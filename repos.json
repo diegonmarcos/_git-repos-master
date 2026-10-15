@@ -16,6 +16,12 @@
   "_fleet_files_doc": "Files that MUST be byte-identical in every repo that has the module they belong to, and where the one authoritative copy lives. `./clone.sh --sync` copies each `from` (resolved under base_dir) to each `to` in every cloned repo that has the entry's `requires` path. `requires` is the OPT-IN and it is explicit on purpose: the obvious shortcut — 'copy where the destination's parent directory exists' — is wrong for any destination at the repo ROOT, because the root always exists. That rule put .mcp.json into all sixteen repos that have no dotfiles module at all (cloud-notes, cloud-u-linux, every lecole-42 entry) on its first run. `requires` names the directory that proves the module is present, so a root-level file is gated by the module it belongs to rather than by its own location.\n\nThis exists because 'one shared implementation, many callers' was only ever true by hand. It was not: deploy-dotfiles.sh had already drifted in cloud-infra-desktop (missing the whole claude-SoT refresh block) and was MISSING outright in four repos whose build.sh calls it, and .mcp.json's own _doc admitted 'propagated by hand — nothing automates that hop', which is how cloud-vault ended up without the cloud-infra-mcp headersHelper while cloud had it. Every one of those was a file claiming, in its own header, to be the same file as another.\n\nADDING a file here is the whole registration: no code change. `from` is <repo>/<path> under base_dir; a `to` list means one source lands at several destinations (mcp.json is both the dotfiles-module source AND the deployed root file, so a repo is consistent whether or not its build.sh has run).",
   "fleet_files": [
     {
+      "from": "git-repos-master/.claude/SESSION-SURVIVAL.md",
+      "to": [".claude/SESSION-SURVIVAL.md"],
+      "requires": ".claude",
+      "doc": "Shell-death recovery runbook from the 2026-10-15 incident (Bash sandbox died after a glob delete in /tmp). Every repo's CLAUDE.md imports it via `@.claude/SESSION-SURVIVAL.md` so every session has it. requires is .claude because sync_all refuses entries without one."
+    },
+    {
       "from": "cloud-infra/1_cloud-configs/dist/mcp.json",
       "to": ["0_apps/src/root/mcp.json", ".mcp.json"],
       "requires": "0_apps/src/root",
