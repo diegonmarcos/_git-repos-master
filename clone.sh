@@ -13,10 +13,10 @@
 # ╚══════════════════════════════════════════════════════════════════╝
 #
 # This repo is an INDEX, not a container. Clones live outside it (in
-# $CLOUD_GIT_BASE, default ~/cloud-drive-shared-store/git) and appear here as symlinks:
+# $CLOUD_GIT_BASE, default ~/cloud-shared-store/git) and appear here as symlinks:
 #
-#     repo-master/a_cloud/cloud-infra-desktop ->  ~/cloud-drive-shared-store/git/cloud-infra-desktop
-#     repo-master/d_lecole/back-Algo ->  ~/cloud-drive-shared-store/git/lecole-42/back-Algo   (`path`)
+#     repo-master/a_cloud/cloud-infra-desktop ->  ~/cloud-shared-store/git/cloud-infra-desktop
+#     repo-master/d_lecole/back-Algo ->  ~/cloud-shared-store/git/lecole-42/back-Algo   (`path`)
 #
 # Every repo in the registry has a link, committed, whether or not you have
 # cloned it. A link to a repo you do not have dangles — that is the index
@@ -34,10 +34,38 @@ set -eu
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REGISTRY="$SCRIPT_DIR/repos.json"
-BASE="${CLOUD_GIT_BASE:-$HOME/cloud-drive-shared-store/git}"
-
 [ -f "$REGISTRY" ] || { echo "FATAL: $REGISTRY missing" >&2; exit 1; }
 command -v node >/dev/null 2>&1 || { echo "FATAL: node required to read $REGISTRY" >&2; exit 1; }
+# The store's directory name is declared once, in repos.json::shared_store_dir.
+STORE_DIR="$(node -e 'process.stdout.write(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).shared_store_dir)' "$REGISTRY")"
+BASE="${CLOUD_GIT_BASE:-$HOME/$STORE_DIR/git}"
+# legacy_store_migration begin (build.json::shared_store.legacy_name): one-time, idempotent, never deletes user data.
+# The old store name is only ever an INPUT here: whatever is under it is merged into the store and the old
+# link/dir goes. Same text as cloud-u-android ac_cloud-termux/rootfs/enter.sh (the reference, executed in its tests).
+legacy_store_merge() {  # $1 = dir emptied into $2; $3 = where a differing file of the same name is kept
+    for e in "$1"/* "$1"/.[!.]* "$1"/..?*; do
+        [ -e "$e" ] || [ -L "$e" ] || continue
+        n="${e##*/}"
+        if [ ! -e "$2/$n" ] && [ ! -L "$2/$n" ]; then mv "$e" "$2/$n"
+        elif [ -d "$e" ] && [ ! -L "$e" ] && [ -d "$2/$n" ] && [ ! -L "$2/$n" ]; then
+            legacy_store_merge "$e" "$2/$n" "$3/$n"; rmdir "$e" 2>/dev/null || true
+        elif [ -f "$e" ] && [ ! -L "$e" ] && [ -f "$2/$n" ] && cmp -s "$e" "$2/$n"; then rm -f "$e"
+        else
+            mkdir -p "$3"; t="$3/$n"; [ ! -e "$t" ] && [ ! -L "$t" ] || t="$t.$$"
+            mv "$e" "$t"
+        fi
+    done
+}
+legacy_store_migrate() {  # $1 = the old name in $HOME, $2 = the store
+    if [ -L "$1" ]; then rm -f "$1"; return 0; fi
+    [ -d "$1" ] || return 0
+    mkdir -p "$2" 2>/dev/null || true
+    legacy_store_merge "$1" "$2" "$2/.legacy-backup-$(date +%Y%m%d)"
+    rmdir "$1" 2>/dev/null || echo "⚠ $1 still has content or is a mount point; it is left in place and migrated again at the next login" >&2
+}
+# legacy_store_migration end
+# One-time, idempotent: the store's old name is merged into the store and removed (never deletes user data).
+legacy_store_migrate "$HOME/cloud-drive-shared-store" "$HOME/$STORE_DIR"  # legacy_store_migration
 
 # Registry readers. node, not jq: node is already required by every build.sh
 # in the fleet, jq is not guaranteed present.
@@ -48,7 +76,7 @@ _field() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1
 # emitted as the sentinel "." and translated back at the point of use.
 _groups() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write([...new Set(r.repos.map(x=>x.group||"."))].sort().join(" "))' "$REGISTRY"; }
 # Where the clone actually lives under $BASE. Defaults to the repo name; the
-# d_lecole entries override it because those clones sit in ~/cloud-drive-shared-store/git/lecole-42/.
+# d_lecole entries override it because those clones sit in ~/cloud-shared-store/git/lecole-42/.
 # Without this the only way to index them would be to move them, which is a
 # separate decision from indexing them.
 _path() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const e=r.repos.find(x=>x.name===process.argv[2]);process.stdout.write(e&&e.path?e.path:process.argv[2])' "$REGISTRY" "$1"; }
@@ -68,7 +96,7 @@ _linktarget() { [ -n "$2" ] && printf '../../%s' "$1" || printf '../%s' "$1"; }
 # so a committed /home/diego/git/cloud-infra-desktop resolves on exactly one machine and
 # dangles everywhere else — the same failure .mcp.json had as a link to
 # /home/diego/.mcp.json. Relative has no such dependency: clone the repos as
-# siblings anywhere ($CLOUD_GIT_BASE, ~/cloud-drive-shared-store/git, /srv, a container) and every link
+# siblings anywhere ($CLOUD_GIT_BASE, ~/cloud-shared-store/git, /srv, a container) and every link
 # resolves.
 # #1073 `status: pending_creation` = declared, GitHub repo not created yet.
 # Every farmer skips it: no clone, no committed link (a link to a repo that
