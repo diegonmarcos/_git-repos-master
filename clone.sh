@@ -9,6 +9,7 @@
 # ║   ./clone.sh --link         relink whatever is already cloned    ║
 # ║   ./clone.sh --relink       rewrite every link from the registry ║
 # ║   ./clone.sh --sync         push fleet-shared files to all repos ║
+# ║   ./clone.sh --check        verify registry + links (repos-sot.js)║
 # ╚══════════════════════════════════════════════════════════════════╝
 #
 # This repo is an INDEX, not a container. Clones live outside it (in
@@ -69,8 +70,14 @@ _linktarget() { [ -n "$2" ] && printf '../../%s' "$1" || printf '../%s' "$1"; }
 # /home/diego/.mcp.json. Relative has no such dependency: clone the repos as
 # siblings anywhere ($CLOUD_GIT_BASE, ~/cloud-drive-shared-store/git, /srv, a container) and every link
 # resolves.
+# #1073 `status: pending_creation` = declared, GitHub repo not created yet.
+# Every farmer skips it: no clone, no committed link (a link to a repo that
+# does not exist is not a to-clone entry, it is a promise nobody can keep).
+_pending() { [ "$(_field "$1" status)" = "pending_creation" ]; }
+
 link_one() {
     _n="$1"; _g=$(_field "$_n" group); _pp=$(_path "$_n")
+    _pending "$_n" && return 1
     _p=$(_linkpath "$_n" "$_g")
     mkdir -p "$(dirname "$_p")"
     # The link is written from the REGISTRY, never from what happens to be on
@@ -94,6 +101,10 @@ link_one() {
 
 clone_one() {
     _n="$1"; _u=$(_field "$_n" url); _t="$BASE/$(_path "$_n")"
+    if _pending "$_n"; then
+        printf "  - %-24s pending_creation: repo not created yet, skipped\n" "$_n"
+        return 0
+    fi
     if [ -d "$_t/.git" ]; then
         printf "  = %-24s already cloned at %s\n" "$_n" "$_t"
     else
@@ -116,7 +127,9 @@ do_list() {
         [ -n "$g" ] && printf "%s/\n" "$g" || printf "./  (repo root)\n"
         for n in $(_names); do
             [ "$(_field "$n" group)" = "$g" ] || continue
-            if [ -d "$BASE/$(_path "$n")/.git" ]; then
+            if _pending "$n"; then
+                s="pending_creation (repo not created yet; skipped by clone/link)"
+            elif [ -d "$BASE/$(_path "$n")/.git" ]; then
                 [ -L "$(_linkpath "$n" "$g")" ] && s="cloned + linked" || s="cloned, NOT linked (run --link)"
             else
                 s="not cloned"
@@ -214,6 +227,10 @@ case "${1:-}" in
         ;;
     --sync)
         sync_all
+        ;;
+    --check)
+        # Registry self-consistency + committed links agree with it.
+        node "$SCRIPT_DIR/repos-sot.js" check "$REGISTRY"
         ;;
     --all)
         fail=0
