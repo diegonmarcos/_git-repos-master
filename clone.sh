@@ -48,7 +48,7 @@ legacy_store_merge() {  # $1 = dir emptied into $2; $3 = where a differing file 
         n="${e##*/}"
         if [ ! -e "$2/$n" ] && [ ! -L "$2/$n" ]; then mv "$e" "$2/$n"
         elif [ -d "$e" ] && [ ! -L "$e" ] && [ -d "$2/$n" ] && [ ! -L "$2/$n" ]; then
-            legacy_store_merge "$e" "$2/$n" "$3/$n"; rmdir "$e" 2>/dev/null || true
+            ( legacy_store_merge "$e" "$2/$n" "$3/$n" ); rmdir "$e" 2>/dev/null || true
         elif [ -f "$e" ] && [ ! -L "$e" ] && [ -f "$2/$n" ] && cmp -s "$e" "$2/$n"; then rm -f "$e"
         else
             mkdir -p "$3"; t="$3/$n"; [ ! -e "$t" ] && [ ! -L "$t" ] || t="$t.$$"
