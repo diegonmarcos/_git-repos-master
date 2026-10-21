@@ -68,7 +68,7 @@ legacy_store_migrate() {  # $1 = the old name in $HOME, $2 = the store
 }
 # legacy_store_migration end
 # One-time, idempotent: the store's old name is merged into the store and removed (never deletes user data).
-legacy_store_migrate "$HOME/cloud-shared-store" "$HOME/$STORE_DIR"  # legacy_store_migration
+legacy_store_migrate "$HOME/cloud-drive-shared-store" "$HOME/$STORE_DIR"  # legacy_store_migration
 
 # Registry readers. node, not jq: node is already required by every build.sh
 # in the fleet, jq is not guaranteed present.
