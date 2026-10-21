@@ -14,13 +14,13 @@ node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "regist
 # reorganisations are declared
 node -e '
 const r=require(process.argv[1]); const by=n=>r.repos.find(x=>x.name===n); let e=[];
-for (const n of ["cloud-webapps","cloud-me-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status!=="pending_creation") e.push(n+" not pending_creation"); }
+for (const n of ["cloud-webapps","cloud-me-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status==="pending_creation") e.push(n+" still pending_creation although the repo exists"); }
 if (r.repos.some(x=>x.name==="cloud-mobile")) e.push("cloud-mobile is a repo entry");
 if (!(r.renames||[]).some(x=>x.from==="cloud-mobile"&&x.to==="cloud-superapp")) e.push("rename cloud-mobile->cloud-superapp missing");
 const f=by("front-diegonmarcos"); const pn=((f&&f.parts)||[]).map(p=>p.name).sort().join(",");
 if (pn!=="linktree,projects") e.push("front-diegonmarcos parts are "+pn);
 if (!(by("front")||{}).url.includes("/front.git")) e.push("front url not front.git");
-if (e.length) { console.error(e.join("\n")); process.exit(1); }' "$ROOT/repos.json" && ok "webapps/me-containers pending, cloud-superapp rename, #1072 placeholders" || bad "reorganisation entries"
+if (e.length) { console.error(e.join("\n")); process.exit(1); }' "$ROOT/repos.json" && ok "webapps/me-containers registered (repo exists), cloud-superapp rename, #1072 placeholders" || bad "reorganisation entries"
 
 # clone.sh skips pending entries: a mini registry with one live (local bare repo) and one pending
 mkdir -p "$T/idx" "$T/base" "$T/src"
