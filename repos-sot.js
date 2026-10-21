@@ -43,6 +43,9 @@ function checkRegistry(reg) {
     if (rn.kind === 'repo' && !reg.repos.some(r => (r.renamed_from || []).includes(rn.from)))
       bad(`renames[] ${rn.from}->${rn.to} is kind repo but no entry has renamed_from ${rn.from}`);
   }
+  const gh = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
+  const registered = new Set(reg.repos.map(r => gh(r.url)));
+  for (const u of reg.unregistered_ok || []) if (registered.has(u.name)) bad(`unregistered_ok ${u.name} is registered`);
   for (const f of reg.fleet_files || []) if (!f.requires) bad(`fleet_files ${f.from}: no requires`);
 }
 
@@ -77,7 +80,14 @@ function checkSubset(file, fix) {
   for (const r of sub.repos || []) {
     const s = by.get(r.name);
     if (old.has(r.name)) bad(`${r.name}: old name of a rename (see renames[]) in ${file}`);
-    if (!s) { bad(`${r.name}: not in the registry`); continue; }
+    if (!s) {
+      const now = reg.repos.find(x => (x.renamed_from || []).includes(r.name));
+      if (now) {
+        bad(`${r.name}: renamed to ${now.name} in the registry (renamed_from)`);
+        if (fix) { r.name = now.name; r.url = now.url; changed = true; }
+      } else bad(`${r.name}: not in the registry`);
+      continue;
+    }
     for (const k of ['url', 'private']) {
       if (JSON.stringify(r[k]) !== JSON.stringify(s[k])) {
         bad(`${r.name}.${k}: ${JSON.stringify(r[k])} but registry says ${JSON.stringify(s[k])}`);
