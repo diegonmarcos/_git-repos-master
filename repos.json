@@ -103,6 +103,8 @@
       "doc": "Claude Code's durable state and the source it runs from. ~/.claude symlinks in, not out: a_sessions/<instance>/ holds transcripts, file-history, shell-snapshots and history.jsonl; b_projects/ holds MEMORY.md and memory-entries; a_commits/ snapshots every commit object of every repo here." },
     { "name": "cloud-notes", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-notes.git", "private": true,
       "doc": "Personal notes (Obsidian vault)." },
+    { "name": "cloud-webapps", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-webapps.git", "private": false,
+      "doc": "The Cloud web apps: one independent site per Cloud APK (cloud-mail, cloud-drive, ...) sharing one generated top nav. Moved out of front-diegonmarcos (c__Cloud). Repo not created yet as of 2026-10-21; until then the same tree lives in front-diegonmarcos/cloud-webapps." },
 
     { "name": "front", "group": "b_front", "url": "git@github.com:diegonmarcos/ffront.git", "private": false,
       "doc": "Project master for the front-end: its own repos.json plus committed symlinks to the front repos. Cloned as the bare 'front' (repo name is ffront) so ~/cloud-drive-shared-store/git/front/<member> resolves through the farm — which is what the ~/cloud-drive-shared-store/git/front/front-data/... paths in cloud-infra already assume." },
