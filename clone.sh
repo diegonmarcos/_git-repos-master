@@ -57,7 +57,10 @@ legacy_store_merge() {  # $1 = dir emptied into $2; $3 = where a differing file 
     done
 }
 legacy_store_migrate() {  # $1 = the old name in $HOME, $2 = the store
-    if [ -L "$1" ]; then rm -f "$1"; return 0; fi
+    if [ -L "$1" ]; then
+        if [ ! -e "$2" ] && [ ! -L "$2" ]; then mv "$1" "$2"; else rm -f "$1"; fi
+        return 0
+    fi
     [ -d "$1" ] || return 0
     mkdir -p "$2" 2>/dev/null || true
     legacy_store_merge "$1" "$2" "$2/.legacy-backup-$(date +%Y%m%d)"
@@ -65,7 +68,7 @@ legacy_store_migrate() {  # $1 = the old name in $HOME, $2 = the store
 }
 # legacy_store_migration end
 # One-time, idempotent: the store's old name is merged into the store and removed (never deletes user data).
-legacy_store_migrate "$HOME/cloud-drive-shared-store" "$HOME/$STORE_DIR"  # legacy_store_migration
+legacy_store_migrate "$HOME/cloud-shared-store" "$HOME/$STORE_DIR"  # legacy_store_migration
 
 # Registry readers. node, not jq: node is already required by every build.sh
 # in the fleet, jq is not guaranteed present.
