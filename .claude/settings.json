@@ -50,7 +50,37 @@
       "mcp__Claude_Code_Remote",
       "mcp__claude-code-remote"
     ],
-    "deny": []
+    "deny": [
+      "Artifact",
+      "ArtifactComments",
+      "ArtifactData",
+      "DesignSync",
+      "Workflow",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "ScheduleWakeup",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "EnterWorktree",
+      "ExitWorktree",
+      "TaskCreate",
+      "TaskGet",
+      "TaskList",
+      "TaskUpdate",
+      "NotebookEdit",
+      "ReportFindings",
+      "ShowOnboardingRolePicker",
+      "SearchSkills",
+      "SuggestSkills",
+      "ListSkills",
+      "SearchPlugins",
+      "SuggestPluginInstall",
+      "ListPlugins",
+      "SearchMcpRegistry",
+      "SuggestConnectors",
+      "ListConnectors"
+    ]
   },
   "autoMode": {
     "_doc": "Guidance for the auto-mode classifier, for calls NOT already matched by a permissions.allow rule (rule matches bypass the classifier entirely). \"$defaults\" keeps Anthropic's built-in rules; the extra entries record what this repo's owner has standing-authorised, so fleet work is not classed as 'destructive infra' and refused.",

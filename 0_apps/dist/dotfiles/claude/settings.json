@@ -44,7 +44,37 @@
       "mcp__github",
       "mcp__Claude_Code_Remote"
     ],
-    "deny": []
+    "deny": [
+      "Artifact",
+      "ArtifactComments",
+      "ArtifactData",
+      "DesignSync",
+      "Workflow",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "ScheduleWakeup",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "EnterWorktree",
+      "ExitWorktree",
+      "TaskCreate",
+      "TaskGet",
+      "TaskList",
+      "TaskUpdate",
+      "NotebookEdit",
+      "ReportFindings",
+      "ShowOnboardingRolePicker",
+      "SearchSkills",
+      "SuggestSkills",
+      "ListSkills",
+      "SearchPlugins",
+      "SuggestPluginInstall",
+      "ListPlugins",
+      "SearchMcpRegistry",
+      "SuggestConnectors",
+      "ListConnectors"
+    ]
   },
 
   "autoMode": {
