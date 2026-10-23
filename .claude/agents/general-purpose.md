@@ -1,8 +1,8 @@
 ---
 name: general-purpose
-description: General-purpose agent for multi-step research and tasks. Repo override of the built-in so it loads only the shell, file tools and the fleet MCPs instead of every connected connector.
+description: General-purpose agent for multi-step research and tasks. Lean override of the built-in: shell, file and web tools only, no MCP servers.
 model: sonnet
 effort: medium
-tools: Bash, Read, Edit, Write, Glob, Grep, WebFetch, WebSearch, ToolSearch, SendMessage, mcp__cloud-infra-mcp, mcp__cloud-mail-mcp, mcp__cloud-superapp-mcp
+tools: Bash, Read, Edit, Write, Glob, Grep, WebFetch, WebSearch, SendMessage
 ---
 Do the task you were given, verify it, and report briefly. Follow CLAUDE.md and the owner rules.

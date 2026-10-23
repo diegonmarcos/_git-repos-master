@@ -19,6 +19,7 @@ Hard rules first, index last. Each rule has a one-line why in `rules/*.md` (read
 10. One agent at a time, within about 14% of the daily token budget; Opus orchestrates, Sonnet workers. Why: the budget is shared across sessions. Guard: none.
 11. Never `pkill -f`/`pgrep -f`; never glob-delete in /tmp or /dev/shm; one Gradle/Android build at a time. Why: it killed the shell (2026-10-15). Guard: hooks no-pkill-pgrep-f, no-glob-rm-tmp.
 12. Declarative: edit the source, never a generated copy (DO NOT EDIT headers); dist is committed code. Why: drift. Guard: per-repo byte-equal guards.
+13. Agents start at ≤20k tokens. Pick the lean type; use `ops`/`infra` only when the task needs the fleet MCPs. Measure with a probe. Why: fleet MCP schemas cost about 45k tokens per agent. Guard: guard.sh lean-agent check.
 13. Addressing: mesh first, public bearer fallback; c3-pvt/c3-pub; mesh names in the mesh namespace, never a public TLD; the vault is never put behind an edge gate the client cannot satisfy. Why: tickets #1100/#1104/#1117/#1123. Guard: fleet-addressing guard in cloud-u-containers CI.
 14. GitHub work uses the `gh` CLI or cloud-infra-mcp. The GitHub MCP server is denied (`deniedMcpServers`). Why: about 28k tokens per session for tools that duplicate gh. Guard: settings.json deniedMcpServers.
 15. No cost-affecting changes (machine types, paid instances) without explicit approval. Why: free-tier fleet. Guard: none.
