@@ -244,7 +244,7 @@ sync_all() {
         i=$((i+1))
     done
     printf "\nsync: %d file(s) written, %d destination(s) skipped (module absent)\n" "$copied" "$skipped"
-    printf "sync: mcp.json is GENERATED — regenerate it in cloud-infra first if the\n"
+    printf "sync: mcp.json is GENERATED — regenerate it in cloud-t-infra first if the\n"
     printf "      service build.json .mcp blocks changed, then re-run --sync.\n"
 }
 

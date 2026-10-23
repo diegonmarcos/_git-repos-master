@@ -44,7 +44,7 @@ node "$T/idx/repos-sot.js" check "$T/idx/repos.json" >/dev/null 2>&1 && bad "che
 
 # subset guard bites
 cat > "$T/sub.json" <<'JSON'
-{"repos":[{"name":"cloud-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}
+{"repos":[{"name":"cloud-t-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}
 JSON
 node "$ROOT/repos-sot.js" check-subset "$T/sub.json" >/dev/null 2>&1 && bad "subset guard accepted drift" || ok "subset guard fails on wrong url / old name"
 node -e 'const r=require(process.argv[1]);require("fs").writeFileSync(process.argv[2],JSON.stringify({repos:r.repos.filter(x=>x.group==="a_cloud")}))' "$ROOT/repos.json" "$T/good.json"
