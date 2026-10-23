@@ -47,7 +47,6 @@
       "mcp__cloud-superapp-mcp",
       "mcp__google-personal-mcp",
       "mcp__google-workspace-mcp",
-      "mcp__github",
       "mcp__Claude_Code_Remote",
       "mcp__claude-code-remote"
     ],
@@ -70,5 +69,11 @@
     "_doc_cloud_sessions": "2026-10-09: in a Claude Code cloud session these rules are read only when the session has ONE repository, and the session's mode dropdown still decides. In Auto, calls the classifier refuses are refused outright (pushes to cloud-infra main and worktree cleanup were refused all day although 'Bash' is allowed). Use 'Accept edits' for fleet work: refusals become approval prompts instead."
   },
   "disableClaudeAiConnectors": true,
-  "_disableClaudeAiConnectors_doc": "2026-10-23 owner decision: claude.ai account connectors (Gmail, Calendar, Drive) stay in claude.ai chat only; Claude Code uses the fleet MCPs from .mcp.json. Applies to terminal/IDE/SDK sessions; cloud sessions take connectors from the session's own connector settings."
+  "_disableClaudeAiConnectors_doc": "2026-10-23 owner decision: claude.ai account connectors (Gmail, Calendar, Drive) stay in claude.ai chat only; Claude Code uses the fleet MCPs from .mcp.json. Applies to terminal/IDE/SDK sessions; cloud sessions take connectors from the session's own connector settings.",
+  "deniedMcpServers": [
+    {
+      "serverName": "github"
+    }
+  ],
+  "_deniedMcpServers_doc": "2026-10-23 owner decision: the GitHub MCP (~60 tools, ~28k tokens per session/agent) is redundant; use gh CLI (proxy-authenticated) and cloud-infra-mcp devops_workflows_gha_*. Removing permissions.allow 'mcp__github' too."
 }
