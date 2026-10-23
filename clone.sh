@@ -15,8 +15,8 @@
 # This repo is an INDEX, not a container. Clones live outside it (in
 # $CLOUD_GIT_BASE, default ~/cloud-shared-store/git) and appear here as symlinks:
 #
-#     repo-master/a_cloud/cloud-infra-desktop ->  ~/cloud-shared-store/git/cloud-infra-desktop
-#     repo-master/d_lecole/back-Algo ->  ~/cloud-shared-store/git/lecole-42/back-Algo   (`path`)
+#     repo-master/a_cloud/cloud-u-desktop ->  ~/cloud-shared-store/git/cloud-u-desktop
+#     repo-master/d_lecole/lecole-42_back-Algo ->  ~/cloud-shared-store/git/lecole-42_back-Algo
 #
 # Every repo in the registry has a link, committed, whether or not you have
 # cloned it. A link to a repo you do not have dangles — that is the index

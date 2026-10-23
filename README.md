@@ -10,11 +10,11 @@ this repo; it is the index, so it has no entry pointing at itself.
 | `a_cloud` | the cloud project: infra, services, data, devices, tooling |
 | `b_front` | the front-end: site, content, assets, experiments |
 | `c_gh` | account-level GitHub repos (the profile README) |
-| `d_lecole` | 42 coursework — clones sit in `~/cloud-shared-store/git/lecole-42/`, see `path` in `repos.json` |
+| `d_lecole` | 42 coursework — project master `lecole-42`; members are `lecole-42_*` |
 
 ```
 ./clone.sh                        # what exists here, what does not
-./clone.sh cloud-unix cloud-notes # clone those two
+./clone.sh cloud-u-desktop cloud-me-notes # clone those two
 ./clone.sh --group d_lecole       # clone a whole group
 ./clone.sh --all                  # everything
 ```
