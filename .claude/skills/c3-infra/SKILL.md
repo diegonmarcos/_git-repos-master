@@ -37,4 +37,4 @@ Hard rules first, index last. Each rule has a one-line why in `rules/*.md` (read
 | rules/security.md | secrets, gitleaks, geo-fence, MCP auth |
 
 ## Delivery
-Local and web sessions with plugins: `extraKnownMarketplaces` + `enabledPlugins` in `.claude/settings.json`. Claude Code cloud sessions do NOT install repo-declared plugins (docs: cloud-environments, "What carries over"), so `scripts/sync-to-repo.sh <repo>` copies this skill, the agents and the hooks into the repo's `.claude/` (which cloud sessions do load) and wires the hooks into its settings.json.
+Source of truth: cloud-u-linux `da_my-ai/data/claude/cloud-marketplace/c3-infra` (this plugin) and `agents/`. Local sessions use the plugin via `cloud-marketplace` + `enabledPlugins`. Claude Code cloud sessions do NOT install plugins (docs: cloud-environments, "What carries over"), so cloud-infra `9_others/src/deploy-dotfiles.sh` copies this skill to `<repo>/.claude/skills/c3-infra`, the hooks to `<repo>/.claude/hooks/c3`, the agents to `<repo>/.claude/agents`, and `settings.project.json` (hooks wired) to `<repo>/.claude/settings.json`. Edit upstream, never the repo copies.
