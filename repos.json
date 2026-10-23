@@ -102,6 +102,24 @@
       "to": ["others/0_apps/src/claude/settings.json", "others/0_apps/dist/dotfiles/claude/settings.json"],
       "requires": "others/0_apps/src/claude",
       "doc": "cloud-me_vault/others: a vendored copy of the cloud module (src and dist; no deployed .claude). Nested module copy of the project settings: a sub-project directory that carries its own copy of the module (or just the file) because it is worked on from its own directory, where the repo-root .claude/ is not the one Claude Code loads. Not covered by the repo-root entry above (its `requires` and paths are root-relative), so it was never refreshed and drifted: ac_cloud-vault, da_dtk and others/ all lacked autoMode and the 2026-10-09 rules. The test-claude-sot.sh settings-verbatim check lists these same paths."
+    },
+    {
+      "from": "git-repos-master/.claude/skills/c3-infra",
+      "to": [".claude/skills/c3-infra"],
+      "requires": ".claude",
+      "doc": "Directory entry mirrored by clone.sh --sync (ticket #1126). Source of truth: the c3-infra-plugin repo; cloud sessions do not install plugins, so each repo carries a copy. c3-infra skill + rules/*.md."
+    },
+    {
+      "from": "git-repos-master/.claude/hooks/c3",
+      "to": [".claude/hooks/c3"],
+      "requires": ".claude",
+      "doc": "Directory entry mirrored by clone.sh --sync (ticket #1126). Source of truth: the c3-infra-plugin repo; cloud sessions do not install plugins, so each repo carries a copy. c3-infra PreToolUse guard hooks and tests, wired in settings.json hooks."
+    },
+    {
+      "from": "git-repos-master/.claude/agents",
+      "to": [".claude/agents"],
+      "requires": ".claude",
+      "doc": "Directory entry mirrored by clone.sh --sync (ticket #1126). Source of truth: the c3-infra-plugin repo; cloud sessions do not install plugins, so each repo carries a copy. lean agents build/explore/ops/review/general-purpose."
     }
   ],
 

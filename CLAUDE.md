@@ -1,16 +1,7 @@
-**Owner rules:** Read [OWNER-RULES.md](https://github.com/diegonmarcos/cloud-data-my-ai-memory/blob/main/4___ASSETS___/4.3.Memory/OWNER-RULES.md) before acting.
-**Standing rules apply to every session and agent; follow them first.**
-
 # Claude Code project instructions
+
+**Owner rules:** the `c3-infra` plugin (repo `diegonmarcos/c3-infra-plugin`) is the single home for all owner rules: skill `c3-infra` and its `rules/*.md`, guard hooks, lean agents. It is declared in `.claude/settings.json` and mirrored into `.claude/skills/c3-infra`, `.claude/agents` and `.claude/hooks/c3` for cloud sessions (they do not install plugins). Read `.claude/skills/c3-infra/SKILL.md` before acting; it applies to every session and agent.
 
 @.claude/SESSION-SURVIVAL.md
 
-## Tickets
-
-When the owner writes "New task", that message is a new ticket. It goes to the
-Product Backlog store (repo `cloud-data-my-ai-memory`, branch `main`), not to a
-local file: add `1___BACKLOG___/1.1.Product-Backlog/tasks/<session-id>/<next id>.json` in the
-existing schema (subject `#N ...`, description, activeForm, status, blocks,
-blockedBy, optional `metadata.closed`), run `node build.js` in
-`1___BACKLOG___/1.1.Product-Backlog`, then `bash ../../4___ASSETS___/4.1.Bin/test-backlog-metadata.sh`,
-and commit and push to `origin main`. Update the ticket's status as the work moves.
+Tickets ("New task"): see `.claude/skills/c3-infra/rules/backlog.md`.

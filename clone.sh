@@ -209,7 +209,7 @@ sync_all() {
         # An entry with no `requires` would silently degrade to "copy
         # everywhere" — the exact bug described above. Refuse instead.
         [ -n "$req" ] || { printf "  ! %-46s no 'requires' in registry — skipped\\n" "$(_ff_from "$i")"; i=$((i+1)); continue; }
-        if [ ! -f "$src" ]; then
+        if [ ! -f "$src" ] && [ ! -d "$src" ]; then
             # Not fatal, and deliberately so: a container that cloned only part
             # of the fleet still gets every OTHER shared file. The absent source
             # is named so it is obvious which clone is missing.
@@ -225,6 +225,12 @@ sync_all() {
             [ -d "$repo_path/$req" ] || { skipped=$((skipped+1)); continue; }
             for d in $dests; do
                 dest="$repo_path/$d"
+                if [ -d "$src" ]; then
+                    # Directory entry (c3-infra skill/hooks/agents): mirror the tree, only on difference.
+                    diff -rq "$src" "$dest" >/dev/null 2>&1 && continue
+                    mkdir -p "$dest"; cp -a "$src"/. "$dest"/
+                    copied=$((copied+1)); printf "      -> %s\n" "${repo_path#"$BASE"/}/$d"; continue
+                fi
                 cmp -s "$src" "$dest" 2>/dev/null && continue
                 cp -f "$src" "$dest"
                 # Executability is part of the file: deploy-dotfiles.sh is

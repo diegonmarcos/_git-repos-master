@@ -75,5 +75,78 @@
       "serverName": "github"
     }
   ],
-  "_deniedMcpServers_doc": "2026-10-23 owner decision: the GitHub MCP (~60 tools, ~28k tokens per session/agent) is redundant; use gh CLI (proxy-authenticated) and cloud-infra-mcp devops_workflows_gha_*. Removing permissions.allow 'mcp__github' too."
+  "_deniedMcpServers_doc": "2026-10-23 owner decision: the GitHub MCP (~60 tools, ~28k tokens per session/agent) is redundant; use gh CLI (proxy-authenticated) and cloud-infra-mcp devops_workflows_gha_*. Removing permissions.allow 'mcp__github' too.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-pkill-pgrep-f.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-glob-rm-tmp.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-local-gradle.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/main-only-push.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-branch-create.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-secrets-commit.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-pkill-pgrep-f.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-glob-rm-tmp.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-local-gradle.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/main-only-push.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-branch-create.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/c3\"/no-secrets-commit.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "c3-infra-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "diegonmarcos/c3-infra-plugin"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "c3-infra@c3-infra-marketplace": true
+  }
 }
