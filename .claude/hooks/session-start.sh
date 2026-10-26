@@ -21,8 +21,8 @@ export CLOUD_GIT_BASE="${CLOUD_GIT_BASE:-$(dirname "$REPO")}"
 # registry's SSH URLs clone over the proxy without an SSH key.
 #
 # PUBLIC repos only, by construction: the anonymous lane serves those and
-# nothing else. The private half (cloud-vault, cloud-data*, front-galaxy-gaia,
-# front-unity, lecole42, dev) needs per-session credentials that a hook cannot
+# nothing else. The private half (cloud-vault, cloud-data*, CG-galaxy-gaia,
+# CG-unity, lecole42, dev) needs per-session credentials that a hook cannot
 # mint, so clone.sh reports them as failures and this does NOT treat that as
 # fatal — a partial fleet beats no fleet, and the dangling links ARE the
 # to-clone list, exactly as clone.sh's header describes.
