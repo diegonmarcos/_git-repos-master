@@ -386,6 +386,16 @@
       "developer": "Leaf.y"
     },
     {
+      "family": "Corporate",
+      "name": "Fin-Corporate",
+      "url": "https://github.com/diegonmarcos/Fin-Corporate",
+      "role": "",
+      "visibility": "public",
+      "project": "Corporate",
+      "field": "Finance",
+      "developer": "Nexus.z"
+    },
+    {
       "family": "Terminal",
       "name": "Fin-CM-Blmbrg",
       "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg",
@@ -407,12 +417,12 @@
     },
     {
       "family": "Hub",
-      "name": "Fin-CM-___",
-      "url": "https://github.com/diegonmarcos/Fin-CM-___",
+      "name": "Fin-___",
+      "url": "https://github.com/diegonmarcos/Fin-___",
       "role": "hub",
       "visibility": "public",
-      "project": "Fin-CM",
-      "field": "Capital Markets",
+      "project": "Fin",
+      "field": "Finance",
       "developer": "Nexus.z"
     },
     {

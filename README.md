@@ -1,6 +1,6 @@
 # repo_master
 
-The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 69 of them, grouped (the GitHub snapshot in the table below holds 72)<!-- repos-count:end -->, with a
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 70 of them, grouped (the GitHub snapshot in the table below holds 73)<!-- repos-count:end -->, with a
 `clone.sh` that pulls down whichever ones you want on this machine. This repo is
 the index, so it has no entry pointing at itself.
 
@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (72 — 53 🌐 public, 19 🔒 private)
+## All repos (73 — 54 🌐 public, 19 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -73,9 +73,10 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | CG | CG | Voxel | [CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust) | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Zirkus | [CG-circus](https://github.com/diegonmarcos/CG-circus) | 🌐 public |
 | 🍃 Leaf.y | Hub | DuckPeng | Hub | [DuckPeng-___](https://github.com/diegonmarcos/DuckPeng-___) _(hub)_ | 🌐 public |
+| 💹 Nexus.z | Finance | Corporate | Corporate | [Fin-Corporate](https://github.com/diegonmarcos/Fin-Corporate) | 🌐 public |
 | 💹 Nexus.z | Capital Markets | Blmbrg | Terminal | [Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg) | 🌐 public |
 | 💹 Nexus.z | Capital Markets | CB | MQPM | [Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm) | 🌐 public |
-| 💹 Nexus.z | Capital Markets | Fin-CM | Hub | [Fin-CM-___](https://github.com/diegonmarcos/Fin-CM-___) _(hub)_ | 🌐 public |
+| 💹 Nexus.z | Finance | Fin | Hub | [Fin-___](https://github.com/diegonmarcos/Fin-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
