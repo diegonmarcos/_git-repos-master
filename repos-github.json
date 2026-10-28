@@ -12,10 +12,10 @@
     "DeepSc": "🔬",
     "DuckPeng": "🦆",
     "CG": "🎨",
-    "Front": "🖥️",
     "Meta": "🗂️",
     "42": "🎓",
-    "Archived": "📦"
+    "Archived": "📦",
+    "Projects": "🖥️"
   },
   "repos": [
     {
@@ -331,7 +331,7 @@
       "visibility": "public"
     },
     {
-      "family": "Front",
+      "family": "Projects",
       "icon": "🖥️",
       "name": "diegonmarcos.github.io",
       "url": "https://github.com/diegonmarcos/diegonmarcos.github.io",
@@ -339,7 +339,7 @@
       "visibility": "public"
     },
     {
-      "family": "Front",
+      "family": "Projects",
       "icon": "🖥️",
       "name": "diegonmarcos",
       "url": "https://github.com/diegonmarcos/diegonmarcos",
@@ -347,26 +347,26 @@
       "visibility": "public"
     },
     {
-      "family": "Front",
+      "family": "Projects",
       "icon": "🖥️",
-      "name": "front",
-      "url": "https://github.com/diegonmarcos/front",
+      "name": "Projects",
+      "url": "https://github.com/diegonmarcos/Projects",
       "role": "hub",
       "visibility": "public"
     },
     {
-      "family": "Front",
+      "family": "Projects",
       "icon": "🖥️",
-      "name": "front-endeavours",
-      "url": "https://github.com/diegonmarcos/front-endeavours",
+      "name": "Projects-endeavours",
+      "url": "https://github.com/diegonmarcos/Projects-endeavours",
       "role": "",
       "visibility": "public"
     },
     {
-      "family": "Front",
+      "family": "Projects",
       "icon": "🖥️",
-      "name": "front-labtools",
-      "url": "https://github.com/diegonmarcos/front-labtools",
+      "name": "Projects-labtools",
+      "url": "https://github.com/diegonmarcos/Projects-labtools",
       "role": "",
       "visibility": "public"
     },

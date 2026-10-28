@@ -8,7 +8,7 @@ the index, so it has no entry pointing at itself.
 |---|---|
 | `2_vault` | secrets (sops/age) — sorts first, everything else needs it |
 | `a_cloud` | the cloud project: infra, services, data, devices, tooling |
-| `b_front` | the front-end: site, content, assets, experiments |
+| `b_projects` | Projects (was front): site, content, assets, experiments |
 | `c_gh` | account-level GitHub repos (the profile README) |
 | `d_lecole` | 42 coursework — project master `lecole-42`; members are `lecole-42_*` |
 
@@ -74,11 +74,11 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🎨 | [CG-galaxy-gaia](https://github.com/diegonmarcos/CG-galaxy-gaia) | CG | 🔒 private |
 | 🎨 | [CG-unity](https://github.com/diegonmarcos/CG-unity) | CG | 🔒 private |
 | 🎨 | [CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust) | CG | 🌐 public |
-| 🖥️ | [diegonmarcos.github.io](https://github.com/diegonmarcos/diegonmarcos.github.io) _(deployer)_ | Front | 🌐 public |
-| 🖥️ | [diegonmarcos](https://github.com/diegonmarcos/diegonmarcos) _(profile)_ | Front | 🌐 public |
-| 🖥️ | [front](https://github.com/diegonmarcos/front) _(hub)_ | Front | 🌐 public |
-| 🖥️ | [front-endeavours](https://github.com/diegonmarcos/front-endeavours) | Front | 🌐 public |
-| 🖥️ | [front-labtools](https://github.com/diegonmarcos/front-labtools) | Front | 🌐 public |
+| 🖥️ | [diegonmarcos.github.io](https://github.com/diegonmarcos/diegonmarcos.github.io) _(deployer)_ | Projects | 🌐 public |
+| 🖥️ | [diegonmarcos](https://github.com/diegonmarcos/diegonmarcos) _(profile)_ | Projects | 🌐 public |
+| 🖥️ | [Projects](https://github.com/diegonmarcos/Projects) _(hub)_ | Projects | 🌐 public |
+| 🖥️ | [Projects-endeavours](https://github.com/diegonmarcos/Projects-endeavours) | Projects | 🌐 public |
+| 🖥️ | [Projects-labtools](https://github.com/diegonmarcos/Projects-labtools) | Projects | 🌐 public |
 | 🗂️ | [git-repos-master](https://github.com/diegonmarcos/git-repos-master) | Meta | 🌐 public |
 | 🎓 | [lecole-42](https://github.com/diegonmarcos/lecole-42) | 42 | 🔒 private |
 | 🎓 | [lecole-42-projects](https://github.com/diegonmarcos/lecole-42-projects) | 42 | 🔒 private |
