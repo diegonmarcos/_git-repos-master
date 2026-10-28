@@ -1,6 +1,6 @@
 # repo_master
 
-The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 70 of them, grouped (the GitHub snapshot in the table below holds 73)<!-- repos-count:end -->, with a
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 71 of them, grouped (the GitHub snapshot in the table below holds 74)<!-- repos-count:end -->, with a
 `clone.sh` that pulls down whichever ones you want on this machine. This repo is
 the index, so it has no entry pointing at itself.
 
@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (73 — 56 🌐 public, 17 🔒 private)
+## All repos (74 — 56 🌐 public, 18 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -62,7 +62,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | AI Memory | [cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai) _(ai memory)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | CGC | [cloud-me-pvt-cgc](https://github.com/diegonmarcos/cloud-me-pvt-cgc) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers (superseded by vault) | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault) | 🔒 private |
@@ -79,6 +79,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 💹 Nexus.z | Finance | Fin | Hub | [Fin-___](https://github.com/diegonmarcos/Fin-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
+| 🔬 Stark.x | Deep Science | DeepSc-Tools | Sailytics | [DeepSc-Tools](https://github.com/diegonmarcos/DeepSc-Tools) | 🔒 private |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Graphic | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🌐 public |

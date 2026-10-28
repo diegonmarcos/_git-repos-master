@@ -320,6 +320,8 @@
       "doc": "Stark.x company site (published at /stark/), moved from front-endeavours a_Companies/stark (#1224); renamed from DeepSc-StarkX into the cloud-me-pub-profiles family 2026-10-28; Projects-endeavours keeps a symlink to this repo." },
     { "name": "DeepSc-X", "group": "b_projects", "hub": "DeepSc-___", "url": "git@github.com:diegonmarcos/DeepSc-X.git", "private": false,
       "doc": "Deep-ScX / saylitics: README and deployer wiring skeleton; the matching front-labtools project c-Stk_DsX/sailytics moves here with the labtools split (#1218). #1224." },
+    { "name": "DeepSc-Tools", "group": "b_projects", "hub": "DeepSc-___", "url": "git@github.com:diegonmarcos/DeepSc-Tools.git", "private": true,
+      "doc": "DeepSc tools: first tool is CAD with MCP servers for agentic 3D modelling (FreeCAD, Blender, AutoCAD/DXF as pinned upstream submodules under tools/cad). #1255." },
     { "name": "DuckPeng-___", "group": "b_projects", "parent_hub": "Projects-___", "url": "git@github.com:diegonmarcos/DuckPeng-___.git", "private": false, "renamed_from": ["DuckPeng", "DuckPeng___"],
       "doc": "Project master for the DuckPeng family: the CG hub and the cloud hub (Leaf.y moved to the cloud-me-pub-profiles family 2026-10-28). Its own repos.json subset plus committed symlinks. Created 2026-10-27 (#1224)." },
     { "name": "cloud-me-pub-profiles-leaf.y", "group": "b_projects", "hub": "cloud-me-pub-profiles-___", "url": "git@github.com:diegonmarcos/cloud-me-pub-profiles-leaf.y.git", "private": false, "renamed_from": ["DuckPeng-LeafY", "Me-Profiles-Leaf.y"],

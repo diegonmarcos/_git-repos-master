@@ -446,6 +446,16 @@
       "developer": "Stark.x"
     },
     {
+      "family": "Sailytics",
+      "name": "DeepSc-Tools",
+      "url": "https://github.com/diegonmarcos/DeepSc-Tools",
+      "role": "",
+      "visibility": "private",
+      "project": "DeepSc-Tools",
+      "field": "Deep Science",
+      "developer": "Stark.x"
+    },
+    {
       "family": "Algo",
       "name": "lecole-42_back-Algo",
       "url": "https://github.com/diegonmarcos/lecole-42_back-Algo",
