@@ -447,11 +447,11 @@
     },
     {
       "family": "Sailytics",
-      "name": "DeepSc-Tools",
-      "url": "https://github.com/diegonmarcos/DeepSc-Tools",
+      "name": "CAD-Simulators",
+      "url": "https://github.com/diegonmarcos/CAD-Simulators",
       "role": "",
-      "visibility": "private",
-      "project": "DeepSc-Tools",
+      "visibility": "public",
+      "project": "CAD-Simulators",
       "field": "Deep Science",
       "developer": "Stark.x"
     },

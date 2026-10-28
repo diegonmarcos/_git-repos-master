@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (74 — 56 🌐 public, 18 🔒 private)
+## All repos (74 — 57 🌐 public, 17 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -79,7 +79,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 💹 Nexus.z | Finance | Fin | Hub | [Fin-___](https://github.com/diegonmarcos/Fin-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
-| 🔬 Stark.x | Deep Science | DeepSc-Tools | Sailytics | [DeepSc-Tools](https://github.com/diegonmarcos/DeepSc-Tools) | 🔒 private |
+| 🔬 Stark.x | Deep Science | CAD-Simulators | Sailytics | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Graphic | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🌐 public |
