@@ -9,6 +9,7 @@
   "_status_doc": "`status` is optional. Absent = the repo exists and is cloned/linked as usual. `pending_creation` = declared on purpose, but the GitHub repo is NOT created yet: every farmer (clone.sh, the cloud-drive seed, the libs:repos mirror, the fleet dotfiles guard) must SKIP it - no clone, no symlink, no seed - and the guard fails if a pending entry is treated as live. Flip it by deleting the field in the same commit that creates the repo. `parts` (optional) lists named sub-trees that live INSIDE the same repo, declared as placeholders so farmers and docs know the planned layout before any file moves; a part is never a repo of its own and is never cloned or linked.",
   "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
   "renames": [
+    { "from": "cloud-data-lfs", "to": "cloud_db_LFS", "kind": "repo", "since": "2026-10-28", "ticket": "#1224", "doc": "GitHub repo is cloud_db_LFS; the registry name followed it." },
     { "from": "a_Companies/leafy", "to": "DuckPeng-LeafY", "kind": "app-folder", "since": "2026-10-27", "ticket": "#1224", "doc": "Folder of front-endeavours moved to its own repo; front-endeavours a_Companies/leafy is now a symlink. Published URL /leafy/ unchanged." },
     { "from": "a_Companies/nexus", "to": "Fin-CM-NexusZ", "kind": "app-folder", "since": "2026-10-27", "ticket": "#1224", "doc": "Folder of front-endeavours moved to its own repo; front-endeavours a_Companies/nexus is now a symlink. Published URL /nexus/ unchanged." },
     { "from": "a_Companies/stark", "to": "DeepSc-StarkX", "kind": "app-folder", "since": "2026-10-27", "ticket": "#1224", "doc": "Folder of front-endeavours moved to its own repo; front-endeavours a_Companies/stark is now a symlink. Published URL /stark/ unchanged." },
@@ -179,7 +180,7 @@
       "doc": "The d* unix apps split out of cloud-unix, which was renamed cloud-infra-desktop (now cloud-u-desktop) in the same move. The desktop flakes reference them as home-directory paths, never as flake inputs." },
     { "name": "cloud-me-data-pvt", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-me-data-pvt.git", "private": true, "renamed_from": ["cloud-data"],
       "doc": "Generated fleet config consumed by cloud's services." },
-    { "name": "cloud-data-lfs", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-data-lfs.git", "private": true,
+    { "name": "cloud_db_LFS", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud_db_LFS.git", "private": true, "renamed_from": ["cloud-data-lfs"],
       "doc": "Large binary artefacts (git-lfs) for cloud-me-data-pvt (was cloud-data)." },
     { "name": "cloud-me-my-ai", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-me-my-ai.git", "private": true, "renamed_from": ["cloud-data-my-ai-memory"],
       "doc": "Claude Code's durable state and the source it runs from. ~/.claude symlinks in, not out: a_sessions/<instance>/ holds transcripts, file-history, shell-snapshots and history.jsonl; b_projects/ holds MEMORY.md and memory-entries; a_commits/ snapshots every commit object of every repo here." },
