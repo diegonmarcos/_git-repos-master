@@ -14,12 +14,12 @@ node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "regist
 # reorganisations are declared
 node -e '
 const r=require(process.argv[1]); const by=n=>r.repos.find(x=>x.name===n); let e=[];
-for (const n of ["cloud-h-webapps","cloud-me-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status==="pending_creation") e.push(n+" still pending_creation although the repo exists"); }
+for (const n of ["cloud-h-webapps","cloud-me-pvt-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status==="pending_creation") e.push(n+" still pending_creation although the repo exists"); }
 if (r.repos.some(x=>x.name==="cloud-mobile")) e.push("cloud-mobile is a repo entry");
 if (!(r.renames||[]).some(x=>x.from==="cloud-mobile"&&x.to==="cloud-superapp")) e.push("rename cloud-mobile->cloud-superapp missing");
-const f=by("front-diegonmarcos"); const pn=((f&&f.parts)||[]).map(p=>p.name).sort().join(",");
-if (pn!=="linktree,projects") e.push("front-diegonmarcos parts are "+pn);
-if (!(by("front")||{}).url.includes("/front.git")) e.push("front url not front.git");
+const f=by("front-diegonmarcos"); if(!f) e.push("front-diegonmarcos missing");
+for (const p of ((f&&f.parts)||[])) if (p.status==="split" && !by(p.path)) e.push("front-diegonmarcos part "+p.name+" split into unregistered "+p.path);
+const pj=by("Projects"); if(!pj||!pj.url.includes("/Projects.git")||!(pj.renamed_from||[]).includes("front")) e.push("Projects (renamed from front) missing or wrong url");
 if (e.length) { console.error(e.join("\n")); process.exit(1); }' "$ROOT/repos.json" && ok "webapps/me-containers registered (repo exists), cloud-superapp rename, #1072 placeholders" || bad "reorganisation entries"
 
 # clone.sh skips pending entries: a mini registry with one live (local bare repo) and one pending
@@ -27,7 +27,7 @@ mkdir -p "$T/idx" "$T/base" "$T/src"
 git init -q --bare "$T/src/live.git"
 cp "$ROOT/clone.sh" "$ROOT/repos-sot.js" "$T/idx/"
 cat > "$T/idx/repos.json" <<JSON
-{"_schema":"cloud-repos/v1","groups":{"a":"x"},"repos":[
+{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","groups":{"a":"x"},"repos":[
  {"name":"live","group":"a","url":"$T/src/live.git","private":false},
  {"name":"nope","group":"a","url":"$T/src/does-not-exist.git","private":false,"status":"pending_creation"}]}
 JSON
