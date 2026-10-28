@@ -1,5 +1,5 @@
 {
-  "_doc": "Every diegonmarcos GitHub repo (snapshot), classified Cia > Field > Project > Family. README 'All repos' tables are generated from this file by gen-repos-list.js; Z-archived goes in its own table after a rule.",
+  "_doc": "Every diegonmarcos GitHub repo (snapshot), classified Developer > Field > Project > Family. README 'All repos' tables are generated from this file by gen-repos-list.js; Z-archived goes in its own table after a rule.",
   "vis_icons": {
     "public": "🌐",
     "private": "🔒"
@@ -12,8 +12,8 @@
       "role": "",
       "visibility": "public",
       "project": "Repos",
-      "cia": "_Meta",
-      "field": "Index"
+      "field": "Index",
+      "developer": "_Meta"
     },
     {
       "family": "Hub",
@@ -22,8 +22,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Android",
@@ -32,8 +32,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "C3",
@@ -42,8 +42,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "C3",
@@ -52,8 +52,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "C3",
@@ -62,8 +62,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "DB",
@@ -72,8 +72,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "DB",
@@ -82,8 +82,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "DB",
@@ -92,8 +92,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Desktop",
@@ -102,8 +102,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Docs",
@@ -112,8 +112,8 @@
       "role": "backlog",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Linux",
@@ -122,8 +122,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -132,8 +132,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -142,8 +142,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -152,8 +152,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -162,8 +162,8 @@
       "role": "ai memory",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -172,8 +172,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -182,8 +182,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -192,8 +192,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -202,8 +202,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -212,8 +212,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -222,8 +222,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -232,8 +232,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Me",
@@ -242,8 +242,8 @@
       "role": "",
       "visibility": "private",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Webapps",
@@ -252,8 +252,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Webapps",
@@ -262,8 +262,8 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
-      "cia": "Leaf.y",
-      "field": "Unix"
+      "field": "Unix",
+      "developer": "Leaf.y"
     },
     {
       "family": "Hub",
@@ -272,8 +272,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Galaxy",
@@ -282,8 +282,8 @@
       "role": "",
       "visibility": "public",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Galaxy",
@@ -292,8 +292,8 @@
       "role": "",
       "visibility": "private",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Unity",
@@ -302,8 +302,8 @@
       "role": "",
       "visibility": "private",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Voxel",
@@ -312,8 +312,8 @@
       "role": "",
       "visibility": "public",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Zirkus",
@@ -322,8 +322,8 @@
       "role": "",
       "visibility": "public",
       "project": "CG",
-      "cia": "Leaf.y",
-      "field": "CG"
+      "field": "CG",
+      "developer": "Leaf.y"
     },
     {
       "family": "Hub",
@@ -332,8 +332,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "DuckPeng",
-      "cia": "Leaf.y",
-      "field": "Hub"
+      "field": "Hub",
+      "developer": "Leaf.y"
     },
     {
       "family": "Site",
@@ -342,8 +342,8 @@
       "role": "",
       "visibility": "public",
       "project": "Leaf.y",
-      "cia": "Leaf.y",
-      "field": "Hub"
+      "field": "Hub",
+      "developer": "Leaf.y"
     },
     {
       "family": "Hub",
@@ -352,8 +352,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "Fin-CM",
-      "cia": "Nexus.z",
-      "field": "Capital Markets"
+      "field": "Capital Markets",
+      "developer": "Nexus.z"
     },
     {
       "family": "Terminal",
@@ -362,8 +362,8 @@
       "role": "",
       "visibility": "public",
       "project": "Blmbrg",
-      "cia": "Nexus.z",
-      "field": "Capital Markets"
+      "field": "Capital Markets",
+      "developer": "Nexus.z"
     },
     {
       "family": "MQPM",
@@ -372,8 +372,8 @@
       "role": "",
       "visibility": "public",
       "project": "CB",
-      "cia": "Nexus.z",
-      "field": "Capital Markets"
+      "field": "Capital Markets",
+      "developer": "Nexus.z"
     },
     {
       "family": "Site",
@@ -382,8 +382,8 @@
       "role": "",
       "visibility": "public",
       "project": "Nexus.z",
-      "cia": "Nexus.z",
-      "field": "Capital Markets"
+      "field": "Capital Markets",
+      "developer": "Nexus.z"
     },
     {
       "family": "Hub",
@@ -392,8 +392,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "DeepSc",
-      "cia": "Stark.x",
-      "field": "Deep Science"
+      "field": "Deep Science",
+      "developer": "Stark.x"
     },
     {
       "family": "Sailytics",
@@ -402,8 +402,8 @@
       "role": "",
       "visibility": "public",
       "project": "DeepSc-X",
-      "cia": "Stark.x",
-      "field": "Deep Science"
+      "field": "Deep Science",
+      "developer": "Stark.x"
     },
     {
       "family": "Site",
@@ -412,8 +412,8 @@
       "role": "",
       "visibility": "public",
       "project": "Stark.x",
-      "cia": "Stark.x",
-      "field": "Deep Science"
+      "field": "Deep Science",
+      "developer": "Stark.x"
     },
     {
       "family": "Algo",
@@ -422,8 +422,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "Graphic",
@@ -432,8 +432,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "Master",
@@ -442,8 +442,8 @@
       "role": "",
       "visibility": "private",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "Mylibs",
@@ -452,8 +452,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "Projects",
@@ -462,8 +462,8 @@
       "role": "",
       "visibility": "private",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "System",
@@ -472,8 +472,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Low Level"
+      "field": "Low Level",
+      "developer": "lecole42"
     },
     {
       "family": "Agentic",
@@ -482,8 +482,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Machine Learning"
+      "field": "Machine Learning",
+      "developer": "lecole42"
     },
     {
       "family": "DataScience",
@@ -492,8 +492,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Machine Learning"
+      "field": "Machine Learning",
+      "developer": "lecole42"
     },
     {
       "family": "MachineLearning",
@@ -502,8 +502,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Machine Learning"
+      "field": "Machine Learning",
+      "developer": "lecole42"
     },
     {
       "family": "Cyberwarfare",
@@ -512,8 +512,8 @@
       "role": "",
       "visibility": "public",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Cybersecurity"
+      "field": "Cybersecurity",
+      "developer": "lecole42"
     },
     {
       "family": "dev",
@@ -522,8 +522,8 @@
       "role": "",
       "visibility": "private",
       "project": "42",
-      "cia": "lecole42",
-      "field": "Dev"
+      "field": "Dev",
+      "developer": "lecole42"
     },
     {
       "family": "Hub",
@@ -532,8 +532,8 @@
       "role": "hub",
       "visibility": "public",
       "project": "Projects",
-      "cia": "Projects",
-      "field": "Front"
+      "field": "Front",
+      "developer": "Projects"
     },
     {
       "family": "Endeavours",
@@ -542,8 +542,8 @@
       "role": "",
       "visibility": "public",
       "project": "Projects",
-      "cia": "Projects",
-      "field": "Front"
+      "field": "Front",
+      "developer": "Projects"
     },
     {
       "family": "Labtools",
@@ -552,8 +552,8 @@
       "role": "",
       "visibility": "public",
       "project": "Projects",
-      "cia": "Projects",
-      "field": "Front"
+      "field": "Front",
+      "developer": "Projects"
     },
     {
       "family": "README",
@@ -562,8 +562,8 @@
       "role": "profile",
       "visibility": "public",
       "project": "Profile",
-      "cia": "Gh",
-      "field": "diegonmarcos"
+      "field": "diegonmarcos",
+      "developer": "Gh"
     },
     {
       "family": "Deployer",
@@ -572,8 +572,8 @@
       "role": "deployer",
       "visibility": "public",
       "project": "Pages",
-      "cia": "Gh",
-      "field": "diegonmarcos.github.io"
+      "field": "diegonmarcos.github.io",
+      "developer": "Gh"
     },
     {
       "family": "—",
@@ -582,8 +582,8 @@
       "role": "",
       "visibility": "private",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -592,8 +592,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -602,8 +602,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -612,8 +612,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -622,8 +622,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -632,8 +632,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -642,8 +642,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -652,8 +652,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -662,8 +662,8 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     },
     {
       "family": "—",
@@ -672,20 +672,10 @@
       "role": "",
       "visibility": "private",
       "project": "—",
-      "cia": "Z-archived",
-      "field": "—"
+      "field": "—",
+      "developer": "Z-archived"
     }
   ],
-  "cia_icons": {
-    "_Meta": "🗂️",
-    "Leaf.y": "🍃",
-    "Nexus.z": "💹",
-    "Stark.x": "🔬",
-    "lecole42": "🎓",
-    "Projects": "🧩",
-    "Gh": "🐙",
-    "Z-archived": "📦"
-  },
   "field_order": [
     "Index",
     "Unix",
@@ -701,5 +691,15 @@
     "diegonmarcos",
     "diegonmarcos.github.io",
     "—"
-  ]
+  ],
+  "developer_icons": {
+    "_Meta": "🗂️",
+    "Leaf.y": "🍃",
+    "Nexus.z": "💹",
+    "Stark.x": "🔬",
+    "lecole42": "🎓",
+    "Projects": "🧩",
+    "Gh": "🐙",
+    "Z-archived": "📦"
+  }
 }

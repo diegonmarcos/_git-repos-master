@@ -33,7 +33,7 @@ not submodules, and what each directory is for.
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
-| Cia | Field | Project | Family | Repo | Visibility |
+| Developer | Field | Project | Family | Repo | Visibility |
 |---|---|---|---|---|---|
 | 🗂️ _Meta | Index | Repos | Master | [_git-repos-master](https://github.com/diegonmarcos/_git-repos-master) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Hub | [cloud](https://github.com/diegonmarcos/cloud) _(hub)_ | 🌐 public |

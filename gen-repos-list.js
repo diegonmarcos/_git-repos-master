@@ -4,13 +4,13 @@
 const fs = require('fs');
 const d = JSON.parse(fs.readFileSync(__dirname + '/repos-github.json', 'utf8'));
 const pub = d.repos.filter(r => r.visibility === 'public').length;
-const head = ['| Cia | Field | Project | Family | Repo | Visibility |', '|---|---|---|---|---|---|'];
-const row = r => `| ${d.cia_icons[r.cia]} ${r.cia} | ${r.field} | ${r.project} | ${r.family} | [${r.name}](${r.url})${r.role ? ` _(${r.role})_` : ''} | ${d.vis_icons[r.visibility]} ${r.visibility} |`;
-const live = d.repos.filter(r => r.cia !== 'Z-archived'), arch = d.repos.filter(r => r.cia === 'Z-archived');
+const head = ['| Developer | Field | Project | Family | Repo | Visibility |', '|---|---|---|---|---|---|'];
+const row = r => `| ${d.developer_icons[r.developer]} ${r.developer} | ${r.field} | ${r.project} | ${r.family} | [${r.name}](${r.url})${r.role ? ` _(${r.role})_` : ''} | ${d.vis_icons[r.visibility]} ${r.visibility} |`;
+const live = d.repos.filter(r => r.developer !== 'Z-archived'), arch = d.repos.filter(r => r.developer === 'Z-archived');
 const lines = [
   `## All repos (${d.repos.length} — ${pub} 🌐 public, ${d.repos.length - pub} 🔒 private)`, '',
   'Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.', '',
-  ...head, ...live.map(row), '', '---', '', `### ${d.cia_icons['Z-archived']} Z-archived (${arch.length})`, '',
+  ...head, ...live.map(row), '', '---', '', `### ${d.developer_icons['Z-archived']} Z-archived (${arch.length})`, '',
   '| Repo | Visibility |', '|---|---|',
   ...arch.map(r => `| [${r.name}](${r.url}) | ${d.vis_icons[r.visibility]} ${r.visibility} |`),
 ];
