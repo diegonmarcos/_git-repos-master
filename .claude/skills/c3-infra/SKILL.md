@@ -1,6 +1,6 @@
 ---
 name: c3-infra
-description: Owner rules for ANY fleet, Android app, CI, GitHub Actions, backlog/ticket, MCP, Caddy/addressing, secrets or agent-orchestration work in the c3 repos (cloud-*, git-repos-master). Load before acting.
+description: Owner rules for ANY fleet, Android app, CI, GitHub Actions, backlog/ticket, MCP, Caddy/addressing, secrets or agent-orchestration work in the c3 repos (cloud-*, _git-repos-master). Load before acting.
 ---
 # c3-infra: owner rules
 
@@ -37,4 +37,4 @@ Hard rules first, index last. Each rule has a one-line why in `rules/*.md` (read
 | rules/security.md | secrets, gitleaks, geo-fence, MCP auth |
 
 ## Delivery
-Source of truth: cloud-u-linux `da_my-ai/data/claude/cloud-marketplace/c3-infra` (this plugin) and `agents/`. Local sessions use the plugin via `cloud-marketplace` + `enabledPlugins`. Claude Code cloud sessions do NOT install plugins (docs: cloud-environments, "What carries over"), so cloud-infra `9_others/src/deploy-dotfiles.sh` copies this skill to `<repo>/.claude/skills/c3-infra`, the hooks to `<repo>/.claude/hooks/c3`, the agents to `<repo>/.claude/agents`, and `settings.project.json` (hooks wired) to `<repo>/.claude/settings.json`. Edit upstream, never the repo copies.
+Source of truth: cloud-u-linux `da_my-ai/data/claude/cloud-marketplace/c3-infra` (this plugin) and `agents/`. The former plugin repo `c3-infra-plugin` is archived (`z-archived_c3-infra-plugin`) and is not a source. Local sessions use the plugin via `cloud-marketplace` + `enabledPlugins`. Claude Code cloud sessions do NOT install plugins (docs: cloud-environments, "What carries over"), so the my-ai `dotfiles` engine (`da_my-ai/engines/dotfiles/deploy-dotfiles.sh`; cloud-infra `9_others/src/deploy-dotfiles.sh` is a wrapper) copies this skill to `<repo>/.claude/skills/c3-infra`, the hooks to `<repo>/.claude/hooks/c3`, the agents to `<repo>/.claude/agents`, and `settings.project.json` (hooks wired) to `<repo>/.claude/settings.json`. Edit upstream, never the repo copies.
