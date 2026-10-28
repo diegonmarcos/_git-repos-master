@@ -226,7 +226,7 @@
 
   "repos": [
     { "name": "cloud-me-pvt-vault", "group": "2_vault", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-vault.git", "private": true, "renamed_from": ["cloud-vault", "cloud-me_vault"],
-      "doc": "Secrets (sops/age). Every credential the fleet uses." },
+      "doc": "Secrets (sops/age) only. Twin of cloud-me-pvt-configs (same top-level folders: Containers, Apks, Terminal, Desktop-GUI, Linux-Server, Shared, plus Identity). Since 2026-10-28 (#1253) it also holds the container secrets formerly in cloud-me-pvt-containers (Containers/) and the secrets/, sso-oidc/, vault-mtls/ bundles formerly in cloud-me-pvt-data." },
 
     { "name": "cloudy-___", "group": "a_cloud", "parent_hub": "_git-repos-master", "url": "git@github.com:diegonmarcos/cloudy-___.git", "private": false, "renamed_from": ["cloud", "cloud___", "cloud-___"],
       "doc": "Project master for the cloud project: a repos.json subset of this file plus committed symlinks. Had a symlink here but no entry until 2026-08-20 — the drift that made `ls a_cloud/` disagree with `--list`." },
@@ -243,11 +243,11 @@
     { "name": "cloud-me-pvt-cgc", "group": "a_cloud", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-cgc.git", "private": true, "renamed_from": ["cloud-me_cgc"],
       "doc": "The PRIVATE half of the cgc pipeline (pvt surface: the private repos -> cloud-cgc-pvt-mcp). A thin orchestrator rendered from cloudy-u-containers_cgc at a pinned sha, so private-repo runs and logs stay private. Was cloud-u-containers_cgc-pvt; renamed 2026-10-10 into the private cloud-me family (split-outs are named <parent>_<name>; every cloud-u-* repo is public)." },
     { "name": "cloud-me-pvt-configs", "group": "a_cloud", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-configs.git", "private": true, "renamed_from": ["cloud-me_configs"],
-      "doc": "Private configs (cloud-me family). Added 2026-10-15: it existed but was missing here, so clone.sh and --sync skipped it. (/home/user/cloud-vault is just a second clone of cloud-me-pvt-vault, not a separate repo.)" },
+      "doc": "Deployable configs, no secrets. Twin of cloud-me-pvt-vault (same top-level folders: Containers, Apks, Terminal, Desktop-GUI, Linux-Server, Shared; #1253). Added 2026-10-15: it existed but was missing here, so clone.sh and --sync skipped it." },
     { "name": "cloudy-u-linux", "group": "a_cloud", "hub": "cloudy-___", "url": "git@github.com:diegonmarcos/cloudy-u-linux.git", "private": false, "renamed_from": ["cloud-u-linux"],
       "doc": "The d* unix apps split out of cloud-unix, which was renamed cloud-infra-desktop (now cloudy-u-desktop) in the same move. The desktop flakes reference them as home-directory paths, never as flake inputs." },
     { "name": "cloud-me-pvt-data", "group": "a_cloud", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-data.git", "private": true, "renamed_from": ["cloud-data", "cloud-me-data-pvt"],
-      "doc": "Generated fleet config consumed by cloud's services." },
+      "doc": "Data only (journal, logs, reports, profiles, health, Pages). Its secrets/, sso-oidc/ and vault-mtls/ moved to cloud-me-pvt-vault on 2026-10-28 (#1253)." },
     { "name": "cloudy_db_LFS", "group": "a_cloud", "hub": "cloudy-___", "url": "git@github.com:diegonmarcos/cloudy_db_LFS.git", "private": true, "lfs": true, "renamed_from": ["cloud-data-lfs", "cloud_db_LFS"],
       "doc": "Large binary artefacts (git-lfs) for cloud-me-pvt-data (was cloud-data)." },
     { "name": "cloud-me-pvt-my-ai", "group": "a_cloud", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-my-ai.git", "private": true, "renamed_from": ["cloud-data-my-ai-memory", "cloud-me-my-ai"],
@@ -259,7 +259,7 @@
     { "name": "cloudy-h-webapps", "group": "a_cloud", "hub": "cloudy-___", "url": "git@github.com:diegonmarcos/cloudy-h-webapps.git", "private": false, "renamed_from": ["cloud-webapps", "cloud-h-webapps"],
       "doc": "The Cloud web apps: one independent site per Cloud APK (cloud-mail, cloud-drive, ...) sharing one generated top nav. Moved out of front-diegonmarcos (c__Cloud). Created 2026-10-21; tree imported from front-diegonmarcos/cloud-webapps." },
     { "name": "cloud-me-pvt-containers", "group": "a_cloud", "hub": "cloud-me-pvt-___", "url": "git@github.com:diegonmarcos/cloud-me-pvt-containers.git", "private": true, "renamed_from": ["cloud-me-containers"],
-      "doc": "The owner's own (cloud-me) containers. Created 2026-10-21 (private)." },
+      "doc": "Superseded 2026-10-28 (#1253): its sops files now live in cloud-me-pvt-vault Containers/ (subtree merge, history kept). Frozen source; to be archived as z-archived_cloud-me-pvt-containers once consumers are confirmed off it." },
     { "name": "cloudy_db_infra-ops-obsv_configs-sync", "group": "a_cloud", "hub": "cloudy-___", "url": "git@github.com:diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync.git", "private": false, "renamed_from": ["cloud_db_infra-ops-obsv_configs-sync"],
       "doc": "Configs-sync engine data repo: the consolidated fleet config SoT (from 1_cloud-configs) served by c3-infra-api/mcp. Created 2026-10-25 (#1197 programme); public." },
     { "name": "z-archived_cloud-me-pvt-legacy", "group": "a_cloud", "url": "git@github.com:diegonmarcos/z-archived_cloud-me-pvt-legacy.git", "private": true, "renamed_from": ["cloud-me", "cloud-me-pvt-legacy"],

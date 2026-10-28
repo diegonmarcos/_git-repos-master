@@ -62,7 +62,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | AI Memory | [cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai) _(ai memory)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | CGC | [cloud-me-pvt-cgc](https://github.com/diegonmarcos/cloud-me-pvt-cgc) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers (superseded by vault) | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault) | 🔒 private |
