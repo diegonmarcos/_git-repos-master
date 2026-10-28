@@ -1,6 +1,6 @@
 # repo_master
 
-The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 68 of them, grouped (the GitHub snapshot in the table below holds 71)<!-- repos-count:end -->, with a
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 69 of them, grouped (the GitHub snapshot in the table below holds 72)<!-- repos-count:end -->, with a
 `clone.sh` that pulls down whichever ones you want on this machine. This repo is
 the index, so it has no entry pointing at itself.
 
@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (71 — 52 🌐 public, 19 🔒 private)
+## All repos (72 — 53 🌐 public, 19 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -49,6 +49,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloudy | Linux | [cloudy-u-linux](https://github.com/diegonmarcos/cloudy-u-linux) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloudy | Webapps | [cloudy-h-webapps](https://github.com/diegonmarcos/cloudy-h-webapps) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloudy | Webapps | [cloudy-h-webapps-2](https://github.com/diegonmarcos/cloudy-h-webapps-2) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me | Hub | [cloud-me-___](https://github.com/diegonmarcos/cloud-me-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub-___](https://github.com/diegonmarcos/cloud-me-pub-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-___](https://github.com/diegonmarcos/cloud-me-pub-profiles-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-_lnktree](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree) | 🌐 public |

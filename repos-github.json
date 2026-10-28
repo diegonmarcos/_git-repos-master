@@ -146,6 +146,16 @@
       "developer": "Leaf.y"
     },
     {
+      "family": "Hub",
+      "name": "cloud-me-___",
+      "url": "https://github.com/diegonmarcos/cloud-me-___",
+      "role": "hub",
+      "visibility": "public",
+      "project": "Cloud-Me",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
       "name": "cloud-me-pub-___",
       "url": "https://github.com/diegonmarcos/cloud-me-pub-___",
       "role": "hub",
