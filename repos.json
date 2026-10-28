@@ -6,6 +6,8 @@
 
   "_visibility_doc": "`private` mirrors GitHub visibility as of 2026-08-20 and only drives the \"(private)\" hint in `--list` plus a clearer message when a clone fails for lack of credentials. It grants nothing.",
 
+  "_lfs_doc": "`lfs` is optional. `true` = the repository stores its large files in git-lfs, so a plain clone fetches pointers until `git lfs pull`; absent = a normal repository. Declarative: the libs:repos mirror and the cloud-drive repos table (LFS | Normal column) read this field, nothing hardcodes which repo is LFS.",
+
   "_status_doc": "`status` is optional. Absent = the repo exists and is cloned/linked as usual. `pending_creation` = declared on purpose, but the GitHub repo is NOT created yet: every farmer (clone.sh, the cloud-drive seed, the libs:repos mirror, the fleet dotfiles guard) must SKIP it - no clone, no symlink, no seed - and the guard fails if a pending entry is treated as live. Flip it by deleting the field in the same commit that creates the repo. `parts` (optional) lists named sub-trees that live INSIDE the same repo, declared as placeholders so farmers and docs know the planned layout before any file moves; a part is never a repo of its own and is never cloned or linked.",
   "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
   "renames": [
@@ -211,7 +213,7 @@
       "doc": "The d* unix apps split out of cloud-unix, which was renamed cloud-infra-desktop (now cloud-u-desktop) in the same move. The desktop flakes reference them as home-directory paths, never as flake inputs." },
     { "name": "cloud-me-pvt-data", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-me-pvt-data.git", "private": true, "renamed_from": ["cloud-data", "cloud-me-data-pvt"],
       "doc": "Generated fleet config consumed by cloud's services." },
-    { "name": "cloud_db_LFS", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud_db_LFS.git", "private": true, "renamed_from": ["cloud-data-lfs"],
+    { "name": "cloud_db_LFS", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud_db_LFS.git", "private": true, "lfs": true, "renamed_from": ["cloud-data-lfs"],
       "doc": "Large binary artefacts (git-lfs) for cloud-me-pvt-data (was cloud-data)." },
     { "name": "cloud-me-pvt-my-ai", "group": "a_cloud", "url": "git@github.com:diegonmarcos/cloud-me-pvt-my-ai.git", "private": true, "renamed_from": ["cloud-data-my-ai-memory", "cloud-me-my-ai"],
       "doc": "Claude Code's durable state and the source it runs from. ~/.claude symlinks in, not out: a_sessions/<instance>/ holds transcripts, file-history, shell-snapshots and history.jsonl; b_projects/ holds MEMORY.md and memory-entries; a_commits/ snapshots every commit object of every repo here." },
