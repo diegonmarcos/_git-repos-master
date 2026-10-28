@@ -239,7 +239,7 @@
       "name": "cloud-me-pvt-___",
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-___",
       "role": "hub",
-      "visibility": "private",
+      "visibility": "public",
       "developer": "Leaf.y",
       "field": "Unix",
       "project": "Cloud-Me-Pvt",
@@ -470,7 +470,7 @@
       "name": "lecole-42-___",
       "url": "https://github.com/diegonmarcos/lecole-42-___",
       "role": "",
-      "visibility": "private",
+      "visibility": "public",
       "project": "42",
       "field": "Low Level",
       "developer": "lecole42"

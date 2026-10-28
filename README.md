@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (73 — 54 🌐 public, 19 🔒 private)
+## All repos (73 — 56 🌐 public, 17 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -58,7 +58,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-prf-prs](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-stark.x](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Shared | [cloud-me-pub-shared](https://github.com/diegonmarcos/cloud-me-pub-shared) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Hub | [cloud-me-pvt-___](https://github.com/diegonmarcos/cloud-me-pvt-___) _(hub)_ | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Hub | [cloud-me-pvt-___](https://github.com/diegonmarcos/cloud-me-pvt-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | AI Memory | [cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai) _(ai memory)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | CGC | [cloud-me-pvt-cgc](https://github.com/diegonmarcos/cloud-me-pvt-cgc) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
@@ -81,7 +81,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Graphic | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
-| 🎓 lecole42 | Low Level | 42 | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🔒 private |
+| 🎓 lecole42 | Low Level | 42 | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Mylibs | [lecole-42_ops-Mylibs](https://github.com/diegonmarcos/lecole-42_ops-Mylibs) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Projects | [lecole-42-projects](https://github.com/diegonmarcos/lecole-42-projects) | 🔒 private |
 | 🎓 lecole42 | Low Level | 42 | System | [lecole-42_back-System](https://github.com/diegonmarcos/lecole-42_back-System) | 🌐 public |

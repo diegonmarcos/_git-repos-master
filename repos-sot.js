@@ -48,6 +48,8 @@ function checkRegistry(reg) {
   const gh = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
   const registered = new Set(reg.repos.map(r => gh(r.url)));
   for (const u of reg.unregistered_ok || []) if (registered.has(u.name)) bad(`unregistered_ok ${u.name} is registered`);
+  // Owner rule: a hub (name ends in -___) is ALWAYS public.
+  for (const r of reg.repos) if (/-___$/.test(r.name) && r.private !== false) bad(`${r.name}: hub must be public (owner rule "Hub always public"), private is ${r.private}`);
   for (const f of reg.fleet_files || []) if (!f.requires) bad(`fleet_files ${f.from}: no requires`);
 }
 
@@ -155,7 +157,12 @@ function checkHubs(reg, remote) {
 const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
-  checkRegistry(reg); checkLinks(reg); done('repos.json');
+  checkRegistry(reg); checkLinks(reg);
+  if (!arg) { // also guard the GitHub snapshot used for the README
+    const gp = path.join(HERE, 'repos-github.json');
+    if (fs.existsSync(gp)) for (const r of read(gp).repos) if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
+  }
+  done('repos.json');
 } else if (cmd === 'check-hubs') {
   const reg = read(SOT); checkHubs(reg, arg === '--remote'); done('hubs' + (arg === '--remote' ? ' (remote .gitmodules)' : ''));
 } else if (cmd === 'check-subset' && arg) {
