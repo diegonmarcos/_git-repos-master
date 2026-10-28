@@ -14,4 +14,8 @@ const p = __dirname + '/README.md';
 let md = fs.readFileSync(p, 'utf8');
 const block = `${B}\n${lines.join('\n')}\n${E}`;
 md = md.includes(B) ? md.replace(new RegExp(`${B}[\\s\\S]*${E}`), block) : md.trimEnd() + '\n\n' + block + '\n';
+const reg = JSON.parse(fs.readFileSync(__dirname + '/repos.json', 'utf8')).repos;
+const n = Array.isArray(reg) ? reg.length : Object.keys(reg).length;
+md = md.replace(/<!-- repos-count:begin -->[\s\S]*?<!-- repos-count:end -->/,
+  `<!-- repos-count:begin -->\`repos.json\` registers ${n} of them, grouped (the GitHub snapshot in the table below holds ${d.repos.length})<!-- repos-count:end -->`);
 fs.writeFileSync(p, md);

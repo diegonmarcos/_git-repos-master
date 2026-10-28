@@ -1,8 +1,8 @@
 # repo_master
 
-The index of every repository this account owns — 27 of them, grouped, with a
-`clone.sh` that pulls down whichever ones you want on this machine. The 28th is
-this repo; it is the index, so it has no entry pointing at itself.
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 61 of them, grouped (the GitHub snapshot in the table below holds 66)<!-- repos-count:end -->, with a
+`clone.sh` that pulls down whichever ones you want on this machine. This repo is
+the index, so it has no entry pointing at itself.
 
 | group | what |
 |---|---|
