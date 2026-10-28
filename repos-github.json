@@ -321,27 +321,27 @@
       "url": "https://github.com/diegonmarcos/CG-___",
       "role": "hub",
       "visibility": "public",
-      "project": "CG",
+      "project": "—",
       "field": "CG",
       "developer": "Leaf.y"
     },
     {
-      "family": "Galaxy",
+      "family": "Threlte",
       "name": "CG-galaxy",
       "url": "https://github.com/diegonmarcos/CG-galaxy",
       "role": "",
       "visibility": "public",
-      "project": "CG",
+      "project": "Galaxy",
       "field": "CG",
       "developer": "Leaf.y"
     },
     {
-      "family": "Galaxy",
+      "family": "Threlte",
       "name": "CG-galaxy-gaia",
       "url": "https://github.com/diegonmarcos/CG-galaxy-gaia",
       "role": "",
       "visibility": "private",
-      "project": "CG",
+      "project": "Galaxy",
       "field": "CG",
       "developer": "Leaf.y"
     },
@@ -351,27 +351,27 @@
       "url": "https://github.com/diegonmarcos/CG-unity",
       "role": "",
       "visibility": "private",
-      "project": "CG",
+      "project": "Galaxy",
       "field": "CG",
       "developer": "Leaf.y"
     },
     {
-      "family": "Voxel",
+      "family": "Voxel-rust",
       "name": "CG-voxel-rust",
       "url": "https://github.com/diegonmarcos/CG-voxel-rust",
       "role": "",
       "visibility": "public",
-      "project": "CG",
+      "project": "Galaxy",
       "field": "CG",
       "developer": "Leaf.y"
     },
     {
-      "family": "Zirkus",
+      "family": "Games, Carto, Music, Others",
       "name": "CG-circus",
       "url": "https://github.com/diegonmarcos/CG-circus",
       "role": "",
       "visibility": "public",
-      "project": "CG",
+      "project": "Zirkus",
       "field": "CG",
       "developer": "Leaf.y"
     },
@@ -381,7 +381,7 @@
       "url": "https://github.com/diegonmarcos/DuckPeng-___",
       "role": "hub",
       "visibility": "public",
-      "project": "DuckPeng",
+      "project": "—",
       "field": "Hub",
       "developer": "Leaf.y"
     },
@@ -421,7 +421,7 @@
       "url": "https://github.com/diegonmarcos/Fin-___",
       "role": "hub",
       "visibility": "public",
-      "project": "Fin",
+      "project": "—",
       "field": "Finance",
       "developer": "Nexus.z"
     },
@@ -431,7 +431,7 @@
       "url": "https://github.com/diegonmarcos/DeepSc-___",
       "role": "hub",
       "visibility": "public",
-      "project": "DeepSc",
+      "project": "—",
       "field": "Deep Science",
       "developer": "Stark.x"
     },
@@ -456,24 +456,26 @@
       "developer": "Stark.x"
     },
     {
-      "family": "Algo",
+      "family": "Back",
       "name": "lecole-42_back-Algo",
       "url": "https://github.com/diegonmarcos/lecole-42_back-Algo",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-algo",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "Graphic",
+      "family": "Back",
       "name": "lecole-42_back-Graphic",
       "url": "https://github.com/diegonmarcos/lecole-42_back-Graphic",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-graphic",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
       "family": "Master",
@@ -481,89 +483,98 @@
       "url": "https://github.com/diegonmarcos/lecole-42-___",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "—",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "Mylibs",
+      "family": "Ops",
       "name": "lecole-42_ops-Mylibs",
       "url": "https://github.com/diegonmarcos/lecole-42_ops-Mylibs",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-mylibs",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "Projects",
+      "family": "Curriculum",
       "name": "lecole-42-projects",
       "url": "https://github.com/diegonmarcos/lecole-42-projects",
       "role": "",
       "visibility": "private",
-      "project": "42",
+      "project": "42-projects",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "System",
+      "family": "Back",
       "name": "lecole-42_back-System",
       "url": "https://github.com/diegonmarcos/lecole-42_back-System",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-system",
       "field": "Low Level",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "Agentic",
+      "family": "ML",
       "name": "lecole-42_ml-Agentic",
       "url": "https://github.com/diegonmarcos/lecole-42_ml-Agentic",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-agentic",
       "field": "Machine Learning",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "DataScience",
+      "family": "ML",
       "name": "lecole-42_ml-DataScience",
       "url": "https://github.com/diegonmarcos/lecole-42_ml-DataScience",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-datascience",
       "field": "Machine Learning",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "MachineLearning",
+      "family": "ML",
       "name": "lecole-42_ml-MachineLearning",
       "url": "https://github.com/diegonmarcos/lecole-42_ml-MachineLearning",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-machinelearning",
       "field": "Machine Learning",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "Cyberwarfare",
+      "family": "Cyber",
       "name": "lecole-42_cyber-Cyberwarfare",
       "url": "https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare",
       "role": "",
       "visibility": "public",
-      "project": "42",
+      "project": "42-cyberwarfare",
       "field": "Cybersecurity",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
-      "family": "dev",
+      "family": "Dev",
       "name": "lecole-42_dev",
       "url": "https://github.com/diegonmarcos/lecole-42_dev",
       "role": "",
       "visibility": "private",
-      "project": "42",
+      "project": "42-dev",
       "field": "Dev",
-      "developer": "lecole42"
+      "developer": "lecole42",
+      "school": "42"
     },
     {
       "family": "Hub",
@@ -571,7 +582,7 @@
       "url": "https://github.com/diegonmarcos/Projects-___",
       "role": "hub",
       "visibility": "public",
-      "project": "Projects",
+      "project": "—",
       "field": "Front",
       "developer": "Projects"
     },
@@ -581,7 +592,7 @@
       "url": "https://github.com/diegonmarcos/Projects-endeavours",
       "role": "",
       "visibility": "public",
-      "project": "Projects",
+      "project": "Endeavours",
       "field": "Front",
       "developer": "Projects"
     },
@@ -591,7 +602,7 @@
       "url": "https://github.com/diegonmarcos/Projects-labtools",
       "role": "",
       "visibility": "public",
-      "project": "Projects",
+      "project": "Labtools",
       "field": "Front",
       "developer": "Projects"
     },

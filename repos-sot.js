@@ -50,6 +50,8 @@ function checkRegistry(reg) {
   for (const u of reg.unregistered_ok || []) if (registered.has(u.name)) bad(`unregistered_ok ${u.name} is registered`);
   // Owner rule: a hub (name ends in -___) is ALWAYS public.
   for (const r of reg.repos) if (/-___$/.test(r.name) && r.private !== false) bad(`${r.name}: hub must be public (owner rule "Hub always public"), private is ${r.private}`);
+  // Owner rule: 42 is a school, not a project; every d_lecole repo carries school "42".
+  for (const r of reg.repos) if ((r.group === 'd_lecole') !== (r.school === '42')) bad(`${r.name}: school must be "42" exactly on d_lecole repos (is ${JSON.stringify(r.school)})`);
   for (const f of reg.fleet_files || []) if (!f.requires) bad(`fleet_files ${f.from}: no requires`);
 }
 
@@ -160,7 +162,7 @@ if (cmd === 'check') {
   checkRegistry(reg); checkLinks(reg);
   if (!arg) { // also guard the GitHub snapshot used for the README
     const gp = path.join(HERE, 'repos-github.json');
-    if (fs.existsSync(gp)) for (const r of read(gp).repos) if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
+    if (fs.existsSync(gp)) for (const r of read(gp).repos) if (['CG', '42'].includes(r.project)) bad(`repos-github.json ${r.name}: ${r.project} is a field/school, not a project`); else if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
   }
   done('repos.json');
 } else if (cmd === 'check-hubs') {
