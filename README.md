@@ -1,6 +1,6 @@
 # repo_master
 
-The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 66 of them, grouped (the GitHub snapshot in the table below holds 71)<!-- repos-count:end -->, with a
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 68 of them, grouped (the GitHub snapshot in the table below holds 71)<!-- repos-count:end -->, with a
 `clone.sh` that pulls down whichever ones you want on this machine. This repo is
 the index, so it has no entry pointing at itself.
 
@@ -50,7 +50,6 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps](https://github.com/diegonmarcos/cloud-h-webapps) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps-2](https://github.com/diegonmarcos/cloud-h-webapps-2) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub](https://github.com/diegonmarcos/cloud-me-pub) _(hub)_ | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Data | [cloud-me-pub-data](https://github.com/diegonmarcos/cloud-me-pub-data) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles](https://github.com/diegonmarcos/cloud-me-pub-profiles) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-_lnktree](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-leaf.y](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y) | 🌐 public |
@@ -64,7 +63,6 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data-private](https://github.com/diegonmarcos/cloud-me-pvt-data-private) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Legacy | [cloud-me-pvt-legacy](https://github.com/diegonmarcos/cloud-me-pvt-legacy) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault) | 🔒 private |
@@ -99,10 +97,12 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 
 ---
 
-### 📦 Z-archived (10)
+### 📦 Z-archived (12)
 
 | Repo | Visibility |
 |---|---|
+| [z-archived_cloud-me-pub-data](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data) | 🌐 public |
+| [z-archived_cloud-me-pvt-data-private](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private) | 🔒 private |
 | [z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin) | 🔒 private |
 | [z-archived_front-data](https://github.com/diegonmarcos/z-archived_front-data) | 🌐 public |
 | [z-archived_front-feeds](https://github.com/diegonmarcos/z-archived_front-feeds) | 🌐 public |
