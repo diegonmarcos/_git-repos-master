@@ -1,6 +1,6 @@
 # repo_master
 
-The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 62 of them, grouped (the GitHub snapshot in the table below holds 67)<!-- repos-count:end -->, with a
+The index of every repository this account owns. <!-- repos-count:begin -->`repos.json` registers 62 of them, grouped (the GitHub snapshot in the table below holds 71)<!-- repos-count:end -->, with a
 `clone.sh` that pulls down whichever ones you want on this machine. This repo is
 the index, so it has no entry pointing at itself.
 
@@ -29,7 +29,7 @@ the index working.
 not submodules, and what each directory is for.
 
 <!-- repos-list:begin -->
-## All repos (67 — 49 🌐 public, 18 🔒 private)
+## All repos (71 — 52 🌐 public, 19 🔒 private)
 
 Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.
 
@@ -47,20 +47,27 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud | Desktop | [cloud-u-desktop](https://github.com/diegonmarcos/cloud-u-desktop) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Docs | [cloud-a-docs](https://github.com/diegonmarcos/cloud-a-docs) _(backlog)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud | Linux | [cloud-u-linux](https://github.com/diegonmarcos/cloud-u-linux) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me](https://github.com/diegonmarcos/cloud-me) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-containers](https://github.com/diegonmarcos/cloud-me-containers) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-data-pvt](https://github.com/diegonmarcos/cloud-me-data-pvt) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-my-ai](https://github.com/diegonmarcos/cloud-me-my-ai) _(ai memory)_ | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-notes](https://github.com/diegonmarcos/cloud-me-notes) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-others](https://github.com/diegonmarcos/cloud-me-others) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me-profiles](https://github.com/diegonmarcos/cloud-me-profiles) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me_cgc](https://github.com/diegonmarcos/cloud-me_cgc) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me_configs](https://github.com/diegonmarcos/cloud-me_configs) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me_data-private](https://github.com/diegonmarcos/cloud-me_data-private) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me_data-pub](https://github.com/diegonmarcos/cloud-me_data-pub) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Me | [cloud-me_vault](https://github.com/diegonmarcos/cloud-me_vault) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps](https://github.com/diegonmarcos/cloud-h-webapps) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps-2](https://github.com/diegonmarcos/cloud-h-webapps-2) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub](https://github.com/diegonmarcos/cloud-me-pub) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Data | [cloud-me_data-pub](https://github.com/diegonmarcos/cloud-me_data-pub) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles](https://github.com/diegonmarcos/Me-Profiles) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles-_Lnktree](https://github.com/diegonmarcos/Me-Profiles-_Lnktree) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles-Leaf.y](https://github.com/diegonmarcos/Me-Profiles-Leaf.y) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles-Nexus.z](https://github.com/diegonmarcos/Me-Profiles-Nexus.z) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles-Prf-Prs](https://github.com/diegonmarcos/Me-Profiles-Prf-Prs) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [Me-Profiles-Stark.x](https://github.com/diegonmarcos/Me-Profiles-Stark.x) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Shared | [cloud-me-others](https://github.com/diegonmarcos/cloud-me-others) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Hub | [cloud-me-pvt](https://github.com/diegonmarcos/cloud-me-pvt) _(hub)_ | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | AI Memory | [cloud-me-my-ai](https://github.com/diegonmarcos/cloud-me-my-ai) _(ai memory)_ | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | CGC | [cloud-me_cgc](https://github.com/diegonmarcos/cloud-me_cgc) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me_configs](https://github.com/diegonmarcos/cloud-me_configs) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers | [cloud-me-containers](https://github.com/diegonmarcos/cloud-me-containers) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-data-pvt](https://github.com/diegonmarcos/cloud-me-data-pvt) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me_data-private](https://github.com/diegonmarcos/cloud-me_data-private) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Legacy | [cloud-me](https://github.com/diegonmarcos/cloud-me) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-notes](https://github.com/diegonmarcos/cloud-me-notes) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me_vault](https://github.com/diegonmarcos/cloud-me_vault) | 🔒 private |
 | 🍃 Leaf.y | CG | CG | Hub | [CG](https://github.com/diegonmarcos/CG) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Galaxy | [CG-galaxy](https://github.com/diegonmarcos/CG-galaxy) | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Galaxy | [CG-galaxy-gaia](https://github.com/diegonmarcos/CG-galaxy-gaia) | 🔒 private |
@@ -68,14 +75,11 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | CG | CG | Voxel | [CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust) | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Zirkus | [CG-circus](https://github.com/diegonmarcos/CG-circus) | 🌐 public |
 | 🍃 Leaf.y | Hub | DuckPeng | Hub | [DuckPeng](https://github.com/diegonmarcos/DuckPeng) _(hub)_ | 🌐 public |
-| 🍃 Leaf.y | Hub | Leaf.y | Site | [DuckPeng-LeafY](https://github.com/diegonmarcos/DuckPeng-LeafY) | 🌐 public |
-| 💹 Nexus.z | Capital Markets | Fin-CM | Hub | [Fin-CM](https://github.com/diegonmarcos/Fin-CM) _(hub)_ | 🌐 public |
 | 💹 Nexus.z | Capital Markets | Blmbrg | Terminal | [Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg) | 🌐 public |
 | 💹 Nexus.z | Capital Markets | CB | MQPM | [Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm) | 🌐 public |
-| 💹 Nexus.z | Capital Markets | Nexus.z | Site | [Fin-CM-NexusZ](https://github.com/diegonmarcos/Fin-CM-NexusZ) | 🌐 public |
+| 💹 Nexus.z | Capital Markets | Fin-CM | Hub | [Fin-CM](https://github.com/diegonmarcos/Fin-CM) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc](https://github.com/diegonmarcos/DeepSc) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
-| 🔬 Stark.x | Deep Science | Stark.x | Site | [DeepSc-StarkX](https://github.com/diegonmarcos/DeepSc-StarkX) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Graphic | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Master | [lecole-42](https://github.com/diegonmarcos/lecole-42) | 🔒 private |

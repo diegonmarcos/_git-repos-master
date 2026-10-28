@@ -126,126 +126,6 @@
       "developer": "Leaf.y"
     },
     {
-      "family": "Me",
-      "name": "cloud-me",
-      "url": "https://github.com/diegonmarcos/cloud-me",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-containers",
-      "url": "https://github.com/diegonmarcos/cloud-me-containers",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-data-pvt",
-      "url": "https://github.com/diegonmarcos/cloud-me-data-pvt",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-my-ai",
-      "url": "https://github.com/diegonmarcos/cloud-me-my-ai",
-      "role": "ai memory",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-notes",
-      "url": "https://github.com/diegonmarcos/cloud-me-notes",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-others",
-      "url": "https://github.com/diegonmarcos/cloud-me-others",
-      "role": "",
-      "visibility": "public",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me-profiles",
-      "url": "https://github.com/diegonmarcos/cloud-me-profiles",
-      "role": "",
-      "visibility": "public",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me_cgc",
-      "url": "https://github.com/diegonmarcos/cloud-me_cgc",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me_configs",
-      "url": "https://github.com/diegonmarcos/cloud-me_configs",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me_data-private",
-      "url": "https://github.com/diegonmarcos/cloud-me_data-private",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me_data-pub",
-      "url": "https://github.com/diegonmarcos/cloud-me_data-pub",
-      "role": "",
-      "visibility": "public",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Me",
-      "name": "cloud-me_vault",
-      "url": "https://github.com/diegonmarcos/cloud-me_vault",
-      "role": "",
-      "visibility": "private",
-      "project": "Cloud",
-      "field": "Unix",
-      "developer": "Leaf.y"
-    },
-    {
       "family": "Webapps",
       "name": "cloud-h-webapps",
       "url": "https://github.com/diegonmarcos/cloud-h-webapps",
@@ -262,6 +142,196 @@
       "role": "",
       "visibility": "public",
       "project": "Cloud",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "name": "cloud-me-pub",
+      "url": "https://github.com/diegonmarcos/cloud-me-pub",
+      "role": "hub",
+      "visibility": "public",
+      "developer": "Leaf.y",
+      "field": "Unix",
+      "project": "Cloud-Me-Pub",
+      "family": "Hub"
+    },
+    {
+      "family": "Data",
+      "name": "cloud-me_data-pub",
+      "url": "https://github.com/diegonmarcos/cloud-me_data-pub",
+      "role": "",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Profiles",
+      "name": "Me-Profiles",
+      "url": "https://github.com/diegonmarcos/Me-Profiles",
+      "role": "hub",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "name": "Me-Profiles-_Lnktree",
+      "url": "https://github.com/diegonmarcos/Me-Profiles-_Lnktree",
+      "role": "",
+      "visibility": "public",
+      "developer": "Leaf.y",
+      "field": "Unix",
+      "project": "Cloud-Me-Pub",
+      "family": "Profiles"
+    },
+    {
+      "family": "Profiles",
+      "name": "Me-Profiles-Leaf.y",
+      "url": "https://github.com/diegonmarcos/Me-Profiles-Leaf.y",
+      "role": "",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Profiles",
+      "name": "Me-Profiles-Nexus.z",
+      "url": "https://github.com/diegonmarcos/Me-Profiles-Nexus.z",
+      "role": "",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "name": "Me-Profiles-Prf-Prs",
+      "url": "https://github.com/diegonmarcos/Me-Profiles-Prf-Prs",
+      "role": "",
+      "visibility": "public",
+      "developer": "Leaf.y",
+      "field": "Unix",
+      "project": "Cloud-Me-Pub",
+      "family": "Profiles"
+    },
+    {
+      "family": "Profiles",
+      "name": "Me-Profiles-Stark.x",
+      "url": "https://github.com/diegonmarcos/Me-Profiles-Stark.x",
+      "role": "",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Shared",
+      "name": "cloud-me-others",
+      "url": "https://github.com/diegonmarcos/cloud-me-others",
+      "role": "",
+      "visibility": "public",
+      "project": "Cloud-Me-Pub",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "name": "cloud-me-pvt",
+      "url": "https://github.com/diegonmarcos/cloud-me-pvt",
+      "role": "hub",
+      "visibility": "private",
+      "developer": "Leaf.y",
+      "field": "Unix",
+      "project": "Cloud-Me-Pvt",
+      "family": "Hub"
+    },
+    {
+      "family": "AI Memory",
+      "name": "cloud-me-my-ai",
+      "url": "https://github.com/diegonmarcos/cloud-me-my-ai",
+      "role": "ai memory",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "CGC",
+      "name": "cloud-me_cgc",
+      "url": "https://github.com/diegonmarcos/cloud-me_cgc",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Configs",
+      "name": "cloud-me_configs",
+      "url": "https://github.com/diegonmarcos/cloud-me_configs",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Containers",
+      "name": "cloud-me-containers",
+      "url": "https://github.com/diegonmarcos/cloud-me-containers",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Data",
+      "name": "cloud-me-data-pvt",
+      "url": "https://github.com/diegonmarcos/cloud-me-data-pvt",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Data",
+      "name": "cloud-me_data-private",
+      "url": "https://github.com/diegonmarcos/cloud-me_data-private",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Legacy",
+      "name": "cloud-me",
+      "url": "https://github.com/diegonmarcos/cloud-me",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Notes",
+      "name": "cloud-me-notes",
+      "url": "https://github.com/diegonmarcos/cloud-me-notes",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
+      "field": "Unix",
+      "developer": "Leaf.y"
+    },
+    {
+      "family": "Vault",
+      "name": "cloud-me_vault",
+      "url": "https://github.com/diegonmarcos/cloud-me_vault",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me-Pvt",
       "field": "Unix",
       "developer": "Leaf.y"
     },
@@ -336,26 +406,6 @@
       "developer": "Leaf.y"
     },
     {
-      "family": "Site",
-      "name": "DuckPeng-LeafY",
-      "url": "https://github.com/diegonmarcos/DuckPeng-LeafY",
-      "role": "",
-      "visibility": "public",
-      "project": "Leaf.y",
-      "field": "Hub",
-      "developer": "Leaf.y"
-    },
-    {
-      "family": "Hub",
-      "name": "Fin-CM",
-      "url": "https://github.com/diegonmarcos/Fin-CM",
-      "role": "hub",
-      "visibility": "public",
-      "project": "Fin-CM",
-      "field": "Capital Markets",
-      "developer": "Nexus.z"
-    },
-    {
       "family": "Terminal",
       "name": "Fin-CM-Blmbrg",
       "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg",
@@ -376,12 +426,12 @@
       "developer": "Nexus.z"
     },
     {
-      "family": "Site",
-      "name": "Fin-CM-NexusZ",
-      "url": "https://github.com/diegonmarcos/Fin-CM-NexusZ",
-      "role": "",
+      "family": "Hub",
+      "name": "Fin-CM",
+      "url": "https://github.com/diegonmarcos/Fin-CM",
+      "role": "hub",
       "visibility": "public",
-      "project": "Nexus.z",
+      "project": "Fin-CM",
       "field": "Capital Markets",
       "developer": "Nexus.z"
     },
@@ -402,16 +452,6 @@
       "role": "",
       "visibility": "public",
       "project": "DeepSc-X",
-      "field": "Deep Science",
-      "developer": "Stark.x"
-    },
-    {
-      "family": "Site",
-      "name": "DeepSc-StarkX",
-      "url": "https://github.com/diegonmarcos/DeepSc-StarkX",
-      "role": "",
-      "visibility": "public",
-      "project": "Stark.x",
       "field": "Deep Science",
       "developer": "Stark.x"
     },
