@@ -167,6 +167,15 @@
       "icon": "👤",
       "name": "cloud-me-my-ai",
       "url": "https://github.com/diegonmarcos/cloud-me-my-ai",
+      "role": "ai memory",
+      "visibility": "private",
+      "project": "Cloud"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-a-docs",
+      "url": "https://github.com/diegonmarcos/cloud-a-docs",
       "role": "backlog",
       "visibility": "private",
       "project": "Cloud"

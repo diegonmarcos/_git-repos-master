@@ -51,7 +51,8 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | ☁️ Cloud | 👤 Cloud me | [cloud-me](https://github.com/diegonmarcos/cloud-me) | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-containers](https://github.com/diegonmarcos/cloud-me-containers) | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-data-pvt](https://github.com/diegonmarcos/cloud-me-data-pvt) | 🔒 private |
-| ☁️ Cloud | 👤 Cloud me | [cloud-me-my-ai](https://github.com/diegonmarcos/cloud-me-my-ai) _(backlog)_ | 🔒 private |
+| ☁️ Cloud | 👤 Cloud me | [cloud-me-my-ai](https://github.com/diegonmarcos/cloud-me-my-ai) _(ai memory)_ | 🔒 private |
+| ☁️ Cloud | 👤 Cloud me | [cloud-a-docs](https://github.com/diegonmarcos/cloud-a-docs) _(backlog)_ | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-notes](https://github.com/diegonmarcos/cloud-me-notes) | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-others](https://github.com/diegonmarcos/cloud-me-others) | 🌐 public |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-profiles](https://github.com/diegonmarcos/cloud-me-profiles) | 🌐 public |
