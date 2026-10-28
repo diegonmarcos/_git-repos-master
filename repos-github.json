@@ -1,0 +1,550 @@
+{
+  "_doc": "Every diegonmarcos GitHub repo (snapshot). README 'All repos' table is generated from this file by gen-repos-list.js.",
+  "vis_icons": {
+    "public": "🌐",
+    "private": "🔒"
+  },
+  "family_icons": {
+    "Cloud core": "☁️",
+    "Cloud me": "👤",
+    "Cloud DB": "🗄️",
+    "Fin-CM": "💹",
+    "DeepSc": "🔬",
+    "DuckPeng": "🦆",
+    "CG": "🎨",
+    "Front": "🖥️",
+    "Meta": "🗂️",
+    "42": "🎓",
+    "Archived": "📦"
+  },
+  "repos": [
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud",
+      "url": "https://github.com/diegonmarcos/cloud",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-u-android",
+      "url": "https://github.com/diegonmarcos/cloud-u-android",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-u-containers",
+      "url": "https://github.com/diegonmarcos/cloud-u-containers",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-u-containers_cgc",
+      "url": "https://github.com/diegonmarcos/cloud-u-containers_cgc",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-u-linux",
+      "url": "https://github.com/diegonmarcos/cloud-u-linux",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-u-desktop",
+      "url": "https://github.com/diegonmarcos/cloud-u-desktop",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-t-infra",
+      "url": "https://github.com/diegonmarcos/cloud-t-infra",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-webapps",
+      "url": "https://github.com/diegonmarcos/cloud-webapps",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud core",
+      "icon": "☁️",
+      "name": "cloud-webapps-2",
+      "url": "https://github.com/diegonmarcos/cloud-webapps-2",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me",
+      "url": "https://github.com/diegonmarcos/cloud-me",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-my-ai",
+      "url": "https://github.com/diegonmarcos/cloud-me-my-ai",
+      "role": "backlog",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-data-pvt",
+      "url": "https://github.com/diegonmarcos/cloud-me-data-pvt",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me_data-private",
+      "url": "https://github.com/diegonmarcos/cloud-me_data-private",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me_data-pub",
+      "url": "https://github.com/diegonmarcos/cloud-me_data-pub",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-containers",
+      "url": "https://github.com/diegonmarcos/cloud-me-containers",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me_configs",
+      "url": "https://github.com/diegonmarcos/cloud-me_configs",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me_vault",
+      "url": "https://github.com/diegonmarcos/cloud-me_vault",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me_cgc",
+      "url": "https://github.com/diegonmarcos/cloud-me_cgc",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-notes",
+      "url": "https://github.com/diegonmarcos/cloud-me-notes",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-profiles",
+      "url": "https://github.com/diegonmarcos/cloud-me-profiles",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud me",
+      "icon": "👤",
+      "name": "cloud-me-others",
+      "url": "https://github.com/diegonmarcos/cloud-me-others",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud DB",
+      "icon": "🗄️",
+      "name": "cloud_db_assets-cdn",
+      "url": "https://github.com/diegonmarcos/cloud_db_assets-cdn",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Cloud DB",
+      "icon": "🗄️",
+      "name": "cloud_db_LFS",
+      "url": "https://github.com/diegonmarcos/cloud_db_LFS",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Cloud DB",
+      "icon": "🗄️",
+      "name": "cloud_db_infra-ops-obsv_configs-sync",
+      "url": "https://github.com/diegonmarcos/cloud_db_infra-ops-obsv_configs-sync",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Fin-CM",
+      "icon": "💹",
+      "name": "Fin-CM",
+      "url": "https://github.com/diegonmarcos/Fin-CM",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "Fin-CM",
+      "icon": "💹",
+      "name": "Fin-CM-NexusZ",
+      "url": "https://github.com/diegonmarcos/Fin-CM-NexusZ",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Fin-CM",
+      "icon": "💹",
+      "name": "Fin-CM-mqpm",
+      "url": "https://github.com/diegonmarcos/Fin-CM-mqpm",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Fin-CM",
+      "icon": "💹",
+      "name": "Fin-CM-Blmbrg",
+      "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "DeepSc",
+      "icon": "🔬",
+      "name": "DeepSc",
+      "url": "https://github.com/diegonmarcos/DeepSc",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "DeepSc",
+      "icon": "🔬",
+      "name": "DeepSc-StarkX",
+      "url": "https://github.com/diegonmarcos/DeepSc-StarkX",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "DeepSc",
+      "icon": "🔬",
+      "name": "DeepSc-X",
+      "url": "https://github.com/diegonmarcos/DeepSc-X",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "DuckPeng",
+      "icon": "🦆",
+      "name": "DuckPeng",
+      "url": "https://github.com/diegonmarcos/DuckPeng",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "DuckPeng",
+      "icon": "🦆",
+      "name": "DuckPeng-LeafY",
+      "url": "https://github.com/diegonmarcos/DuckPeng-LeafY",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG",
+      "url": "https://github.com/diegonmarcos/CG",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG-circus",
+      "url": "https://github.com/diegonmarcos/CG-circus",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG-galaxy",
+      "url": "https://github.com/diegonmarcos/CG-galaxy",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG-galaxy-gaia",
+      "url": "https://github.com/diegonmarcos/CG-galaxy-gaia",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG-unity",
+      "url": "https://github.com/diegonmarcos/CG-unity",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "CG",
+      "icon": "🎨",
+      "name": "CG-voxel-rust",
+      "url": "https://github.com/diegonmarcos/CG-voxel-rust",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Front",
+      "icon": "🖥️",
+      "name": "diegonmarcos.github.io",
+      "url": "https://github.com/diegonmarcos/diegonmarcos.github.io",
+      "role": "deployer",
+      "visibility": "public"
+    },
+    {
+      "family": "Front",
+      "icon": "🖥️",
+      "name": "diegonmarcos",
+      "url": "https://github.com/diegonmarcos/diegonmarcos",
+      "role": "profile",
+      "visibility": "public"
+    },
+    {
+      "family": "Front",
+      "icon": "🖥️",
+      "name": "front",
+      "url": "https://github.com/diegonmarcos/front",
+      "role": "hub",
+      "visibility": "public"
+    },
+    {
+      "family": "Front",
+      "icon": "🖥️",
+      "name": "front-endeavours",
+      "url": "https://github.com/diegonmarcos/front-endeavours",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Front",
+      "icon": "🖥️",
+      "name": "front-labtools",
+      "url": "https://github.com/diegonmarcos/front-labtools",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Meta",
+      "icon": "🗂️",
+      "name": "git-repos-master",
+      "url": "https://github.com/diegonmarcos/git-repos-master",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42",
+      "url": "https://github.com/diegonmarcos/lecole-42",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42-projects",
+      "url": "https://github.com/diegonmarcos/lecole-42-projects",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_dev",
+      "url": "https://github.com/diegonmarcos/lecole-42_dev",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_back-Algo",
+      "url": "https://github.com/diegonmarcos/lecole-42_back-Algo",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_back-Graphic",
+      "url": "https://github.com/diegonmarcos/lecole-42_back-Graphic",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_back-System",
+      "url": "https://github.com/diegonmarcos/lecole-42_back-System",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_cyber-Cyberwarfare",
+      "url": "https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_ml-Agentic",
+      "url": "https://github.com/diegonmarcos/lecole-42_ml-Agentic",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_ml-DataScience",
+      "url": "https://github.com/diegonmarcos/lecole-42_ml-DataScience",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_ml-MachineLearning",
+      "url": "https://github.com/diegonmarcos/lecole-42_ml-MachineLearning",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "42",
+      "icon": "🎓",
+      "name": "lecole-42_ops-Mylibs",
+      "url": "https://github.com/diegonmarcos/lecole-42_ops-Mylibs",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-linktree",
+      "url": "https://github.com/diegonmarcos/z-archived_front-linktree",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-projects",
+      "url": "https://github.com/diegonmarcos/z-archived_front-projects",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-media",
+      "url": "https://github.com/diegonmarcos/z-archived_front-media",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-others",
+      "url": "https://github.com/diegonmarcos/z-archived_front-others",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-feeds",
+      "url": "https://github.com/diegonmarcos/z-archived_front-feeds",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-warehouse",
+      "url": "https://github.com/diegonmarcos/z-archived_front-warehouse",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-individual",
+      "url": "https://github.com/diegonmarcos/z-archived_front-individual",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_front-data",
+      "url": "https://github.com/diegonmarcos/z-archived_front-data",
+      "role": "",
+      "visibility": "public"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_c3-infra-plugin",
+      "url": "https://github.com/diegonmarcos/z-archived_c3-infra-plugin",
+      "role": "",
+      "visibility": "private"
+    },
+    {
+      "family": "Archived",
+      "icon": "📦",
+      "name": "z-archived_My-ai-memory",
+      "url": "https://github.com/diegonmarcos/z-archived_My-ai-memory",
+      "role": "",
+      "visibility": "private"
+    }
+  ]
+}
