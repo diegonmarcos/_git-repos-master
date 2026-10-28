@@ -36,7 +36,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | Developer | Field | Project | Family | Repo | Visibility |
 |---|---|---|---|---|---|
 | 🗂️ _Meta | Index | Repos | Master | [_git-repos-master](https://github.com/diegonmarcos/_git-repos-master) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Hub | [cloud___](https://github.com/diegonmarcos/cloud___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud | Hub | [cloud-___](https://github.com/diegonmarcos/cloud-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Android | [cloud-u-android](https://github.com/diegonmarcos/cloud-u-android) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | C3 | [cloud-t-infra](https://github.com/diegonmarcos/cloud-t-infra) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | C3 | [cloud-u-containers](https://github.com/diegonmarcos/cloud-u-containers) | 🌐 public |
@@ -49,15 +49,15 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud | Linux | [cloud-u-linux](https://github.com/diegonmarcos/cloud-u-linux) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps](https://github.com/diegonmarcos/cloud-h-webapps) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps-2](https://github.com/diegonmarcos/cloud-h-webapps-2) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub___](https://github.com/diegonmarcos/cloud-me-pub___) _(hub)_ | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles___](https://github.com/diegonmarcos/cloud-me-pub-profiles___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub-___](https://github.com/diegonmarcos/cloud-me-pub-___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-___](https://github.com/diegonmarcos/cloud-me-pub-profiles-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-_lnktree](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-leaf.y](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-nexus.z](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-prf-prs](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-stark.x](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Shared | [cloud-me-pub-shared](https://github.com/diegonmarcos/cloud-me-pub-shared) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Hub | [cloud-me-pvt___](https://github.com/diegonmarcos/cloud-me-pvt___) _(hub)_ | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Hub | [cloud-me-pvt-___](https://github.com/diegonmarcos/cloud-me-pvt-___) _(hub)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | AI Memory | [cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai) _(ai memory)_ | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | CGC | [cloud-me-pvt-cgc](https://github.com/diegonmarcos/cloud-me-pvt-cgc) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
@@ -65,21 +65,21 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault) | 🔒 private |
-| 🍃 Leaf.y | CG | CG | Hub | [CG___](https://github.com/diegonmarcos/CG___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | CG | CG | Hub | [CG-___](https://github.com/diegonmarcos/CG-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Galaxy | [CG-galaxy](https://github.com/diegonmarcos/CG-galaxy) | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Galaxy | [CG-galaxy-gaia](https://github.com/diegonmarcos/CG-galaxy-gaia) | 🔒 private |
 | 🍃 Leaf.y | CG | CG | Unity | [CG-unity](https://github.com/diegonmarcos/CG-unity) | 🔒 private |
 | 🍃 Leaf.y | CG | CG | Voxel | [CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust) | 🌐 public |
 | 🍃 Leaf.y | CG | CG | Zirkus | [CG-circus](https://github.com/diegonmarcos/CG-circus) | 🌐 public |
-| 🍃 Leaf.y | Hub | DuckPeng | Hub | [DuckPeng___](https://github.com/diegonmarcos/DuckPeng___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Hub | DuckPeng | Hub | [DuckPeng-___](https://github.com/diegonmarcos/DuckPeng-___) _(hub)_ | 🌐 public |
 | 💹 Nexus.z | Capital Markets | Blmbrg | Terminal | [Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg) | 🌐 public |
 | 💹 Nexus.z | Capital Markets | CB | MQPM | [Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm) | 🌐 public |
-| 💹 Nexus.z | Capital Markets | Fin-CM | Hub | [Fin-CM___](https://github.com/diegonmarcos/Fin-CM___) _(hub)_ | 🌐 public |
-| 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc___](https://github.com/diegonmarcos/DeepSc___) _(hub)_ | 🌐 public |
+| 💹 Nexus.z | Capital Markets | Fin-CM | Hub | [Fin-CM-___](https://github.com/diegonmarcos/Fin-CM-___) _(hub)_ | 🌐 public |
+| 🔬 Stark.x | Deep Science | DeepSc | Hub | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Algo | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Graphic | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
-| 🎓 lecole42 | Low Level | 42 | Master | [lecole-42](https://github.com/diegonmarcos/lecole-42) | 🔒 private |
+| 🎓 lecole42 | Low Level | 42 | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🔒 private |
 | 🎓 lecole42 | Low Level | 42 | Mylibs | [lecole-42_ops-Mylibs](https://github.com/diegonmarcos/lecole-42_ops-Mylibs) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42 | Projects | [lecole-42-projects](https://github.com/diegonmarcos/lecole-42-projects) | 🔒 private |
 | 🎓 lecole42 | Low Level | 42 | System | [lecole-42_back-System](https://github.com/diegonmarcos/lecole-42_back-System) | 🌐 public |
@@ -88,7 +88,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🎓 lecole42 | Machine Learning | 42 | MachineLearning | [lecole-42_ml-MachineLearning](https://github.com/diegonmarcos/lecole-42_ml-MachineLearning) | 🌐 public |
 | 🎓 lecole42 | Cybersecurity | 42 | Cyberwarfare | [lecole-42_cyber-Cyberwarfare](https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare) | 🌐 public |
 | 🎓 lecole42 | Dev | 42 | dev | [lecole-42_dev](https://github.com/diegonmarcos/lecole-42_dev) | 🔒 private |
-| 🧩 Projects | Front | Projects | Hub | [Projects___](https://github.com/diegonmarcos/Projects___) _(hub)_ | 🌐 public |
+| 🧩 Projects | Front | Projects | Hub | [Projects-___](https://github.com/diegonmarcos/Projects-___) _(hub)_ | 🌐 public |
 | 🧩 Projects | Front | Projects | Endeavours | [Projects-endeavours](https://github.com/diegonmarcos/Projects-endeavours) | 🌐 public |
 | 🧩 Projects | Front | Projects | Labtools | [Projects-labtools](https://github.com/diegonmarcos/Projects-labtools) | 🌐 public |
 | 🐙 Gh | diegonmarcos | Profile | README | [diegonmarcos](https://github.com/diegonmarcos/diegonmarcos) _(profile)_ | 🌐 public |
