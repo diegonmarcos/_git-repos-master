@@ -6,8 +6,8 @@ const pub = d.repos.filter(r => r.visibility === 'public').length;
 const lines = [
   `## All repos (${d.repos.length} — ${pub} 🌐 public, ${d.repos.length - pub} 🔒 private)`, '',
   'Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.js`.', '',
-  '| | Repo | Family | Visibility |', '|---|---|---|---|',
-  ...d.repos.map(r => `| ${r.icon} | [${r.name}](${r.url})${r.role ? ` _(${r.role})_` : ''} | ${r.family} | ${d.vis_icons[r.visibility]} ${r.visibility} |`),
+  '| Project | Family | Repo | Visibility |', '|---|---|---|---|',
+  ...d.repos.map(r => `| ${d.project_icons[r.project]} ${r.project} | ${r.icon} ${r.family} | [${r.name}](${r.url})${r.role ? ` _(${r.role})_` : ''} | ${d.vis_icons[r.visibility]} ${r.visibility} |`),
 ];
 const B = '<!-- repos-list:begin -->', E = '<!-- repos-list:end -->';
 const p = __dirname + '/README.md';

@@ -109,7 +109,7 @@ if (cmd === 'check') {
 } else if (cmd === 'check-subset' && arg) {
   checkSubset(arg, flag === '--fix'); done(`subset ${arg}`);
 } else if (cmd === 'copy-of' && arg) {
-  if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from git-repos-master/repos.json (run ./clone.sh --sync)`);
+  if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/repos.json (run ./clone.sh --sync)`);
   done(`copy ${arg}`);
 } else {
   console.error('usage: repos-sot.js check [file] | check-subset <file> [--fix] | copy-of <file>');
