@@ -17,8 +17,8 @@
     },
     {
       "family": "Hub",
-      "name": "cloud",
-      "url": "https://github.com/diegonmarcos/cloud",
+      "name": "cloud___",
+      "url": "https://github.com/diegonmarcos/cloud___",
       "role": "hub",
       "visibility": "public",
       "project": "Cloud",
@@ -146,8 +146,8 @@
       "developer": "Leaf.y"
     },
     {
-      "name": "cloud-me-pub",
-      "url": "https://github.com/diegonmarcos/cloud-me-pub",
+      "name": "cloud-me-pub___",
+      "url": "https://github.com/diegonmarcos/cloud-me-pub___",
       "role": "hub",
       "visibility": "public",
       "developer": "Leaf.y",
@@ -157,8 +157,8 @@
     },
     {
       "family": "Profiles",
-      "name": "cloud-me-pub-profiles",
-      "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles",
+      "name": "cloud-me-pub-profiles___",
+      "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles___",
       "role": "hub",
       "visibility": "public",
       "project": "Cloud-Me-Pub",
@@ -226,8 +226,8 @@
       "developer": "Leaf.y"
     },
     {
-      "name": "cloud-me-pvt",
-      "url": "https://github.com/diegonmarcos/cloud-me-pvt",
+      "name": "cloud-me-pvt___",
+      "url": "https://github.com/diegonmarcos/cloud-me-pvt___",
       "role": "hub",
       "visibility": "private",
       "developer": "Leaf.y",
@@ -307,8 +307,8 @@
     },
     {
       "family": "Hub",
-      "name": "CG",
-      "url": "https://github.com/diegonmarcos/CG",
+      "name": "CG___",
+      "url": "https://github.com/diegonmarcos/CG___",
       "role": "hub",
       "visibility": "public",
       "project": "CG",
@@ -367,8 +367,8 @@
     },
     {
       "family": "Hub",
-      "name": "DuckPeng",
-      "url": "https://github.com/diegonmarcos/DuckPeng",
+      "name": "DuckPeng___",
+      "url": "https://github.com/diegonmarcos/DuckPeng___",
       "role": "hub",
       "visibility": "public",
       "project": "DuckPeng",
@@ -397,8 +397,8 @@
     },
     {
       "family": "Hub",
-      "name": "Fin-CM",
-      "url": "https://github.com/diegonmarcos/Fin-CM",
+      "name": "Fin-CM___",
+      "url": "https://github.com/diegonmarcos/Fin-CM___",
       "role": "hub",
       "visibility": "public",
       "project": "Fin-CM",
@@ -407,8 +407,8 @@
     },
     {
       "family": "Hub",
-      "name": "DeepSc",
-      "url": "https://github.com/diegonmarcos/DeepSc",
+      "name": "DeepSc___",
+      "url": "https://github.com/diegonmarcos/DeepSc___",
       "role": "hub",
       "visibility": "public",
       "project": "DeepSc",
@@ -537,8 +537,8 @@
     },
     {
       "family": "Hub",
-      "name": "Projects",
-      "url": "https://github.com/diegonmarcos/Projects",
+      "name": "Projects___",
+      "url": "https://github.com/diegonmarcos/Projects___",
       "role": "hub",
       "visibility": "public",
       "project": "Projects",

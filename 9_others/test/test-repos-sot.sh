@@ -19,7 +19,8 @@ if (r.repos.some(x=>x.name==="cloud-mobile")) e.push("cloud-mobile is a repo ent
 if (!(r.renames||[]).some(x=>x.from==="cloud-mobile"&&x.to==="cloud-superapp")) e.push("rename cloud-mobile->cloud-superapp missing");
 const f=by("front-diegonmarcos"); if(!f) e.push("front-diegonmarcos missing");
 for (const p of ((f&&f.parts)||[])) if (p.status==="split" && !by(p.path)) e.push("front-diegonmarcos part "+p.name+" split into unregistered "+p.path);
-const pj=by("Projects"); if(!pj||!pj.url.includes("/Projects.git")||!(pj.renamed_from||[]).includes("front")) e.push("Projects (renamed from front) missing or wrong url");
+const pj=by("Projects___"); if(!pj||!pj.url.includes("/Projects___.git")||!["front","Projects"].every(o=>(pj.renamed_from||[]).includes(o))) e.push("Projects___ (renamed from front, Projects) missing or wrong url");
+for (const h of ["cloud","cloud-me-pub","cloud-me-pvt","cloud-me-pub-profiles","Projects","CG","Fin-CM","DeepSc","DuckPeng"]) { const x=by(h+"___"); if(by(h)) e.push(h+" is still a live entry (hub renamed "+h+"___)"); if(!x||!x.url.endsWith("/"+h+"___.git")||!(x.renamed_from||[]).includes(h)) e.push(h+"___ missing, wrong url or no renamed_from "+h); if(!(r.renames||[]).some(y=>y.from===h&&y.to===h+"___")) e.push("rename "+h+"->"+h+"___ missing"); if(r.consumers.some(c=>c.repo===h)) e.push("consumer still named "+h); }
 if (e.length) { console.error(e.join("\n")); process.exit(1); }' "$ROOT/repos.json" && ok "webapps/me-containers registered (repo exists), cloud-superapp rename, #1072 placeholders" || bad "reorganisation entries"
 
 # clone.sh skips pending entries: a mini registry with one live (local bare repo) and one pending
