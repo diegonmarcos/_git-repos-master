@@ -46,8 +46,8 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | ☁️ Cloud | ☁️ Cloud core | [cloud-u-containers_cgc](https://github.com/diegonmarcos/cloud-u-containers_cgc) | 🌐 public |
 | ☁️ Cloud | ☁️ Cloud core | [cloud-u-desktop](https://github.com/diegonmarcos/cloud-u-desktop) | 🌐 public |
 | ☁️ Cloud | ☁️ Cloud core | [cloud-u-linux](https://github.com/diegonmarcos/cloud-u-linux) | 🌐 public |
-| ☁️ Cloud | ☁️ Cloud core | [cloud-webapps](https://github.com/diegonmarcos/cloud-webapps) | 🌐 public |
-| ☁️ Cloud | ☁️ Cloud core | [cloud-webapps-2](https://github.com/diegonmarcos/cloud-webapps-2) | 🌐 public |
+| ☁️ Cloud | ☁️ Cloud core | [cloud-h-webapps](https://github.com/diegonmarcos/cloud-h-webapps) | 🌐 public |
+| ☁️ Cloud | ☁️ Cloud core | [cloud-h-webapps-2](https://github.com/diegonmarcos/cloud-h-webapps-2) | 🌐 public |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me](https://github.com/diegonmarcos/cloud-me) | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-containers](https://github.com/diegonmarcos/cloud-me-containers) | 🔒 private |
 | ☁️ Cloud | 👤 Cloud me | [cloud-me-data-pvt](https://github.com/diegonmarcos/cloud-me-data-pvt) | 🔒 private |

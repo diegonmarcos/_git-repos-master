@@ -120,8 +120,8 @@
     {
       "family": "Cloud core",
       "icon": "☁️",
-      "name": "cloud-webapps",
-      "url": "https://github.com/diegonmarcos/cloud-webapps",
+      "name": "cloud-h-webapps",
+      "url": "https://github.com/diegonmarcos/cloud-h-webapps",
       "role": "",
       "visibility": "public",
       "project": "Cloud"
@@ -129,8 +129,8 @@
     {
       "family": "Cloud core",
       "icon": "☁️",
-      "name": "cloud-webapps-2",
-      "url": "https://github.com/diegonmarcos/cloud-webapps-2",
+      "name": "cloud-h-webapps-2",
+      "url": "https://github.com/diegonmarcos/cloud-h-webapps-2",
       "role": "",
       "visibility": "public",
       "project": "Cloud"
