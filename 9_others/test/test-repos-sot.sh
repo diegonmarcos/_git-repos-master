@@ -14,13 +14,13 @@ node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "regist
 # reorganisations are declared
 node -e '
 const r=require(process.argv[1]); const by=n=>r.repos.find(x=>x.name===n); let e=[];
-for (const n of ["cloud-h-webapps","cloud-me-pvt-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status==="pending_creation") e.push(n+" still pending_creation although the repo exists"); }
+for (const n of ["cloudy-h-webapps","cloud-me-pvt-containers"]) { const x=by(n); if(!x) e.push(n+" missing"); else if(x.status==="pending_creation") e.push(n+" still pending_creation although the repo exists"); }
 if (r.repos.some(x=>x.name==="cloud-mobile")) e.push("cloud-mobile is a repo entry");
 if (!(r.renames||[]).some(x=>x.from==="cloud-mobile"&&x.to==="cloud-superapp")) e.push("rename cloud-mobile->cloud-superapp missing");
 const f=by("front-diegonmarcos"); if(!f) e.push("front-diegonmarcos missing");
 for (const p of ((f&&f.parts)||[])) if (p.status==="split" && !by(p.path)) e.push("front-diegonmarcos part "+p.name+" split into unregistered "+p.path);
 const pj=by("Projects-___"); if(!pj||!pj.url.includes("/Projects-___.git")||!["front","Projects","Projects___"].every(o=>(pj.renamed_from||[]).includes(o))) e.push("Projects-___ (renamed from front, Projects) missing or wrong url");
-for (const h of ["cloud","cloud-me-pub","cloud-me-pvt","cloud-me-pub-profiles","Projects","CG","Fin-CM","DeepSc","DuckPeng","lecole-42"]) { const f=h+"-___", x=by(f), mid=h==="lecole-42"?[]:[h+"___"]; for (const o of [h,...mid]) { if(by(o)) e.push(o+" is still a live entry (hub is "+f+")"); if(!(r.renames||[]).some(y=>y.from===o&&y.to===f)) e.push("rename "+o+"->"+f+" missing"); if(r.consumers.some(c=>c.repo===o)) e.push("consumer still named "+o); } if(!x||!x.url.endsWith("/"+f+".git")||![h,...mid].every(o=>(x.renamed_from||[]).includes(o))) e.push(f+" missing, wrong url or incomplete renamed_from"); }
+for (const h of ["cloud","cloud-me-pub","cloud-me-pvt","cloud-me-pub-profiles","Projects","CG","Fin-CM","DeepSc","DuckPeng","lecole-42"]) { const f=h==="cloud"?"cloudy-___":h+"-___", x=by(f), mid=h==="lecole-42"?[]:h==="cloud"?["cloud___","cloud-___"]:[h+"___"]; for (const o of [h,...mid]) { if(by(o)) e.push(o+" is still a live entry (hub is "+f+")"); if(!(r.renames||[]).some(y=>y.from===o&&(y.to===f||(r.renames||[]).some(z=>z.from===y.to&&z.to===f)))) e.push("rename "+o+"->"+f+" missing"); if(r.consumers.some(c=>c.repo===o)) e.push("consumer still named "+o); } if(!x||!x.url.endsWith("/"+f+".git")||![h,...mid].every(o=>(x.renamed_from||[]).includes(o))) e.push(f+" missing, wrong url or incomplete renamed_from"); }
 if (e.length) { console.error(e.join("\n")); process.exit(1); }' "$ROOT/repos.json" && ok "webapps/me-containers registered (repo exists), cloud-superapp rename, #1072 placeholders" || bad "reorganisation entries"
 
 # clone.sh skips pending entries: a mini registry with one live (local bare repo) and one pending
@@ -45,7 +45,7 @@ node "$T/idx/repos-sot.js" check "$T/idx/repos.json" >/dev/null 2>&1 && bad "che
 
 # subset guard bites
 cat > "$T/sub.json" <<'JSON'
-{"repos":[{"name":"cloud-t-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}
+{"repos":[{"name":"cloudy-t-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}
 JSON
 node "$ROOT/repos-sot.js" check-subset "$T/sub.json" >/dev/null 2>&1 && bad "subset guard accepted drift" || ok "subset guard fails on wrong url / old name"
 node -e 'const r=require(process.argv[1]);require("fs").writeFileSync(process.argv[2],JSON.stringify({repos:r.repos.filter(x=>x.group==="a_cloud")}))' "$ROOT/repos.json" "$T/good.json"

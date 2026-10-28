@@ -14,7 +14,7 @@ the index, so it has no entry pointing at itself.
 
 ```
 ./clone.sh                        # what exists here, what does not
-./clone.sh cloud-u-desktop cloud-me-notes # clone those two
+./clone.sh cloudy-u-desktop cloud-me-notes # clone those two
 ./clone.sh --group d_lecole       # clone a whole group
 ./clone.sh --all                  # everything
 ```
@@ -36,19 +36,19 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | Developer | Field | Project | Family | Repo | Visibility |
 |---|---|---|---|---|---|
 | 🗂️ _Meta | Index | Repos | Master | [_git-repos-master](https://github.com/diegonmarcos/_git-repos-master) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Hub | [cloud-___](https://github.com/diegonmarcos/cloud-___) _(hub)_ | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Android | [cloud-u-android](https://github.com/diegonmarcos/cloud-u-android) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | C3 | [cloud-t-infra](https://github.com/diegonmarcos/cloud-t-infra) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | C3 | [cloud-u-containers](https://github.com/diegonmarcos/cloud-u-containers) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | C3 | [cloud-u-containers_cgc](https://github.com/diegonmarcos/cloud-u-containers_cgc) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | DB | [cloud_db_assets-cdn](https://github.com/diegonmarcos/cloud_db_assets-cdn) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | DB | [cloud_db_infra-ops-obsv_configs-sync](https://github.com/diegonmarcos/cloud_db_infra-ops-obsv_configs-sync) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | DB | [cloud_db_LFS](https://github.com/diegonmarcos/cloud_db_LFS) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Desktop | [cloud-u-desktop](https://github.com/diegonmarcos/cloud-u-desktop) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Docs | [cloud-a-docs](https://github.com/diegonmarcos/cloud-a-docs) _(backlog)_ | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud | Linux | [cloud-u-linux](https://github.com/diegonmarcos/cloud-u-linux) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps](https://github.com/diegonmarcos/cloud-h-webapps) | 🌐 public |
-| 🍃 Leaf.y | Unix | Cloud | Webapps | [cloud-h-webapps-2](https://github.com/diegonmarcos/cloud-h-webapps-2) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | Hub | [cloudy-___](https://github.com/diegonmarcos/cloudy-___) _(hub)_ | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | Android | [cloudy-u-android](https://github.com/diegonmarcos/cloudy-u-android) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | C3 | [cloudy-t-infra](https://github.com/diegonmarcos/cloudy-t-infra) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | C3 | [cloudy-u-containers](https://github.com/diegonmarcos/cloudy-u-containers) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | C3 | [cloudy-u-containers_cgc](https://github.com/diegonmarcos/cloudy-u-containers_cgc) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | DB | [cloudy_db_assets-cdn](https://github.com/diegonmarcos/cloudy_db_assets-cdn) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | DB | [cloudy_db_infra-ops-obsv_configs-sync](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | DB | [cloudy_db_LFS](https://github.com/diegonmarcos/cloudy_db_LFS) | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloudy | Desktop | [cloudy-u-desktop](https://github.com/diegonmarcos/cloudy-u-desktop) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | Docs | [cloudy-a-docs](https://github.com/diegonmarcos/cloudy-a-docs) _(backlog)_ | 🔒 private |
+| 🍃 Leaf.y | Unix | Cloudy | Linux | [cloudy-u-linux](https://github.com/diegonmarcos/cloudy-u-linux) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | Webapps | [cloudy-h-webapps](https://github.com/diegonmarcos/cloudy-h-webapps) | 🌐 public |
+| 🍃 Leaf.y | Unix | Cloudy | Webapps | [cloudy-h-webapps-2](https://github.com/diegonmarcos/cloudy-h-webapps-2) | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Hub | [cloud-me-pub-___](https://github.com/diegonmarcos/cloud-me-pub-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-___](https://github.com/diegonmarcos/cloud-me-pub-profiles-___) _(hub)_ | 🌐 public |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pub | Profiles | [cloud-me-pub-profiles-_lnktree](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree) | 🌐 public |
