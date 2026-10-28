@@ -63,7 +63,6 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Configs | [cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Containers | [cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Data | [cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data) | 🔒 private |
-| 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Legacy | [cloud-me-pvt-legacy](https://github.com/diegonmarcos/cloud-me-pvt-legacy) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Notes | [cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes) | 🔒 private |
 | 🍃 Leaf.y | Unix | Cloud-Me-Pvt | Vault | [cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault) | 🔒 private |
 | 🍃 Leaf.y | CG | CG | Hub | [CG](https://github.com/diegonmarcos/CG) _(hub)_ | 🌐 public |
@@ -97,13 +96,14 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 
 ---
 
-### 📦 Z-archived (12)
+### 📦 Z-archived (13)
 
 | Repo | Visibility |
 |---|---|
+| [z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin) | 🔒 private |
 | [z-archived_cloud-me-pub-data](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data) | 🌐 public |
 | [z-archived_cloud-me-pvt-data-private](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private) | 🔒 private |
-| [z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin) | 🔒 private |
+| [z-archived_cloud-me-pvt-legacy](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy) | 🔒 private |
 | [z-archived_front-data](https://github.com/diegonmarcos/z-archived_front-data) | 🌐 public |
 | [z-archived_front-feeds](https://github.com/diegonmarcos/z-archived_front-feeds) | 🌐 public |
 | [z-archived_front-individual](https://github.com/diegonmarcos/z-archived_front-individual) | 🌐 public |
