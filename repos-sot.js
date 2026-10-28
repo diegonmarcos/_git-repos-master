@@ -3,6 +3,8 @@
 //
 //   node repos-sot.js check [repos.json]            registry is consistent and the committed
 //                                                   symlink farm matches it
+//   node repos-sot.js check-hubs [--remote]         hub/parent_hub hierarchy is sound; --remote reads each repo's
+//                                                   .gitmodules via `gh api` and requires 0_hub/<hub>
 //   node repos-sot.js check-subset <file> [--fix]   a project master's repos.json (cloud, ffront)
 //                                                   is a consistent SUBSET of this registry;
 //                                                   --fix rewrites url/private/status from it
@@ -102,16 +104,66 @@ function checkSubset(file, fix) {
   if (fix && changed) { fs.writeFileSync(file, JSON.stringify(sub, null, 2) + '\n'); console.log(`fixed ${file}`); errs.length = 0; }
 }
 
+// ---- hub hierarchy (#3ff19f58): `hub` on members, `parent_hub` on hubs, submodule 0_hub/<hub> ----
+const TOP = '_git-repos-master';
+const ghName = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
+function hubPlan(reg) {
+  // returns Map repoName -> {up: hubName|null, skip: reason|null}; reports registry-level problems
+  const by = new Map(reg.repos.map(r => [r.name, r]));
+  const plan = new Map();
+  const isPrivate = n => n === TOP ? false : !!(by.get(n) || {}).private;
+  for (const r of reg.repos) {
+    if (r.name.startsWith('z-archived_')) continue;
+    const up = r.parent_hub || r.hub || null;
+    if (r.parent_hub && r.hub) bad(`${r.name}: both hub and parent_hub`);
+    if (!up) { bad(`${r.name}: no hub/parent_hub`); continue; }
+    if (up !== TOP && !by.has(up)) bad(`${r.name}: hub ${up} is not a registry entry`);
+    if (r.hub && !(by.get(r.hub) || {}).parent_hub) bad(`${r.name}: hub ${r.hub} is not a hub (no parent_hub)`);
+    const skip = (isPrivate(up) && !r.private) ? `public repo, private hub ${up}` : null;
+    plan.set(r.name, { up, skip });
+  }
+  for (const [n] of plan) { // cycles
+    const seen = new Set([n]); let c = (by.get(n) || {}).parent_hub;
+    while (c && c !== TOP) { if (seen.has(c)) { bad(`${n}: hub cycle via ${c}`); break; } seen.add(c); c = (by.get(c) || {}).parent_hub; }
+  }
+  return plan;
+}
+function checkHubs(reg, remote) {
+  const plan = hubPlan(reg);
+  const by = new Map(reg.repos.map(r => [r.name, r]));
+  const skipped = [];
+  for (const [n, p] of plan) if (p.skip) skipped.push(`${n}: ${p.skip}`);
+  if (skipped.length) console.log('hub submodule skipped (rule: public never gets a private hub):\n  ' + skipped.join('\n  '));
+  if (!remote) return;
+  const cp = require('child_process');
+  for (const [n, p] of plan) {
+    const repo = ghName(by.get(n).url);
+    let txt = '';
+    try {
+      txt = cp.execFileSync('gh', ['api', `repos/diegonmarcos/${repo}/contents/.gitmodules`, '--jq', '.content'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+      txt = Buffer.from(txt.trim(), 'base64').toString('utf8');
+    } catch (_) { /* no .gitmodules */ }
+    const want = `0_hub/${p.up}`;
+    const has = txt.includes(`path = ${want}`) && txt.includes(`https://github.com/diegonmarcos/${p.up}.git`);
+    if (p.skip) { if (txt.includes('path = 0_hub/')) bad(`${n}: has a hub submodule but ${p.skip}`); }
+    else if (!has) bad(`${n}: .gitmodules lacks submodule ${want}`);
+    const others = [...txt.matchAll(/path = 0_hub\/(\S+)/g)].map(m => m[1]).filter(h => h !== p.up);
+    if (others.length) bad(`${n}: unexpected hub submodule(s) ${others.join(', ')}`);
+  }
+}
+
 const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
   checkRegistry(reg); checkLinks(reg); done('repos.json');
+} else if (cmd === 'check-hubs') {
+  const reg = read(SOT); checkHubs(reg, arg === '--remote'); done('hubs' + (arg === '--remote' ? ' (remote .gitmodules)' : ''));
 } else if (cmd === 'check-subset' && arg) {
   checkSubset(arg, flag === '--fix'); done(`subset ${arg}`);
 } else if (cmd === 'copy-of' && arg) {
   if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/repos.json (run ./clone.sh --sync)`);
   done(`copy ${arg}`);
 } else {
-  console.error('usage: repos-sot.js check [file] | check-subset <file> [--fix] | copy-of <file>');
+  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | copy-of <file>');
   process.exit(2);
 }

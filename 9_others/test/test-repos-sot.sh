@@ -11,6 +11,9 @@ T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
 
 node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "registry consistent, links match" || { bad "repos-sot.js check"; node "$ROOT/repos-sot.js" check; }
 
+node "$ROOT/repos-sot.js" check-hubs >/dev/null 2>&1 && ok "hub hierarchy sound (no cycles, no public->private hub)" || { bad "repos-sot.js check-hubs"; node "$ROOT/repos-sot.js" check-hubs; }
+# live drift (needs gh): node repos-sot.js check-hubs --remote
+
 # reorganisations are declared
 node -e '
 const r=require(process.argv[1]); const by=n=>r.repos.find(x=>x.name===n); let e=[];
