@@ -261,8 +261,12 @@ function readmeKits(dirArg, write, migrate) {
     if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
     { // the ONE shared CI drift guard, emitted by this same command into every kit repo
       const wf = path.join(dir, '.github/workflows/readme-check.yml'), text = T('readme-check.yml');
+      let gh = null; try { gh = fs.lstatSync(path.join(dir, '.github')); } catch (_) {}
+      // a .github symlink (front repos: -> 0_deployer/.github, a submodule) is never read by GitHub Actions; that family's CI
+      // lives in its deployer, so the guard is not emitted there (reported, not failed)
       const cur = fs.existsSync(wf) ? fs.readFileSync(wf, 'utf8') : null;
-      if (cur !== text) {
+      if (gh && gh.isSymbolicLink()) console.log(`${name}: .github is a symlink (${fs.readlinkSync(path.join(dir, '.github'))}), readme-check.yml not emitted`);
+      else if (cur !== text) {
         if (write) { fs.mkdirSync(path.dirname(wf), { recursive: true }); fs.writeFileSync(wf, text); console.log(`wrote ${wf}`); }
         else bad(`${wf} differs from 9_others/templates/readme/readme-check.yml (run node repos-sot.js sync-readmes)`);
       }
