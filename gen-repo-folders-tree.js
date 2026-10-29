@@ -7,13 +7,13 @@
 // Folder data comes from the GitHub tree API on remote HEAD (`gh api .../git/trees/HEAD?recursive=1`, no clones);
 // when that fails or is truncated, a local single clone under $LOCAL_CLONES (default /home/user) by registry name
 // or an old name (renamed_from) is read with `git ls-tree`; else the repo is marked "unreadable".
-// PRIVATE repos: name + "private" only, never a listing (this repo is public).
+// PRIVATE repos: name + URL + "private" only, never a folder/file listing (contents stay private).
 //   node gen-repo-folders-tree.js --fetch [--depth N]  refresh the JSON from GitHub, then render md/html
 //   node gen-repo-folders-tree.js                      render md/html from the committed JSON
 //   node gen-repo-folders-tree.js --check              exit 1 if md/html differ from the JSON, or the JSON
 //                                                      drifts from the registry (repo set, hubs, visibility)
 const fs = require('fs'), path = require('path'), cp = require('child_process');
-const HERE = __dirname, OWNER = 'diegonmarcos', MAX_DEPTH = 5;
+const HERE = __dirname, OWNER = 'diegonmarcos', MAX_DEPTH = 3;
 const { model, TOP } = require('./gen-repos-tree.js');
 const JSON_F = 'repo-folders-tree.json', MD_F = 'repo-folders-tree.md', HTML_F = 'repo-folders-tree.html';
 // Dependency and build-output directories: never listed (dist/ is kept: in these repos it is committed code).
@@ -24,7 +24,7 @@ function skeleton(m) { // hubs -> repos, from the registry
   const reg = JSON.parse(fs.readFileSync(path.join(HERE, 'repos.json'), 'utf8')).repos;
   const old = new Map(reg.map(r => [r.url.replace(/^.*[/:]/, '').replace(/\.git$/, ''), [r.name, ...(r.renamed_from || [])]]));
   const by = new Map(m.nodes.map(n => [n.name, n]));
-  const node = n => ({ name: n.name, kind: n.hub ? 'hub' : 'repo', visibility: n.visibility, aliases: old.get(n.name) || [n.name],
+  const node = n => ({ name: n.name, kind: n.hub ? 'hub' : 'repo', visibility: n.visibility, url: `https://github.com/${OWNER}/${n.name}`, aliases: old.get(n.name) || [n.name],
     ...(n.hub ? { children: (m.kids.get(n.name) || []).map(node) } : {}) });
   return node(by.get(TOP));
 }
@@ -88,7 +88,7 @@ function mdTree(j) {
   const walk = (n, d) => {
     const pad = '  '.repeat(d);
     if (n.kind === 'hub') { L.push(`${pad}- **${n.name}/** (hub${n.status === 'private' ? ', 🔒 private' : ''})`); }
-    else L.push(`${pad}- **${n.name}** · ${n.status === 'ok' ? '🌐 public' : n.status === 'private' ? '🔒 private' : '⚠️ unreadable'}`);
+    else L.push(`${pad}- **[${n.name}](https://github.com/${OWNER}/${n.name})** · ${n.status === 'ok' ? '🌐 public' : n.status === 'private' ? '🔒 private' : '⚠️ unreadable'}`);
     if (n.status === 'ok' && n.kind === 'repo') (n.entries || []).forEach(e => ent(e, d + 1));
     (n.children || []).forEach(c => walk(c, d + 1));
   };
@@ -112,7 +112,7 @@ function html(j) {
   };
   const walk = (n, par) => {
     const id = n.name, isRepo = n.kind === 'repo';
-    add({ id, name: id, parent: par, hub: n.kind === 'hub' || (isRepo && n.status === 'ok'), url: n.visibility === 'public' ? `https://github.com/${OWNER}/${n.name}` : '',
+    add({ id, name: id, parent: par, hub: n.kind === 'hub' || (isRepo && n.status === 'ok'), url: `https://github.com/${OWNER}/${n.name}`,
       project: n.kind === 'hub' ? 'hub' : n.status === 'ok' ? 'repo' : 'repo (' + n.status + ')', family: '', field: '', developer: '', visibility: n.visibility, vis_icon: VIS[n.visibility] });
     if (isRepo && n.status === 'ok') (n.entries || []).forEach(e => ent(e, id, n.name, ''));
     (n.children || []).forEach(c => walk(c, id));

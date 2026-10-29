@@ -9,6 +9,7 @@ family: "Threlte"
 subcategory: ""
 visibility: private
 developer: "Leaf.y"
+url: "https://github.com/diegonmarcos/CG-galaxy-gaia"
 tags:
   - repo
   - area/CG
@@ -24,5 +25,7 @@ tags:
 #repo #area/CG #project/Galaxy #family/Threlte #visibility/private
 
 Hub: [[CG-___]]
+
+GitHub: https://github.com/diegonmarcos/CG-galaxy-gaia
 
 Related (Galaxy): [[CG-galaxy]], [[CG-unity]], [[CG-voxel-rust]]

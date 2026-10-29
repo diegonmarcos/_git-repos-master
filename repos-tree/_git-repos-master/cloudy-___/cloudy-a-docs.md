@@ -9,6 +9,7 @@ family: "Docs"
 subcategory: ""
 visibility: private
 developer: "Leaf.y"
+url: "https://github.com/diegonmarcos/cloudy-a-docs"
 tags:
   - repo
   - area/Unix
@@ -24,5 +25,7 @@ tags:
 #repo #area/Unix #project/Cloudy #family/Docs #visibility/private
 
 Hub: [[cloudy-___]]
+
+GitHub: https://github.com/diegonmarcos/cloudy-a-docs
 
 Related (Cloudy): [[cloudy-___]], [[cloudy-h-webapps]], [[cloudy-h-webapps-2]], [[cloudy-t-infra]], [[cloudy-u-android]], [[cloudy-u-containers]], [[cloudy-u-containers_cgc]], [[cloudy-u-desktop]], [[cloudy-u-linux]], [[cloudy_db_LFS]], [[cloudy_db_assets-cdn]], [[cloudy_db_infra-ops-obsv_configs-sync]]

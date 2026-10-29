@@ -9,6 +9,7 @@ family: "Dev"
 subcategory: "Dev"
 visibility: private
 developer: "lecole42"
+url: "https://github.com/diegonmarcos/lecole-42_dev"
 tags:
   - repo
   - area/42
@@ -25,3 +26,5 @@ tags:
 #repo #area/42 #project/42-dev #family/Dev #visibility/private #subcategory/Dev
 
 Hub: [[lecole-42-___]]
+
+GitHub: https://github.com/diegonmarcos/lecole-42_dev

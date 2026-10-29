@@ -9,6 +9,7 @@ family: "AI Memory"
 subcategory: "Pvt"
 visibility: private
 developer: "Leaf.y"
+url: "https://github.com/diegonmarcos/cloud-me-pvt-my-ai"
 tags:
   - repo
   - area/Unix
@@ -25,5 +26,7 @@ tags:
 #repo #area/Unix #project/Cloud-Me #family/AI-Memory #visibility/private #subcategory/Pvt
 
 Hub: [[cloud-me-pvt-___]]
+
+GitHub: https://github.com/diegonmarcos/cloud-me-pvt-my-ai
 
 Related (Cloud-Me): [[cloud-me-___]], [[cloud-me-pub-___]], [[cloud-me-pub-profiles-___]], [[cloud-me-pub-profiles-_lnktree]], [[cloud-me-pub-profiles-leaf.y]], [[cloud-me-pub-profiles-nexus.z]], [[cloud-me-pub-profiles-prf-prs]], [[cloud-me-pub-profiles-stark.x]], [[cloud-me-pub-shared]], [[cloud-me-pvt-___]], [[cloud-me-pvt-cgc]], [[cloud-me-pvt-configs]], [[cloud-me-pvt-containers]], [[cloud-me-pvt-data]], [[cloud-me-pvt-notes]], [[cloud-me-pvt-vault]]

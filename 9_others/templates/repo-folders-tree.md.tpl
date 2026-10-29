@@ -16,7 +16,7 @@ tags: [hub, repos-tree]
 
 Every registry repo, grouped by hub, with its folders and files to depth **{{DEPTH}}**
 (read from remote `HEAD` through the GitHub tree API). {{OK}} of {{REPOS}} listed; {{PRIVATE}} private repos
-show their name only (this repo is public); {{UNREADABLE}} unreadable. Excluded: {{EXCLUDED}}.
+show name and URL only, never their contents; {{UNREADABLE}} unreadable. Excluded: {{EXCLUDED}}.
 
 Browser view: [`repo-folders-tree.html`](repo-folders-tree.html). Data: [`repo-folders-tree.json`](repo-folders-tree.json).
 Refresh: `node gen-repo-folders-tree.js --fetch [--depth N]`.

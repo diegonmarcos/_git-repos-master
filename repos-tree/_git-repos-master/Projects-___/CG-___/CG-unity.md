@@ -9,6 +9,7 @@ family: "Unity"
 subcategory: ""
 visibility: private
 developer: "Leaf.y"
+url: "https://github.com/diegonmarcos/CG-unity"
 tags:
   - repo
   - area/CG
@@ -24,5 +25,7 @@ tags:
 #repo #area/CG #project/Galaxy #family/Unity #visibility/private
 
 Hub: [[CG-___]]
+
+GitHub: https://github.com/diegonmarcos/CG-unity
 
 Related (Galaxy): [[CG-galaxy]], [[CG-galaxy-gaia]], [[CG-voxel-rust]]

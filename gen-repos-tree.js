@@ -7,7 +7,8 @@
 //   repos-tree.xml     the same tree as XML
 //   repos-tree/        Obsidian graph notes: one folder per hub (nested by parent_hub), <hub>/<hub>.md index
 //                      notes and <repo>.md notes with frontmatter, tags and wikilinks. Wholly generated.
-// Private repos carry no URL in md/json/xml/notes (names only).
+// URL policy: every repo (public AND private) carries its GitHub URL; a private repo's existence, name
+// and URL may be public, its contents may not.
 // Data: repos.json (hierarchy) + repos-github.json (project/family/visibility/developer). No hard-coded lists.
 //   node gen-repos-tree.js          write both files
 //   node gen-repos-tree.js --check  exit 1 when the committed files differ from the registry
@@ -74,7 +75,7 @@ function html(m) {
 }
 
 // ---- tree formats -------------------------------------------------------------------------------
-const pubUrl = n => n.visibility === 'public' ? n.url : '';
+const pubUrl = n => n.url; // private URLs included by owner decision (#1283)
 const tag = s => String(s || '').trim().replace(/[^A-Za-z0-9_\-/]+/g, '-').replace(/^-+|-+$/g, '');
 const fams = n => String(n.family || '').split(',').map(x => x.trim()).filter(Boolean);
 const hasProject = n => n.project && n.project !== '—';

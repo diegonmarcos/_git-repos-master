@@ -9,6 +9,7 @@ family: "Curriculum"
 subcategory: "Low Level"
 visibility: private
 developer: "lecole42"
+url: "https://github.com/diegonmarcos/lecole-42-projects"
 tags:
   - repo
   - area/42
@@ -25,3 +26,5 @@ tags:
 #repo #area/42 #project/42-projects #family/Curriculum #visibility/private #subcategory/Low-Level
 
 Hub: [[lecole-42-___]]
+
+GitHub: https://github.com/diegonmarcos/lecole-42-projects

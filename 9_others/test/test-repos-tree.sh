@@ -59,6 +59,7 @@ node -e 'const f=process.argv[1]+"/repos-tree.canvas",c=JSON.parse(require("fs")
 [ "$(node -e 'const c=JSON.parse(require("fs").readFileSync(process.argv[1]+"/repos-tree.canvas"));const gh=require(process.argv[1]+"/repos-github.json").repos;console.log(c.nodes.filter(n=>n.type==="text").length!==gh.length?"caught":"missed")' "$T")" = caught ] && ok "mutation (dropped card) is detectable" || bad "mutation not detectable"
 
 # md / json / xml / graph notes
+# Policy: every repo, private included, carries its GitHub URL (existence/name/URL may be public; contents may not).
 node -e '
 const fs=require("fs"),path=require("path"),root=process.argv[1],e=[],TOP="_git-repos-master";
 const gh=require(root+"/repos-github.json").repos, reg=require(root+"/repos.json").repos;
@@ -67,7 +68,7 @@ const par=n=>n===TOP?null:(up.get(n)||TOP), priv=new Set(gh.filter(r=>r.visibili
 // json
 const j=JSON.parse(fs.readFileSync(root+"/repos-tree.json","utf8")); if(j._schema!=="repos-tree/v1") e.push("json schema");
 const seen=new Map(); const walk=(o,p)=>{ if(seen.has(o.name)) e.push("json dup "+o.name); seen.set(o.name,p);
-  if(!["hub","repo"].includes(o.kind)) e.push("json kind "+o.name); if(priv.has(o.name)&&o.url) e.push("json private url "+o.name);
+  if(!["hub","repo"].includes(o.kind)) e.push("json kind "+o.name); if(!o.url) e.push("json url missing "+o.name);
   (o.children||[]).forEach(c=>walk(c,o.name)); }; walk(j.tree,null);
 for(const r of gh){ if(!seen.has(r.name)) e.push("json lacks "+r.name); else if(seen.get(r.name)!==par(r.name)) e.push("json parent "+r.name); }
 if(seen.size!==gh.length||j.count!==gh.length) e.push("json count");
@@ -76,7 +77,7 @@ const x=fs.readFileSync(root+"/repos-tree.xml","utf8"); if(!/^<\?xml /.test(x)) 
 const st=[], xs=new Map();
 for(const m of x.matchAll(/<(\/?)(hub|repo|repos-tree)([^>]*?)(\/?)>/g)){ if(m[1]){ if((st.pop()||{}).t!==m[2]) e.push("xml nesting"); continue; }
   const nm=(m[3].match(/ name="([^"]*)"/)||[])[1];
-  if(nm){ const h=st.filter(s=>s.t==="hub"); xs.set(nm,h.length?h[h.length-1].n:null); if(priv.has(nm)&&/ url=/.test(m[3])) e.push("xml private url "+nm); }
+  if(nm){ const h=st.filter(s=>s.t==="hub"); xs.set(nm,h.length?h[h.length-1].n:null); if(!/ url="https:\/\/github\.com\//.test(m[3])) e.push("xml url missing "+nm); }
   if(!m[4]) st.push({t:m[2],n:nm}); }
 if(st.length) e.push("xml unclosed");
 for(const r of gh) if(xs.get(r.name)!==par(r.name)) e.push("xml parent "+r.name+" "+xs.get(r.name));
@@ -89,15 +90,14 @@ const names=all.map(f=>path.basename(f,".md")); if(new Set(names).size!==names.l
 for(const r of gh){ const f=all.find(a=>path.basename(a,".md")===r.name); if(!f){ e.push("no note "+r.name); continue; }
   const t=fs.readFileSync(f,"utf8"), fm=(t.match(/^---\n([\s\S]*?)\n---\n/)||[])[1]; if(!fm){ e.push("note fm "+r.name); continue; }
   for(const k of ["name","kind","hub","parent_hub","project","area","family","subcategory","visibility","developer","tags"]) if(!new RegExp("^"+k+":","m").test(fm)) e.push("note "+r.name+" lacks "+k);
-  if(priv.has(r.name)&&/github\.com/.test(t)) e.push("private url in note "+r.name);
-  if(!priv.has(r.name)&&!fm.includes("url: \""+r.url+"\"")) e.push("public note lacks url "+r.name);
+  if(!fm.includes("url: \""+r.url+"\"")) e.push("note lacks url "+r.name);
   if(!/^  - visibility\//m.test(fm)||!/^  - (hub|repo)$/m.test(fm)) e.push("note tags "+r.name);
   const p=par(r.name); if(p&&!t.includes("[["+p+"]]")) e.push("note "+r.name+" lacks link to "+p);
   for(const c of gh.filter(c=>par(c.name)===r.name)) if(!t.includes("[["+c.name+"]]")) e.push("hub "+r.name+" lacks child "+c.name);
   const segs=path.relative(root+"/repos-tree",f).split(path.sep).slice(0,-1), chain=[]; for(let h=(r.name===TOP||/-___$/.test(r.name)||gh.some(c=>par(c.name)===r.name))?r.name:p;h;h=par(h)) chain.unshift(h);
   if(segs.join("/")!==chain.join("/")) e.push("note path "+r.name+" "+segs.join("/")+" != "+chain.join("/")); }
 if(all.length!==gh.length) e.push("notes "+all.length+" != repos "+gh.length);
-if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROOT" && ok "md/json/xml/notes: every repo once, parents, links, tags, no private urls" || bad "md/json/xml/notes content"
+if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROOT" && ok "md/json/xml/notes: every repo once, parents, links, tags, urls (private too)" || bad "md/json/xml/notes content"
 
 # mutations: a hand-edited note and a stray note must be caught by --check
 cp -r "$ROOT/gen-repos-tree.js" "$ROOT/repos-tree" "$ROOT/repos-tree.md" "$ROOT/repos-tree.json" "$ROOT/repos-tree.xml" "$ROOT/9_others" "$T/" 2>/dev/null
