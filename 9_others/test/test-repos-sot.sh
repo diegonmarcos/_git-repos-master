@@ -46,6 +46,23 @@ echo "$out" | grep -q 'pending_creation' && ok "pending repo reported as skipped
 ln -s ../../nope "$T/idx/a/nope"
 node "$T/idx/repos-sot.js" check "$T/idx/repos.json" >/dev/null 2>&1 && bad "check did not flag a link for a pending repo" || ok "check flags a link for a pending repo"
 
+# default clone depth is 1; --full / CLONE_DEPTH=0 is the opt-out (file:// because git ignores --depth for plain local paths)
+git init -q "$T/w" && ( cd "$T/w" && git -c user.name=t -c user.email=t@t commit -q --allow-empty -m one && git -c user.name=t -c user.email=t@t commit -q --allow-empty -m two )
+cat > "$T/idx/repos.json" <<JSON
+{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","groups":{"a":"x"},"repos":[
+ {"name":"d1","group":"a","url":"file://$T/w","private":false},
+ {"name":"d2","group":"a","url":"file://$T/w","private":false},
+ {"name":"d3","group":"a","url":"file://$T/w","private":false}]}
+JSON
+(cd "$T/idx" && CLOUD_GIT_BASE="$T/dbase" ./clone.sh d1 >/dev/null 2>&1; CLOUD_GIT_BASE="$T/dbase" ./clone.sh --full d2 >/dev/null 2>&1; CLONE_DEPTH=0 CLOUD_GIT_BASE="$T/dbase" ./clone.sh d3 >/dev/null 2>&1)
+[ "$(git -C "$T/dbase/d1" rev-list --count HEAD 2>/dev/null)" = 1 ] && [ "$(git -C "$T/dbase/d1" rev-parse --is-shallow-repository)" = true ] && ok "default clone is --depth 1" || bad "default clone is not depth 1"
+[ "$(git -C "$T/dbase/d2" rev-list --count HEAD 2>/dev/null)" = 2 ] && ok "--full clones full history" || bad "--full not full"
+[ "$(git -C "$T/dbase/d3" rev-list --count HEAD 2>/dev/null)" = 2 ] && ok "CLONE_DEPTH=0 clones full history" || bad "CLONE_DEPTH=0 not full"
+# hub clone scripts (siblings of this repo, when present) carry the same default
+for h in "$ROOT"/../*-___; do [ -f "$h/clone.sh" ] || continue
+  grep -q 'CLONE_DEPTH="${CLONE_DEPTH:-1}"' "$h/clone.sh" && grep -q -- '--shallow-submodules' "$h/clone.sh" && ok "$(basename "$h")/clone.sh defaults to depth 1" || bad "$(basename "$h")/clone.sh lacks the depth-1 default"
+done
+
 # subset guard bites
 cat > "$T/sub.json" <<'JSON'
 {"repos":[{"name":"cloudy-t-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}

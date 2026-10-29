@@ -24,6 +24,18 @@ it and nothing else; the group directories hold committed relative symlinks out
 to the clones. A link that dangles is a repo you have not cloned yet — that is
 the index working.
 
+## Clone depth
+
+`clone.sh` clones with `--depth 1 --shallow-submodules` by default: only the latest commit, so a clone is fast and takes little disk. Each repo has exactly ONE clone (in `$CLOUD_GIT_BASE`); the links point at it, so never keep a second full copy next to it.
+
+```
+./clone.sh <name>...                 # shallow, depth 1 (default)
+./clone.sh --full <name>...          # full history (same as CLONE_DEPTH=0)
+CLONE_DEPTH=50 ./clone.sh <name>...  # a deeper shallow clone
+git -C <clone> fetch --unshallow     # later, turn an existing clone into full history
+git -C <clone> submodule update --init --depth 1   # submodules stay shallow too
+```
+
 `cloud-master` is the same idea narrowed to the cloud project. See
 [`a0_docs/README.md`](a0_docs/README.md) for how the two relate, why this is
 not submodules, and what each directory is for.
