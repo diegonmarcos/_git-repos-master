@@ -29,6 +29,7 @@ and deployed here; edit them there. Update: `bash 9_others/obsidian/install-plug
 | obsidian-html-plugin | 1.0.19 | MIT | https://github.com/nuthrash/obsidian-html-plugin |
 | json-viewer | 0.1.2 | MIT | https://github.com/viggomeesters/obsidian-json-viewer |
 | xml-viewer | 0.1.1 | MIT | https://github.com/viggomeesters/obsidian-xml-viewer |
+| show-hidden-files | 1.0.3 | MIT | https://github.com/witi42/obsidian-show-hidden-files |
 
 Choice notes: HTML viewer = HTML Reader (`obsidian-html-plugin`, most downloaded
 HTML viewer); JSON/XML = `json-viewer` + `xml-viewer` (same author; most-used
@@ -41,3 +42,4 @@ read-only viewers for each format). Beautiful Mermaid id = `beautiful-mermaid-re
   interval" (minutes) and turn off "Disable push" (or set those keys in data.json, locally).
 - **Remotely Save**: no credentials, every auto-run timer -1 (disabled). Configure on
   the device only; never commit credentials (data.json would carry them).
+- **Show Hidden Files**: data.json sets showHiddenFiles and showAllFileTypes to true, so dotfiles and dotfolders (.claude, .github, dotfiles) show in the file explorer on load. The vault config dir and .trash stay hidden by plugin design.

@@ -17,5 +17,6 @@
   "obsidian-html-plugin",
   "json-editor",
   "xml-viewer",
-  "notebook-navigator"
+  "notebook-navigator",
+  "show-hidden-files"
 ]
