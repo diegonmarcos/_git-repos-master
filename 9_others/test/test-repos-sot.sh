@@ -81,4 +81,18 @@ node "$ROOT/repos-sot.js" check-subset "$T/good.json" >/dev/null 2>&1 && ok "a f
 cp "$ROOT/repos.json" "$T/copy.json"; node "$ROOT/repos-sot.js" copy-of "$T/copy.json" >/dev/null 2>&1 && ok "byte copy passes" || bad "byte copy"
 echo " " >> "$T/copy.json"; node "$ROOT/repos-sot.js" copy-of "$T/copy.json" >/dev/null 2>&1 && bad "edited copy accepted" || ok "edited copy fails"
 
+# no git filters: this repo is plain metadata (GitSync treats in-tree attributes/filters as premium, #1284)
+no_filters() {  # $1 = repo dir; prints offenders, returns 1 if any
+  local d="$1" out=""
+  out+=$(git -C "$d" ls-files | grep -E '(^|/)\.gitattributes$|(^|/)\.lfsconfig$' | sed 's/^/in-tree: /')
+  out+=$(grep -nE '(^|[[:space:]])filter=' "$d/.gitattributes_ours" 2>/dev/null | sed 's/^/filter attr: /')
+  out+=$(git -C "$d" config --local --get-regexp '^filter\.' 2>/dev/null | sed 's/^/local filter config: /')
+  [ -z "$out" ] || { echo "$out"; return 1; }
+}
+off=$(no_filters "$ROOT") && ok "no git filters (no in-tree .gitattributes/.lfsconfig, no filter= attribute, no local filter.* config)" || bad "git filters present: $off"
+F="$T/filtrepo"; git init -q "$F"; cp "$ROOT/.gitattributes_ours" "$F/"; echo '*.bin filter=lfs' >> "$F/.gitattributes_ours"
+no_filters "$F" >/dev/null && bad "a filter= attribute was accepted" || ok "a filter= attribute fails the guard"
+F2="$T/filtrepo2"; git init -q "$F2"; echo '* text=auto' > "$F2/.gitattributes"; git -C "$F2" add .gitattributes
+no_filters "$F2" >/dev/null && bad "an in-tree .gitattributes was accepted" || ok "an in-tree .gitattributes fails the guard"
+
 exit $fail
