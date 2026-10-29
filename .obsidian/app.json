@@ -15,7 +15,8 @@
     "0_apps/dist/",
     "0_git/dist/",
     "repo-folders-tree.json",
-    "repo-folders-tree.html"
+    "repo-folders-tree.html",
+    "repos-tree.json"
   ],
   "tabSize": 4
 }
