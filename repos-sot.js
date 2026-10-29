@@ -218,7 +218,8 @@ function hubScripts(dir) {
 function readmeClones(dirArg) {
   const cp = require('child_process'), M = require('./registry-model.js'), x = M.expand(M.load());
   const alias = new Map();
-  for (const r of x.repos) { alias.set(r.github.toLowerCase(), r.name); for (const o of r.renamed_from || []) if (!alias.has(o.toLowerCase())) alias.set(o.toLowerCase(), r.name); }
+  for (const r of x.repos) { alias.set(r.github.toLowerCase(), r.name); }
+  const old = new Set(); for (const r of x.repos) for (const o of r.renamed_from || []) old.add(o.toLowerCase());
   const root = path.resolve(dirArg || path.join(HERE, '..'));
   const dirs = fs.existsSync(path.join(root, '.git')) ? [root]
     : fs.readdirSync(root).map(d => path.join(root, d)).filter(d => fs.existsSync(path.join(d, '.git')));
@@ -226,6 +227,7 @@ function readmeClones(dirArg) {
   for (const d of dirs) {
     let url = ''; try { url = cp.execFileSync('git', ['-C', d, 'remote', 'get-url', 'origin'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch (_) { continue; }
     const m = url.match(/github\.com[:/]diegonmarcos\/([^/]+?)(\.git)?\/?$/); if (!m) continue;
+    if (old.has(m[1].toLowerCase()) && !alias.has(m[1].toLowerCase())) continue; // stale clone of a renamed_from name, not a real repo
     const name = alias.get(m[1].toLowerCase());
     if (!name || name === TOP) continue;
     out.push({ dir: d, name });
