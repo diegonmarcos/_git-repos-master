@@ -28,7 +28,7 @@
 //                                                   README.md into _dotfiles/readme/readme.json when that file is missing.
 //                                                   Template variant from node.json variant: hub | repo | archived
 //                                                   (z-archived_*) | profile (role "profile"). Also writes the ONE shared
-//                                                   CI guard .github/workflows/readme-check.yml (render-readme.sh --check)
+//                                                   CI guard readme-check.yml (render-readme.sh --check) in .github/workflows, or in 1_cicd/src/cicd when the repo generates its workflows
 //   node repos-sot.js check-readmes [dir]           fail when a kit file, readme-check.yml or README.md differs from a fresh render
 //
 // Exit 0 = ok, 1 = drift (every difference printed). No dependencies: node only.
@@ -260,12 +260,17 @@ function readmeKits(dirArg, write, migrate) {
     }
     if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
     { // the ONE shared CI drift guard, emitted by this same command into every kit repo
-      const wf = path.join(dir, '.github/workflows/readme-check.yml'), text = T('readme-check.yml');
+      // a repo that owns a workflow generator (1_cicd/src/cicd/*.yml -> 1_cicd/dist -> .github/workflows) gets the guard in its
+      // workflow SOURCE (no generated banner: the generator adds its own); the generated .github file is never written there
+      const srcDir = path.join(dir, '1_cicd/src/cicd'), hasGen = fs.existsSync(srcDir) && fs.statSync(srcDir).isDirectory();
+      const full = T('readme-check.yml');
+      const wf = hasGen ? path.join(srcDir, 'readme-check.yml') : path.join(dir, '.github/workflows/readme-check.yml');
+      const text = hasGen ? full.replace(/^(#[^\n]*\n)*?# ╚[^\n]*\n/, '') : full;
       let gh = null; try { gh = fs.lstatSync(path.join(dir, '.github')); } catch (_) {}
       // a .github symlink (front repos: -> 0_deployer/.github, a submodule) is never read by GitHub Actions; that family's CI
       // lives in its deployer, so the guard is not emitted there (reported, not failed)
       const cur = fs.existsSync(wf) ? fs.readFileSync(wf, 'utf8') : null;
-      if (gh && gh.isSymbolicLink()) console.log(`${name}: .github is a symlink (${fs.readlinkSync(path.join(dir, '.github'))}), readme-check.yml not emitted`);
+      if (!hasGen && gh && gh.isSymbolicLink()) console.log(`${name}: .github is a symlink (${fs.readlinkSync(path.join(dir, '.github'))}), readme-check.yml not emitted`);
       else if (cur !== text) {
         if (write) { fs.mkdirSync(path.dirname(wf), { recursive: true }); fs.writeFileSync(wf, text); console.log(`wrote ${wf}`); }
         else bad(`${wf} differs from 9_others/templates/readme/readme-check.yml (run node repos-sot.js sync-readmes)`);
