@@ -13,7 +13,9 @@
     "node_modules/",
     ".git/",
     "0_apps/dist/",
-    "0_git/dist/"
+    "0_git/dist/",
+    "repo-folders-tree.json",
+    "repo-folders-tree.html"
   ],
   "tabSize": 4
 }

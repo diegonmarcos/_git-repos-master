@@ -30,6 +30,7 @@ and deployed here; edit them there. Update: `bash 9_others/obsidian/install-plug
 | obsidian-html-plugin | 1.0.19 | MIT | https://github.com/nuthrash/obsidian-html-plugin |
 | json-viewer | 0.1.2 | MIT | https://github.com/viggomeesters/obsidian-json-viewer |
 | xml-viewer | 0.1.1 | MIT | https://github.com/viggomeesters/obsidian-xml-viewer |
+| notebook-navigator | 3.5.0 | GPL-3.0 | https://github.com/johansan/notebook-navigator |
 
 Choice notes: HTML viewer = HTML Reader (`obsidian-html-plugin`, most downloaded
 HTML viewer); JSON/XML = `json-viewer` + `xml-viewer` (same author; most-used
@@ -42,3 +43,15 @@ read-only viewers for each format). Beautiful Mermaid id = `beautiful-mermaid-re
   interval" (minutes) and turn off "Disable push" (or set those keys in data.json, locally).
 - **Remotely Save**: no credentials, every auto-run timer -1 (disabled). Configure on
   the device only; never commit credentials (data.json would carry them).
+
+## Settings changed (#1287)
+- **Notebook Navigator** (added): `confirmBeforeDelete: true`, `autoRevealActiveFile: true`; everything else stays at the plugin defaults.
+- **HTML Reader**: `mhtmlSupport: true`. This is the plugin's own "MHTML File Format Support" toggle (main.js: it registers `mht`, `mhtml` and converts them to HTML). Do not add the extensions to `extraFileExt` as well. `opMode` was the invalid value `1`; it is now `"BalanceMode"`, the plugin's default enum string. Relaunch Obsidian after changing either setting.
+- **Dataview**: `enableDataviewJs: true`, `enableInlineDataviewJs: true`. JS queries run arbitrary code from any note, so open only trusted vaults.
+- **PDF++**: `enablePDFEdit: true` ("Editing PDF files directly", experimental per upstream: no warranty against corruption, the viewer reloads after each written highlight, keep backups, and `.git` history is the backup here). Also `author` (written into annotations), `enableAnnotationDeletion`/`enableAnnotationContentEdit: true`, `warnBacklinkedAnnotationDelete: true`, `enableEditEncryptedPDF: false`.
+- **Omnisearch**: `indexedFileTypes: ["md","canvas"]` (json, xml and html removed) and `hideExcluded: true`. `app.json` `userIgnoreFilters` now also lists `repo-folders-tree.json` and `repo-folders-tree.html`.
+
+### Why JSON "hung"
+`json-viewer` 0.1.2 is not the cause. Its main.js renders eagerly only up to 2000 nodes, caps the outline at 1000 entries, pages children 250 at a time, caps "Expand all" at 5000 rows, and loads raw source lazily. JSON.parse of 1.3 MB is cheap. It is also the only plugin that registers `.json`, so there is no extension clash.
+
+The culprit is **Omnisearch**. With `json`, `html` and `xml` in `indexedFileTypes`, it tokenised every such file with no size limit: 89 files, 5.7 MB. Two generated files make up most of that: `repo-folders-tree.json` (1.3 MB, 43k nodes) and `repo-folders-tree.html` (4.2 MB). Both are rewritten on every commit, and Omnisearch's `vault.on("modify")` handler then re-flags them for indexing. Its excluded-files check (`isUserIgnored`) only applies when `hideExcluded` is on, and it was off. On the phone that indexing blocks the UI right after a sync or pull, which is when those JSON files get opened.

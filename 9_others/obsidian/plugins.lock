@@ -17,3 +17,4 @@ obsidian-zotero-desktop-connector 3.2.1 GPL-3.0 obsidian-community/obsidian-zote
 obsidian-html-plugin 1.0.19 MIT nuthrash/obsidian-html-plugin
 json-viewer 0.1.2 MIT viggomeesters/obsidian-json-viewer
 xml-viewer 0.1.1 MIT viggomeesters/obsidian-xml-viewer
+notebook-navigator 3.5.0 GPL-3.0 johansan/notebook-navigator

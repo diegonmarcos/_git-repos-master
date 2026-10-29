@@ -1,13 +1,11 @@
 {
   "indexedFileTypes": [
     "md",
-    "canvas",
-    "json",
-    "xml",
-    "html"
+    "canvas"
   ],
   "PDFIndexing": false,
   "imagesIndexing": false,
   "showExcerpt": true,
-  "ribbonIcon": true
+  "ribbonIcon": true,
+  "hideExcluded": true
 }

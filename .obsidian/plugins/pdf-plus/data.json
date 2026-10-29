@@ -1,1 +1,9 @@
-{}
+{
+  "enablePDFEdit": true,
+  "author": "Diego Nepomuceno Marcos",
+  "enableAnnotationDeletion": true,
+  "enableAnnotationContentEdit": true,
+  "warnEveryAnnotationDelete": false,
+  "warnBacklinkedAnnotationDelete": true,
+  "enableEditEncryptedPDF": false
+}

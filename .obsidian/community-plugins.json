@@ -17,5 +17,6 @@
   "obsidian-zotero-desktop-connector",
   "obsidian-html-plugin",
   "json-viewer",
-  "xml-viewer"
+  "xml-viewer",
+  "notebook-navigator"
 ]

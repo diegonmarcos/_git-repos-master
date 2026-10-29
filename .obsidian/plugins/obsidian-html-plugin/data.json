@@ -1,3 +1,4 @@
 {
-  "opMode": 1
+  "opMode": "BalanceMode",
+  "mhtmlSupport": true
 }
