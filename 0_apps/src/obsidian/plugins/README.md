@@ -30,6 +30,7 @@ and deployed here; edit them there. Update: `bash 9_others/obsidian/install-plug
 | json-viewer | 0.1.2 | MIT | https://github.com/viggomeesters/obsidian-json-viewer |
 | xml-viewer | 0.1.1 | MIT | https://github.com/viggomeesters/obsidian-xml-viewer |
 | show-hidden-files | 1.0.3 | MIT | https://github.com/witi42/obsidian-show-hidden-files |
+| new-3d-graph | 2.8.2 | MIT | https://github.com/apoo711/obsidian-3d-graph |
 
 Choice notes: HTML viewer = HTML Reader (`obsidian-html-plugin`, most downloaded
 HTML viewer); JSON/XML = `json-viewer` + `xml-viewer` (same author; most-used
@@ -43,3 +44,4 @@ read-only viewers for each format). Beautiful Mermaid id = `beautiful-mermaid-re
 - **Remotely Save**: no credentials, every auto-run timer -1 (disabled). Configure on
   the device only; never commit credentials (data.json would carry them).
 - **Show Hidden Files**: data.json sets showHiddenFiles and showAllFileTypes to true, so dotfiles and dotfolders (.claude, .github, dotfiles) show in the file explorer on load. The vault config dir and .trash stay hidden by plugin design.
+- **New 3D Graph**: data.json shows tags and links, with colour groups copied from graph.json (#hub, #repo, #visibility/public|private, and each #area/* tag in the area colour; the plugin matches tags exactly, so every area tag used in repos-tree/ is listed). That way the repos-tree notes render as the 3D repo graph.

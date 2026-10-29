@@ -18,5 +18,6 @@
   "json-editor",
   "xml-viewer",
   "notebook-navigator",
-  "show-hidden-files"
+  "show-hidden-files",
+  "new-3d-graph"
 ]

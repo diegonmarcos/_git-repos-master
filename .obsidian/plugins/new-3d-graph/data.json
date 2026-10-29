@@ -1,0 +1,64 @@
+{
+  "showTags": true,
+  "showAttachments": false,
+  "hideOrphans": false,
+  "showNeighboringNodes": true,
+  "groups": [
+    {
+      "query": "tag:#hub",
+      "color": "#E05252"
+    },
+    {
+      "query": "tag:#repo",
+      "color": "#52E052"
+    },
+    {
+      "query": "tag:#visibility/public",
+      "color": "#3399FF"
+    },
+    {
+      "query": "tag:#visibility/private",
+      "color": "#B30000"
+    },
+    {
+      "query": "tag:#area/42",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/CG",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Deep-Science",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Financial",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Front",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Hub",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Index",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/Unix",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/diegonmarcos",
+      "color": "#9966CC"
+    },
+    {
+      "query": "tag:#area/diegonmarcos-github-io",
+      "color": "#9966CC"
+    }
+  ]
+}
