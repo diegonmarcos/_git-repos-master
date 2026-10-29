@@ -1,5 +1,5 @@
 {
-  "_doc": "Every diegonmarcos GitHub repo (snapshot), classified Developer > Field > Project > Family. README 'All repos' tables are generated from this file by gen-repos-list.js; Z-archived goes in its own table after a rule.",
+  "_doc": "Every diegonmarcos GitHub repo (snapshot), classified Developer > Field > Project > Subcategory (optional) > Family. README 'All repos' tables are generated from this file by gen-repos-list.js; Z-archived goes in its own table after a rule.",
   "vis_icons": {
     "public": "🌐",
     "private": "🔒"
@@ -162,8 +162,9 @@
       "visibility": "public",
       "developer": "Leaf.y",
       "field": "Unix",
-      "project": "Cloud-Me-Pub",
-      "family": "Hub"
+      "project": "Cloud-Me",
+      "family": "Hub",
+      "subcategory": "Pub"
     },
     {
       "family": "Profiles",
@@ -171,9 +172,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-___",
       "role": "hub",
       "visibility": "public",
-      "project": "Cloud-Me-Pub",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pub"
     },
     {
       "name": "cloud-me-pub-profiles-_lnktree",
@@ -182,8 +184,9 @@
       "visibility": "public",
       "developer": "Leaf.y",
       "field": "Unix",
-      "project": "Cloud-Me-Pub",
-      "family": "Profiles"
+      "project": "Cloud-Me",
+      "family": "Profiles",
+      "subcategory": "Pub"
     },
     {
       "family": "Profiles",
@@ -191,9 +194,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y",
       "role": "",
       "visibility": "public",
-      "project": "Cloud-Me-Pub",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pub"
     },
     {
       "family": "Profiles",
@@ -201,9 +205,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z",
       "role": "",
       "visibility": "public",
-      "project": "Cloud-Me-Pub",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pub"
     },
     {
       "name": "cloud-me-pub-profiles-prf-prs",
@@ -212,8 +217,9 @@
       "visibility": "public",
       "developer": "Leaf.y",
       "field": "Unix",
-      "project": "Cloud-Me-Pub",
-      "family": "Profiles"
+      "project": "Cloud-Me",
+      "family": "Profiles",
+      "subcategory": "Pub"
     },
     {
       "family": "Profiles",
@@ -221,9 +227,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x",
       "role": "",
       "visibility": "public",
-      "project": "Cloud-Me-Pub",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pub"
     },
     {
       "family": "Shared",
@@ -231,9 +238,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pub-shared",
       "role": "",
       "visibility": "public",
-      "project": "Cloud-Me-Pub",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pub"
     },
     {
       "name": "cloud-me-pvt-___",
@@ -242,8 +250,9 @@
       "visibility": "public",
       "developer": "Leaf.y",
       "field": "Unix",
-      "project": "Cloud-Me-Pvt",
-      "family": "Hub"
+      "project": "Cloud-Me",
+      "family": "Hub",
+      "subcategory": "Pvt"
     },
     {
       "family": "AI Memory",
@@ -251,9 +260,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-my-ai",
       "role": "ai memory",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "CGC",
@@ -261,9 +271,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-cgc",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Configs",
@@ -271,9 +282,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-configs",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Containers",
@@ -281,9 +293,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-containers",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Data",
@@ -291,9 +304,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-data",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Notes",
@@ -301,9 +315,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-notes",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Vault",
@@ -311,9 +326,10 @@
       "url": "https://github.com/diegonmarcos/cloud-me-pvt-vault",
       "role": "",
       "visibility": "private",
-      "project": "Cloud-Me-Pvt",
+      "project": "Cloud-Me",
       "field": "Unix",
-      "developer": "Leaf.y"
+      "developer": "Leaf.y",
+      "subcategory": "Pvt"
     },
     {
       "family": "Hub",
@@ -391,9 +407,10 @@
       "url": "https://github.com/diegonmarcos/Fin-Corporate",
       "role": "",
       "visibility": "public",
-      "project": "Corporate",
-      "field": "Finance",
-      "developer": "Nexus.z"
+      "project": "Fin-CM",
+      "field": "Financial",
+      "developer": "Nexus.z",
+      "subcategory": "Corporate"
     },
     {
       "family": "Terminal",
@@ -401,9 +418,10 @@
       "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg",
       "role": "",
       "visibility": "public",
-      "project": "Blmbrg",
-      "field": "Capital Markets",
-      "developer": "Nexus.z"
+      "project": "Fin-CM",
+      "field": "Financial",
+      "developer": "Nexus.z",
+      "subcategory": "Capital Markets"
     },
     {
       "family": "MQPM",
@@ -411,9 +429,10 @@
       "url": "https://github.com/diegonmarcos/Fin-CM-mqpm",
       "role": "",
       "visibility": "public",
-      "project": "CB",
-      "field": "Capital Markets",
-      "developer": "Nexus.z"
+      "project": "Fin-CM",
+      "field": "Financial",
+      "developer": "Nexus.z",
+      "subcategory": "Capital Markets"
     },
     {
       "family": "Hub",
@@ -421,8 +440,8 @@
       "url": "https://github.com/diegonmarcos/Fin-___",
       "role": "hub",
       "visibility": "public",
-      "project": "—",
-      "field": "Finance",
+      "project": "Fin-CM",
+      "field": "Financial",
       "developer": "Nexus.z"
     },
     {
@@ -462,9 +481,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-algo",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Low Level"
     },
     {
       "family": "Back",
@@ -473,9 +493,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-graphic",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Low Level"
     },
     {
       "family": "Master",
@@ -484,7 +505,7 @@
       "role": "",
       "visibility": "public",
       "project": "—",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
       "school": "42"
     },
@@ -495,9 +516,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-mylibs",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Low Level"
     },
     {
       "family": "Curriculum",
@@ -506,9 +528,10 @@
       "role": "",
       "visibility": "private",
       "project": "42-projects",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Low Level"
     },
     {
       "family": "Back",
@@ -517,9 +540,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-system",
-      "field": "Low Level",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Low Level"
     },
     {
       "family": "ML",
@@ -528,9 +552,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-agentic",
-      "field": "Machine Learning",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Machine Learning"
     },
     {
       "family": "ML",
@@ -539,9 +564,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-datascience",
-      "field": "Machine Learning",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Machine Learning"
     },
     {
       "family": "ML",
@@ -550,9 +576,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-machinelearning",
-      "field": "Machine Learning",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Machine Learning"
     },
     {
       "family": "Cyber",
@@ -561,9 +588,10 @@
       "role": "",
       "visibility": "public",
       "project": "42-cyberwarfare",
-      "field": "Cybersecurity",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Cybersecurity"
     },
     {
       "family": "Dev",
@@ -572,9 +600,10 @@
       "role": "",
       "visibility": "private",
       "project": "42-dev",
-      "field": "Dev",
+      "field": "42",
       "developer": "lecole42",
-      "school": "42"
+      "school": "42",
+      "subcategory": "Dev"
     },
     {
       "family": "Hub",
@@ -762,12 +791,9 @@
     "Unix",
     "CG",
     "Hub",
-    "Capital Markets",
+    "Financial",
     "Deep Science",
-    "Low Level",
-    "Machine Learning",
-    "Cybersecurity",
-    "Dev",
+    "42",
     "Front",
     "diegonmarcos",
     "diegonmarcos.github.io",

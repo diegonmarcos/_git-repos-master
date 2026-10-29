@@ -178,6 +178,23 @@ if (cmd === 'check') {
     const gp = path.join(HERE, 'repos-github.json');
     if (fs.existsSync(gp)) for (const r of read(gp).repos) if (['CG', '42'].includes(r.project)) bad(`repos-github.json ${r.name}: ${r.project} is a field/school, not a project`); else if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
   }
+  if (!arg) { // #1281 project groupings: Cloud-Me is one project (Pub/Pvt), Fin-CM one project in Financial, 42 one field
+    const gp = path.join(HERE, 'repos-github.json');
+    const gh = fs.existsSync(gp) ? read(gp).repos.filter(r => !r.name.startsWith('z-archived_')) : [];
+    for (const r of gh) {
+      if (/^cloud-me-(pub|pvt)-/.test(r.name) && (r.project !== 'Cloud-Me' || r.subcategory !== (r.name.startsWith('cloud-me-pub-') ? 'Pub' : 'Pvt'))) bad(`repos-github.json ${r.name}: must be project Cloud-Me, subcategory ${r.name.startsWith('cloud-me-pub-') ? 'Pub' : 'Pvt'}`);
+      if (/^Fin-/.test(r.name) && (r.field !== 'Financial' || r.project !== 'Fin-CM')) bad(`repos-github.json ${r.name}: must be field Financial, project Fin-CM`);
+      if (/^Fin-CM-/.test(r.name) && r.subcategory !== 'Capital Markets') bad(`repos-github.json ${r.name}: subcategory must be Capital Markets`);
+      if (r.name === 'Fin-Corporate' && r.subcategory !== 'Corporate') bad('repos-github.json Fin-Corporate: subcategory must be Corporate');
+      if (/^lecole-42/.test(r.name) && r.field !== '42') bad(`repos-github.json ${r.name}: 42 repos are one field "42" (sub-categories allowed)`);
+      if (['Finance', 'Capital Markets', 'Low Level', 'Machine Learning', 'Cybersecurity', 'Dev'].includes(r.field)) bad(`repos-github.json ${r.name}: field ${r.field} was merged (Financial / 42)`);
+      if (['Cloud-Me-Pub', 'Cloud-Me-Pvt', 'Corporate', 'Blmbrg', 'CB'].includes(r.project)) bad(`repos-github.json ${r.name}: project ${r.project} was merged (Cloud-Me / Fin-CM)`);
+    }
+    const md = fs.readFileSync(path.join(HERE, 'README.md'), 'utf8');
+    const pt = (md.match(/<!-- projects-list:begin -->[\s\S]*?<!-- projects-list:end -->/) || [''])[0];
+    for (const [proj, field] of [['Cloud-Me', 'Unix'], ['Fin-CM', 'Financial']]) if ((pt.match(new RegExp(`^\\| ${proj} \\| ${field} \\|`, 'gm')) || []).length !== 1) bad(`README Projects table: need exactly one ${proj} row in ${field} (run node gen-repos-list.js)`);
+    if (/^\| [^|]+ \| (Finance|Capital Markets|Low Level|Machine Learning|Cybersecurity|Dev) \|/m.test(pt) || /^\| Cloud-Me-P(ub|vt) \|/m.test(pt)) bad('README Projects table: merged field/project still listed (run node gen-repos-list.js)');
+  }
   if (!arg) { // generated repo tree (canvas + html) must match the registry
     const gen = require('./gen-repos-tree.js').render();
     for (const [f, text] of Object.entries(gen)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} out of date, run node gen-repos-tree.js`); }

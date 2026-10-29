@@ -8,7 +8,7 @@
       "y": 0,
       "width": 2980,
       "height": 4000,
-      "color": "5"
+      "color": "3"
     },
     {
       "id": "61b37abb2d70ec68",
@@ -158,7 +158,7 @@
       "y": 40,
       "width": 1700,
       "height": 1200,
-      "color": "3"
+      "color": "4"
     },
     {
       "id": "5ed9c5e27a549178",
@@ -178,12 +178,12 @@
       "y": 80,
       "width": 1340,
       "height": 520,
-      "color": "3"
+      "color": "4"
     },
     {
       "id": "9d2293fb95755992",
       "type": "text",
-      "text": "**cloud-me-pub-___**\nCloud-Me-Pub · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-___)",
+      "text": "**cloud-me-pub-___**\nCloud-Me · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-___)",
       "x": 1340,
       "y": 120,
       "width": 300,
@@ -193,7 +193,7 @@
     {
       "id": "ed92353bf1d569e6",
       "type": "text",
-      "text": "**cloud-me-pub-shared**\nCloud-Me-Pub · Shared\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-shared)",
+      "text": "**cloud-me-pub-shared**\nCloud-Me · Shared\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-shared)",
       "x": 1340,
       "y": 260,
       "width": 300,
@@ -208,12 +208,12 @@
       "y": 120,
       "width": 980,
       "height": 460,
-      "color": "3"
+      "color": "4"
     },
     {
       "id": "c952f08b0288b53b",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-___**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-___)",
+      "text": "**cloud-me-pub-profiles-___**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-___)",
       "x": 1680,
       "y": 160,
       "width": 300,
@@ -223,7 +223,7 @@
     {
       "id": "295a4c825dc0b5e7",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-_lnktree**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree)",
+      "text": "**cloud-me-pub-profiles-_lnktree**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree)",
       "x": 1680,
       "y": 300,
       "width": 300,
@@ -233,7 +233,7 @@
     {
       "id": "663b3d5d2684d9fa",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-leaf.y**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y)",
+      "text": "**cloud-me-pub-profiles-leaf.y**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y)",
       "x": 2000,
       "y": 300,
       "width": 300,
@@ -243,7 +243,7 @@
     {
       "id": "03c30e10463487c1",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-nexus.z**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z)",
+      "text": "**cloud-me-pub-profiles-nexus.z**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z)",
       "x": 2320,
       "y": 300,
       "width": 300,
@@ -253,7 +253,7 @@
     {
       "id": "d00ea3fed3e0b97e",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-prf-prs**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs)",
+      "text": "**cloud-me-pub-profiles-prf-prs**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs)",
       "x": 1680,
       "y": 440,
       "width": 300,
@@ -263,7 +263,7 @@
     {
       "id": "bd0a6aba995e6fb2",
       "type": "text",
-      "text": "**cloud-me-pub-profiles-stark.x**\nCloud-Me-Pub · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x)",
+      "text": "**cloud-me-pub-profiles-stark.x**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x)",
       "x": 2000,
       "y": 440,
       "width": 300,
@@ -278,12 +278,12 @@
       "y": 620,
       "width": 980,
       "height": 600,
-      "color": "3"
+      "color": "4"
     },
     {
       "id": "89dc1fc10f7a0afb",
       "type": "text",
-      "text": "**cloud-me-pvt-___**\nCloud-Me-Pvt · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-___)",
+      "text": "**cloud-me-pvt-___**\nCloud-Me · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-___)",
       "x": 1340,
       "y": 660,
       "width": 300,
@@ -293,7 +293,7 @@
     {
       "id": "a1f1d26844d6e401",
       "type": "text",
-      "text": "**cloud-me-pvt-cgc**\nCloud-Me-Pvt · CGC\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-cgc)",
+      "text": "**cloud-me-pvt-cgc**\nCloud-Me · CGC\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-cgc)",
       "x": 1340,
       "y": 800,
       "width": 300,
@@ -303,7 +303,7 @@
     {
       "id": "ed8cdc25c61dc9e8",
       "type": "text",
-      "text": "**cloud-me-pvt-configs**\nCloud-Me-Pvt · Configs\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-configs)",
+      "text": "**cloud-me-pvt-configs**\nCloud-Me · Configs\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-configs)",
       "x": 1660,
       "y": 800,
       "width": 300,
@@ -313,7 +313,7 @@
     {
       "id": "c2fb7bf8f0c45362",
       "type": "text",
-      "text": "**cloud-me-pvt-containers**\nCloud-Me-Pvt · Containers\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-containers)",
+      "text": "**cloud-me-pvt-containers**\nCloud-Me · Containers\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-containers)",
       "x": 1980,
       "y": 800,
       "width": 300,
@@ -323,7 +323,7 @@
     {
       "id": "7ac12f750194d023",
       "type": "text",
-      "text": "**cloud-me-pvt-data**\nCloud-Me-Pvt · Data\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-data)",
+      "text": "**cloud-me-pvt-data**\nCloud-Me · Data\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-data)",
       "x": 1340,
       "y": 940,
       "width": 300,
@@ -333,7 +333,7 @@
     {
       "id": "ba511e561780c7c6",
       "type": "text",
-      "text": "**cloud-me-pvt-my-ai**\nCloud-Me-Pvt · AI Memory\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)",
+      "text": "**cloud-me-pvt-my-ai**\nCloud-Me · AI Memory\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)",
       "x": 1660,
       "y": 940,
       "width": 300,
@@ -343,7 +343,7 @@
     {
       "id": "5f58b852fc5cb645",
       "type": "text",
-      "text": "**cloud-me-pvt-notes**\nCloud-Me-Pvt · Notes\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-notes)",
+      "text": "**cloud-me-pvt-notes**\nCloud-Me · Notes\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-notes)",
       "x": 1980,
       "y": 940,
       "width": 300,
@@ -353,7 +353,7 @@
     {
       "id": "453ef43ac3b63bbc",
       "type": "text",
-      "text": "**cloud-me-pvt-vault**\nCloud-Me-Pvt · Vault\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
+      "text": "**cloud-me-pvt-vault**\nCloud-Me · Vault\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
       "x": 1340,
       "y": 1080,
       "width": 300,
@@ -368,7 +368,7 @@
       "y": 1260,
       "width": 980,
       "height": 740,
-      "color": "3"
+      "color": "4"
     },
     {
       "id": "ae41605aad5649d4",
@@ -508,7 +508,7 @@
       "y": 2020,
       "width": 980,
       "height": 740,
-      "color": "6"
+      "color": "2"
     },
     {
       "id": "2f921c609809b9c1",
@@ -628,7 +628,7 @@
       "y": 2780,
       "width": 1980,
       "height": 1200,
-      "color": "3"
+      "color": "6"
     },
     {
       "id": "99e82aea5183040e",
@@ -698,7 +698,7 @@
       "y": 2820,
       "width": 980,
       "height": 460,
-      "color": "2"
+      "color": "3"
     },
     {
       "id": "1995239d98b99b14",
@@ -768,7 +768,7 @@
       "y": 3300,
       "width": 660,
       "height": 320,
-      "color": "5"
+      "color": "4"
     },
     {
       "id": "db3af7ea8b8685b4",
@@ -808,12 +808,12 @@
       "y": 3640,
       "width": 980,
       "height": 320,
-      "color": "2"
+      "color": "5"
     },
     {
       "id": "4742cbf1dcf9e90e",
       "type": "text",
-      "text": "**Fin-___**\n— · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-___)",
+      "text": "**Fin-___**\nFin-CM · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-___)",
       "x": 1980,
       "y": 3680,
       "width": 300,
@@ -823,7 +823,7 @@
     {
       "id": "78d3c16d85f3a976",
       "type": "text",
-      "text": "**Fin-CM-Blmbrg**\nBlmbrg · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
+      "text": "**Fin-CM-Blmbrg**\nFin-CM · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
       "x": 1980,
       "y": 3820,
       "width": 300,
@@ -833,7 +833,7 @@
     {
       "id": "2f93b59db3fca1d1",
       "type": "text",
-      "text": "**Fin-CM-mqpm**\nCB · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
+      "text": "**Fin-CM-mqpm**\nFin-CM · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
       "x": 2300,
       "y": 3820,
       "width": 300,
@@ -843,7 +843,7 @@
     {
       "id": "6dd9952fa4369792",
       "type": "text",
-      "text": "**Fin-Corporate**\nCorporate · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
+      "text": "**Fin-Corporate**\nFin-CM · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
       "x": 2620,
       "y": 3820,
       "width": 300,
