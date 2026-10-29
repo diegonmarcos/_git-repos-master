@@ -70,7 +70,7 @@ function canvas({ nodes, kids }) {
 function html(m) {
   const tpl = fs.readFileSync(path.join(HERE, '9_others/templates/repos-tree.html'), 'utf8');
   const data = { top: TOP, icons: m.icons, nodes: m.nodes.map(({ name, url, project, family, field, developer, visibility, vis_icon, parent, hub }) => ({ name, url, project, family, field, developer, visibility, vis_icon, parent, hub })) };
-  return tpl.replace('/*__DATA__*/null', () => JSON.stringify(data).replace(/</g, '\\u003c'));
+  return tpl.replace('/*__GEN__*/', 'gen-repos-tree.js from repos.json + repos-github.json.').replace('/*__DATA__*/null', () => JSON.stringify(data).replace(/</g, '\\u003c'));
 }
 
 // ---- tree formats -------------------------------------------------------------------------------
