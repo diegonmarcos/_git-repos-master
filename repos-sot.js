@@ -25,8 +25,11 @@
 //                                                   template.md.tpl, node.json, render-readme.sh) and render README.md
 //                                                   (#1303); [dir] = a clone or a folder of clones (default: siblings),
 //                                                   matched to the registry by origin URL. --migrate turns a hand-written
-//                                                   README.md into _dotfiles/readme/readme.json when that file is missing
-//   node repos-sot.js check-readmes [dir]           fail when a kit file or README.md differs from a fresh render
+//                                                   README.md into _dotfiles/readme/readme.json when that file is missing.
+//                                                   Template variant from node.json variant: hub | repo | archived
+//                                                   (z-archived_*) | profile (role "profile"). Also writes the ONE shared
+//                                                   CI guard .github/workflows/readme-check.yml (render-readme.sh --check)
+//   node repos-sot.js check-readmes [dir]           fail when a kit file, readme-check.yml or README.md differs from a fresh render
 //
 // Exit 0 = ok, 1 = drift (every difference printed). No dependencies: node only.
 'use strict';
@@ -236,7 +239,7 @@ function readmeKits(dirArg, write, migrate) {
     const node = RR.nodeData(x, name), kit = path.join(dir, RR.KIT);
     const files = {
       'readme-render.cjs': fs.readFileSync(path.join(HERE, 'readme-render.js'), 'utf8'),
-      'template.md.tpl': T(node.kind === 'hub' ? 'hub.md.tpl' : 'repo.md.tpl'),
+      'template.md.tpl': T(`${node.variant}.md.tpl`),
       'node.json': JSON.stringify(node, null, 2) + '\n',
       'render-readme.sh': T('render-readme.sh'),
     };
@@ -256,6 +259,14 @@ function readmeKits(dirArg, write, migrate) {
       else bad(`${p} differs from the render (run node repos-sot.js sync-readmes)`);
     }
     if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
+    { // the ONE shared CI drift guard, emitted by this same command into every kit repo
+      const wf = path.join(dir, '.github/workflows/readme-check.yml'), text = T('readme-check.yml');
+      const cur = fs.existsSync(wf) ? fs.readFileSync(wf, 'utf8') : null;
+      if (cur !== text) {
+        if (write) { fs.mkdirSync(path.dirname(wf), { recursive: true }); fs.writeFileSync(wf, text); console.log(`wrote ${wf}`); }
+        else bad(`${wf} differs from 9_others/templates/readme/readme-check.yml (run node repos-sot.js sync-readmes)`);
+      }
+    }
     const stale = path.join(kit, 'readme-render.js'); // vendored as .cjs so "type": "module" repos run it too
     if (fs.existsSync(stale)) { if (write) { fs.unlinkSync(stale); console.log(`removed ${stale}`); } else bad(`${stale} is stale (vendored as readme-render.cjs)`); }
     const want = RR.render(node, JSON.parse(fs.readFileSync(rj, 'utf8')), files['template.md.tpl']), rp = path.join(dir, 'README.md');
