@@ -24,7 +24,6 @@ and deployed here; edit them there. Update: `bash 9_others/obsidian/install-plug
 | quickadd | 2.33.1 | MIT | https://github.com/chhoumann/quickadd |
 | omnisearch | 1.32.0 | GPL-3.0 | https://github.com/scambier/obsidian-omnisearch |
 | beautiful-mermaid-renderer | 0.2.5 | Apache-2.0 | https://github.com/qiaoborui/obsidian-beautiful-mermaid |
-| periodic-notes | 0.0.17 | MIT | https://github.com/liamcain/obsidian-periodic-notes |
 | pdf-plus | 0.40.31 | MIT | https://github.com/ryotaushio/obsidian-pdf-plus |
 | obsidian-zotero-desktop-connector | 3.2.1 | GPL-3.0 | https://github.com/obsidian-community/obsidian-zotero-integration |
 | obsidian-html-plugin | 1.0.19 | MIT | https://github.com/nuthrash/obsidian-html-plugin |
