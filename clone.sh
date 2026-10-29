@@ -5,7 +5,7 @@
 # ║   ./clone.sh                list what exists and what does not   ║
 # ║   ./clone.sh <name>...      clone those, then link them          ║
 # ║   ./clone.sh --all          clone everything in repos.json       ║
-# ║   ./clone.sh --group <g>    clone one group                      ║
+# ║   ./clone.sh --group <g>    clone one farm folder (e.g. 01.CG)   ║
 # ║   ./clone.sh --link         relink whatever is already cloned    ║
 # ║   ./clone.sh --relink       rewrite every link from the registry ║
 # ║   ./clone.sh --sync         push fleet-shared files to all repos ║
@@ -16,8 +16,8 @@
 # This repo is an INDEX, not a container. Clones live outside it (in
 # $CLOUD_GIT_BASE, default ~/cloud-shared-store/git) and appear here as symlinks:
 #
-#     repo-master/a_cloud/cloud-u-desktop ->  ~/cloud-shared-store/git/cloud-u-desktop
-#     repo-master/d_lecole/lecole-42_back-Algo ->  ~/cloud-shared-store/git/lecole-42_back-Algo
+#     repo-master/02.Cloudy/cloudy-u-desktop             ->  ~/cloud-shared-store/git/cloudy-u-desktop
+#     repo-master/03.Cloud-me/Pvt/cloud-me-pvt-vault      ->  ~/cloud-shared-store/git/cloud-me-pvt-vault
 #
 # Every repo in the registry has a link, committed, whether or not you have
 # cloned it. A link to a repo you do not have dangles — that is the index
@@ -96,24 +96,25 @@ esac
 # in the fleet, jq is not guaranteed present.
 _names() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write(r.repos.map(x=>x.name).join(" "))' "$REGISTRY"; }
 _field() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const e=r.repos.find(x=>x.name===process.argv[2]);process.stdout.write(e?String(e[process.argv[3]]??""):"")' "$REGISTRY" "$1" "$2"; }
-# A repo with no group lives at the root and its group name is the empty
-# string, which word-splitting would drop from the loop entirely — so it is
-# emitted as the sentinel "." and translated back at the point of use.
-_groups() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write([...new Set(r.repos.map(x=>x.group||"."))].sort().join(" "))' "$REGISTRY"; }
+# #1291 links are placed by `farm` (numbered hub folders, e.g. 03.Cloud-me/Pvt);
+# `group` is a legacy family key that places nothing. A repo with no farm lives
+# at the root; that empty name is emitted as the sentinel "." (word-splitting
+# would drop it) and translated back at the point of use.
+_groups() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write([...new Set(r.repos.map(x=>x.farm||"."))].sort().join(" "))' "$REGISTRY"; }
 # Where the clone actually lives under $BASE. Defaults to the repo name; the
 # d_lecole entries override it because those clones sit in ~/cloud-shared-store/git/lecole-42/.
 # Without this the only way to index them would be to move them, which is a
 # separate decision from indexing them.
 _path() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const e=r.repos.find(x=>x.name===process.argv[2]);process.stdout.write(e&&e.path?e.path:process.argv[2])' "$REGISTRY" "$1"; }
 
-# An entry with no `group` links at the ROOT of this repo; one with a group
-# links inside that directory. Depth follows: ../ from the root, ../../ from a
-# group. Getting that wrong does not fail loudly — it produces a link that
+# An entry with no `farm` links at the ROOT of this repo; one with a farm
+# links inside that (possibly nested) directory. Depth follows: ../ from the
+# root, one more ../ per farm folder (03.Cloud-me/Pvt -> ../../../). Getting that wrong does not fail loudly — it produces a link that
 # resolves somewhere plausible and wrong.
 _linkpath() { [ -n "$2" ] && printf '%s/%s/%s' "$SCRIPT_DIR" "$2" "$1" || printf '%s/%s' "$SCRIPT_DIR" "$1"; }
 # $1 is the PATH under $BASE, not the name — they differ whenever an entry sets
 # `path`, and using the name there yields a link that dangles silently.
-_linktarget() { [ -n "$2" ] && printf '../../%s' "$1" || printf '../%s' "$1"; }
+_linktarget() { _up='../'; if [ -n "$2" ]; then _r="$2/"; while [ -n "$_r" ]; do _up="../$_up"; _r="${_r#*/}"; done; fi; printf '%s%s' "$_up" "$1"; }
 
 # The links are RELATIVE and COMMITTED.
 #
@@ -129,7 +130,7 @@ _linktarget() { [ -n "$2" ] && printf '../../%s' "$1" || printf '../%s' "$1"; }
 _pending() { [ "$(_field "$1" status)" = "pending_creation" ]; }
 
 link_one() {
-    _n="$1"; _g=$(_field "$_n" group); _pp=$(_path "$_n")
+    _n="$1"; _g=$(_field "$_n" farm); _pp=$(_path "$_n")
     _pending "$_n" && return 1
     _p=$(_linkpath "$_n" "$_g")
     mkdir -p "$(dirname "$_p")"
@@ -179,7 +180,7 @@ do_list() {
         [ "$g" = "." ] && g=""
         [ -n "$g" ] && printf "%s/\n" "$g" || printf "./  (repo root)\n"
         for n in $(_names); do
-            [ "$(_field "$n" group)" = "$g" ] || continue
+            [ "$(_field "$n" farm)" = "$g" ] || continue
             if _pending "$n"; then
                 s="pending_creation (repo not created yet; skipped by clone/link)"
             elif [ -d "$BASE/$(_path "$n")/.git" ]; then
@@ -280,7 +281,7 @@ case "${1:-}" in
         # regrouping a repo in repos.json; the result is committed like any
         # other change.
         for n in $(_names); do
-            g=$(_field "$n" group)
+            g=$(_field "$n" farm)
             link_one "$n" && printf "  > %-24s %s -> %s\n" "$n" "${g:+$g/}$n" "$(_linktarget "$(_path "$n")" "$g")"
         done
         ;;
@@ -297,8 +298,10 @@ case "${1:-}" in
         [ "$fail" -eq 0 ] || { echo; echo "$fail repo(s) failed — see above."; exit 1; }
         ;;
     --group)
-        g="${2:?usage: clone.sh --group <group>}"
-        for n in $(_names); do [ "$(_field "$n" group)" = "$g" ] && clone_one "$n" || true; done
+        # a farm folder (07.Projects, or 03.Cloud-me for everything under it) or a legacy group key (a_cloud)
+        g="${2:?usage: clone.sh --group <farm-folder|legacy-group>}"; g="${g%/}"
+        for n in $(_names); do f=$(_field "$n" farm)
+            { [ "$f" = "$g" ] || [ "${f#"$g"/}" != "$f" ] || [ "$(_field "$n" group)" = "$g" ]; } && { clone_one "$n" || true; }; done
         ;;
     -h|--help)
         sed -n '2,15p' "$0" | sed 's/^# \?//'

@@ -58,27 +58,50 @@ function checkRegistry(reg) {
   for (const f of reg.fleet_files || []) if (!f.requires) bad(`fleet_files ${f.from}: no requires`);
 }
 
+// #1291 link folder: `farm` (numbered hub folders); `group` is a legacy family key and places nothing.
+const linkRel = r => `${r.farm ? r.farm + '/' : ''}${r.name}`;
+const linkTarget = r => '../'.repeat(r.farm ? r.farm.split('/').length + 1 : 1) + (r.path || r.name);
+function checkFarms(reg) {
+  const by = new Map(reg.repos.map(r => [r.name, r])), tops = Object.keys(reg.farms || {});
+  if (!tops.length) bad('no farms{} declared');
+  for (const t of tops) if (!/^\d\d\.[A-Za-z0-9-]+$/.test(t)) bad(`farms ${t}: not NN.Name`);
+  for (const r of reg.repos) {
+    if (!r.farm) { bad(`${r.name}: no farm`); continue; }
+    const seg = r.farm.split('/');
+    if (!tops.includes(seg[0])) bad(`${r.name}: farm ${r.farm} top folder not in farms{}`);
+    if (seg.some(x => !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(x))) bad(`${r.name}: farm ${r.farm} has a bad segment`);
+    const up = r.parent_hub || r.hub;
+    if (r.name.startsWith('z-archived_') && seg[0] !== '09.Archived') bad(`${r.name}: z-archived_* must be in 09.Archived`);
+    if (seg[0] === '08.Others' && up) bad(`${r.name}: 08.Others repos have no hub (has ${up})`);
+    if (!up || up === TOP) { if (seg.length !== 1) bad(`${r.name}: top-level farm must be one folder, is ${r.farm}`); continue; }
+    const h = by.get(up); if (!h || !h.farm) continue;
+    const ok = r.farm === h.farm || (r.farm.startsWith(h.farm + '/') && seg.length === h.farm.split('/').length + 1);
+    if (!ok) bad(`${r.name}: farm ${r.farm} is not ${h.farm} or one folder below it (hub ${up})`);
+  }
+}
+
 function checkLinks(reg) {
   // A live entry has its committed link; a pending entry has none; no link is unregistered.
   const want = new Map();
-  for (const r of reg.repos) want.set(`${r.group ? r.group + '/' : ''}${r.name}`, r);
+  for (const r of reg.repos) want.set(linkRel(r), r);
   for (const [rel, r] of want) {
     const p = path.join(HERE, rel);
     let isLink = false;
     try { isLink = fs.lstatSync(p).isSymbolicLink(); } catch (_) { /* absent */ }
     if (r.status === 'pending_creation') { if (isLink) bad(`${rel}: pending_creation entry has a committed link`); continue; }
     if (!isLink) { bad(`${rel}: registered but no committed link (run ./clone.sh --relink)`); continue; }
-    const target = fs.readlinkSync(p);
-    const expect = (r.group ? '../../' : '../') + (r.path || r.name);
+    const target = fs.readlinkSync(p), expect = linkTarget(r);
     if (target !== expect) bad(`${rel}: link is ${target}, expected ${expect}`);
   }
-  for (const g of Object.keys(reg.groups || {})) {
-    const d = path.join(HERE, g);
-    if (!fs.existsSync(d)) continue;
-    for (const e of fs.readdirSync(d)) {
-      if (!want.has(`${g}/${e}`) && fs.lstatSync(path.join(d, e)).isSymbolicLink()) bad(`${g}/${e}: link not in the registry`);
-    }
+  const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => {
+    const p = path.join(d, e.name);
+    return e.isSymbolicLink() ? [path.relative(HERE, p).split(path.sep).join('/')] : e.isDirectory() ? walk(p) : [];
+  });
+  for (const t of Object.keys(reg.farms || {})) {
+    const d = path.join(HERE, t);
+    if (fs.existsSync(d)) for (const rel of walk(d)) if (!want.has(rel)) bad(`${rel}: link not in the registry`);
   }
+  for (const g of Object.keys(reg.groups || {})) if (fs.existsSync(path.join(HERE, g))) bad(`${g}/: legacy group folder still present (links live under farms since #1291)`);
 }
 
 function checkSubset(file, fix) {
@@ -120,8 +143,8 @@ function hubPlan(reg) {
   const plan = new Map();
   const isPrivate = n => n === TOP ? false : !!(by.get(n) || {}).private;
   for (const r of reg.repos) {
-    if (r.name.startsWith('z-archived_')) continue;
     const up = r.parent_hub || r.hub || null;
+    if (!up && (r.farm || '').startsWith('08.Others')) continue; // #1291 hubless by rule
     if (r.parent_hub && r.hub) bad(`${r.name}: both hub and parent_hub`);
     if (!up) { bad(`${r.name}: no hub/parent_hub`); continue; }
     if (up !== TOP && !by.has(up)) bad(`${r.name}: hub ${up} is not a registry entry`);
@@ -173,7 +196,7 @@ function hubScripts(dir) {
 const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
-  checkRegistry(reg); checkLinks(reg);
+  checkRegistry(reg); checkFarms(reg); checkLinks(reg);
   if (!arg) { // also guard the GitHub snapshot used for the README
     const gp = path.join(HERE, 'repos-github.json');
     if (fs.existsSync(gp)) for (const r of read(gp).repos) if (['CG', '42'].includes(r.project)) bad(`repos-github.json ${r.name}: ${r.project} is a field/school, not a project`); else if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);

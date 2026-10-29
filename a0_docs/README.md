@@ -19,6 +19,8 @@ It holds no project code. Two files carry the whole thing:
 
 ## Groups
 
+> Superseded (#1291): the lettered groups below are history. Links now sit in numbered hub folders (01.CG .. 09.Archived) placed by each entry's `farm`; see the Layout section of the top-level README.md.
+
 Four, and the prefixes are the sort order, not decoration:
 
 | group | | |

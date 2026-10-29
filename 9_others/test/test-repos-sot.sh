@@ -31,28 +31,28 @@ mkdir -p "$T/idx" "$T/base" "$T/src"
 git init -q --bare "$T/src/live.git"
 cp "$ROOT/clone.sh" "$ROOT/repos-sot.js" "$T/idx/"
 cat > "$T/idx/repos.json" <<JSON
-{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","groups":{"a":"x"},"repos":[
- {"name":"live","group":"a","url":"$T/src/live.git","private":false},
- {"name":"nope","group":"a","url":"$T/src/does-not-exist.git","private":false,"status":"pending_creation"}]}
+{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","farms":{"01.A":"x"},"repos":[
+ {"name":"live","farm":"01.A/b","url":"$T/src/live.git","private":false},
+ {"name":"nope","farm":"01.A/b","url":"$T/src/does-not-exist.git","private":false,"status":"pending_creation"}]}
 JSON
 out="$(cd "$T/idx" && CLOUD_GIT_BASE="$T/base" ./clone.sh --all 2>&1)"; rc=$?
 [ $rc -eq 0 ] && ok "--all exits 0 with a pending entry" || bad "--all rc=$rc: $out"
-[ -d "$T/base/live/.git" ] && [ -L "$T/idx/a/live" ] && ok "live repo cloned + linked" || bad "live repo not cloned/linked"
-[ ! -e "$T/base/nope" ] && [ ! -L "$T/idx/a/nope" ] && ok "pending repo: no clone, no link" || bad "pending repo was cloned or linked"
+[ -d "$T/base/live/.git" ] && [ "$(readlink "$T/idx/01.A/b/live")" = ../../../live ] && ok "live repo cloned + linked at its nested farm (../../../live)" || bad "live repo not cloned/linked"
+[ ! -e "$T/base/nope" ] && [ ! -L "$T/idx/01.A/b/nope" ] && ok "pending repo: no clone, no link" || bad "pending repo was cloned or linked"
 echo "$out" | grep -q 'pending_creation' && ok "pending repo reported as skipped" || bad "no skip message"
 (cd "$T/idx" && CLOUD_GIT_BASE="$T/base" ./clone.sh nope >/dev/null 2>&1) && [ ! -e "$T/base/nope" ] && ok "explicit clone of a pending repo is a no-op" || bad "explicit pending clone"
-(cd "$T/idx" && CLOUD_GIT_BASE="$T/base" ./clone.sh --relink >/dev/null 2>&1; [ ! -L a/nope ]) && ok "--relink skips pending" || bad "--relink linked a pending repo"
+(cd "$T/idx" && CLOUD_GIT_BASE="$T/base" ./clone.sh --relink >/dev/null 2>&1; [ ! -L 01.A/b/nope ]) && ok "--relink skips pending" || bad "--relink linked a pending repo"
 (cd "$T/idx" && ./clone.sh --list 2>&1 | grep -q 'nope.*pending_creation') && ok "--list shows pending" || bad "--list"
-ln -s ../../nope "$T/idx/a/nope"
+ln -s ../../../nope "$T/idx/01.A/b/nope"
 node "$T/idx/repos-sot.js" check "$T/idx/repos.json" >/dev/null 2>&1 && bad "check did not flag a link for a pending repo" || ok "check flags a link for a pending repo"
 
 # default clone depth is 1; --full / CLONE_DEPTH=0 is the opt-out (file:// because git ignores --depth for plain local paths)
 git init -q "$T/w" && ( cd "$T/w" && git -c user.name=t -c user.email=t@t commit -q --allow-empty -m one && git -c user.name=t -c user.email=t@t commit -q --allow-empty -m two )
 cat > "$T/idx/repos.json" <<JSON
-{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","groups":{"a":"x"},"repos":[
- {"name":"d1","group":"a","url":"file://$T/w","private":false},
- {"name":"d2","group":"a","url":"file://$T/w","private":false},
- {"name":"d3","group":"a","url":"file://$T/w","private":false}]}
+{"_schema":"cloud-repos/v1","shared_store_dir":"cloud-shared-store","farms":{"01.A":"x"},"repos":[
+ {"name":"d1","farm":"01.A","url":"file://$T/w","private":false},
+ {"name":"d2","farm":"01.A","url":"file://$T/w","private":false},
+ {"name":"d3","farm":"01.A","url":"file://$T/w","private":false}]}
 JSON
 (cd "$T/idx" && CLOUD_GIT_BASE="$T/dbase" ./clone.sh d1 >/dev/null 2>&1; CLOUD_GIT_BASE="$T/dbase" ./clone.sh --full d2 >/dev/null 2>&1; CLONE_DEPTH=0 CLOUD_GIT_BASE="$T/dbase" ./clone.sh d3 >/dev/null 2>&1)
 [ "$(git -C "$T/dbase/d1" rev-list --count HEAD 2>/dev/null)" = 1 ] && [ "$(git -C "$T/dbase/d1" rev-parse --is-shallow-repository)" = true ] && ok "default clone is --depth 1" || bad "default clone is not depth 1"
@@ -80,6 +80,23 @@ node -e 'const r=require(process.argv[1]);require("fs").writeFileSync(process.ar
 node "$ROOT/repos-sot.js" check-subset "$T/good.json" >/dev/null 2>&1 && ok "a faithful subset passes" || bad "faithful subset rejected"
 cp "$ROOT/repos.json" "$T/copy.json"; node "$ROOT/repos-sot.js" copy-of "$T/copy.json" >/dev/null 2>&1 && ok "byte copy passes" || bad "byte copy"
 echo " " >> "$T/copy.json"; node "$ROOT/repos-sot.js" copy-of "$T/copy.json" >/dev/null 2>&1 && bad "edited copy accepted" || ok "edited copy fails"
+
+# #1291 farm guards: numbered hub folders, nesting by the hub chain, Archived/Others rules, no legacy group dirs
+farm_mut() { # $1 = label, $2 = node expression mutating r (the registry)
+  rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+  node -e 'const fs=require("fs"),r=JSON.parse(fs.readFileSync(process.argv[1]));const by=n=>r.repos.find(x=>x.name===n);'"$2"';fs.writeFileSync(process.argv[2],JSON.stringify(r))' "$ROOT/repos.json" "$T/fm/repos.json"
+  node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && bad "farm mutation accepted: $1" || ok "farm mutation caught: $1"; }
+rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && ok "farm copy is clean" || bad "farm copy not clean"
+farm_mut "z-archived_* outside 09.Archived" 'by("z-archived_front-data").farm="07.Projects"'
+farm_mut "08.Others repo with a hub" 'by("front-diegonmarcos").hub="Projects-___"'
+farm_mut "member two folders below its hub" 'by("cloud-me-pvt-notes").farm="03.Cloud-me/Pvt/x"'
+farm_mut "farm top folder not declared" 'delete r.farms["05.DeepSc"]'
+farm_mut "entry without farm" 'delete by("CG-unity").farm'
+farm_mut "link moved off its farm" 'by("CG-unity").farm="01.CG/Sub"'
+rm -rf "$T/fm"; mkdir -p "$T/fm/a_cloud"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && bad "legacy group folder a_cloud/ accepted" || ok "legacy group folder a_cloud/ fails the check"
+for d in 2_vault a_cloud b_projects c_gh d_lecole; do [ -e "$ROOT/$d" ] && bad "legacy farm folder $d/ still present"; done
 
 # no git filters: this repo is plain metadata (GitSync treats in-tree attributes/filters as premium, #1284)
 no_filters() {  # $1 = repo dir; prints offenders, returns 1 if any

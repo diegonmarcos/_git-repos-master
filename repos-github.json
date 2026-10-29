@@ -656,6 +656,16 @@
       "developer": "Gh"
     },
     {
+      "family": "Hub",
+      "name": "z-archived-___",
+      "url": "https://github.com/diegonmarcos/z-archived-___",
+      "role": "hub",
+      "visibility": "public",
+      "project": "—",
+      "field": "—",
+      "developer": "Z-archived"
+    },
+    {
       "family": "—",
       "name": "z-archived_c3-infra-plugin",
       "url": "https://github.com/diegonmarcos/z-archived_c3-infra-plugin",
