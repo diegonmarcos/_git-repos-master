@@ -58,7 +58,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | Blmbrg | Capital Markets | 💹 Nexus.z | Terminal | [Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg) | 1 |
 | CB | Capital Markets | 💹 Nexus.z | MQPM | [Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm) | 1 |
 | DeepSc-X | Deep Science | 🔬 Stark.x | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 1 |
-| CAD-Simulators | Deep Science | 🔬 Stark.x | Sailytics | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | 1 |
+| CAD-Simulators | Deep Science | 🔬 Stark.x | CAD, Sailytics | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | 1 |
 | 42-algo | Low Level | 🎓 lecole42 (school 42) | Back | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 1 |
 | 42-graphic | Low Level | 🎓 lecole42 (school 42) | Back | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 1 |
 | 42-mylibs | Low Level | 🎓 lecole42 (school 42) | Ops | [lecole-42_ops-Mylibs](https://github.com/diegonmarcos/lecole-42_ops-Mylibs) | 1 |
@@ -126,7 +126,7 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 | 💹 Nexus.z | Finance | — | Hub | [Fin-___](https://github.com/diegonmarcos/Fin-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | — | Hub | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | 🌐 public |
 | 🔬 Stark.x | Deep Science | DeepSc-X | Sailytics | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | 🌐 public |
-| 🔬 Stark.x | Deep Science | CAD-Simulators | Sailytics | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | 🌐 public |
+| 🔬 Stark.x | Deep Science | CAD-Simulators | CAD, Sailytics | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42-algo | Back | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 🌐 public |
 | 🎓 lecole42 | Low Level | 42-graphic | Back | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 🌐 public |
 | 🎓 lecole42 | Low Level | — | Master | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) | 🌐 public |

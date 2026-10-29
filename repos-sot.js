@@ -9,6 +9,9 @@
 //                                                   is a consistent SUBSET of this registry;
 //                                                   --fix rewrites url/private/status from it
 //   node repos-sot.js copy-of <file>                <file> is a byte copy of this registry
+//   node repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
+//   node repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
+//                                                   (hubs = registry entries with parent_hub, siblings of this repo, or in [dir])
 //
 // Exit 0 = ok, 1 = drift (every difference printed). No dependencies: node only.
 'use strict';
@@ -156,6 +159,17 @@ function checkHubs(reg, remote) {
   }
 }
 
+// ---- hub clone.sh: rendered from ONE template; hubs are registry entries with parent_hub ----
+const HUB_BASE = { 'lecole-42-___': 'cloud-shared-store/git' }; // default store dir is "git" (under $HOME)
+function hubScripts(dir) {
+  const reg = read(SOT), tpl = fs.readFileSync(path.join(HERE, '9_others/templates/hub-clone.sh'), 'utf8');
+  const root = dir || path.join(HERE, '..');
+  return reg.repos.filter(r => r.parent_hub && !r.name.startsWith('z-archived_')).map(r => ({
+    file: path.join(root, r.name, 'clone.sh'),
+    text: tpl.replace(/@@BASE_DIR@@/g, HUB_BASE[r.name] || 'git').replace(/@@HUB@@/g, r.name),
+  })).filter(h => fs.existsSync(path.dirname(h.file)));
+}
+
 const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
@@ -172,7 +186,16 @@ if (cmd === 'check') {
 } else if (cmd === 'copy-of' && arg) {
   if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/repos.json (run ./clone.sh --sync)`);
   done(`copy ${arg}`);
+} else if (cmd === 'sync-hub-scripts' || cmd === 'check-hub-scripts') {
+  const hs = hubScripts(arg);
+  for (const h of hs) {
+    const cur = fs.existsSync(h.file) ? fs.readFileSync(h.file, 'utf8') : null;
+    if (cur === h.text) continue;
+    if (cmd === 'sync-hub-scripts') { fs.writeFileSync(h.file, h.text, { mode: 0o755 }); fs.chmodSync(h.file, 0o755); console.log(`wrote ${h.file}`); }
+    else bad(`${h.file} differs from the rendered 9_others/templates/hub-clone.sh (run node repos-sot.js sync-hub-scripts)`);
+  }
+  done(`${cmd} (${hs.length} hubs)`);
 } else {
-  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | copy-of <file>');
+  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | copy-of <file> | sync-hub-scripts [dir] | check-hub-scripts [dir]');
   process.exit(2);
 }

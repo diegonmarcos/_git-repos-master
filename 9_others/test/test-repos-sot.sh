@@ -63,6 +63,14 @@ for h in "$ROOT"/../*-___; do [ -f "$h/clone.sh" ] || continue
   grep -q 'CLONE_DEPTH="${CLONE_DEPTH:-1}"' "$h/clone.sh" && grep -q -- '--shallow-submodules' "$h/clone.sh" && ok "$(basename "$h")/clone.sh defaults to depth 1" || bad "$(basename "$h")/clone.sh lacks the depth-1 default"
 done
 
+# hub clone.sh files are rendered from the one template (skipped when no hub sibling exists)
+mkdir -p "$T/hubs/cloudy-___"; cp "$ROOT"/../cloudy-___/clone.sh "$T/hubs/cloudy-___/" 2>/dev/null
+if [ -f "$T/hubs/cloudy-___/clone.sh" ]; then
+  node "$ROOT/repos-sot.js" sync-hub-scripts "$T/hubs" >/dev/null 2>&1; node "$ROOT/repos-sot.js" check-hub-scripts "$T/hubs" >/dev/null 2>&1 && ok "hub clone.sh sync renders the template" || bad "hub clone.sh sync"
+  echo "# drift" >> "$T/hubs/cloudy-___/clone.sh"; node "$ROOT/repos-sot.js" check-hub-scripts "$T/hubs" >/dev/null 2>&1 && bad "edited hub clone.sh accepted" || ok "edited hub clone.sh fails the check"
+fi
+node "$ROOT/repos-sot.js" check-hub-scripts >/dev/null 2>&1 && ok "sibling hub clone.sh files match the template" || bad "sibling hub clone.sh drift"
+
 # subset guard bites
 cat > "$T/sub.json" <<'JSON'
 {"repos":[{"name":"cloudy-t-infra","url":"git@github.com:diegonmarcos/WRONG.git","private":false},{"name":"cloud-mobile","url":"x","private":false}]}
