@@ -114,3 +114,13 @@ build.log
 .claude.json.tmp.*
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+## Obsidian runtime state (#1283)
+.obsidian/cache
+.obsidian/cache/
+.obsidian/workspaces.json
+.obsidian/plugins/*/.hotreload
+.obsidian/plugins/omnisearch/cache*
+## Remotely Save main.js embeds the upstream Google OAuth app credentials; GitHub push
+## protection rejects it. Fetched per device by 9_others/obsidian/install-plugins.sh.
+.obsidian/plugins/remotely-save/main.js
