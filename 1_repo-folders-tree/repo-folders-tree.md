@@ -24,155 +24,7 @@ Refresh: `node gen-repo-folders-tree.js --fetch [--depth N]`.
 Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from git blobs.
 
 - **_git-repos-master/** (hub)
-  - 📁 **01.CG/** (group)
-    - **CG-___/** (hub)
-      - **[CG-circus](https://github.com/diegonmarcos/CG-circus)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `CG-___` (submodule)
-        - 📁 `c_Circus`
-          - 📁 `carto`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 2.2 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `README.md` · 3.2 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `games`
-            - 📁 `.claude`
-            - 📁 `0.spec`
-            - 📁 `1.ops`
-            - 📁 `dist`
-            - 📁 `src`
-            - 📁 `static`
-            - `.editorconfig` · 188 B
-            - `.env.example` · 2.3 KiB
-            - `.eslintrc.cjs` · 556 B
-            - `.gitignore` · 357 B
-            - `.npmrc` · 19 B
-            - `app.d.ts` · 274 B
-            - `build.json` · 206 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 100.9 KiB
-            - `package.json` · 872 B
-            - `prettier.config.js` · 417 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 702 B
-            - `tsconfig.json` · 687 B
-            - `vite.config.ts` · 189 B
-            - `z-setup_svelte.sh` · 1.9 KiB
-          - 📁 `others`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `src`
-            - `about.html` · 11.5 KiB
-            - `build_index.py` · 12.4 KiB
-            - `build.json` · 2.2 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `cv_timeline.svg` · 12.5 KiB
-            - `cv.html` · 3.1 KiB
-            - `earth.html` · 6.0 KiB
-            - `favicon.ico` · 31.3 KiB
-            - `feed_yourself.html` · 43.5 KiB
-            - `health_tracker.html` · 47.8 KiB
-            - `index.html` · 13.0 KiB
-            - `maps_md.md` · 4.4 KiB
-            - `quill.html` · 8.4 KiB
-            - `repos.html` · 9.7 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-        - 📁 `Game-Production`
-          - 📁 `GDevelop`
-            - `README.md` · 441 B
-          - 📁 `Godot`
-            - `README.md` · 383 B
-          - 📁 `Unity`
-            - `README.md` · 652 B
-          - `README.md` · 833 B
-        - 📁 `Music-Production`
-          - 📁 `Music-DAW`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 778 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `README.md` · 719 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `Music-Mixer`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 779 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `README.md` · 581 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - `README.md` · 812 B
-        - 📁 `Video-Production`
-          - 📁 `Higgsfield`
-            - `README.md` · 836 B
-          - `README.md` · 851 B
-        - 🔗 `.github` → `0_deployer/.github` · 18 B
-        - `.gitmodules` · 238 B
-        - 📦 `0_deployer` (submodule)
-        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-        - `README.md` · 1.1 KiB
-        - `SPLIT-PATHS.txt` · 96 B
-      - **[CG-galaxy](https://github.com/diegonmarcos/CG-galaxy)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `CG-___` (submodule)
-        - 📁 `b_Projects`
-          - 📁 `galaxy`
-            - 📁 `.svelte-kit`
-            - 📁 `dist`
-            - 📁 `src`
-            - 📁 `test`
-            - `build.json` · 207 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package.json` · 664 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 710 B
-            - `tsconfig.json` · 326 B
-            - `vite.config.ts` · 202 B
-          - 📁 `galaxy-earth`
-            - 📁 `dist`
-            - 📁 `src`
-            - 📁 `test`
-            - `.gitignore` · 54 B
-            - `build.json` · 213 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.json` · 65.0 KiB
-            - `package.json` · 864 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 556 B
-            - `tsconfig.json` · 326 B
-            - `vite.config.ts` · 225 B
-          - 📁 `galaxy-x1`
-            - 📁 `dist`
-            - 📁 `scripts`
-            - 📁 `src`
-            - 📁 `test`
-            - `.gitignore` · 54 B
-            - `build.json` · 210 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package.json` · 819 B
-            - `README.md` · 2.2 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 556 B
-            - `tmp-inspect.mjs` · 1.9 KiB
-            - `tsconfig.json` · 326 B
-            - `vite.config.ts` · 282 B
-        - 🔗 `.github` → `0_deployer/.github` · 18 B
-        - `.gitmodules` · 238 B
-        - 📦 `0_deployer` (submodule)
-        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-        - `README.md` · 422 B
-        - `SPLIT-PATHS.txt` · 63 B
-      - **[CG-galaxy-gaia](https://github.com/diegonmarcos/CG-galaxy-gaia)** · 🔒 private
-      - **[CG-unity](https://github.com/diegonmarcos/CG-unity)** · 🔒 private
-      - **[CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `CG-___` (submodule)
-        - 📁 `docs`
-          - `vox-rust_Agent-Driven_Voxel_World_Full_Build_Plan.md` · 37.4 KiB
-        - `.gitmodules` · 98 B
-        - `README.md` · 278 B
-  - 📁 **02.Cloudy/** (group)
+  - 📁 **1.1.Cloudy/** (group)
     - **cloudy-___/** (hub)
       - **[cloudy_db_assets-cdn](https://github.com/diegonmarcos/cloudy_db_assets-cdn)** · 🌐 public
         - 📁 `.claude`
@@ -8175,7 +8027,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `CLAUDE.md` · 86 B
         - `LICENSE` · 4.5 KiB
         - `LICENSING.md` · 961 B
-  - 📁 **03.Cloud-me/** (group)
+  - 📁 **1.2.Cloud-me/** (group)
     - **cloud-me-___/** (hub)
       - 📁 **Pub/** (group)
         - **cloud-me-pub-___/** (hub)
@@ -8596,7 +8448,155 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - **[cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)** · 🔒 private
           - **[cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes)** · 🔒 private
           - **[cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault)** · 🔒 private
-  - 📁 **04.Fin/** (group)
+  - 📁 **2.CG/** (group)
+    - **CG-___/** (hub)
+      - **[CG-circus](https://github.com/diegonmarcos/CG-circus)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `CG-___` (submodule)
+        - 📁 `c_Circus`
+          - 📁 `carto`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 2.2 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `README.md` · 3.2 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `games`
+            - 📁 `.claude`
+            - 📁 `0.spec`
+            - 📁 `1.ops`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `static`
+            - `.editorconfig` · 188 B
+            - `.env.example` · 2.3 KiB
+            - `.eslintrc.cjs` · 556 B
+            - `.gitignore` · 357 B
+            - `.npmrc` · 19 B
+            - `app.d.ts` · 274 B
+            - `build.json` · 206 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 100.9 KiB
+            - `package.json` · 872 B
+            - `prettier.config.js` · 417 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 702 B
+            - `tsconfig.json` · 687 B
+            - `vite.config.ts` · 189 B
+            - `z-setup_svelte.sh` · 1.9 KiB
+          - 📁 `others`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `src`
+            - `about.html` · 11.5 KiB
+            - `build_index.py` · 12.4 KiB
+            - `build.json` · 2.2 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `cv_timeline.svg` · 12.5 KiB
+            - `cv.html` · 3.1 KiB
+            - `earth.html` · 6.0 KiB
+            - `favicon.ico` · 31.3 KiB
+            - `feed_yourself.html` · 43.5 KiB
+            - `health_tracker.html` · 47.8 KiB
+            - `index.html` · 13.0 KiB
+            - `maps_md.md` · 4.4 KiB
+            - `quill.html` · 8.4 KiB
+            - `repos.html` · 9.7 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+        - 📁 `Game-Production`
+          - 📁 `GDevelop`
+            - `README.md` · 441 B
+          - 📁 `Godot`
+            - `README.md` · 383 B
+          - 📁 `Unity`
+            - `README.md` · 652 B
+          - `README.md` · 833 B
+        - 📁 `Music-Production`
+          - 📁 `Music-DAW`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 778 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `README.md` · 719 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `Music-Mixer`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 779 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `README.md` · 581 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - `README.md` · 812 B
+        - 📁 `Video-Production`
+          - 📁 `Higgsfield`
+            - `README.md` · 836 B
+          - `README.md` · 851 B
+        - 🔗 `.github` → `0_deployer/.github` · 18 B
+        - `.gitmodules` · 238 B
+        - 📦 `0_deployer` (submodule)
+        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+        - `README.md` · 1.1 KiB
+        - `SPLIT-PATHS.txt` · 96 B
+      - **[CG-galaxy](https://github.com/diegonmarcos/CG-galaxy)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `CG-___` (submodule)
+        - 📁 `b_Projects`
+          - 📁 `galaxy`
+            - 📁 `.svelte-kit`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `test`
+            - `build.json` · 207 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package.json` · 664 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 710 B
+            - `tsconfig.json` · 326 B
+            - `vite.config.ts` · 202 B
+          - 📁 `galaxy-earth`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `test`
+            - `.gitignore` · 54 B
+            - `build.json` · 213 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.json` · 65.0 KiB
+            - `package.json` · 864 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 556 B
+            - `tsconfig.json` · 326 B
+            - `vite.config.ts` · 225 B
+          - 📁 `galaxy-x1`
+            - 📁 `dist`
+            - 📁 `scripts`
+            - 📁 `src`
+            - 📁 `test`
+            - `.gitignore` · 54 B
+            - `build.json` · 210 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package.json` · 819 B
+            - `README.md` · 2.2 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 556 B
+            - `tmp-inspect.mjs` · 1.9 KiB
+            - `tsconfig.json` · 326 B
+            - `vite.config.ts` · 282 B
+        - 🔗 `.github` → `0_deployer/.github` · 18 B
+        - `.gitmodules` · 238 B
+        - 📦 `0_deployer` (submodule)
+        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+        - `README.md` · 422 B
+        - `SPLIT-PATHS.txt` · 63 B
+      - **[CG-galaxy-gaia](https://github.com/diegonmarcos/CG-galaxy-gaia)** · 🔒 private
+      - **[CG-unity](https://github.com/diegonmarcos/CG-unity)** · 🔒 private
+      - **[CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `CG-___` (submodule)
+        - 📁 `docs`
+          - `vox-rust_Agent-Driven_Voxel_World_Full_Build_Plan.md` · 37.4 KiB
+        - `.gitmodules` · 98 B
+        - `README.md` · 278 B
+  - 📁 **3.Fin/** (group)
     - **Fin-___/** (hub)
       - 📁 **Capital-Markets/** (group)
         - **[Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg)** · 🌐 public
@@ -8693,7 +8693,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📦 `Fin-___` (submodule)
           - `.gitmodules` · 101 B
           - `README.md` · 319 B
-  - 📁 **05.DeepSc/** (group)
+  - 📁 **4.DeepSc/** (group)
     - **DeepSc-___/** (hub)
       - **[CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators)** · 🌐 public
         - 📁 `0_hub`
@@ -8739,7 +8739,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
         - `README.md` · 773 B
         - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
-  - 📁 **06.Lecole-42/** (group)
+  - 📁 **5.Lecole-42/** (group)
     - **lecole-42-___/** (hub)
       - **[lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo)** · 🌐 public
         - 📁 `.claude`
@@ -9202,7 +9202,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `LICENSING.md` · 961 B
         - `README.md` · 2.7 KiB
       - **[lecole-42-projects](https://github.com/diegonmarcos/lecole-42-projects)** · 🔒 private
-  - 📁 **07.Projects/** (group)
+  - 📁 **6.Projects/** (group)
     - **Projects-___/** (hub)
       - 📁 **DuckPeng/** (group)
         - **DuckPeng-___/** (hub)
@@ -9285,7 +9285,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
         - `README.md` · 1.0 KiB
         - `SPLIT-PATHS.txt` · 0 B
-  - 📁 **08.Others/** (group)
+  - 📁 **7.Others/** (group)
     - **[diegonmarcos](https://github.com/diegonmarcos/diegonmarcos)** · 🌐 public
       - 📁 `.claude`
         - `SESSION-SURVIVAL.md` · 1.6 KiB
@@ -10195,7 +10195,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - `package.json` · 3.6 KiB
       - `README.md` · 14.3 KiB
       - `todo.md` · 1.0 KiB
-  - 📁 **09.Archived/** (group)
+  - 📁 **8.Archived/** (group)
     - **z-archived-___/** (hub)
       - **[z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)** · 🔒 private
       - **[z-archived_cloud-me-pub-data](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data)** · 🌐 public

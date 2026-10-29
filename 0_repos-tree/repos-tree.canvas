@@ -8,7 +8,7 @@
       "y": 0,
       "width": 3140,
       "height": 6160,
-      "color": "3"
+      "color": "2"
     },
     {
       "id": "61b37abb2d70ec68",
@@ -21,91 +21,11 @@
       "color": "6"
     },
     {
-      "id": "3d58f5da0a8e9580",
+      "id": "44c7783d6897d19b",
       "type": "group",
-      "label": "01.CG",
+      "label": "1.1.Cloudy",
       "x": 340,
       "y": 40,
-      "width": 1340,
-      "height": 520,
-      "color": "5"
-    },
-    {
-      "id": "081881a062e42b8f",
-      "type": "group",
-      "label": "CG-___",
-      "x": 680,
-      "y": 80,
-      "width": 980,
-      "height": 460,
-      "color": "3"
-    },
-    {
-      "id": "1995239d98b99b14",
-      "type": "text",
-      "text": "**CG-___**\n— · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-___)",
-      "x": 700,
-      "y": 120,
-      "width": 300,
-      "height": 120,
-      "color": "6"
-    },
-    {
-      "id": "a15f44f67ca86eb9",
-      "type": "text",
-      "text": "**CG-circus**\nZirkus · Games, Carto, Music, Others\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
-      "x": 700,
-      "y": 260,
-      "width": 300,
-      "height": 120,
-      "color": "4"
-    },
-    {
-      "id": "77e7f50adc3b44a6",
-      "type": "text",
-      "text": "**CG-galaxy**\nGalaxy · Threlte\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy)",
-      "x": 1020,
-      "y": 260,
-      "width": 300,
-      "height": 120,
-      "color": "4"
-    },
-    {
-      "id": "d8b88f1892f4e226",
-      "type": "text",
-      "text": "**CG-galaxy-gaia**\nGalaxy · Threlte\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy-gaia)",
-      "x": 1340,
-      "y": 260,
-      "width": 300,
-      "height": 120,
-      "color": "1"
-    },
-    {
-      "id": "5abc567817e0718e",
-      "type": "text",
-      "text": "**CG-unity**\nGalaxy · Unity\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-unity)",
-      "x": 700,
-      "y": 400,
-      "width": 300,
-      "height": 120,
-      "color": "1"
-    },
-    {
-      "id": "d81ed0207ada41de",
-      "type": "text",
-      "text": "**CG-voxel-rust**\nGalaxy · Voxel-rust\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-voxel-rust)",
-      "x": 1020,
-      "y": 400,
-      "width": 300,
-      "height": 120,
-      "color": "4"
-    },
-    {
-      "id": "1f23e644454ffd24",
-      "type": "group",
-      "label": "02.Cloudy",
-      "x": 340,
-      "y": 580,
       "width": 1340,
       "height": 800,
       "color": "5"
@@ -115,17 +35,17 @@
       "type": "group",
       "label": "cloudy-___",
       "x": 680,
-      "y": 620,
+      "y": 80,
       "width": 980,
       "height": 740,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "ae41605aad5649d4",
       "type": "text",
       "text": "**cloudy-___**\nCloudy · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-___)",
       "x": 700,
-      "y": 660,
+      "y": 120,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -135,7 +55,7 @@
       "type": "text",
       "text": "**cloudy_db_assets-cdn**\nCloudy · DB\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_assets-cdn)",
       "x": 700,
-      "y": 800,
+      "y": 260,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -145,7 +65,7 @@
       "type": "text",
       "text": "**cloudy_db_infra-ops-obsv_configs-sync**\nCloudy · DB\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync)",
       "x": 1020,
-      "y": 800,
+      "y": 260,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -155,7 +75,7 @@
       "type": "text",
       "text": "**cloudy_db_LFS**\nCloudy · DB\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_LFS)",
       "x": 1340,
-      "y": 800,
+      "y": 260,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -165,7 +85,7 @@
       "type": "text",
       "text": "**cloudy-a-docs**\nCloudy · Docs\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-a-docs)",
       "x": 700,
-      "y": 940,
+      "y": 400,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -175,7 +95,7 @@
       "type": "text",
       "text": "**cloudy-h-webapps**\nCloudy · Webapps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps)",
       "x": 1020,
-      "y": 940,
+      "y": 400,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -185,7 +105,7 @@
       "type": "text",
       "text": "**cloudy-h-webapps-2**\nCloudy · Webapps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-2)",
       "x": 1340,
-      "y": 940,
+      "y": 400,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -195,7 +115,7 @@
       "type": "text",
       "text": "**cloudy-t-infra**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-t-infra)",
       "x": 700,
-      "y": 1080,
+      "y": 540,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -205,7 +125,7 @@
       "type": "text",
       "text": "**cloudy-u-android**\nCloudy · Android\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-android)",
       "x": 1020,
-      "y": 1080,
+      "y": 540,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -215,7 +135,7 @@
       "type": "text",
       "text": "**cloudy-u-containers**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers)",
       "x": 1340,
-      "y": 1080,
+      "y": 540,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -225,7 +145,7 @@
       "type": "text",
       "text": "**cloudy-u-containers_cgc**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers_cgc)",
       "x": 700,
-      "y": 1220,
+      "y": 680,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -235,7 +155,7 @@
       "type": "text",
       "text": "**cloudy-u-desktop**\nCloudy · Desktop\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-desktop)",
       "x": 1020,
-      "y": 1220,
+      "y": 680,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -245,17 +165,17 @@
       "type": "text",
       "text": "**cloudy-u-linux**\nCloudy · Linux\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-linux)",
       "x": 1340,
-      "y": 1220,
+      "y": 680,
       "width": 300,
       "height": 120,
       "color": "4"
     },
     {
-      "id": "1b68c19784770760",
+      "id": "da2e326416e51c59",
       "type": "group",
-      "label": "03.Cloud-me",
+      "label": "1.2.Cloud-me",
       "x": 340,
-      "y": 1400,
+      "y": 860,
       "width": 2780,
       "height": 1440,
       "color": "5"
@@ -265,27 +185,27 @@
       "type": "group",
       "label": "cloud-me-___",
       "x": 680,
-      "y": 1440,
+      "y": 900,
       "width": 2420,
       "height": 1380,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "5ed9c5e27a549178",
       "type": "text",
       "text": "**cloud-me-___**\nCloud-Me · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-___)",
       "x": 700,
-      "y": 1480,
+      "y": 940,
       "width": 300,
       "height": 120,
       "color": "6"
     },
     {
-      "id": "42f167a4077c0962",
+      "id": "7a69d6e6032743a9",
       "type": "group",
-      "label": "03.Cloud-me/Pub",
+      "label": "1.2.Cloud-me/Pub",
       "x": 1020,
-      "y": 1480,
+      "y": 940,
       "width": 2060,
       "height": 640,
       "color": "5"
@@ -295,17 +215,17 @@
       "type": "group",
       "label": "cloud-me-pub-___",
       "x": 1360,
-      "y": 1520,
+      "y": 980,
       "width": 1700,
       "height": 580,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "9d2293fb95755992",
       "type": "text",
       "text": "**cloud-me-pub-___**\nCloud-Me · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-___)",
       "x": 1380,
-      "y": 1560,
+      "y": 1020,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -315,17 +235,17 @@
       "type": "text",
       "text": "**cloud-me-pub-shared**\nCloud-Me · Shared\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-shared)",
       "x": 1380,
-      "y": 1700,
+      "y": 1160,
       "width": 300,
       "height": 120,
       "color": "4"
     },
     {
-      "id": "f61ac63c7807722a",
+      "id": "260ade8db051afc7",
       "type": "group",
-      "label": "03.Cloud-me/Pub/Profiles",
+      "label": "1.2.Cloud-me/Pub/Profiles",
       "x": 1700,
-      "y": 1560,
+      "y": 1020,
       "width": 1340,
       "height": 520,
       "color": "5"
@@ -335,17 +255,17 @@
       "type": "group",
       "label": "cloud-me-pub-profiles-___",
       "x": 2040,
-      "y": 1600,
+      "y": 1060,
       "width": 980,
       "height": 460,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "c952f08b0288b53b",
       "type": "text",
       "text": "**cloud-me-pub-profiles-___**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-___)",
       "x": 2060,
-      "y": 1640,
+      "y": 1100,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -355,7 +275,7 @@
       "type": "text",
       "text": "**cloud-me-pub-profiles-_lnktree**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree)",
       "x": 2060,
-      "y": 1780,
+      "y": 1240,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -365,7 +285,7 @@
       "type": "text",
       "text": "**cloud-me-pub-profiles-leaf.y**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y)",
       "x": 2380,
-      "y": 1780,
+      "y": 1240,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -375,7 +295,7 @@
       "type": "text",
       "text": "**cloud-me-pub-profiles-nexus.z**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z)",
       "x": 2700,
-      "y": 1780,
+      "y": 1240,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -385,7 +305,7 @@
       "type": "text",
       "text": "**cloud-me-pub-profiles-prf-prs**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs)",
       "x": 2060,
-      "y": 1920,
+      "y": 1380,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -395,17 +315,17 @@
       "type": "text",
       "text": "**cloud-me-pub-profiles-stark.x**\nCloud-Me · Profiles\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x)",
       "x": 2380,
-      "y": 1920,
+      "y": 1380,
       "width": 300,
       "height": 120,
       "color": "4"
     },
     {
-      "id": "52100bb903606220",
+      "id": "6653f645dcb0e25f",
       "type": "group",
-      "label": "03.Cloud-me/Pvt",
+      "label": "1.2.Cloud-me/Pvt",
       "x": 1020,
-      "y": 2140,
+      "y": 1600,
       "width": 1340,
       "height": 660,
       "color": "5"
@@ -415,17 +335,17 @@
       "type": "group",
       "label": "cloud-me-pvt-___",
       "x": 1360,
-      "y": 2180,
+      "y": 1640,
       "width": 980,
       "height": 600,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "89dc1fc10f7a0afb",
       "type": "text",
       "text": "**cloud-me-pvt-___**\nCloud-Me · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-___)",
       "x": 1380,
-      "y": 2220,
+      "y": 1680,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -435,7 +355,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-cgc**\nCloud-Me · CGC\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-cgc)",
       "x": 1380,
-      "y": 2360,
+      "y": 1820,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -445,7 +365,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-configs**\nCloud-Me · Configs\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-configs)",
       "x": 1700,
-      "y": 2360,
+      "y": 1820,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -455,7 +375,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-containers**\nCloud-Me · Containers\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-containers)",
       "x": 2020,
-      "y": 2360,
+      "y": 1820,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -465,7 +385,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-data**\nCloud-Me · Data\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-data)",
       "x": 1380,
-      "y": 2500,
+      "y": 1960,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -475,7 +395,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-my-ai**\nCloud-Me · AI Memory\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)",
       "x": 1700,
-      "y": 2500,
+      "y": 1960,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -485,7 +405,7 @@
       "type": "text",
       "text": "**cloud-me-pvt-notes**\nCloud-Me · Notes\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-notes)",
       "x": 2020,
-      "y": 2500,
+      "y": 1960,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -495,15 +415,95 @@
       "type": "text",
       "text": "**cloud-me-pvt-vault**\nCloud-Me · Vault\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
       "x": 1380,
-      "y": 2640,
+      "y": 2100,
       "width": 300,
       "height": 120,
       "color": "1"
     },
     {
-      "id": "ae9f8a9172e5b7d5",
+      "id": "b69b4b1767f84936",
       "type": "group",
-      "label": "04.Fin",
+      "label": "2.CG",
+      "x": 340,
+      "y": 2320,
+      "width": 1340,
+      "height": 520,
+      "color": "5"
+    },
+    {
+      "id": "081881a062e42b8f",
+      "type": "group",
+      "label": "CG-___",
+      "x": 680,
+      "y": 2360,
+      "width": 980,
+      "height": 460,
+      "color": "4"
+    },
+    {
+      "id": "1995239d98b99b14",
+      "type": "text",
+      "text": "**CG-___**\n— · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-___)",
+      "x": 700,
+      "y": 2400,
+      "width": 300,
+      "height": 120,
+      "color": "6"
+    },
+    {
+      "id": "a15f44f67ca86eb9",
+      "type": "text",
+      "text": "**CG-circus**\nZirkus · Production\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
+      "x": 700,
+      "y": 2540,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "77e7f50adc3b44a6",
+      "type": "text",
+      "text": "**CG-galaxy**\nGalaxy · Threlte\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy)",
+      "x": 1020,
+      "y": 2540,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "d8b88f1892f4e226",
+      "type": "text",
+      "text": "**CG-galaxy-gaia**\nGalaxy · Threlte\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy-gaia)",
+      "x": 1340,
+      "y": 2540,
+      "width": 300,
+      "height": 120,
+      "color": "1"
+    },
+    {
+      "id": "5abc567817e0718e",
+      "type": "text",
+      "text": "**CG-unity**\nGalaxy · Unity\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-unity)",
+      "x": 700,
+      "y": 2680,
+      "width": 300,
+      "height": 120,
+      "color": "1"
+    },
+    {
+      "id": "d81ed0207ada41de",
+      "type": "text",
+      "text": "**CG-voxel-rust**\nGalaxy · Voxel-rust\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-voxel-rust)",
+      "x": 1020,
+      "y": 2680,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "36fc7edf166c4428",
+      "type": "group",
+      "label": "3.Fin",
       "x": 340,
       "y": 2860,
       "width": 1380,
@@ -518,12 +518,12 @@
       "y": 2900,
       "width": 1020,
       "height": 440,
-      "color": "5"
+      "color": "6"
     },
     {
       "id": "4742cbf1dcf9e90e",
       "type": "text",
-      "text": "**Fin-___**\nFin-CM · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-___)",
+      "text": "**Fin-___**\n— · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-___)",
       "x": 700,
       "y": 2940,
       "width": 300,
@@ -531,9 +531,9 @@
       "color": "6"
     },
     {
-      "id": "932c54c31e1d5592",
+      "id": "b97525f68709b2a1",
       "type": "group",
-      "label": "04.Fin/Capital-Markets",
+      "label": "3.Fin/Capital-Markets",
       "x": 1020,
       "y": 2940,
       "width": 660,
@@ -543,7 +543,7 @@
     {
       "id": "78d3c16d85f3a976",
       "type": "text",
-      "text": "**Fin-CM-Blmbrg**\nFin-CM · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
+      "text": "**Fin-CM-Blmbrg**\nCM-Blmbrg · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
       "x": 1040,
       "y": 2980,
       "width": 300,
@@ -553,7 +553,7 @@
     {
       "id": "2f93b59db3fca1d1",
       "type": "text",
-      "text": "**Fin-CM-mqpm**\nFin-CM · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
+      "text": "**Fin-CM-mqpm**\nCM-MQPM · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
       "x": 1360,
       "y": 2980,
       "width": 300,
@@ -561,9 +561,9 @@
       "color": "4"
     },
     {
-      "id": "a6f2ade45cf7c75f",
+      "id": "3f6aea0868af19f0",
       "type": "group",
-      "label": "04.Fin/Corporate",
+      "label": "3.Fin/Corporate",
       "x": 1020,
       "y": 3140,
       "width": 340,
@@ -573,7 +573,7 @@
     {
       "id": "6dd9952fa4369792",
       "type": "text",
-      "text": "**Fin-Corporate**\nFin-CM · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
+      "text": "**Fin-Corporate**\nCORP-Wacc · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
       "x": 1040,
       "y": 3180,
       "width": 300,
@@ -581,9 +581,9 @@
       "color": "4"
     },
     {
-      "id": "c43d25be727b3e94",
+      "id": "5f6f605dacc88191",
       "type": "group",
-      "label": "05.DeepSc",
+      "label": "4.DeepSc",
       "x": 340,
       "y": 3380,
       "width": 1020,
@@ -598,7 +598,7 @@
       "y": 3420,
       "width": 660,
       "height": 320,
-      "color": "4"
+      "color": "5"
     },
     {
       "id": "db3af7ea8b8685b4",
@@ -613,7 +613,7 @@
     {
       "id": "4092c61e05e10b1a",
       "type": "text",
-      "text": "**CAD-Simulators**\nCAD-Simulators · CAD, Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/CAD-Simulators)",
+      "text": "**CAD-Simulators**\nCAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/CAD-Simulators)",
       "x": 700,
       "y": 3600,
       "width": 300,
@@ -631,9 +631,9 @@
       "color": "4"
     },
     {
-      "id": "e044b68a1195f968",
+      "id": "a55bf2103277253f",
       "type": "group",
-      "label": "06.Lecole-42",
+      "label": "5.Lecole-42",
       "x": 340,
       "y": 3780,
       "width": 1340,
@@ -653,7 +653,7 @@
     {
       "id": "2f921c609809b9c1",
       "type": "text",
-      "text": "**lecole-42-___**\n— · Master\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42-___)",
+      "text": "**lecole-42-___**\n— · Hub\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42-___)",
       "x": 700,
       "y": 3860,
       "width": 300,
@@ -761,9 +761,9 @@
       "color": "1"
     },
     {
-      "id": "4d94a3c2e6ab7e02",
+      "id": "b15e9988750f564f",
       "type": "group",
-      "label": "07.Projects",
+      "label": "6.Projects",
       "x": 340,
       "y": 4600,
       "width": 1740,
@@ -778,7 +778,7 @@
       "y": 4640,
       "width": 1380,
       "height": 320,
-      "color": "6"
+      "color": "4"
     },
     {
       "id": "99e82aea5183040e",
@@ -811,9 +811,9 @@
       "color": "4"
     },
     {
-      "id": "19dae817491547d8",
+      "id": "ab33eb35318fae9e",
       "type": "group",
-      "label": "07.Projects/DuckPeng",
+      "label": "6.Projects/DuckPeng",
       "x": 1340,
       "y": 4680,
       "width": 700,
@@ -828,12 +828,12 @@
       "y": 4720,
       "width": 340,
       "height": 180,
-      "color": "2"
+      "color": "4"
     },
     {
       "id": "99c6d4483cceaf9c",
       "type": "text",
-      "text": "**DuckPeng-___**\n— · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
+      "text": "**DuckPeng-___**\nDuckPeng · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
       "x": 1700,
       "y": 4760,
       "width": 300,
@@ -841,9 +841,9 @@
       "color": "6"
     },
     {
-      "id": "b1b03adfcfb76953",
+      "id": "0cda0fb9e52425c1",
       "type": "group",
-      "label": "08.Others",
+      "label": "7.Others",
       "x": 340,
       "y": 5000,
       "width": 660,
@@ -871,9 +871,9 @@
       "color": "4"
     },
     {
-      "id": "a3ad55792ff3203e",
+      "id": "4d17a63eab6d61f6",
       "type": "group",
-      "label": "09.Archived",
+      "label": "8.Archived",
       "x": 340,
       "y": 5200,
       "width": 1340,
@@ -888,7 +888,7 @@
       "y": 5240,
       "width": 980,
       "height": 880,
-      "color": "2"
+      "color": "3"
     },
     {
       "id": "e5ee18279f60a305",
@@ -903,7 +903,7 @@
     {
       "id": "425a5a5cab2ae4bb",
       "type": "text",
-      "text": "**z-archived_c3-infra-plugin**\n— · —\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)",
+      "text": "**z-archived_c3-infra-plugin**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)",
       "x": 700,
       "y": 5420,
       "width": 300,
@@ -913,7 +913,7 @@
     {
       "id": "8f0417bb73b8a769",
       "type": "text",
-      "text": "**z-archived_cloud-me-pub-data**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data)",
+      "text": "**z-archived_cloud-me-pub-data**\nZ-archived · Cloud-Me\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data)",
       "x": 1020,
       "y": 5420,
       "width": 300,
@@ -923,7 +923,7 @@
     {
       "id": "a15e599cd340a1fd",
       "type": "text",
-      "text": "**z-archived_cloud-me-pvt-data-private**\n— · —\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private)",
+      "text": "**z-archived_cloud-me-pvt-data-private**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private)",
       "x": 1340,
       "y": 5420,
       "width": 300,
@@ -933,7 +933,7 @@
     {
       "id": "b0c01603dae891c0",
       "type": "text",
-      "text": "**z-archived_cloud-me-pvt-legacy**\n— · —\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy)",
+      "text": "**z-archived_cloud-me-pvt-legacy**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy)",
       "x": 700,
       "y": 5560,
       "width": 300,
@@ -943,7 +943,7 @@
     {
       "id": "74a5ff07c9d915d9",
       "type": "text",
-      "text": "**z-archived_front-data**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-data)",
+      "text": "**z-archived_front-data**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-data)",
       "x": 1020,
       "y": 5560,
       "width": 300,
@@ -953,7 +953,7 @@
     {
       "id": "50104f736764018a",
       "type": "text",
-      "text": "**z-archived_front-feeds**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-feeds)",
+      "text": "**z-archived_front-feeds**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-feeds)",
       "x": 1340,
       "y": 5560,
       "width": 300,
@@ -963,7 +963,7 @@
     {
       "id": "71ea730da0f4bc76",
       "type": "text",
-      "text": "**z-archived_front-individual**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-individual)",
+      "text": "**z-archived_front-individual**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-individual)",
       "x": 700,
       "y": 5700,
       "width": 300,
@@ -973,7 +973,7 @@
     {
       "id": "4158ddd6fcd83f6b",
       "type": "text",
-      "text": "**z-archived_front-linktree**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-linktree)",
+      "text": "**z-archived_front-linktree**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-linktree)",
       "x": 1020,
       "y": 5700,
       "width": 300,
@@ -983,7 +983,7 @@
     {
       "id": "ef709c3db7f7928e",
       "type": "text",
-      "text": "**z-archived_front-media**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-media)",
+      "text": "**z-archived_front-media**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-media)",
       "x": 1340,
       "y": 5700,
       "width": 300,
@@ -993,7 +993,7 @@
     {
       "id": "14b767d584797315",
       "type": "text",
-      "text": "**z-archived_front-others**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-others)",
+      "text": "**z-archived_front-others**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-others)",
       "x": 700,
       "y": 5840,
       "width": 300,
@@ -1003,7 +1003,7 @@
     {
       "id": "2fa9cd0e5cd2ced6",
       "type": "text",
-      "text": "**z-archived_front-projects**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-projects)",
+      "text": "**z-archived_front-projects**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-projects)",
       "x": 1020,
       "y": 5840,
       "width": 300,
@@ -1013,7 +1013,7 @@
     {
       "id": "bfd655f190f06a09",
       "type": "text",
-      "text": "**z-archived_front-warehouse**\n— · —\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-warehouse)",
+      "text": "**z-archived_front-warehouse**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-warehouse)",
       "x": 1340,
       "y": 5840,
       "width": 300,
@@ -1023,7 +1023,7 @@
     {
       "id": "fc3fbe67cc471ea7",
       "type": "text",
-      "text": "**z-archived_My-ai-memory**\n— · —\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_My-ai-memory)",
+      "text": "**z-archived_My-ai-memory**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_My-ai-memory)",
       "x": 700,
       "y": 5980,
       "width": 300,
@@ -1032,54 +1032,6 @@
     }
   ],
   "edges": [
-    {
-      "id": "5dcdbf5a31d162b7",
-      "fromNode": "61b37abb2d70ec68",
-      "fromSide": "right",
-      "toNode": "1995239d98b99b14",
-      "toSide": "left",
-      "color": "4"
-    },
-    {
-      "id": "691aad24c90338ac",
-      "fromNode": "1995239d98b99b14",
-      "fromSide": "bottom",
-      "toNode": "a15f44f67ca86eb9",
-      "toSide": "top",
-      "color": "4"
-    },
-    {
-      "id": "4d3e45b50f551ad2",
-      "fromNode": "1995239d98b99b14",
-      "fromSide": "right",
-      "toNode": "77e7f50adc3b44a6",
-      "toSide": "left",
-      "color": "4"
-    },
-    {
-      "id": "7cb0c8b68b5a50cb",
-      "fromNode": "1995239d98b99b14",
-      "fromSide": "right",
-      "toNode": "d8b88f1892f4e226",
-      "toSide": "left",
-      "color": "1"
-    },
-    {
-      "id": "e376e648b2501495",
-      "fromNode": "1995239d98b99b14",
-      "fromSide": "bottom",
-      "toNode": "5abc567817e0718e",
-      "toSide": "top",
-      "color": "1"
-    },
-    {
-      "id": "2741a88433e49fb6",
-      "fromNode": "1995239d98b99b14",
-      "fromSide": "right",
-      "toNode": "d81ed0207ada41de",
-      "toSide": "left",
-      "color": "4"
-    },
     {
       "id": "6a2873cb04630792",
       "fromNode": "61b37abb2d70ec68",
@@ -1319,6 +1271,54 @@
       "toNode": "453ef43ac3b63bbc",
       "toSide": "top",
       "color": "1"
+    },
+    {
+      "id": "5dcdbf5a31d162b7",
+      "fromNode": "61b37abb2d70ec68",
+      "fromSide": "right",
+      "toNode": "1995239d98b99b14",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "691aad24c90338ac",
+      "fromNode": "1995239d98b99b14",
+      "fromSide": "bottom",
+      "toNode": "a15f44f67ca86eb9",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "4d3e45b50f551ad2",
+      "fromNode": "1995239d98b99b14",
+      "fromSide": "right",
+      "toNode": "77e7f50adc3b44a6",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "7cb0c8b68b5a50cb",
+      "fromNode": "1995239d98b99b14",
+      "fromSide": "right",
+      "toNode": "d8b88f1892f4e226",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "e376e648b2501495",
+      "fromNode": "1995239d98b99b14",
+      "fromSide": "bottom",
+      "toNode": "5abc567817e0718e",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "2741a88433e49fb6",
+      "fromNode": "1995239d98b99b14",
+      "fromSide": "right",
+      "toNode": "d81ed0207ada41de",
+      "toSide": "left",
+      "color": "4"
     },
     {
       "id": "916b7f790ea6fa12",

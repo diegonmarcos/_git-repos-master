@@ -48,7 +48,7 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 
 # mutations
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
-mkdir -p "$T/9_others"; cp -r "$ROOT/9_others/templates" "$T/9_others/"; cp "$ROOT"/gen-repo-folders-tree.js "$ROOT"/gen-repos-tree.js "$ROOT"/repos.json "$ROOT"/repos-github.json "$T/"; cp -r "$ROOT/1_repo-folders-tree" "$T/"
+mkdir -p "$T/9_others"; cp -r "$ROOT/9_others/templates" "$T/9_others/"; cp "$ROOT"/gen-repo-folders-tree.js "$ROOT"/gen-repos-tree.js "$ROOT"/registry-model.js "$ROOT"/repos.v3.json "$ROOT"/repos.v3.schema.json "$ROOT"/repos.json "$ROOT"/repos-github.json "$T/"; cp -r "$ROOT/1_repo-folders-tree" "$T/"
 for f in json md html; do ln -s "1_repo-folders-tree/repo-folders-tree.$f" "$T/repo-folders-tree.$f"; done
 node "$T/gen-repo-folders-tree.js" --check >/dev/null 2>&1 && ok "copy is clean" || bad "copy not clean"
 echo x >> "$T/1_repo-folders-tree/repo-folders-tree.md"

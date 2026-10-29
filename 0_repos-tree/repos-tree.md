@@ -18,14 +18,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
 ## Tree
 
 - **[[_git-repos-master]]** · 🌐 public · Repos
-  - 📁 **01.CG/** · Computer graphics: hub CG-___ and its members.
-    - **[[CG-___]]** · 🌐 public
-      - [[CG-circus]] · 🌐 public · Zirkus
-      - [[CG-galaxy]] · 🌐 public · Galaxy
-      - [[CG-galaxy-gaia]] · 🔒 private · Galaxy
-      - [[CG-unity]] · 🔒 private · Galaxy
-      - [[CG-voxel-rust]] · 🌐 public · Galaxy
-  - 📁 **02.Cloudy/** · The cloudy project: hub cloudy-___ and its members.
+  - 📁 **1.1.Cloudy/** · Cloudy (1.1): hub cloudy-___ and its members. The cloudy project: fleet infrastructure, services, devices, data and docs.
     - **[[cloudy-___]]** · 🌐 public · Cloudy
       - [[cloudy_db_assets-cdn]] · 🌐 public · Cloudy
       - [[cloudy_db_infra-ops-obsv_configs-sync]] · 🌐 public · Cloudy
@@ -39,7 +32,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[cloudy-u-containers_cgc]] · 🌐 public · Cloudy
       - [[cloudy-u-desktop]] · 🌐 public · Cloudy
       - [[cloudy-u-linux]] · 🌐 public · Cloudy
-  - 📁 **03.Cloud-me/** · Personal cloud: hub cloud-me-___; Pub/ (cloud-me-pub-___, Pub/Profiles/ cloud-me-pub-profiles-___) and Pvt/ (cloud-me-pvt-___).
+  - 📁 **1.2.Cloud-me/** · Cloud-Me (1.2): hub cloud-me-___ and its members. The owner's personal cloud: public profiles and shared data, private configs, data and secrets.
     - **[[cloud-me-___]]** · 🌐 public · Cloud-Me
       - 📁 **Pub/**
         - **[[cloud-me-pub-___]]** · 🌐 public · Cloud-Me
@@ -60,18 +53,25 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
           - [[cloud-me-pvt-my-ai]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-notes]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-vault]] · 🔒 private · Cloud-Me
-  - 📁 **04.Fin/** · Finance: hub Fin-___; Corporate/ and Capital-Markets/.
-    - **[[Fin-___]]** · 🌐 public · Fin-CM
+  - 📁 **2.CG/** · CG (2): hub CG-___ and its members. Computer graphics: 3D worlds, engines and media production.
+    - **[[CG-___]]** · 🌐 public
+      - [[CG-circus]] · 🌐 public · Zirkus
+      - [[CG-galaxy]] · 🌐 public · Galaxy
+      - [[CG-galaxy-gaia]] · 🔒 private · Galaxy
+      - [[CG-unity]] · 🔒 private · Galaxy
+      - [[CG-voxel-rust]] · 🌐 public · Galaxy
+  - 📁 **3.Fin/** · Financial (3): hub Fin-___ and its members. Finance: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).
+    - **[[Fin-___]]** · 🌐 public
       - 📁 **Capital-Markets/**
-        - [[Fin-CM-Blmbrg]] · 🌐 public · Fin-CM
-        - [[Fin-CM-mqpm]] · 🌐 public · Fin-CM
+        - [[Fin-CM-Blmbrg]] · 🌐 public · CM-Blmbrg
+        - [[Fin-CM-mqpm]] · 🌐 public · CM-MQPM
       - 📁 **Corporate/**
-        - [[Fin-Corporate]] · 🌐 public · Fin-CM
-  - 📁 **05.DeepSc/** · Deep science: hub DeepSc-___ and its members.
+        - [[Fin-Corporate]] · 🌐 public · CORP-Wacc
+  - 📁 **4.DeepSc/** · Deep Science (4): hub DeepSc-___ and its members. Deep science projects and CAD / simulation tools.
     - **[[DeepSc-___]]** · 🌐 public
       - [[CAD-Simulators]] · 🌐 public · CAD-Simulators
       - [[DeepSc-X]] · 🌐 public · DeepSc-X
-  - 📁 **06.Lecole-42/** · 42 coursework: hub lecole-42-___ and its members.
+  - 📁 **5.Lecole-42/** · 42 (5): hub lecole-42-___ and its members. 42 school coursework (a school, not a project): one project per curriculum repo.
     - **[[lecole-42-___]]** · 🌐 public
       - [[lecole-42_back-Algo]] · 🌐 public · 42-algo
       - [[lecole-42_back-Graphic]] · 🌐 public · 42-graphic
@@ -83,44 +83,37 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[lecole-42_ml-MachineLearning]] · 🌐 public · 42-machinelearning
       - [[lecole-42_ops-Mylibs]] · 🌐 public · 42-mylibs
       - [[lecole-42-projects]] · 🔒 private · 42-projects
-  - 📁 **07.Projects/** · Projects: hub Projects-___, its members, DuckPeng/ (sub-hub DuckPeng-___).
+  - 📁 **6.Projects/** · Projects (6): hub Projects-___ and its members. Projects (formerly Front): endeavours, lab tools and DuckPeng.
     - **[[Projects-___]]** · 🌐 public
       - 📁 **DuckPeng/**
-        - **[[DuckPeng-___]]** · 🌐 public
+        - **[[DuckPeng-___]]** · 🌐 public · DuckPeng
       - [[Projects-endeavours]] · 🌐 public · Endeavours
       - [[Projects-labtools]] · 🌐 public · Labtools
-  - 📁 **08.Others/** · Loose GitHub repos with no project hub (profile README, GitHub Pages site).
+  - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[diegonmarcos]] · 🌐 public · Profile
     - [[diegonmarcos.github.io]] · 🌐 public · Pages
-  - 📁 **09.Archived/** · Every z-archived_* repo, under the hub z-archived-___.
+  - 📁 **8.Archived/** · Archived (8): hub z-archived-___ and its members. Every z-archived_* repo, under the hub z-archived-___.
     - **[[z-archived-___]]** · 🌐 public
-      - [[z-archived_c3-infra-plugin]] · 🔒 private
-      - [[z-archived_cloud-me-pub-data]] · 🌐 public
-      - [[z-archived_cloud-me-pvt-data-private]] · 🔒 private
-      - [[z-archived_cloud-me-pvt-legacy]] · 🔒 private
-      - [[z-archived_front-data]] · 🌐 public
-      - [[z-archived_front-feeds]] · 🌐 public
-      - [[z-archived_front-individual]] · 🌐 public
-      - [[z-archived_front-linktree]] · 🌐 public
-      - [[z-archived_front-media]] · 🌐 public
-      - [[z-archived_front-others]] · 🌐 public
-      - [[z-archived_front-projects]] · 🌐 public
-      - [[z-archived_front-warehouse]] · 🌐 public
-      - [[z-archived_My-ai-memory]] · 🔒 private
+      - [[z-archived_c3-infra-plugin]] · 🔒 private · Z-archived
+      - [[z-archived_cloud-me-pub-data]] · 🌐 public · Z-archived
+      - [[z-archived_cloud-me-pvt-data-private]] · 🔒 private · Z-archived
+      - [[z-archived_cloud-me-pvt-legacy]] · 🔒 private · Z-archived
+      - [[z-archived_front-data]] · 🌐 public · Z-archived
+      - [[z-archived_front-feeds]] · 🌐 public · Z-archived
+      - [[z-archived_front-individual]] · 🌐 public · Z-archived
+      - [[z-archived_front-linktree]] · 🌐 public · Z-archived
+      - [[z-archived_front-media]] · 🌐 public · Z-archived
+      - [[z-archived_front-others]] · 🌐 public · Z-archived
+      - [[z-archived_front-projects]] · 🌐 public · Z-archived
+      - [[z-archived_front-warehouse]] · 🌐 public · Z-archived
+      - [[z-archived_My-ai-memory]] · 🔒 private · Z-archived
 
 ## Mermaid
 
 ```mermaid
 graph LR
   n__git_repos_master["_git-repos-master"]
-  n_group_01_CG["01.CG/"]
-  n_CG____["CG-___"]
-  n_CG_circus["CG-circus"]
-  n_CG_galaxy["CG-galaxy"]
-  n_CG_galaxy_gaia["CG-galaxy-gaia"]
-  n_CG_unity["CG-unity"]
-  n_CG_voxel_rust["CG-voxel-rust"]
-  n_group_02_Cloudy["02.Cloudy/"]
+  n_group_1_1_Cloudy["1.1.Cloudy/"]
   n_cloudy____["cloudy-___"]
   n_cloudy_db_assets_cdn["cloudy_db_assets-cdn"]
   n_cloudy_db_infra_ops_obsv_configs_sync["cloudy_db_infra-ops-obsv_configs-sync"]
@@ -134,11 +127,11 @@ graph LR
   n_cloudy_u_containers_cgc["cloudy-u-containers_cgc"]
   n_cloudy_u_desktop["cloudy-u-desktop"]
   n_cloudy_u_linux["cloudy-u-linux"]
-  n_group_03_Cloud_me["03.Cloud-me/"]
+  n_group_1_2_Cloud_me["1.2.Cloud-me/"]
   n_cloud_me____["cloud-me-___"]
-  n_group_03_Cloud_me_Pub["Pub/"]
+  n_group_1_2_Cloud_me_Pub["Pub/"]
   n_cloud_me_pub____["cloud-me-pub-___"]
-  n_group_03_Cloud_me_Pub_Profiles["Profiles/"]
+  n_group_1_2_Cloud_me_Pub_Profiles["Profiles/"]
   n_cloud_me_pub_profiles____["cloud-me-pub-profiles-___"]
   n_cloud_me_pub_profiles__lnktree["cloud-me-pub-profiles-_lnktree"]
   n_cloud_me_pub_profiles_leaf_y["cloud-me-pub-profiles-leaf.y"]
@@ -146,7 +139,7 @@ graph LR
   n_cloud_me_pub_profiles_prf_prs["cloud-me-pub-profiles-prf-prs"]
   n_cloud_me_pub_profiles_stark_x["cloud-me-pub-profiles-stark.x"]
   n_cloud_me_pub_shared["cloud-me-pub-shared"]
-  n_group_03_Cloud_me_Pvt["Pvt/"]
+  n_group_1_2_Cloud_me_Pvt["Pvt/"]
   n_cloud_me_pvt____["cloud-me-pvt-___"]
   n_cloud_me_pvt_cgc["cloud-me-pvt-cgc"]
   n_cloud_me_pvt_configs["cloud-me-pvt-configs"]
@@ -155,18 +148,25 @@ graph LR
   n_cloud_me_pvt_my_ai["cloud-me-pvt-my-ai"]
   n_cloud_me_pvt_notes["cloud-me-pvt-notes"]
   n_cloud_me_pvt_vault["cloud-me-pvt-vault"]
-  n_group_04_Fin["04.Fin/"]
+  n_group_2_CG["2.CG/"]
+  n_CG____["CG-___"]
+  n_CG_circus["CG-circus"]
+  n_CG_galaxy["CG-galaxy"]
+  n_CG_galaxy_gaia["CG-galaxy-gaia"]
+  n_CG_unity["CG-unity"]
+  n_CG_voxel_rust["CG-voxel-rust"]
+  n_group_3_Fin["3.Fin/"]
   n_Fin____["Fin-___"]
-  n_group_04_Fin_Capital_Markets["Capital-Markets/"]
+  n_group_3_Fin_Capital_Markets["Capital-Markets/"]
   n_Fin_CM_Blmbrg["Fin-CM-Blmbrg"]
   n_Fin_CM_mqpm["Fin-CM-mqpm"]
-  n_group_04_Fin_Corporate["Corporate/"]
+  n_group_3_Fin_Corporate["Corporate/"]
   n_Fin_Corporate["Fin-Corporate"]
-  n_group_05_DeepSc["05.DeepSc/"]
+  n_group_4_DeepSc["4.DeepSc/"]
   n_DeepSc____["DeepSc-___"]
   n_CAD_Simulators["CAD-Simulators"]
   n_DeepSc_X["DeepSc-X"]
-  n_group_06_Lecole_42["06.Lecole-42/"]
+  n_group_5_Lecole_42["5.Lecole-42/"]
   n_lecole_42____["lecole-42-___"]
   n_lecole_42_back_Algo["lecole-42_back-Algo"]
   n_lecole_42_back_Graphic["lecole-42_back-Graphic"]
@@ -178,16 +178,16 @@ graph LR
   n_lecole_42_ml_MachineLearning["lecole-42_ml-MachineLearning"]
   n_lecole_42_ops_Mylibs["lecole-42_ops-Mylibs"]
   n_lecole_42_projects["lecole-42-projects"]
-  n_group_07_Projects["07.Projects/"]
+  n_group_6_Projects["6.Projects/"]
   n_Projects____["Projects-___"]
-  n_group_07_Projects_DuckPeng["DuckPeng/"]
+  n_group_6_Projects_DuckPeng["DuckPeng/"]
   n_DuckPeng____["DuckPeng-___"]
   n_Projects_endeavours["Projects-endeavours"]
   n_Projects_labtools["Projects-labtools"]
-  n_group_08_Others["08.Others/"]
+  n_group_7_Others["7.Others/"]
   n_diegonmarcos["diegonmarcos"]
   n_diegonmarcos_github_io["diegonmarcos.github.io"]
-  n_group_09_Archived["09.Archived/"]
+  n_group_8_Archived["8.Archived/"]
   n_z_archived____["z-archived-___"]
   n_z_archived_c3_infra_plugin["z-archived_c3-infra-plugin"]
   n_z_archived_cloud_me_pub_data["z-archived_cloud-me-pub-data"]
@@ -202,15 +202,8 @@ graph LR
   n_z_archived_front_projects["z-archived_front-projects"]
   n_z_archived_front_warehouse["z-archived_front-warehouse"]
   n_z_archived_My_ai_memory["z-archived_My-ai-memory"]
-  n__git_repos_master --> n_group_01_CG
-  n_group_01_CG --> n_CG____
-  n_CG____ --> n_CG_circus
-  n_CG____ --> n_CG_galaxy
-  n_CG____ --> n_CG_galaxy_gaia
-  n_CG____ --> n_CG_unity
-  n_CG____ --> n_CG_voxel_rust
-  n__git_repos_master --> n_group_02_Cloudy
-  n_group_02_Cloudy --> n_cloudy____
+  n__git_repos_master --> n_group_1_1_Cloudy
+  n_group_1_1_Cloudy --> n_cloudy____
   n_cloudy____ --> n_cloudy_db_assets_cdn
   n_cloudy____ --> n_cloudy_db_infra_ops_obsv_configs_sync
   n_cloudy____ --> n_cloudy_db_LFS
@@ -223,20 +216,20 @@ graph LR
   n_cloudy____ --> n_cloudy_u_containers_cgc
   n_cloudy____ --> n_cloudy_u_desktop
   n_cloudy____ --> n_cloudy_u_linux
-  n__git_repos_master --> n_group_03_Cloud_me
-  n_group_03_Cloud_me --> n_cloud_me____
-  n_cloud_me____ --> n_group_03_Cloud_me_Pub
-  n_group_03_Cloud_me_Pub --> n_cloud_me_pub____
-  n_cloud_me_pub____ --> n_group_03_Cloud_me_Pub_Profiles
-  n_group_03_Cloud_me_Pub_Profiles --> n_cloud_me_pub_profiles____
+  n__git_repos_master --> n_group_1_2_Cloud_me
+  n_group_1_2_Cloud_me --> n_cloud_me____
+  n_cloud_me____ --> n_group_1_2_Cloud_me_Pub
+  n_group_1_2_Cloud_me_Pub --> n_cloud_me_pub____
+  n_cloud_me_pub____ --> n_group_1_2_Cloud_me_Pub_Profiles
+  n_group_1_2_Cloud_me_Pub_Profiles --> n_cloud_me_pub_profiles____
   n_cloud_me_pub_profiles____ --> n_cloud_me_pub_profiles__lnktree
   n_cloud_me_pub_profiles____ --> n_cloud_me_pub_profiles_leaf_y
   n_cloud_me_pub_profiles____ --> n_cloud_me_pub_profiles_nexus_z
   n_cloud_me_pub_profiles____ --> n_cloud_me_pub_profiles_prf_prs
   n_cloud_me_pub_profiles____ --> n_cloud_me_pub_profiles_stark_x
   n_cloud_me_pub____ --> n_cloud_me_pub_shared
-  n_cloud_me____ --> n_group_03_Cloud_me_Pvt
-  n_group_03_Cloud_me_Pvt --> n_cloud_me_pvt____
+  n_cloud_me____ --> n_group_1_2_Cloud_me_Pvt
+  n_group_1_2_Cloud_me_Pvt --> n_cloud_me_pvt____
   n_cloud_me_pvt____ --> n_cloud_me_pvt_cgc
   n_cloud_me_pvt____ --> n_cloud_me_pvt_configs
   n_cloud_me_pvt____ --> n_cloud_me_pvt_containers
@@ -244,19 +237,26 @@ graph LR
   n_cloud_me_pvt____ --> n_cloud_me_pvt_my_ai
   n_cloud_me_pvt____ --> n_cloud_me_pvt_notes
   n_cloud_me_pvt____ --> n_cloud_me_pvt_vault
-  n__git_repos_master --> n_group_04_Fin
-  n_group_04_Fin --> n_Fin____
-  n_Fin____ --> n_group_04_Fin_Capital_Markets
-  n_group_04_Fin_Capital_Markets --> n_Fin_CM_Blmbrg
-  n_group_04_Fin_Capital_Markets --> n_Fin_CM_mqpm
-  n_Fin____ --> n_group_04_Fin_Corporate
-  n_group_04_Fin_Corporate --> n_Fin_Corporate
-  n__git_repos_master --> n_group_05_DeepSc
-  n_group_05_DeepSc --> n_DeepSc____
+  n__git_repos_master --> n_group_2_CG
+  n_group_2_CG --> n_CG____
+  n_CG____ --> n_CG_circus
+  n_CG____ --> n_CG_galaxy
+  n_CG____ --> n_CG_galaxy_gaia
+  n_CG____ --> n_CG_unity
+  n_CG____ --> n_CG_voxel_rust
+  n__git_repos_master --> n_group_3_Fin
+  n_group_3_Fin --> n_Fin____
+  n_Fin____ --> n_group_3_Fin_Capital_Markets
+  n_group_3_Fin_Capital_Markets --> n_Fin_CM_Blmbrg
+  n_group_3_Fin_Capital_Markets --> n_Fin_CM_mqpm
+  n_Fin____ --> n_group_3_Fin_Corporate
+  n_group_3_Fin_Corporate --> n_Fin_Corporate
+  n__git_repos_master --> n_group_4_DeepSc
+  n_group_4_DeepSc --> n_DeepSc____
   n_DeepSc____ --> n_CAD_Simulators
   n_DeepSc____ --> n_DeepSc_X
-  n__git_repos_master --> n_group_06_Lecole_42
-  n_group_06_Lecole_42 --> n_lecole_42____
+  n__git_repos_master --> n_group_5_Lecole_42
+  n_group_5_Lecole_42 --> n_lecole_42____
   n_lecole_42____ --> n_lecole_42_back_Algo
   n_lecole_42____ --> n_lecole_42_back_Graphic
   n_lecole_42____ --> n_lecole_42_back_System
@@ -267,17 +267,17 @@ graph LR
   n_lecole_42____ --> n_lecole_42_ml_MachineLearning
   n_lecole_42____ --> n_lecole_42_ops_Mylibs
   n_lecole_42____ --> n_lecole_42_projects
-  n__git_repos_master --> n_group_07_Projects
-  n_group_07_Projects --> n_Projects____
-  n_Projects____ --> n_group_07_Projects_DuckPeng
-  n_group_07_Projects_DuckPeng --> n_DuckPeng____
+  n__git_repos_master --> n_group_6_Projects
+  n_group_6_Projects --> n_Projects____
+  n_Projects____ --> n_group_6_Projects_DuckPeng
+  n_group_6_Projects_DuckPeng --> n_DuckPeng____
   n_Projects____ --> n_Projects_endeavours
   n_Projects____ --> n_Projects_labtools
-  n__git_repos_master --> n_group_08_Others
-  n_group_08_Others --> n_diegonmarcos
-  n_group_08_Others --> n_diegonmarcos_github_io
-  n__git_repos_master --> n_group_09_Archived
-  n_group_09_Archived --> n_z_archived____
+  n__git_repos_master --> n_group_7_Others
+  n_group_7_Others --> n_diegonmarcos
+  n_group_7_Others --> n_diegonmarcos_github_io
+  n__git_repos_master --> n_group_8_Archived
+  n_group_8_Archived --> n_z_archived____
   n_z_archived____ --> n_z_archived_c3_infra_plugin
   n_z_archived____ --> n_z_archived_cloud_me_pub_data
   n_z_archived____ --> n_z_archived_cloud_me_pvt_data_private

@@ -22,7 +22,7 @@ const R=require(root+"/repos.json"), reg=R.repos, gh=require(root+"/repos-github
 const gn=u=>u.replace(/^.*[/:]/,"").replace(/\.git$/,""), byGh=new Map(reg.map(r=>[gn(r.url),r]));
 const par=n=>n===TOP?null:((byGh.get(n)||{}).parent_hub||(byGh.get(n)||{}).hub||TOP);
 const j=JSON.parse(fs.readFileSync(root+"/0_repos-tree/repos-tree.json","utf8"));
-if(j._schema!=="repos-tree/v2") e.push("json schema"); if(j.tree.name!==TOP) e.push("root is not "+TOP);
+if(j._schema!=="repos-tree/v3") e.push("json schema"); if(j.tree.name!==TOP) e.push("root is not "+TOP);
 const tops=j.tree.children.filter(c=>c.kind==="group").map(c=>c.name);
 if(JSON.stringify(tops)!==JSON.stringify(Object.keys(R.farms))) e.push("top groups "+tops+" != farms{} "+Object.keys(R.farms));
 if(j.tree.children.some(c=>c.kind!=="group")) e.push("root has a non-group child");
@@ -36,7 +36,8 @@ const seen=new Map(); const walk=(o,hub,grp)=>{
 walk(j.tree,null,null);
 for(const r of gh){ if(!seen.has(r.name)) e.push("json lacks "+r.name); else if(seen.get(r.name)!==par(r.name)) e.push("json parent "+r.name+" "+seen.get(r.name)+" != "+par(r.name)); }
 if(seen.size!==gh.length||j.count!==gh.length) e.push("json count");
-for(const n of reg) if(n.name.startsWith("z-archived_")&&!n.farm.startsWith("09.Archived")) e.push(n.name+" not in 09.Archived");
+for(const n of reg) if(n.name.startsWith("z-archived_")&&!/^\d+(\.\d+)*\.Archived(\/|$)/.test(n.farm)) e.push(n.name+" not in the Archived farm folder");
+const codes=new Map(); const walk2=(o)=>{ if(o.kind!=="group"){ if(typeof o.code!=="string"||!/^(0|[1-9]\d*(\.\d+)*)$/.test(o.code)) e.push("json code "+o.name+" "+o.code); if(codes.has(o.code)) e.push("json dup code "+o.code); codes.set(o.code,o.name); } (o.children||[]).forEach(walk2); }; walk2(j.tree);
 if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROOT" && ok "json: root -> farms{} groups -> hubs -> repos, every repo once, parents and farms match the registry" || bad "repos-tree.json content"
 
 # canvas + html, read against the JSON
@@ -99,7 +100,7 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 
 # mutations: each must be caught by --check
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
-mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp -r "$ROOT/gen-repos-tree.js" "$ROOT/repos.json" "$ROOT/repos-github.json" "$ROOT/README.md" "$D" "$T/w/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/w/repos-tree.$f"; done; }
+mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp -r "$ROOT/gen-repos-tree.js" "$ROOT/registry-model.js" "$ROOT/repos.v3.json" "$ROOT/repos.v3.schema.json" "$D" "$T/w/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/w/repos-tree.$f"; done; }
 mk; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && ok "copy is clean" || bad "copy not clean"
 mk; f=$(find "$T/w/0_repos-tree/repos-tree" -name '*.md' | head -1); echo x >> "$f"
 node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (edited note) missed" || ok "mutation (edited note) is caught"
@@ -109,6 +110,6 @@ node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (dropped 
 mk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree.children.pop();require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/w/0_repos-tree/repos-tree.json"
 node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (group dropped from JSON) missed" || ok "mutation (group dropped from JSON) is caught"
 mk; rm "$T/w/repos-tree.html"; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (root symlink removed) missed" || ok "mutation (root symlink removed) is caught"
-mk; sed -i 's/"name": "CG-circus", "farm": "01.CG"/"name": "CG-circus", "farm": "05.DeepSc"/' "$T/w/repos.json"; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (registry farm changed) missed" || ok "mutation (registry farm changed) is caught"
-mk; sed -i "s/    CG-circus$/    CG-circus-x/" "$T/w/README.md"; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (README farm tree edited) missed" || ok "mutation (README farm tree edited) is caught"
+mk; sed -i 's/"farm": "2.CG"/"farm": "2.CG-x"/' "$T/w/repos.v3.json"; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (source farm changed) missed" || ok "mutation (source farm in repos.v3.json changed) is caught"
+mk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));const c=j.tree[1].children[1].children[0].children;c.push(j.tree[1].children[0].children[0].children.pop());require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/w/repos.v3.json"; node "$T/w/gen-repos-tree.js" --check >/dev/null 2>&1 && bad "mutation (repo moved between families in the source) missed" || ok "mutation (repo moved in repos.v3.json) is caught"
 exit $fail

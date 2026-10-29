@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# #1073 tester for the repo-list source of truth (repos.json + clone.sh + repos-sot.js).
+# #1073/#1295 tester for the repo-list source of truth (repos.v3.json -> repos.json/repos-github.json/README.md, clone.sh, repos-sot.js).
 # Fails on: registry/link drift, a pending_creation repo being cloned or linked,
 # a missing reorganisation entry, a subset/copy guard that does not bite.
 set -u
@@ -10,6 +10,37 @@ bad() { echo "FAIL  $*"; fail=1; }
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
 
 node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "registry consistent, links match" || { bad "repos-sot.js check"; node "$ROOT/repos-sot.js" check; }
+node "$ROOT/repos-sot.js" check >/dev/null 2>&1 && ok "repos.v3.json valid; repos.json, repos-github.json, README.md, 0_repos-tree equal a fresh render byte-for-byte" || { bad "repos-sot.js check (full)"; node "$ROOT/repos-sot.js" check; }
+if python3 -c 'import jsonschema' 2>/dev/null; then
+  python3 - "$ROOT" <<'PY' && ok "repos.v3.json valid against repos.v3.schema.json (python jsonschema, draft 2020-12)" || bad "repos.v3.json fails repos.v3.schema.json (python jsonschema)"
+import json, sys, jsonschema
+r = sys.argv[1]; s = json.load(open(r + '/repos.v3.schema.json')); d = json.load(open(r + '/repos.v3.json'))
+jsonschema.Draft202012Validator.check_schema(s); e = list(jsonschema.Draft202012Validator(s).iter_errors(d))
+for x in e[:10]: print(list(x.path), x.message)
+sys.exit(1 if e else 0)
+PY
+fi
+# the generated files say so and point at the source
+for f in repos.json repos-github.json README.md; do grep -q 'repos.v3.json' "$ROOT/$f" && ok "$f names its source repos.v3.json" || bad "$f does not name repos.v3.json"; done
+grep -q 'DO NOT EDIT' "$ROOT/README.md" && ok "README.md carries the DO NOT EDIT banner" || bad "README.md lacks the DO NOT EDIT banner"
+
+# #1295 the README / compat guards bite: a scratch copy is clean, then each mutation fails `check`
+SRCS="repos-sot.js registry-model.js gen-registry.js gen-repos-tree.js gen-repo-folders-tree.js repos.v3.json repos.v3.schema.json repos.json repos-github.json README.md"
+gmk() { rm -rf "$T/g"; mkdir -p "$T/g/9_others"; cp -r "$ROOT/9_others/templates" "$T/g/9_others/"; for f in $SRCS; do cp "$ROOT/$f" "$T/g/"; done
+  cp -a "$ROOT/0_repos-tree" "$ROOT"/[1-9].* "$T/g/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/g/repos-tree.$f"; done; }
+gchk() { node "$T/g/repos-sot.js" check >/dev/null 2>&1; }
+gmk; gchk && ok "README guard: scratch copy is clean" || { bad "README guard: scratch copy not clean"; node "$T/g/repos-sot.js" check | head -5; }
+gmk; sed -i '0,/repositories/s/repositories/repos/' "$T/g/README.md"; gchk && bad "hand-edited README.md accepted" || ok "hand-edited README.md (one word) fails the check"
+gmk; printf ' ' >> "$T/g/README.md"; gchk && bad "README.md with one trailing byte accepted" || ok "README.md one byte off fails the check (byte-for-byte)"
+gmk; sed -i 's/^## Clone depth$/## Clone Depth/' "$T/g/9_others/templates/README.md.tpl"; gchk && bad "template edit without re-render accepted" || ok "template edited, README not re-rendered: fails"
+gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[0].children[0].description+=" x";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; gchk && bad "source edit without re-render accepted" || ok "repos.v3.json edited, outputs not re-rendered: fails"
+gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[0].children[0].description+=" x";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; (cd "$T/g" && node -e 'const g=require("./gen-registry.js"),fs=require("fs");for(const[f,t]of Object.entries(g.render()))fs.writeFileSync(f,t)' && node gen-repos-tree.js >/dev/null); gchk && ok "source edit + re-render passes" || bad "source edit + re-render still fails"
+gmk; sed -i 's/"private": true/"private": false/' "$T/g/repos.json"; gchk && bad "hand-edited repos.json accepted" || ok "hand-edited repos.json fails the check"
+gmk; sed -i '0,/"visibility": "private"/s//"visibility": "public"/' "$T/g/repos-github.json"; gchk && bad "hand-edited repos-github.json accepted" || ok "hand-edited repos-github.json fails the check"
+gmk; sed -i '0,/"code": "1.1"/s//"code": "1.9"/' "$T/g/repos.v3.json"; gchk && bad "non-positional code accepted" || ok "a non-positional code in repos.v3.json fails"
+gmk; sed -i '0,/"kind": "family"/s//"kind": "famly"/' "$T/g/repos.v3.json"; gchk && bad "schema violation accepted" || ok "a schema violation (bad kind) fails"
+gmk; sed -i 's/"farm": "4.DeepSc"/"farm": "9.DeepSc"/' "$T/g/repos.v3.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
+gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[1].hub.visibility="private";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; gchk && bad "private hub accepted" || ok "a private hub fails (hub always public)"
 
 node "$ROOT/repos-sot.js" check-hubs >/dev/null 2>&1 && ok "hub hierarchy sound (no cycles, no public->private hub)" || { bad "repos-sot.js check-hubs"; node "$ROOT/repos-sot.js" check-hubs; }
 # live drift (needs gh): node repos-sot.js check-hubs --remote
@@ -83,18 +114,19 @@ echo " " >> "$T/copy.json"; node "$ROOT/repos-sot.js" copy-of "$T/copy.json" >/d
 
 # #1291 farm guards: numbered hub folders, nesting by the hub chain, Archived/Others rules, no legacy group dirs
 farm_mut() { # $1 = label, $2 = node expression mutating r (the registry)
-  rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+  rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$T/fm/"; cp -a "$ROOT"/[1-9].* "$T/fm/"
   node -e 'const fs=require("fs"),r=JSON.parse(fs.readFileSync(process.argv[1]));const by=n=>r.repos.find(x=>x.name===n);'"$2"';fs.writeFileSync(process.argv[2],JSON.stringify(r))' "$ROOT/repos.json" "$T/fm/repos.json"
   node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && bad "farm mutation accepted: $1" || ok "farm mutation caught: $1"; }
-rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+rm -rf "$T/fm"; mkdir -p "$T/fm"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/[1-9].* "$T/fm/"
 node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && ok "farm copy is clean" || bad "farm copy not clean"
-farm_mut "z-archived_* outside 09.Archived" 'by("z-archived_front-data").farm="07.Projects"'
-farm_mut "08.Others repo with a hub" 'by("front-diegonmarcos").hub="Projects-___"'
-farm_mut "member two folders below its hub" 'by("cloud-me-pvt-notes").farm="03.Cloud-me/Pvt/x"'
-farm_mut "farm top folder not declared" 'delete r.farms["05.DeepSc"]'
+farm_mut "z-archived_* outside 8.Archived" 'by("z-archived_front-data").farm="6.Projects"'
+farm_mut "7.Others repo with a hub" 'by("front-diegonmarcos").hub="Projects-___"'
+farm_mut "member two folders below its hub" 'by("cloud-me-pvt-notes").farm="1.2.Cloud-me/Pvt/x"'
+farm_mut "farm top folder not declared" 'delete r.farms["4.DeepSc"]'
+farm_mut "farm top folder not <code>.<Name>" 'r.farms["DeepSc"]=r.farms["4.DeepSc"]'
 farm_mut "entry without farm" 'delete by("CG-unity").farm'
-farm_mut "link moved off its farm" 'by("CG-unity").farm="01.CG/Sub"'
-rm -rf "$T/fm"; mkdir -p "$T/fm/a_cloud"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/0[1-9].* "$T/fm/"
+farm_mut "link moved off its farm" 'by("CG-unity").farm="2.CG/Sub"'
+rm -rf "$T/fm"; mkdir -p "$T/fm/a_cloud"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/[1-9].* "$T/fm/"
 node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && bad "legacy group folder a_cloud/ accepted" || ok "legacy group folder a_cloud/ fails the check"
 for d in 2_vault a_cloud b_projects c_gh d_lecole; do [ -e "$ROOT/$d" ] && bad "legacy farm folder $d/ still present"; done
 

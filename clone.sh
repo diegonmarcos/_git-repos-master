@@ -5,7 +5,7 @@
 # ║   ./clone.sh                list what exists and what does not   ║
 # ║   ./clone.sh <name>...      clone those, then link them          ║
 # ║   ./clone.sh --all          clone everything in repos.json       ║
-# ║   ./clone.sh --group <g>    clone one farm folder (e.g. 01.CG)   ║
+# ║   ./clone.sh --group <g>    clone one farm folder (e.g. 2.CG)     ║
 # ║   ./clone.sh --link         relink whatever is already cloned    ║
 # ║   ./clone.sh --relink       rewrite every link from the registry ║
 # ║   ./clone.sh --sync         push fleet-shared files to all repos ║
@@ -16,8 +16,8 @@
 # This repo is an INDEX, not a container. Clones live outside it (in
 # $CLOUD_GIT_BASE, default ~/cloud-shared-store/git) and appear here as symlinks:
 #
-#     repo-master/02.Cloudy/cloudy-u-desktop             ->  ~/cloud-shared-store/git/cloudy-u-desktop
-#     repo-master/03.Cloud-me/Pvt/cloud-me-pvt-vault      ->  ~/cloud-shared-store/git/cloud-me-pvt-vault
+#     repo-master/1.1.Cloudy/cloudy-u-desktop            ->  ~/cloud-shared-store/git/cloudy-u-desktop
+#     repo-master/1.2.Cloud-me/Pvt/cloud-me-pvt-vault     ->  ~/cloud-shared-store/git/cloud-me-pvt-vault
 #
 # Every repo in the registry has a link, committed, whether or not you have
 # cloned it. A link to a repo you do not have dangles — that is the index
@@ -96,7 +96,7 @@ esac
 # in the fleet, jq is not guaranteed present.
 _names() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write(r.repos.map(x=>x.name).join(" "))' "$REGISTRY"; }
 _field() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const e=r.repos.find(x=>x.name===process.argv[2]);process.stdout.write(e?String(e[process.argv[3]]??""):"")' "$REGISTRY" "$1" "$2"; }
-# #1291 links are placed by `farm` (numbered hub folders, e.g. 03.Cloud-me/Pvt);
+# #1291 links are placed by `farm` (<code>.<Name> folders from repos.v3.json, e.g. 1.2.Cloud-me/Pvt);
 # `group` is a legacy family key that places nothing. A repo with no farm lives
 # at the root; that empty name is emitted as the sentinel "." (word-splitting
 # would drop it) and translated back at the point of use.
@@ -109,7 +109,7 @@ _path() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1]
 
 # An entry with no `farm` links at the ROOT of this repo; one with a farm
 # links inside that (possibly nested) directory. Depth follows: ../ from the
-# root, one more ../ per farm folder (03.Cloud-me/Pvt -> ../../../). Getting that wrong does not fail loudly — it produces a link that
+# root, one more ../ per farm folder (1.2.Cloud-me/Pvt -> ../../../). Getting that wrong does not fail loudly — it produces a link that
 # resolves somewhere plausible and wrong.
 _linkpath() { [ -n "$2" ] && printf '%s/%s/%s' "$SCRIPT_DIR" "$2" "$1" || printf '%s/%s' "$SCRIPT_DIR" "$1"; }
 # $1 is the PATH under $BASE, not the name — they differ whenever an entry sets
@@ -298,7 +298,7 @@ case "${1:-}" in
         [ "$fail" -eq 0 ] || { echo; echo "$fail repo(s) failed — see above."; exit 1; }
         ;;
     --group)
-        # a farm folder (07.Projects, or 03.Cloud-me for everything under it) or a legacy group key (a_cloud)
+        # a farm folder (6.Projects, or 1.2.Cloud-me for everything under it) or a legacy group key (a_cloud)
         g="${2:?usage: clone.sh --group <farm-folder|legacy-group>}"; g="${g%/}"
         for n in $(_names); do f=$(_field "$n" farm)
             { [ "$f" = "$g" ] || [ "${f#"$g"/}" != "$f" ] || [ "$(_field "$n" group)" = "$g" ]; } && { clone_one "$n" || true; }; done

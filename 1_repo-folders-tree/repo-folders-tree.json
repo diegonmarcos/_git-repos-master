@@ -25,1063 +25,26 @@
   "venv"
  ],
  "tree": {
+  "code": "0",
   "name": "_git-repos-master",
   "kind": "hub",
   "visibility": "public",
   "url": "https://github.com/diegonmarcos/_git-repos-master",
   "children": [
    {
-    "name": "01.CG",
+    "name": "1.1.Cloudy",
     "kind": "group",
-    "path": "01.CG",
+    "path": "1.1.Cloudy",
     "children": [
      {
-      "name": "CG-___",
-      "kind": "hub",
-      "visibility": "public",
-      "url": "https://github.com/diegonmarcos/CG-___",
-      "children": [
-       {
-        "name": "CG-circus",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/CG-circus",
-        "status": "ok",
-        "source": "github-api",
-        "head": "aa14654a9db7848cf861c138181a0a8d1b797180",
-        "entries": [
-         {
-          "name": "0_hub",
-          "type": "dir",
-          "children": [
-           {
-            "name": "CG-___",
-            "type": "submodule"
-           }
-          ]
-         },
-         {
-          "name": "c_Circus",
-          "type": "dir",
-          "children": [
-           {
-            "name": "carto",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 2255
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 3275
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "games",
-            "type": "dir",
-            "children": [
-             {
-              "name": ".claude",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "0.spec",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "1.ops",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "static",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".editorconfig",
-              "type": "file",
-              "size": 188
-             },
-             {
-              "name": ".env.example",
-              "type": "file",
-              "size": 2363
-             },
-             {
-              "name": ".eslintrc.cjs",
-              "type": "file",
-              "size": 556
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 357
-             },
-             {
-              "name": ".npmrc",
-              "type": "file",
-              "size": 19
-             },
-             {
-              "name": "app.d.ts",
-              "type": "file",
-              "size": 274
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 206
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 103300
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 872
-             },
-             {
-              "name": "prettier.config.js",
-              "type": "file",
-              "size": 417
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 702
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 687
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 189
-             },
-             {
-              "name": "z-setup_svelte.sh",
-              "type": "file",
-              "size": 1938
-             }
-            ]
-           },
-           {
-            "name": "others",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "about.html",
-              "type": "file",
-              "size": 11794
-             },
-             {
-              "name": "build_index.py",
-              "type": "file",
-              "size": 12732
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 2266
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "cv_timeline.svg",
-              "type": "file",
-              "size": 12764
-             },
-             {
-              "name": "cv.html",
-              "type": "file",
-              "size": 3134
-             },
-             {
-              "name": "earth.html",
-              "type": "file",
-              "size": 6158
-             },
-             {
-              "name": "favicon.ico",
-              "type": "file",
-              "size": 32038
-             },
-             {
-              "name": "feed_yourself.html",
-              "type": "file",
-              "size": 44564
-             },
-             {
-              "name": "health_tracker.html",
-              "type": "file",
-              "size": 48915
-             },
-             {
-              "name": "index.html",
-              "type": "file",
-              "size": 13263
-             },
-             {
-              "name": "maps_md.md",
-              "type": "file",
-              "size": 4542
-             },
-             {
-              "name": "quill.html",
-              "type": "file",
-              "size": 8564
-             },
-             {
-              "name": "repos.html",
-              "type": "file",
-              "size": 9947
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": "Game-Production",
-          "type": "dir",
-          "children": [
-           {
-            "name": "GDevelop",
-            "type": "dir",
-            "children": [
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 441
-             }
-            ]
-           },
-           {
-            "name": "Godot",
-            "type": "dir",
-            "children": [
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 383
-             }
-            ]
-           },
-           {
-            "name": "Unity",
-            "type": "dir",
-            "children": [
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 652
-             }
-            ]
-           },
-           {
-            "name": "README.md",
-            "type": "file",
-            "size": 833
-           }
-          ]
-         },
-         {
-          "name": "Music-Production",
-          "type": "dir",
-          "children": [
-           {
-            "name": "Music-DAW",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 778
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 719
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "Music-Mixer",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 779
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 581
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "README.md",
-            "type": "file",
-            "size": 812
-           }
-          ]
-         },
-         {
-          "name": "Video-Production",
-          "type": "dir",
-          "children": [
-           {
-            "name": "Higgsfield",
-            "type": "dir",
-            "children": [
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 836
-             }
-            ]
-           },
-           {
-            "name": "README.md",
-            "type": "file",
-            "size": 851
-           }
-          ]
-         },
-         {
-          "name": ".github",
-          "type": "symlink",
-          "size": 18,
-          "target": "0_deployer/.github"
-         },
-         {
-          "name": ".gitmodules",
-          "type": "file",
-          "size": 238
-         },
-         {
-          "name": "0_deployer",
-          "type": "submodule"
-         },
-         {
-          "name": "1_cicd",
-          "type": "symlink",
-          "size": 17,
-          "target": "0_deployer/1_cicd"
-         },
-         {
-          "name": "README.md",
-          "type": "file",
-          "size": 1117
-         },
-         {
-          "name": "SPLIT-PATHS.txt",
-          "type": "file",
-          "size": 96
-         }
-        ]
-       },
-       {
-        "name": "CG-galaxy",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/CG-galaxy",
-        "status": "ok",
-        "source": "github-api",
-        "head": "1a2f453251641c276d5553163a314713a30d94f2",
-        "entries": [
-         {
-          "name": "0_hub",
-          "type": "dir",
-          "children": [
-           {
-            "name": "CG-___",
-            "type": "submodule"
-           }
-          ]
-         },
-         {
-          "name": "b_Projects",
-          "type": "dir",
-          "children": [
-           {
-            "name": "galaxy",
-            "type": "dir",
-            "children": [
-             {
-              "name": ".svelte-kit",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "test",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 207
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 664
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 710
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 326
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 202
-             }
-            ]
-           },
-           {
-            "name": "galaxy-earth",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "test",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 54
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 213
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.json",
-              "type": "file",
-              "size": 66517
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 864
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 556
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 326
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 225
-             }
-            ]
-           },
-           {
-            "name": "galaxy-x1",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "scripts",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "test",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 54
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 210
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 819
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 2294
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 556
-             },
-             {
-              "name": "tmp-inspect.mjs",
-              "type": "file",
-              "size": 1907
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 326
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 282
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": ".github",
-          "type": "symlink",
-          "size": 18,
-          "target": "0_deployer/.github"
-         },
-         {
-          "name": ".gitmodules",
-          "type": "file",
-          "size": 238
-         },
-         {
-          "name": "0_deployer",
-          "type": "submodule"
-         },
-         {
-          "name": "1_cicd",
-          "type": "symlink",
-          "size": 17,
-          "target": "0_deployer/1_cicd"
-         },
-         {
-          "name": "README.md",
-          "type": "file",
-          "size": 422
-         },
-         {
-          "name": "SPLIT-PATHS.txt",
-          "type": "file",
-          "size": 63
-         }
-        ]
-       },
-       {
-        "name": "CG-galaxy-gaia",
-        "kind": "repo",
-        "visibility": "private",
-        "url": "https://github.com/diegonmarcos/CG-galaxy-gaia",
-        "status": "private"
-       },
-       {
-        "name": "CG-unity",
-        "kind": "repo",
-        "visibility": "private",
-        "url": "https://github.com/diegonmarcos/CG-unity",
-        "status": "private"
-       },
-       {
-        "name": "CG-voxel-rust",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/CG-voxel-rust",
-        "status": "ok",
-        "source": "github-api",
-        "head": "f3277291d05673d3c0b78635d18a0e488348b63b",
-        "entries": [
-         {
-          "name": "0_hub",
-          "type": "dir",
-          "children": [
-           {
-            "name": "CG-___",
-            "type": "submodule"
-           }
-          ]
-         },
-         {
-          "name": "docs",
-          "type": "dir",
-          "children": [
-           {
-            "name": "vox-rust_Agent-Driven_Voxel_World_Full_Build_Plan.md",
-            "type": "file",
-            "size": 38327
-           }
-          ]
-         },
-         {
-          "name": ".gitmodules",
-          "type": "file",
-          "size": 98
-         },
-         {
-          "name": "README.md",
-          "type": "file",
-          "size": 278
-         }
-        ]
-       }
-      ],
-      "status": "ok",
-      "source": "github-api",
-      "head": "5f675216af4209d8701057af7310c2d627f758fc",
-      "entries": [
-       {
-        "name": ".claude",
-        "type": "dir",
-        "children": [
-         {
-          "name": "agents",
-          "type": "dir",
-          "children": [
-           {
-            "name": "build.md",
-            "type": "file",
-            "size": 529
-           },
-           {
-            "name": "explore.md",
-            "type": "file",
-            "size": 568
-           },
-           {
-            "name": "ops.md",
-            "type": "file",
-            "size": 577
-           },
-           {
-            "name": "README.md",
-            "type": "file",
-            "size": 2460
-           },
-           {
-            "name": "review.md",
-            "type": "file",
-            "size": 524
-           }
-          ]
-         },
-         {
-          "name": "mcp-auth-headers.sh",
-          "type": "file",
-          "size": 7716
-         },
-         {
-          "name": "mcp-connect.mjs",
-          "type": "file",
-          "size": 5653
-         },
-         {
-          "name": "SESSION-SURVIVAL.md",
-          "type": "file",
-          "size": 1648
-         },
-         {
-          "name": "settings.json",
-          "type": "file",
-          "size": 10892
-         }
-        ]
-       },
-       {
-        "name": ".githooks",
-        "type": "dir",
-        "children": [
-         {
-          "name": "history-gate",
-          "type": "file",
-          "size": 3072
-         },
-         {
-          "name": "leak-scan",
-          "type": "file",
-          "size": 3710
-         },
-         {
-          "name": "pre-commit",
-          "type": "file",
-          "size": 1385
-         },
-         {
-          "name": "pre-push",
-          "type": "file",
-          "size": 1395
-         },
-         {
-          "name": "purged-history",
-          "type": "file",
-          "size": 1087
-         }
-        ]
-       },
-       {
-        "name": ".github",
-        "type": "dir",
-        "children": [
-         {
-          "name": "workflows",
-          "type": "dir",
-          "children": [
-           {
-            "name": "leak-scan.yml",
-            "type": "file",
-            "size": 6504
-           }
-          ]
-         }
-        ]
-       },
-       {
-        "name": ".obsidian",
-        "type": "dir",
-        "children": [
-         {
-          "name": "app.json",
-          "type": "file",
-          "size": 35
-         },
-         {
-          "name": "appearance.json",
-          "type": "file",
-          "size": 2
-         },
-         {
-          "name": "core-plugins.json",
-          "type": "file",
-          "size": 696
-         }
-        ]
-       },
-       {
-        "name": ".vscode",
-        "type": "dir",
-        "children": [
-         {
-          "name": "extensions.json",
-          "type": "file",
-          "size": 454
-         },
-         {
-          "name": "settings.json",
-          "type": "file",
-          "size": 1346
-         }
-        ]
-       },
-       {
-        "name": "0_hub",
-        "type": "dir",
-        "children": [
-         {
-          "name": "Projects-___",
-          "type": "submodule"
-         }
-        ]
-       },
-       {
-        "name": ".gitleaks.toml",
-        "type": "file",
-        "size": 3524
-       },
-       {
-        "name": ".gitmodules",
-        "type": "file",
-        "size": 116
-       },
-       {
-        "name": ".mcp.json",
-        "type": "file",
-        "size": 3892
-       },
-       {
-        "name": "CG-circus",
-        "type": "symlink",
-        "size": 12,
-        "target": "../CG-circus"
-       },
-       {
-        "name": "CG-galaxy",
-        "type": "symlink",
-        "size": 12,
-        "target": "../CG-galaxy"
-       },
-       {
-        "name": "CG-galaxy-gaia",
-        "type": "symlink",
-        "size": 17,
-        "target": "../CG-galaxy-gaia"
-       },
-       {
-        "name": "CG-unity",
-        "type": "symlink",
-        "size": 11,
-        "target": "../CG-unity"
-       },
-       {
-        "name": "CG-voxel-rust",
-        "type": "symlink",
-        "size": 16,
-        "target": "../CG-voxel-rust"
-       },
-       {
-        "name": "check-repos-sot.sh",
-        "type": "file",
-        "size": 1083
-       },
-       {
-        "name": "CLAUDE.md",
-        "type": "file",
-        "size": 86
-       },
-       {
-        "name": "clone.sh",
-        "type": "file",
-        "size": 8060
-       },
-       {
-        "name": "LICENSE",
-        "type": "file",
-        "size": 4649
-       },
-       {
-        "name": "LICENSING.md",
-        "type": "file",
-        "size": 1073
-       },
-       {
-        "name": "README.md",
-        "type": "file",
-        "size": 1963
-       },
-       {
-        "name": "repos.json",
-        "type": "file",
-        "size": 2169
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "name": "02.Cloudy",
-    "kind": "group",
-    "path": "02.Cloudy",
-    "children": [
-     {
+      "code": "1.1.0",
       "name": "cloudy-___",
       "kind": "hub",
       "visibility": "public",
       "url": "https://github.com/diegonmarcos/cloudy-___",
       "children": [
        {
+        "code": "1.1.3.1",
         "name": "cloudy_db_assets-cdn",
         "kind": "repo",
         "visibility": "public",
@@ -1279,6 +242,7 @@
         ]
        },
        {
+        "code": "1.1.3.2",
         "name": "cloudy_db_infra-ops-obsv_configs-sync",
         "kind": "repo",
         "visibility": "public",
@@ -1315,6 +279,7 @@
         ]
        },
        {
+        "code": "1.1.3.3",
         "name": "cloudy_db_LFS",
         "kind": "repo",
         "visibility": "private",
@@ -1322,6 +287,7 @@
         "status": "private"
        },
        {
+        "code": "1.1.5.1",
         "name": "cloudy-a-docs",
         "kind": "repo",
         "visibility": "private",
@@ -1329,6 +295,7 @@
         "status": "private"
        },
        {
+        "code": "1.1.7.1",
         "name": "cloudy-h-webapps",
         "kind": "repo",
         "visibility": "public",
@@ -5216,6 +4183,7 @@
         ]
        },
        {
+        "code": "1.1.7.2",
         "name": "cloudy-h-webapps-2",
         "kind": "repo",
         "visibility": "public",
@@ -6067,6 +5035,7 @@
         ]
        },
        {
+        "code": "1.1.2.1",
         "name": "cloudy-t-infra",
         "kind": "repo",
         "visibility": "public",
@@ -9933,6 +8902,7 @@
         ]
        },
        {
+        "code": "1.1.1.1",
         "name": "cloudy-u-android",
         "kind": "repo",
         "visibility": "public",
@@ -24819,6 +23789,7 @@
         ]
        },
        {
+        "code": "1.1.2.2",
         "name": "cloudy-u-containers",
         "kind": "repo",
         "visibility": "public",
@@ -38372,6 +37343,7 @@
         ]
        },
        {
+        "code": "1.1.2.3",
         "name": "cloudy-u-containers_cgc",
         "kind": "repo",
         "visibility": "public",
@@ -38791,6 +37763,7 @@
         ]
        },
        {
+        "code": "1.1.4.1",
         "name": "cloudy-u-desktop",
         "kind": "repo",
         "visibility": "public",
@@ -40606,6 +39579,7 @@
         ]
        },
        {
+        "code": "1.1.6.1",
         "name": "cloudy-u-linux",
         "kind": "repo",
         "visibility": "public",
@@ -43747,11 +42721,12 @@
     ]
    },
    {
-    "name": "03.Cloud-me",
+    "name": "1.2.Cloud-me",
     "kind": "group",
-    "path": "03.Cloud-me",
+    "path": "1.2.Cloud-me",
     "children": [
      {
+      "code": "1.2.0",
       "name": "cloud-me-___",
       "kind": "hub",
       "visibility": "public",
@@ -43760,9 +42735,10 @@
        {
         "name": "Pub",
         "kind": "group",
-        "path": "03.Cloud-me/Pub",
+        "path": "1.2.Cloud-me/Pub",
         "children": [
          {
+          "code": "1.2.1.0",
           "name": "cloud-me-pub-___",
           "kind": "hub",
           "visibility": "public",
@@ -43771,15 +42747,17 @@
            {
             "name": "Profiles",
             "kind": "group",
-            "path": "03.Cloud-me/Pub/Profiles",
+            "path": "1.2.Cloud-me/Pub/Profiles",
             "children": [
              {
+              "code": "1.2.1.1.0",
               "name": "cloud-me-pub-profiles-___",
               "kind": "hub",
               "visibility": "public",
               "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-___",
               "children": [
                {
+                "code": "1.2.1.1.1",
                 "name": "cloud-me-pub-profiles-_lnktree",
                 "kind": "repo",
                 "visibility": "public",
@@ -44085,6 +43063,7 @@
                 ]
                },
                {
+                "code": "1.2.1.1.2",
                 "name": "cloud-me-pub-profiles-leaf.y",
                 "kind": "repo",
                 "visibility": "public",
@@ -44451,6 +43430,7 @@
                 ]
                },
                {
+                "code": "1.2.1.1.3",
                 "name": "cloud-me-pub-profiles-nexus.z",
                 "kind": "repo",
                 "visibility": "public",
@@ -44830,6 +43810,7 @@
                 ]
                },
                {
+                "code": "1.2.1.1.4",
                 "name": "cloud-me-pub-profiles-prf-prs",
                 "kind": "repo",
                 "visibility": "public",
@@ -45247,6 +44228,7 @@
                 ]
                },
                {
+                "code": "1.2.1.1.5",
                 "name": "cloud-me-pub-profiles-stark.x",
                 "kind": "repo",
                 "visibility": "public",
@@ -45796,6 +44778,7 @@
             ]
            },
            {
+            "code": "1.2.1.2.1",
             "name": "cloud-me-pub-shared",
             "kind": "repo",
             "visibility": "public",
@@ -46423,15 +45406,17 @@
        {
         "name": "Pvt",
         "kind": "group",
-        "path": "03.Cloud-me/Pvt",
+        "path": "1.2.Cloud-me/Pvt",
         "children": [
          {
+          "code": "1.2.2.0",
           "name": "cloud-me-pvt-___",
           "kind": "hub",
           "visibility": "public",
           "url": "https://github.com/diegonmarcos/cloud-me-pvt-___",
           "children": [
            {
+            "code": "1.2.2.2.1",
             "name": "cloud-me-pvt-cgc",
             "kind": "repo",
             "visibility": "private",
@@ -46439,6 +45424,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.3.1",
             "name": "cloud-me-pvt-configs",
             "kind": "repo",
             "visibility": "private",
@@ -46446,6 +45432,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.4.1",
             "name": "cloud-me-pvt-containers",
             "kind": "repo",
             "visibility": "private",
@@ -46453,6 +45440,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.5.1",
             "name": "cloud-me-pvt-data",
             "kind": "repo",
             "visibility": "private",
@@ -46460,6 +45448,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.1.1",
             "name": "cloud-me-pvt-my-ai",
             "kind": "repo",
             "visibility": "private",
@@ -46467,6 +45456,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.6.1",
             "name": "cloud-me-pvt-notes",
             "kind": "repo",
             "visibility": "private",
@@ -46474,6 +45464,7 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.7.1",
             "name": "cloud-me-pvt-vault",
             "kind": "repo",
             "visibility": "private",
@@ -47027,11 +46018,1058 @@
     ]
    },
    {
-    "name": "04.Fin",
+    "name": "2.CG",
     "kind": "group",
-    "path": "04.Fin",
+    "path": "2.CG",
     "children": [
      {
+      "code": "2.0",
+      "name": "CG-___",
+      "kind": "hub",
+      "visibility": "public",
+      "url": "https://github.com/diegonmarcos/CG-___",
+      "children": [
+       {
+        "code": "2.2.1.1",
+        "name": "CG-circus",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/CG-circus",
+        "status": "ok",
+        "source": "github-api",
+        "head": "aa14654a9db7848cf861c138181a0a8d1b797180",
+        "entries": [
+         {
+          "name": "0_hub",
+          "type": "dir",
+          "children": [
+           {
+            "name": "CG-___",
+            "type": "submodule"
+           }
+          ]
+         },
+         {
+          "name": "c_Circus",
+          "type": "dir",
+          "children": [
+           {
+            "name": "carto",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 2255
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 3275
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "games",
+            "type": "dir",
+            "children": [
+             {
+              "name": ".claude",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "0.spec",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "1.ops",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "static",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".editorconfig",
+              "type": "file",
+              "size": 188
+             },
+             {
+              "name": ".env.example",
+              "type": "file",
+              "size": 2363
+             },
+             {
+              "name": ".eslintrc.cjs",
+              "type": "file",
+              "size": 556
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 357
+             },
+             {
+              "name": ".npmrc",
+              "type": "file",
+              "size": 19
+             },
+             {
+              "name": "app.d.ts",
+              "type": "file",
+              "size": 274
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 206
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 103300
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 872
+             },
+             {
+              "name": "prettier.config.js",
+              "type": "file",
+              "size": 417
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 702
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 687
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 189
+             },
+             {
+              "name": "z-setup_svelte.sh",
+              "type": "file",
+              "size": 1938
+             }
+            ]
+           },
+           {
+            "name": "others",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "about.html",
+              "type": "file",
+              "size": 11794
+             },
+             {
+              "name": "build_index.py",
+              "type": "file",
+              "size": 12732
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 2266
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "cv_timeline.svg",
+              "type": "file",
+              "size": 12764
+             },
+             {
+              "name": "cv.html",
+              "type": "file",
+              "size": 3134
+             },
+             {
+              "name": "earth.html",
+              "type": "file",
+              "size": 6158
+             },
+             {
+              "name": "favicon.ico",
+              "type": "file",
+              "size": 32038
+             },
+             {
+              "name": "feed_yourself.html",
+              "type": "file",
+              "size": 44564
+             },
+             {
+              "name": "health_tracker.html",
+              "type": "file",
+              "size": 48915
+             },
+             {
+              "name": "index.html",
+              "type": "file",
+              "size": 13263
+             },
+             {
+              "name": "maps_md.md",
+              "type": "file",
+              "size": 4542
+             },
+             {
+              "name": "quill.html",
+              "type": "file",
+              "size": 8564
+             },
+             {
+              "name": "repos.html",
+              "type": "file",
+              "size": 9947
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "Game-Production",
+          "type": "dir",
+          "children": [
+           {
+            "name": "GDevelop",
+            "type": "dir",
+            "children": [
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 441
+             }
+            ]
+           },
+           {
+            "name": "Godot",
+            "type": "dir",
+            "children": [
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 383
+             }
+            ]
+           },
+           {
+            "name": "Unity",
+            "type": "dir",
+            "children": [
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 652
+             }
+            ]
+           },
+           {
+            "name": "README.md",
+            "type": "file",
+            "size": 833
+           }
+          ]
+         },
+         {
+          "name": "Music-Production",
+          "type": "dir",
+          "children": [
+           {
+            "name": "Music-DAW",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 778
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 719
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "Music-Mixer",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 779
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 581
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "README.md",
+            "type": "file",
+            "size": 812
+           }
+          ]
+         },
+         {
+          "name": "Video-Production",
+          "type": "dir",
+          "children": [
+           {
+            "name": "Higgsfield",
+            "type": "dir",
+            "children": [
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 836
+             }
+            ]
+           },
+           {
+            "name": "README.md",
+            "type": "file",
+            "size": 851
+           }
+          ]
+         },
+         {
+          "name": ".github",
+          "type": "symlink",
+          "size": 18,
+          "target": "0_deployer/.github"
+         },
+         {
+          "name": ".gitmodules",
+          "type": "file",
+          "size": 238
+         },
+         {
+          "name": "0_deployer",
+          "type": "submodule"
+         },
+         {
+          "name": "1_cicd",
+          "type": "symlink",
+          "size": 17,
+          "target": "0_deployer/1_cicd"
+         },
+         {
+          "name": "README.md",
+          "type": "file",
+          "size": 1117
+         },
+         {
+          "name": "SPLIT-PATHS.txt",
+          "type": "file",
+          "size": 96
+         }
+        ]
+       },
+       {
+        "code": "2.1.1.1",
+        "name": "CG-galaxy",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/CG-galaxy",
+        "status": "ok",
+        "source": "github-api",
+        "head": "1a2f453251641c276d5553163a314713a30d94f2",
+        "entries": [
+         {
+          "name": "0_hub",
+          "type": "dir",
+          "children": [
+           {
+            "name": "CG-___",
+            "type": "submodule"
+           }
+          ]
+         },
+         {
+          "name": "b_Projects",
+          "type": "dir",
+          "children": [
+           {
+            "name": "galaxy",
+            "type": "dir",
+            "children": [
+             {
+              "name": ".svelte-kit",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "test",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 207
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 664
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 710
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 326
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 202
+             }
+            ]
+           },
+           {
+            "name": "galaxy-earth",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "test",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 54
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 213
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.json",
+              "type": "file",
+              "size": 66517
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 864
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 556
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 326
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 225
+             }
+            ]
+           },
+           {
+            "name": "galaxy-x1",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "scripts",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "test",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 54
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 210
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 819
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 2294
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 556
+             },
+             {
+              "name": "tmp-inspect.mjs",
+              "type": "file",
+              "size": 1907
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 326
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 282
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": ".github",
+          "type": "symlink",
+          "size": 18,
+          "target": "0_deployer/.github"
+         },
+         {
+          "name": ".gitmodules",
+          "type": "file",
+          "size": 238
+         },
+         {
+          "name": "0_deployer",
+          "type": "submodule"
+         },
+         {
+          "name": "1_cicd",
+          "type": "symlink",
+          "size": 17,
+          "target": "0_deployer/1_cicd"
+         },
+         {
+          "name": "README.md",
+          "type": "file",
+          "size": 422
+         },
+         {
+          "name": "SPLIT-PATHS.txt",
+          "type": "file",
+          "size": 63
+         }
+        ]
+       },
+       {
+        "code": "2.1.1.2",
+        "name": "CG-galaxy-gaia",
+        "kind": "repo",
+        "visibility": "private",
+        "url": "https://github.com/diegonmarcos/CG-galaxy-gaia",
+        "status": "private"
+       },
+       {
+        "code": "2.1.2.1",
+        "name": "CG-unity",
+        "kind": "repo",
+        "visibility": "private",
+        "url": "https://github.com/diegonmarcos/CG-unity",
+        "status": "private"
+       },
+       {
+        "code": "2.1.3.1",
+        "name": "CG-voxel-rust",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/CG-voxel-rust",
+        "status": "ok",
+        "source": "github-api",
+        "head": "f3277291d05673d3c0b78635d18a0e488348b63b",
+        "entries": [
+         {
+          "name": "0_hub",
+          "type": "dir",
+          "children": [
+           {
+            "name": "CG-___",
+            "type": "submodule"
+           }
+          ]
+         },
+         {
+          "name": "docs",
+          "type": "dir",
+          "children": [
+           {
+            "name": "vox-rust_Agent-Driven_Voxel_World_Full_Build_Plan.md",
+            "type": "file",
+            "size": 38327
+           }
+          ]
+         },
+         {
+          "name": ".gitmodules",
+          "type": "file",
+          "size": 98
+         },
+         {
+          "name": "README.md",
+          "type": "file",
+          "size": 278
+         }
+        ]
+       }
+      ],
+      "status": "ok",
+      "source": "github-api",
+      "head": "5f675216af4209d8701057af7310c2d627f758fc",
+      "entries": [
+       {
+        "name": ".claude",
+        "type": "dir",
+        "children": [
+         {
+          "name": "agents",
+          "type": "dir",
+          "children": [
+           {
+            "name": "build.md",
+            "type": "file",
+            "size": 529
+           },
+           {
+            "name": "explore.md",
+            "type": "file",
+            "size": 568
+           },
+           {
+            "name": "ops.md",
+            "type": "file",
+            "size": 577
+           },
+           {
+            "name": "README.md",
+            "type": "file",
+            "size": 2460
+           },
+           {
+            "name": "review.md",
+            "type": "file",
+            "size": 524
+           }
+          ]
+         },
+         {
+          "name": "mcp-auth-headers.sh",
+          "type": "file",
+          "size": 7716
+         },
+         {
+          "name": "mcp-connect.mjs",
+          "type": "file",
+          "size": 5653
+         },
+         {
+          "name": "SESSION-SURVIVAL.md",
+          "type": "file",
+          "size": 1648
+         },
+         {
+          "name": "settings.json",
+          "type": "file",
+          "size": 10892
+         }
+        ]
+       },
+       {
+        "name": ".githooks",
+        "type": "dir",
+        "children": [
+         {
+          "name": "history-gate",
+          "type": "file",
+          "size": 3072
+         },
+         {
+          "name": "leak-scan",
+          "type": "file",
+          "size": 3710
+         },
+         {
+          "name": "pre-commit",
+          "type": "file",
+          "size": 1385
+         },
+         {
+          "name": "pre-push",
+          "type": "file",
+          "size": 1395
+         },
+         {
+          "name": "purged-history",
+          "type": "file",
+          "size": 1087
+         }
+        ]
+       },
+       {
+        "name": ".github",
+        "type": "dir",
+        "children": [
+         {
+          "name": "workflows",
+          "type": "dir",
+          "children": [
+           {
+            "name": "leak-scan.yml",
+            "type": "file",
+            "size": 6504
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": ".obsidian",
+        "type": "dir",
+        "children": [
+         {
+          "name": "app.json",
+          "type": "file",
+          "size": 35
+         },
+         {
+          "name": "appearance.json",
+          "type": "file",
+          "size": 2
+         },
+         {
+          "name": "core-plugins.json",
+          "type": "file",
+          "size": 696
+         }
+        ]
+       },
+       {
+        "name": ".vscode",
+        "type": "dir",
+        "children": [
+         {
+          "name": "extensions.json",
+          "type": "file",
+          "size": 454
+         },
+         {
+          "name": "settings.json",
+          "type": "file",
+          "size": 1346
+         }
+        ]
+       },
+       {
+        "name": "0_hub",
+        "type": "dir",
+        "children": [
+         {
+          "name": "Projects-___",
+          "type": "submodule"
+         }
+        ]
+       },
+       {
+        "name": ".gitleaks.toml",
+        "type": "file",
+        "size": 3524
+       },
+       {
+        "name": ".gitmodules",
+        "type": "file",
+        "size": 116
+       },
+       {
+        "name": ".mcp.json",
+        "type": "file",
+        "size": 3892
+       },
+       {
+        "name": "CG-circus",
+        "type": "symlink",
+        "size": 12,
+        "target": "../CG-circus"
+       },
+       {
+        "name": "CG-galaxy",
+        "type": "symlink",
+        "size": 12,
+        "target": "../CG-galaxy"
+       },
+       {
+        "name": "CG-galaxy-gaia",
+        "type": "symlink",
+        "size": 17,
+        "target": "../CG-galaxy-gaia"
+       },
+       {
+        "name": "CG-unity",
+        "type": "symlink",
+        "size": 11,
+        "target": "../CG-unity"
+       },
+       {
+        "name": "CG-voxel-rust",
+        "type": "symlink",
+        "size": 16,
+        "target": "../CG-voxel-rust"
+       },
+       {
+        "name": "check-repos-sot.sh",
+        "type": "file",
+        "size": 1083
+       },
+       {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "size": 86
+       },
+       {
+        "name": "clone.sh",
+        "type": "file",
+        "size": 8060
+       },
+       {
+        "name": "LICENSE",
+        "type": "file",
+        "size": 4649
+       },
+       {
+        "name": "LICENSING.md",
+        "type": "file",
+        "size": 1073
+       },
+       {
+        "name": "README.md",
+        "type": "file",
+        "size": 1963
+       },
+       {
+        "name": "repos.json",
+        "type": "file",
+        "size": 2169
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "3.Fin",
+    "kind": "group",
+    "path": "3.Fin",
+    "children": [
+     {
+      "code": "3.0",
       "name": "Fin-___",
       "kind": "hub",
       "visibility": "public",
@@ -47040,9 +47078,10 @@
        {
         "name": "Capital-Markets",
         "kind": "group",
-        "path": "04.Fin/Capital-Markets",
+        "path": "3.Fin/Capital-Markets",
         "children": [
          {
+          "code": "3.2.1.1",
           "name": "Fin-CM-Blmbrg",
           "kind": "repo",
           "visibility": "public",
@@ -47330,6 +47369,7 @@
           ]
          },
          {
+          "code": "3.1.1.1",
           "name": "Fin-CM-mqpm",
           "kind": "repo",
           "visibility": "public",
@@ -47524,9 +47564,10 @@
        {
         "name": "Corporate",
         "kind": "group",
-        "path": "04.Fin/Corporate",
+        "path": "3.Fin/Corporate",
         "children": [
          {
+          "code": "3.3.1.1",
           "name": "Fin-Corporate",
           "kind": "repo",
           "visibility": "public",
@@ -47789,17 +47830,19 @@
     ]
    },
    {
-    "name": "05.DeepSc",
+    "name": "4.DeepSc",
     "kind": "group",
-    "path": "05.DeepSc",
+    "path": "4.DeepSc",
     "children": [
      {
+      "code": "4.0",
       "name": "DeepSc-___",
       "kind": "hub",
       "visibility": "public",
       "url": "https://github.com/diegonmarcos/DeepSc-___",
       "children": [
        {
+        "code": "4.2.1.1",
         "name": "CAD-Simulators",
         "kind": "repo",
         "visibility": "public",
@@ -47951,6 +47994,7 @@
         ]
        },
        {
+        "code": "4.1.1.1",
         "name": "DeepSc-X",
         "kind": "repo",
         "visibility": "public",
@@ -48265,17 +48309,19 @@
     ]
    },
    {
-    "name": "06.Lecole-42",
+    "name": "5.Lecole-42",
     "kind": "group",
-    "path": "06.Lecole-42",
+    "path": "5.Lecole-42",
     "children": [
      {
+      "code": "5.0",
       "name": "lecole-42-___",
       "kind": "hub",
       "visibility": "public",
       "url": "https://github.com/diegonmarcos/lecole-42-___",
       "children": [
        {
+        "code": "5.1.1.1",
         "name": "lecole-42_back-Algo",
         "kind": "repo",
         "visibility": "public",
@@ -48552,6 +48598,7 @@
         ]
        },
        {
+        "code": "5.2.1.1",
         "name": "lecole-42_back-Graphic",
         "kind": "repo",
         "visibility": "public",
@@ -48693,6 +48740,7 @@
         ]
        },
        {
+        "code": "5.3.1.1",
         "name": "lecole-42_back-System",
         "kind": "repo",
         "visibility": "public",
@@ -48963,6 +49011,7 @@
         ]
        },
        {
+        "code": "5.9.1.1",
         "name": "lecole-42_cyber-Cyberwarfare",
         "kind": "repo",
         "visibility": "public",
@@ -49020,6 +49069,7 @@
         ]
        },
        {
+        "code": "5.10.1.1",
         "name": "lecole-42_dev",
         "kind": "repo",
         "visibility": "private",
@@ -49027,6 +49077,7 @@
         "status": "private"
        },
        {
+        "code": "5.6.1.1",
         "name": "lecole-42_ml-Agentic",
         "kind": "repo",
         "visibility": "public",
@@ -49848,6 +49899,7 @@
         ]
        },
        {
+        "code": "5.7.1.1",
         "name": "lecole-42_ml-DataScience",
         "kind": "repo",
         "visibility": "public",
@@ -49910,6 +49962,7 @@
         ]
        },
        {
+        "code": "5.8.1.1",
         "name": "lecole-42_ml-MachineLearning",
         "kind": "repo",
         "visibility": "public",
@@ -50064,6 +50117,7 @@
         ]
        },
        {
+        "code": "5.4.1.1",
         "name": "lecole-42_ops-Mylibs",
         "kind": "repo",
         "visibility": "public",
@@ -50736,6 +50790,7 @@
         ]
        },
        {
+        "code": "5.5.1.1",
         "name": "lecole-42-projects",
         "kind": "repo",
         "visibility": "private",
@@ -50847,11 +50902,12 @@
     ]
    },
    {
-    "name": "07.Projects",
+    "name": "6.Projects",
     "kind": "group",
-    "path": "07.Projects",
+    "path": "6.Projects",
     "children": [
      {
+      "code": "6.0",
       "name": "Projects-___",
       "kind": "hub",
       "visibility": "public",
@@ -50860,9 +50916,10 @@
        {
         "name": "DuckPeng",
         "kind": "group",
-        "path": "07.Projects/DuckPeng",
+        "path": "6.Projects/DuckPeng",
         "children": [
          {
+          "code": "6.3.0",
           "name": "DuckPeng-___",
           "kind": "hub",
           "visibility": "public",
@@ -51091,6 +51148,7 @@
         ]
        },
        {
+        "code": "6.1.1.1",
         "name": "Projects-endeavours",
         "kind": "repo",
         "visibility": "public",
@@ -51411,6 +51469,7 @@
         ]
        },
        {
+        "code": "6.2.1.1",
         "name": "Projects-labtools",
         "kind": "repo",
         "visibility": "public",
@@ -51939,11 +51998,12 @@
     ]
    },
    {
-    "name": "08.Others",
+    "name": "7.Others",
     "kind": "group",
-    "path": "08.Others",
+    "path": "7.Others",
     "children": [
      {
+      "code": "7.1.1.1",
       "name": "diegonmarcos",
       "kind": "repo",
       "visibility": "public",
@@ -52311,6 +52371,7 @@
       ]
      },
      {
+      "code": "7.2.1.1",
       "name": "diegonmarcos.github.io",
       "kind": "repo",
       "visibility": "public",
@@ -56716,17 +56777,19 @@
     ]
    },
    {
-    "name": "09.Archived",
+    "name": "8.Archived",
     "kind": "group",
-    "path": "09.Archived",
+    "path": "8.Archived",
     "children": [
      {
+      "code": "8.0",
       "name": "z-archived-___",
       "kind": "hub",
       "visibility": "public",
       "url": "https://github.com/diegonmarcos/z-archived-___",
       "children": [
        {
+        "code": "8.1.3.1",
         "name": "z-archived_c3-infra-plugin",
         "kind": "repo",
         "visibility": "private",
@@ -56734,6 +56797,7 @@
         "status": "private"
        },
        {
+        "code": "8.1.1.1",
         "name": "z-archived_cloud-me-pub-data",
         "kind": "repo",
         "visibility": "public",
@@ -56791,6 +56855,7 @@
         ]
        },
        {
+        "code": "8.1.1.2",
         "name": "z-archived_cloud-me-pvt-data-private",
         "kind": "repo",
         "visibility": "private",
@@ -56798,6 +56863,7 @@
         "status": "private"
        },
        {
+        "code": "8.1.1.3",
         "name": "z-archived_cloud-me-pvt-legacy",
         "kind": "repo",
         "visibility": "private",
@@ -56805,6 +56871,7 @@
         "status": "private"
        },
        {
+        "code": "8.1.2.1",
         "name": "z-archived_front-data",
         "kind": "repo",
         "visibility": "public",
@@ -57229,6 +57296,7 @@
         ]
        },
        {
+        "code": "8.1.2.2",
         "name": "z-archived_front-feeds",
         "kind": "repo",
         "visibility": "public",
@@ -57478,6 +57546,7 @@
         ]
        },
        {
+        "code": "8.1.2.3",
         "name": "z-archived_front-individual",
         "kind": "repo",
         "visibility": "public",
@@ -57695,6 +57764,7 @@
         ]
        },
        {
+        "code": "8.1.2.4",
         "name": "z-archived_front-linktree",
         "kind": "repo",
         "visibility": "public",
@@ -57747,6 +57817,7 @@
         ]
        },
        {
+        "code": "8.1.2.5",
         "name": "z-archived_front-media",
         "kind": "repo",
         "visibility": "public",
@@ -57848,6 +57919,7 @@
         ]
        },
        {
+        "code": "8.1.2.6",
         "name": "z-archived_front-others",
         "kind": "repo",
         "visibility": "public",
@@ -58004,6 +58076,7 @@
         ]
        },
        {
+        "code": "8.1.2.7",
         "name": "z-archived_front-projects",
         "kind": "repo",
         "visibility": "public",
@@ -60698,6 +60771,7 @@
         ]
        },
        {
+        "code": "8.1.2.8",
         "name": "z-archived_front-warehouse",
         "kind": "repo",
         "visibility": "public",
@@ -60809,6 +60883,7 @@
         ]
        },
        {
+        "code": "8.1.3.2",
         "name": "z-archived_My-ai-memory",
         "kind": "repo",
         "visibility": "private",

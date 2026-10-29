@@ -1,13 +1,20 @@
 #!/usr/bin/env node
-// repos-sot.js - the ONE guard for the repo list (#1073).
+// repos-sot.js - the ONE guard for the repo list (#1073, #1295).
+// THE ONE SOURCE is repos.v3.json (schema repos.v3.schema.json); repos.json, repos-github.json, README.md,
+// 0_repos-tree/* are rendered from it (gen-registry.js, gen-repos-tree.js) and must never be edited.
 //
-//   node repos-sot.js check [repos.json]            registry is consistent and the committed
-//                                                   symlink farm matches it
+//   node repos-sot.js check                         the source is valid (schema + rules), repos.json / repos-github.json /
+//                                                   README.md / 0_repos-tree/* equal a fresh render BYTE-FOR-BYTE, the
+//                                                   rendered registry is consistent and the committed symlink farm matches it
+//   node repos-sot.js check <repos.json>            only the registry/farm/link checks, on that cloud-repos/v1 file
 //   node repos-sot.js check-hubs [--remote]         hub/parent_hub hierarchy is sound; --remote reads each repo's
 //                                                   .gitmodules via `gh api` and requires 0_hub/<hub>
 //   node repos-sot.js check-subset <file> [--fix]   a project master's repos.json (cloud, ffront)
 //                                                   is a consistent SUBSET of this registry;
 //                                                   --fix rewrites url/private/status from it
+//   node repos-sot.js check-hub-subsets [dir]       every hub clone (sibling of this repo, or in [dir]) with a repos.json:
+//                                                   a consistent subset (check-subset) that lists every member the source
+//                                                   gives that hub (extra cross-links allowed)
 //   node repos-sot.js copy-of <file>                <file> is a byte copy of this registry
 //   node repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
 //   node repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
@@ -59,20 +66,22 @@ function checkRegistry(reg) {
 }
 
 // #1291 link folder: `farm` (numbered hub folders); `group` is a legacy family key and places nothing.
+// #1295 top farm folders are <code>.<Name> after their node in repos.v3.json (1.1.Cloudy, 2.CG, 8.Archived, ...)
+const TOP_FARM = /^\d+(\.\d+)*\.[A-Za-z][A-Za-z0-9-]*$/, ARCHIVED = /^\d+(\.\d+)*\.Archived$/, OTHERS = /^\d+(\.\d+)*\.Others$/;
 const linkRel = r => `${r.farm ? r.farm + '/' : ''}${r.name}`;
 const linkTarget = r => '../'.repeat(r.farm ? r.farm.split('/').length + 1 : 1) + (r.path || r.name);
 function checkFarms(reg) {
   const by = new Map(reg.repos.map(r => [r.name, r])), tops = Object.keys(reg.farms || {});
   if (!tops.length) bad('no farms{} declared');
-  for (const t of tops) if (!/^\d\d\.[A-Za-z0-9-]+$/.test(t)) bad(`farms ${t}: not NN.Name`);
+  for (const t of tops) if (!TOP_FARM.test(t)) bad(`farms ${t}: not <code>.<Name>`);
   for (const r of reg.repos) {
     if (!r.farm) { bad(`${r.name}: no farm`); continue; }
     const seg = r.farm.split('/');
     if (!tops.includes(seg[0])) bad(`${r.name}: farm ${r.farm} top folder not in farms{}`);
     if (seg.some(x => !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(x))) bad(`${r.name}: farm ${r.farm} has a bad segment`);
     const up = r.parent_hub || r.hub;
-    if (r.name.startsWith('z-archived_') && seg[0] !== '09.Archived') bad(`${r.name}: z-archived_* must be in 09.Archived`);
-    if (seg[0] === '08.Others' && up) bad(`${r.name}: 08.Others repos have no hub (has ${up})`);
+    if (r.name.startsWith('z-archived_') && !ARCHIVED.test(seg[0])) bad(`${r.name}: z-archived_* must be in the Archived farm folder`);
+    if (OTHERS.test(seg[0]) && up) bad(`${r.name}: Others repos have no hub (has ${up})`);
     if (!up || up === TOP) { if (seg.length !== 1) bad(`${r.name}: top-level farm must be one folder, is ${r.farm}`); continue; }
     const h = by.get(up); if (!h || !h.farm) continue;
     const ok = r.farm === h.farm || (r.farm.startsWith(h.farm + '/') && seg.length === h.farm.split('/').length + 1);
@@ -105,6 +114,7 @@ function checkLinks(reg) {
 }
 
 function checkSubset(file, fix) {
+  const n0 = errs.length;
   const reg = read(SOT), sub = read(file);
   const by = new Map(reg.repos.map(r => [r.name, r]));
   const old = new Set((reg.renames || []).map(r => r.from));
@@ -120,7 +130,7 @@ function checkSubset(file, fix) {
       } else bad(`${r.name}: not in the registry`);
       continue;
     }
-    for (const k of ['url', 'private']) {
+    for (const k of ['url', 'private', ...('farm' in r ? ['farm'] : [])]) {
       if (JSON.stringify(r[k]) !== JSON.stringify(s[k])) {
         bad(`${r.name}.${k}: ${JSON.stringify(r[k])} but registry says ${JSON.stringify(s[k])}`);
         if (fix) { r[k] = s[k]; changed = true; }
@@ -131,7 +141,7 @@ function checkSubset(file, fix) {
       if (fix) { if (s.status) r.status = s.status; else delete r.status; changed = true; }
     }
   }
-  if (fix && changed) { fs.writeFileSync(file, JSON.stringify(sub, null, 2) + '\n'); console.log(`fixed ${file}`); errs.length = 0; }
+  if (fix && changed) { fs.writeFileSync(file, JSON.stringify(sub, null, 2) + '\n'); console.log(`fixed ${file}`); errs.length = n0; }
 }
 
 // ---- hub hierarchy (#3ff19f58): `hub` on members, `parent_hub` on hubs, submodule 0_hub/<hub> ----
@@ -144,7 +154,7 @@ function hubPlan(reg) {
   const isPrivate = n => n === TOP ? false : !!(by.get(n) || {}).private;
   for (const r of reg.repos) {
     const up = r.parent_hub || r.hub || null;
-    if (!up && (r.farm || '').startsWith('08.Others')) continue; // #1291 hubless by rule
+    if (!up && OTHERS.test((r.farm || '').split('/')[0])) continue; // #1291 hubless by rule
     if (r.parent_hub && r.hub) bad(`${r.name}: both hub and parent_hub`);
     if (!up) { bad(`${r.name}: no hub/parent_hub`); continue; }
     if (up !== TOP && !by.has(up)) bad(`${r.name}: hub ${up} is not a registry entry`);
@@ -197,36 +207,31 @@ const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
   checkRegistry(reg); checkFarms(reg); checkLinks(reg);
-  if (!arg) { // also guard the GitHub snapshot used for the README
-    const gp = path.join(HERE, 'repos-github.json');
-    if (fs.existsSync(gp)) for (const r of read(gp).repos) if (['CG', '42'].includes(r.project)) bad(`repos-github.json ${r.name}: ${r.project} is a field/school, not a project`); else if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
-  }
-  if (!arg) { // #1281 project groupings: Cloud-Me is one project (Pub/Pvt), Fin-CM one project in Financial, 42 one field
-    const gp = path.join(HERE, 'repos-github.json');
-    const gh = fs.existsSync(gp) ? read(gp).repos.filter(r => !r.name.startsWith('z-archived_')) : [];
-    for (const r of gh) {
-      if (/^cloud-me-(pub|pvt)-/.test(r.name) && (r.project !== 'Cloud-Me' || r.subcategory !== (r.name.startsWith('cloud-me-pub-') ? 'Pub' : 'Pvt'))) bad(`repos-github.json ${r.name}: must be project Cloud-Me, subcategory ${r.name.startsWith('cloud-me-pub-') ? 'Pub' : 'Pvt'}`);
-      if (/^Fin-/.test(r.name) && (r.field !== 'Financial' || r.project !== 'Fin-CM')) bad(`repos-github.json ${r.name}: must be field Financial, project Fin-CM`);
-      if (/^Fin-CM-/.test(r.name) && r.subcategory !== 'Capital Markets') bad(`repos-github.json ${r.name}: subcategory must be Capital Markets`);
-      if (r.name === 'Fin-Corporate' && r.subcategory !== 'Corporate') bad('repos-github.json Fin-Corporate: subcategory must be Corporate');
-      if (/^lecole-42/.test(r.name) && r.field !== '42') bad(`repos-github.json ${r.name}: 42 repos are one field "42" (sub-categories allowed)`);
-      if (['Finance', 'Capital Markets', 'Low Level', 'Machine Learning', 'Cybersecurity', 'Dev'].includes(r.field)) bad(`repos-github.json ${r.name}: field ${r.field} was merged (Financial / 42)`);
-      if (['Cloud-Me-Pub', 'Cloud-Me-Pvt', 'Corporate', 'Blmbrg', 'CB'].includes(r.project)) bad(`repos-github.json ${r.name}: project ${r.project} was merged (Cloud-Me / Fin-CM)`);
+  if (!arg) { // #1295 THE ONE SOURCE: valid, and every rendered file equals a fresh render byte-for-byte
+    let gen = {};
+    try { gen = require('./gen-registry.js').render(); } catch (e) { (e.problems || [e.message]).forEach(x => bad('repos.v3.json: ' + x)); }
+    for (const [f, text] of Object.entries(gen)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} differs from a fresh render of repos.v3.json (never edit it; run node gen-registry.js)`); }
+    if (Object.keys(gen).length) {
+      const tree = require('./gen-repos-tree.js').render();
+      for (const [f, text] of Object.entries(tree)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} out of date, run node gen-registry.js`); }
     }
-    const md = fs.readFileSync(path.join(HERE, 'README.md'), 'utf8');
-    const pt = (md.match(/<!-- projects-list:begin -->[\s\S]*?<!-- projects-list:end -->/) || [''])[0];
-    for (const [proj, field] of [['Cloud-Me', 'Unix'], ['Fin-CM', 'Financial']]) if ((pt.match(new RegExp(`^\\| ${proj} \\| ${field} \\|`, 'gm')) || []).length !== 1) bad(`README Projects table: need exactly one ${proj} row in ${field} (run node gen-repos-list.js)`);
-    if (/^\| [^|]+ \| (Finance|Capital Markets|Low Level|Machine Learning|Cybersecurity|Dev) \|/m.test(pt) || /^\| Cloud-Me-P(ub|vt) \|/m.test(pt)) bad('README Projects table: merged field/project still listed (run node gen-repos-list.js)');
-  }
-  if (!arg) { // generated repo tree (canvas + html) must match the registry
-    const gen = require('./gen-repos-tree.js').render();
-    for (const [f, text] of Object.entries(gen)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} out of date, run node gen-repos-tree.js`); }
   }
   done('repos.json');
 } else if (cmd === 'check-hubs') {
   const reg = read(SOT); checkHubs(reg, arg === '--remote'); done('hubs' + (arg === '--remote' ? ' (remote .gitmodules)' : ''));
 } else if (cmd === 'check-subset' && arg) {
   checkSubset(arg, flag === '--fix'); done(`subset ${arg}`);
+} else if (cmd === 'check-hub-subsets') {
+  const x = require('./registry-model.js').expand(require('./registry-model.js').load());
+  const fix = arg === '--fix' || flag === '--fix', root = arg && arg !== '--fix' ? arg : path.join(HERE, '..');
+  let n = 0;
+  for (const h of x.repos.filter(r => r.kind === 'hub' && r.name !== TOP)) {
+    const f = path.join(root, h.name, 'repos.json'); if (!fs.existsSync(f)) continue; n++;
+    checkSubset(f, fix);
+    const have = new Set((read(f).repos || []).map(r => r.name));
+    for (const m of x.repos.filter(r => r.up === h.name)) if (!have.has(m.name) && m.status !== 'pending_creation') bad(`${h.name}/repos.json lacks member ${m.name}`);
+  }
+  done(`hub subsets (${n} hub clones)`);
 } else if (cmd === 'copy-of' && arg) {
   if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/repos.json (run ./clone.sh --sync)`);
   done(`copy ${arg}`);
@@ -240,6 +245,6 @@ if (cmd === 'check') {
   }
   done(`${cmd} (${hs.length} hubs)`);
 } else {
-  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | copy-of <file> | sync-hub-scripts [dir] | check-hub-scripts [dir]');
+  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | check-hub-subsets [dir] [--fix] | copy-of <file> | sync-hub-scripts [dir] | check-hub-scripts [dir]');
   process.exit(2);
 }

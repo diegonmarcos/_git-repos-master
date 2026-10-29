@@ -29,12 +29,12 @@ GitHub: https://github.com/diegonmarcos/_git-repos-master
 
 ## Children
 
-- [[01.CG]] (group)
-- [[02.Cloudy]] (group)
-- [[03.Cloud-me]] (group)
-- [[04.Fin]] (group)
-- [[05.DeepSc]] (group)
-- [[06.Lecole-42]] (group)
-- [[07.Projects]] (group)
-- [[08.Others]] (group)
-- [[09.Archived]] (group)
+- [[1.1.Cloudy]] (group)
+- [[1.2.Cloud-me]] (group)
+- [[2.CG]] (group)
+- [[3.Fin]] (group)
+- [[4.DeepSc]] (group)
+- [[5.Lecole-42]] (group)
+- [[6.Projects]] (group)
+- [[7.Others]] (group)
+- [[8.Archived]] (group)

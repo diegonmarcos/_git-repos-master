@@ -19,7 +19,7 @@ It holds no project code. Two files carry the whole thing:
 
 ## Groups
 
-> Superseded (#1291): the lettered groups below are history. Links now sit in numbered hub folders (01.CG .. 09.Archived) placed by each entry's `farm`; see the Layout section of the top-level README.md.
+> Superseded (#1291): the lettered groups below are history. Links now sit in farm folders named <code>.<Name> after the area/project codes of repos.v3.json (1.1.Cloudy .. 8.Archived, renumbered #1295), placed by each entry's derived `farm`; see the Layout section of the top-level README.md (rendered from repos.v3.json).
 
 Four, and the prefixes are the sort order, not decoration:
 

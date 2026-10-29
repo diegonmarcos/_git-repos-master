@@ -4,7 +4,7 @@
 //   repo-folders-tree.json  SOURCE OF TRUTH: root -> numbered groups -> hubs -> repos -> folders/files (depth <= max_depth)
 //   repo-folders-tree.md    rendered from 9_others/templates/repo-folders-tree.md.tpl
 //   repo-folders-tree.html  rendered with the shared Dolphin template 9_others/templates/repos-tree.html
-// Hierarchy (groups/hubs/repos) comes from gen-repos-tree.js's tree (0_repos-tree/repos-tree.json shape).
+// Hierarchy (groups/hubs/repos, with codes) comes from gen-repos-tree.js's tree, i.e. from repos.v3.json (#1295).
 // Folder data comes from the GitHub tree API on remote HEAD (`gh api .../git/trees/HEAD?recursive=1`, no clones);
 // when that fails or is truncated, a local single clone under $LOCAL_CLONES (default /home/user) by registry name
 // or an old name (renamed_from) is read with `git ls-tree`; else the repo is marked "unreadable".
@@ -26,10 +26,10 @@ const EXCLUDE = new Set(['.git', 'node_modules', 'target', 'build', 'out', '.nex
   '.cache', '.venv', 'venv', '.deps', '.cargo-home', '.terraform', '.pytest_cache', '.mypy_cache', 'coverage', '.parcel-cache']);
 
 function skeleton(m) { // root -> groups -> hubs -> repos, same shape as 0_repos-tree/repos-tree.json
-  const reg = JSON.parse(fs.readFileSync(path.join(HERE, 'repos.json'), 'utf8')).repos;
-  const old = new Map(reg.map(r => [r.url.replace(/^.*[/:]/, '').replace(/\.git$/, ''), [r.name, ...(r.renamed_from || [])]]));
+  const RM = require('./registry-model.js'), x = RM.expand(RM.load()); // #1295: THE ONE SOURCE repos.v3.json
+  const old = new Map(x.repos.map(r => [r.github, [...new Set([r.github, r.name, ...(r.renamed_from || [])])]]));
   const node = o => o.kind === 'group' ? { name: o.name, kind: 'group', path: o.path, children: o.children.map(node) }
-    : { name: o.name, kind: o.kind, visibility: o.visibility, url: `https://github.com/${OWNER}/${o.name}`, aliases: old.get(o.name) || [o.name],
+    : { code: o.code, name: o.name, kind: o.kind, visibility: o.visibility, url: `https://github.com/${OWNER}/${o.name}`, aliases: old.get(o.name) || [o.name],
       ...(o.children ? { children: o.children.map(node) } : {}) };
   return node(buildTree(m).tree);
 }
