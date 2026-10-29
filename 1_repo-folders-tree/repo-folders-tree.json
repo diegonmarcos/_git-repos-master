@@ -51,7 +51,7 @@
         "url": "https://github.com/diegonmarcos/cloudy_db_assets-cdn",
         "status": "ok",
         "source": "github-api",
-        "head": "d5cb3552bf9de62a1111d6a48db523dbbe2924fa",
+        "head": "7df065e80b238499cb237c980c75cb53eca7666e",
         "entries": [
          {
           "name": ".claude",
@@ -64,34 +64,66 @@
              {
               "name": "build.md",
               "type": "file",
-              "size": 529
+              "size": 585
              },
              {
               "name": "explore.md",
               "type": "file",
-              "size": 568
+              "size": 581
+             },
+             {
+              "name": "general-purpose.md",
+              "type": "file",
+              "size": 382
+             },
+             {
+              "name": "infra.md",
+              "type": "file",
+              "size": 539
              },
              {
               "name": "ops.md",
               "type": "file",
-              "size": 577
+              "size": 658
              },
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
               "type": "file",
-              "size": 524
+              "size": 537
+             }
+            ]
+           },
+           {
+            "name": "hooks",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "skills",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3-infra",
+              "type": "dir",
+              "children": []
              }
             ]
            },
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7716
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -106,7 +138,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 10892
+            "size": 14274
            }
           ]
          },
@@ -117,22 +149,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -152,7 +184,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              }
             ]
            }
@@ -191,7 +223,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
+            "size": 1354
            }
           ]
          },
@@ -208,7 +240,7 @@
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitmodules",
@@ -218,7 +250,7 @@
          {
           "name": ".mcp.json",
           "type": "file",
-          "size": 3892
+          "size": 1160
          },
          {
           "name": "0_deployer",
@@ -302,7 +334,7 @@
         "url": "https://github.com/diegonmarcos/cloudy-h-webapps",
         "status": "ok",
         "source": "github-api",
-        "head": "fed59474569071fd7e1e5480050311b229d038e0",
+        "head": "5a311f120d60c2e303ef37ca7919ae85be143a96",
         "entries": [
          {
           "name": "_shared",
@@ -3453,7 +3485,7 @@
              {
               "name": "index.html",
               "type": "file",
-              "size": 2411
+              "size": 2415
              }
             ]
            },
@@ -3464,7 +3496,7 @@
              {
               "name": "index.html",
               "type": "file",
-              "size": 2411
+              "size": 2415
              }
             ]
            }
@@ -3846,7 +3878,7 @@
            {
             "name": "fallback-services.json",
             "type": "file",
-            "size": 31951
+            "size": 31953
            },
            {
             "name": "gen-fallback.mjs",
@@ -5042,8 +5074,51 @@
         "url": "https://github.com/diegonmarcos/cloudy-t-infra",
         "status": "ok",
         "source": "github-api",
-        "head": "fa96344d01c1874e5e3a0f258e98a727ca11b268",
+        "head": "19944d4b9f0242cd30ddaa407df86f51e04d97e2",
         "entries": [
+         {
+          "name": "_dotfiles",
+          "type": "dir",
+          "children": [
+           {
+            "name": "apps",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "git",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "deploy.sh",
+            "type": "file",
+            "size": 1722
+           }
+          ]
+         },
          {
           "name": ".claude",
           "type": "dir",
@@ -5080,7 +5155,7 @@
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
@@ -5114,7 +5189,7 @@
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7872
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -5129,7 +5204,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 14266
+            "size": 14274
            }
           ]
          },
@@ -5140,22 +5215,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -5251,7 +5326,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              },
              {
               "name": "licence-inventory-guard.yml",
@@ -5266,7 +5341,7 @@
              {
               "name": "lint-pipeline.yml",
               "type": "file",
-              "size": 24918
+              "size": 24934
              },
              {
               "name": "lint-secrets-coverage.yml",
@@ -5292,7 +5367,7 @@
              {
               "name": "ship-gen-configs.yml",
               "type": "file",
-              "size": 15273
+              "size": 15305
              },
              {
               "name": "ship-home-manager.yml",
@@ -5396,7 +5471,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
+            "size": 1354
            }
           ]
          },
@@ -5408,142 +5483,6 @@
             "name": ".gitkeep",
             "type": "file",
             "size": 0
-           }
-          ]
-         },
-         {
-          "name": "0_apps",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dotfiles",
-              "type": "dir",
-              "children": []
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "claude",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "githooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "github",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "obsidian",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "root",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "vscode",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "manifest.json",
-              "type": "file",
-              "size": 10722
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": "0_git",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitattributes",
-              "type": "file",
-              "size": 2083
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 5844
-             },
-             {
-              "name": ".gitmodules",
-              "type": "file",
-              "size": 3171
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 2021
-             },
-             {
-              "name": "LICENSE",
-              "type": "file",
-              "size": 4649
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "gitattributes",
-              "type": "file",
-              "size": 1067
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 1009
-             },
-             {
-              "name": "gitignore",
-              "type": "file",
-              "size": 4832
-             },
-             {
-              "name": "gitmodules",
-              "type": "file",
-              "size": 2158
-             },
-             {
-              "name": "LICENSE",
-              "type": "file",
-              "size": 4649
-             }
-            ]
            }
           ]
          },
@@ -5643,7 +5582,7 @@
              {
               "name": "lint-pipeline.yml",
               "type": "file",
-              "size": 24918
+              "size": 24934
              },
              {
               "name": "lint-secrets-coverage.yml",
@@ -5663,7 +5602,7 @@
              {
               "name": "ship-gen-configs.yml",
               "type": "file",
-              "size": 15273
+              "size": 15305
              },
              {
               "name": "ship-home-manager.yml",
@@ -5781,7 +5720,7 @@
              {
               "name": "_cloud-data-consolidated.json",
               "type": "file",
-              "size": 597569
+              "size": 597759
              },
              {
               "name": "build-agents-tmp-reaper.json",
@@ -5856,7 +5795,7 @@
              {
               "name": "build-caddy-edge.json",
               "type": "file",
-              "size": 61263
+              "size": 61471
              },
              {
               "name": "build-caddy-l4-image.json",
@@ -5871,7 +5810,7 @@
              {
               "name": "build-caddy.json",
               "type": "file",
-              "size": 265282
+              "size": 265490
              },
              {
               "name": "build-calendar-radicale.json",
@@ -6061,12 +6000,12 @@
              {
               "name": "build-flakes_desktop.json",
               "type": "file",
-              "size": 464596
+              "size": 464786
              },
              {
               "name": "build-flakes_termux.json",
               "type": "file",
-              "size": 464388
+              "size": 464578
              },
              {
               "name": "build-front-end.json",
@@ -6436,7 +6375,7 @@
              {
               "name": "code-signatures-cloud-u-android.json",
               "type": "file",
-              "size": 20797943
+              "size": 20894990
              },
              {
               "name": "code-signatures-cloud-u-containers.json",
@@ -6446,7 +6385,7 @@
              {
               "name": "code-signatures-cloud.json",
               "type": "file",
-              "size": 1034485
+              "size": 1034732
              },
              {
               "name": "containers-declared.json",
@@ -6461,7 +6400,7 @@
              {
               "name": "mcp.json",
               "type": "file",
-              "size": 3715
+              "size": 3723
              },
              {
               "name": "mcp.optin.json",
@@ -6693,7 +6632,7 @@
              {
               "name": "build.sh.portable",
               "type": "file",
-              "size": 7432
+              "size": 7552
              },
              {
               "name": "cloud-paths.sh",
@@ -6703,7 +6642,7 @@
              {
               "name": "deploy-dotfiles-fleet.sh",
               "type": "file",
-              "size": 9249
+              "size": 9335
              },
              {
               "name": "deploy-dotfiles.sh",
@@ -6859,7 +6798,7 @@
              {
               "name": "cgc-db-noindex-value.test.sh",
               "type": "file",
-              "size": 4398
+              "size": 4437
              },
              {
               "name": "cgc-db-octocode-pin.test.sh",
@@ -6919,7 +6858,7 @@
              {
               "name": "dotfiles-fleet.test.sh",
               "type": "file",
-              "size": 11586
+              "size": 11755
              },
              {
               "name": "edge-auth-gate.test.sh",
@@ -6964,7 +6903,7 @@
              {
               "name": "history-gate.test.sh",
               "type": "file",
-              "size": 3701
+              "size": 3725
              },
              {
               "name": "hm-activation-verdict.test.sh",
@@ -6984,7 +6923,7 @@
              {
               "name": "leak-scan.test.sh",
               "type": "file",
-              "size": 9973
+              "size": 10037
              },
              {
               "name": "mail-health-failure-classifier.test.sh",
@@ -6999,12 +6938,12 @@
              {
               "name": "pre-commit-gitignore-gate.test.sh",
               "type": "file",
-              "size": 2097
+              "size": 2105
              },
              {
               "name": "repos-sot.test.sh",
               "type": "file",
-              "size": 6588
+              "size": 6601
              },
              {
               "name": "run-registered-testers.sh",
@@ -7164,7 +7103,7 @@
              {
               "name": "test_dist_in_sync_with_src.sh",
               "type": "file",
-              "size": 6013
+              "size": 6045
              },
              {
               "name": "test_dist_render_deterministic.sh",
@@ -7264,7 +7203,7 @@
              {
               "name": "test_gitignore_synced.sh",
               "type": "file",
-              "size": 5263
+              "size": 5335
              },
              {
               "name": "test_goose_has_cgc.sh",
@@ -7339,12 +7278,12 @@
              {
               "name": "test_mcp_json_no_legacy_hosts.sh",
               "type": "file",
-              "size": 1547
+              "size": 1587
              },
              {
               "name": "test_mcp_json_no_oauth_only.sh",
               "type": "file",
-              "size": 1562
+              "size": 1586
              },
              {
               "name": "test_native_build_app_dir.sh",
@@ -7399,17 +7338,17 @@
              {
               "name": "test_precommit_allows_gha_workflow.sh",
               "type": "file",
-              "size": 4723
+              "size": 4731
              },
              {
               "name": "test_precommit_blocks_forced_add.sh",
               "type": "file",
-              "size": 2788
+              "size": 2796
              },
              {
               "name": "test_precommit_blocks_plaintext_secret.sh",
               "type": "file",
-              "size": 3921
+              "size": 3929
              },
              {
               "name": "test_proxied_mcps_resolution.sh",
@@ -7484,7 +7423,7 @@
              {
               "name": "test_ship_deployed_sha_retry.sh",
               "type": "file",
-              "size": 2447
+              "size": 2730
              },
              {
               "name": "test_ship_detects_build_json.sh",
@@ -7727,7 +7666,7 @@
            {
             "name": "build.sh",
             "type": "file",
-            "size": 25048
+            "size": 25128
            },
            {
             "name": "dispatch-policy.json",
@@ -7818,12 +7757,12 @@
              {
               "name": "cloudflare-zero-trust.md",
               "type": "file",
-              "size": 14488
+              "size": 14496
              },
              {
               "name": "jev-fleet-usage.md",
               "type": "file",
-              "size": 16034
+              "size": 16058
              },
              {
               "name": "SAD-Software-Architecture-Document.md",
@@ -8036,7 +7975,7 @@
            {
             "name": "TASK-SECRETS-CLEANUP-TODO.md",
             "type": "file",
-            "size": 6981
+            "size": 6989
            }
           ]
          },
@@ -8541,12 +8480,12 @@
            {
             "name": "curated.json",
             "type": "file",
-            "size": 4437
+            "size": 4778
            },
            {
             "name": "inventory.json",
             "type": "file",
-            "size": 13020
+            "size": 12809
            },
            {
             "name": "upstreams.json",
@@ -8808,22 +8747,22 @@
          {
           "name": ".gitattributes",
           "type": "file",
-          "size": 2083
+          "size": 2091
          },
          {
           "name": ".gitignore",
           "type": "file",
-          "size": 5844
+          "size": 5868
          },
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 4152
+          "size": 4168
          },
          {
           "name": ".gitmodules",
           "type": "file",
-          "size": 3281
+          "size": 3293
          },
          {
           "name": ".mcp.json",
@@ -8882,7 +8821,7 @@
          {
           "name": "LICENSING.md",
           "type": "file",
-          "size": 5801
+          "size": 5825
          },
          {
           "name": "PLAN-ghcr-artifacts.md",
@@ -8909,8 +8848,51 @@
         "url": "https://github.com/diegonmarcos/cloudy-u-android",
         "status": "ok",
         "source": "local-clone",
-        "head": "abd22b89a50e7fde462ee5c2e530a87b1a485185",
+        "head": "2ea6f983fdf823ff2a5102194d798f87077bf313",
         "entries": [
+         {
+          "name": "_dotfiles",
+          "type": "dir",
+          "children": [
+           {
+            "name": "apps",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "git",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "deploy.sh",
+            "type": "file",
+            "size": 1722
+           }
+          ]
+         },
          {
           "name": ".claude",
           "type": "dir",
@@ -8922,34 +8904,66 @@
              {
               "name": "build.md",
               "type": "file",
-              "size": 529
+              "size": 585
              },
              {
               "name": "explore.md",
               "type": "file",
-              "size": 568
+              "size": 581
+             },
+             {
+              "name": "general-purpose.md",
+              "type": "file",
+              "size": 382
+             },
+             {
+              "name": "infra.md",
+              "type": "file",
+              "size": 539
              },
              {
               "name": "ops.md",
               "type": "file",
-              "size": 577
+              "size": 658
              },
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
               "type": "file",
-              "size": 524
+              "size": 537
+             }
+            ]
+           },
+           {
+            "name": "hooks",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "skills",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3-infra",
+              "type": "dir",
+              "children": []
              }
             ]
            },
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7872
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -8964,7 +8978,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 10895
+            "size": 14274
            }
           ]
          },
@@ -8975,22 +8989,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -9156,7 +9170,7 @@
              {
               "name": "generated-up-to-date.yml",
               "type": "file",
-              "size": 13257
+              "size": 13273
              },
              {
               "name": "ghcr-delete-package.yml",
@@ -9206,7 +9220,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              },
              {
               "name": "lib-consumers-guard.yml",
@@ -9287,7 +9301,7 @@
              {
               "name": "ship-cloud-account.yml",
               "type": "file",
-              "size": 13634
+              "size": 13679
              },
              {
               "name": "ship-cloud-browser-wasm.yml",
@@ -9347,7 +9361,7 @@
              {
               "name": "ship-cloud-code.yml",
               "type": "file",
-              "size": 10010
+              "size": 10018
              },
              {
               "name": "ship-cloud-contacts.yml",
@@ -9372,7 +9386,7 @@
              {
               "name": "ship-cloud-drive.yml",
               "type": "file",
-              "size": 15010
+              "size": 15055
              },
              {
               "name": "ship-cloud-gallery.yml",
@@ -9382,12 +9396,12 @@
              {
               "name": "ship-cloud-keyboard-libs.yml",
               "type": "file",
-              "size": 12566
+              "size": 12611
              },
              {
               "name": "ship-cloud-keyboard.yml",
               "type": "file",
-              "size": 16070
+              "size": 16115
              },
              {
               "name": "ship-cloud-kg-store.yml",
@@ -9442,7 +9456,7 @@
              {
               "name": "ship-cloud-nav.yml",
               "type": "file",
-              "size": 15268
+              "size": 15313
              },
              {
               "name": "ship-cloud-news-wasm.yml",
@@ -9457,7 +9471,7 @@
              {
               "name": "ship-cloud-nix-on-droid.yml",
               "type": "file",
-              "size": 16097
+              "size": 16142
              },
              {
               "name": "ship-cloud-notes-wasm.yml",
@@ -9497,7 +9511,7 @@
              {
               "name": "ship-cloud-store.yml",
               "type": "file",
-              "size": 14370
+              "size": 14415
              },
              {
               "name": "ship-cloud-superapp.yml",
@@ -9517,7 +9531,7 @@
              {
               "name": "ship-cloud-termux.yml",
               "type": "file",
-              "size": 20371
+              "size": 20416
              },
              {
               "name": "ship-cloud-tools-small-llms-wasm.yml",
@@ -9627,7 +9641,7 @@
              {
               "name": "test-cloud-nav.yml",
               "type": "file",
-              "size": 10346
+              "size": 10391
              },
              {
               "name": "test-cloud-superapp.yml",
@@ -9771,118 +9785,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
-           }
-          ]
-         },
-         {
-          "name": "0_apps",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dotfiles",
-              "type": "dir",
-              "children": []
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "claude",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "obsidian",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "root",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "vscode",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "manifest.json",
-              "type": "file",
-              "size": 2662
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": "0_git",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "modules",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 13024
-             },
-             {
-              "name": ".gitmodules",
-              "type": "file",
-              "size": 915
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 153
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 153
-             },
-             {
-              "name": "gitignore",
-              "type": "file",
-              "size": 13024
-             },
-             {
-              "name": "gitmodules",
-              "type": "file",
-              "size": 915
-             }
-            ]
+            "size": 1354
            }
           ]
          },
@@ -10064,7 +9967,7 @@
            {
             "name": "README.md",
             "type": "file",
-            "size": 5436
+            "size": 5444
            }
           ]
          },
@@ -10353,7 +10256,7 @@
              {
               "name": "fleet-config-matrix.md",
               "type": "file",
-              "size": 180546
+              "size": 182242
              },
              {
               "name": "fleet-endpoints.md",
@@ -10368,7 +10271,7 @@
              {
               "name": "jev-fleet-usage.md",
               "type": "file",
-              "size": 17944
+              "size": 17968
              },
              {
               "name": "keyboard-autocomplete.md",
@@ -10408,7 +10311,7 @@
              {
               "name": "terminal-per-tool-libs-measurement.md",
               "type": "file",
-              "size": 55653
+              "size": 55677
              }
             ]
            },
@@ -10550,12 +10453,12 @@
              {
               "name": "lib-consumers.json",
               "type": "file",
-              "size": 26799
+              "size": 26969
              },
              {
               "name": "linktree.json",
               "type": "file",
-              "size": 53754
+              "size": 53733
              },
              {
               "name": "mesh.json",
@@ -10807,7 +10710,7 @@
              {
               "name": "test-data-badge.sh",
               "type": "file",
-              "size": 7221
+              "size": 7313
              },
              {
               "name": "test-devcontrol-control-route.sh",
@@ -11257,7 +11160,7 @@
              {
               "name": "test-store-fleet-actions.sh",
               "type": "file",
-              "size": 6608
+              "size": 6610
              },
              {
               "name": "test-store-identity-line.sh",
@@ -11409,7 +11312,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 656264
+            "size": 656272
            },
            {
             "name": "build.sh",
@@ -11507,7 +11410,7 @@
              {
               "name": "build.json",
               "type": "file",
-              "size": 8849
+              "size": 9065
              },
              {
               "name": "build.sh",
@@ -12117,7 +12020,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 163560
+            "size": 163565
            }
           ]
          },
@@ -12591,7 +12494,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 47364
+            "size": 47676
            },
            {
             "name": "build.sh",
@@ -12884,7 +12787,7 @@
              {
               "name": "test-browser-web-bluetooth.sh",
               "type": "file",
-              "size": 7695
+              "size": 7779
              },
              {
               "name": "test-browser-web-hardware.sh",
@@ -15597,7 +15500,7 @@
            {
             "name": "CLOUD-CODE.md",
             "type": "file",
-            "size": 14850
+            "size": 14858
            },
            {
             "name": "CODE_OF_CONDUCT.md",
@@ -16241,7 +16144,7 @@
              {
               "name": "repos.sot.json",
               "type": "file",
-              "size": 65420
+              "size": 88975
              }
             ]
            },
@@ -16293,7 +16196,7 @@
              {
               "name": "test-drive-disk.sh",
               "type": "file",
-              "size": 7533
+              "size": 7577
              },
              {
               "name": "test-drive-documents-provider.sh",
@@ -16346,9 +16249,19 @@
               "size": 12968
              },
              {
+              "name": "test-drive-git-folder-actions.sh",
+              "type": "file",
+              "size": 7859
+             },
+             {
               "name": "test-drive-git-gh-leg.sh",
               "type": "file",
               "size": 34094
+             },
+             {
+              "name": "test-drive-git-menu.sh",
+              "type": "file",
+              "size": 6244
              },
              {
               "name": "test-drive-git-page.sh",
@@ -16418,12 +16331,12 @@
              {
               "name": "test-drive-shared-store.sh",
               "type": "file",
-              "size": 22918
+              "size": 23151
              },
              {
               "name": "test-drive-shell.sh",
               "type": "file",
-              "size": 47403
+              "size": 47919
              },
              {
               "name": "test-drive-store-grant.sh",
@@ -16542,7 +16455,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 97178
+            "size": 105156
            },
            {
             "name": "build.sh",
@@ -17062,7 +16975,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 13039
+            "size": 13351
            },
            {
             "name": "build.sh",
@@ -17412,7 +17325,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 56198
+            "size": 56189
            },
            {
             "name": "build.sh",
@@ -18664,7 +18577,7 @@
              {
               "name": "build.gradle",
               "type": "file",
-              "size": 14511
+              "size": 16290
              },
              {
               "name": "proguard-rules.pro",
@@ -18689,6 +18602,11 @@
              },
              {
               "name": "profiles",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "repos",
               "type": "dir",
               "children": []
              },
@@ -18731,7 +18649,7 @@
              {
               "name": "test-bottom-nav.sh",
               "type": "file",
-              "size": 4565
+              "size": 4596
              },
              {
               "name": "test-fleet-setup.sh",
@@ -18746,7 +18664,7 @@
              {
               "name": "test-me-redesign.sh",
               "type": "file",
-              "size": 30002
+              "size": 30288
              },
              {
               "name": "test-me-web.sh",
@@ -18756,7 +18674,7 @@
              {
               "name": "test-profiles-privacy.sh",
               "type": "file",
-              "size": 5187
+              "size": 5217
              },
              {
               "name": "test-release-asset-contract.sh",
@@ -18829,7 +18747,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 34272
+            "size": 37057
            },
            {
             "name": "build.sh",
@@ -19376,7 +19294,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 76142
+            "size": 76454
            },
            {
             "name": "build.sh",
@@ -20067,7 +19985,7 @@
            {
             "name": "settings.gradle",
             "type": "file",
-            "size": 1750
+            "size": 2007
            }
           ]
          },
@@ -21415,7 +21333,7 @@
              {
               "name": "test-store-phone-sizes.sh",
               "type": "file",
-              "size": 10530
+              "size": 10548
              },
              {
               "name": "test-store-search-landing.sh",
@@ -21503,7 +21421,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 20996
+            "size": 21308
            },
            {
             "name": "build.sh",
@@ -22097,7 +22015,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 25204
+            "size": 25516
            },
            {
             "name": "build.sh",
@@ -22147,7 +22065,7 @@
            {
             "name": "settings.gradle",
             "type": "file",
-            "size": 1750
+            "size": 2007
            }
           ]
          },
@@ -22343,7 +22261,7 @@
              {
               "name": "settings.json",
               "type": "file",
-              "size": 10525
+              "size": 14274
              }
             ]
            },
@@ -23440,7 +23358,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 60055
+            "size": 60046
            },
            {
             "name": "build.sh",
@@ -23678,12 +23596,12 @@
            {
             "name": "curated.json",
             "type": "file",
-            "size": 33866
+            "size": 33874
            },
            {
             "name": "inventory.json",
             "type": "file",
-            "size": 563402
+            "size": 562404
            },
            {
             "name": "provenance.json",
@@ -23711,12 +23629,12 @@
          {
           "name": ".gitignore",
           "type": "file",
-          "size": 13024
+          "size": 13229
          },
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitleaksignore",
@@ -23731,7 +23649,7 @@
          {
           "name": ".mcp.json",
           "type": "file",
-          "size": 4111
+          "size": 1160
          },
          {
           "name": ".sops.yaml",
@@ -23774,12 +23692,12 @@
          {
           "name": "LICENSING.md",
           "type": "file",
-          "size": 21287
+          "size": 21303
          },
          {
           "name": "README.md",
           "type": "file",
-          "size": 8134
+          "size": 8142
          },
          {
           "name": "SIGNING.md",
@@ -23796,7 +23714,7 @@
         "url": "https://github.com/diegonmarcos/cloudy-u-containers",
         "status": "ok",
         "source": "github-api",
-        "head": "36fd571487a023a13ce4f2d58f64e9dc366ef9d9",
+        "head": "812b8b6de8cbecef55527fff7f597a4c77df4495",
         "entries": [
          {
           "name": "_dispatch",
@@ -24010,12 +23928,12 @@
            {
             "name": "fallback-services.json",
             "type": "file",
-            "size": 31951
+            "size": 31953
            },
            {
             "name": "fleet-addressing.json",
             "type": "file",
-            "size": 9079
+            "size": 9285
            },
            {
             "name": "gen-fallback-services.mjs",
@@ -24105,12 +24023,12 @@
            {
             "name": "test-fleet-addressing.mjs",
             "type": "file",
-            "size": 15804
+            "size": 16838
            },
            {
             "name": "test-jev-gate.py",
             "type": "file",
-            "size": 69566
+            "size": 69614
            },
            {
             "name": "test-kg-store-memory-ceiling.mjs",
@@ -27105,7 +27023,7 @@
              {
               "name": "test-contract-and-authz.mjs",
               "type": "file",
-              "size": 54799
+              "size": 54807
              }
             ]
            },
@@ -31161,7 +31079,7 @@
              {
               "name": "caddyfile.nix",
               "type": "file",
-              "size": 65848
+              "size": 66185
              },
              {
               "name": "compose.nix",
@@ -31269,7 +31187,7 @@
            {
             "name": "build.json",
             "type": "file",
-            "size": 31648
+            "size": 31874
            },
            {
             "name": "build.sh",
@@ -31898,12 +31816,12 @@
            {
             "name": "curated.json",
             "type": "file",
-            "size": 20042
+            "size": 20196
            },
            {
             "name": "inventory.json",
             "type": "file",
-            "size": 245756
+            "size": 246108
            },
            {
             "name": "provenance.json",
@@ -37350,7 +37268,7 @@
         "url": "https://github.com/diegonmarcos/cloudy-u-containers_cgc",
         "status": "ok",
         "source": "github-api",
-        "head": "26097194c4091d592177317eaec0553322fda5fa",
+        "head": "97f6b77e4f1bb39d7516fb99fff1aae0a5c61518",
         "entries": [
          {
           "name": ".claude",
@@ -37363,34 +37281,66 @@
              {
               "name": "build.md",
               "type": "file",
-              "size": 529
+              "size": 585
              },
              {
               "name": "explore.md",
               "type": "file",
-              "size": 568
+              "size": 581
+             },
+             {
+              "name": "general-purpose.md",
+              "type": "file",
+              "size": 382
+             },
+             {
+              "name": "infra.md",
+              "type": "file",
+              "size": 539
              },
              {
               "name": "ops.md",
               "type": "file",
-              "size": 577
+              "size": 658
              },
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
               "type": "file",
-              "size": 524
+              "size": 537
+             }
+            ]
+           },
+           {
+            "name": "hooks",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "skills",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3-infra",
+              "type": "dir",
+              "children": []
              }
             ]
            },
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7716
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -37405,7 +37355,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 10895
+            "size": 14274
            }
           ]
          },
@@ -37416,22 +37366,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -37466,7 +37416,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              }
             ]
            }
@@ -37505,7 +37455,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
+            "size": 1354
            }
           ]
          },
@@ -37632,7 +37582,7 @@
              {
               "name": "cgc-db-noindex-value.test.sh",
               "type": "file",
-              "size": 4398
+              "size": 4400
              },
              {
               "name": "cgc-db-octocode-pin.test.sh",
@@ -37728,7 +37678,7 @@
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitmodules",
@@ -37738,7 +37688,7 @@
          {
           "name": ".mcp.json",
           "type": "file",
-          "size": 3892
+          "size": 1160
          },
          {
           "name": "CLAUDE.md",
@@ -37770,7 +37720,7 @@
         "url": "https://github.com/diegonmarcos/cloudy-u-desktop",
         "status": "ok",
         "source": "github-api",
-        "head": "3d75a010ce3e10c91039e969394d0441b2dc03fa",
+        "head": "5f7badd79ad05108155b519e88fbf956682431b5",
         "entries": [
          {
           "name": "_aac_dev-phone-arm",
@@ -37898,6 +37848,59 @@
           ]
          },
          {
+          "name": "_dotfiles",
+          "type": "dir",
+          "children": [
+           {
+            "name": "apps",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "test",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "git",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "test",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "deploy.sh",
+            "type": "file",
+            "size": 1722
+           }
+          ]
+         },
+         {
           "name": ".claude",
           "type": "dir",
           "children": [
@@ -37908,34 +37911,71 @@
              {
               "name": "build.md",
               "type": "file",
-              "size": 529
+              "size": 585
              },
              {
               "name": "explore.md",
               "type": "file",
-              "size": 568
+              "size": 581
+             },
+             {
+              "name": "general-purpose.md",
+              "type": "file",
+              "size": 382
+             },
+             {
+              "name": "infra.md",
+              "type": "file",
+              "size": 539
              },
              {
               "name": "ops.md",
               "type": "file",
-              "size": 577
+              "size": 658
              },
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
               "type": "file",
-              "size": 524
+              "size": 537
+             }
+            ]
+           },
+           {
+            "name": "hooks",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "skills",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3-infra",
+              "type": "dir",
+              "children": []
              }
             ]
            },
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7716
+            "size": 8282
+           },
+           {
+            "name": "mcp-connect.mjs",
+            "type": "file",
+            "size": 5653
            },
            {
             "name": "SESSION-SURVIVAL.md",
@@ -37945,7 +37985,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 12002
+            "size": 14274
            }
           ]
          },
@@ -37956,22 +37996,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -38001,12 +38041,12 @@
              {
               "name": "jev-hooks-tests.yml",
               "type": "file",
-              "size": 804
+              "size": 852
              },
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              },
              {
               "name": "ship-builders.yml",
@@ -38082,154 +38122,6 @@
             "name": ".gitkeep",
             "type": "file",
             "size": 0
-           }
-          ]
-         },
-         {
-          "name": "0_apps",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dotfiles",
-              "type": "dir",
-              "children": []
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "claude",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "obsidian",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "root",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "vscode",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "manifest.json",
-              "type": "file",
-              "size": 2516
-             }
-            ]
-           },
-           {
-            "name": "test",
-            "type": "dir",
-            "children": [
-             {
-              "name": "test-claude-jev-hooks.sh",
-              "type": "file",
-              "size": 2253
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": "0_git",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitattributes",
-              "type": "file",
-              "size": 2082
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 13415
-             },
-             {
-              "name": ".gitmodules",
-              "type": "file",
-              "size": 2543
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 2565
-             },
-             {
-              "name": "LICENSE",
-              "type": "file",
-              "size": 4649
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "hooks",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "gitattributes",
-              "type": "file",
-              "size": 1067
-             },
-             {
-              "name": "gitconfig",
-              "type": "file",
-              "size": 1554
-             },
-             {
-              "name": "gitignore",
-              "type": "file",
-              "size": 12404
-             },
-             {
-              "name": "gitmodules",
-              "type": "file",
-              "size": 1531
-             },
-             {
-              "name": "LICENSE",
-              "type": "file",
-              "size": 4649
-             }
-            ]
-           },
-           {
-            "name": "test",
-            "type": "dir",
-            "children": [
-             {
-              "name": "test-commit-msg.sh",
-              "type": "file",
-              "size": 3270
-             }
-            ]
            }
           ]
          },
@@ -38391,7 +38283,7 @@
              {
               "name": "test_framework.sh",
               "type": "file",
-              "size": 2189
+              "size": 2253
              }
             ]
            },
@@ -38518,7 +38410,7 @@
            {
             "name": "PLAN_cloud-comms-constellation.md",
             "type": "file",
-            "size": 16268
+            "size": 16276
            },
            {
             "name": "PLAN_cloud-dialer-call-providers.md",
@@ -38533,7 +38425,7 @@
            {
             "name": "PLAN_cloud-ide-constellation.md",
             "type": "file",
-            "size": 19585
+            "size": 19593
            },
            {
             "name": "PLAN_cloud-media-center.md",
@@ -39495,27 +39387,27 @@
          {
           "name": ".gitattributes",
           "type": "file",
-          "size": 2082
+          "size": 2090
          },
          {
           "name": ".gitignore",
           "type": "file",
-          "size": 13415
+          "size": 13447
          },
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitmodules",
           "type": "file",
-          "size": 2653
+          "size": 2661
          },
          {
           "name": ".mcp.json",
           "type": "file",
-          "size": 3454
+          "size": 1160
          },
          {
           "name": ".sops.yaml",
@@ -39586,7 +39478,7 @@
         "url": "https://github.com/diegonmarcos/cloudy-u-linux",
         "status": "ok",
         "source": "github-api",
-        "head": "e11062007c5d773ca90dde032f9013abbf016600",
+        "head": "4f594e71b1372dab816b4a63d3c945bfd93fd9e6",
         "entries": [
          {
           "name": ".claude",
@@ -39624,7 +39516,7 @@
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
@@ -39658,7 +39550,7 @@
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7870
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -39673,7 +39565,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 14266
+            "size": 14274
            }
           ]
          },
@@ -39684,22 +39576,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -39730,7 +39622,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              },
              {
               "name": "ship_my-browser-rust-chromium.yaml",
@@ -39809,7 +39701,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
+            "size": 1354
            }
           ]
          },
@@ -40482,12 +40374,17 @@
              {
               "name": "mcp-auth-headers.sh",
               "type": "file",
-              "size": 4896
+              "size": 8282
+             },
+             {
+              "name": "mcp-connect.mjs",
+              "type": "file",
+              "size": 5653
              },
              {
               "name": "settings.json",
               "type": "file",
-              "size": 14162
+              "size": 14274
              }
             ]
            },
@@ -40509,6 +40406,22 @@
               "name": "core-plugins.json",
               "type": "file",
               "size": 696
+             }
+            ]
+           },
+           {
+            "name": ".vscode",
+            "type": "dir",
+            "children": [
+             {
+              "name": "extensions.json",
+              "type": "file",
+              "size": 454
+             },
+             {
+              "name": "settings.json",
+              "type": "file",
+              "size": 1346
              }
             ]
            },
@@ -40907,7 +40820,12 @@
              {
               "name": "mcp-policy.json",
               "type": "file",
-              "size": 11439
+              "size": 12629
+             },
+             {
+              "name": "mcp-sizes.json",
+              "type": "file",
+              "size": 1054
              },
              {
               "name": "mcp.desktop.json.tpl",
@@ -40920,9 +40838,14 @@
               "size": 1207
              },
              {
+              "name": "measure-mcp-sizes.sh",
+              "type": "file",
+              "size": 3842
+             },
+             {
               "name": "README.md",
               "type": "file",
-              "size": 10757
+              "size": 11043
              },
              {
               "name": "rgignore",
@@ -40932,12 +40855,12 @@
              {
               "name": "settings.base.json",
               "type": "file",
-              "size": 12448
+              "size": 13112
              },
              {
               "name": "settings.cloud.json",
               "type": "file",
-              "size": 2750
+              "size": 2939
              },
              {
               "name": "settings.desktop.json",
@@ -40947,7 +40870,7 @@
              {
               "name": "settings.project.json",
               "type": "file",
-              "size": 12833
+              "size": 14274
              },
              {
               "name": "settings.termux.json",
@@ -40957,7 +40880,7 @@
              {
               "name": "test-claude-sot.sh",
               "type": "file",
-              "size": 29436
+              "size": 34730
              }
             ]
            },
@@ -41462,7 +41385,7 @@
            {
             "name": "my-account",
             "type": "file",
-            "size": 6594
+            "size": 6822
            },
            {
             "name": "README.md",
@@ -42151,7 +42074,7 @@
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitmodules",
@@ -42183,8 +42106,51 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "1606c76595aeb782aa1709147df025806430d534",
+      "head": "64ece58fc5a7c41a4b71838f921a9339126d310d",
       "entries": [
+       {
+        "name": "_dotfiles",
+        "type": "dir",
+        "children": [
+         {
+          "name": "apps",
+          "type": "dir",
+          "children": [
+           {
+            "name": "dist",
+            "type": "dir",
+            "children": []
+           },
+           {
+            "name": "src",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "git",
+          "type": "dir",
+          "children": [
+           {
+            "name": "dist",
+            "type": "dir",
+            "children": []
+           },
+           {
+            "name": "src",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "deploy.sh",
+          "type": "file",
+          "size": 1722
+         }
+        ]
+       },
        {
         "name": ".claude",
         "type": "dir",
@@ -42196,34 +42162,71 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
+         },
+         {
+          "name": "mcp-connect.mjs",
+          "type": "file",
+          "size": 5653
          },
          {
           "name": "SESSION-SURVIVAL.md",
@@ -42233,7 +42236,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10525
+          "size": 14274
          }
         ]
        },
@@ -42270,113 +42273,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
-         }
-        ]
-       },
-       {
-        "name": "0_apps",
-        "type": "dir",
-        "children": [
-         {
-          "name": "dist",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dotfiles",
-            "type": "dir",
-            "children": []
-           }
-          ]
-         },
-         {
-          "name": "src",
-          "type": "dir",
-          "children": [
-           {
-            "name": "claude",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "obsidian",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "root",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "vscode",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "manifest.json",
-            "type": "file",
-            "size": 2516
-           }
-          ]
-         }
-        ]
-       },
-       {
-        "name": "0_git",
-        "type": "dir",
-        "children": [
-         {
-          "name": "dist",
-          "type": "dir",
-          "children": [
-           {
-            "name": "hooks",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": ".gitattributes",
-            "type": "file",
-            "size": 1067
-           },
-           {
-            "name": ".gitignore",
-            "type": "file",
-            "size": 3762
-           },
-           {
-            "name": "gitconfig",
-            "type": "file",
-            "size": 1009
-           }
-          ]
-         },
-         {
-          "name": "src",
-          "type": "dir",
-          "children": [
-           {
-            "name": "hooks",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "gitattributes",
-            "type": "file",
-            "size": 1067
-           },
-           {
-            "name": "gitconfig",
-            "type": "file",
-            "size": 1009
-           },
-           {
-            "name": "gitignore",
-            "type": "file",
-            "size": 3780
-           }
-          ]
+          "size": 1354
          }
         ]
        },
@@ -42431,7 +42328,7 @@
          {
           "name": "build.sh",
           "type": "file",
-          "size": 7432
+          "size": 7552
          }
         ]
        },
@@ -42669,7 +42566,7 @@
        {
         "name": ".gitignore",
         "type": "file",
-        "size": 3762
+        "size": 3788
        },
        {
         "name": ".gitmodules",
@@ -42679,7 +42576,7 @@
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3454
+        "size": 1160
        },
        {
         "name": "check-repos-sot.sh",
@@ -42764,7 +42661,7 @@
                 "url": "https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree",
                 "status": "ok",
                 "source": "github-api",
-                "head": "bb9ec8956de8114e6e047749b5ff48331958cd45",
+                "head": "e0eec56c3042d88c7c503e6b231061b9c0a8c4f7",
                 "entries": [
                  {
                   "name": "0_hub",
@@ -42795,11 +42692,6 @@
                       "children": []
                      },
                      {
-                      "name": "dist",
-                      "type": "dir",
-                      "children": []
-                     },
-                     {
                       "name": "scripts",
                       "type": "dir",
                       "children": []
@@ -42815,9 +42707,14 @@
                       "children": []
                      },
                      {
+                      "name": ".gitignore",
+                      "type": "file",
+                      "size": 675
+                     },
+                     {
                       "name": "build.json",
                       "type": "file",
-                      "size": 5558
+                      "size": 5774
                      },
                      {
                       "name": "build.sh",
@@ -42833,7 +42730,7 @@
                      {
                       "name": "package.json",
                       "type": "file",
-                      "size": 1470
+                      "size": 1414
                      },
                      {
                       "name": "ship.yml",
@@ -42844,7 +42741,7 @@
                      {
                       "name": "tsconfig.json",
                       "type": "file",
-                      "size": 613
+                      "size": 744
                      },
                      {
                       "name": "vitest.config.ts",
@@ -44534,7 +44431,7 @@
               ],
               "status": "ok",
               "source": "github-api",
-              "head": "cae7f231dbe65739a77e82e194b4a02597a449c8",
+              "head": "f2518c603eb86ee15bc68e309e20c19383f687e0",
               "entries": [
                {
                 "name": ".claude",
@@ -44589,7 +44486,7 @@
                  {
                   "name": "settings.json",
                   "type": "file",
-                  "size": 10892
+                  "size": 14274
                  }
                 ]
                },
@@ -44701,7 +44598,7 @@
                {
                 "name": ".mcp.json",
                 "type": "file",
-                "size": 3892
+                "size": 1160
                },
                {
                 "name": "check-repos-sot.sh",
@@ -45183,7 +45080,7 @@
           ],
           "status": "ok",
           "source": "github-api",
-          "head": "43321a9911d8881e8386a5181602c7546b0b1437",
+          "head": "778326831e7d89672abd1815df64f7e3e006fe97",
           "entries": [
            {
             "name": ".claude",
@@ -45238,7 +45135,7 @@
              {
               "name": "settings.json",
               "type": "file",
-              "size": 10895
+              "size": 14274
              }
             ]
            },
@@ -45350,7 +45247,7 @@
            {
             "name": ".mcp.json",
             "type": "file",
-            "size": 3892
+            "size": 1160
            },
            {
             "name": "check-repos-sot.sh",
@@ -45474,7 +45371,7 @@
           ],
           "status": "ok",
           "source": "github-api",
-          "head": "86a26a4daa2b51d0c47dd8bb2420fc53aecfe3a1",
+          "head": "7330027e283647727d217980b9f76eef4540753a",
           "entries": [
            {
             "name": ".claude",
@@ -45529,7 +45426,7 @@
              {
               "name": "settings.json",
               "type": "file",
-              "size": 10895
+              "size": 14274
              }
             ]
            },
@@ -45711,7 +45608,7 @@
            {
             "name": ".mcp.json",
             "type": "file",
-            "size": 3892
+            "size": 1160
            },
            {
             "name": "check-repos-sot.sh",
@@ -45797,7 +45694,7 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "3906386374bb7d6bb2122abb54b1515cc0e1e702",
+      "head": "17a3ccff052381d46d7cf871a4c41bb2b8f17e03",
       "entries": [
        {
         "name": ".claude",
@@ -45852,7 +45749,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10892
+          "size": 14274
          }
         ]
        },
@@ -45964,7 +45861,7 @@
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": "check-repos-sot.sh",
@@ -46825,7 +46722,7 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "5f675216af4209d8701057af7310c2d627f758fc",
+      "head": "00941fcfc39df07ccfd93e1807a3d2407b7c5f94",
       "entries": [
        {
         "name": ".claude",
@@ -46838,34 +46735,66 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
          },
          {
           "name": "mcp-connect.mjs",
@@ -46880,7 +46809,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10892
+          "size": 14274
          }
         ]
        },
@@ -46891,22 +46820,22 @@
          {
           "name": "history-gate",
           "type": "file",
-          "size": 3072
+          "size": 3080
          },
          {
           "name": "leak-scan",
           "type": "file",
-          "size": 3710
+          "size": 3718
          },
          {
           "name": "pre-commit",
           "type": "file",
-          "size": 1385
+          "size": 1409
          },
          {
           "name": "pre-push",
           "type": "file",
-          "size": 1395
+          "size": 1419
          },
          {
           "name": "purged-history",
@@ -46926,7 +46855,7 @@
            {
             "name": "leak-scan.yml",
             "type": "file",
-            "size": 6504
+            "size": 6528
            }
           ]
          }
@@ -46965,7 +46894,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
+          "size": 1354
          }
         ]
        },
@@ -46974,7 +46903,7 @@
         "type": "dir",
         "children": [
          {
-          "name": "Projects-___",
+          "name": "_git-repos-master",
           "type": "submodule"
          }
         ]
@@ -46982,17 +46911,17 @@
        {
         "name": ".gitleaks.toml",
         "type": "file",
-        "size": 3524
+        "size": 4168
        },
        {
         "name": ".gitmodules",
         "type": "file",
-        "size": 116
+        "size": 131
        },
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": "CG-circus",
@@ -47052,7 +46981,7 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 1963
+        "size": 2027
        },
        {
         "name": "repos.json",
@@ -47603,7 +47532,7 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "e03ea14db9f4cab0313acce56a12d456fcd9d056",
+      "head": "bc385af3c7a6027b42f6aa2258c71e1d5fb38941",
       "entries": [
        {
         "name": ".claude",
@@ -47616,34 +47545,66 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
          },
          {
           "name": "mcp-connect.mjs",
@@ -47658,7 +47619,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10892
+          "size": 14274
          }
         ]
        },
@@ -47669,22 +47630,22 @@
          {
           "name": "history-gate",
           "type": "file",
-          "size": 3072
+          "size": 3080
          },
          {
           "name": "leak-scan",
           "type": "file",
-          "size": 3710
+          "size": 3718
          },
          {
           "name": "pre-commit",
           "type": "file",
-          "size": 1385
+          "size": 1409
          },
          {
           "name": "pre-push",
           "type": "file",
-          "size": 1395
+          "size": 1419
          },
          {
           "name": "purged-history",
@@ -47704,7 +47665,7 @@
            {
             "name": "leak-scan.yml",
             "type": "file",
-            "size": 6504
+            "size": 6528
            }
           ]
          }
@@ -47743,7 +47704,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
+          "size": 1354
          }
         ]
        },
@@ -47752,7 +47713,7 @@
         "type": "dir",
         "children": [
          {
-          "name": "Projects-___",
+          "name": "_git-repos-master",
           "type": "submodule"
          }
         ]
@@ -47760,17 +47721,17 @@
        {
         "name": ".gitleaks.toml",
         "type": "file",
-        "size": 3524
+        "size": 4168
        },
        {
         "name": ".gitmodules",
         "type": "file",
-        "size": 116
+        "size": 131
        },
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": "check-repos-sot.sh",
@@ -47818,7 +47779,7 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 2727
+        "size": 2790
        },
        {
         "name": "repos.json",
@@ -47848,8 +47809,8 @@
         "visibility": "public",
         "url": "https://github.com/diegonmarcos/CAD-Simulators",
         "status": "ok",
-        "source": "local-clone",
-        "head": "69b5d955cf44ca01ba1ea7bf25c12ca2059ef70b",
+        "source": "github-api",
+        "head": "9247b7fea10cb45940b9ef44df913a27b21fc99d",
         "entries": [
          {
           "name": "0_hub",
@@ -47938,9 +47899,13 @@
             "type": "dir",
             "children": [
              {
+              "name": "bonsai-mcp",
+              "type": "submodule"
+             },
+             {
               "name": "README.md",
               "type": "file",
-              "size": 1412
+              "size": 1523
              }
             ]
            },
@@ -47970,7 +47935,11 @@
              {
               "name": "README.md",
               "type": "file",
-              "size": 1520
+              "size": 1507
+             },
+             {
+              "name": "rvt-mcp",
+              "type": "submodule"
              }
             ]
            },
@@ -47984,12 +47953,12 @@
          {
           "name": ".gitmodules",
           "type": "file",
-          "size": 485
+          "size": 780
          },
          {
           "name": "README.md",
           "type": "file",
-          "size": 2164
+          "size": 2616
          }
         ]
        },
@@ -48088,7 +48057,7 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "56cf80571eb633335720c1c1fd6c7075ef9fdc7c",
+      "head": "b3dd63351649f71610ca63b21305705c283f9842",
       "entries": [
        {
         "name": ".claude",
@@ -48101,34 +48070,66 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
          },
          {
           "name": "mcp-connect.mjs",
@@ -48143,7 +48144,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10892
+          "size": 14274
          }
         ]
        },
@@ -48154,22 +48155,22 @@
          {
           "name": "history-gate",
           "type": "file",
-          "size": 3072
+          "size": 3080
          },
          {
           "name": "leak-scan",
           "type": "file",
-          "size": 3710
+          "size": 3718
          },
          {
           "name": "pre-commit",
           "type": "file",
-          "size": 1385
+          "size": 1409
          },
          {
           "name": "pre-push",
           "type": "file",
-          "size": 1395
+          "size": 1419
          },
          {
           "name": "purged-history",
@@ -48189,7 +48190,7 @@
            {
             "name": "leak-scan.yml",
             "type": "file",
-            "size": 6504
+            "size": 6528
            }
           ]
          }
@@ -48228,7 +48229,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
+          "size": 1354
          }
         ]
        },
@@ -48237,7 +48238,7 @@
         "type": "dir",
         "children": [
          {
-          "name": "Projects-___",
+          "name": "_git-repos-master",
           "type": "submodule"
          }
         ]
@@ -48245,17 +48246,17 @@
        {
         "name": ".gitleaks.toml",
         "type": "file",
-        "size": 3524
+        "size": 4168
        },
        {
         "name": ".gitmodules",
         "type": "file",
-        "size": 116
+        "size": 131
        },
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": "CAD-Simulators",
@@ -48297,7 +48298,7 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 2585
+        "size": 2648
        },
        {
         "name": "repos.json",
@@ -49084,7 +49085,7 @@
         "url": "https://github.com/diegonmarcos/lecole-42_ml-Agentic",
         "status": "ok",
         "source": "github-api",
-        "head": "cfe85936c2cea2c47c06bc35e94a6a5683696ac2",
+        "head": "3d9bcc5144717788468ccd9e210a36478797b868",
         "entries": [
          {
           "name": ".claude",
@@ -49108,7 +49109,7 @@
              {
               "name": "ci-cd.yml",
               "type": "file",
-              "size": 10179
+              "size": 10598
              }
             ]
            }
@@ -49534,29 +49535,34 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "base_agent.py",
               "type": "file",
-              "size": 10833
+              "size": 10286
              },
              {
               "name": "coder.py",
               "type": "file",
-              "size": 3697
+              "size": 3643
              },
              {
               "name": "coordinator.py",
               "type": "file",
-              "size": 13730
+              "size": 13785
              },
              {
               "name": "planner.py",
               "type": "file",
-              "size": 3097
+              "size": 3023
              },
              {
               "name": "reviewer.py",
               "type": "file",
-              "size": 4545
+              "size": 4539
              }
             ]
            },
@@ -49565,14 +49571,19 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "metrics_aggregator.py",
               "type": "file",
-              "size": 21121
+              "size": 21656
              },
              {
               "name": "provider_analytics.py",
               "type": "file",
-              "size": 21980
+              "size": 22131
              }
             ]
            },
@@ -49581,19 +49592,24 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "budget.py",
               "type": "file",
-              "size": 13327
+              "size": 13341
              },
              {
               "name": "health.py",
               "type": "file",
-              "size": 15623
+              "size": 17056
              },
              {
               "name": "main.py",
               "type": "file",
-              "size": 4937
+              "size": 4929
              }
             ]
            },
@@ -49602,14 +49618,19 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "llm_browser.py",
               "type": "file",
-              "size": 13425
+              "size": 13646
              },
              {
               "name": "stealth_browser.py",
               "type": "file",
-              "size": 13279
+              "size": 13434
              }
             ]
            },
@@ -49618,9 +49639,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "enforcer.py",
               "type": "file",
-              "size": 3046
+              "size": 2966
              }
             ]
            },
@@ -49629,9 +49655,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "redis_tracker.py",
               "type": "file",
-              "size": 10941
+              "size": 10620
              }
             ]
            },
@@ -49640,9 +49671,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "logger.py",
               "type": "file",
-              "size": 13582
+              "size": 13841
              }
             ]
            },
@@ -49651,9 +49687,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "client.py",
               "type": "file",
-              "size": 14396
+              "size": 14722
              }
             ]
            },
@@ -49662,9 +49703,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "rate_limit.py",
               "type": "file",
-              "size": 13510
+              "size": 13454
              }
             ]
            },
@@ -49673,44 +49719,59 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "anthropic_provider.py",
               "type": "file",
-              "size": 10206
+              "size": 9262
              },
              {
               "name": "base.py",
               "type": "file",
-              "size": 1273
+              "size": 1249
+             },
+             {
+              "name": "demo.py",
+              "type": "file",
+              "size": 1359
              },
              {
               "name": "fireworks_provider.py",
               "type": "file",
-              "size": 8151
+              "size": 1914
              },
              {
               "name": "jan_provider.py",
               "type": "file",
-              "size": 8574
+              "size": 3309
              },
              {
               "name": "ollama_provider.py",
               "type": "file",
-              "size": 2221
+              "size": 2792
+             },
+             {
+              "name": "openai_compatible.py",
+              "type": "file",
+              "size": 6870
              },
              {
               "name": "openai_provider.py",
               "type": "file",
-              "size": 7884
+              "size": 1605
              },
              {
               "name": "router.py",
               "type": "file",
-              "size": 14376
+              "size": 15118
              },
              {
               "name": "together_provider.py",
               "type": "file",
-              "size": 8271
+              "size": 1955
              }
             ]
            },
@@ -49719,29 +49780,34 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "bm25_index.py",
               "type": "file",
-              "size": 7134
+              "size": 7095
              },
              {
               "name": "hybrid_search.py",
               "type": "file",
-              "size": 13698
+              "size": 14277
              },
              {
               "name": "metadata_filter.py",
               "type": "file",
-              "size": 17941
+              "size": 17525
              },
              {
               "name": "reranker.py",
               "type": "file",
-              "size": 11986
+              "size": 12181
              },
              {
               "name": "semantic_chunker.py",
               "type": "file",
-              "size": 12031
+              "size": 12281
              }
             ]
            },
@@ -49750,9 +49816,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "stream_manager.py",
               "type": "file",
-              "size": 11429
+              "size": 11071
              }
             ]
            },
@@ -49766,9 +49837,14 @@
               "children": []
              },
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "registry.py",
               "type": "file",
-              "size": 13228
+              "size": 13359
              }
             ]
            },
@@ -49777,9 +49853,14 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "shutdown.py",
               "type": "file",
-              "size": 6172
+              "size": 6220
              }
             ]
            },
@@ -49788,16 +49869,26 @@
             "type": "dir",
             "children": [
              {
+              "name": "__init__.py",
+              "type": "file",
+              "size": 0
+             },
+             {
               "name": "ab_testing.py",
               "type": "file",
-              "size": 23765
+              "size": 23673
              },
              {
               "name": "versioning.py",
               "type": "file",
-              "size": 18218
+              "size": 18176
              }
             ]
+           },
+           {
+            "name": "__init__.py",
+            "type": "file",
+            "size": 0
            }
           ]
          },
@@ -49812,7 +49903,7 @@
              {
               "name": "test_multi_agent_workflow.py",
               "type": "file",
-              "size": 18048
+              "size": 18534
              }
             ]
            },
@@ -49828,12 +49919,12 @@
              {
               "name": "test_jan_integration.py",
               "type": "file",
-              "size": 10133
+              "size": 10235
              },
              {
               "name": "test_workflow_versioning.py",
               "type": "file",
-              "size": 17495
+              "size": 17202
              }
             ]
            },
@@ -49844,12 +49935,12 @@
              {
               "name": "agent_benchmarks.py",
               "type": "file",
-              "size": 10328
+              "size": 10293
              },
              {
               "name": "benchmark.py",
               "type": "file",
-              "size": 11619
+              "size": 11700
              }
             ]
            },
@@ -49860,7 +49951,7 @@
              {
               "name": "test_llmops_logger.py",
               "type": "file",
-              "size": 5234
+              "size": 5179
              }
             ]
            }
@@ -49887,6 +49978,11 @@
           "size": 961
          },
          {
+          "name": "pyproject.toml",
+          "type": "file",
+          "size": 911
+         },
+         {
           "name": "README.md",
           "type": "file",
           "size": 8667
@@ -49894,7 +49990,7 @@
          {
           "name": "requirements.txt",
           "type": "file",
-          "size": 3006
+          "size": 3130
          }
         ]
        },
@@ -50927,7 +51023,7 @@
           "children": [],
           "status": "ok",
           "source": "github-api",
-          "head": "4059c9e6b3106d4238780b163febc05e1a12c601",
+          "head": "a369dcc0b4caa36629ac1348de8d76192371d713",
           "entries": [
            {
             "name": ".claude",
@@ -50940,34 +51036,66 @@
                {
                 "name": "build.md",
                 "type": "file",
-                "size": 529
+                "size": 585
                },
                {
                 "name": "explore.md",
                 "type": "file",
-                "size": 568
+                "size": 581
+               },
+               {
+                "name": "general-purpose.md",
+                "type": "file",
+                "size": 382
+               },
+               {
+                "name": "infra.md",
+                "type": "file",
+                "size": 539
                },
                {
                 "name": "ops.md",
                 "type": "file",
-                "size": 577
+                "size": 658
                },
                {
                 "name": "README.md",
                 "type": "file",
-                "size": 2460
+                "size": 2468
                },
                {
                 "name": "review.md",
                 "type": "file",
-                "size": 524
+                "size": 537
+               }
+              ]
+             },
+             {
+              "name": "hooks",
+              "type": "dir",
+              "children": [
+               {
+                "name": "c3",
+                "type": "dir",
+                "children": []
+               }
+              ]
+             },
+             {
+              "name": "skills",
+              "type": "dir",
+              "children": [
+               {
+                "name": "c3-infra",
+                "type": "dir",
+                "children": []
                }
               ]
              },
              {
               "name": "mcp-auth-headers.sh",
               "type": "file",
-              "size": 7716
+              "size": 8282
              },
              {
               "name": "mcp-connect.mjs",
@@ -50982,7 +51110,7 @@
              {
               "name": "settings.json",
               "type": "file",
-              "size": 10892
+              "size": 14274
              }
             ]
            },
@@ -50993,22 +51121,22 @@
              {
               "name": "history-gate",
               "type": "file",
-              "size": 3072
+              "size": 3080
              },
              {
               "name": "leak-scan",
               "type": "file",
-              "size": 3710
+              "size": 3718
              },
              {
               "name": "pre-commit",
               "type": "file",
-              "size": 1385
+              "size": 1409
              },
              {
               "name": "pre-push",
               "type": "file",
-              "size": 1395
+              "size": 1419
              },
              {
               "name": "purged-history",
@@ -51028,7 +51156,7 @@
                {
                 "name": "leak-scan.yml",
                 "type": "file",
-                "size": 6504
+                "size": 6528
                }
               ]
              }
@@ -51067,7 +51195,7 @@
              {
               "name": "settings.json",
               "type": "file",
-              "size": 1346
+              "size": 1354
              }
             ]
            },
@@ -51084,7 +51212,7 @@
            {
             "name": ".gitleaks.toml",
             "type": "file",
-            "size": 3524
+            "size": 4168
            },
            {
             "name": ".gitmodules",
@@ -51094,7 +51222,7 @@
            {
             "name": ".mcp.json",
             "type": "file",
-            "size": 3892
+            "size": 1160
            },
            {
             "name": "CG-___",
@@ -51579,7 +51707,7 @@
       ],
       "status": "ok",
       "source": "github-api",
-      "head": "e45e00fe88ab7c656ac5a08576b186c598c819e9",
+      "head": "dba78be7d1fad7565e36b5651dde496a7408b6df",
       "entries": [
        {
         "name": ".claude",
@@ -51592,34 +51720,66 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
          },
          {
           "name": "mcp-connect.mjs",
@@ -51634,7 +51794,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10892
+          "size": 14274
          }
         ]
        },
@@ -51645,22 +51805,22 @@
          {
           "name": "history-gate",
           "type": "file",
-          "size": 3072
+          "size": 3080
          },
          {
           "name": "leak-scan",
           "type": "file",
-          "size": 3710
+          "size": 3718
          },
          {
           "name": "pre-commit",
           "type": "file",
-          "size": 1385
+          "size": 1409
          },
          {
           "name": "pre-push",
           "type": "file",
-          "size": 1395
+          "size": 1419
          },
          {
           "name": "purged-history",
@@ -51680,7 +51840,7 @@
            {
             "name": "leak-scan.yml",
             "type": "file",
-            "size": 6504
+            "size": 6528
            }
           ]
          }
@@ -51719,7 +51879,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
+          "size": 1354
          }
         ]
        },
@@ -51738,148 +51898,10 @@
         "type": "dir",
         "children": [
          {
-          "name": "CG-___",
-          "type": "symlink",
-          "size": 12,
-          "target": "../../CG-___"
-         },
-         {
-          "name": "CG-circus",
-          "type": "symlink",
-          "size": 15,
-          "target": "../../CG-circus"
-         },
-         {
-          "name": "CG-galaxy",
-          "type": "symlink",
-          "size": 15,
-          "target": "../../CG-galaxy"
-         },
-         {
-          "name": "CG-galaxy-gaia",
-          "type": "symlink",
-          "size": 20,
-          "target": "../../CG-galaxy-gaia"
-         },
-         {
-          "name": "CG-unity",
-          "type": "symlink",
-          "size": 14,
-          "target": "../../CG-unity"
-         },
-         {
-          "name": "CG-voxel-rust",
-          "type": "symlink",
-          "size": 19,
-          "target": "../../CG-voxel-rust"
-         },
-         {
-          "name": "cloud_db_assets-cdn",
-          "type": "symlink",
-          "size": 25,
-          "target": "../../cloud_db_assets-cdn"
-         },
-         {
-          "name": "cloud-h-webapps-2",
-          "type": "symlink",
-          "size": 23,
-          "target": "../../cloud-h-webapps-2"
-         },
-         {
-          "name": "cloud-me-pub-profiles-___",
-          "type": "symlink",
-          "size": 31,
-          "target": "../../cloud-me-pub-profiles-___"
-         },
-         {
-          "name": "cloud-me-pub-profiles-_lnktree",
-          "type": "symlink",
-          "size": 36,
-          "target": "../../cloud-me-pub-profiles-_lnktree"
-         },
-         {
-          "name": "cloud-me-pub-profiles-leaf.y",
-          "type": "symlink",
-          "size": 34,
-          "target": "../../cloud-me-pub-profiles-leaf.y"
-         },
-         {
-          "name": "cloud-me-pub-profiles-nexus.z",
-          "type": "symlink",
-          "size": 35,
-          "target": "../../cloud-me-pub-profiles-nexus.z"
-         },
-         {
-          "name": "cloud-me-pub-profiles-prf-prs",
-          "type": "symlink",
-          "size": 35,
-          "target": "../../cloud-me-pub-profiles-prf-prs"
-         },
-         {
-          "name": "cloud-me-pub-profiles-stark.x",
-          "type": "symlink",
-          "size": 35,
-          "target": "../../cloud-me-pub-profiles-stark.x"
-         },
-         {
-          "name": "cloud-me-pub-shared",
-          "type": "symlink",
-          "size": 25,
-          "target": "../../cloud-me-pub-shared"
-         },
-         {
-          "name": "DeepSc-___",
-          "type": "symlink",
-          "size": 16,
-          "target": "../../DeepSc-___"
-         },
-         {
-          "name": "DeepSc-X",
-          "type": "symlink",
-          "size": 14,
-          "target": "../../DeepSc-X"
-         },
-         {
           "name": "DuckPeng-___",
           "type": "symlink",
           "size": 18,
           "target": "../../DuckPeng-___"
-         },
-         {
-          "name": "Fin-___",
-          "type": "symlink",
-          "size": 13,
-          "target": "../../Fin-___"
-         },
-         {
-          "name": "Fin-CM-Blmbrg",
-          "type": "symlink",
-          "size": 19,
-          "target": "../../Fin-CM-Blmbrg"
-         },
-         {
-          "name": "Fin-CM-mqpm",
-          "type": "symlink",
-          "size": 17,
-          "target": "../../Fin-CM-mqpm"
-         },
-         {
-          "name": "Fin-Corporate",
-          "type": "symlink",
-          "size": 19,
-          "target": "../../Fin-Corporate"
-         },
-         {
-          "name": "front-diegonmarcos",
-          "type": "symlink",
-          "size": 24,
-          "target": "../../front-diegonmarcos"
-         },
-         {
-          "name": "Projects-___",
-          "type": "symlink",
-          "size": 18,
-          "target": "../../Projects-___"
          },
          {
           "name": "Projects-endeavours",
@@ -51892,61 +51914,13 @@
           "type": "symlink",
           "size": 23,
           "target": "../../Projects-labtools"
-         },
-         {
-          "name": "z-archived_front-data",
-          "type": "symlink",
-          "size": 27,
-          "target": "../../z-archived_front-data"
-         },
-         {
-          "name": "z-archived_front-feeds",
-          "type": "symlink",
-          "size": 28,
-          "target": "../../z-archived_front-feeds"
-         },
-         {
-          "name": "z-archived_front-individual",
-          "type": "symlink",
-          "size": 33,
-          "target": "../../z-archived_front-individual"
-         },
-         {
-          "name": "z-archived_front-linktree",
-          "type": "symlink",
-          "size": 31,
-          "target": "../../z-archived_front-linktree"
-         },
-         {
-          "name": "z-archived_front-media",
-          "type": "symlink",
-          "size": 28,
-          "target": "../../z-archived_front-media"
-         },
-         {
-          "name": "z-archived_front-others",
-          "type": "symlink",
-          "size": 29,
-          "target": "../../z-archived_front-others"
-         },
-         {
-          "name": "z-archived_front-projects",
-          "type": "symlink",
-          "size": 31,
-          "target": "../../z-archived_front-projects"
-         },
-         {
-          "name": "z-archived_front-warehouse",
-          "type": "symlink",
-          "size": 32,
-          "target": "../../z-archived_front-warehouse"
          }
         ]
        },
        {
         "name": ".gitleaks.toml",
         "type": "file",
-        "size": 3524
+        "size": 4168
        },
        {
         "name": ".gitmodules",
@@ -51956,7 +51930,7 @@
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": "check-repos-sot.sh",
@@ -51986,12 +51960,12 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 2028
+        "size": 2093
        },
        {
         "name": "repos.json",
         "type": "file",
-        "size": 29986
+        "size": 13319
        }
       ]
      }
@@ -52010,7 +51984,7 @@
       "url": "https://github.com/diegonmarcos/diegonmarcos",
       "status": "ok",
       "source": "github-api",
-      "head": "fbd05d3e3f5425724ec7e86a68d00fc9ec41e59c",
+      "head": "22027d5b92a0c10432189fb48c516381c6e27bb2",
       "entries": [
        {
         "name": ".claude",
@@ -52155,37 +52129,37 @@
            {
             "name": "ghcr-byarchitecture.md",
             "type": "file",
-            "size": 134004
+            "size": 140205
            },
            {
             "name": "ghcr-byrepocodespc.md",
             "type": "file",
-            "size": 71686
+            "size": 74657
            },
            {
             "name": "ghcr-byrepogha.md",
             "type": "file",
-            "size": 81385
+            "size": 85073
            },
            {
             "name": "ghcr-byreposrc.md",
             "type": "file",
-            "size": 80149
+            "size": 83481
            },
            {
             "name": "ghcr-byvisibility.md",
             "type": "file",
-            "size": 83933
+            "size": 87878
            },
            {
             "name": "ghcr-data.json",
             "type": "file",
-            "size": 32379889
+            "size": 33575980
            },
            {
             "name": "GHCR.md",
             "type": "file",
-            "size": 3438086
+            "size": 3559532
            }
           ]
          },
@@ -52259,17 +52233,17 @@
            {
             "name": "releases-byrepo.md",
             "type": "file",
-            "size": 151994
+            "size": 159720
            },
            {
             "name": "releases-data.json",
             "type": "file",
-            "size": 998136
+            "size": 1041799
            },
            {
             "name": "RELEASES.md",
             "type": "file",
-            "size": 673692
+            "size": 707761
            }
           ]
          },
@@ -52378,8 +52352,51 @@
       "url": "https://github.com/diegonmarcos/diegonmarcos.github.io",
       "status": "ok",
       "source": "github-api",
-      "head": "7e9a938f5d3a1fb92e45f424e1622f87bf2d9b55",
+      "head": "51b9cfba42310fa39615a4a251e9981075b31158",
       "entries": [
+       {
+        "name": "_dotfiles",
+        "type": "dir",
+        "children": [
+         {
+          "name": "apps",
+          "type": "dir",
+          "children": [
+           {
+            "name": "dist",
+            "type": "dir",
+            "children": []
+           },
+           {
+            "name": "src",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "git",
+          "type": "dir",
+          "children": [
+           {
+            "name": "dist",
+            "type": "dir",
+            "children": []
+           },
+           {
+            "name": "src",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "deploy.sh",
+          "type": "file",
+          "size": 1722
+         }
+        ]
+       },
        {
         "name": ".claude",
         "type": "dir",
@@ -52391,34 +52408,66 @@
            {
             "name": "build.md",
             "type": "file",
-            "size": 529
+            "size": 585
            },
            {
             "name": "explore.md",
             "type": "file",
-            "size": 568
+            "size": 581
+           },
+           {
+            "name": "general-purpose.md",
+            "type": "file",
+            "size": 382
+           },
+           {
+            "name": "infra.md",
+            "type": "file",
+            "size": 539
            },
            {
             "name": "ops.md",
             "type": "file",
-            "size": 577
+            "size": 658
            },
            {
             "name": "README.md",
             "type": "file",
-            "size": 2460
+            "size": 2468
            },
            {
             "name": "review.md",
             "type": "file",
-            "size": 524
+            "size": 537
+           }
+          ]
+         },
+         {
+          "name": "hooks",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3",
+            "type": "dir",
+            "children": []
+           }
+          ]
+         },
+         {
+          "name": "skills",
+          "type": "dir",
+          "children": [
+           {
+            "name": "c3-infra",
+            "type": "dir",
+            "children": []
            }
           ]
          },
          {
           "name": "mcp-auth-headers.sh",
           "type": "file",
-          "size": 7716
+          "size": 8282
          },
          {
           "name": "mcp-connect.mjs",
@@ -52433,7 +52482,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 10895
+          "size": 14274
          }
         ]
        },
@@ -52444,22 +52493,22 @@
          {
           "name": "history-gate",
           "type": "file",
-          "size": 3072
+          "size": 3080
          },
          {
           "name": "leak-scan",
           "type": "file",
-          "size": 3710
+          "size": 3718
          },
          {
           "name": "pre-commit",
           "type": "file",
-          "size": 1385
+          "size": 1409
          },
          {
           "name": "pre-push",
           "type": "file",
-          "size": 1395
+          "size": 1419
          },
          {
           "name": "purged-history",
@@ -52509,7 +52558,7 @@
            {
             "name": "leak-scan.yml",
             "type": "file",
-            "size": 6504
+            "size": 6528
            },
            {
             "name": "linktree-e2e.yml",
@@ -52568,7 +52617,7 @@
          {
           "name": "settings.json",
           "type": "file",
-          "size": 1346
+          "size": 1354
          }
         ]
        },
@@ -52655,132 +52704,6 @@
           "name": "style.css",
           "type": "file",
           "size": 1657
-         }
-        ]
-       },
-       {
-        "name": "0_apps",
-        "type": "dir",
-        "children": [
-         {
-          "name": "dist",
-          "type": "dir",
-          "children": [
-           {
-            "name": "dotfiles",
-            "type": "dir",
-            "children": []
-           }
-          ]
-         },
-         {
-          "name": "src",
-          "type": "dir",
-          "children": [
-           {
-            "name": "claude",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "obsidian",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "root",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "vscode",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "manifest.json",
-            "type": "file",
-            "size": 2516
-           }
-          ]
-         }
-        ]
-       },
-       {
-        "name": "0_git",
-        "type": "dir",
-        "children": [
-         {
-          "name": "dist",
-          "type": "dir",
-          "children": [
-           {
-            "name": "hooks",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": ".gitattributes",
-            "type": "file",
-            "size": 2083
-           },
-           {
-            "name": ".gitignore",
-            "type": "file",
-            "size": 4792
-           },
-           {
-            "name": ".gitmodules",
-            "type": "file",
-            "size": 1419
-           },
-           {
-            "name": "gitconfig",
-            "type": "file",
-            "size": 2024
-           },
-           {
-            "name": "LICENSE",
-            "type": "file",
-            "size": 4649
-           }
-          ]
-         },
-         {
-          "name": "src",
-          "type": "dir",
-          "children": [
-           {
-            "name": "hooks",
-            "type": "dir",
-            "children": []
-           },
-           {
-            "name": "gitattributes",
-            "type": "file",
-            "size": 1067
-           },
-           {
-            "name": "gitconfig",
-            "type": "file",
-            "size": 1012
-           },
-           {
-            "name": "gitignore",
-            "type": "file",
-            "size": 3780
-           },
-           {
-            "name": "gitmodules",
-            "type": "file",
-            "size": 406
-           },
-           {
-            "name": "LICENSE",
-            "type": "file",
-            "size": 4649
-           }
-          ]
          }
         ]
        },
@@ -53547,7 +53470,7 @@
            {
             "name": "test_framework.sh",
             "type": "file",
-            "size": 19634
+            "size": 19682
            },
            {
             "name": "test_front_cache_hash.sh",
@@ -56667,17 +56590,17 @@
        {
         "name": ".gitattributes",
         "type": "file",
-        "size": 2083
+        "size": 2091
        },
        {
         "name": ".gitignore",
         "type": "file",
-        "size": 4792
+        "size": 4808
        },
        {
         "name": ".gitleaks.toml",
         "type": "file",
-        "size": 3524
+        "size": 4168
        },
        {
         "name": ".gitleaksignore",
@@ -56687,12 +56610,12 @@
        {
         "name": ".gitmodules",
         "type": "file",
-        "size": 1535
+        "size": 1543
        },
        {
         "name": ".mcp.json",
         "type": "file",
-        "size": 3892
+        "size": 1160
        },
        {
         "name": ".node-version",
@@ -56878,7 +56801,7 @@
         "url": "https://github.com/diegonmarcos/z-archived_front-data",
         "status": "ok",
         "source": "github-api",
-        "head": "de6779ababda1094f2357b2e312bac5f9626d66d",
+        "head": "f856a5828645a61f072bda47bf9231ec85e27dc2",
         "entries": [
          {
           "name": ".claude",
@@ -56891,34 +56814,66 @@
              {
               "name": "build.md",
               "type": "file",
-              "size": 529
+              "size": 585
              },
              {
               "name": "explore.md",
               "type": "file",
-              "size": 568
+              "size": 581
+             },
+             {
+              "name": "general-purpose.md",
+              "type": "file",
+              "size": 382
+             },
+             {
+              "name": "infra.md",
+              "type": "file",
+              "size": 539
              },
              {
               "name": "ops.md",
               "type": "file",
-              "size": 577
+              "size": 658
              },
              {
               "name": "README.md",
               "type": "file",
-              "size": 2460
+              "size": 2468
              },
              {
               "name": "review.md",
               "type": "file",
-              "size": 524
+              "size": 537
+             }
+            ]
+           },
+           {
+            "name": "hooks",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3",
+              "type": "dir",
+              "children": []
+             }
+            ]
+           },
+           {
+            "name": "skills",
+            "type": "dir",
+            "children": [
+             {
+              "name": "c3-infra",
+              "type": "dir",
+              "children": []
              }
             ]
            },
            {
             "name": "mcp-auth-headers.sh",
             "type": "file",
-            "size": 7716
+            "size": 8282
            },
            {
             "name": "mcp-connect.mjs",
@@ -56933,7 +56888,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 10892
+            "size": 14274
            }
           ]
          },
@@ -56944,22 +56899,22 @@
            {
             "name": "history-gate",
             "type": "file",
-            "size": 3072
+            "size": 3080
            },
            {
             "name": "leak-scan",
             "type": "file",
-            "size": 3710
+            "size": 3718
            },
            {
             "name": "pre-commit",
             "type": "file",
-            "size": 1385
+            "size": 1409
            },
            {
             "name": "pre-push",
             "type": "file",
-            "size": 1395
+            "size": 1419
            },
            {
             "name": "purged-history",
@@ -56979,7 +56934,7 @@
              {
               "name": "leak-scan.yml",
               "type": "file",
-              "size": 6504
+              "size": 6528
              }
             ]
            }
@@ -57018,7 +56973,7 @@
            {
             "name": "settings.json",
             "type": "file",
-            "size": 1346
+            "size": 1354
            }
           ]
          },
@@ -57246,7 +57201,7 @@
          {
           "name": ".gitleaks.toml",
           "type": "file",
-          "size": 3524
+          "size": 4168
          },
          {
           "name": ".gitmodules",
@@ -57256,7 +57211,7 @@
          {
           "name": ".mcp.json",
           "type": "file",
-          "size": 3892
+          "size": 1160
          },
          {
           "name": "CLAUDE.md",
@@ -61020,8 +60975,51 @@
   ],
   "status": "ok",
   "source": "github-api",
-  "head": "681e70f85ca77be0ac7454e674bd10d6c2973958",
+  "head": "063eef27a4c3652e2970c68d0508cf95ea1921bd",
   "entries": [
+   {
+    "name": "_dotfiles",
+    "type": "dir",
+    "children": [
+     {
+      "name": "apps",
+      "type": "dir",
+      "children": [
+       {
+        "name": "dist",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "src",
+        "type": "dir",
+        "children": []
+       }
+      ]
+     },
+     {
+      "name": "git",
+      "type": "dir",
+      "children": [
+       {
+        "name": "dist",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "src",
+        "type": "dir",
+        "children": []
+       }
+      ]
+     },
+     {
+      "name": "deploy.sh",
+      "type": "file",
+      "size": 1722
+     }
+    ]
+   },
    {
     "name": ".claude",
     "type": "dir",
@@ -61058,7 +61056,7 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 2460
+        "size": 2468
        },
        {
         "name": "review.md",
@@ -61112,7 +61110,7 @@
      {
       "name": "settings.json",
       "type": "file",
-      "size": 14266
+      "size": 14274
      }
     ]
    },
@@ -61140,7 +61138,17 @@
         "children": []
        },
        {
-        "name": "json-viewer",
+        "name": "json-editor",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "new-3d-graph",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "notebook-navigator",
         "type": "dir",
         "children": []
        },
@@ -61190,17 +61198,17 @@
         "children": []
        },
        {
-        "name": "periodic-notes",
-        "type": "dir",
-        "children": []
-       },
-       {
         "name": "quickadd",
         "type": "dir",
         "children": []
        },
        {
         "name": "remotely-save",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "show-hidden-files",
         "type": "dir",
         "children": []
        },
@@ -61222,7 +61230,7 @@
        {
         "name": "README.md",
         "type": "file",
-        "size": 3407
+        "size": 4054
        }
       ]
      },
@@ -61245,7 +61253,7 @@
      {
       "name": "app.json",
       "type": "file",
-      "size": 442
+      "size": 541
      },
      {
       "name": "appearance.json",
@@ -61260,7 +61268,7 @@
      {
       "name": "community-plugins.json",
       "type": "file",
-      "size": 422
+      "size": 467
      },
      {
       "name": "core-plugins.json",
@@ -61286,260 +61294,82 @@
      {
       "name": "settings.json",
       "type": "file",
-      "size": 1346
+      "size": 1354
      }
     ]
    },
    {
-    "name": "0_apps",
+    "name": "0_repos-tree",
     "type": "dir",
     "children": [
      {
-      "name": "dist",
+      "name": "repos-tree",
       "type": "dir",
       "children": [
        {
-        "name": "dotfiles",
+        "name": "_git-repos-master",
         "type": "dir",
         "children": []
        }
       ]
      },
      {
-      "name": "src",
-      "type": "dir",
-      "children": [
-       {
-        "name": "claude",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "obsidian",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "root",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "vscode",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "manifest.json",
-        "type": "file",
-        "size": 2662
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "name": "0_git",
-    "type": "dir",
-    "children": [
-     {
-      "name": "dist",
-      "type": "dir",
-      "children": [
-       {
-        "name": "hooks",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": ".gitattributes",
-        "type": "file",
-        "size": 1067
-       },
-       {
-        "name": ".gitignore",
-        "type": "file",
-        "size": 3762
-       },
-       {
-        "name": "gitconfig",
-        "type": "file",
-        "size": 1009
-       }
-      ]
-     },
-     {
-      "name": "src",
-      "type": "dir",
-      "children": [
-       {
-        "name": "hooks",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "gitattributes",
-        "type": "file",
-        "size": 1067
-       },
-       {
-        "name": "gitconfig",
-        "type": "file",
-        "size": 1009
-       },
-       {
-        "name": "gitignore",
-        "type": "file",
-        "size": 3780
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "name": "2_vault",
-    "type": "dir",
-    "children": [
-     {
-      "name": "cloud-me-pvt-vault",
-      "type": "symlink",
-      "size": 24,
-      "target": "../../cloud-me-pvt-vault"
-     }
-    ]
-   },
-   {
-    "name": "9_others",
-    "type": "dir",
-    "children": [
-     {
-      "name": "obsidian",
-      "type": "dir",
-      "children": [
-       {
-        "name": "install-plugins.sh",
-        "type": "file",
-        "size": 2249
-       },
-       {
-        "name": "plugins.list",
-        "type": "file",
-        "size": 1048
-       },
-       {
-        "name": "plugins.lock",
-        "type": "file",
-        "size": 1195
-       }
-      ]
-     },
-     {
-      "name": "src",
-      "type": "dir",
-      "children": [
-       {
-        "name": "deploy-dotfiles.sh",
-        "type": "file",
-        "size": 11793
-       }
-      ]
-     },
-     {
-      "name": "templates",
-      "type": "dir",
-      "children": [
-       {
-        "name": "hub-clone.sh",
-        "type": "file",
-        "size": 8088
-       },
-       {
-        "name": "repos-tree.html",
-        "type": "file",
-        "size": 12531
-       }
-      ]
-     },
-     {
-      "name": "test",
-      "type": "dir",
-      "children": [
-       {
-        "name": "test-repos-sot.sh",
-        "type": "file",
-        "size": 8129
-       },
-       {
-        "name": "test-repos-tree.sh",
-        "type": "file",
-        "size": 9869
-       }
-      ]
-     },
-     {
-      "name": "build.sh",
+      "name": "repos-tree.canvas",
       "type": "file",
-      "size": 7432
+      "size": 42564
+     },
+     {
+      "name": "repos-tree.html",
+      "type": "file",
+      "size": 39641
+     },
+     {
+      "name": "repos-tree.json",
+      "type": "file",
+      "size": 47909
+     },
+     {
+      "name": "repos-tree.md",
+      "type": "file",
+      "size": 14768
+     },
+     {
+      "name": "repos-tree.xml",
+      "type": "file",
+      "size": 17577
      }
     ]
    },
    {
-    "name": "a_cloud",
+    "name": "1_repo-folders-tree",
     "type": "dir",
     "children": [
      {
-      "name": "cloud-me-___",
-      "type": "symlink",
-      "size": 18,
-      "target": "../../cloud-me-___"
+      "name": "repo-folders-tree.html",
+      "type": "file",
+      "size": 4694027
      },
      {
-      "name": "cloud-me-pub-___",
-      "type": "symlink",
-      "size": 22,
-      "target": "../../cloud-me-pub-___"
+      "name": "repo-folders-tree.json",
+      "type": "file",
+      "size": 1554647
      },
      {
-      "name": "cloud-me-pvt-___",
-      "type": "symlink",
-      "size": 22,
-      "target": "../../cloud-me-pvt-___"
-     },
+      "name": "repo-folders-tree.md",
+      "type": "file",
+      "size": 473802
+     }
+    ]
+   },
+   {
+    "name": "1.1.Cloudy",
+    "type": "dir",
+    "children": [
      {
-      "name": "cloud-me-pvt-cgc",
-      "type": "symlink",
-      "size": 22,
-      "target": "../../cloud-me-pvt-cgc"
-     },
-     {
-      "name": "cloud-me-pvt-configs",
+      "name": "cloudy_db_assets-cdn",
       "type": "symlink",
       "size": 26,
-      "target": "../../cloud-me-pvt-configs"
-     },
-     {
-      "name": "cloud-me-pvt-containers",
-      "type": "symlink",
-      "size": 29,
-      "target": "../../cloud-me-pvt-containers"
-     },
-     {
-      "name": "cloud-me-pvt-data",
-      "type": "symlink",
-      "size": 23,
-      "target": "../../cloud-me-pvt-data"
-     },
-     {
-      "name": "cloud-me-pvt-my-ai",
-      "type": "symlink",
-      "size": 24,
-      "target": "../../cloud-me-pvt-my-ai"
-     },
-     {
-      "name": "cloud-me-pvt-notes",
-      "type": "symlink",
-      "size": 24,
-      "target": "../../cloud-me-pvt-notes"
+      "target": "../../cloudy_db_assets-cdn"
      },
      {
       "name": "cloudy_db_infra-ops-obsv_configs-sync",
@@ -61570,6 +61400,12 @@
       "type": "symlink",
       "size": 22,
       "target": "../../cloudy-h-webapps"
+     },
+     {
+      "name": "cloudy-h-webapps-2",
+      "type": "symlink",
+      "size": 24,
+      "target": "../../cloudy-h-webapps-2"
      },
      {
       "name": "cloudy-t-infra",
@@ -61606,48 +61442,102 @@
       "type": "symlink",
       "size": 20,
       "target": "../../cloudy-u-linux"
-     },
-     {
-      "name": "z-archived_cloud-me-pub-data",
-      "type": "symlink",
-      "size": 34,
-      "target": "../../z-archived_cloud-me-pub-data"
-     },
-     {
-      "name": "z-archived_cloud-me-pvt-data-private",
-      "type": "symlink",
-      "size": 42,
-      "target": "../../z-archived_cloud-me-pvt-data-private"
-     },
-     {
-      "name": "z-archived_cloud-me-pvt-legacy",
-      "type": "symlink",
-      "size": 36,
-      "target": "../../z-archived_cloud-me-pvt-legacy"
      }
     ]
    },
    {
-    "name": "a0_docs",
+    "name": "1.2.Cloud-me",
     "type": "dir",
     "children": [
      {
-      "name": "README.md",
-      "type": "file",
-      "size": 3725
+      "name": "Pub",
+      "type": "dir",
+      "children": [
+       {
+        "name": "Profiles",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "cloud-me-pub-___",
+        "type": "symlink",
+        "size": 25,
+        "target": "../../../cloud-me-pub-___"
+       },
+       {
+        "name": "cloud-me-pub-shared",
+        "type": "symlink",
+        "size": 28,
+        "target": "../../../cloud-me-pub-shared"
+       }
+      ]
+     },
+     {
+      "name": "Pvt",
+      "type": "dir",
+      "children": [
+       {
+        "name": "cloud-me-pvt-___",
+        "type": "symlink",
+        "size": 25,
+        "target": "../../../cloud-me-pvt-___"
+       },
+       {
+        "name": "cloud-me-pvt-cgc",
+        "type": "symlink",
+        "size": 25,
+        "target": "../../../cloud-me-pvt-cgc"
+       },
+       {
+        "name": "cloud-me-pvt-configs",
+        "type": "symlink",
+        "size": 29,
+        "target": "../../../cloud-me-pvt-configs"
+       },
+       {
+        "name": "cloud-me-pvt-containers",
+        "type": "symlink",
+        "size": 32,
+        "target": "../../../cloud-me-pvt-containers"
+       },
+       {
+        "name": "cloud-me-pvt-data",
+        "type": "symlink",
+        "size": 26,
+        "target": "../../../cloud-me-pvt-data"
+       },
+       {
+        "name": "cloud-me-pvt-my-ai",
+        "type": "symlink",
+        "size": 27,
+        "target": "../../../cloud-me-pvt-my-ai"
+       },
+       {
+        "name": "cloud-me-pvt-notes",
+        "type": "symlink",
+        "size": 27,
+        "target": "../../../cloud-me-pvt-notes"
+       },
+       {
+        "name": "cloud-me-pvt-vault",
+        "type": "symlink",
+        "size": 27,
+        "target": "../../../cloud-me-pvt-vault"
+       }
+      ]
+     },
+     {
+      "name": "cloud-me-___",
+      "type": "symlink",
+      "size": 18,
+      "target": "../../cloud-me-___"
      }
     ]
    },
    {
-    "name": "b_projects",
+    "name": "2.CG",
     "type": "dir",
     "children": [
-     {
-      "name": "CAD-Simulators",
-      "type": "symlink",
-      "size": 20,
-      "target": "../../CAD-Simulators"
-     },
      {
       "name": "CG-___",
       "type": "symlink",
@@ -61683,60 +61573,60 @@
       "type": "symlink",
       "size": 19,
       "target": "../../CG-voxel-rust"
+     }
+    ]
+   },
+   {
+    "name": "3.Capital",
+    "type": "dir",
+    "children": [
+     {
+      "name": "Capital-Markets",
+      "type": "dir",
+      "children": [
+       {
+        "name": "Fin-CM-Blmbrg",
+        "type": "symlink",
+        "size": 22,
+        "target": "../../../Fin-CM-Blmbrg"
+       },
+       {
+        "name": "Fin-CM-mqpm",
+        "type": "symlink",
+        "size": 20,
+        "target": "../../../Fin-CM-mqpm"
+       }
+      ]
      },
      {
-      "name": "cloud-me-pub-profiles-___",
-      "type": "symlink",
-      "size": 31,
-      "target": "../../cloud-me-pub-profiles-___"
+      "name": "Corporate",
+      "type": "dir",
+      "children": [
+       {
+        "name": "Fin-Corporate",
+        "type": "symlink",
+        "size": 22,
+        "target": "../../../Fin-Corporate"
+       }
+      ]
      },
      {
-      "name": "cloud-me-pub-profiles-_lnktree",
+      "name": "Fin-___",
       "type": "symlink",
-      "size": 36,
-      "target": "../../cloud-me-pub-profiles-_lnktree"
-     },
+      "size": 13,
+      "target": "../../Fin-___"
+     }
+    ]
+   },
+   {
+    "name": "4.HardTech",
+    "type": "dir",
+    "children": [
      {
-      "name": "cloud-me-pub-profiles-leaf.y",
+      "name": "CAD-Simulators",
       "type": "symlink",
-      "size": 34,
-      "target": "../../cloud-me-pub-profiles-leaf.y"
-     },
-     {
-      "name": "cloud-me-pub-profiles-nexus.z",
-      "type": "symlink",
-      "size": 35,
-      "target": "../../cloud-me-pub-profiles-nexus.z"
-     },
-     {
-      "name": "cloud-me-pub-profiles-prf-prs",
-      "type": "symlink",
-      "size": 35,
-      "target": "../../cloud-me-pub-profiles-prf-prs"
-     },
-     {
-      "name": "cloud-me-pub-profiles-stark.x",
-      "type": "symlink",
-      "size": 35,
-      "target": "../../cloud-me-pub-profiles-stark.x"
-     },
-     {
-      "name": "cloud-me-pub-shared",
-      "type": "symlink",
-      "size": 25,
-      "target": "../../cloud-me-pub-shared"
-     },
-     {
-      "name": "cloudy_db_assets-cdn",
-      "type": "symlink",
-      "size": 26,
-      "target": "../../cloudy_db_assets-cdn"
-     },
-     {
-      "name": "cloudy-h-webapps-2",
-      "type": "symlink",
-      "size": 24,
-      "target": "../../cloudy-h-webapps-2"
+      "size": 20,
+      "target": "../../CAD-Simulators"
      },
      {
       "name": "DeepSc-___",
@@ -61749,125 +61639,11 @@
       "type": "symlink",
       "size": 14,
       "target": "../../DeepSc-X"
-     },
-     {
-      "name": "DuckPeng-___",
-      "type": "symlink",
-      "size": 18,
-      "target": "../../DuckPeng-___"
-     },
-     {
-      "name": "Fin-___",
-      "type": "symlink",
-      "size": 13,
-      "target": "../../Fin-___"
-     },
-     {
-      "name": "Fin-CM-Blmbrg",
-      "type": "symlink",
-      "size": 19,
-      "target": "../../Fin-CM-Blmbrg"
-     },
-     {
-      "name": "Fin-CM-mqpm",
-      "type": "symlink",
-      "size": 17,
-      "target": "../../Fin-CM-mqpm"
-     },
-     {
-      "name": "Fin-Corporate",
-      "type": "symlink",
-      "size": 19,
-      "target": "../../Fin-Corporate"
-     },
-     {
-      "name": "front-diegonmarcos",
-      "type": "symlink",
-      "size": 24,
-      "target": "../../front-diegonmarcos"
-     },
-     {
-      "name": "Projects-___",
-      "type": "symlink",
-      "size": 18,
-      "target": "../../Projects-___"
-     },
-     {
-      "name": "Projects-endeavours",
-      "type": "symlink",
-      "size": 25,
-      "target": "../../Projects-endeavours"
-     },
-     {
-      "name": "Projects-labtools",
-      "type": "symlink",
-      "size": 23,
-      "target": "../../Projects-labtools"
-     },
-     {
-      "name": "z-archived_front-data",
-      "type": "symlink",
-      "size": 27,
-      "target": "../../z-archived_front-data"
-     },
-     {
-      "name": "z-archived_front-feeds",
-      "type": "symlink",
-      "size": 28,
-      "target": "../../z-archived_front-feeds"
-     },
-     {
-      "name": "z-archived_front-individual",
-      "type": "symlink",
-      "size": 33,
-      "target": "../../z-archived_front-individual"
-     },
-     {
-      "name": "z-archived_front-linktree",
-      "type": "symlink",
-      "size": 31,
-      "target": "../../z-archived_front-linktree"
-     },
-     {
-      "name": "z-archived_front-media",
-      "type": "symlink",
-      "size": 28,
-      "target": "../../z-archived_front-media"
-     },
-     {
-      "name": "z-archived_front-others",
-      "type": "symlink",
-      "size": 29,
-      "target": "../../z-archived_front-others"
-     },
-     {
-      "name": "z-archived_front-projects",
-      "type": "symlink",
-      "size": 31,
-      "target": "../../z-archived_front-projects"
-     },
-     {
-      "name": "z-archived_front-warehouse",
-      "type": "symlink",
-      "size": 32,
-      "target": "../../z-archived_front-warehouse"
      }
     ]
    },
    {
-    "name": "c_gh",
-    "type": "dir",
-    "children": [
-     {
-      "name": "front-gh-profile-diegonmarcos",
-      "type": "symlink",
-      "size": 35,
-      "target": "../../front-gh-profile-diegonmarcos"
-     }
-    ]
-   },
-   {
-    "name": "d_lecole",
+    "name": "5.Lecole-42",
     "type": "dir",
     "children": [
      {
@@ -61939,141 +61715,284 @@
     ]
    },
    {
-    "name": "repos-tree",
+    "name": "6.Projects",
     "type": "dir",
     "children": [
      {
-      "name": "_git-repos-master",
+      "name": "DuckPeng",
       "type": "dir",
       "children": [
        {
-        "name": "cloud-me-___",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "cloudy-___",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "lecole-42-___",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "Projects-___",
-        "type": "dir",
-        "children": []
-       },
-       {
-        "name": "_git-repos-master.md",
-        "type": "file",
-        "size": 1053
-       },
-       {
-        "name": "z-archived_c3-infra-plugin.md",
-        "type": "file",
-        "size": 425
-       },
-       {
-        "name": "z-archived_cloud-me-pub-data.md",
-        "type": "file",
-        "size": 564
-       },
-       {
-        "name": "z-archived_cloud-me-pvt-data-private.md",
-        "type": "file",
-        "size": 445
-       },
-       {
-        "name": "z-archived_cloud-me-pvt-legacy.md",
-        "type": "file",
-        "size": 433
-       },
-       {
-        "name": "z-archived_front-data.md",
-        "type": "file",
-        "size": 536
-       },
-       {
-        "name": "z-archived_front-feeds.md",
-        "type": "file",
-        "size": 540
-       },
-       {
-        "name": "z-archived_front-individual.md",
-        "type": "file",
-        "size": 560
-       },
-       {
-        "name": "z-archived_front-linktree.md",
-        "type": "file",
-        "size": 552
-       },
-       {
-        "name": "z-archived_front-media.md",
-        "type": "file",
-        "size": 540
-       },
-       {
-        "name": "z-archived_front-others.md",
-        "type": "file",
-        "size": 544
-       },
-       {
-        "name": "z-archived_front-projects.md",
-        "type": "file",
-        "size": 552
-       },
-       {
-        "name": "z-archived_front-warehouse.md",
-        "type": "file",
-        "size": 556
-       },
-       {
-        "name": "z-archived_My-ai-memory.md",
-        "type": "file",
-        "size": 419
+        "name": "DuckPeng-___",
+        "type": "symlink",
+        "size": 21,
+        "target": "../../../DuckPeng-___"
        }
       ]
+     },
+     {
+      "name": "Projects-___",
+      "type": "symlink",
+      "size": 18,
+      "target": "../../Projects-___"
+     },
+     {
+      "name": "Projects-endeavours",
+      "type": "symlink",
+      "size": 25,
+      "target": "../../Projects-endeavours"
+     },
+     {
+      "name": "Projects-labtools",
+      "type": "symlink",
+      "size": 23,
+      "target": "../../Projects-labtools"
      }
     ]
    },
    {
-    "name": ".gitattributes",
+    "name": "7.Others",
+    "type": "dir",
+    "children": [
+     {
+      "name": "front-diegonmarcos",
+      "type": "symlink",
+      "size": 24,
+      "target": "../../front-diegonmarcos"
+     },
+     {
+      "name": "front-gh-profile-diegonmarcos",
+      "type": "symlink",
+      "size": 35,
+      "target": "../../front-gh-profile-diegonmarcos"
+     }
+    ]
+   },
+   {
+    "name": "8.Archived",
+    "type": "dir",
+    "children": [
+     {
+      "name": "z-archived_c3-infra-plugin",
+      "type": "symlink",
+      "size": 32,
+      "target": "../../z-archived_c3-infra-plugin"
+     },
+     {
+      "name": "z-archived_cloud-me-pub-data",
+      "type": "symlink",
+      "size": 34,
+      "target": "../../z-archived_cloud-me-pub-data"
+     },
+     {
+      "name": "z-archived_cloud-me-pvt-data-private",
+      "type": "symlink",
+      "size": 42,
+      "target": "../../z-archived_cloud-me-pvt-data-private"
+     },
+     {
+      "name": "z-archived_cloud-me-pvt-legacy",
+      "type": "symlink",
+      "size": 36,
+      "target": "../../z-archived_cloud-me-pvt-legacy"
+     },
+     {
+      "name": "z-archived_front-data",
+      "type": "symlink",
+      "size": 27,
+      "target": "../../z-archived_front-data"
+     },
+     {
+      "name": "z-archived_front-feeds",
+      "type": "symlink",
+      "size": 28,
+      "target": "../../z-archived_front-feeds"
+     },
+     {
+      "name": "z-archived_front-individual",
+      "type": "symlink",
+      "size": 33,
+      "target": "../../z-archived_front-individual"
+     },
+     {
+      "name": "z-archived_front-linktree",
+      "type": "symlink",
+      "size": 31,
+      "target": "../../z-archived_front-linktree"
+     },
+     {
+      "name": "z-archived_front-media",
+      "type": "symlink",
+      "size": 28,
+      "target": "../../z-archived_front-media"
+     },
+     {
+      "name": "z-archived_front-others",
+      "type": "symlink",
+      "size": 29,
+      "target": "../../z-archived_front-others"
+     },
+     {
+      "name": "z-archived_front-projects",
+      "type": "symlink",
+      "size": 31,
+      "target": "../../z-archived_front-projects"
+     },
+     {
+      "name": "z-archived_front-warehouse",
+      "type": "symlink",
+      "size": 32,
+      "target": "../../z-archived_front-warehouse"
+     },
+     {
+      "name": "z-archived_My-ai-memory",
+      "type": "symlink",
+      "size": 29,
+      "target": "../../z-archived_My-ai-memory"
+     },
+     {
+      "name": "z-archived-___",
+      "type": "symlink",
+      "size": 20,
+      "target": "../../z-archived-___"
+     }
+    ]
+   },
+   {
+    "name": "9_others",
+    "type": "dir",
+    "children": [
+     {
+      "name": "obsidian",
+      "type": "dir",
+      "children": [
+       {
+        "name": "install-plugins.sh",
+        "type": "file",
+        "size": 2249
+       },
+       {
+        "name": "plugins.list",
+        "type": "file",
+        "size": 1131
+       },
+       {
+        "name": "plugins.lock",
+        "type": "file",
+        "size": 1307
+       }
+      ]
+     },
+     {
+      "name": "src",
+      "type": "dir",
+      "children": [
+       {
+        "name": "deploy-dotfiles.sh",
+        "type": "file",
+        "size": 11793
+       }
+      ]
+     },
+     {
+      "name": "templates",
+      "type": "dir",
+      "children": [
+       {
+        "name": "readme",
+        "type": "dir",
+        "children": []
+       },
+       {
+        "name": "hub-clone.sh",
+        "type": "file",
+        "size": 8088
+       },
+       {
+        "name": "README.md.tpl",
+        "type": "file",
+        "size": 6224
+       },
+       {
+        "name": "repo-folders-tree.md.tpl",
+        "type": "file",
+        "size": 1097
+       },
+       {
+        "name": "repos-tree.html",
+        "type": "file",
+        "size": 12605
+       }
+      ]
+     },
+     {
+      "name": "test",
+      "type": "dir",
+      "children": [
+       {
+        "name": "test-repo-folders-tree.sh",
+        "type": "file",
+        "size": 7026
+       },
+       {
+        "name": "test-repos-sot.sh",
+        "type": "file",
+        "size": 18512
+       },
+       {
+        "name": "test-repos-tree.sh",
+        "type": "file",
+        "size": 12511
+       }
+      ]
+     },
+     {
+      "name": "build.sh",
+      "type": "file",
+      "size": 8321
+     }
+    ]
+   },
+   {
+    "name": "a0_docs",
+    "type": "dir",
+    "children": [
+     {
+      "name": "README.md",
+      "type": "file",
+      "size": 4065
+     }
+    ]
+   },
+   {
+    "name": ".gitattributes_ours",
     "type": "file",
     "size": 1067
    },
    {
     "name": ".gitignore",
     "type": "file",
-    "size": 4101
+    "size": 4162
    },
    {
     "name": ".mcp.json",
     "type": "file",
-    "size": 1142
+    "size": 1160
    },
    {
     "name": "CLAUDE.md",
     "type": "file",
-    "size": 1249
+    "size": 1281
    },
    {
     "name": "clone.sh",
     "type": "file",
-    "size": 17503
+    "size": 17995
    },
    {
-    "name": "gen-repos-list.js",
+    "name": "gen-registry.js",
     "type": "file",
-    "size": 3706
-   },
-   {
-    "name": "gen-repos-tree.js",
-    "type": "file",
-    "size": 11547
+    "size": 11914
    },
    {
     "name": "LICENSE",
@@ -62086,49 +62005,107 @@
     "size": 961
    },
    {
+    "name": "projects-repos.json",
+    "type": "file",
+    "size": 825875
+   },
+   {
+    "name": "projects-repos.schema.json",
+    "type": "file",
+    "size": 16257
+   },
+   {
+    "name": "readme-render.js",
+    "type": "file",
+    "size": 7485
+   },
+   {
     "name": "README.md",
     "type": "file",
-    "size": 19070
+    "size": 36872
+   },
+   {
+    "name": "refresh-folders-tree.js",
+    "type": "file",
+    "size": 5652
+   },
+   {
+    "name": "registry-model.js",
+    "type": "file",
+    "size": 12736
+   },
+   {
+    "name": "render-folders-tree.js",
+    "type": "file",
+    "size": 6898
+   },
+   {
+    "name": "render-repos-tree.js",
+    "type": "file",
+    "size": 13801
+   },
+   {
+    "name": "repo-folders-tree.html",
+    "type": "symlink",
+    "size": 42,
+    "target": "1_repo-folders-tree/repo-folders-tree.html"
+   },
+   {
+    "name": "repo-folders-tree.json",
+    "type": "symlink",
+    "size": 42,
+    "target": "1_repo-folders-tree/repo-folders-tree.json"
+   },
+   {
+    "name": "repo-folders-tree.md",
+    "type": "symlink",
+    "size": 40,
+    "target": "1_repo-folders-tree/repo-folders-tree.md"
    },
    {
     "name": "repos-github.json",
     "type": "file",
-    "size": 22045
+    "size": 78448
    },
    {
     "name": "repos-sot.js",
     "type": "file",
-    "size": 14051
+    "size": 19697
    },
    {
     "name": "repos-tree.canvas",
-    "type": "file",
-    "size": 38626
+    "type": "symlink",
+    "size": 30,
+    "target": "0_repos-tree/repos-tree.canvas"
    },
    {
     "name": "repos-tree.html",
-    "type": "file",
-    "size": 30659
+    "type": "symlink",
+    "size": 28,
+    "target": "0_repos-tree/repos-tree.html"
    },
    {
     "name": "repos-tree.json",
-    "type": "file",
-    "size": 27390
+    "type": "symlink",
+    "size": 28,
+    "target": "0_repos-tree/repos-tree.json"
    },
    {
     "name": "repos-tree.md",
-    "type": "file",
-    "size": 11351
+    "type": "symlink",
+    "size": 26,
+    "target": "0_repos-tree/repos-tree.md"
    },
    {
     "name": "repos-tree.xml",
-    "type": "file",
-    "size": 13428
+    "type": "symlink",
+    "size": 27,
+    "target": "0_repos-tree/repos-tree.xml"
    },
    {
     "name": "repos.json",
     "type": "file",
-    "size": 68049
+    "size": 88975
    }
   ]
  }

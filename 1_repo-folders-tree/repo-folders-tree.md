@@ -29,15 +29,21 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - **[cloudy_db_assets-cdn](https://github.com/diegonmarcos/cloudy_db_assets-cdn)** · 🌐 public
         - 📁 `.claude`
           - 📁 `agents`
-            - `build.md` · 529 B
-            - `explore.md` · 568 B
-            - `ops.md` · 577 B
+            - `build.md` · 585 B
+            - `explore.md` · 581 B
+            - `general-purpose.md` · 382 B
+            - `infra.md` · 539 B
+            - `ops.md` · 658 B
             - `README.md` · 2.4 KiB
-            - `review.md` · 524 B
-          - `mcp-auth-headers.sh` · 7.5 KiB
+            - `review.md` · 537 B
+          - 📁 `hooks`
+            - 📁 `c3`
+          - 📁 `skills`
+            - 📁 `c3-infra`
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
-          - `settings.json` · 10.6 KiB
+          - `settings.json` · 13.9 KiB
         - 📁 `.githooks`
           - `history-gate` · 3.0 KiB
           - `leak-scan` · 3.6 KiB
@@ -56,9 +62,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `settings.json` · 1.3 KiB
         - 📁 `0_hub`
           - 📦 `cloudy-___` (submodule)
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitmodules` · 250 B
-        - `.mcp.json` · 3.8 KiB
+        - `.mcp.json` · 1.1 KiB
         - 📦 `0_deployer` (submodule)
         - `CLAUDE.md` · 50 B
         - `LICENSE` · 4.5 KiB
@@ -932,6 +938,14 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `README.md` · 521 B
         - `SPLIT-PATHS.txt` · 213 B
       - **[cloudy-t-infra](https://github.com/diegonmarcos/cloudy-t-infra)** · 🌐 public
+        - 📁 `_dotfiles`
+          - 📁 `apps`
+            - 📁 `dist`
+            - 📁 `src`
+          - 📁 `git`
+            - 📁 `dist`
+            - 📁 `src`
+          - `deploy.sh` · 1.7 KiB
         - 📁 `.claude`
           - 📁 `agents`
             - `build.md` · 585 B
@@ -945,7 +959,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `c3`
           - 📁 `skills`
             - 📁 `c3-infra`
-          - `mcp-auth-headers.sh` · 7.7 KiB
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
           - `settings.json` · 13.9 KiB
@@ -1003,32 +1017,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `settings.json` · 1.3 KiB
         - 📁 `0____________________`
           - `.gitkeep` · 0 B
-        - 📁 `0_apps`
-          - 📁 `dist`
-            - 📁 `dotfiles`
-          - 📁 `src`
-            - 📁 `claude`
-            - 📁 `githooks`
-            - 📁 `github`
-            - 📁 `obsidian`
-            - 📁 `root`
-            - 📁 `vscode`
-            - `manifest.json` · 10.5 KiB
-        - 📁 `0_git`
-          - 📁 `dist`
-            - 📁 `hooks`
-            - `.gitattributes` · 2.0 KiB
-            - `.gitignore` · 5.7 KiB
-            - `.gitmodules` · 3.1 KiB
-            - `gitconfig` · 2.0 KiB
-            - `LICENSE` · 4.5 KiB
-          - 📁 `src`
-            - 📁 `hooks`
-            - `gitattributes` · 1.0 KiB
-            - `gitconfig` · 1009 B
-            - `gitignore` · 4.7 KiB
-            - `gitmodules` · 2.1 KiB
-            - `LICENSE` · 4.5 KiB
         - 📁 `0_hub`
           - 📦 `cloudy-___` (submodule)
         - 📁 `1_cicd`
@@ -1075,7 +1063,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 📁 `1_cloud-configs`
           - 📁 `dist`
             - 📁 `z_archive`
-            - `_cloud-data-consolidated.json` · 583.6 KiB
+            - `_cloud-data-consolidated.json` · 583.7 KiB
             - `build-agents-tmp-reaper.json` · 67.0 KiB
             - `build-alerts-api.json` · 66.9 KiB
             - `build-auth-broker-cloudflare.json` · 75.4 KiB
@@ -1090,10 +1078,10 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `build-c3-infra-api.json` · 68.4 KiB
             - `build-c3-public-api.json` · 70.7 KiB
             - `build-c3-services-api.json` · 67.4 KiB
-            - `build-caddy-edge.json` · 59.8 KiB
+            - `build-caddy-edge.json` · 60.0 KiB
             - `build-caddy-l4-image.json` · 66.9 KiB
             - `build-caddy-public.json` · 71.1 KiB
-            - `build-caddy.json` · 259.1 KiB
+            - `build-caddy.json` · 259.3 KiB
             - `build-calendar-radicale.json` · 67.6 KiB
             - `build-cloud-agi-claude.json` · 75.8 KiB
             - `build-cloud-agi-goose.json` · 74.9 KiB
@@ -1131,8 +1119,8 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `build-etherpad_postgres.json` · 67.6 KiB
             - `build-filebrowser_app.json` · 67.7 KiB
             - `build-fin-api.json` · 67.3 KiB
-            - `build-flakes_desktop.json` · 453.7 KiB
-            - `build-flakes_termux.json` · 453.5 KiB
+            - `build-flakes_desktop.json` · 453.9 KiB
+            - `build-flakes_termux.json` · 453.7 KiB
             - `build-front-end.json` · 66.8 KiB
             - `build-gcloud.json` · 66.8 KiB
             - `build-gha-runner.json` · 68.4 KiB
@@ -1206,9 +1194,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `build-workflows.json` · 744 B
             - `cloud-fleet-containers-declared.json` · 221.2 KiB
             - `cloud-fleet-declared.json` · 236.8 KiB
-            - `code-signatures-cloud-u-android.json` · 19.8 MiB
+            - `code-signatures-cloud-u-android.json` · 19.9 MiB
             - `code-signatures-cloud-u-containers.json` · 1.8 MiB
-            - `code-signatures-cloud.json` · 1010.2 KiB
+            - `code-signatures-cloud.json` · 1010.5 KiB
             - `containers-declared.json` · 84.6 KiB
             - `manifest.json` · 12.6 KiB
             - `mcp.json` · 3.6 KiB
@@ -1254,9 +1242,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - 📁 `src`
             - `agent-credential-audit.sh` · 3.2 KiB
             - `agent-credential-declared-guard.sh` · 2.4 KiB
-            - `build.sh.portable` · 7.3 KiB
+            - `build.sh.portable` · 7.4 KiB
             - `cloud-paths.sh` · 6.0 KiB
-            - `deploy-dotfiles-fleet.sh` · 9.0 KiB
+            - `deploy-dotfiles-fleet.sh` · 9.1 KiB
             - `deploy-dotfiles.sh` · 1.6 KiB
             - `engine-traps.sh` · 3.8 KiB
             - `ensure-deps.sh` · 6.2 KiB
@@ -1299,7 +1287,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `cgc-db-ssh-retry.test.sh` · 2.6 KiB
             - `cgc-db-zero-content.test.sh` · 8.6 KiB
             - `cgc-knowledge-repo-root-resolvable.test.sh` · 8.1 KiB
-            - `dotfiles-fleet.test.sh` · 11.3 KiB
+            - `dotfiles-fleet.test.sh` · 11.5 KiB
             - `edge-auth-gate.test.sh` · 2.3 KiB
             - `edge-auth-probe.sh` · 7.9 KiB
             - `edge-ipv6-aaaa.test.sh` · 4.4 KiB
@@ -1312,10 +1300,10 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `hm-activation-verdict.test.sh` · 6.1 KiB
             - `host-sync-declaration.test.sh` · 4.3 KiB
             - `kg-seed-topology-derived.test.sh` · 6.9 KiB
-            - `leak-scan.test.sh` · 9.7 KiB
+            - `leak-scan.test.sh` · 9.8 KiB
             - `mail-health-failure-classifier.test.sh` · 8.1 KiB
             - `mesh-fallback-check.test.sh` · 1.6 KiB
-            - `pre-commit-gitignore-gate.test.sh` · 2.0 KiB
+            - `pre-commit-gitignore-gate.test.sh` · 2.1 KiB
             - `repos-sot.test.sh` · 6.4 KiB
             - `run-registered-testers.sh` · 4.4 KiB
             - `services-mcp-registry.test.sh` · 9.4 KiB
@@ -1368,7 +1356,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test_ghcr_visibility.sh` · 5.4 KiB
             - `test_ghcr_vm_login_token.sh` · 3.1 KiB
             - `test_git_nuke.sh` · 8.5 KiB
-            - `test_gitignore_synced.sh` · 5.1 KiB
+            - `test_gitignore_synced.sh` · 5.2 KiB
             - `test_goose_has_cgc.sh` · 2.8 KiB
             - `test_goosed_server.sh` · 3.8 KiB
             - `test_health_all_vms_dispatch.sh` · 5.0 KiB
@@ -1412,7 +1400,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test_ship_cargo_cache.sh` · 5.3 KiB
             - `test_ship_configs_push_failure.sh` · 3.8 KiB
             - `test_ship_deploy_gate.sh` · 8.2 KiB
-            - `test_ship_deployed_sha_retry.sh` · 2.4 KiB
+            - `test_ship_deployed_sha_retry.sh` · 2.7 KiB
             - `test_ship_detects_build_json.sh` · 8.4 KiB
             - `test_ship_disk_headroom.sh` · 4.2 KiB
             - `test_ship_drain_live_agents.sh` · 10.8 KiB
@@ -1478,7 +1466,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `cloud_architecture.json` · 48.0 KiB
             - `cloud_control.json` · 24.8 KiB
             - `Cloud-spec.md` · 145.0 KiB
-            - `cloudflare-zero-trust.md` · 14.1 KiB
+            - `cloudflare-zero-trust.md` · 14.2 KiB
             - `jev-fleet-usage.md` · 15.7 KiB
             - `SAD-Software-Architecture-Document.md` · 12.2 KiB
             - `SDD-Software-Design-Document.md` · 10.2 KiB
@@ -1615,8 +1603,8 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 📁 `I_______________________`
           - `.gitkeep` · 0 B
         - 📁 `licenses`
-          - `curated.json` · 4.3 KiB
-          - `inventory.json` · 12.7 KiB
+          - `curated.json` · 4.7 KiB
+          - `inventory.json` · 12.5 KiB
           - `upstreams.json` · 411 B
         - 📁 `z_______________________`
           - `.gitkeep` · 0 B
@@ -1685,17 +1673,31 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `README.md` · 23.9 KiB
         - `style.css` · 8.3 KiB
       - **[cloudy-u-android](https://github.com/diegonmarcos/cloudy-u-android)** · 🌐 public
+        - 📁 `_dotfiles`
+          - 📁 `apps`
+            - 📁 `dist`
+            - 📁 `src`
+          - 📁 `git`
+            - 📁 `dist`
+            - 📁 `src`
+          - `deploy.sh` · 1.7 KiB
         - 📁 `.claude`
           - 📁 `agents`
-            - `build.md` · 529 B
-            - `explore.md` · 568 B
-            - `ops.md` · 577 B
+            - `build.md` · 585 B
+            - `explore.md` · 581 B
+            - `general-purpose.md` · 382 B
+            - `infra.md` · 539 B
+            - `ops.md` · 658 B
             - `README.md` · 2.4 KiB
-            - `review.md` · 524 B
-          - `mcp-auth-headers.sh` · 7.7 KiB
+            - `review.md` · 537 B
+          - 📁 `hooks`
+            - 📁 `c3`
+          - 📁 `skills`
+            - 📁 `c3-infra`
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
-          - `settings.json` · 10.6 KiB
+          - `settings.json` · 13.9 KiB
         - 📁 `.githooks`
           - `history-gate` · 3.0 KiB
           - `leak-scan` · 3.6 KiB
@@ -1733,7 +1735,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `fleet-setup-guard.yml` · 1.7 KiB
             - `foreign-gate-guard.yml` · 4.0 KiB
             - `fork-engine-guard.yml` · 5.5 KiB
-            - `generated-up-to-date.yml` · 12.9 KiB
+            - `generated-up-to-date.yml` · 13.0 KiB
             - `ghcr-delete-package.yml` · 4.0 KiB
             - `ghcr-secret-scan.yml` · 5.6 KiB
             - `ghcr-visibility-audit.yml` · 1.2 KiB
@@ -1759,7 +1761,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `ship-c3-watchdog.yml` · 15.0 KiB
             - `ship-c3-watchtower.yml` · 17.0 KiB
             - `ship-cloud-account-wasm.yml` · 9.2 KiB
-            - `ship-cloud-account.yml` · 13.3 KiB
+            - `ship-cloud-account.yml` · 13.4 KiB
             - `ship-cloud-browser-wasm.yml` · 9.2 KiB
             - `ship-cloud-browser.yml` · 14.2 KiB
             - `ship-cloud-c3-wasm.yml` · 9.1 KiB
@@ -1790,10 +1792,10 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `ship-cloud-myterminal-wasm.yml` · 9.3 KiB
             - `ship-cloud-myterminal.yml` · 15.8 KiB
             - `ship-cloud-nav-wasm.yml` · 9.1 KiB
-            - `ship-cloud-nav.yml` · 14.9 KiB
+            - `ship-cloud-nav.yml` · 15.0 KiB
             - `ship-cloud-news-wasm.yml` · 9.1 KiB
             - `ship-cloud-news.yml` · 12.2 KiB
-            - `ship-cloud-nix-on-droid.yml` · 15.7 KiB
+            - `ship-cloud-nix-on-droid.yml` · 15.8 KiB
             - `ship-cloud-notes-wasm.yml` · 9.1 KiB
             - `ship-cloud-notes.yml` · 21.5 KiB
             - `ship-cloud-office-wasm.yml` · 9.2 KiB
@@ -1801,7 +1803,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `ship-cloud-search-wasm.yml` · 9.2 KiB
             - `ship-cloud-search.yml` · 13.2 KiB
             - `ship-cloud-store-wasm.yml` · 9.1 KiB
-            - `ship-cloud-store.yml` · 14.0 KiB
+            - `ship-cloud-store.yml` · 14.1 KiB
             - `ship-cloud-superapp.yml` · 25.9 KiB
             - `ship-cloud-superintel.yml` · 13.3 KiB
             - `ship-cloud-tasks.yml` · 13.4 KiB
@@ -1856,27 +1858,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 📁 `.vscode`
           - `extensions.json` · 454 B
           - `settings.json` · 1.3 KiB
-        - 📁 `0_apps`
-          - 📁 `dist`
-            - 📁 `dotfiles`
-          - 📁 `src`
-            - 📁 `claude`
-            - 📁 `obsidian`
-            - 📁 `root`
-            - 📁 `vscode`
-            - `manifest.json` · 2.6 KiB
-        - 📁 `0_git`
-          - 📁 `dist`
-            - 📁 `hooks`
-            - 📁 `modules`
-            - `.gitignore` · 12.7 KiB
-            - `.gitmodules` · 915 B
-            - `gitconfig` · 153 B
-          - 📁 `src`
-            - 📁 `hooks`
-            - `gitconfig` · 153 B
-            - `gitignore` · 12.7 KiB
-            - `gitmodules` · 915 B
         - 📁 `0_hub`
           - 📦 `cloudy-___` (submodule)
         - 📁 `1_cicd`
@@ -1964,7 +1945,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `cloud-writer-text-tools-home.md` · 33.6 KiB
             - `compose-migration.md` · 9.5 KiB
             - `engine-apk-split.md` · 52.8 KiB
-            - `fleet-config-matrix.md` · 176.3 KiB
+            - `fleet-config-matrix.md` · 178.0 KiB
             - `fleet-endpoints.md` · 10.5 KiB
             - `fleet-ipc.md` · 7.9 KiB
             - `jev-fleet-usage.md` · 17.5 KiB
@@ -1975,7 +1956,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `store-upstream-sources.md` · 48.7 KiB
             - `superapp-auth-profile-peer-flow.md` · 23.9 KiB
             - `superapp-notification-centre-duplicate.md` · 9.5 KiB
-            - `terminal-per-tool-libs-measurement.md` · 54.3 KiB
+            - `terminal-per-tool-libs-measurement.md` · 54.4 KiB
           - 📁 `prod-specs`
             - `.gitkeep` · 0 B
           - 📁 `user-specs`
@@ -2002,7 +1983,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `folder-tree.txt` · 2.5 KiB
             - `gen_cloud_services.js` · 12.1 KiB
             - `ipc-mesh.json` · 91.4 KiB
-            - `lib-consumers.json` · 26.2 KiB
+            - `lib-consumers.json` · 26.3 KiB
             - `linktree.json` · 52.5 KiB
             - `mesh.json` · 9.4 KiB
             - `regen.sh` · 41.0 KiB
@@ -2192,7 +2173,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `gradle`
             - `.gitignore` · 74 B
             - `build.gradle` · 577 B
-            - `build.json` · 8.6 KiB
+            - `build.json` · 8.9 KiB
             - `build.sh` · 12.4 KiB
             - `debug-api.json` · 395 B
             - `gradle.properties` · 216 B
@@ -2405,7 +2386,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `gradlew.bat` · 2.9 KiB
             - `settings.gradle.kts` · 2.0 KiB
           - `build.gradle` · 745 B
-          - `build.json` · 46.3 KiB
+          - `build.json` · 46.6 KiB
           - `build.sh` · 33.9 KiB
           - `debug-api.json` · 390 B
           - `flake.nix` · 2.4 KiB
@@ -2463,7 +2444,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test-browser-translate.sh` · 8.7 KiB
             - `test-browser-urlbar.sh` · 9.3 KiB
             - `test-browser-vault-addon.sh` · 4.7 KiB
-            - `test-browser-web-bluetooth.sh` · 7.5 KiB
+            - `test-browser-web-bluetooth.sh` · 7.6 KiB
             - `test-browser-web-hardware.sh` · 10.2 KiB
             - `test-browser-web.sh` · 9.6 KiB
             - `test-fleet-setup.sh` · 5.0 KiB
@@ -3119,7 +3100,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `drive-rclone-jobs.json` · 2.2 KiB
             - `drive-remotes.json` · 3.8 KiB
             - `drive-sync-rules.json` · 3.0 KiB
-            - `repos.sot.json` · 63.9 KiB
+            - `repos.sot.json` · 86.9 KiB
           - 📁 `docs`
             - `screenshot-agent-contract.md` · 4.6 KiB
           - 📁 `test`
@@ -3140,7 +3121,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test-drive-gh-engine.sh` · 23.5 KiB
             - `test-drive-git-auth-chain.sh` · 69.3 KiB
             - `test-drive-git-depth.sh` · 12.7 KiB
+            - `test-drive-git-folder-actions.sh` · 7.7 KiB
             - `test-drive-git-gh-leg.sh` · 33.3 KiB
+            - `test-drive-git-menu.sh` · 6.1 KiB
             - `test-drive-git-page.sh` · 32.8 KiB
             - `test-drive-git-parallel-ways.sh` · 14.7 KiB
             - `test-drive-git-status.sh` · 8.0 KiB
@@ -3154,8 +3137,8 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test-drive-regex-android-safe.sh` · 3.1 KiB
             - `test-drive-repos-sot.sh` · 8.9 KiB
             - `test-drive-seed-and-migration.sh` · 20.7 KiB
-            - `test-drive-shared-store.sh` · 22.4 KiB
-            - `test-drive-shell.sh` · 46.3 KiB
+            - `test-drive-shared-store.sh` · 22.6 KiB
+            - `test-drive-shell.sh` · 46.8 KiB
             - `test-drive-store-grant.sh` · 3.3 KiB
             - `test-drive-store-paths.sh` · 5.7 KiB
             - `test-drive-sync-screen.sh` · 19.9 KiB
@@ -3178,7 +3161,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `gradlew.bat` · 2.9 KiB
             - `settings.gradle.kts` · 1.9 KiB
           - `build.gradle` · 892 B
-          - `build.json` · 94.9 KiB
+          - `build.json` · 102.7 KiB
           - `build.sh` · 34.1 KiB
           - `debug-api.json` · 388 B
           - `flake.nix` · 2.4 KiB
@@ -3278,7 +3261,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test-translate-panel-not-black.sh` · 12.2 KiB
           - `.gitignore` · 74 B
           - `build.gradle` · 577 B
-          - `build.json` · 12.7 KiB
+          - `build.json` · 13.0 KiB
           - `build.sh` · 17.9 KiB
           - `debug-api.json` · 391 B
           - `gradle.properties` · 216 B
@@ -3592,12 +3575,13 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 📁 `ac_cloud-me`
           - 📁 `app`
             - 📁 `src`
-            - `build.gradle` · 14.2 KiB
+            - `build.gradle` · 15.9 KiB
             - `proguard-rules.pro` · 78 B
           - 📁 `data`
             - 📁 `files`
             - 📁 `health`
             - 📁 `profiles`
+            - 📁 `repos`
             - 📁 `ui`
             - 📁 `web`
             - `README.md` · 4.7 KiB
@@ -3608,7 +3592,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `test-bottom-nav.sh` · 4.5 KiB
             - `test-fleet-setup.sh` · 5.0 KiB
             - `test-me-cal-engine.sh` · 21.0 KiB
-            - `test-me-redesign.sh` · 29.3 KiB
+            - `test-me-redesign.sh` · 29.6 KiB
             - `test-me-web.sh` · 10.2 KiB
             - `test-profiles-privacy.sh` · 5.1 KiB
             - `test-release-asset-contract.sh` · 5.5 KiB
@@ -3624,7 +3608,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `settings.gradle.kts` · 1.9 KiB
           - `.gitignore` · 998 B
           - `build.gradle` · 599 B
-          - `build.json` · 33.5 KiB
+          - `build.json` · 36.2 KiB
           - `build.sh` · 33.6 KiB
           - `debug-api.json` · 385 B
           - `flake.lock` · 1.5 KiB
@@ -3730,7 +3714,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `settings.gradle.kts` · 1.9 KiB
           - `.gitignore` · 1008 B
           - `build.gradle` · 600 B
-          - `build.json` · 74.4 KiB
+          - `build.json` · 74.7 KiB
           - `build.sh` · 34.6 KiB
           - `debug-api.json` · 386 B
           - `flake.lock` · 1.5 KiB
@@ -3864,7 +3848,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `login-closure.json` · 7.5 KiB
           - `privileged-channel.json` · 1.3 KiB
           - `README.md` · 1.8 KiB
-          - `settings.gradle` · 1.7 KiB
+          - `settings.gradle` · 2.0 KiB
         - 📁 `ac_cloud-notes`
           - 📁 `.cargo`
             - `config.toml` · 1007 B
@@ -4144,7 +4128,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `gradlew.bat` · 2.9 KiB
             - `settings.gradle.kts` · 1.9 KiB
           - `build.gradle` · 1.3 KiB
-          - `build.json` · 20.5 KiB
+          - `build.json` · 20.8 KiB
           - `build.sh` · 33.9 KiB
           - `debug-api.json` · 4.7 KiB
           - `flake.nix` · 2.4 KiB
@@ -4259,7 +4243,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `.gitignore` · 1.0 KiB
           - `ATTRIBUTION.md` · 299 B
           - `build.gradle` · 2.9 KiB
-          - `build.json` · 24.6 KiB
+          - `build.json` · 24.9 KiB
           - `build.sh` · 78.2 KiB
           - `debug-api.json` · 371 B
           - `fleet-lib.json` · 1.9 KiB
@@ -4269,7 +4253,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `jitpack.yml` · 62 B
           - `LICENSE.md` · 533 B
           - `README.md` · 1.7 KiB
-          - `settings.gradle` · 1.7 KiB
+          - `settings.gradle` · 2.0 KiB
         - 📁 `ac_cloud-tools-small-llms`
           - 📁 `app`
             - 📁 `src`
@@ -4307,7 +4291,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `skills`
             - `CLAUDE.md` · 6.7 KiB
             - `CONTRIBUTING.md` · 7.4 KiB
-            - `settings.json` · 10.3 KiB
+            - `settings.json` · 13.9 KiB
           - 📁 `.github`
             - 📁 `actions`
             - 📁 `ISSUE_TEMPLATE`
@@ -4567,16 +4551,16 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `termux.tsv` · 29.4 KiB
             - `vault.tsv` · 360.4 KiB
           - `curated.json` · 33.1 KiB
-          - `inventory.json` · 550.2 KiB
+          - `inventory.json` · 549.2 KiB
           - `provenance.json` · 20.4 KiB
           - `upstreams.json` · 7.4 KiB
         - 📁 `z_archive`
           - `.gitkeep` · 0 B
-        - `.gitignore` · 12.7 KiB
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitignore` · 12.9 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitleaksignore` · 1.0 KiB
         - `.gitmodules` · 915 B
-        - `.mcp.json` · 4.0 KiB
+        - `.mcp.json` · 1.1 KiB
         - `.sops.yaml` · 681 B
         - 🔗 `aa_cloud-superapp-mcp` → `../cloud-infra/a_solutions/infra-api_cloud-superapp-mcp` · 55 B
         - 🔗 `aa_cloud-superapp-web` → `../front-diegonmarcos/a-Portals/cloud-mobile` · 44 B
@@ -4585,7 +4569,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `CLAUDE.md` · 315 B
         - `config.json` · 4.9 KiB
         - `LICENSING.md` · 20.8 KiB
-        - `README.md` · 7.9 KiB
+        - `README.md` · 8.0 KiB
         - `SIGNING.md` · 6.1 KiB
       - **[cloudy-u-containers](https://github.com/diegonmarcos/cloudy-u-containers)** · 🌐 public
         - 📁 `_dispatch`
@@ -4630,7 +4614,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `edge-auth.nix` · 11.1 KiB
           - `engine.nix` · 41.9 KiB
           - `fallback-services.json` · 31.2 KiB
-          - `fleet-addressing.json` · 8.9 KiB
+          - `fleet-addressing.json` · 9.1 KiB
           - `gen-fallback-services.mjs` · 2.7 KiB
           - `gen-mcp-manifest.sh` · 2.5 KiB
           - `geo-fence.json` · 3.0 KiB
@@ -4648,8 +4632,8 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `test-agi-container-naming.mjs` · 3.7 KiB
           - `test-dist-terraform.sh` · 1.9 KiB
           - `test-dist-v2.sh` · 9.5 KiB
-          - `test-fleet-addressing.mjs` · 15.4 KiB
-          - `test-jev-gate.py` · 67.9 KiB
+          - `test-fleet-addressing.mjs` · 16.4 KiB
+          - `test-jev-gate.py` · 68.0 KiB
           - `test-kg-store-memory-ceiling.mjs` · 15.3 KiB
           - `test-mail-stack-limits.mjs` · 8.2 KiB
           - `test-public-route-allowlist.mjs` · 2.1 KiB
@@ -5960,7 +5944,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `test`
             - 🔗 `build-caddy.json` → `../../../1_cloud-configs/dist/build-caddy.json` · 46 B
             - 🔗 `build.json` → `../build.json` · 13 B
-            - `caddyfile.nix` · 64.3 KiB
+            - `caddyfile.nix` · 64.6 KiB
             - `compose.nix` · 2.8 KiB
             - `dashboard.html` · 49.7 KiB
             - `Dockerfile.runtime` · 179 B
@@ -5981,7 +5965,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `.configs-hash` · 23 B
           - `.secrets-hash` · 17 B
           - `.secrets-hash-new` · 17 B
-          - `build.json` · 30.9 KiB
+          - `build.json` · 31.1 KiB
           - 🔗 `build.sh` → `../../1_cicd/src/scripts/cloud-ship-container-engine.sh` · 55 B
         - 📁 `infra-sec_caddy-l4-image`
           - 📁 `dist`
@@ -6099,8 +6083,8 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `google-workspace-mcp.tsv` · 10.1 KiB
             - `headroom-claude-api.tsv` · 61.1 KiB
             - `headroom-my-ai-api.tsv` · 57.1 KiB
-          - `curated.json` · 19.6 KiB
-          - `inventory.json` · 240.0 KiB
+          - `curated.json` · 19.7 KiB
+          - `inventory.json` · 240.3 KiB
           - `provenance.json` · 4.7 KiB
           - `upstreams.json` · 2.5 KiB
         - 📁 `user-ai_cloud-cgc-pub-mcp`
@@ -7103,15 +7087,21 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - **[cloudy-u-containers_cgc](https://github.com/diegonmarcos/cloudy-u-containers_cgc)** · 🌐 public
         - 📁 `.claude`
           - 📁 `agents`
-            - `build.md` · 529 B
-            - `explore.md` · 568 B
-            - `ops.md` · 577 B
+            - `build.md` · 585 B
+            - `explore.md` · 581 B
+            - `general-purpose.md` · 382 B
+            - `infra.md` · 539 B
+            - `ops.md` · 658 B
             - `README.md` · 2.4 KiB
-            - `review.md` · 524 B
-          - `mcp-auth-headers.sh` · 7.5 KiB
+            - `review.md` · 537 B
+          - 📁 `hooks`
+            - 📁 `c3`
+          - 📁 `skills`
+            - 📁 `c3-infra`
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
-          - `settings.json` · 10.6 KiB
+          - `settings.json` · 13.9 KiB
         - 📁 `.githooks`
           - `history-gate` · 3.0 KiB
           - `leak-scan` · 3.6 KiB
@@ -7173,9 +7163,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `cgc-incremental-chunked.md` · 14.1 KiB
             - `cgc-public-private-split.md` · 21.0 KiB
         - `.gitignore` · 169 B
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitmodules` · 110 B
-        - `.mcp.json` · 3.8 KiB
+        - `.mcp.json` · 1.1 KiB
         - `CLAUDE.md` · 50 B
         - `LICENSE` · 4.5 KiB
         - `LICENSING.md` · 5.7 KiB
@@ -7205,16 +7195,33 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `.gitignore` · 43 B
           - `build.json` · 1.2 KiB
           - `build.sh` · 1.1 KiB
+        - 📁 `_dotfiles`
+          - 📁 `apps`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `test`
+          - 📁 `git`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `test`
+          - `deploy.sh` · 1.7 KiB
         - 📁 `.claude`
           - 📁 `agents`
-            - `build.md` · 529 B
-            - `explore.md` · 568 B
-            - `ops.md` · 577 B
+            - `build.md` · 585 B
+            - `explore.md` · 581 B
+            - `general-purpose.md` · 382 B
+            - `infra.md` · 539 B
+            - `ops.md` · 658 B
             - `README.md` · 2.4 KiB
-            - `review.md` · 524 B
-          - `mcp-auth-headers.sh` · 7.5 KiB
+            - `review.md` · 537 B
+          - 📁 `hooks`
+            - 📁 `c3`
+          - 📁 `skills`
+            - 📁 `c3-infra`
+          - `mcp-auth-headers.sh` · 8.1 KiB
+          - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
-          - `settings.json` · 11.7 KiB
+          - `settings.json` · 13.9 KiB
         - 📁 `.githooks`
           - `history-gate` · 3.0 KiB
           - `leak-scan` · 3.6 KiB
@@ -7225,7 +7232,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - 📁 `workflows`
             - 📁 `hooks`
             - 📁 `scripts`
-            - `jev-hooks-tests.yml` · 804 B
+            - `jev-hooks-tests.yml` · 852 B
             - `leak-scan.yml` · 6.4 KiB
             - `ship-builders.yml` · 12.2 KiB
             - `ship-cloud-terminal.yml` · 3.4 KiB
@@ -7241,34 +7248,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `settings.json` · 1.3 KiB
         - 📁 `0_______________________________`
           - `.gitkeep` · 0 B
-        - 📁 `0_apps`
-          - 📁 `dist`
-            - 📁 `dotfiles`
-          - 📁 `src`
-            - 📁 `claude`
-            - 📁 `obsidian`
-            - 📁 `root`
-            - 📁 `vscode`
-            - `manifest.json` · 2.5 KiB
-          - 📁 `test`
-            - `test-claude-jev-hooks.sh` · 2.2 KiB
-        - 📁 `0_git`
-          - 📁 `dist`
-            - 📁 `hooks`
-            - `.gitattributes` · 2.0 KiB
-            - `.gitignore` · 13.1 KiB
-            - `.gitmodules` · 2.5 KiB
-            - `gitconfig` · 2.5 KiB
-            - `LICENSE` · 4.5 KiB
-          - 📁 `src`
-            - 📁 `hooks`
-            - `gitattributes` · 1.0 KiB
-            - `gitconfig` · 1.5 KiB
-            - `gitignore` · 12.1 KiB
-            - `gitmodules` · 1.5 KiB
-            - `LICENSE` · 4.5 KiB
-          - 📁 `test`
-            - `test-commit-msg.sh` · 3.2 KiB
         - 📁 `0_hub`
           - 📦 `cloudy-___` (submodule)
         - 📁 `1_cicd`
@@ -7299,7 +7278,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `generated-header.json` · 3.5 KiB
             - `inject-header.sh` · 10.9 KiB
           - 📁 `test`
-            - `test_framework.sh` · 2.1 KiB
+            - `test_framework.sh` · 2.2 KiB
           - 🔗 `build.sh` → `../1_cicd/src/scripts/unix-ship-repo-workflow-engine.sh` · 55 B
         - 📁 `a_OS-TERRAFORM_______________________________`
           - `a.md` · 0 B
@@ -7513,9 +7492,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `.cwd_restore` · 7 B
         - `.gitattributes` · 2.0 KiB
         - `.gitignore` · 13.1 KiB
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitmodules` · 2.6 KiB
-        - `.mcp.json` · 3.4 KiB
+        - `.mcp.json` · 1.1 KiB
         - `.sops.yaml` · 183 B
         - `CLAUDE.md` · 86 B
         - 📦 `I_cloud` (submodule)
@@ -7542,7 +7521,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `c3`
           - 📁 `skills`
             - 📁 `c3-infra`
-          - `mcp-auth-headers.sh` · 7.7 KiB
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
           - `settings.json` · 13.9 KiB
@@ -7701,12 +7680,16 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📁 `agents`
             - 📁 `hooks`
             - 📁 `skills`
-            - `mcp-auth-headers.sh` · 4.8 KiB
-            - `settings.json` · 13.8 KiB
+            - `mcp-auth-headers.sh` · 8.1 KiB
+            - `mcp-connect.mjs` · 5.5 KiB
+            - `settings.json` · 13.9 KiB
           - 📁 `.obsidian`
             - `app.json` · 35 B
             - `appearance.json` · 2 B
             - `core-plugins.json` · 696 B
+          - 📁 `.vscode`
+            - `extensions.json` · 454 B
+            - `settings.json` · 1.3 KiB
           - 📁 `0_apps`
             - 📁 `dist`
             - 📁 `src`
@@ -7782,17 +7765,19 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `mcp-auth-headers.sh` · 8.1 KiB
             - `mcp-connect.mjs` · 5.5 KiB
             - `mcp-local-launch.sh` · 4.2 KiB
-            - `mcp-policy.json` · 11.2 KiB
+            - `mcp-policy.json` · 12.3 KiB
+            - `mcp-sizes.json` · 1.0 KiB
             - `mcp.desktop.json.tpl` · 3.1 KiB
             - `mcp.termux.json.tpl` · 1.2 KiB
-            - `README.md` · 10.5 KiB
+            - `measure-mcp-sizes.sh` · 3.8 KiB
+            - `README.md` · 10.8 KiB
             - `rgignore` · 311 B
-            - `settings.base.json` · 12.2 KiB
-            - `settings.cloud.json` · 2.7 KiB
+            - `settings.base.json` · 12.8 KiB
+            - `settings.cloud.json` · 2.9 KiB
             - `settings.desktop.json` · 308 B
-            - `settings.project.json` · 12.5 KiB
+            - `settings.project.json` · 13.9 KiB
             - `settings.termux.json` · 3.7 KiB
-            - `test-claude-sot.sh` · 28.7 KiB
+            - `test-claude-sot.sh` · 33.9 KiB
           - 📁 `curl-wget-wrapper`
             - `curl-wget-wrapper.sh` · 2.8 KiB
             - `manifest` · 222 B
@@ -7888,7 +7873,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - `manifest` · 727 B
             - `wireguard-wstunnel-render.sh` · 4.2 KiB
             - `wireguard-wstunnel.sh` · 8.6 KiB
-          - `my-account` · 6.4 KiB
+          - `my-account` · 6.7 KiB
           - `README.md` · 4.5 KiB
         - 📁 `da_my-ai`
           - 📁 `cli`
@@ -8021,7 +8006,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `README.md` · 3.4 KiB
           - `UI-SPEC.md` · 5.4 KiB
         - `.gitignore` · 127 B
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitmodules` · 110 B
         - `.mcp.json` · 1.1 KiB
         - `CLAUDE.md` · 86 B
@@ -8040,16 +8025,16 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
                   - 📁 `linktree`
                     - 📁 `0.spec`
                     - 📁 `1.ops`
-                    - 📁 `dist`
                     - 📁 `scripts`
                     - 📁 `src`
                     - 📁 `tests`
-                    - `build.json` · 5.4 KiB
+                    - `.gitignore` · 675 B
+                    - `build.json` · 5.6 KiB
                     - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
                     - `package-lock.md` · 103.1 KiB
                     - `package.json` · 1.4 KiB
                     - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-                    - `tsconfig.json` · 613 B
+                    - `tsconfig.json` · 744 B
                     - `vitest.config.ts` · 178 B
                   - 📁 `linktree_icon-view`
                     - 📁 `dist`
@@ -8713,16 +8698,18 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `README.md` · 1.2 KiB
         - 📁 `Structural-Designer`
           - 📁 `OpenBIM`
-            - `README.md` · 1.4 KiB
+            - 📦 `bonsai-mcp` (submodule)
+            - `README.md` · 1.5 KiB
           - 📁 `OpenCAD`
             - 📦 `autocad-mcp` (submodule)
             - 📦 `freecad-mcp` (submodule)
             - `README.md` · 1.0 KiB
           - 📁 `OpenRevit`
             - `README.md` · 1.5 KiB
+            - 📦 `rvt-mcp` (submodule)
           - `README.md` · 1.0 KiB
-        - `.gitmodules` · 485 B
-        - `README.md` · 2.1 KiB
+        - `.gitmodules` · 780 B
+        - `README.md` · 2.6 KiB
       - **[DeepSc-X](https://github.com/diegonmarcos/DeepSc-X)** · 🌐 public
         - 📁 `0_hub`
           - 📦 `DeepSc-___` (submodule)
@@ -8885,7 +8872,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `SESSION-SURVIVAL.md` · 1.6 KiB
         - 📁 `.github`
           - 📁 `workflows`
-            - `ci-cd.yml` · 9.9 KiB
+            - `ci-cd.yml` · 10.3 KiB
         - 📁 `0_hub`
           - 📦 `lecole-42-___` (submodule)
         - 📁 `0.spec`
@@ -8966,74 +8953,93 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `README.md` · 11.1 KiB
         - 📁 `src`
           - 📁 `agents`
-            - `base_agent.py` · 10.6 KiB
+            - `__init__.py` · 0 B
+            - `base_agent.py` · 10.0 KiB
             - `coder.py` · 3.6 KiB
-            - `coordinator.py` · 13.4 KiB
+            - `coordinator.py` · 13.5 KiB
             - `planner.py` · 3.0 KiB
             - `reviewer.py` · 4.4 KiB
           - 📁 `analytics`
-            - `metrics_aggregator.py` · 20.6 KiB
-            - `provider_analytics.py` · 21.5 KiB
+            - `__init__.py` · 0 B
+            - `metrics_aggregator.py` · 21.1 KiB
+            - `provider_analytics.py` · 21.6 KiB
           - 📁 `api`
+            - `__init__.py` · 0 B
             - `budget.py` · 13.0 KiB
-            - `health.py` · 15.3 KiB
+            - `health.py` · 16.7 KiB
             - `main.py` · 4.8 KiB
           - 📁 `browser`
-            - `llm_browser.py` · 13.1 KiB
-            - `stealth_browser.py` · 13.0 KiB
+            - `__init__.py` · 0 B
+            - `llm_browser.py` · 13.3 KiB
+            - `stealth_browser.py` · 13.1 KiB
           - 📁 `budget`
-            - `enforcer.py` · 3.0 KiB
+            - `__init__.py` · 0 B
+            - `enforcer.py` · 2.9 KiB
           - 📁 `cost`
-            - `redis_tracker.py` · 10.7 KiB
+            - `__init__.py` · 0 B
+            - `redis_tracker.py` · 10.4 KiB
           - 📁 `llmops`
-            - `logger.py` · 13.3 KiB
+            - `__init__.py` · 0 B
+            - `logger.py` · 13.5 KiB
           - 📁 `mcp`
-            - `client.py` · 14.1 KiB
+            - `__init__.py` · 0 B
+            - `client.py` · 14.4 KiB
           - 📁 `middleware`
-            - `rate_limit.py` · 13.2 KiB
+            - `__init__.py` · 0 B
+            - `rate_limit.py` · 13.1 KiB
           - 📁 `providers`
-            - `anthropic_provider.py` · 10.0 KiB
+            - `__init__.py` · 0 B
+            - `anthropic_provider.py` · 9.0 KiB
             - `base.py` · 1.2 KiB
-            - `fireworks_provider.py` · 8.0 KiB
-            - `jan_provider.py` · 8.4 KiB
-            - `ollama_provider.py` · 2.2 KiB
-            - `openai_provider.py` · 7.7 KiB
-            - `router.py` · 14.0 KiB
-            - `together_provider.py` · 8.1 KiB
+            - `demo.py` · 1.3 KiB
+            - `fireworks_provider.py` · 1.9 KiB
+            - `jan_provider.py` · 3.2 KiB
+            - `ollama_provider.py` · 2.7 KiB
+            - `openai_compatible.py` · 6.7 KiB
+            - `openai_provider.py` · 1.6 KiB
+            - `router.py` · 14.8 KiB
+            - `together_provider.py` · 1.9 KiB
           - 📁 `rag`
-            - `bm25_index.py` · 7.0 KiB
-            - `hybrid_search.py` · 13.4 KiB
-            - `metadata_filter.py` · 17.5 KiB
-            - `reranker.py` · 11.7 KiB
-            - `semantic_chunker.py` · 11.7 KiB
+            - `__init__.py` · 0 B
+            - `bm25_index.py` · 6.9 KiB
+            - `hybrid_search.py` · 13.9 KiB
+            - `metadata_filter.py` · 17.1 KiB
+            - `reranker.py` · 11.9 KiB
+            - `semantic_chunker.py` · 12.0 KiB
           - 📁 `streaming`
-            - `stream_manager.py` · 11.2 KiB
+            - `__init__.py` · 0 B
+            - `stream_manager.py` · 10.8 KiB
           - 📁 `tools`
             - 📁 `workbenches`
-            - `registry.py` · 12.9 KiB
+            - `__init__.py` · 0 B
+            - `registry.py` · 13.0 KiB
           - 📁 `utils`
-            - `shutdown.py` · 6.0 KiB
+            - `__init__.py` · 0 B
+            - `shutdown.py` · 6.1 KiB
           - 📁 `workflows`
-            - `ab_testing.py` · 23.2 KiB
+            - `__init__.py` · 0 B
+            - `ab_testing.py` · 23.1 KiB
             - `versioning.py` · 17.8 KiB
+          - `__init__.py` · 0 B
         - 📁 `tests`
           - 📁 `e2e`
-            - `test_multi_agent_workflow.py` · 17.6 KiB
+            - `test_multi_agent_workflow.py` · 18.1 KiB
           - 📁 `integration`
             - `README_JAN.md` · 7.3 KiB
-            - `test_jan_integration.py` · 9.9 KiB
-            - `test_workflow_versioning.py` · 17.1 KiB
+            - `test_jan_integration.py` · 10.0 KiB
+            - `test_workflow_versioning.py` · 16.8 KiB
           - 📁 `performance`
             - `agent_benchmarks.py` · 10.1 KiB
-            - `benchmark.py` · 11.3 KiB
+            - `benchmark.py` · 11.4 KiB
           - 📁 `unit`
             - `test_llmops_logger.py` · 5.1 KiB
         - `.gitmodules` · 119 B
         - `CLAUDE.md` · 50 B
         - `LICENSE` · 4.5 KiB
         - `LICENSING.md` · 961 B
+        - `pyproject.toml` · 911 B
         - `README.md` · 8.5 KiB
-        - `requirements.txt` · 2.9 KiB
+        - `requirements.txt` · 3.1 KiB
       - **[lecole-42_ml-DataScience](https://github.com/diegonmarcos/lecole-42_ml-DataScience)** · 🌐 public
         - 📁 `.claude`
           - `SESSION-SURVIVAL.md` · 1.6 KiB
@@ -9314,13 +9320,13 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `build.sh` · 4.0 KiB
       - 📁 `ghrc`
         - 📁 `dist`
-          - `ghcr-byarchitecture.md` · 130.9 KiB
-          - `ghcr-byrepocodespc.md` · 70.0 KiB
-          - `ghcr-byrepogha.md` · 79.5 KiB
-          - `ghcr-byreposrc.md` · 78.3 KiB
-          - `ghcr-byvisibility.md` · 82.0 KiB
-          - `ghcr-data.json` · 30.9 MiB
-          - `GHCR.md` · 3.3 MiB
+          - `ghcr-byarchitecture.md` · 136.9 KiB
+          - `ghcr-byrepocodespc.md` · 72.9 KiB
+          - `ghcr-byrepogha.md` · 83.1 KiB
+          - `ghcr-byreposrc.md` · 81.5 KiB
+          - `ghcr-byvisibility.md` · 85.8 KiB
+          - `ghcr-data.json` · 32.0 MiB
+          - `GHCR.md` · 3.4 MiB
         - 📁 `src`
           - `fetch.ts` · 12.1 KiB
           - `generate-md.ts` · 27.4 KiB
@@ -9334,9 +9340,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - 📁 `releases`
         - 📁 `dist`
           - `.gitkeep` · 0 B
-          - `releases-byrepo.md` · 148.4 KiB
-          - `releases-data.json` · 974.7 KiB
-          - `RELEASES.md` · 657.9 KiB
+          - `releases-byrepo.md` · 156.0 KiB
+          - `releases-data.json` · 1017.4 KiB
+          - `RELEASES.md` · 691.2 KiB
         - 📁 `src`
           - `fetch.ts` · 4.0 KiB
           - `generate-md.ts` · 9.4 KiB
@@ -9356,17 +9362,31 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - `loc.sh` · 3.1 KiB
       - `README.md` · 33.2 KiB
     - **[diegonmarcos.github.io](https://github.com/diegonmarcos/diegonmarcos.github.io)** · 🌐 public
+      - 📁 `_dotfiles`
+        - 📁 `apps`
+          - 📁 `dist`
+          - 📁 `src`
+        - 📁 `git`
+          - 📁 `dist`
+          - 📁 `src`
+        - `deploy.sh` · 1.7 KiB
       - 📁 `.claude`
         - 📁 `agents`
-          - `build.md` · 529 B
-          - `explore.md` · 568 B
-          - `ops.md` · 577 B
+          - `build.md` · 585 B
+          - `explore.md` · 581 B
+          - `general-purpose.md` · 382 B
+          - `infra.md` · 539 B
+          - `ops.md` · 658 B
           - `README.md` · 2.4 KiB
-          - `review.md` · 524 B
-        - `mcp-auth-headers.sh` · 7.5 KiB
+          - `review.md` · 537 B
+        - 📁 `hooks`
+          - 📁 `c3`
+        - 📁 `skills`
+          - 📁 `c3-infra`
+        - `mcp-auth-headers.sh` · 8.1 KiB
         - `mcp-connect.mjs` · 5.5 KiB
         - `SESSION-SURVIVAL.md` · 1.6 KiB
-        - `settings.json` · 10.6 KiB
+        - `settings.json` · 13.9 KiB
       - 📁 `.githooks`
         - `history-gate` · 3.0 KiB
         - `leak-scan` · 3.6 KiB
@@ -9410,30 +9430,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `server.json` · 198 B
         - `server.sh` · 36.8 KiB
         - `style.css` · 1.6 KiB
-      - 📁 `0_apps`
-        - 📁 `dist`
-          - 📁 `dotfiles`
-        - 📁 `src`
-          - 📁 `claude`
-          - 📁 `obsidian`
-          - 📁 `root`
-          - 📁 `vscode`
-          - `manifest.json` · 2.5 KiB
-      - 📁 `0_git`
-        - 📁 `dist`
-          - 📁 `hooks`
-          - `.gitattributes` · 2.0 KiB
-          - `.gitignore` · 4.7 KiB
-          - `.gitmodules` · 1.4 KiB
-          - `gitconfig` · 2.0 KiB
-          - `LICENSE` · 4.5 KiB
-        - 📁 `src`
-          - 📁 `hooks`
-          - `gitattributes` · 1.0 KiB
-          - `gitconfig` · 1012 B
-          - `gitignore` · 3.7 KiB
-          - `gitmodules` · 406 B
-          - `LICENSE` · 4.5 KiB
       - 📁 `0_hub`
         - 📦 `Projects-___` (submodule)
       - 📁 `1_cicd`
@@ -10176,10 +10172,10 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `vite.config.ts` · 2.6 KiB
       - `.gitattributes` · 2.0 KiB
       - `.gitignore` · 4.7 KiB
-      - `.gitleaks.toml` · 3.4 KiB
+      - `.gitleaks.toml` · 4.1 KiB
       - `.gitleaksignore` · 270 B
       - `.gitmodules` · 1.5 KiB
-      - `.mcp.json` · 3.8 KiB
+      - `.mcp.json` · 1.1 KiB
       - `.node-version` · 3 B
       - `.nojekyll` · 0 B
       - `.sops.yaml` · 176 B
@@ -10213,15 +10209,21 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - **[z-archived_front-data](https://github.com/diegonmarcos/z-archived_front-data)** · 🌐 public
         - 📁 `.claude`
           - 📁 `agents`
-            - `build.md` · 529 B
-            - `explore.md` · 568 B
-            - `ops.md` · 577 B
+            - `build.md` · 585 B
+            - `explore.md` · 581 B
+            - `general-purpose.md` · 382 B
+            - `infra.md` · 539 B
+            - `ops.md` · 658 B
             - `README.md` · 2.4 KiB
-            - `review.md` · 524 B
-          - `mcp-auth-headers.sh` · 7.5 KiB
+            - `review.md` · 537 B
+          - 📁 `hooks`
+            - 📁 `c3`
+          - 📁 `skills`
+            - 📁 `c3-infra`
+          - `mcp-auth-headers.sh` · 8.1 KiB
           - `mcp-connect.mjs` · 5.5 KiB
           - `SESSION-SURVIVAL.md` · 1.6 KiB
-          - `settings.json` · 10.6 KiB
+          - `settings.json` · 13.9 KiB
         - 📁 `.githooks`
           - `history-gate` · 3.0 KiB
           - `leak-scan` · 3.6 KiB
@@ -10279,9 +10281,9 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 📁 `a0_tasks`
           - `README.md` · 363 B
         - `.gitignore` · 3.7 KiB
-        - `.gitleaks.toml` · 3.4 KiB
+        - `.gitleaks.toml` · 4.1 KiB
         - `.gitmodules` · 220 B
-        - `.mcp.json` · 3.8 KiB
+        - `.mcp.json` · 1.1 KiB
         - `CLAUDE.md` · 50 B
         - `front-deps.json` · 0 B
         - `front-topology.json` · 11.0 KiB
