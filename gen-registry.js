@@ -8,8 +8,12 @@
 //   0_repos-tree/*     json, canvas, html, md, xml, Obsidian graph notes        (render-repos-tree.js)
 //   1_repo-folders-tree/*  json (excerpt of the master's `tree` fields), md, html  (render-folders-tree.js)
 //   root symlinks      ./repos-tree.* -> 0_repos-tree/, ./repo-folders-tree.* -> 1_repo-folders-tree/
+//   consumer copies    registry.consumers[].copies, written into sibling consumer clones by sync-consumers.js
+//                      (e.g. cloudy-u-android repos.sot.json + pin, repos-github.sot.json, repos.outline.json and
+//                      Cloud Me's ac_cloud-me/data/repos copy); a consumer with no clone prints a note, never fails
 //
-//   node gen-registry.js           validate the master, write every rendered file, drop stale graph notes, fix root symlinks
+//   node gen-registry.js           validate the master, write every rendered file, drop stale graph notes, fix root symlinks,
+//                                  then refresh the consumer copies (node sync-consumers.js; --no-consumers skips it)
 //   node gen-registry.js --check   exit 1 when the master is invalid, any rendered file differs from a fresh render
 //                                  (byte-for-byte), a stale note exists or a root symlink is wrong; repos-sot.js check runs it
 // Folder data: `node refresh-folders-tree.js` fetches it INTO projects-repos.json, then runs this generator.
@@ -149,4 +153,5 @@ if (require.main === module) {
   for (const [l, t] of LINKS) { const fp = path.join(HERE, l); let cur = null; try { cur = fs.readlinkSync(fp); } catch { }
     if (cur !== t) { try { fs.unlinkSync(fp); } catch { } fs.symlinkSync(t, fp); } }
   console.log(`gen-registry.js: ${Object.keys(out).length} rendered files from projects-repos.json, ${n} rewritten`);
+  if (!process.argv.includes('--no-consumers')) require('./sync-consumers.js').syncAll().notes.forEach(x => console.log(x));
 }
