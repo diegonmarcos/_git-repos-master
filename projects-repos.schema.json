@@ -348,6 +348,14 @@
         "description": true,
         "hub": true,
         "farm": true,
+        "show_in": {
+          "description": "Consumer surfaces that list this area (e.g. lnktree = Cloud Me Lnktree > Proj chips). Absent = listed nowhere beyond the full outline.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["lnktree"]
+          }
+        },
         "kind": {
           "const": "area"
         },

@@ -47,6 +47,7 @@ function outline(n, x) { // a non-repo node as linktree/README data
   const under = x.repos.filter(r => (r.path || []).includes(n.code)).length;
   const o = { code: n.code, kind: n.kind, name: n.name, label: n.label };
   if (n.icon) o.icon = n.icon; if (n.banner) o.banner = n.banner;
+  if (n.show_in) o.show_in = n.show_in;
   o.developer = devOf(n); o.description = n.description; o.hub = n.hub ? n.hub.name : null; o.farm = farmOf(n) || null;
   if (n.branch) o.branch = n.branch;
   o.repos_count = under;

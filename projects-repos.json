@@ -86,6 +86,7 @@
     {
       "code": "1",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "Unix",
       "label": "Unix",
       "icon": "🐧",
@@ -1483,6 +1484,7 @@
     {
       "code": "2",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "CG",
       "label": "CG",
       "icon": "🎮",
@@ -1718,6 +1720,7 @@
     {
       "code": "3",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "Capital",
       "label": "Capital",
       "icon": "💹",
@@ -1905,6 +1908,7 @@
     {
       "code": "4",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "HardTech",
       "label": "HardTech",
       "icon": "🔬",
@@ -2059,6 +2063,7 @@
     {
       "code": "5",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "42",
       "label": "42",
       "icon": "🎓",
@@ -2586,6 +2591,7 @@
     {
       "code": "6",
       "kind": "area",
+      "show_in": ["lnktree"],
       "name": "Projects",
       "label": "Projects",
       "icon": "🎨",
