@@ -63,14 +63,14 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
   - 📁 **3.Capital/** · Capital (3): hub Fin-___ and its members. Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).
     - **[[Fin-___]]** · 🌐 public
       - 📁 **Capital-Markets/**
-        - [[Fin-CM-Blmbrg]] · 🌐 public · CM-Blmbrg
-        - [[Fin-CM-mqpm]] · 🌐 public · CM-MQPM
+        - [[Fin-CM-Blmbrg]] · 🌐 public · Stack-Fin-Terminal
+        - [[Fin-CM-mqpm]] · 🌐 public · Macro-Central-Bank
       - 📁 **Corporate/**
-        - [[Fin-Corporate]] · 🌐 public · CORP-Wacc
+        - [[Fin-Corporate]] · 🌐 public · Micro-Asset-Management
   - 📁 **4.HardTech/** · HardTech (4): hub DeepSc-___ and its members. HardTech: deep science projects and CAD / simulation tools.
     - **[[DeepSc-___]]** · 🌐 public
-      - [[CAD-Simulators]] · 🌐 public · CAD-Simulators
-      - [[DeepSc-X]] · 🌐 public · DeepSc-X
+      - [[CAD-Simulators]] · 🌐 public · Stack-CAD-Simulators
+      - [[DeepSc-X]] · 🌐 public · DeepXTech
   - 📁 **5.Lecole-42/** · 42 (5): hub lecole-42-___ and its members. 42 school coursework (a school, not a project): one project per curriculum repo.
     - **[[lecole-42-___]]** · 🌐 public
       - [[lecole-42_back-Algo]] · 🌐 public · 42-algo

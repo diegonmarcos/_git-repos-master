@@ -1760,8 +1760,8 @@
         {
           "code": "3.1",
           "kind": "project",
-          "name": "CM-MQPM",
-          "label": "CM-MQPM",
+          "name": "Macro-Central-Bank",
+          "label": "Macro-Central-Bank",
           "icon": "📈",
           "description": "Capital markets: MQPM, StochBates and quant projects.",
           "farm": "3.Capital/Capital-Markets",
@@ -1808,21 +1808,60 @@
         {
           "code": "3.2",
           "kind": "project",
-          "name": "CM-Blmbrg",
-          "label": "CM-Blmbrg",
+          "name": "Micro-Asset-Management",
+          "label": "Micro-Asset-Management",
+          "icon": "🏢",
+          "description": "Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet.",
+          "farm": "3.Capital/Corporate",
+          "children": [
+            {
+              "code": "3.2.1",
+              "kind": "family",
+              "name": "Corporate",
+              "label": "Corporate",
+              "description": "",
+              "children": [
+                {
+                  "code": "3.2.1.1",
+                  "kind": "repo",
+                  "name": "Fin-Corporate",
+                  "label": "Fin-Corporate",
+                  "visibility": "public",
+                  "description": "Fin: Corporate finance",
+                  "group": "b_projects",
+                  "doc": "Corporate finance (Nexus.z, Field Finance, Project Corporate); member of the Fin-___ hub. Created 2026-10-28.",
+                  "tree": {
+                    "source": "github-api",
+                    "head": "9130998d3aa555a4e13dd672557d334ff3f89fac",
+                    "entries": [
+                      {"name":"0_hub","type":"dir","children":[{"name":"Fin-___","type":"submodule"}]},
+                      {"name":".gitmodules","type":"file","size":101},
+                      {"name":"README.md","type":"file","size":319}
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "3.3",
+          "kind": "project",
+          "name": "Stack-Fin-Terminal",
+          "label": "Stack-Fin-Terminal",
           "icon": "📰",
           "description": "Capital markets: Blmbrg terminal, market watch and news.",
           "farm": "3.Capital/Capital-Markets",
           "children": [
             {
-              "code": "3.2.1",
+              "code": "3.3.1",
               "kind": "family",
               "name": "Terminal",
               "label": "Terminal",
               "description": "",
               "children": [
                 {
-                  "code": "3.2.1.1",
+                  "code": "3.3.1.1",
                   "kind": "repo",
                   "name": "Fin-CM-Blmbrg",
                   "label": "Fin-CM-Blmbrg",
@@ -1845,45 +1884,6 @@
                       {"name":"build.sh","type":"symlink","size":29,"target":"1_cicd/src/scripts/_engine.sh"},
                       {"name":"README.md","type":"file","size":1200},
                       {"name":"ship.yml","type":"symlink","size":26,"target":".github/workflows/ship.yml"}
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "code": "3.3",
-          "kind": "project",
-          "name": "CORP-Wacc",
-          "label": "CORP-Wacc",
-          "icon": "🏢",
-          "description": "Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet.",
-          "farm": "3.Capital/Corporate",
-          "children": [
-            {
-              "code": "3.3.1",
-              "kind": "family",
-              "name": "Corporate",
-              "label": "Corporate",
-              "description": "",
-              "children": [
-                {
-                  "code": "3.3.1.1",
-                  "kind": "repo",
-                  "name": "Fin-Corporate",
-                  "label": "Fin-Corporate",
-                  "visibility": "public",
-                  "description": "Fin: Corporate finance",
-                  "group": "b_projects",
-                  "doc": "Corporate finance (Nexus.z, Field Finance, Project Corporate); member of the Fin-___ hub. Created 2026-10-28.",
-                  "tree": {
-                    "source": "github-api",
-                    "head": "9130998d3aa555a4e13dd672557d334ff3f89fac",
-                    "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"Fin-___","type":"submodule"}]},
-                      {"name":".gitmodules","type":"file","size":101},
-                      {"name":"README.md","type":"file","size":319}
                     ]
                   }
                 }
@@ -1959,8 +1959,8 @@
         {
           "code": "4.2",
           "kind": "project",
-          "name": "DeepSc-X",
-          "label": "DeepSc-X",
+          "name": "DeepXTech",
+          "label": "DeepXTech",
           "icon": "🧬",
           "description": "Deep science projects.",
           "children": [
@@ -2005,8 +2005,8 @@
         {
           "code": "4.3",
           "kind": "project",
-          "name": "CAD-Simulators",
-          "label": "CAD-Simulators",
+          "name": "Stack-CAD-Simulators",
+          "label": "Stack-CAD-Simulators",
           "icon": "📐",
           "description": "Agentic CAD (MCP) and simulators.",
           "children": [

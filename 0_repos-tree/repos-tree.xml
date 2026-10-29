@@ -59,18 +59,18 @@
     <group name="3.Capital" path="3.Capital">
       <hub name="Fin-___" farm="3.Capital" field="Capital" family="Hub" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-___">
         <group name="Capital-Markets" path="3.Capital/Capital-Markets">
-          <repo name="Fin-CM-Blmbrg" farm="3.Capital/Capital-Markets" project="CM-Blmbrg" field="Capital" family="Terminal" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-CM-Blmbrg"/>
-          <repo name="Fin-CM-mqpm" farm="3.Capital/Capital-Markets" project="CM-MQPM" field="Capital" family="MQPM" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-CM-mqpm"/>
+          <repo name="Fin-CM-Blmbrg" farm="3.Capital/Capital-Markets" project="Stack-Fin-Terminal" field="Capital" family="Terminal" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-CM-Blmbrg"/>
+          <repo name="Fin-CM-mqpm" farm="3.Capital/Capital-Markets" project="Macro-Central-Bank" field="Capital" family="MQPM" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-CM-mqpm"/>
         </group>
         <group name="Corporate" path="3.Capital/Corporate">
-          <repo name="Fin-Corporate" farm="3.Capital/Corporate" project="CORP-Wacc" field="Capital" family="Corporate" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-Corporate"/>
+          <repo name="Fin-Corporate" farm="3.Capital/Corporate" project="Micro-Asset-Management" field="Capital" family="Corporate" visibility="public" developer="Nexus.z" url="https://github.com/diegonmarcos/Fin-Corporate"/>
         </group>
       </hub>
     </group>
     <group name="4.HardTech" path="4.HardTech">
       <hub name="DeepSc-___" farm="4.HardTech" field="HardTech" family="Hub" visibility="public" developer="Stark.x" url="https://github.com/diegonmarcos/DeepSc-___">
-        <repo name="CAD-Simulators" farm="4.HardTech" project="CAD-Simulators" field="HardTech" family="CAD" visibility="public" developer="Stark.x" url="https://github.com/diegonmarcos/CAD-Simulators"/>
-        <repo name="DeepSc-X" farm="4.HardTech" project="DeepSc-X" field="HardTech" family="Sailytics" visibility="public" developer="Stark.x" url="https://github.com/diegonmarcos/DeepSc-X"/>
+        <repo name="CAD-Simulators" farm="4.HardTech" project="Stack-CAD-Simulators" field="HardTech" family="CAD" visibility="public" developer="Stark.x" url="https://github.com/diegonmarcos/CAD-Simulators"/>
+        <repo name="DeepSc-X" farm="4.HardTech" project="DeepXTech" field="HardTech" family="Sailytics" visibility="public" developer="Stark.x" url="https://github.com/diegonmarcos/DeepSc-X"/>
       </hub>
     </group>
     <group name="5.Lecole-42" path="5.Lecole-42">

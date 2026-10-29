@@ -543,7 +543,7 @@
     {
       "id": "78d3c16d85f3a976",
       "type": "text",
-      "text": "**Fin-CM-Blmbrg**\nCM-Blmbrg · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
+      "text": "**Fin-CM-Blmbrg**\nStack-Fin-Terminal · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
       "x": 1040,
       "y": 2980,
       "width": 300,
@@ -553,7 +553,7 @@
     {
       "id": "2f93b59db3fca1d1",
       "type": "text",
-      "text": "**Fin-CM-mqpm**\nCM-MQPM · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
+      "text": "**Fin-CM-mqpm**\nMacro-Central-Bank · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
       "x": 1360,
       "y": 2980,
       "width": 300,
@@ -573,7 +573,7 @@
     {
       "id": "6dd9952fa4369792",
       "type": "text",
-      "text": "**Fin-Corporate**\nCORP-Wacc · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
+      "text": "**Fin-Corporate**\nMicro-Asset-Management · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
       "x": 1040,
       "y": 3180,
       "width": 300,
@@ -613,7 +613,7 @@
     {
       "id": "4092c61e05e10b1a",
       "type": "text",
-      "text": "**CAD-Simulators**\nCAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/CAD-Simulators)",
+      "text": "**CAD-Simulators**\nStack-CAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/CAD-Simulators)",
       "x": 700,
       "y": 3600,
       "width": 300,
@@ -623,7 +623,7 @@
     {
       "id": "fb62f973e4ea5046",
       "type": "text",
-      "text": "**DeepSc-X**\nDeepSc-X · Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/DeepSc-X)",
+      "text": "**DeepSc-X**\nDeepXTech · Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/DeepSc-X)",
       "x": 1020,
       "y": 3600,
       "width": 300,

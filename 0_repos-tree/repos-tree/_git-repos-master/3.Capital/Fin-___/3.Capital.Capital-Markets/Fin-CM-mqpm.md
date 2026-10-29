@@ -4,7 +4,7 @@ kind: repo
 group: "3.Capital/Capital-Markets"
 hub: "Fin-___"
 parent_hub: "Fin-___"
-project: "CM-MQPM"
+project: "Macro-Central-Bank"
 area: "Capital"
 family: "MQPM"
 subcategory: ""
@@ -14,7 +14,7 @@ url: "https://github.com/diegonmarcos/Fin-CM-mqpm"
 tags:
   - repo
   - area/Capital
-  - project/CM-MQPM
+  - project/Macro-Central-Bank
   - family/MQPM
   - visibility/public
   - group/3-Capital/Capital-Markets
@@ -24,7 +24,7 @@ tags:
 
 # Fin-CM-mqpm
 
-#repo #area/Capital #project/CM-MQPM #family/MQPM #visibility/public #group/3-Capital/Capital-Markets
+#repo #area/Capital #project/Macro-Central-Bank #family/MQPM #visibility/public #group/3-Capital/Capital-Markets
 
 Hub: [[Fin-___]]
 

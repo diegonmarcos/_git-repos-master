@@ -1520,15 +1520,6 @@
       "doc": "MQPM / StochBates: README and deployer wiring skeleton; src/central_bank moved here with history 2026-10-28 from labtools b-Nxs_PA (#1218, 92b18a0). #1224."
     },
     {
-      "name": "Fin-CM-Blmbrg",
-      "farm": "3.Capital/Capital-Markets",
-      "group": "b_projects",
-      "hub": "Fin-___",
-      "url": "git@github.com:diegonmarcos/Fin-CM-Blmbrg.git",
-      "private": false,
-      "doc": "Blmbrg (FIN TERMINAL: CentralBank pointer, Fin-Terminal, GDELT-News, MarketWatch, DataScience-ML-Terminal under src/): README and deployer wiring skeleton; the former front-labtools projects b-Nxs_Blmmbrg/* moved here with history 2026-10-28 (#1218, 47950ae), laid out 2026-10-29 (#1279). #1224."
-    },
-    {
       "name": "Fin-Corporate",
       "farm": "3.Capital/Corporate",
       "group": "b_projects",
@@ -1536,6 +1527,15 @@
       "url": "git@github.com:diegonmarcos/Fin-Corporate.git",
       "private": false,
       "doc": "Corporate finance (Nexus.z, Field Finance, Project Corporate); member of the Fin-___ hub. Created 2026-10-28."
+    },
+    {
+      "name": "Fin-CM-Blmbrg",
+      "farm": "3.Capital/Capital-Markets",
+      "group": "b_projects",
+      "hub": "Fin-___",
+      "url": "git@github.com:diegonmarcos/Fin-CM-Blmbrg.git",
+      "private": false,
+      "doc": "Blmbrg (FIN TERMINAL: CentralBank pointer, Fin-Terminal, GDELT-News, MarketWatch, DataScience-ML-Terminal under src/): README and deployer wiring skeleton; the former front-labtools projects b-Nxs_Blmmbrg/* moved here with history 2026-10-28 (#1218, 47950ae), laid out 2026-10-29 (#1279). #1224."
     },
     {
       "name": "DeepSc-___",

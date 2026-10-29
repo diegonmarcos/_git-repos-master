@@ -4,7 +4,7 @@ kind: repo
 group: "4.HardTech"
 hub: "DeepSc-___"
 parent_hub: "DeepSc-___"
-project: "DeepSc-X"
+project: "DeepXTech"
 area: "HardTech"
 family: "Sailytics"
 subcategory: ""
@@ -14,7 +14,7 @@ url: "https://github.com/diegonmarcos/DeepSc-X"
 tags:
   - repo
   - area/HardTech
-  - project/DeepSc-X
+  - project/DeepXTech
   - family/Sailytics
   - visibility/public
   - group/4-HardTech
@@ -24,7 +24,7 @@ tags:
 
 # DeepSc-X
 
-#repo #area/HardTech #project/DeepSc-X #family/Sailytics #visibility/public #group/4-HardTech
+#repo #area/HardTech #project/DeepXTech #family/Sailytics #visibility/public #group/4-HardTech
 
 Hub: [[DeepSc-___]]
 

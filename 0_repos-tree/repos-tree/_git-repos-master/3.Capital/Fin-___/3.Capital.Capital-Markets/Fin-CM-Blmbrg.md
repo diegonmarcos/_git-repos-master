@@ -4,7 +4,7 @@ kind: repo
 group: "3.Capital/Capital-Markets"
 hub: "Fin-___"
 parent_hub: "Fin-___"
-project: "CM-Blmbrg"
+project: "Stack-Fin-Terminal"
 area: "Capital"
 family: "Terminal"
 subcategory: ""
@@ -14,7 +14,7 @@ url: "https://github.com/diegonmarcos/Fin-CM-Blmbrg"
 tags:
   - repo
   - area/Capital
-  - project/CM-Blmbrg
+  - project/Stack-Fin-Terminal
   - family/Terminal
   - visibility/public
   - group/3-Capital/Capital-Markets
@@ -24,7 +24,7 @@ tags:
 
 # Fin-CM-Blmbrg
 
-#repo #area/Capital #project/CM-Blmbrg #family/Terminal #visibility/public #group/3-Capital/Capital-Markets
+#repo #area/Capital #project/Stack-Fin-Terminal #family/Terminal #visibility/public #group/3-Capital/Capital-Markets
 
 Hub: [[Fin-___]]
 

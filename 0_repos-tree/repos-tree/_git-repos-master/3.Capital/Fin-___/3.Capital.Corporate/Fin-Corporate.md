@@ -4,7 +4,7 @@ kind: repo
 group: "3.Capital/Corporate"
 hub: "Fin-___"
 parent_hub: "Fin-___"
-project: "CORP-Wacc"
+project: "Micro-Asset-Management"
 area: "Capital"
 family: "Corporate"
 subcategory: ""
@@ -14,7 +14,7 @@ url: "https://github.com/diegonmarcos/Fin-Corporate"
 tags:
   - repo
   - area/Capital
-  - project/CORP-Wacc
+  - project/Micro-Asset-Management
   - family/Corporate
   - visibility/public
   - group/3-Capital/Corporate
@@ -24,7 +24,7 @@ tags:
 
 # Fin-Corporate
 
-#repo #area/Capital #project/CORP-Wacc #family/Corporate #visibility/public #group/3-Capital/Corporate
+#repo #area/Capital #project/Micro-Asset-Management #family/Corporate #visibility/public #group/3-Capital/Corporate
 
 Hub: [[Fin-___]]
 

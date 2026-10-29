@@ -4,7 +4,7 @@ kind: repo
 group: "4.HardTech"
 hub: "DeepSc-___"
 parent_hub: "DeepSc-___"
-project: "CAD-Simulators"
+project: "Stack-CAD-Simulators"
 area: "HardTech"
 family: "CAD"
 subcategory: ""
@@ -14,7 +14,7 @@ url: "https://github.com/diegonmarcos/CAD-Simulators"
 tags:
   - repo
   - area/HardTech
-  - project/CAD-Simulators
+  - project/Stack-CAD-Simulators
   - family/CAD
   - visibility/public
   - group/4-HardTech
@@ -24,7 +24,7 @@ tags:
 
 # CAD-Simulators
 
-#repo #area/HardTech #project/CAD-Simulators #family/CAD #visibility/public #group/4-HardTech
+#repo #area/HardTech #project/Stack-CAD-Simulators #family/CAD #visibility/public #group/4-HardTech
 
 Hub: [[DeepSc-___]]
 
