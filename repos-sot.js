@@ -178,6 +178,10 @@ if (cmd === 'check') {
     const gp = path.join(HERE, 'repos-github.json');
     if (fs.existsSync(gp)) for (const r of read(gp).repos) if (['CG', '42'].includes(r.project)) bad(`repos-github.json ${r.name}: ${r.project} is a field/school, not a project`); else if (/-___$/.test(r.name) && r.visibility !== 'public') bad(`repos-github.json ${r.name}: hub must be public, visibility is ${r.visibility}`);
   }
+  if (!arg) { // generated repo tree (canvas + html) must match the registry
+    const gen = require('./gen-repos-tree.js').render();
+    for (const [f, text] of Object.entries(gen)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} out of date, run node gen-repos-tree.js`); }
+  }
   done('repos.json');
 } else if (cmd === 'check-hubs') {
   const reg = read(SOT); checkHubs(reg, arg === '--remote'); done('hubs' + (arg === '--remote' ? ' (remote .gitmodules)' : ''));
