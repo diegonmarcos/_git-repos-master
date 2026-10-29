@@ -76,7 +76,6 @@ the ones you do not have yet. `./clone.sh --list` spells it out.
 0_apps/    src/ dist/   claude, vscode, obsidian dotfiles + root/mcp.json
 9_others/  src/ dist/   shared libs + build.sh
 a0_docs/                this
-a0_tasks/               what is being done
 2_vault/  a_cloud/  b_data_science/  y_others/     the index itself
 ```
 
