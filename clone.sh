@@ -96,7 +96,7 @@ esac
 # in the fleet, jq is not guaranteed present.
 _names() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));process.stdout.write(r.repos.map(x=>x.name).join(" "))' "$REGISTRY"; }
 _field() { node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const e=r.repos.find(x=>x.name===process.argv[2]);process.stdout.write(e?String(e[process.argv[3]]??""):"")' "$REGISTRY" "$1" "$2"; }
-# #1291 links are placed by `farm` (<code>.<Name> folders from repos.v3.json, e.g. 1.2.Cloud-me/Pvt);
+# #1291 links are placed by `farm` (<code>.<Name> folders from projects-repos.json, e.g. 1.2.Cloud-me/Pvt);
 # `group` is a legacy family key that places nothing. A repo with no farm lives
 # at the root; that empty name is emitted as the sentinel "." (word-splitting
 # would drop it) and translated back at the point of use.

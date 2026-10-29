@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# #1073/#1295 tester for the repo-list source of truth (repos.v3.json -> repos.json/repos-github.json/README.md, clone.sh, repos-sot.js).
+# #1073/#1295/#1301 tester for the ONE master source projects-repos.json (-> repos.json, repos-github.json, README.md,
+# 0_repos-tree/*, 1_repo-folders-tree/* via the one generator gen-registry.js), clone.sh, repos-sot.js.
 # Fails on: registry/link drift, a pending_creation repo being cloned or linked,
 # a missing reorganisation entry, a subset/copy guard that does not bite.
 set -u
@@ -10,37 +11,51 @@ bad() { echo "FAIL  $*"; fail=1; }
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
 
 node "$ROOT/repos-sot.js" check "$ROOT/repos.json" >/dev/null 2>&1 && ok "registry consistent, links match" || { bad "repos-sot.js check"; node "$ROOT/repos-sot.js" check; }
-node "$ROOT/repos-sot.js" check >/dev/null 2>&1 && ok "repos.v3.json valid; repos.json, repos-github.json, README.md, 0_repos-tree equal a fresh render byte-for-byte" || { bad "repos-sot.js check (full)"; node "$ROOT/repos-sot.js" check; }
+node "$ROOT/repos-sot.js" check >/dev/null 2>&1 && ok "projects-repos.json valid; repos.json, repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/* equal a fresh render byte-for-byte" || { bad "repos-sot.js check (full)"; node "$ROOT/repos-sot.js" check; }
 if python3 -c 'import jsonschema' 2>/dev/null; then
-  python3 - "$ROOT" <<'PY' && ok "repos.v3.json valid against repos.v3.schema.json (python jsonschema, draft 2020-12)" || bad "repos.v3.json fails repos.v3.schema.json (python jsonschema)"
+  python3 - "$ROOT" <<'PY' && ok "projects-repos.json valid against projects-repos.schema.json (python jsonschema, draft 2020-12)" || bad "projects-repos.json fails projects-repos.schema.json (python jsonschema)"
 import json, sys, jsonschema
-r = sys.argv[1]; s = json.load(open(r + '/repos.v3.schema.json')); d = json.load(open(r + '/repos.v3.json'))
+r = sys.argv[1]; s = json.load(open(r + '/projects-repos.schema.json')); d = json.load(open(r + '/projects-repos.json'))
 jsonschema.Draft202012Validator.check_schema(s); e = list(jsonschema.Draft202012Validator(s).iter_errors(d))
 for x in e[:10]: print(list(x.path), x.message)
 sys.exit(1 if e else 0)
 PY
 fi
 # the generated files say so and point at the source
-for f in repos.json repos-github.json README.md; do grep -q 'repos.v3.json' "$ROOT/$f" && ok "$f names its source repos.v3.json" || bad "$f does not name repos.v3.json"; done
+for f in repos.json repos-github.json README.md 0_repos-tree/repos-tree.json 1_repo-folders-tree/repo-folders-tree.json 1_repo-folders-tree/repo-folders-tree.md; do grep -q 'projects-repos.json' "$ROOT/$f" && ok "$f names its source projects-repos.json" || bad "$f does not name projects-repos.json"; done
+# #1301 the old separate sources/generators are gone; the folder data has no second home
+for f in repos.v3.json repos.v3.schema.json gen-repos-tree.js gen-repo-folders-tree.js; do [ -e "$ROOT/$f" ] && bad "$f still present (superseded by projects-repos.json / gen-registry.js)" || ok "$f gone"; done
+node -e 'const M=require(process.argv[1]+"/registry-model.js"),s=M.load(),n=[s.root];const w=x=>{if(x.hub)n.push(x.hub);(x.children||[]).forEach(c=>c.kind==="repo"?n.push(c):w(c))};s.tree.forEach(w);
+const pub=n.filter(r=>r.visibility==="public"),t=pub.filter(r=>r.tree);if(n.some(r=>r.visibility!=="public"&&r.tree)||t.length<pub.length*0.9)process.exit(1)' "$ROOT" && ok "folder trees live in projects-repos.json (public repos have tree, private repos none)" || bad "folder trees missing from the master or a private repo has one"
 grep -q 'DO NOT EDIT' "$ROOT/README.md" && ok "README.md carries the DO NOT EDIT banner" || bad "README.md lacks the DO NOT EDIT banner"
 
 # #1295 the README / compat guards bite: a scratch copy is clean, then each mutation fails `check`
-SRCS="repos-sot.js registry-model.js gen-registry.js gen-repos-tree.js gen-repo-folders-tree.js repos.v3.json repos.v3.schema.json repos.json repos-github.json README.md"
+SRCS="repos-sot.js registry-model.js gen-registry.js render-repos-tree.js render-folders-tree.js refresh-folders-tree.js projects-repos.json projects-repos.schema.json repos.json repos-github.json README.md"
 gmk() { rm -rf "$T/g"; mkdir -p "$T/g/9_others"; cp -r "$ROOT/9_others/templates" "$T/g/9_others/"; for f in $SRCS; do cp "$ROOT/$f" "$T/g/"; done
-  cp -a "$ROOT/0_repos-tree" "$ROOT"/[1-9].* "$T/g/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/g/repos-tree.$f"; done; }
+  cp -a "$ROOT/0_repos-tree" "$ROOT/1_repo-folders-tree" "$ROOT"/[1-9].* "$T/g/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/g/repos-tree.$f"; done
+  for f in json md html; do ln -s "1_repo-folders-tree/repo-folders-tree.$f" "$T/g/repo-folders-tree.$f"; done; }
+jmut() { node -e 'const M=require(process.argv[1]+"/registry-model.js"),fs=require("fs"),j=M.load();'"$1"';fs.writeFileSync(M.SRC,M.serialize(j))' "$T/g"; }
 gchk() { node "$T/g/repos-sot.js" check >/dev/null 2>&1; }
 gmk; gchk && ok "README guard: scratch copy is clean" || { bad "README guard: scratch copy not clean"; node "$T/g/repos-sot.js" check | head -5; }
 gmk; sed -i '0,/repositories/s/repositories/repos/' "$T/g/README.md"; gchk && bad "hand-edited README.md accepted" || ok "hand-edited README.md (one word) fails the check"
 gmk; printf ' ' >> "$T/g/README.md"; gchk && bad "README.md with one trailing byte accepted" || ok "README.md one byte off fails the check (byte-for-byte)"
 gmk; sed -i 's/^## Clone depth$/## Clone Depth/' "$T/g/9_others/templates/README.md.tpl"; gchk && bad "template edit without re-render accepted" || ok "template edited, README not re-rendered: fails"
-gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[0].children[0].description+=" x";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; gchk && bad "source edit without re-render accepted" || ok "repos.v3.json edited, outputs not re-rendered: fails"
-gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[0].children[0].description+=" x";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; (cd "$T/g" && node -e 'const g=require("./gen-registry.js"),fs=require("fs");for(const[f,t]of Object.entries(g.render()))fs.writeFileSync(f,t)' && node gen-repos-tree.js >/dev/null); gchk && ok "source edit + re-render passes" || bad "source edit + re-render still fails"
+gmk; jmut 'j.tree[0].children[0].description+=" x"'; gchk && bad "master edit without re-render accepted" || ok "projects-repos.json edited, outputs not re-rendered: fails"
+gmk; jmut 'j.tree[0].children[0].description+=" x"'; (cd "$T/g" && node gen-registry.js >/dev/null); gchk && ok "master edit + re-render passes" || bad "master edit + re-render still fails"
+gmk; jmut 'j.root.tree.entries.pop()'; gchk && bad "master folder tree edited without re-render accepted" || ok "a repo tree in projects-repos.json edited, 1_repo-folders-tree not re-rendered: fails"
+gmk; jmut 'j.root.tree.entries.pop()'; (cd "$T/g" && node gen-registry.js >/dev/null); gchk && ok "master tree edit + re-render passes" || bad "master tree edit + re-render still fails"
+gmk; sed -i '0,/"status": "ok"/s//"status": "unreadable"/' "$T/g/1_repo-folders-tree/repo-folders-tree.json"; gchk && bad "hand-edited repo-folders-tree.json accepted" || ok "hand-edited 1_repo-folders-tree/repo-folders-tree.json fails the check"
+gmk; echo x >> "$T/g/1_repo-folders-tree/repo-folders-tree.md"; gchk && bad "hand-edited repo-folders-tree.md accepted" || ok "hand-edited 1_repo-folders-tree/repo-folders-tree.md fails the check"
+gmk; echo x >> "$T/g/0_repos-tree/repos-tree.xml"; gchk && bad "hand-edited repos-tree.xml accepted" || ok "hand-edited 0_repos-tree/repos-tree.xml fails the check"
+gmk; jmut 'const p=j.tree[0].children[1].children.find(x=>x.kind==="subcategory"&&x.name==="Pvt");p.children[0].children[0].tree=j.root.tree'; gchk && bad "private repo with a folder tree accepted" || ok "a PRIVATE repo carrying a folder tree in the master fails"
+gmk; jmut 'let e=j.root.tree.entries.find(x=>x.children&&x.children.some(c=>c.children&&c.children.some(d=>d.children)));const c=e.children.find(c=>c.children&&c.children.some(d=>d.children)),d=c.children.find(d=>d.children);d.children.push({name:"deep",type:"dir",children:[{name:"x",type:"file"}]})'; gchk && bad "tree deeper than max_depth accepted" || ok "a tree entry deeper than folders.max_depth fails"
+gmk; rm "$T/g/repo-folders-tree.html"; gchk && bad "missing root symlink accepted" || ok "a missing root symlink (repo-folders-tree.html) fails"
 gmk; sed -i 's/"private": true/"private": false/' "$T/g/repos.json"; gchk && bad "hand-edited repos.json accepted" || ok "hand-edited repos.json fails the check"
 gmk; sed -i '0,/"visibility": "private"/s//"visibility": "public"/' "$T/g/repos-github.json"; gchk && bad "hand-edited repos-github.json accepted" || ok "hand-edited repos-github.json fails the check"
-gmk; sed -i '0,/"code": "1.1"/s//"code": "1.9"/' "$T/g/repos.v3.json"; gchk && bad "non-positional code accepted" || ok "a non-positional code in repos.v3.json fails"
-gmk; sed -i '0,/"kind": "family"/s//"kind": "famly"/' "$T/g/repos.v3.json"; gchk && bad "schema violation accepted" || ok "a schema violation (bad kind) fails"
-gmk; sed -i 's/"farm": "4.HardTech"/"farm": "9.DeepSc"/' "$T/g/repos.v3.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
-gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[1].hub.visibility="private";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; gchk && bad "private hub accepted" || ok "a private hub fails (hub always public)"
+gmk; sed -i '0,/"code": "1.1"/s//"code": "1.9"/' "$T/g/projects-repos.json"; gchk && bad "non-positional code accepted" || ok "a non-positional code in projects-repos.json fails"
+gmk; sed -i '0,/"kind": "family"/s//"kind": "famly"/' "$T/g/projects-repos.json"; gchk && bad "schema violation accepted" || ok "a schema violation (bad kind) fails"
+gmk; sed -i 's/"farm": "4.HardTech"/"farm": "9.DeepSc"/' "$T/g/projects-repos.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
+gmk; jmut 'j.tree[1].hub.visibility="private"'; gchk && bad "private hub accepted" || ok "a private hub fails (hub always public)"
 
 node "$ROOT/repos-sot.js" check-hubs >/dev/null 2>&1 && ok "hub hierarchy sound (no cycles, no public->private hub)" || { bad "repos-sot.js check-hubs"; node "$ROOT/repos-sot.js" check-hubs; }
 # live drift (needs gh): node repos-sot.js check-hubs --remote

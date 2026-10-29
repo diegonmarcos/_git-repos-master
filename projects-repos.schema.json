@@ -1,0 +1,729 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/diegonmarcos/_git-repos-master/projects-repos.schema.json",
+  "title": "_git-repos-master master source (projects-repos/v1, #1295, #1301)",
+  "description": "Schema of projects-repos.json, the ONE master source of _git-repos-master (hierarchy, repos and their folder trees). Checked by `node repos-sot.js check` (registry-model.js) and by 9_others/test/test-repos-sot.sh (python jsonschema when present). Positional codes, unique names and farm nesting are checked in registry-model.js validate().",
+  "type": "object",
+  "required": [
+    "$schema",
+    "_schema",
+    "_doc",
+    "owner",
+    "icons",
+    "root",
+    "tree",
+    "registry",
+    "readme",
+    "folders"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "./projects-repos.schema.json"
+    },
+    "_schema": {
+      "const": "projects-repos/v1"
+    },
+    "_doc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]+$"
+    },
+    "icons": {
+      "type": "object",
+      "required": [
+        "visibility",
+        "developer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "visibility": {
+          "type": "object",
+          "required": [
+            "public",
+            "private"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "public": {
+              "type": "string",
+              "minLength": 1
+            },
+            "private": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "developer": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "root": {
+      "type": "object",
+      "required": [
+        "code",
+        "kind",
+        "name",
+        "label",
+        "visibility",
+        "developer",
+        "area",
+        "project",
+        "family",
+        "description"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "const": "0"
+        },
+        "kind": {
+          "const": "hub"
+        },
+        "name": {
+          "const": "_git-repos-master"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visibility": {
+          "const": "public"
+        },
+        "developer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "area": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "doc": {
+          "type": "string"
+        },
+        "tree": {
+          "$ref": "#/$defs/folderTree"
+        }
+      }
+    },
+    "tree": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/area"
+      }
+    },
+    "registry": {
+      "description": "Account-level registry data carried into the generated repos.json (cloud-repos/v1) verbatim: docs, renames, consumers, fleet_files, store dirs, legacy groups.",
+      "type": "object",
+      "required": [
+        "_doc",
+        "renames",
+        "unregistered_ok",
+        "consumers",
+        "shared_store_dir",
+        "base_dir_default",
+        "fleet_files",
+        "groups"
+      ],
+      "properties": {
+        "renames": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to",
+              "kind"
+            ],
+            "properties": {
+              "from": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "repo",
+                  "app-folder",
+                  "self",
+                  "group",
+                  "farm-folder"
+                ]
+              }
+            }
+          }
+        },
+        "unregistered_ok": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "reason"
+            ]
+          }
+        },
+        "consumers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "repo",
+              "what",
+              "reads",
+              "guard"
+            ]
+          }
+        },
+        "fleet_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to",
+              "requires"
+            ]
+          }
+        },
+        "groups": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "readme": {
+      "type": "object",
+      "required": [
+        "template"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "template": {
+          "type": "string",
+          "pattern": "\\.tpl$"
+        }
+      }
+    },
+    "folders": {
+      "description": "Folder-tree settings (#1301): depth and excluded names used by refresh-folders-tree.js and checked on every repo tree.",
+      "type": "object",
+      "required": [
+        "_doc",
+        "max_depth",
+        "excluded"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "_doc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_depth": {
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "code": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*(\\.[1-9][0-9]*)*$"
+    },
+    "hubCode": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*(\\.[1-9][0-9]*)*\\.0$"
+    },
+    "farm": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)*\\.[A-Za-z][A-Za-z0-9-]*(/[A-Za-z0-9][A-Za-z0-9._-]*)*$"
+    },
+    "nodeCommon": {
+      "type": "object",
+      "required": [
+        "code",
+        "kind",
+        "name",
+        "label",
+        "description",
+        "children"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/code"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[^/]+$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "icon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "banner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+$"
+        },
+        "developer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "hub": {
+          "$ref": "#/$defs/hub"
+        },
+        "farm": {
+          "$ref": "#/$defs/farm"
+        }
+      }
+    },
+    "area": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/nodeCommon"
+        }
+      ],
+      "type": "object",
+      "required": [
+        "icon",
+        "banner",
+        "developer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": true,
+        "name": true,
+        "label": true,
+        "icon": true,
+        "banner": true,
+        "developer": true,
+        "description": true,
+        "hub": true,
+        "farm": true,
+        "kind": {
+          "const": "area"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/project"
+          }
+        }
+      }
+    },
+    "project": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/nodeCommon"
+        }
+      ],
+      "type": "object",
+      "required": [
+        "icon"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": true,
+        "name": true,
+        "label": true,
+        "icon": true,
+        "developer": true,
+        "description": true,
+        "hub": true,
+        "farm": true,
+        "kind": {
+          "const": "project"
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Curriculum branch (42); rendered as `subcategory` in repos-github.json."
+        },
+        "status": {
+          "enum": [
+            "planned"
+          ],
+          "description": "planned = the project is declared but has no repo of its own yet (children may be empty)."
+        },
+        "content": {
+          "type": "object",
+          "required": [
+            "repo",
+            "path"
+          ],
+          "additionalProperties": false,
+          "description": "Where a planned project's content lives for now: a repo and a path inside it.",
+          "properties": {
+            "repo": {
+              "type": "string",
+              "minLength": 1
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/subcategory"
+              },
+              {
+                "$ref": "#/$defs/family"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "subcategory": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/nodeCommon"
+        }
+      ],
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": true,
+        "name": true,
+        "label": true,
+        "icon": true,
+        "developer": true,
+        "description": true,
+        "hub": true,
+        "farm": true,
+        "kind": {
+          "const": "subcategory"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/family"
+          }
+        }
+      }
+    },
+    "family": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/nodeCommon"
+        }
+      ],
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": true,
+        "name": true,
+        "label": true,
+        "icon": true,
+        "developer": true,
+        "description": true,
+        "hub": true,
+        "farm": true,
+        "kind": {
+          "const": "family"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/repo"
+          }
+        }
+      }
+    },
+    "repoCommon": {
+      "type": "object",
+      "required": [
+        "code",
+        "kind",
+        "name",
+        "label",
+        "visibility",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+$"
+        },
+        "github": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+$",
+          "description": "GitHub repo name when it differs from the registry name."
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "icon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "private"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "GitHub description (snapshot)."
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "group": {
+          "enum": [
+            "2_vault",
+            "a_cloud",
+            "b_projects",
+            "c_gh",
+            "d_lecole"
+          ],
+          "description": "LEGACY family key, carried into repos.json for its readers."
+        },
+        "lfs": {
+          "const": true
+        },
+        "school": {
+          "const": "42"
+        },
+        "status": {
+          "enum": [
+            "pending_creation"
+          ]
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "path"
+            ]
+          }
+        },
+        "renamed_from": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "doc": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "path"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "tree": {
+          "$ref": "#/$defs/folderTree"
+        }
+      }
+    },
+    "repo": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/repoCommon"
+        }
+      ],
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/code"
+        },
+        "kind": {
+          "const": "repo"
+        },
+        "name": true,
+        "github": true,
+        "label": true,
+        "icon": true,
+        "visibility": true,
+        "description": true,
+        "role": true,
+        "group": true,
+        "lfs": true,
+        "school": true,
+        "status": true,
+        "parts": true,
+        "renamed_from": true,
+        "doc": true,
+        "apps": true,
+        "tree": true
+      }
+    },
+    "hub": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/repoCommon"
+        }
+      ],
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/hubCode"
+        },
+        "kind": {
+          "const": "hub"
+        },
+        "name": true,
+        "github": true,
+        "label": true,
+        "icon": true,
+        "visibility": true,
+        "description": true,
+        "role": true,
+        "group": true,
+        "lfs": true,
+        "school": true,
+        "status": true,
+        "parts": true,
+        "renamed_from": true,
+        "doc": true,
+        "apps": true,
+        "tree": true
+      }
+    },
+    "treeEntry": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "dir",
+            "file",
+            "submodule",
+            "symlink"
+          ]
+        },
+        "size": {
+          "type": "integer"
+        },
+        "target": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/treeEntry"
+          }
+        }
+      }
+    },
+    "folderTree": {
+      "description": "A public repo's folder tree at remote HEAD (#1301), written by refresh-folders-tree.js. Private repos carry none.",
+      "type": "object",
+      "required": [
+        "source",
+        "head",
+        "entries"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "enum": [
+            "github-api",
+            "local-clone"
+          ]
+        },
+        "head": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/treeEntry"
+          }
+        }
+      }
+    }
+  }
+}

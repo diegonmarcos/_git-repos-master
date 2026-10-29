@@ -1,8 +1,10 @@
-// registry-model.js - reads THE ONE SOURCE repos.v3.json (#1295) and expands it. No dependencies: node only.
+// registry-model.js - reads THE ONE MASTER SOURCE projects-repos.json (#1295, #1301) and expands it. No dependencies: node only.
 //
 //   load([file])       parsed source
-//   validate(src)      [] or a list of problems: JSON Schema (repos.v3.schema.json, checked by the small validator below)
-//                      plus the rules a schema cannot say: positional codes, unique names, farm prefixes, hub placement
+//   serialize(src)     the canonical text of the master (JSON, 2-space indent; each folder-tree entry on one line)
+//   validate(src)      [] or a list of problems: JSON Schema (projects-repos.schema.json, checked by the small validator below)
+//                      plus the rules a schema cannot say: positional codes, unique names, farm prefixes, hub placement,
+//                      folder trees (private repos carry none; depth <= folders.max_depth; no folders.excluded names)
 //   expand(src)        { nodes, repos, byName, root }: every non-repo node with its path, and every repo (root first,
 //                      then tree order) with the DERIVED fields: farm, up (hub or parent_hub), developer, area/project/
 //                      subcategory/family names and codes, github name, https url, ssh url, private
@@ -15,12 +17,26 @@
 //   developer  nearest `developer` up the tree
 'use strict';
 const fs = require('fs'), path = require('path');
-const HERE = __dirname, SRC = path.join(HERE, 'repos.v3.json'), SCHEMA = path.join(HERE, 'repos.v3.schema.json');
+const HERE = __dirname, SRC = path.join(HERE, 'projects-repos.json'), SCHEMA = path.join(HERE, 'projects-repos.schema.json');
 const TOP = '_git-repos-master';
 
 const load = (f = SRC) => JSON.parse(fs.readFileSync(f, 'utf8'));
 
-// ---- small JSON Schema validator: the keywords repos.v3.schema.json uses, nothing more -------------------------
+// canonical text: JSON.stringify(src, null, 2) except that inside a repo's `tree.entries` each top-level entry is
+// written on ONE line (compact JSON), so the ~10k folder/file entries keep the master readable and diffs small
+function serialize(src) {
+  const fmt = (v, ind, compactItems) => {
+    if (v === null || typeof v !== 'object') return JSON.stringify(v);
+    const pad = '  '.repeat(ind + 1), end = '  '.repeat(ind);
+    if (Array.isArray(v)) { if (!v.length) return '[]';
+      return '[\n' + v.map(x => pad + (compactItems ? JSON.stringify(x) : fmt(x, ind + 1))).join(',\n') + '\n' + end + ']'; }
+    const ks = Object.keys(v).filter(k => v[k] !== undefined); if (!ks.length) return '{}';
+    return '{\n' + ks.map(k => pad + JSON.stringify(k) + ': ' + fmt(v[k], ind + 1, k === 'entries')).join(',\n') + '\n' + end + '}';
+  };
+  return fmt(src, 0) + '\n';
+}
+
+// ---- small JSON Schema validator: the keywords projects-repos.schema.json uses, nothing more -------------------------
 function schemaErrors(schema, data) {
   const errs = [], root = schema;
   const resolve = ref => ref.replace(/^#\//, '').split('/').reduce((o, k) => o[k], root);
@@ -106,7 +122,7 @@ function finish(r, owner) {
 const CHILD = { area: ['project'], project: ['subcategory', 'family'], subcategory: ['family'], family: ['repo'] };
 function validate(src) {
   const e = [];
-  let schema; try { schema = JSON.parse(fs.readFileSync(SCHEMA, 'utf8')); } catch (x) { return [`repos.v3.schema.json: ${x.message}`]; }
+  let schema; try { schema = JSON.parse(fs.readFileSync(SCHEMA, 'utf8')); } catch (x) { return [`projects-repos.schema.json: ${x.message}`]; }
   for (const x of schemaErrors(schema, src)) e.push('schema ' + x);
   if (e.length) return e;
   const names = new Map(), farmTops = new Map();
@@ -146,6 +162,17 @@ function validate(src) {
   }
   const ren = new Set((src.registry.renames || []).map(r => r.from));
   for (const r of x.repos) if (ren.has(r.name)) e.push(`${r.name} is the OLD name in renames[]; use the new name`);
+  // #1301 folder trees live in the master under each repo node (`tree`); private repos never carry a listing
+  const F = src.folders, EX = new Set(F.excluded);
+  for (const r of x.repos) {
+    if (!r.tree) continue;
+    if (r.visibility !== 'public') { e.push(`${r.name}: PRIVATE repo carries a folder tree (contents stay private)`); continue; }
+    const ent = (n, d) => { if (d > F.max_depth) e.push(`${r.name}: tree entry ${n.name} at depth ${d} > folders.max_depth ${F.max_depth}`);
+      if (EX.has(n.name)) e.push(`${r.name}: tree lists excluded name ${n.name}`);
+      if ((n.type === 'dir') !== Array.isArray(n.children)) e.push(`${r.name}: tree entry ${n.name}: children exactly on dirs`);
+      (n.children || []).forEach(c => ent(c, d + 1)); };
+    r.tree.entries.forEach(n => ent(n, 1));
+  }
   return e;
 }
 
@@ -156,4 +183,4 @@ function farms(x) {
   return o;
 }
 
-module.exports = { load, validate, expand, farms, schemaErrors, SRC, SCHEMA, TOP };
+module.exports = { load, serialize, validate, expand, farms, schemaErrors, SRC, SCHEMA, TOP };

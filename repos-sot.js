@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 // repos-sot.js - the ONE guard for the repo list (#1073, #1295).
-// THE ONE SOURCE is repos.v3.json (schema repos.v3.schema.json); repos.json, repos-github.json, README.md,
-// 0_repos-tree/* are rendered from it (gen-registry.js, gen-repos-tree.js) and must never be edited.
+// THE ONE MASTER SOURCE is projects-repos.json (schema projects-repos.schema.json; #1301): hierarchy, repos AND each
+// repo's folder tree. repos.json, repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/* are rendered
+// from it by the one generator gen-registry.js and must never be edited.
 //
-//   node repos-sot.js check                         the source is valid (schema + rules), repos.json / repos-github.json /
-//                                                   README.md / 0_repos-tree/* equal a fresh render BYTE-FOR-BYTE, the
+//   node repos-sot.js check                         the master is valid (schema + rules), every rendered file (repos.json,
+//                                                   repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/*,
+//                                                   root symlinks) equals a fresh render BYTE-FOR-BYTE, the
 //                                                   rendered registry is consistent and the committed symlink farm matches it
 //   node repos-sot.js check <repos.json>            only the registry/farm/link checks, on that cloud-repos/v1 file
 //   node repos-sot.js check-hubs [--remote]         hub/parent_hub hierarchy is sound; --remote reads each repo's
@@ -66,7 +68,7 @@ function checkRegistry(reg) {
 }
 
 // #1291 link folder: `farm` (numbered hub folders); `group` is a legacy family key and places nothing.
-// #1295 top farm folders are <code>.<Name> after their node in repos.v3.json (1.1.Cloudy, 2.CG, 8.Archived, ...)
+// #1295 top farm folders are <code>.<Name> after their node in projects-repos.json (1.1.Cloudy, 2.CG, 8.Archived, ...)
 const TOP_FARM = /^\d+(\.\d+)*\.[A-Za-z][A-Za-z0-9-]*$/, ARCHIVED = /^\d+(\.\d+)*\.Archived$/, OTHERS = /^\d+(\.\d+)*\.Others$/;
 const linkRel = r => `${r.farm ? r.farm + '/' : ''}${r.name}`;
 const linkTarget = r => '../'.repeat(r.farm ? r.farm.split('/').length + 1 : 1) + (r.path || r.name);
@@ -207,15 +209,9 @@ const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
   checkRegistry(reg); checkFarms(reg); checkLinks(reg);
-  if (!arg) { // #1295 THE ONE SOURCE: valid, and every rendered file equals a fresh render byte-for-byte
-    let gen = {};
-    try { gen = require('./gen-registry.js').render(); } catch (e) { (e.problems || [e.message]).forEach(x => bad('repos.v3.json: ' + x)); }
-    for (const [f, text] of Object.entries(gen)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} differs from a fresh render of repos.v3.json (never edit it; run node gen-registry.js)`); }
-    if (Object.keys(gen).length) {
-      const tree = require('./gen-repos-tree.js').render();
-      for (const [f, text] of Object.entries(tree)) { const p = path.join(HERE, f); if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) bad(`${f} out of date, run node gen-registry.js`); }
-    }
-  }
+  if (!arg) // #1295/#1301 THE ONE MASTER SOURCE: valid against its schema, and EVERY rendered file (repos.json,
+    // repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/*) equals a fresh render byte-for-byte
+    require('./gen-registry.js').problems().forEach(bad);
   done('repos.json');
 } else if (cmd === 'check-hubs') {
   const reg = read(SOT); checkHubs(reg, arg === '--remote'); done('hubs' + (arg === '--remote' ? ' (remote .gitmodules)' : ''));
