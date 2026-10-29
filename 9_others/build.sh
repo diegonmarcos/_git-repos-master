@@ -48,8 +48,19 @@ do_git() {
         cp -f "$GIT_SRC/gitconfig" "$GIT_DIST/gitconfig"
         log "  git: gitconfig -> 0_git/dist/gitconfig (included from .git/config)"
     fi
-    # These three ARE root dotfiles — git reads them from the working tree.
-    for f in gitattributes gitignore gitmodules; do
+    # gitattributes is NOT a root .gitattributes: sync clients (e.g. GitSync on
+    # Android) treat any in-tree attributes/filters as a premium feature, and this
+    # repo is plain metadata. It ships as .gitattributes_ours and is applied
+    # locally through core.attributesFile (set below), so git still honours it.
+    if [ -f "$GIT_SRC/gitattributes" ]; then
+        cp -f "$GIT_SRC/gitattributes" "$GIT_DIST/gitattributes_ours"
+        cp -f "$GIT_DIST/gitattributes_ours" "$REPO_ROOT/.gitattributes_ours"
+        rm -f "$GIT_DIST/.gitattributes" "$REPO_ROOT/.gitattributes"
+        git -C "$REPO_ROOT" config --local core.attributesFile "$REPO_ROOT/.gitattributes_ours" 2>/dev/null || true
+        log "  git: gitattributes -> .gitattributes_ours (core.attributesFile)"
+    fi
+    # These two ARE root dotfiles — git reads them from the working tree.
+    for f in gitignore gitmodules; do
         [ -f "$GIT_SRC/$f" ] || continue
         cp -f "$GIT_SRC/$f" "$GIT_DIST/.$f"
         cp -f "$GIT_DIST/.$f" "$REPO_ROOT/.$f"
