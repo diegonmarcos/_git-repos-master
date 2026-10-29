@@ -72,8 +72,8 @@ the ones you do not have yet. `./clone.sh --list` spells it out.
 ## Layout
 
 ```
-0_git/     src/ dist/   gitconfig, gitattributes, gitignore, hooks/
-0_apps/    src/ dist/   claude, vscode, obsidian dotfiles + root/mcp.json
+_dotfiles/git/     src/ dist/   gitconfig, gitattributes, gitignore, hooks/
+_dotfiles/apps/    src/ dist/   claude, vscode, obsidian dotfiles + root/mcp.json
 9_others/  src/ dist/   shared libs + build.sh
 a0_docs/                this
 2_vault/  a_cloud/  b_data_science/  y_others/     the index itself

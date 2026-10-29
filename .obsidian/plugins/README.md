@@ -5,7 +5,7 @@ GitHub **latest release** by `9_others/obsidian/install-plugins.sh` (list:
 `9_others/obsidian/plugins.list`, lock: `9_others/obsidian/plugins.lock`) and
 committed here unmodified, except `remotely-save/main.js`: it embeds the upstream Google OAuth app client id/secret, which GitHub push protection rejects, so it is gitignored and fetched per device by running the script. Every licence below permits redistribution of the
 unmodified build with its notice; source is at the linked repo.
-Default settings (`data.json`) are managed in `0_apps/src/obsidian/plugins/<id>/data.json`
+Default settings (`data.json`) are managed in `_dotfiles/apps/src/obsidian/plugins/<id>/data.json`
 and deployed here; edit them there. Update: `bash 9_others/obsidian/install-plugins.sh`
 (or `--only id1,id2`), then commit.
 

@@ -239,7 +239,7 @@ sync_all() {
             i=$((i+1)); continue
         fi
         printf "  = %s\n" "$(_ff_from "$i")"
-        # The index itself is a target too: it carries 0_apps/ and 9_others/
+        # The index itself is a target too: it carries _dotfiles/apps/ and 9_others/
         # like any other repo, and excluding it is how an index drifts from the
         # fleet it indexes.
         for repo_path in "$SCRIPT_DIR" $(for m in $(_names); do echo "$BASE/$(_path "$m")"; done); do

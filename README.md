@@ -164,4 +164,4 @@ Generated from [`repos-github.json`](repos-github.json) by `node gen-repos-list.
 <!-- repos-list:end -->
 
 ## Git attributes (`.gitattributes_ours`)
-This repo is plain metadata, so it carries no in-tree `.gitattributes`: sync clients such as GitSync (Android) treat any attributes/filters as a premium feature. The rules live in `.gitattributes_ours` (source: `0_git/src/gitattributes`) and are applied locally by `9_others/build.sh`, which sets `git config --local core.attributesFile "$PWD/.gitattributes_ours"`. On a fresh clone, run that one command (or `9_others/build.sh`) to get LF normalisation, union-merge logs and binary handling.
+This repo is plain metadata, so it carries no in-tree `.gitattributes`: sync clients such as GitSync (Android) treat any attributes/filters as a premium feature. The rules live in `.gitattributes_ours` (source: `_dotfiles/git/src/gitattributes`) and are applied locally by `9_others/build.sh`, which sets `git config --local core.attributesFile "$PWD/.gitattributes_ours"`. On a fresh clone, run that one command (or `9_others/build.sh`) to get LF normalisation, union-merge logs and binary handling.

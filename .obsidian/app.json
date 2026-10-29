@@ -12,8 +12,8 @@
   "userIgnoreFilters": [
     "node_modules/",
     ".git/",
-    "0_apps/dist/",
-    "0_git/dist/",
+    "_dotfiles/apps/dist/",
+    "_dotfiles/git/dist/",
     "repo-folders-tree.json",
     "repo-folders-tree.html",
     "repos-tree.json"

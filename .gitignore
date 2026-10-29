@@ -5,9 +5,9 @@
 
 # ── Secrets & Credentials (reinforces global gitignore) ──
 # KEEP IN SYNC WITH:
-#   Pre-commit hook: 0_git/src/hooks/pre-commit  (blocks even git add -f)
-#   Global gitignore: ~/git/cloud-unix/ba_flakes_desktop/src/modules/programs/git.nix
-#   Global gitignore: ~/git/cloud-unix/bb_flakes_termux/src/modules/programs/git.nix
+#   Pre-commit hook: _dotfiles/git/src/hooks/pre-commit  (blocks even git add -f)
+#   Global gitignore: ~/git/cloud-infra-desktop/ba_flakes_desktop/src/modules/programs/git.nix
+#   Global gitignore: ~/git/cloud-infra-desktop/bb_flakes_termux/src/modules/programs/git.nix
 ## Decrypted secrets output
 .secrets
 *.secrets
@@ -114,11 +114,3 @@ build.log
 .claude.json.tmp.*
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-.obsidian/cache
-.obsidian/cache/
-.obsidian/workspaces.json
-.obsidian/plugins/*/.hotreload
-.obsidian/plugins/omnisearch/cache*
-## Remotely Save main.js embeds the upstream Google OAuth app credentials; GitHub push
-## protection rejects it. Fetched per device by 9_others/obsidian/install-plugins.sh.
-.obsidian/plugins/remotely-save/main.js

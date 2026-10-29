@@ -1,0 +1,13 @@
+{
+  "daily": {
+    "enabled": false,
+    "folder": "",
+    "format": "YYYY-MM-DD"
+  },
+  "weekly": {
+    "enabled": false
+  },
+  "monthly": {
+    "enabled": false
+  }
+}
