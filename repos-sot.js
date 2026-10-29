@@ -21,6 +21,12 @@
 //   node repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
 //   node repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
 //                                                   (hubs = registry entries with parent_hub, siblings of this repo, or in [dir])
+//   node repos-sot.js sync-readmes [dir] [--migrate] write each clone's _dotfiles/readme/ kit (readme-render.js,
+//                                                   template.md.tpl, node.json, render-readme.sh) and render README.md
+//                                                   (#1303); [dir] = a clone or a folder of clones (default: siblings),
+//                                                   matched to the registry by origin URL. --migrate turns a hand-written
+//                                                   README.md into _dotfiles/readme/readme.json when that file is missing
+//   node repos-sot.js check-readmes [dir]           fail when a kit file or README.md differs from a fresh render
 //
 // Exit 0 = ok, 1 = drift (every difference printed). No dependencies: node only.
 'use strict';
@@ -205,6 +211,60 @@ function hubScripts(dir) {
   })).filter(h => fs.existsSync(path.dirname(h.file)));
 }
 
+// ---- README kits (#1303): every repo's README.md = shared template + its registry node + its readme.json ----
+function readmeClones(dirArg) {
+  const cp = require('child_process'), M = require('./registry-model.js'), x = M.expand(M.load());
+  const alias = new Map();
+  for (const r of x.repos) { alias.set(r.github.toLowerCase(), r.name); for (const o of r.renamed_from || []) if (!alias.has(o.toLowerCase())) alias.set(o.toLowerCase(), r.name); }
+  const root = path.resolve(dirArg || path.join(HERE, '..'));
+  const dirs = fs.existsSync(path.join(root, '.git')) ? [root]
+    : fs.readdirSync(root).map(d => path.join(root, d)).filter(d => fs.existsSync(path.join(d, '.git')));
+  const out = [];
+  for (const d of dirs) {
+    let url = ''; try { url = cp.execFileSync('git', ['-C', d, 'remote', 'get-url', 'origin'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch (_) { continue; }
+    const m = url.match(/github\.com[:/]diegonmarcos\/([^/]+?)(\.git)?\/?$/); if (!m) continue;
+    const name = alias.get(m[1].toLowerCase());
+    if (!name || name === TOP) continue;
+    out.push({ dir: d, name });
+  }
+  return { x, out };
+}
+function readmeKits(dirArg, write, migrate) {
+  const RR = require('./readme-render.js'), { x, out } = readmeClones(dirArg);
+  const T = f => fs.readFileSync(path.join(HERE, '9_others/templates/readme', f), 'utf8');
+  for (const { dir, name } of out) {
+    const node = RR.nodeData(x, name), kit = path.join(dir, RR.KIT);
+    const files = {
+      'readme-render.js': fs.readFileSync(path.join(HERE, 'readme-render.js'), 'utf8'),
+      'template.md.tpl': T(node.kind === 'hub' ? 'hub.md.tpl' : 'repo.md.tpl'),
+      'node.json': JSON.stringify(node, null, 2) + '\n',
+      'render-readme.sh': T('render-readme.sh'),
+    };
+    const rj = path.join(kit, 'readme.json');
+    if (!fs.existsSync(rj)) {
+      if (!write || !migrate) { bad(`${name} (${dir}): no ${RR.KIT}/readme.json (run sync-readmes --migrate once)`); continue; }
+      const old = fs.existsSync(path.join(dir, 'README.md')) ? fs.readFileSync(path.join(dir, 'README.md'), 'utf8') : '';
+      const { readme, dropped } = RR.migrate(old, node.kind);
+      fs.mkdirSync(kit, { recursive: true });
+      fs.writeFileSync(rj, JSON.stringify(readme, null, 2) + '\n');
+      console.log(`migrated ${name}: ${(readme.sections || []).length} section(s)${dropped.length ? ', template owns ' + dropped.join(', ') : ''}`);
+    }
+    for (const [f, text] of Object.entries(files)) {
+      const p = path.join(kit, f), cur = fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : null;
+      if (cur === text) continue;
+      if (write) { fs.mkdirSync(kit, { recursive: true }); fs.writeFileSync(p, text); if (f.endsWith('.sh')) fs.chmodSync(p, 0o755); console.log(`wrote ${p}`); }
+      else bad(`${p} differs from the render (run node repos-sot.js sync-readmes)`);
+    }
+    if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
+    const want = RR.render(node, JSON.parse(fs.readFileSync(rj, 'utf8')), files['template.md.tpl']), rp = path.join(dir, 'README.md');
+    const have = fs.existsSync(rp) ? fs.readFileSync(rp, 'utf8') : null;
+    if (have === want) continue;
+    if (write) { fs.writeFileSync(rp, want); console.log(`wrote ${rp}`); }
+    else bad(`${rp} differs from the render (edit ${RR.KIT}/readme.json, then render)`);
+  }
+  return out.length;
+}
+
 const [cmd, arg, flag] = process.argv.slice(2);
 if (cmd === 'check') {
   const reg = read(arg || SOT);
@@ -240,7 +300,11 @@ if (cmd === 'check') {
     else bad(`${h.file} differs from the rendered 9_others/templates/hub-clone.sh (run node repos-sot.js sync-hub-scripts)`);
   }
   done(`${cmd} (${hs.length} hubs)`);
+} else if (cmd === 'sync-readmes' || cmd === 'check-readmes') {
+  const opts = process.argv.slice(3), migrate = opts.includes('--migrate'), dirArg = opts.find(o => !o.startsWith('--'));
+  const n = readmeKits(dirArg, cmd === 'sync-readmes', migrate);
+  done(`${cmd} (${n} repos)`);
 } else {
-  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | check-hub-subsets [dir] [--fix] | copy-of <file> | sync-hub-scripts [dir] | check-hub-scripts [dir]');
+  console.error('usage: repos-sot.js check [file] | check-hubs [--remote] | check-subset <file> [--fix] | check-hub-subsets [dir] [--fix] | copy-of <file> | sync-hub-scripts [dir] | check-hub-scripts [dir] | sync-readmes [dir] [--migrate] | check-readmes [dir]');
   process.exit(2);
 }
