@@ -1,0 +1,14 @@
+{
+  "commitMessage": "vault: {{date}}",
+  "autoCommitMessage": "vault: auto {{date}}",
+  "autoSaveInterval": 0,
+  "autoPushInterval": 0,
+  "autoPullInterval": 0,
+  "autoPullOnBoot": false,
+  "disablePush": true,
+  "pullBeforePush": true,
+  "disablePopups": false,
+  "syncMethod": "rebase",
+  "showStatusBar": true,
+  "refreshSourceControl": true
+}

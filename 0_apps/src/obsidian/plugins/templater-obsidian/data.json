@@ -1,0 +1,7 @@
+{
+  "templates_folder": "9_others/obsidian/templates",
+  "trigger_on_file_creation": false,
+  "enable_system_commands": false,
+  "user_scripts_folder": "",
+  "auto_jump_to_cursor": true
+}

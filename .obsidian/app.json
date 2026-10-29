@@ -1,4 +1,19 @@
 {
-  "showUnsupportedFiles": false,
+  "showUnsupportedFiles": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showFrontmatter": true,
+  "livePreview": true,
+  "defaultViewMode": "preview",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "9_others/obsidian/attachments",
+  "userIgnoreFilters": [
+    "node_modules/",
+    ".git/",
+    "0_apps/dist/",
+    "0_git/dist/"
+  ],
   "tabSize": 4
 }

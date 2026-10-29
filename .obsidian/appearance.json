@@ -1,3 +1,14 @@
 {
-  "baseFontSizeAction": true
+  "baseFontSize": 16,
+  "baseFontSizeAction": true,
+  "theme": "obsidian",
+  "accentColor": "",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "enabledCssSnippets": [
+    "readable-min-font",
+    "canvas-zoom"
+  ],
+  "showViewHeader": true
 }

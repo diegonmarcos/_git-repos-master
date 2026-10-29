@@ -1,0 +1,13 @@
+{
+  "serviceType": "s3",
+  "s3": {},
+  "webdav": {},
+  "dropbox": {},
+  "onedrive": {},
+  "autoRunEveryMilliseconds": -1,
+  "initRunAfterMilliseconds": -1,
+  "syncOnSaveAfterMilliseconds": -1,
+  "concurrency": 5,
+  "syncConfigDir": false,
+  "password": ""
+}

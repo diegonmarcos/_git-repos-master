@@ -1,0 +1,8 @@
+{
+  "enableDataviewJs": false,
+  "enableInlineDataviewJs": false,
+  "renderNullAs": "-",
+  "refreshEnabled": true,
+  "refreshInterval": 2500,
+  "defaultDateFormat": "yyyy-MM-dd"
+}

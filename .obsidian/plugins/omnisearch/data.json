@@ -1,0 +1,13 @@
+{
+  "indexedFileTypes": [
+    "md",
+    "canvas",
+    "json",
+    "xml",
+    "html"
+  ],
+  "PDFIndexing": false,
+  "imagesIndexing": false,
+  "showExcerpt": true,
+  "ribbonIcon": true
+}
