@@ -21,7 +21,7 @@
 //   node repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
 //   node repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
 //                                                   (hubs = registry entries with parent_hub, siblings of this repo, or in [dir])
-//   node repos-sot.js sync-readmes [dir] [--migrate] write each clone's _dotfiles/readme/ kit (readme-render.js,
+//   node repos-sot.js sync-readmes [dir] [--migrate] write each clone's _dotfiles/readme/ kit (readme-render.cjs,
 //                                                   template.md.tpl, node.json, render-readme.sh) and render README.md
 //                                                   (#1303); [dir] = a clone or a folder of clones (default: siblings),
 //                                                   matched to the registry by origin URL. --migrate turns a hand-written
@@ -235,7 +235,7 @@ function readmeKits(dirArg, write, migrate) {
   for (const { dir, name } of out) {
     const node = RR.nodeData(x, name), kit = path.join(dir, RR.KIT);
     const files = {
-      'readme-render.js': fs.readFileSync(path.join(HERE, 'readme-render.js'), 'utf8'),
+      'readme-render.cjs': fs.readFileSync(path.join(HERE, 'readme-render.js'), 'utf8'),
       'template.md.tpl': T(node.kind === 'hub' ? 'hub.md.tpl' : 'repo.md.tpl'),
       'node.json': JSON.stringify(node, null, 2) + '\n',
       'render-readme.sh': T('render-readme.sh'),
@@ -256,6 +256,8 @@ function readmeKits(dirArg, write, migrate) {
       else bad(`${p} differs from the render (run node repos-sot.js sync-readmes)`);
     }
     if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
+    const stale = path.join(kit, 'readme-render.js'); // vendored as .cjs so "type": "module" repos run it too
+    if (fs.existsSync(stale)) { if (write) { fs.unlinkSync(stale); console.log(`removed ${stale}`); } else bad(`${stale} is stale (vendored as readme-render.cjs)`); }
     const want = RR.render(node, JSON.parse(fs.readFileSync(rj, 'utf8')), files['template.md.tpl']), rp = path.join(dir, 'README.md');
     const have = fs.existsSync(rp) ? fs.readFileSync(rp, 'utf8') : null;
     if (have === want) continue;
