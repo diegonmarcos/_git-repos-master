@@ -47064,9 +47064,9 @@
     ]
    },
    {
-    "name": "3.Fin",
+    "name": "3.Capital",
     "kind": "group",
-    "path": "3.Fin",
+    "path": "3.Capital",
     "children": [
      {
       "code": "3.0",
@@ -47078,7 +47078,7 @@
        {
         "name": "Capital-Markets",
         "kind": "group",
-        "path": "3.Fin/Capital-Markets",
+        "path": "3.Capital/Capital-Markets",
         "children": [
          {
           "code": "3.2.1.1",
@@ -47564,7 +47564,7 @@
        {
         "name": "Corporate",
         "kind": "group",
-        "path": "3.Fin/Corporate",
+        "path": "3.Capital/Corporate",
         "children": [
          {
           "code": "3.3.1.1",
@@ -47830,9 +47830,9 @@
     ]
    },
    {
-    "name": "4.DeepSc",
+    "name": "4.HardTech",
     "kind": "group",
-    "path": "4.DeepSc",
+    "path": "4.HardTech",
     "children": [
      {
       "code": "4.0",
@@ -47842,7 +47842,7 @@
       "url": "https://github.com/diegonmarcos/DeepSc-___",
       "children": [
        {
-        "code": "4.2.1.1",
+        "code": "4.3.1.1",
         "name": "CAD-Simulators",
         "kind": "repo",
         "visibility": "public",
@@ -47994,7 +47994,7 @@
         ]
        },
        {
-        "code": "4.1.1.1",
+        "code": "4.2.1.1",
         "name": "DeepSc-X",
         "kind": "repo",
         "visibility": "public",

@@ -60,14 +60,14 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[CG-galaxy-gaia]] · 🔒 private · Galaxy
       - [[CG-unity]] · 🔒 private · Galaxy
       - [[CG-voxel-rust]] · 🌐 public · Galaxy
-  - 📁 **3.Fin/** · Financial (3): hub Fin-___ and its members. Finance: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).
+  - 📁 **3.Capital/** · Capital (3): hub Fin-___ and its members. Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).
     - **[[Fin-___]]** · 🌐 public
       - 📁 **Capital-Markets/**
         - [[Fin-CM-Blmbrg]] · 🌐 public · CM-Blmbrg
         - [[Fin-CM-mqpm]] · 🌐 public · CM-MQPM
       - 📁 **Corporate/**
         - [[Fin-Corporate]] · 🌐 public · CORP-Wacc
-  - 📁 **4.DeepSc/** · Deep Science (4): hub DeepSc-___ and its members. Deep science projects and CAD / simulation tools.
+  - 📁 **4.HardTech/** · HardTech (4): hub DeepSc-___ and its members. HardTech: deep science projects and CAD / simulation tools.
     - **[[DeepSc-___]]** · 🌐 public
       - [[CAD-Simulators]] · 🌐 public · CAD-Simulators
       - [[DeepSc-X]] · 🌐 public · DeepSc-X
@@ -155,14 +155,14 @@ graph LR
   n_CG_galaxy_gaia["CG-galaxy-gaia"]
   n_CG_unity["CG-unity"]
   n_CG_voxel_rust["CG-voxel-rust"]
-  n_group_3_Fin["3.Fin/"]
+  n_group_3_Capital["3.Capital/"]
   n_Fin____["Fin-___"]
-  n_group_3_Fin_Capital_Markets["Capital-Markets/"]
+  n_group_3_Capital_Capital_Markets["Capital-Markets/"]
   n_Fin_CM_Blmbrg["Fin-CM-Blmbrg"]
   n_Fin_CM_mqpm["Fin-CM-mqpm"]
-  n_group_3_Fin_Corporate["Corporate/"]
+  n_group_3_Capital_Corporate["Corporate/"]
   n_Fin_Corporate["Fin-Corporate"]
-  n_group_4_DeepSc["4.DeepSc/"]
+  n_group_4_HardTech["4.HardTech/"]
   n_DeepSc____["DeepSc-___"]
   n_CAD_Simulators["CAD-Simulators"]
   n_DeepSc_X["DeepSc-X"]
@@ -244,15 +244,15 @@ graph LR
   n_CG____ --> n_CG_galaxy_gaia
   n_CG____ --> n_CG_unity
   n_CG____ --> n_CG_voxel_rust
-  n__git_repos_master --> n_group_3_Fin
-  n_group_3_Fin --> n_Fin____
-  n_Fin____ --> n_group_3_Fin_Capital_Markets
-  n_group_3_Fin_Capital_Markets --> n_Fin_CM_Blmbrg
-  n_group_3_Fin_Capital_Markets --> n_Fin_CM_mqpm
-  n_Fin____ --> n_group_3_Fin_Corporate
-  n_group_3_Fin_Corporate --> n_Fin_Corporate
-  n__git_repos_master --> n_group_4_DeepSc
-  n_group_4_DeepSc --> n_DeepSc____
+  n__git_repos_master --> n_group_3_Capital
+  n_group_3_Capital --> n_Fin____
+  n_Fin____ --> n_group_3_Capital_Capital_Markets
+  n_group_3_Capital_Capital_Markets --> n_Fin_CM_Blmbrg
+  n_group_3_Capital_Capital_Markets --> n_Fin_CM_mqpm
+  n_Fin____ --> n_group_3_Capital_Corporate
+  n_group_3_Capital_Corporate --> n_Fin_Corporate
+  n__git_repos_master --> n_group_4_HardTech
+  n_group_4_HardTech --> n_DeepSc____
   n_DeepSc____ --> n_CAD_Simulators
   n_DeepSc____ --> n_DeepSc_X
   n__git_repos_master --> n_group_5_Lecole_42

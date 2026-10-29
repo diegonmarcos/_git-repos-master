@@ -100,6 +100,9 @@
         "code": true, "name": true, "label": true, "icon": true, "developer": true, "description": true, "hub": true, "farm": true,
         "kind": { "const": "project" },
         "branch": { "type": "string", "minLength": 1, "description": "Curriculum branch (42); rendered as `subcategory` in repos-github.json." },
+        "status": { "enum": ["planned"], "description": "planned = the project is declared but has no repo of its own yet (children may be empty)." },
+        "content": { "type": "object", "required": ["repo", "path"], "additionalProperties": false, "description": "Where a planned project's content lives for now: a repo and a path inside it.",
+          "properties": { "repo": { "type": "string", "minLength": 1 }, "path": { "type": "string", "minLength": 1 } } },
         "children": { "type": "array", "items": { "oneOf": [{ "$ref": "#/$defs/subcategory" }, { "$ref": "#/$defs/family" }] } }
       }
     },

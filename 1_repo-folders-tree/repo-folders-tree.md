@@ -8596,7 +8596,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `vox-rust_Agent-Driven_Voxel_World_Full_Build_Plan.md` · 37.4 KiB
         - `.gitmodules` · 98 B
         - `README.md` · 278 B
-  - 📁 **3.Fin/** (group)
+  - 📁 **3.Capital/** (group)
     - **Fin-___/** (hub)
       - 📁 **Capital-Markets/** (group)
         - **[Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg)** · 🌐 public
@@ -8693,7 +8693,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
             - 📦 `Fin-___` (submodule)
           - `.gitmodules` · 101 B
           - `README.md` · 319 B
-  - 📁 **4.DeepSc/** (group)
+  - 📁 **4.HardTech/** (group)
     - **DeepSc-___/** (hub)
       - **[CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators)** · 🌐 public
         - 📁 `0_hub`

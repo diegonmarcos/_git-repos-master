@@ -815,12 +815,12 @@
     {
       "code": "3",
       "kind": "area",
-      "name": "Financial",
-      "label": "Financial",
+      "name": "Capital",
+      "label": "Capital",
       "icon": "💹",
       "banner": "nexus.webp",
       "developer": "Nexus.z",
-      "description": "Finance: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
+      "description": "Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
       "hub": {
         "code": "3.0",
         "kind": "hub",
@@ -836,7 +836,7 @@
         ],
         "doc": "Project master for the Fin-CM family (Fin-CM-mqpm, Fin-CM-Blmbrg; Nexus.z moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224)."
       },
-      "farm": "3.Fin",
+      "farm": "3.Capital",
       "children": [
         {
           "code": "3.1",
@@ -845,7 +845,7 @@
           "label": "CM-MQPM",
           "icon": "📈",
           "description": "Capital markets: MQPM, StochBates and quant projects.",
-          "farm": "3.Fin/Capital-Markets",
+          "farm": "3.Capital/Capital-Markets",
           "children": [
             {
               "code": "3.1.1",
@@ -875,7 +875,7 @@
           "label": "CM-Blmbrg",
           "icon": "📰",
           "description": "Capital markets: Blmbrg terminal, market watch and news.",
-          "farm": "3.Fin/Capital-Markets",
+          "farm": "3.Capital/Capital-Markets",
           "children": [
             {
               "code": "3.2.1",
@@ -905,7 +905,7 @@
           "label": "CORP-Wacc",
           "icon": "🏢",
           "description": "Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet.",
-          "farm": "3.Fin/Corporate",
+          "farm": "3.Capital/Corporate",
           "children": [
             {
               "code": "3.3.1",
@@ -933,12 +933,12 @@
     {
       "code": "4",
       "kind": "area",
-      "name": "Deep Science",
-      "label": "Deep Science",
+      "name": "HardTech",
+      "label": "HardTech",
       "icon": "🔬",
       "banner": "structural.gif",
       "developer": "Stark.x",
-      "description": "Deep science projects and CAD / simulation tools.",
+      "description": "HardTech: deep science projects and CAD / simulation tools.",
       "hub": {
         "code": "4.0",
         "kind": "hub",
@@ -953,10 +953,21 @@
         ],
         "doc": "Project master for the DeepSc family (DeepSc-X; Stark.x moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224)."
       },
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "children": [
         {
           "code": "4.1",
+          "kind": "project",
+          "name": "Structural",
+          "label": "Structural",
+          "icon": "🏗️",
+          "status": "planned",
+          "content": { "repo": "CAD-Simulators", "path": "Structural-Designer" },
+          "description": "Structural design (planned): the content lives in CAD-Simulators/Structural-Designer until it gets its own repo.",
+          "children": []
+        },
+        {
+          "code": "4.2",
           "kind": "project",
           "name": "DeepSc-X",
           "label": "DeepSc-X",
@@ -964,14 +975,14 @@
           "description": "Deep science projects.",
           "children": [
             {
-              "code": "4.1.1",
+              "code": "4.2.1",
               "kind": "family",
               "name": "Sailytics",
               "label": "Sailytics",
               "description": "",
               "children": [
                 {
-                  "code": "4.1.1.1",
+                  "code": "4.2.1.1",
                   "kind": "repo",
                   "name": "DeepSc-X",
                   "label": "DeepSc-X",
@@ -985,7 +996,7 @@
           ]
         },
         {
-          "code": "4.2",
+          "code": "4.3",
           "kind": "project",
           "name": "CAD-Simulators",
           "label": "CAD-Simulators",
@@ -993,14 +1004,14 @@
           "description": "Agentic CAD (MCP) and simulators.",
           "children": [
             {
-              "code": "4.2.1",
+              "code": "4.3.1",
               "kind": "family",
               "name": "CAD",
               "label": "CAD",
               "description": "",
               "children": [
                 {
-                  "code": "4.2.1.1",
+                  "code": "4.3.1.1",
                   "kind": "repo",
                   "name": "CAD-Simulators",
                   "label": "CAD-Simulators",
@@ -2616,7 +2627,7 @@
       },
       {
         "from": "04.Fin",
-        "to": "3.Fin",
+        "to": "3.Capital",
         "kind": "farm-folder",
         "since": "2026-10-29",
         "ticket": "#1295",
@@ -2629,6 +2640,22 @@
         "since": "2026-10-29",
         "ticket": "#1295",
         "doc": "Farm folders renumbered to the area/project codes of repos.v3.json."
+      },
+      {
+        "from": "3.Fin",
+        "to": "3.Capital",
+        "kind": "farm-folder",
+        "since": "2026-10-29",
+        "ticket": "#1296",
+        "doc": "Area renamed (Financial to Capital); the farm folder follows."
+      },
+      {
+        "from": "4.DeepSc",
+        "to": "4.HardTech",
+        "kind": "farm-folder",
+        "since": "2026-10-29",
+        "ticket": "#1296",
+        "doc": "Area renamed (Deep Science to HardTech); the farm folder follows."
       },
       {
         "from": "06.Lecole-42",

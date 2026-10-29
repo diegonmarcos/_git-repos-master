@@ -716,7 +716,7 @@
       "role": "hub",
       "visibility": "public",
       "project": "—",
-      "field": "Financial",
+      "field": "Capital",
       "developer": "Nexus.z",
       "code": "3.0",
       "area_code": "3",
@@ -724,7 +724,7 @@
       "family_code": null,
       "registry_name": "Fin-___",
       "hub": "_git-repos-master",
-      "farm": "3.Fin",
+      "farm": "3.Capital",
       "description": "Fin-CM — hub: capital markets (NexusZ, MQPM, Blmbrg)"
     },
     {
@@ -734,7 +734,7 @@
       "role": "",
       "visibility": "public",
       "project": "CM-MQPM",
-      "field": "Financial",
+      "field": "Capital",
       "developer": "Nexus.z",
       "code": "3.1.1.1",
       "area_code": "3",
@@ -742,7 +742,7 @@
       "family_code": "3.1.1",
       "registry_name": "Fin-CM-mqpm",
       "hub": "Fin-___",
-      "farm": "3.Fin/Capital-Markets",
+      "farm": "3.Capital/Capital-Markets",
       "description": "MQPM — StochBates and quant projects"
     },
     {
@@ -752,7 +752,7 @@
       "role": "",
       "visibility": "public",
       "project": "CM-Blmbrg",
-      "field": "Financial",
+      "field": "Capital",
       "developer": "Nexus.z",
       "code": "3.2.1.1",
       "area_code": "3",
@@ -760,7 +760,7 @@
       "family_code": "3.2.1",
       "registry_name": "Fin-CM-Blmbrg",
       "hub": "Fin-___",
-      "farm": "3.Fin/Capital-Markets",
+      "farm": "3.Capital/Capital-Markets",
       "description": "Blmbrg — fin-term, market watch and news"
     },
     {
@@ -770,7 +770,7 @@
       "role": "",
       "visibility": "public",
       "project": "CORP-Wacc",
-      "field": "Financial",
+      "field": "Capital",
       "developer": "Nexus.z",
       "code": "3.3.1.1",
       "area_code": "3",
@@ -778,7 +778,7 @@
       "family_code": "3.3.1",
       "registry_name": "Fin-Corporate",
       "hub": "Fin-___",
-      "farm": "3.Fin/Corporate",
+      "farm": "3.Capital/Corporate",
       "description": "Fin: Corporate finance"
     },
     {
@@ -788,7 +788,7 @@
       "role": "hub",
       "visibility": "public",
       "project": "—",
-      "field": "Deep Science",
+      "field": "HardTech",
       "developer": "Stark.x",
       "code": "4.0",
       "area_code": "4",
@@ -796,7 +796,7 @@
       "family_code": null,
       "registry_name": "DeepSc-___",
       "hub": "_git-repos-master",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "description": "DeepSc — hub: deep science (StarkX, X)"
     },
     {
@@ -806,15 +806,15 @@
       "role": "",
       "visibility": "public",
       "project": "DeepSc-X",
-      "field": "Deep Science",
+      "field": "HardTech",
       "developer": "Stark.x",
-      "code": "4.1.1.1",
+      "code": "4.2.1.1",
       "area_code": "4",
-      "project_code": "4.1",
-      "family_code": "4.1.1",
+      "project_code": "4.2",
+      "family_code": "4.2.1",
       "registry_name": "DeepSc-X",
       "hub": "DeepSc-___",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "description": "DeepSc-X — deep science projects"
     },
     {
@@ -824,15 +824,15 @@
       "role": "",
       "visibility": "public",
       "project": "CAD-Simulators",
-      "field": "Deep Science",
+      "field": "HardTech",
       "developer": "Stark.x",
-      "code": "4.2.1.1",
+      "code": "4.3.1.1",
       "area_code": "4",
-      "project_code": "4.2",
-      "family_code": "4.2.1",
+      "project_code": "4.3",
+      "family_code": "4.3.1",
       "registry_name": "CAD-Simulators",
       "hub": "DeepSc-___",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "description": "DeepSc tools: agentic CAD (MCP) and more"
     },
     {
@@ -1408,8 +1408,8 @@
     "Index",
     "Unix",
     "CG",
-    "Financial",
-    "Deep Science",
+    "Capital",
+    "HardTech",
     "42",
     "Projects",
     "Others",
@@ -1831,14 +1831,14 @@
     {
       "code": "3",
       "kind": "area",
-      "name": "Financial",
-      "label": "Financial",
+      "name": "Capital",
+      "label": "Capital",
       "icon": "💹",
       "banner": "nexus.webp",
       "developer": "Nexus.z",
-      "description": "Finance: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
+      "description": "Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
       "hub": "Fin-___",
-      "farm": "3.Fin",
+      "farm": "3.Capital",
       "repos_count": 4,
       "children": [
         {
@@ -1850,7 +1850,7 @@
           "developer": "Nexus.z",
           "description": "Capital markets: MQPM, StochBates and quant projects.",
           "hub": null,
-          "farm": "3.Fin/Capital-Markets",
+          "farm": "3.Capital/Capital-Markets",
           "repos_count": 1,
           "children": [
             {
@@ -1861,7 +1861,7 @@
               "developer": "Nexus.z",
               "description": "",
               "hub": null,
-              "farm": "3.Fin/Capital-Markets",
+              "farm": "3.Capital/Capital-Markets",
               "repos_count": 1,
               "repos": [
                 "Fin-CM-mqpm"
@@ -1878,7 +1878,7 @@
           "developer": "Nexus.z",
           "description": "Capital markets: Blmbrg terminal, market watch and news.",
           "hub": null,
-          "farm": "3.Fin/Capital-Markets",
+          "farm": "3.Capital/Capital-Markets",
           "repos_count": 1,
           "children": [
             {
@@ -1889,7 +1889,7 @@
               "developer": "Nexus.z",
               "description": "",
               "hub": null,
-              "farm": "3.Fin/Capital-Markets",
+              "farm": "3.Capital/Capital-Markets",
               "repos_count": 1,
               "repos": [
                 "Fin-CM-Blmbrg"
@@ -1906,7 +1906,7 @@
           "developer": "Nexus.z",
           "description": "Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet.",
           "hub": null,
-          "farm": "3.Fin/Corporate",
+          "farm": "3.Capital/Corporate",
           "repos_count": 1,
           "children": [
             {
@@ -1917,7 +1917,7 @@
               "developer": "Nexus.z",
               "description": "",
               "hub": null,
-              "farm": "3.Fin/Corporate",
+              "farm": "3.Capital/Corporate",
               "repos_count": 1,
               "repos": [
                 "Fin-Corporate"
@@ -1930,18 +1930,31 @@
     {
       "code": "4",
       "kind": "area",
-      "name": "Deep Science",
-      "label": "Deep Science",
+      "name": "HardTech",
+      "label": "HardTech",
       "icon": "🔬",
       "banner": "structural.gif",
       "developer": "Stark.x",
-      "description": "Deep science projects and CAD / simulation tools.",
+      "description": "HardTech: deep science projects and CAD / simulation tools.",
       "hub": "DeepSc-___",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "repos_count": 3,
       "children": [
         {
           "code": "4.1",
+          "kind": "project",
+          "name": "Structural",
+          "label": "Structural",
+          "icon": "🏗️",
+          "developer": "Stark.x",
+          "description": "Structural design (planned): the content lives in CAD-Simulators/Structural-Designer until it gets its own repo.",
+          "hub": null,
+          "farm": "4.HardTech",
+          "repos_count": 0,
+          "children": []
+        },
+        {
+          "code": "4.2",
           "kind": "project",
           "name": "DeepSc-X",
           "label": "DeepSc-X",
@@ -1949,18 +1962,18 @@
           "developer": "Stark.x",
           "description": "Deep science projects.",
           "hub": null,
-          "farm": "4.DeepSc",
+          "farm": "4.HardTech",
           "repos_count": 1,
           "children": [
             {
-              "code": "4.1.1",
+              "code": "4.2.1",
               "kind": "family",
               "name": "Sailytics",
               "label": "Sailytics",
               "developer": "Stark.x",
               "description": "",
               "hub": null,
-              "farm": "4.DeepSc",
+              "farm": "4.HardTech",
               "repos_count": 1,
               "repos": [
                 "DeepSc-X"
@@ -1969,7 +1982,7 @@
           ]
         },
         {
-          "code": "4.2",
+          "code": "4.3",
           "kind": "project",
           "name": "CAD-Simulators",
           "label": "CAD-Simulators",
@@ -1977,18 +1990,18 @@
           "developer": "Stark.x",
           "description": "Agentic CAD (MCP) and simulators.",
           "hub": null,
-          "farm": "4.DeepSc",
+          "farm": "4.HardTech",
           "repos_count": 1,
           "children": [
             {
-              "code": "4.2.1",
+              "code": "4.3.1",
               "kind": "family",
               "name": "CAD",
               "label": "CAD",
               "developer": "Stark.x",
               "description": "",
               "hub": null,
-              "farm": "4.DeepSc",
+              "farm": "4.HardTech",
               "repos_count": 1,
               "repos": [
                 "CAD-Simulators"

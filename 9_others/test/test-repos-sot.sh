@@ -39,7 +39,7 @@ gmk; sed -i 's/"private": true/"private": false/' "$T/g/repos.json"; gchk && bad
 gmk; sed -i '0,/"visibility": "private"/s//"visibility": "public"/' "$T/g/repos-github.json"; gchk && bad "hand-edited repos-github.json accepted" || ok "hand-edited repos-github.json fails the check"
 gmk; sed -i '0,/"code": "1.1"/s//"code": "1.9"/' "$T/g/repos.v3.json"; gchk && bad "non-positional code accepted" || ok "a non-positional code in repos.v3.json fails"
 gmk; sed -i '0,/"kind": "family"/s//"kind": "famly"/' "$T/g/repos.v3.json"; gchk && bad "schema violation accepted" || ok "a schema violation (bad kind) fails"
-gmk; sed -i 's/"farm": "4.DeepSc"/"farm": "9.DeepSc"/' "$T/g/repos.v3.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
+gmk; sed -i 's/"farm": "4.HardTech"/"farm": "9.DeepSc"/' "$T/g/repos.v3.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
 gmk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree[1].hub.visibility="private";require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/g/repos.v3.json"; gchk && bad "private hub accepted" || ok "a private hub fails (hub always public)"
 
 node "$ROOT/repos-sot.js" check-hubs >/dev/null 2>&1 && ok "hub hierarchy sound (no cycles, no public->private hub)" || { bad "repos-sot.js check-hubs"; node "$ROOT/repos-sot.js" check-hubs; }
@@ -122,8 +122,8 @@ node "$T/fm/repos-sot.js" check "$T/fm/repos.json" >/dev/null 2>&1 && ok "farm c
 farm_mut "z-archived_* outside 8.Archived" 'by("z-archived_front-data").farm="6.Projects"'
 farm_mut "7.Others repo with a hub" 'by("front-diegonmarcos").hub="Projects-___"'
 farm_mut "member two folders below its hub" 'by("cloud-me-pvt-notes").farm="1.2.Cloud-me/Pvt/x"'
-farm_mut "farm top folder not declared" 'delete r.farms["4.DeepSc"]'
-farm_mut "farm top folder not <code>.<Name>" 'r.farms["DeepSc"]=r.farms["4.DeepSc"]'
+farm_mut "farm top folder not declared" 'delete r.farms["4.HardTech"]'
+farm_mut "farm top folder not <code>.<Name>" 'r.farms["DeepSc"]=r.farms["4.HardTech"]'
 farm_mut "entry without farm" 'delete by("CG-unity").farm'
 farm_mut "link moved off its farm" 'by("CG-unity").farm="2.CG/Sub"'
 rm -rf "$T/fm"; mkdir -p "$T/fm/a_cloud"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/fm/"; cp -a "$ROOT"/[1-9].* "$T/fm/"

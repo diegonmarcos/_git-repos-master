@@ -691,7 +691,7 @@
     },
     {
       "from": "04.Fin",
-      "to": "3.Fin",
+      "to": "3.Capital",
       "kind": "farm-folder",
       "since": "2026-10-29",
       "ticket": "#1295",
@@ -704,6 +704,22 @@
       "since": "2026-10-29",
       "ticket": "#1295",
       "doc": "Farm folders renumbered to the area/project codes of repos.v3.json."
+    },
+    {
+      "from": "3.Fin",
+      "to": "3.Capital",
+      "kind": "farm-folder",
+      "since": "2026-10-29",
+      "ticket": "#1296",
+      "doc": "Area renamed (Financial to Capital); the farm folder follows."
+    },
+    {
+      "from": "4.DeepSc",
+      "to": "4.HardTech",
+      "kind": "farm-folder",
+      "since": "2026-10-29",
+      "ticket": "#1296",
+      "doc": "Area renamed (Deep Science to HardTech); the farm folder follows."
     },
     {
       "from": "06.Lecole-42",
@@ -1014,8 +1030,8 @@
     "1.1.Cloudy": "Cloudy (1.1): hub cloudy-___ and its members. The cloudy project: fleet infrastructure, services, devices, data and docs.",
     "1.2.Cloud-me": "Cloud-Me (1.2): hub cloud-me-___ and its members. The owner's personal cloud: public profiles and shared data, private configs, data and secrets.",
     "2.CG": "CG (2): hub CG-___ and its members. Computer graphics: 3D worlds, engines and media production.",
-    "3.Fin": "Financial (3): hub Fin-___ and its members. Finance: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
-    "4.DeepSc": "Deep Science (4): hub DeepSc-___ and its members. Deep science projects and CAD / simulation tools.",
+    "3.Capital": "Capital (3): hub Fin-___ and its members. Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
+    "4.HardTech": "HardTech (4): hub DeepSc-___ and its members. HardTech: deep science projects and CAD / simulation tools.",
     "5.Lecole-42": "42 (5): hub lecole-42-___ and its members. 42 school coursework (a school, not a project): one project per curriculum repo.",
     "6.Projects": "Projects (6): hub Projects-___ and its members. Projects (formerly Front): endeavours, lab tools and DuckPeng.",
     "7.Others": "Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).",
@@ -1482,7 +1498,7 @@
     },
     {
       "name": "Fin-___",
-      "farm": "3.Fin",
+      "farm": "3.Capital",
       "group": "b_projects",
       "parent_hub": "_git-repos-master",
       "url": "git@github.com:diegonmarcos/Fin-___.git",
@@ -1496,7 +1512,7 @@
     },
     {
       "name": "Fin-CM-mqpm",
-      "farm": "3.Fin/Capital-Markets",
+      "farm": "3.Capital/Capital-Markets",
       "group": "b_projects",
       "hub": "Fin-___",
       "url": "git@github.com:diegonmarcos/Fin-CM-mqpm.git",
@@ -1505,7 +1521,7 @@
     },
     {
       "name": "Fin-CM-Blmbrg",
-      "farm": "3.Fin/Capital-Markets",
+      "farm": "3.Capital/Capital-Markets",
       "group": "b_projects",
       "hub": "Fin-___",
       "url": "git@github.com:diegonmarcos/Fin-CM-Blmbrg.git",
@@ -1514,7 +1530,7 @@
     },
     {
       "name": "Fin-Corporate",
-      "farm": "3.Fin/Corporate",
+      "farm": "3.Capital/Corporate",
       "group": "b_projects",
       "hub": "Fin-___",
       "url": "git@github.com:diegonmarcos/Fin-Corporate.git",
@@ -1523,7 +1539,7 @@
     },
     {
       "name": "DeepSc-___",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "group": "b_projects",
       "parent_hub": "_git-repos-master",
       "url": "git@github.com:diegonmarcos/DeepSc-___.git",
@@ -1536,7 +1552,7 @@
     },
     {
       "name": "DeepSc-X",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "group": "b_projects",
       "hub": "DeepSc-___",
       "url": "git@github.com:diegonmarcos/DeepSc-X.git",
@@ -1545,7 +1561,7 @@
     },
     {
       "name": "CAD-Simulators",
-      "farm": "4.DeepSc",
+      "farm": "4.HardTech",
       "group": "b_projects",
       "hub": "DeepSc-___",
       "url": "git@github.com:diegonmarcos/CAD-Simulators.git",
