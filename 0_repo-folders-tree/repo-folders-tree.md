@@ -4563,7 +4563,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `.mcp.json` · 1.1 KiB
         - `.sops.yaml` · 681 B
         - 🔗 `aa_cloud-superapp-mcp` → `../cloud-infra/a_solutions/infra-api_cloud-superapp-mcp` · 55 B
-        - 🔗 `aa_cloud-superapp-web` → `../front-diegonmarcos/a-Portals/cloud-mobile` · 44 B
+        - 🔗 `aa_cloud-superapp-web` → `../cloudy-h-webapps-2/a_Portals/cloud-superapp` · 44 B
         - 🔗 `aa_cloud-terminal-flakes` → `../cloud-infra-desktop/bb_flakes_termux` · 39 B
         - `build.sh` · 5.6 KiB
         - `CLAUDE.md` · 315 B

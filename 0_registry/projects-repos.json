@@ -241,7 +241,7 @@
                       {"name":".mcp.json","type":"file","size":1160},
                       {"name":".sops.yaml","type":"file","size":681},
                       {"name":"aa_cloud-superapp-mcp","type":"symlink","size":55,"target":"../cloud-infra/a_solutions/infra-api_cloud-superapp-mcp"},
-                      {"name":"aa_cloud-superapp-web","type":"symlink","size":44,"target":"../front-diegonmarcos/a-Portals/cloud-mobile"},
+                      {"name":"aa_cloud-superapp-web","type":"symlink","size":44,"target":"../cloudy-h-webapps-2/a_Portals/cloud-superapp"},
                       {"name":"aa_cloud-terminal-flakes","type":"symlink","size":39,"target":"../cloud-infra-desktop/bb_flakes_termux"},
                       {"name":"build.sh","type":"file","size":5738},
                       {"name":"CLAUDE.md","type":"file","size":315},
@@ -906,7 +906,7 @@
                     "cloud-webapps-2",
                     "cloud-h-webapps-2"
                   ],
-                  "doc": "Sources of the c_Suite group (now also movies, music, myfeed, #1204), split from front-projects (#1072); snapshot copy, paths mirror the original layout.",
+                  "doc": "Sources of the c_Suite group (now also movies, music, myfeed, #1204; and the portals a_Portals/{cloud,cloud-superapp,cloud-web}, #1319), split from front-projects (#1072); snapshot copy, paths mirror the original layout.",
                   "tree": {
                     "source": "github-api",
                     "head": "5fe632f235b9965f1c852296a2442e95e0f82277",
@@ -2948,6 +2948,13 @@
                       "doc": "Split out 2026-10-24 from front-projects into front-endeavours; the Pages workflow overlays it."
                     },
                     {
+                      "name": "a_Portals",
+                      "path": "cloudy-h-webapps-2",
+                      "status": "split",
+                      "ticket": "#1319",
+                      "doc": "Moved 2026-10-30 (cloud, cloud-superapp, cloud-web) into cloudy-h-webapps-2 with history; the Pages workflow overlays it. Linktree went earlier (#1217)."
+                    },
+                    {
                       "name": "a_Individual",
                       "path": "cloud-me-pub-profiles-prf-prs",
                       "status": "split",
@@ -4293,6 +4300,30 @@
         "since": "2026-10-21",
         "ticket": "#1073",
         "doc": "The SuperApp web replica folder (front/a-Portals/cloud-mobile) is now cloud-superapp, matching the APK folder aa_cloud-superapp. The deployed page URL https://diegonmarcos.github.io/cloud-mobile/ is a SITE path owned by #1062/#1072 and moves with that deploy split, not here."
+      },
+      {
+        "from": "front-diegonmarcos a_Portals/cloud",
+        "to": "cloudy-h-webapps-2 a_Portals/cloud",
+        "kind": "app-folder",
+        "since": "2026-10-30",
+        "ticket": "#1319",
+        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud/ unchanged."
+      },
+      {
+        "from": "front-diegonmarcos a_Portals/cloud-superapp",
+        "to": "cloudy-h-webapps-2 a_Portals/cloud-superapp",
+        "kind": "app-folder",
+        "since": "2026-10-30",
+        "ticket": "#1319",
+        "doc": "Portal folder (formerly cloud-mobile, #1073) moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud-superapp/ (and /cloud-mobile/ redirect) unchanged."
+      },
+      {
+        "from": "front-diegonmarcos a_Portals/cloud-web",
+        "to": "cloudy-h-webapps-2 a_Portals/cloud-web",
+        "kind": "app-folder",
+        "since": "2026-10-30",
+        "ticket": "#1319",
+        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud-web/ unchanged."
       },
       {
         "from": "ffront",
