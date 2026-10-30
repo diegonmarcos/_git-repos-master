@@ -60,17 +60,17 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[CG-galaxy-gaia]] · 🔒 private · Galaxy
       - [[CG-unity]] · 🔒 private · Galaxy
       - [[CG-voxel-rust]] · 🌐 public · Galaxy
-  - 📁 **3.Capital/** · Capital (3): hub Fin-___ and its members. Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).
-    - **[[Fin-___]]** · 🌐 public
+  - 📁 **3.Capital/** · Capital (3): hub Capital-___ and its members. Capital: capital markets and corporate finance. The hub Capital-___ is the area home (3.0).
+    - **[[Capital-___]]** · 🌐 public
       - 📁 **Capital-Markets/**
-        - [[Fin-CM-Blmbrg]] · 🌐 public · Stack-Fin-Terminal
-        - [[Fin-CM-mqpm]] · 🌐 public · Macro-Central-Bank
+        - [[Capital-Macro-Central-Bank]] · 🌐 public · Macro-Central-Bank
+        - [[Capital-Stack-Fin-Terminal]] · 🌐 public · Stack-Fin-Terminal
       - 📁 **Corporate/**
-        - [[Fin-Corporate]] · 🌐 public · Micro-Asset-Management
-  - 📁 **4.HardTech/** · HardTech (4): hub DeepSc-___ and its members. HardTech: deep science projects and CAD / simulation tools.
-    - **[[DeepSc-___]]** · 🌐 public
-      - [[CAD-Simulators]] · 🌐 public · Stack-CAD-Simulators
-      - [[DeepSc-X]] · 🌐 public · DeepXTech
+        - [[Capital-Micro-Asset-Management]] · 🌐 public · Micro-Asset-Management
+  - 📁 **4.HardTech/** · HardTech (4): hub HardTech-___ and its members. HardTech: deep science projects and CAD / simulation tools.
+    - **[[HardTech-___]]** · 🌐 public
+      - [[HardTech-DeepXTech]] · 🌐 public · DeepXTech
+      - [[HardTech-Stack-CAD-Simulators]] · 🌐 public · Stack-CAD-Simulators
   - 📁 **5.Lecole-42/** · 42 (5): hub lecole-42-___ and its members. 42 school coursework (a school, not a project): one project per curriculum repo.
     - **[[lecole-42-___]]** · 🌐 public
       - [[lecole-42_back-Algo]] · 🌐 public · 42-algo
@@ -156,16 +156,16 @@ graph LR
   n_CG_unity["CG-unity"]
   n_CG_voxel_rust["CG-voxel-rust"]
   n_group_3_Capital["3.Capital/"]
-  n_Fin____["Fin-___"]
+  n_Capital____["Capital-___"]
   n_group_3_Capital_Capital_Markets["Capital-Markets/"]
-  n_Fin_CM_Blmbrg["Fin-CM-Blmbrg"]
-  n_Fin_CM_mqpm["Fin-CM-mqpm"]
+  n_Capital_Macro_Central_Bank["Capital-Macro-Central-Bank"]
+  n_Capital_Stack_Fin_Terminal["Capital-Stack-Fin-Terminal"]
   n_group_3_Capital_Corporate["Corporate/"]
-  n_Fin_Corporate["Fin-Corporate"]
+  n_Capital_Micro_Asset_Management["Capital-Micro-Asset-Management"]
   n_group_4_HardTech["4.HardTech/"]
-  n_DeepSc____["DeepSc-___"]
-  n_CAD_Simulators["CAD-Simulators"]
-  n_DeepSc_X["DeepSc-X"]
+  n_HardTech____["HardTech-___"]
+  n_HardTech_DeepXTech["HardTech-DeepXTech"]
+  n_HardTech_Stack_CAD_Simulators["HardTech-Stack-CAD-Simulators"]
   n_group_5_Lecole_42["5.Lecole-42/"]
   n_lecole_42____["lecole-42-___"]
   n_lecole_42_back_Algo["lecole-42_back-Algo"]
@@ -245,16 +245,16 @@ graph LR
   n_CG____ --> n_CG_unity
   n_CG____ --> n_CG_voxel_rust
   n__git_repos_master --> n_group_3_Capital
-  n_group_3_Capital --> n_Fin____
-  n_Fin____ --> n_group_3_Capital_Capital_Markets
-  n_group_3_Capital_Capital_Markets --> n_Fin_CM_Blmbrg
-  n_group_3_Capital_Capital_Markets --> n_Fin_CM_mqpm
-  n_Fin____ --> n_group_3_Capital_Corporate
-  n_group_3_Capital_Corporate --> n_Fin_Corporate
+  n_group_3_Capital --> n_Capital____
+  n_Capital____ --> n_group_3_Capital_Capital_Markets
+  n_group_3_Capital_Capital_Markets --> n_Capital_Macro_Central_Bank
+  n_group_3_Capital_Capital_Markets --> n_Capital_Stack_Fin_Terminal
+  n_Capital____ --> n_group_3_Capital_Corporate
+  n_group_3_Capital_Corporate --> n_Capital_Micro_Asset_Management
   n__git_repos_master --> n_group_4_HardTech
-  n_group_4_HardTech --> n_DeepSc____
-  n_DeepSc____ --> n_CAD_Simulators
-  n_DeepSc____ --> n_DeepSc_X
+  n_group_4_HardTech --> n_HardTech____
+  n_HardTech____ --> n_HardTech_DeepXTech
+  n_HardTech____ --> n_HardTech_Stack_CAD_Simulators
   n__git_repos_master --> n_group_5_Lecole_42
   n_group_5_Lecole_42 --> n_lecole_42____
   n_lecole_42____ --> n_lecole_42_back_Algo

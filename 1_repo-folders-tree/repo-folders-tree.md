@@ -8582,11 +8582,46 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `.gitmodules` · 98 B
         - `README.md` · 278 B
   - 📁 **3.Capital/** (group)
-    - **Fin-___/** (hub)
+    - **Capital-___/** (hub)
       - 📁 **Capital-Markets/** (group)
-        - **[Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg)** · 🌐 public
+        - **[Capital-Macro-Central-Bank](https://github.com/diegonmarcos/Capital-Macro-Central-Bank)** · 🌐 public
           - 📁 `0_hub`
-            - 📦 `Fin-___` (submodule)
+            - 📦 `Capital-___` (submodule)
+          - 📁 `dist`
+            - `index.html` · 252 B
+          - 📁 `docs`
+            - `MQPM-StochBates_Architecture_Principles.md` · 8.1 KiB
+          - 📁 `src`
+            - 📁 `central_bank`
+              - 📁 `0.spec`
+              - 📁 `1.ops`
+              - 📁 `dist`
+              - 📁 `dist_scss`
+              - 📁 `public`
+              - 📁 `src`
+              - 📁 `src_scss`
+              - 📁 `src_static`
+              - `build.json` · 682 B
+              - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+              - `package-lock.md` · 71.5 KiB
+              - `package.json` · 463 B
+              - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+              - `tsconfig.json` · 381 B
+              - `vite.config.scss.ts` · 385 B
+              - `vite.config.ts` · 347 B
+            - `.gitkeep` · 0 B
+            - `index.html` · 252 B
+          - 🔗 `.github` → `0_deployer/.github` · 18 B
+          - `.gitmodules` · 241 B
+          - 📦 `0_deployer` (submodule)
+          - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+          - `build.json` · 374 B
+          - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
+          - `README.md` · 739 B
+          - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
+        - **[Capital-Stack-Fin-Terminal](https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal)** · 🌐 public
+          - 📁 `0_hub`
+            - 📦 `Capital-___` (submodule)
           - 📁 `dist`
             - `index.html` · 256 B
           - 📁 `src`
@@ -8637,52 +8672,33 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
           - `README.md` · 1.2 KiB
           - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
-        - **[Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm)** · 🌐 public
-          - 📁 `0_hub`
-            - 📦 `Fin-___` (submodule)
-          - 📁 `dist`
-            - `index.html` · 252 B
-          - 📁 `docs`
-            - `MQPM-StochBates_Architecture_Principles.md` · 8.1 KiB
-          - 📁 `src`
-            - 📁 `central_bank`
-              - 📁 `0.spec`
-              - 📁 `1.ops`
-              - 📁 `dist`
-              - 📁 `dist_scss`
-              - 📁 `public`
-              - 📁 `src`
-              - 📁 `src_scss`
-              - 📁 `src_static`
-              - `build.json` · 682 B
-              - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-              - `package-lock.md` · 71.5 KiB
-              - `package.json` · 463 B
-              - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-              - `tsconfig.json` · 381 B
-              - `vite.config.scss.ts` · 385 B
-              - `vite.config.ts` · 347 B
-            - `.gitkeep` · 0 B
-            - `index.html` · 252 B
-          - 🔗 `.github` → `0_deployer/.github` · 18 B
-          - `.gitmodules` · 241 B
-          - 📦 `0_deployer` (submodule)
-          - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-          - `build.json` · 374 B
-          - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
-          - `README.md` · 739 B
-          - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
       - 📁 **Corporate/** (group)
-        - **[Fin-Corporate](https://github.com/diegonmarcos/Fin-Corporate)** · 🌐 public
+        - **[Capital-Micro-Asset-Management](https://github.com/diegonmarcos/Capital-Micro-Asset-Management)** · 🌐 public
           - 📁 `0_hub`
-            - 📦 `Fin-___` (submodule)
+            - 📦 `Capital-___` (submodule)
           - `.gitmodules` · 101 B
           - `README.md` · 319 B
   - 📁 **4.HardTech/** (group)
-    - **DeepSc-___/** (hub)
-      - **[CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators)** · 🌐 public
+    - **HardTech-___/** (hub)
+      - **[HardTech-DeepXTech](https://github.com/diegonmarcos/HardTech-DeepXTech)** · 🌐 public
         - 📁 `0_hub`
-          - 📦 `DeepSc-___` (submodule)
+          - 📦 `HardTech-___` (submodule)
+        - 📁 `dist`
+          - `index.html` · 258 B
+        - 📁 `src`
+          - `.gitkeep` · 0 B
+          - `index.html` · 258 B
+        - 🔗 `.github` → `0_deployer/.github` · 18 B
+        - `.gitmodules` · 250 B
+        - 📦 `0_deployer` (submodule)
+        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+        - `build.json` · 377 B
+        - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
+        - `README.md` · 773 B
+        - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
+      - **[HardTech-Stack-CAD-Simulators](https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `HardTech-___` (submodule)
         - 📁 `Simulators`
           - 📁 `sailytics`
             - 📁 `dist`
@@ -8710,22 +8726,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - `README.md` · 1.0 KiB
         - `.gitmodules` · 780 B
         - `README.md` · 2.6 KiB
-      - **[DeepSc-X](https://github.com/diegonmarcos/DeepSc-X)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `DeepSc-___` (submodule)
-        - 📁 `dist`
-          - `index.html` · 258 B
-        - 📁 `src`
-          - `.gitkeep` · 0 B
-          - `index.html` · 258 B
-        - 🔗 `.github` → `0_deployer/.github` · 18 B
-        - `.gitmodules` · 250 B
-        - 📦 `0_deployer` (submodule)
-        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-        - `build.json` · 377 B
-        - 🔗 `build.sh` → `1_cicd/src/scripts/_engine.sh` · 29 B
-        - `README.md` · 773 B
-        - 🔗 `ship.yml` → `.github/workflows/ship.yml` · 26 B
   - 📁 **5.Lecole-42/** (group)
     - **lecole-42-___/** (hub)
       - **[lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo)** · 🌐 public

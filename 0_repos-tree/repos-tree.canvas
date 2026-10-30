@@ -511,9 +511,9 @@
       "color": "5"
     },
     {
-      "id": "ffd1c9f7b0af368d",
+      "id": "026a05499b3bf3cd",
       "type": "group",
-      "label": "Fin-___",
+      "label": "Capital-___",
       "x": 680,
       "y": 2900,
       "width": 1020,
@@ -521,9 +521,9 @@
       "color": "5"
     },
     {
-      "id": "4742cbf1dcf9e90e",
+      "id": "21996173f5f8c50b",
       "type": "text",
-      "text": "**Fin-___**\n— · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-___)",
+      "text": "**Capital-___**\n— · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-___)",
       "x": 700,
       "y": 2940,
       "width": 300,
@@ -541,9 +541,9 @@
       "color": "5"
     },
     {
-      "id": "78d3c16d85f3a976",
+      "id": "e477a03e63359e04",
       "type": "text",
-      "text": "**Fin-CM-Blmbrg**\nStack-Fin-Terminal · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-Blmbrg)",
+      "text": "**Capital-Macro-Central-Bank**\nMacro-Central-Bank · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Macro-Central-Bank)",
       "x": 1040,
       "y": 2980,
       "width": 300,
@@ -551,9 +551,9 @@
       "color": "4"
     },
     {
-      "id": "2f93b59db3fca1d1",
+      "id": "1132060fd634797b",
       "type": "text",
-      "text": "**Fin-CM-mqpm**\nMacro-Central-Bank · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-CM-mqpm)",
+      "text": "**Capital-Stack-Fin-Terminal**\nStack-Fin-Terminal · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal)",
       "x": 1360,
       "y": 2980,
       "width": 300,
@@ -571,9 +571,9 @@
       "color": "5"
     },
     {
-      "id": "6dd9952fa4369792",
+      "id": "81c18043eab7a85a",
       "type": "text",
-      "text": "**Fin-Corporate**\nMicro-Asset-Management · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Fin-Corporate)",
+      "text": "**Capital-Micro-Asset-Management**\nMicro-Asset-Management · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Micro-Asset-Management)",
       "x": 1040,
       "y": 3180,
       "width": 300,
@@ -591,9 +591,9 @@
       "color": "5"
     },
     {
-      "id": "9d1375a8a0eec46f",
+      "id": "dd27e9fe5002d628",
       "type": "group",
-      "label": "DeepSc-___",
+      "label": "HardTech-___",
       "x": 680,
       "y": 3420,
       "width": 660,
@@ -601,9 +601,9 @@
       "color": "6"
     },
     {
-      "id": "db3af7ea8b8685b4",
+      "id": "c58fc671fb7c8773",
       "type": "text",
-      "text": "**DeepSc-___**\n— · Hub\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/DeepSc-___)",
+      "text": "**HardTech-___**\n— · Hub\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-___)",
       "x": 700,
       "y": 3460,
       "width": 300,
@@ -611,9 +611,9 @@
       "color": "6"
     },
     {
-      "id": "4092c61e05e10b1a",
+      "id": "a8fd9977049c760b",
       "type": "text",
-      "text": "**CAD-Simulators**\nStack-CAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/CAD-Simulators)",
+      "text": "**HardTech-DeepXTech**\nDeepXTech · Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-DeepXTech)",
       "x": 700,
       "y": 3600,
       "width": 300,
@@ -621,9 +621,9 @@
       "color": "4"
     },
     {
-      "id": "fb62f973e4ea5046",
+      "id": "06974b1599c18225",
       "type": "text",
-      "text": "**DeepSc-X**\nDeepXTech · Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/DeepSc-X)",
+      "text": "**HardTech-Stack-CAD-Simulators**\nStack-CAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators)",
       "x": 1020,
       "y": 3600,
       "width": 300,
@@ -1321,58 +1321,58 @@
       "color": "4"
     },
     {
-      "id": "916b7f790ea6fa12",
+      "id": "435de1ff640f4e28",
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
-      "toNode": "4742cbf1dcf9e90e",
+      "toNode": "21996173f5f8c50b",
       "toSide": "left",
       "color": "4"
     },
     {
-      "id": "5b2534c2e072fcda",
-      "fromNode": "4742cbf1dcf9e90e",
+      "id": "6cfac06eedbc2910",
+      "fromNode": "21996173f5f8c50b",
       "fromSide": "right",
-      "toNode": "78d3c16d85f3a976",
+      "toNode": "e477a03e63359e04",
       "toSide": "left",
       "color": "4"
     },
     {
-      "id": "879e454a40fecbb8",
-      "fromNode": "4742cbf1dcf9e90e",
+      "id": "7b252a96f6053b48",
+      "fromNode": "21996173f5f8c50b",
       "fromSide": "right",
-      "toNode": "2f93b59db3fca1d1",
+      "toNode": "1132060fd634797b",
       "toSide": "left",
       "color": "4"
     },
     {
-      "id": "8dc74cdcca68e112",
-      "fromNode": "4742cbf1dcf9e90e",
+      "id": "9b4c46aaffc532b4",
+      "fromNode": "21996173f5f8c50b",
       "fromSide": "right",
-      "toNode": "6dd9952fa4369792",
+      "toNode": "81c18043eab7a85a",
       "toSide": "left",
       "color": "4"
     },
     {
-      "id": "f4fe53a3538ae7ef",
+      "id": "055bb881947f397a",
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
-      "toNode": "db3af7ea8b8685b4",
+      "toNode": "c58fc671fb7c8773",
       "toSide": "left",
       "color": "4"
     },
     {
-      "id": "83c912e1759d5af6",
-      "fromNode": "db3af7ea8b8685b4",
+      "id": "f13971f05e7f8bec",
+      "fromNode": "c58fc671fb7c8773",
       "fromSide": "bottom",
-      "toNode": "4092c61e05e10b1a",
+      "toNode": "a8fd9977049c760b",
       "toSide": "top",
       "color": "4"
     },
     {
-      "id": "6e2790f8ef4fbd4f",
-      "fromNode": "db3af7ea8b8685b4",
+      "id": "1d33c58e2ab5fc62",
+      "fromNode": "c58fc671fb7c8773",
       "fromSide": "right",
-      "toNode": "fb62f973e4ea5046",
+      "toNode": "06974b1599c18225",
       "toSide": "left",
       "color": "4"
     },

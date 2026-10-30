@@ -56,15 +56,15 @@ The index of every repository this account owns. 75 repositories (58 🌐 public
 | `2.2.2` | family | **Video Production** | — | `2.CG/` | 🍃 Leaf.y | 0 | Folders of CG-circus. |
 | `2.2.3` | family | **Game Production** | — | `2.CG/` | 🍃 Leaf.y | 0 | Folders of CG-circus. |
 | `2.2.4` | family | **Web Games** | — | `2.CG/` | 🍃 Leaf.y | 1 | CG-circus (listed once, hosts every production line below as folders); its own c_Circus group holds the web mini-games. |
-| `3` | area | 💹 **Capital** | [Fin-___](https://github.com/diegonmarcos/Fin-___) `3.0` | `3.Capital/` | 💹 Nexus.z | 4 | Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0). |
+| `3` | area | 💹 **Capital** | [Capital-___](https://github.com/diegonmarcos/Capital-___) `3.0` | `3.Capital/` | 💹 Nexus.z | 4 | Capital: capital markets and corporate finance. The hub Capital-___ is the area home (3.0). |
 | `3.1` | project | 📈 **Macro-Central-Bank** | — | `3.Capital/Capital-Markets/` | 💹 Nexus.z | 1 | Capital markets: MQPM, StochBates and quant projects. |
 | `3.1.1` | family | **MQPM** | — | `3.Capital/Capital-Markets/` | 💹 Nexus.z | 1 |  |
-| `3.2` | project | 🏢 **Micro-Asset-Management** | — | `3.Capital/Corporate/` | 💹 Nexus.z | 1 | Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet. |
+| `3.2` | project | 🏢 **Micro-Asset-Management** | — | `3.Capital/Corporate/` | 💹 Nexus.z | 1 | Corporate finance (WACC). Capital-Micro-Asset-Management holds only a README so far: no WACC material inside it yet. |
 | `3.2.1` | family | **Corporate** | — | `3.Capital/Corporate/` | 💹 Nexus.z | 1 |  |
 | `3.3` | project | 📰 **Stack-Fin-Terminal** | — | `3.Capital/Capital-Markets/` | 💹 Nexus.z | 1 | Capital markets: Blmbrg terminal, market watch and news. |
 | `3.3.1` | family | **Terminal** | — | `3.Capital/Capital-Markets/` | 💹 Nexus.z | 1 |  |
-| `4` | area | 🔬 **HardTech** | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) `4.0` | `4.HardTech/` | 🔬 Stark.x | 3 | HardTech: deep science projects and CAD / simulation tools. |
-| `4.1` | project | 🏗️ **Structural** | — | `4.HardTech/` | 🔬 Stark.x | 0 | Structural design (planned): the content lives in CAD-Simulators/Structural-Designer until it gets its own repo. |
+| `4` | area | 🔬 **HardTech** | [HardTech-___](https://github.com/diegonmarcos/HardTech-___) `4.0` | `4.HardTech/` | 🔬 Stark.x | 3 | HardTech: deep science projects and CAD / simulation tools. |
+| `4.1` | project | 🏗️ **Structural** | — | `4.HardTech/` | 🔬 Stark.x | 0 | Structural design (planned): the content lives in HardTech-Stack-CAD-Simulators/Structural-Designer until it gets its own repo. |
 | `4.2` | project | 🧬 **DeepXTech** | — | `4.HardTech/` | 🔬 Stark.x | 1 | Deep science projects. |
 | `4.2.1` | family | **Sailytics** | — | `4.HardTech/` | 🔬 Stark.x | 1 |  |
 | `4.3` | project | 📐 **Stack-CAD-Simulators** | — | `4.HardTech/` | 🔬 Stark.x | 1 | Agentic CAD (MCP) and simulators. |
@@ -115,7 +115,7 @@ The committed symlinks sit in one folder per area or project, named `<code>.<Nam
 | [`1.1.Cloudy/`](1.1.Cloudy/) | `1.1` | Cloudy | 1 | 12 | The cloudy project: fleet infrastructure, services, devices, data and docs. |
 | [`1.2.Cloud-me/`](1.2.Cloud-me/) | `1.2` | Cloud-Me | 4 | 13 | The owner's personal cloud: public profiles and shared data, private configs, data and secrets. |
 | [`2.CG/`](2.CG/) | `2` | CG | 1 | 5 | Computer graphics: 3D worlds, engines and media production. |
-| [`3.Capital/`](3.Capital/) | `3` | Capital | 1 | 3 | Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0). |
+| [`3.Capital/`](3.Capital/) | `3` | Capital | 1 | 3 | Capital: capital markets and corporate finance. The hub Capital-___ is the area home (3.0). |
 | [`4.HardTech/`](4.HardTech/) | `4` | HardTech | 1 | 2 | HardTech: deep science projects and CAD / simulation tools. |
 | [`5.Lecole-42/`](5.Lecole-42/) | `5` | 42 | 1 | 10 | 42 school coursework (a school, not a project): one project per curriculum repo. |
 | [`6.Projects/`](6.Projects/) | `6` | Projects | 2 | 1 | Projects (formerly Front): endeavours, lab tools and DuckPeng. |
@@ -168,15 +168,15 @@ _git-repos-master/
     CG-voxel-rust
   3.Capital/
     Capital-Markets/
-      Fin-CM-Blmbrg
-      Fin-CM-mqpm
+      Capital-Macro-Central-Bank
+      Capital-Stack-Fin-Terminal
     Corporate/
-      Fin-Corporate
-    Fin-___  (hub)
+      Capital-Micro-Asset-Management
+    Capital-___  (hub)
   4.HardTech/
-    DeepSc-___  (hub)
-    CAD-Simulators
-    DeepSc-X
+    HardTech-___  (hub)
+    HardTech-DeepXTech
+    HardTech-Stack-CAD-Simulators
   5.Lecole-42/
     lecole-42-___  (hub)
     lecole-42_back-Algo
@@ -279,13 +279,13 @@ Every repo except this one carries its hub as a git submodule at `0_hub/<hub>` (
 | `2.1.2.1` | [CG-unity](https://github.com/diegonmarcos/CG-unity) | CG | Galaxy | — | Unity | CG-___ | 🔒 private | 🍃 Leaf.y | Asset CDN tooling: reproducible Unity Asset Store download via cloud VM + glTF conversion |
 | `2.1.3.1` | [CG-voxel-rust](https://github.com/diegonmarcos/CG-voxel-rust) | CG | Galaxy | — | Voxel-rust | CG-___ | 🌐 public | 🍃 Leaf.y | vox-rust: agent-driven voxel world (Luanti-class engine in Rust) — build plan |
 | `2.2.4.1` | [CG-circus](https://github.com/diegonmarcos/CG-circus) | CG | Zirkus | — | Web Games (apps: Game-Production, Music-Production, Video-Production, c_Circus) | CG-___ | 🌐 public | 🍃 Leaf.y | Front group c_Circus (split from front-projects, #1072) |
-| `3.0` | [Fin-___](https://github.com/diegonmarcos/Fin-___) _(hub)_ | Capital | — | — | Hub | _git-repos-master | 🌐 public | 💹 Nexus.z | Fin-CM — hub: capital markets (NexusZ, MQPM, Blmbrg) |
-| `3.1.1.1` | [Fin-CM-mqpm](https://github.com/diegonmarcos/Fin-CM-mqpm) | Capital | Macro-Central-Bank | — | MQPM | Fin-___ | 🌐 public | 💹 Nexus.z | MQPM — StochBates and quant projects |
-| `3.2.1.1` | [Fin-Corporate](https://github.com/diegonmarcos/Fin-Corporate) | Capital | Micro-Asset-Management | — | Corporate | Fin-___ | 🌐 public | 💹 Nexus.z | Fin: Corporate finance |
-| `3.3.1.1` | [Fin-CM-Blmbrg](https://github.com/diegonmarcos/Fin-CM-Blmbrg) | Capital | Stack-Fin-Terminal | — | Terminal | Fin-___ | 🌐 public | 💹 Nexus.z | Blmbrg — fin-term, market watch and news |
-| `4.0` | [DeepSc-___](https://github.com/diegonmarcos/DeepSc-___) _(hub)_ | HardTech | — | — | Hub | _git-repos-master | 🌐 public | 🔬 Stark.x | DeepSc — hub: deep science (StarkX, X) |
-| `4.2.1.1` | [DeepSc-X](https://github.com/diegonmarcos/DeepSc-X) | HardTech | DeepXTech | — | Sailytics | DeepSc-___ | 🌐 public | 🔬 Stark.x | DeepSc-X — deep science projects |
-| `4.3.1.1` | [CAD-Simulators](https://github.com/diegonmarcos/CAD-Simulators) | HardTech | Stack-CAD-Simulators | — | CAD | DeepSc-___ | 🌐 public | 🔬 Stark.x | DeepSc tools: agentic CAD (MCP) and more |
+| `3.0` | [Capital-___](https://github.com/diegonmarcos/Capital-___) _(hub)_ | Capital | — | — | Hub | _git-repos-master | 🌐 public | 💹 Nexus.z | Capital — hub: capital markets and corporate finance (Macro-Central-Bank, Micro-Asset-Management, Stack-Fin-Terminal) |
+| `3.1.1.1` | [Capital-Macro-Central-Bank](https://github.com/diegonmarcos/Capital-Macro-Central-Bank) | Capital | Macro-Central-Bank | — | MQPM | Capital-___ | 🌐 public | 💹 Nexus.z | MQPM — StochBates and quant projects |
+| `3.2.1.1` | [Capital-Micro-Asset-Management](https://github.com/diegonmarcos/Capital-Micro-Asset-Management) | Capital | Micro-Asset-Management | — | Corporate | Capital-___ | 🌐 public | 💹 Nexus.z | Fin: Corporate finance |
+| `3.3.1.1` | [Capital-Stack-Fin-Terminal](https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal) | Capital | Stack-Fin-Terminal | — | Terminal | Capital-___ | 🌐 public | 💹 Nexus.z | Blmbrg — fin-term, market watch and news |
+| `4.0` | [HardTech-___](https://github.com/diegonmarcos/HardTech-___) _(hub)_ | HardTech | — | — | Hub | _git-repos-master | 🌐 public | 🔬 Stark.x | HardTech — hub: deep science and CAD / simulators (DeepXTech, Stack-CAD-Simulators) |
+| `4.2.1.1` | [HardTech-DeepXTech](https://github.com/diegonmarcos/HardTech-DeepXTech) | HardTech | DeepXTech | — | Sailytics | HardTech-___ | 🌐 public | 🔬 Stark.x | HardTech-DeepXTech — deep science projects |
+| `4.3.1.1` | [HardTech-Stack-CAD-Simulators](https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators) | HardTech | Stack-CAD-Simulators | — | CAD | HardTech-___ | 🌐 public | 🔬 Stark.x | DeepSc tools: agentic CAD (MCP) and more |
 | `5.0` | [lecole-42-___](https://github.com/diegonmarcos/lecole-42-___) _(hub)_ | 42 | — | — | Hub | _git-repos-master | 🌐 public | 🎓 lecole42 | Master repo for the lecole-42_* repos: registry + symlinks |
 | `5.1.1.1` | [lecole-42_back-Algo](https://github.com/diegonmarcos/lecole-42_back-Algo) | 42 | 42-algo | Low Level | Back | lecole-42-___ | 🌐 public | 🎓 lecole42 | where dead-ends are just recursive detours and you will try to overcome stack overflows with a `ulimit - s unlimited` |
 | `5.2.1.1` | [lecole-42_back-Graphic](https://github.com/diegonmarcos/lecole-42_back-Graphic) | 42 | 42-graphic | Low Level | Back | lecole-42-___ | 🌐 public | 🎓 lecole42 | Filling Wireframes, rendering matrixes and applying ray tracing one pixel at a time, until the GPU begs for mercy. |

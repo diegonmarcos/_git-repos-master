@@ -44,8 +44,8 @@
         {"name":"1.1.Cloudy","type":"dir","children":[{"name":"cloudy_db_assets-cdn","type":"symlink","size":26,"target":"../../cloudy_db_assets-cdn"},{"name":"cloudy_db_infra-ops-obsv_configs-sync","type":"symlink","size":43,"target":"../../cloudy_db_infra-ops-obsv_configs-sync"},{"name":"cloudy_db_LFS","type":"symlink","size":19,"target":"../../cloudy_db_LFS"},{"name":"cloudy-___","type":"symlink","size":16,"target":"../../cloudy-___"},{"name":"cloudy-a-docs","type":"symlink","size":19,"target":"../../cloudy-a-docs"},{"name":"cloudy-h-webapps","type":"symlink","size":22,"target":"../../cloudy-h-webapps"},{"name":"cloudy-h-webapps-2","type":"symlink","size":24,"target":"../../cloudy-h-webapps-2"},{"name":"cloudy-t-infra","type":"symlink","size":20,"target":"../../cloudy-t-infra"},{"name":"cloudy-u-android","type":"symlink","size":22,"target":"../../cloudy-u-android"},{"name":"cloudy-u-containers","type":"symlink","size":25,"target":"../../cloudy-u-containers"},{"name":"cloudy-u-containers_cgc","type":"symlink","size":29,"target":"../../cloudy-u-containers_cgc"},{"name":"cloudy-u-desktop","type":"symlink","size":22,"target":"../../cloudy-u-desktop"},{"name":"cloudy-u-linux","type":"symlink","size":20,"target":"../../cloudy-u-linux"}]},
         {"name":"1.2.Cloud-me","type":"dir","children":[{"name":"Pub","type":"dir","children":[{"name":"Profiles","type":"dir","children":[]},{"name":"cloud-me-pub-___","type":"symlink","size":25,"target":"../../../cloud-me-pub-___"},{"name":"cloud-me-pub-shared","type":"symlink","size":28,"target":"../../../cloud-me-pub-shared"}]},{"name":"Pvt","type":"dir","children":[{"name":"cloud-me-pvt-___","type":"symlink","size":25,"target":"../../../cloud-me-pvt-___"},{"name":"cloud-me-pvt-cgc","type":"symlink","size":25,"target":"../../../cloud-me-pvt-cgc"},{"name":"cloud-me-pvt-configs","type":"symlink","size":29,"target":"../../../cloud-me-pvt-configs"},{"name":"cloud-me-pvt-containers","type":"symlink","size":32,"target":"../../../cloud-me-pvt-containers"},{"name":"cloud-me-pvt-data","type":"symlink","size":26,"target":"../../../cloud-me-pvt-data"},{"name":"cloud-me-pvt-my-ai","type":"symlink","size":27,"target":"../../../cloud-me-pvt-my-ai"},{"name":"cloud-me-pvt-notes","type":"symlink","size":27,"target":"../../../cloud-me-pvt-notes"},{"name":"cloud-me-pvt-vault","type":"symlink","size":27,"target":"../../../cloud-me-pvt-vault"}]},{"name":"cloud-me-___","type":"symlink","size":18,"target":"../../cloud-me-___"}]},
         {"name":"2.CG","type":"dir","children":[{"name":"CG-___","type":"symlink","size":12,"target":"../../CG-___"},{"name":"CG-circus","type":"symlink","size":15,"target":"../../CG-circus"},{"name":"CG-galaxy","type":"symlink","size":15,"target":"../../CG-galaxy"},{"name":"CG-galaxy-gaia","type":"symlink","size":20,"target":"../../CG-galaxy-gaia"},{"name":"CG-unity","type":"symlink","size":14,"target":"../../CG-unity"},{"name":"CG-voxel-rust","type":"symlink","size":19,"target":"../../CG-voxel-rust"}]},
-        {"name":"3.Capital","type":"dir","children":[{"name":"Capital-Markets","type":"dir","children":[{"name":"Fin-CM-Blmbrg","type":"symlink","size":22,"target":"../../../Fin-CM-Blmbrg"},{"name":"Fin-CM-mqpm","type":"symlink","size":20,"target":"../../../Fin-CM-mqpm"}]},{"name":"Corporate","type":"dir","children":[{"name":"Fin-Corporate","type":"symlink","size":22,"target":"../../../Fin-Corporate"}]},{"name":"Fin-___","type":"symlink","size":13,"target":"../../Fin-___"}]},
-        {"name":"4.HardTech","type":"dir","children":[{"name":"CAD-Simulators","type":"symlink","size":20,"target":"../../CAD-Simulators"},{"name":"DeepSc-___","type":"symlink","size":16,"target":"../../DeepSc-___"},{"name":"DeepSc-X","type":"symlink","size":14,"target":"../../DeepSc-X"}]},
+        {"name":"3.Capital","type":"dir","children":[{"name":"Capital-Markets","type":"dir","children":[{"name":"Capital-Stack-Fin-Terminal","type":"symlink","size":22,"target":"../../../Capital-Stack-Fin-Terminal"},{"name":"Capital-Macro-Central-Bank","type":"symlink","size":20,"target":"../../../Capital-Macro-Central-Bank"}]},{"name":"Corporate","type":"dir","children":[{"name":"Capital-Micro-Asset-Management","type":"symlink","size":22,"target":"../../../Capital-Micro-Asset-Management"}]},{"name":"Capital-___","type":"symlink","size":13,"target":"../../Capital-___"}]},
+        {"name":"4.HardTech","type":"dir","children":[{"name":"HardTech-Stack-CAD-Simulators","type":"symlink","size":20,"target":"../../HardTech-Stack-CAD-Simulators"},{"name":"HardTech-___","type":"symlink","size":16,"target":"../../HardTech-___"},{"name":"HardTech-DeepXTech","type":"symlink","size":14,"target":"../../HardTech-DeepXTech"}]},
         {"name":"5.Lecole-42","type":"dir","children":[{"name":"lecole-42_back-Algo","type":"symlink","size":25,"target":"../../lecole-42_back-Algo"},{"name":"lecole-42_back-Graphic","type":"symlink","size":28,"target":"../../lecole-42_back-Graphic"},{"name":"lecole-42_back-System","type":"symlink","size":27,"target":"../../lecole-42_back-System"},{"name":"lecole-42_cyber-Cyberwarfare","type":"symlink","size":34,"target":"../../lecole-42_cyber-Cyberwarfare"},{"name":"lecole-42_dev","type":"symlink","size":19,"target":"../../lecole-42_dev"},{"name":"lecole-42_ml-Agentic","type":"symlink","size":26,"target":"../../lecole-42_ml-Agentic"},{"name":"lecole-42_ml-DataScience","type":"symlink","size":30,"target":"../../lecole-42_ml-DataScience"},{"name":"lecole-42_ml-MachineLearning","type":"symlink","size":34,"target":"../../lecole-42_ml-MachineLearning"},{"name":"lecole-42_ops-Mylibs","type":"symlink","size":26,"target":"../../lecole-42_ops-Mylibs"},{"name":"lecole-42-___","type":"symlink","size":19,"target":"../../lecole-42-___"},{"name":"lecole-42-projects","type":"symlink","size":24,"target":"../../lecole-42-projects"}]},
         {"name":"6.Projects","type":"dir","children":[{"name":"DuckPeng","type":"dir","children":[{"name":"DuckPeng-___","type":"symlink","size":21,"target":"../../../DuckPeng-___"}]},{"name":"Projects-___","type":"symlink","size":18,"target":"../../Projects-___"},{"name":"Projects-endeavours","type":"symlink","size":25,"target":"../../Projects-endeavours"},{"name":"Projects-labtools","type":"symlink","size":23,"target":"../../Projects-labtools"}]},
         {"name":"7.Others","type":"dir","children":[{"name":"front-diegonmarcos","type":"symlink","size":24,"target":"../../front-diegonmarcos"},{"name":"front-gh-profile-diegonmarcos","type":"symlink","size":35,"target":"../../front-gh-profile-diegonmarcos"}]},
@@ -1810,21 +1810,22 @@
       "icon": "💹",
       "banner": "nexus.webp",
       "developer": "Nexus.z",
-      "description": "Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
+      "description": "Capital: capital markets and corporate finance. The hub Capital-___ is the area home (3.0).",
       "hub": {
         "code": "3.0",
         "kind": "hub",
-        "name": "Fin-___",
-        "label": "Fin-___",
+        "name": "Capital-___",
+        "label": "Capital-___",
         "visibility": "public",
-        "description": "Fin-CM — hub: capital markets (NexusZ, MQPM, Blmbrg)",
+        "description": "Capital — hub: capital markets and corporate finance (Macro-Central-Bank, Micro-Asset-Management, Stack-Fin-Terminal)",
         "group": "b_projects",
         "renamed_from": [
           "Fin-CM",
           "Fin-CM___",
-          "Fin-CM-___"
+          "Fin-CM-___",
+          "Fin-___"
         ],
-        "doc": "Project master for the Fin-CM family (Fin-CM-mqpm, Fin-CM-Blmbrg; Nexus.z moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224).",
+        "doc": "Project master for the Capital family (Capital-Macro-Central-Bank, Capital-Stack-Fin-Terminal; Nexus.z moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224).",
         "tree": {
           "source": "github-api",
           "head": "bc385af3c7a6027b42f6aa2258c71e1d5fb38941",
@@ -1841,9 +1842,9 @@
             {"name":"check-repos-sot.sh","type":"file","size":1083},
             {"name":"CLAUDE.md","type":"file","size":86},
             {"name":"clone.sh","type":"file","size":8061},
-            {"name":"Fin-CM-Blmbrg","type":"symlink","size":16,"target":"../Fin-CM-Blmbrg"},
-            {"name":"Fin-CM-mqpm","type":"symlink","size":14,"target":"../Fin-CM-mqpm"},
-            {"name":"Fin-Corporate","type":"symlink","size":16,"target":"../Fin-Corporate"},
+            {"name":"Capital-Stack-Fin-Terminal","type":"symlink","size":16,"target":"../Capital-Stack-Fin-Terminal"},
+            {"name":"Capital-Macro-Central-Bank","type":"symlink","size":14,"target":"../Capital-Macro-Central-Bank"},
+            {"name":"Capital-Micro-Asset-Management","type":"symlink","size":16,"target":"../Capital-Micro-Asset-Management"},
             {"name":"LICENSE","type":"file","size":4649},
             {"name":"LICENSING.md","type":"file","size":1032},
             {"name":"README.md","type":"file","size":2790},
@@ -1872,8 +1873,11 @@
                 {
                   "code": "3.1.1.1",
                   "kind": "repo",
-                  "name": "Fin-CM-mqpm",
-                  "label": "Fin-CM-mqpm",
+                  "name": "Capital-Macro-Central-Bank",
+                  "label": "Capital-Macro-Central-Bank",
+                  "renamed_from": [
+                    "Fin-CM-mqpm"
+                  ],
                   "visibility": "public",
                   "description": "MQPM — StochBates and quant projects",
                   "group": "b_projects",
@@ -1882,7 +1886,7 @@
                     "source": "github-api",
                     "head": "92b18a030ca619158d0f272bcd9917a25fa7ed4e",
                     "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"Fin-___","type":"submodule"}]},
+                      {"name":"0_hub","type":"dir","children":[{"name":"Capital-___","type":"submodule"}]},
                       {"name":"dist","type":"dir","children":[{"name":"index.html","type":"file","size":252}]},
                       {"name":"docs","type":"dir","children":[{"name":"MQPM-StochBates_Architecture_Principles.md","type":"file","size":8338}]},
                       {"name":"src","type":"dir","children":[{"name":"central_bank","type":"dir","children":[{"name":"0.spec","type":"dir","children":[]},{"name":"1.ops","type":"dir","children":[]},{"name":"dist","type":"dir","children":[]},{"name":"dist_scss","type":"dir","children":[]},{"name":"public","type":"dir","children":[]},{"name":"src","type":"dir","children":[]},{"name":"src_scss","type":"dir","children":[]},{"name":"src_static","type":"dir","children":[]},{"name":"build.json","type":"file","size":682},{"name":"build.sh","type":"symlink","size":35,"target":"../../1_cicd/src/scripts/_engine.sh"},{"name":"package-lock.md","type":"file","size":73223},{"name":"package.json","type":"file","size":463},{"name":"ship.yml","type":"symlink","size":32,"target":"../../.github/workflows/ship.yml"},{"name":"tsconfig.json","type":"file","size":381},{"name":"vite.config.scss.ts","type":"file","size":385},{"name":"vite.config.ts","type":"file","size":347}]},{"name":".gitkeep","type":"file","size":0},{"name":"index.html","type":"file","size":252}]},
@@ -1907,7 +1911,7 @@
           "name": "Micro-Asset-Management",
           "label": "Micro-Asset-Management",
           "icon": "🏢",
-          "description": "Corporate finance (WACC). Fin-Corporate holds only a README so far: no WACC material inside it yet.",
+          "description": "Corporate finance (WACC). Capital-Micro-Asset-Management holds only a README so far: no WACC material inside it yet.",
           "farm": "3.Capital/Corporate",
           "children": [
             {
@@ -1920,17 +1924,20 @@
                 {
                   "code": "3.2.1.1",
                   "kind": "repo",
-                  "name": "Fin-Corporate",
-                  "label": "Fin-Corporate",
+                  "name": "Capital-Micro-Asset-Management",
+                  "label": "Capital-Micro-Asset-Management",
+                  "renamed_from": [
+                    "Fin-Corporate"
+                  ],
                   "visibility": "public",
                   "description": "Fin: Corporate finance",
                   "group": "b_projects",
-                  "doc": "Corporate finance (Nexus.z, Field Finance, Project Corporate); member of the Fin-___ hub. Created 2026-10-28.",
+                  "doc": "Corporate finance (Nexus.z, Field Finance, Project Corporate); member of the Capital-___ hub. Created 2026-10-28.",
                   "tree": {
                     "source": "github-api",
                     "head": "9130998d3aa555a4e13dd672557d334ff3f89fac",
                     "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"Fin-___","type":"submodule"}]},
+                      {"name":"0_hub","type":"dir","children":[{"name":"Capital-___","type":"submodule"}]},
                       {"name":".gitmodules","type":"file","size":101},
                       {"name":"README.md","type":"file","size":319}
                     ]
@@ -1959,8 +1966,11 @@
                 {
                   "code": "3.3.1.1",
                   "kind": "repo",
-                  "name": "Fin-CM-Blmbrg",
-                  "label": "Fin-CM-Blmbrg",
+                  "name": "Capital-Stack-Fin-Terminal",
+                  "label": "Capital-Stack-Fin-Terminal",
+                  "renamed_from": [
+                    "Fin-CM-Blmbrg"
+                  ],
                   "visibility": "public",
                   "description": "Blmbrg — fin-term, market watch and news",
                   "group": "b_projects",
@@ -1969,7 +1979,7 @@
                     "source": "github-api",
                     "head": "1124e5e07c77248ad8bbbd361df22b70740204c3",
                     "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"Fin-___","type":"submodule"}]},
+                      {"name":"0_hub","type":"dir","children":[{"name":"Capital-___","type":"submodule"}]},
                       {"name":"dist","type":"dir","children":[{"name":"index.html","type":"file","size":256}]},
                       {"name":"src","type":"dir","children":[{"name":"CentralBank","type":"dir","children":[{"name":"README.md","type":"file","size":1403}]},{"name":"DataScience-ML-Terminal","type":"dir","children":[{"name":"README.md","type":"file","size":1400}]},{"name":"Fin-Terminal","type":"dir","children":[{"name":"dist","type":"dir","children":[]},{"name":"src","type":"dir","children":[]},{"name":"tests","type":"dir","children":[]},{"name":"build.json","type":"file","size":2735},{"name":"build.sh","type":"symlink","size":35,"target":"../../1_cicd/src/scripts/_engine.sh"},{"name":"package.json","type":"file","size":501},{"name":"README.md","type":"file","size":3552},{"name":"ship.yml","type":"symlink","size":32,"target":"../../.github/workflows/ship.yml"},{"name":"tsconfig.json","type":"file","size":482},{"name":"vitest.config.ts","type":"file","size":357}]},{"name":"GDELT-News","type":"dir","children":[{"name":"dist","type":"dir","children":[]},{"name":"src","type":"dir","children":[]},{"name":"build.json","type":"file","size":2414},{"name":"build.sh","type":"symlink","size":35,"target":"../../1_cicd/src/scripts/_engine.sh"},{"name":"package-lock.md","type":"file","size":29097},{"name":"package.json","type":"file","size":833},{"name":"README.md","type":"file","size":1201},{"name":"ship.yml","type":"symlink","size":32,"target":"../../.github/workflows/ship.yml"},{"name":"tsconfig.json","type":"file","size":413}]},{"name":"MarketWatch","type":"dir","children":[{"name":"0.spec","type":"dir","children":[]},{"name":"dist","type":"dir","children":[]},{"name":"public","type":"dir","children":[]},{"name":"src","type":"dir","children":[]},{"name":"build.json","type":"file","size":2416},{"name":"build.sh","type":"symlink","size":35,"target":"../../1_cicd/src/scripts/_engine.sh"},{"name":"package-lock.md","type":"file","size":90061},{"name":"package.json","type":"file","size":1357},{"name":"README.md","type":"file","size":1020},{"name":"ship.yml","type":"symlink","size":32,"target":"../../.github/workflows/ship.yml"},{"name":"tsconfig.json","type":"file","size":413}]},{"name":".gitkeep","type":"file","size":0},{"name":"index.html","type":"file","size":256}]},
                       {"name":".github","type":"symlink","size":18,"target":"0_deployer/.github"},
@@ -2004,16 +2014,17 @@
       "hub": {
         "code": "4.0",
         "kind": "hub",
-        "name": "DeepSc-___",
-        "label": "DeepSc-___",
+        "name": "HardTech-___",
+        "label": "HardTech-___",
         "visibility": "public",
-        "description": "DeepSc — hub: deep science (StarkX, X)",
+        "description": "HardTech — hub: deep science and CAD / simulators (DeepXTech, Stack-CAD-Simulators)",
         "group": "b_projects",
         "renamed_from": [
           "DeepSc",
-          "DeepSc___"
+          "DeepSc___",
+          "DeepSc-___"
         ],
-        "doc": "Project master for the DeepSc family (DeepSc-X; Stark.x moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224).",
+        "doc": "Project master for the HardTech family (HardTech-DeepXTech; Stark.x moved to the cloud-me-pub-profiles family 2026-10-28): its own repos.json subset plus committed symlinks, same model as CG, front and cloud. Created 2026-10-27 (#1224).",
         "tree": {
           "source": "github-api",
           "head": "b3dd63351649f71610ca63b21305705c283f9842",
@@ -2027,11 +2038,11 @@
             {"name":".gitleaks.toml","type":"file","size":4168},
             {"name":".gitmodules","type":"file","size":131},
             {"name":".mcp.json","type":"file","size":1160},
-            {"name":"CAD-Simulators","type":"symlink","size":17,"target":"../CAD-Simulators"},
+            {"name":"HardTech-Stack-CAD-Simulators","type":"symlink","size":17,"target":"../HardTech-Stack-CAD-Simulators"},
             {"name":"check-repos-sot.sh","type":"file","size":1083},
             {"name":"CLAUDE.md","type":"file","size":86},
             {"name":"clone.sh","type":"file","size":8064},
-            {"name":"DeepSc-X","type":"symlink","size":11,"target":"../DeepSc-X"},
+            {"name":"HardTech-DeepXTech","type":"symlink","size":11,"target":"../HardTech-DeepXTech"},
             {"name":"LICENSE","type":"file","size":4649},
             {"name":"LICENSING.md","type":"file","size":1012},
             {"name":"README.md","type":"file","size":2648},
@@ -2049,10 +2060,10 @@
           "icon": "🏗️",
           "status": "planned",
           "content": {
-            "repo": "CAD-Simulators",
+            "repo": "HardTech-Stack-CAD-Simulators",
             "path": "Structural-Designer"
           },
-          "description": "Structural design (planned): the content lives in CAD-Simulators/Structural-Designer until it gets its own repo.",
+          "description": "Structural design (planned): the content lives in HardTech-Stack-CAD-Simulators/Structural-Designer until it gets its own repo.",
           "children": []
         },
         {
@@ -2073,17 +2084,20 @@
                 {
                   "code": "4.2.1.1",
                   "kind": "repo",
-                  "name": "DeepSc-X",
-                  "label": "DeepSc-X",
+                  "name": "HardTech-DeepXTech",
+                  "label": "HardTech-DeepXTech",
+                  "renamed_from": [
+                    "DeepSc-X"
+                  ],
                   "visibility": "public",
-                  "description": "DeepSc-X — deep science projects",
+                  "description": "HardTech-DeepXTech — deep science projects",
                   "group": "b_projects",
-                  "doc": "Deep-ScX / saylitics: README and deployer wiring skeleton; #1224. The former front-labtools project c-Stk_DsX/sailytics moved to CAD-Simulators Simulators/sailytics (was tools/sailytics) 2026-10-28 (#1218, 457f89f).",
+                  "doc": "Deep-ScX / saylitics: README and deployer wiring skeleton; #1224. The former front-labtools project c-Stk_DsX/sailytics moved to HardTech-Stack-CAD-Simulators Simulators/sailytics (was tools/sailytics) 2026-10-28 (#1218, 457f89f).",
                   "tree": {
                     "source": "github-api",
                     "head": "f7cf028a0d36b1a601de1352e9ebd7c8332fb11b",
                     "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"DeepSc-___","type":"submodule"}]},
+                      {"name":"0_hub","type":"dir","children":[{"name":"HardTech-___","type":"submodule"}]},
                       {"name":"dist","type":"dir","children":[{"name":"index.html","type":"file","size":258}]},
                       {"name":"src","type":"dir","children":[{"name":".gitkeep","type":"file","size":0},{"name":"index.html","type":"file","size":258}]},
                       {"name":".github","type":"symlink","size":18,"target":"0_deployer/.github"},
@@ -2119,20 +2133,21 @@
                 {
                   "code": "4.3.1.1",
                   "kind": "repo",
-                  "name": "CAD-Simulators",
-                  "label": "CAD-Simulators",
+                  "name": "HardTech-Stack-CAD-Simulators",
+                  "label": "HardTech-Stack-CAD-Simulators",
                   "visibility": "public",
                   "description": "DeepSc tools: agentic CAD (MCP) and more",
                   "group": "b_projects",
                   "renamed_from": [
-                    "DeepSc-Tools"
+                    "DeepSc-Tools",
+                    "CAD-Simulators"
                   ],
                   "doc": "CAD and simulators (renamed from DeepSc-Tools and made public 2026-10-28, #1261): first tool is CAD with MCP servers for agentic 3D modelling (FreeCAD, Blender, AutoCAD/DXF as pinned upstream submodules: Structural-Designer/OpenCAD (FreeCAD, AutoCAD) and Simulators (Blender); sailytics in Simulators; layout Structural-Designer + Simulators since #1279). #1255.",
                   "tree": {
                     "source": "github-api",
                     "head": "9247b7fea10cb45940b9ef44df913a27b21fc99d",
                     "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"DeepSc-___","type":"submodule"}]},
+                      {"name":"0_hub","type":"dir","children":[{"name":"HardTech-___","type":"submodule"}]},
                       {"name":"Simulators","type":"dir","children":[{"name":"sailytics","type":"dir","children":[{"name":"dist","type":"dir","children":[]},{"name":"docs","type":"dir","children":[]},{"name":"src","type":"dir","children":[]},{"name":"build.json","type":"file","size":2416},{"name":"build.sh","type":"symlink","size":35,"target":"../../1_cicd/src/scripts/_engine.sh"},{"name":"package-lock.md","type":"file","size":3801},{"name":"package.json","type":"file","size":173},{"name":"ship.yml","type":"symlink","size":32,"target":"../../.github/workflows/ship.yml"},{"name":"tsconfig.json","type":"file","size":433}]},{"name":"blender-mcp","type":"submodule"},{"name":"README.md","type":"file","size":1237}]},
                       {"name":"Structural-Designer","type":"dir","children":[{"name":"OpenBIM","type":"dir","children":[{"name":"bonsai-mcp","type":"submodule"},{"name":"README.md","type":"file","size":1523}]},{"name":"OpenCAD","type":"dir","children":[{"name":"autocad-mcp","type":"submodule"},{"name":"freecad-mcp","type":"submodule"},{"name":"README.md","type":"file","size":1069}]},{"name":"OpenRevit","type":"dir","children":[{"name":"README.md","type":"file","size":1507},{"name":"rvt-mcp","type":"submodule"}]},{"name":"README.md","type":"file","size":1042}]},
                       {"name":".gitmodules","type":"file","size":780},
@@ -3004,24 +3019,24 @@
                     },
                     {
                       "name": "b-Nxs_PA",
-                      "path": "Fin-CM-mqpm",
+                      "path": "Capital-Macro-Central-Bank",
                       "status": "split",
                       "ticket": "#1218",
-                      "doc": "Central bank, moved with history 2026-10-28 into Fin-CM-mqpm (src/central_bank, 92b18a0); labtools removed it in 741bb8b."
+                      "doc": "Central bank, moved with history 2026-10-28 into Capital-Macro-Central-Bank (src/central_bank, 92b18a0); labtools removed it in 741bb8b."
                     },
                     {
                       "name": "b-Nxs_Blmmbrg",
-                      "path": "Fin-CM-Blmbrg",
+                      "path": "Capital-Stack-Fin-Terminal",
                       "status": "split",
                       "ticket": "#1218",
-                      "doc": "fin-terminal, market_watch, news, moved with history 2026-10-28 into Fin-CM-Blmbrg (src/, 47950ae), then laid out as FIN TERMINAL 2026-10-29 (#1279): src/{CentralBank, Fin-Terminal, GDELT-News, MarketWatch, DataScience-ML-Terminal}; labtools removed it in 741bb8b."
+                      "doc": "fin-terminal, market_watch, news, moved with history 2026-10-28 into Capital-Stack-Fin-Terminal (src/, 47950ae), then laid out as FIN TERMINAL 2026-10-29 (#1279): src/{CentralBank, Fin-Terminal, GDELT-News, MarketWatch, DataScience-ML-Terminal}; labtools removed it in 741bb8b."
                     },
                     {
                       "name": "c-Stk_DsX",
-                      "path": "CAD-Simulators",
+                      "path": "HardTech-Stack-CAD-Simulators",
                       "status": "split",
                       "ticket": "#1218",
-                      "doc": "sailytics, moved with history 2026-10-28 into CAD-Simulators (457f89f), now Simulators/sailytics (#1279, was tools/sailytics); labtools removed it in 741bb8b."
+                      "doc": "sailytics, moved with history 2026-10-28 into HardTech-Stack-CAD-Simulators (457f89f), now Simulators/sailytics (#1279, was tools/sailytics); labtools removed it in 741bb8b."
                     },
                     {
                       "name": "c_Suite",
@@ -3510,7 +3525,7 @@
                     "Projects-labtools",
                     "front-labtools"
                   ],
-                  "doc": "Sources of the former c_LabTools group, split from front-projects (#1072); since #1218 laid out as a-Lfy_C3 only; a-Lfy_CG-Zirkus, b-Nxs_PA, b-Nxs_Blmmbrg, c-Stk_DsX were moved with history to CG-circus, Fin-CM-mqpm, Fin-CM-Blmbrg, CAD-Simulators (labtools 741bb8b, 2026-10-28). Archived 2026-10-30: empty except pointer READMEs; renamed z-archived_Projects-labtools, to be archived on GitHub (owner click).",
+                  "doc": "Sources of the former c_LabTools group, split from front-projects (#1072); since #1218 laid out as a-Lfy_C3 only; a-Lfy_CG-Zirkus, b-Nxs_PA, b-Nxs_Blmmbrg, c-Stk_DsX were moved with history to CG-circus, Capital-Macro-Central-Bank, Capital-Stack-Fin-Terminal, HardTech-Stack-CAD-Simulators (labtools 741bb8b, 2026-10-28). Archived 2026-10-30: empty except pointer READMEs; renamed z-archived_Projects-labtools, to be archived on GitHub (owner click).",
                   "tree": {
                     "source": "github-api",
                     "head": "1eed628ee04a39363bb418dde1522db9a55664e4",
@@ -3547,13 +3562,68 @@
     "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
     "renames": [
       {
+        "from": "Fin-___",
+        "to": "Capital-___",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Area 3 hub renamed after the area (Capital)."
+      },
+      {
+        "from": "Fin-CM-mqpm",
+        "to": "Capital-Macro-Central-Bank",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Member 3.1 renamed to the registry project name, prefixed with the area."
+      },
+      {
+        "from": "Fin-Corporate",
+        "to": "Capital-Micro-Asset-Management",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Member 3.2 renamed to the registry project name, prefixed with the area."
+      },
+      {
+        "from": "Fin-CM-Blmbrg",
+        "to": "Capital-Stack-Fin-Terminal",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Member 3.3 renamed to the registry project name, prefixed with the area."
+      },
+      {
+        "from": "DeepSc-___",
+        "to": "HardTech-___",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Area 4 hub renamed after the area (HardTech)."
+      },
+      {
+        "from": "DeepSc-X",
+        "to": "HardTech-DeepXTech",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Member 4.2 renamed to the registry project name, prefixed with the area."
+      },
+      {
+        "from": "CAD-Simulators",
+        "to": "HardTech-Stack-CAD-Simulators",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1313",
+        "doc": "Member 4.3 renamed to the registry project name, prefixed with the area."
+      },
+      {
         "from": "Projects-labtools",
         "to": "z-archived_Projects-labtools",
         "kind": "repo",
         "since": "2026-10-30",
         "ticket": "#1311",
-        "status": "pending owner GitHub rename",
-        "doc": "Emptied (its four projects moved to Fin-CM-Blmbrg, Fin-CM-mqpm, CG-circus, CAD-Simulators on 2026-10-29; only pointer READMEs remain); archived. The GitHub rename is the owner's step; the old name keeps working through the GitHub redirect."
+        "doc": "Emptied (its four projects moved to Capital-Stack-Fin-Terminal, Capital-Macro-Central-Bank, CG-circus, HardTech-Stack-CAD-Simulators on 2026-10-29; only pointer READMEs remain); archived. GitHub repo renamed 2026-10-30."
       },
       {
         "from": "DeepSc-Tools",
@@ -4335,14 +4405,14 @@
         "guard": "node repos-sot.js check-subset (run from _git-repos-master)"
       },
       {
-        "repo": "Fin-___",
-        "what": "Fin project master subset (Fin-CM-mqpm, Fin-CM-Blmbrg, Fin-Corporate)",
+        "repo": "Capital-___",
+        "what": "Capital project master subset (Capital-Macro-Central-Bank, Capital-Stack-Fin-Terminal, Capital-Micro-Asset-Management)",
         "reads": "repos.json (subset)",
         "guard": "node repos-sot.js check-subset (run from _git-repos-master)"
       },
       {
-        "repo": "DeepSc-___",
-        "what": "DeepSc project master subset (X)",
+        "repo": "HardTech-___",
+        "what": "HardTech project master subset (DeepXTech, Stack-CAD-Simulators)",
         "reads": "repos.json (subset)",
         "guard": "node repos-sot.js check-subset (run from _git-repos-master)"
       },

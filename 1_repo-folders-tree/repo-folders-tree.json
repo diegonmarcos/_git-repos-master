@@ -46999,10 +46999,10 @@
     "children": [
      {
       "code": "3.0",
-      "name": "Fin-___",
+      "name": "Capital-___",
       "kind": "hub",
       "visibility": "public",
-      "url": "https://github.com/diegonmarcos/Fin-___",
+      "url": "https://github.com/diegonmarcos/Capital-___",
       "children": [
        {
         "name": "Capital-Markets",
@@ -47010,11 +47010,202 @@
         "path": "3.Capital/Capital-Markets",
         "children": [
          {
-          "code": "3.3.1.1",
-          "name": "Fin-CM-Blmbrg",
+          "code": "3.1.1.1",
+          "name": "Capital-Macro-Central-Bank",
           "kind": "repo",
           "visibility": "public",
-          "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg",
+          "url": "https://github.com/diegonmarcos/Capital-Macro-Central-Bank",
+          "status": "ok",
+          "source": "github-api",
+          "head": "92b18a030ca619158d0f272bcd9917a25fa7ed4e",
+          "entries": [
+           {
+            "name": "0_hub",
+            "type": "dir",
+            "children": [
+             {
+              "name": "Capital-___",
+              "type": "submodule"
+             }
+            ]
+           },
+           {
+            "name": "dist",
+            "type": "dir",
+            "children": [
+             {
+              "name": "index.html",
+              "type": "file",
+              "size": 252
+             }
+            ]
+           },
+           {
+            "name": "docs",
+            "type": "dir",
+            "children": [
+             {
+              "name": "MQPM-StochBates_Architecture_Principles.md",
+              "type": "file",
+              "size": 8338
+             }
+            ]
+           },
+           {
+            "name": "src",
+            "type": "dir",
+            "children": [
+             {
+              "name": "central_bank",
+              "type": "dir",
+              "children": [
+               {
+                "name": "0.spec",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "1.ops",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "dist",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "dist_scss",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "public",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "src",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "src_scss",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "src_static",
+                "type": "dir",
+                "children": []
+               },
+               {
+                "name": "build.json",
+                "type": "file",
+                "size": 682
+               },
+               {
+                "name": "build.sh",
+                "type": "symlink",
+                "size": 35,
+                "target": "../../1_cicd/src/scripts/_engine.sh"
+               },
+               {
+                "name": "package-lock.md",
+                "type": "file",
+                "size": 73223
+               },
+               {
+                "name": "package.json",
+                "type": "file",
+                "size": 463
+               },
+               {
+                "name": "ship.yml",
+                "type": "symlink",
+                "size": 32,
+                "target": "../../.github/workflows/ship.yml"
+               },
+               {
+                "name": "tsconfig.json",
+                "type": "file",
+                "size": 381
+               },
+               {
+                "name": "vite.config.scss.ts",
+                "type": "file",
+                "size": 385
+               },
+               {
+                "name": "vite.config.ts",
+                "type": "file",
+                "size": 347
+               }
+              ]
+             },
+             {
+              "name": ".gitkeep",
+              "type": "file",
+              "size": 0
+             },
+             {
+              "name": "index.html",
+              "type": "file",
+              "size": 252
+             }
+            ]
+           },
+           {
+            "name": ".github",
+            "type": "symlink",
+            "size": 18,
+            "target": "0_deployer/.github"
+           },
+           {
+            "name": ".gitmodules",
+            "type": "file",
+            "size": 241
+           },
+           {
+            "name": "0_deployer",
+            "type": "submodule"
+           },
+           {
+            "name": "1_cicd",
+            "type": "symlink",
+            "size": 17,
+            "target": "0_deployer/1_cicd"
+           },
+           {
+            "name": "build.json",
+            "type": "file",
+            "size": 374
+           },
+           {
+            "name": "build.sh",
+            "type": "symlink",
+            "size": 29,
+            "target": "1_cicd/src/scripts/_engine.sh"
+           },
+           {
+            "name": "README.md",
+            "type": "file",
+            "size": 739
+           },
+           {
+            "name": "ship.yml",
+            "type": "symlink",
+            "size": 26,
+            "target": ".github/workflows/ship.yml"
+           }
+          ]
+         },
+         {
+          "code": "3.3.1.1",
+          "name": "Capital-Stack-Fin-Terminal",
+          "kind": "repo",
+          "visibility": "public",
+          "url": "https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal",
           "status": "ok",
           "source": "github-api",
           "head": "1124e5e07c77248ad8bbbd361df22b70740204c3",
@@ -47024,7 +47215,7 @@
             "type": "dir",
             "children": [
              {
-              "name": "Fin-___",
+              "name": "Capital-___",
               "type": "submodule"
              }
             ]
@@ -47296,197 +47487,6 @@
             "target": ".github/workflows/ship.yml"
            }
           ]
-         },
-         {
-          "code": "3.1.1.1",
-          "name": "Fin-CM-mqpm",
-          "kind": "repo",
-          "visibility": "public",
-          "url": "https://github.com/diegonmarcos/Fin-CM-mqpm",
-          "status": "ok",
-          "source": "github-api",
-          "head": "92b18a030ca619158d0f272bcd9917a25fa7ed4e",
-          "entries": [
-           {
-            "name": "0_hub",
-            "type": "dir",
-            "children": [
-             {
-              "name": "Fin-___",
-              "type": "submodule"
-             }
-            ]
-           },
-           {
-            "name": "dist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "index.html",
-              "type": "file",
-              "size": 252
-             }
-            ]
-           },
-           {
-            "name": "docs",
-            "type": "dir",
-            "children": [
-             {
-              "name": "MQPM-StochBates_Architecture_Principles.md",
-              "type": "file",
-              "size": 8338
-             }
-            ]
-           },
-           {
-            "name": "src",
-            "type": "dir",
-            "children": [
-             {
-              "name": "central_bank",
-              "type": "dir",
-              "children": [
-               {
-                "name": "0.spec",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "1.ops",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "dist",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "dist_scss",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "public",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "src",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "src_scss",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "src_static",
-                "type": "dir",
-                "children": []
-               },
-               {
-                "name": "build.json",
-                "type": "file",
-                "size": 682
-               },
-               {
-                "name": "build.sh",
-                "type": "symlink",
-                "size": 35,
-                "target": "../../1_cicd/src/scripts/_engine.sh"
-               },
-               {
-                "name": "package-lock.md",
-                "type": "file",
-                "size": 73223
-               },
-               {
-                "name": "package.json",
-                "type": "file",
-                "size": 463
-               },
-               {
-                "name": "ship.yml",
-                "type": "symlink",
-                "size": 32,
-                "target": "../../.github/workflows/ship.yml"
-               },
-               {
-                "name": "tsconfig.json",
-                "type": "file",
-                "size": 381
-               },
-               {
-                "name": "vite.config.scss.ts",
-                "type": "file",
-                "size": 385
-               },
-               {
-                "name": "vite.config.ts",
-                "type": "file",
-                "size": 347
-               }
-              ]
-             },
-             {
-              "name": ".gitkeep",
-              "type": "file",
-              "size": 0
-             },
-             {
-              "name": "index.html",
-              "type": "file",
-              "size": 252
-             }
-            ]
-           },
-           {
-            "name": ".github",
-            "type": "symlink",
-            "size": 18,
-            "target": "0_deployer/.github"
-           },
-           {
-            "name": ".gitmodules",
-            "type": "file",
-            "size": 241
-           },
-           {
-            "name": "0_deployer",
-            "type": "submodule"
-           },
-           {
-            "name": "1_cicd",
-            "type": "symlink",
-            "size": 17,
-            "target": "0_deployer/1_cicd"
-           },
-           {
-            "name": "build.json",
-            "type": "file",
-            "size": 374
-           },
-           {
-            "name": "build.sh",
-            "type": "symlink",
-            "size": 29,
-            "target": "1_cicd/src/scripts/_engine.sh"
-           },
-           {
-            "name": "README.md",
-            "type": "file",
-            "size": 739
-           },
-           {
-            "name": "ship.yml",
-            "type": "symlink",
-            "size": 26,
-            "target": ".github/workflows/ship.yml"
-           }
-          ]
          }
         ]
        },
@@ -47497,10 +47497,10 @@
         "children": [
          {
           "code": "3.2.1.1",
-          "name": "Fin-Corporate",
+          "name": "Capital-Micro-Asset-Management",
           "kind": "repo",
           "visibility": "public",
-          "url": "https://github.com/diegonmarcos/Fin-Corporate",
+          "url": "https://github.com/diegonmarcos/Capital-Micro-Asset-Management",
           "status": "ok",
           "source": "github-api",
           "head": "9130998d3aa555a4e13dd672557d334ff3f89fac",
@@ -47510,7 +47510,7 @@
             "type": "dir",
             "children": [
              {
-              "name": "Fin-___",
+              "name": "Capital-___",
               "type": "submodule"
              }
             ]
@@ -47749,22 +47749,22 @@
         "size": 8061
        },
        {
-        "name": "Fin-CM-Blmbrg",
+        "name": "Capital-Stack-Fin-Terminal",
         "type": "symlink",
         "size": 16,
-        "target": "../Fin-CM-Blmbrg"
+        "target": "../Capital-Stack-Fin-Terminal"
        },
        {
-        "name": "Fin-CM-mqpm",
+        "name": "Capital-Macro-Central-Bank",
         "type": "symlink",
         "size": 14,
-        "target": "../Fin-CM-mqpm"
+        "target": "../Capital-Macro-Central-Bank"
        },
        {
-        "name": "Fin-Corporate",
+        "name": "Capital-Micro-Asset-Management",
         "type": "symlink",
         "size": 16,
-        "target": "../Fin-Corporate"
+        "target": "../Capital-Micro-Asset-Management"
        },
        {
         "name": "LICENSE",
@@ -47797,17 +47797,109 @@
     "children": [
      {
       "code": "4.0",
-      "name": "DeepSc-___",
+      "name": "HardTech-___",
       "kind": "hub",
       "visibility": "public",
-      "url": "https://github.com/diegonmarcos/DeepSc-___",
+      "url": "https://github.com/diegonmarcos/HardTech-___",
       "children": [
        {
-        "code": "4.3.1.1",
-        "name": "CAD-Simulators",
+        "code": "4.2.1.1",
+        "name": "HardTech-DeepXTech",
         "kind": "repo",
         "visibility": "public",
-        "url": "https://github.com/diegonmarcos/CAD-Simulators",
+        "url": "https://github.com/diegonmarcos/HardTech-DeepXTech",
+        "status": "ok",
+        "source": "github-api",
+        "head": "f7cf028a0d36b1a601de1352e9ebd7c8332fb11b",
+        "entries": [
+         {
+          "name": "0_hub",
+          "type": "dir",
+          "children": [
+           {
+            "name": "HardTech-___",
+            "type": "submodule"
+           }
+          ]
+         },
+         {
+          "name": "dist",
+          "type": "dir",
+          "children": [
+           {
+            "name": "index.html",
+            "type": "file",
+            "size": 258
+           }
+          ]
+         },
+         {
+          "name": "src",
+          "type": "dir",
+          "children": [
+           {
+            "name": ".gitkeep",
+            "type": "file",
+            "size": 0
+           },
+           {
+            "name": "index.html",
+            "type": "file",
+            "size": 258
+           }
+          ]
+         },
+         {
+          "name": ".github",
+          "type": "symlink",
+          "size": 18,
+          "target": "0_deployer/.github"
+         },
+         {
+          "name": ".gitmodules",
+          "type": "file",
+          "size": 250
+         },
+         {
+          "name": "0_deployer",
+          "type": "submodule"
+         },
+         {
+          "name": "1_cicd",
+          "type": "symlink",
+          "size": 17,
+          "target": "0_deployer/1_cicd"
+         },
+         {
+          "name": "build.json",
+          "type": "file",
+          "size": 377
+         },
+         {
+          "name": "build.sh",
+          "type": "symlink",
+          "size": 29,
+          "target": "1_cicd/src/scripts/_engine.sh"
+         },
+         {
+          "name": "README.md",
+          "type": "file",
+          "size": 773
+         },
+         {
+          "name": "ship.yml",
+          "type": "symlink",
+          "size": 26,
+          "target": ".github/workflows/ship.yml"
+         }
+        ]
+       },
+       {
+        "code": "4.3.1.1",
+        "name": "HardTech-Stack-CAD-Simulators",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators",
         "status": "ok",
         "source": "github-api",
         "head": "9247b7fea10cb45940b9ef44df913a27b21fc99d",
@@ -47817,7 +47909,7 @@
           "type": "dir",
           "children": [
            {
-            "name": "DeepSc-___",
+            "name": "HardTech-___",
             "type": "submodule"
            }
           ]
@@ -47959,98 +48051,6 @@
           "name": "README.md",
           "type": "file",
           "size": 2616
-         }
-        ]
-       },
-       {
-        "code": "4.2.1.1",
-        "name": "DeepSc-X",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/DeepSc-X",
-        "status": "ok",
-        "source": "github-api",
-        "head": "f7cf028a0d36b1a601de1352e9ebd7c8332fb11b",
-        "entries": [
-         {
-          "name": "0_hub",
-          "type": "dir",
-          "children": [
-           {
-            "name": "DeepSc-___",
-            "type": "submodule"
-           }
-          ]
-         },
-         {
-          "name": "dist",
-          "type": "dir",
-          "children": [
-           {
-            "name": "index.html",
-            "type": "file",
-            "size": 258
-           }
-          ]
-         },
-         {
-          "name": "src",
-          "type": "dir",
-          "children": [
-           {
-            "name": ".gitkeep",
-            "type": "file",
-            "size": 0
-           },
-           {
-            "name": "index.html",
-            "type": "file",
-            "size": 258
-           }
-          ]
-         },
-         {
-          "name": ".github",
-          "type": "symlink",
-          "size": 18,
-          "target": "0_deployer/.github"
-         },
-         {
-          "name": ".gitmodules",
-          "type": "file",
-          "size": 250
-         },
-         {
-          "name": "0_deployer",
-          "type": "submodule"
-         },
-         {
-          "name": "1_cicd",
-          "type": "symlink",
-          "size": 17,
-          "target": "0_deployer/1_cicd"
-         },
-         {
-          "name": "build.json",
-          "type": "file",
-          "size": 377
-         },
-         {
-          "name": "build.sh",
-          "type": "symlink",
-          "size": 29,
-          "target": "1_cicd/src/scripts/_engine.sh"
-         },
-         {
-          "name": "README.md",
-          "type": "file",
-          "size": 773
-         },
-         {
-          "name": "ship.yml",
-          "type": "symlink",
-          "size": 26,
-          "target": ".github/workflows/ship.yml"
          }
         ]
        }
@@ -48259,10 +48259,10 @@
         "size": 1160
        },
        {
-        "name": "CAD-Simulators",
+        "name": "HardTech-Stack-CAD-Simulators",
         "type": "symlink",
         "size": 17,
-        "target": "../CAD-Simulators"
+        "target": "../HardTech-Stack-CAD-Simulators"
        },
        {
         "name": "check-repos-sot.sh",
@@ -48280,10 +48280,10 @@
         "size": 8064
        },
        {
-        "name": "DeepSc-X",
+        "name": "HardTech-DeepXTech",
         "type": "symlink",
         "size": 11,
-        "target": "../DeepSc-X"
+        "target": "../HardTech-DeepXTech"
        },
        {
         "name": "LICENSE",
@@ -61585,16 +61585,16 @@
       "type": "dir",
       "children": [
        {
-        "name": "Fin-CM-Blmbrg",
+        "name": "Capital-Stack-Fin-Terminal",
         "type": "symlink",
         "size": 22,
-        "target": "../../../Fin-CM-Blmbrg"
+        "target": "../../../Capital-Stack-Fin-Terminal"
        },
        {
-        "name": "Fin-CM-mqpm",
+        "name": "Capital-Macro-Central-Bank",
         "type": "symlink",
         "size": 20,
-        "target": "../../../Fin-CM-mqpm"
+        "target": "../../../Capital-Macro-Central-Bank"
        }
       ]
      },
@@ -61603,18 +61603,18 @@
       "type": "dir",
       "children": [
        {
-        "name": "Fin-Corporate",
+        "name": "Capital-Micro-Asset-Management",
         "type": "symlink",
         "size": 22,
-        "target": "../../../Fin-Corporate"
+        "target": "../../../Capital-Micro-Asset-Management"
        }
       ]
      },
      {
-      "name": "Fin-___",
+      "name": "Capital-___",
       "type": "symlink",
       "size": 13,
-      "target": "../../Fin-___"
+      "target": "../../Capital-___"
      }
     ]
    },
@@ -61623,22 +61623,22 @@
     "type": "dir",
     "children": [
      {
-      "name": "CAD-Simulators",
+      "name": "HardTech-Stack-CAD-Simulators",
       "type": "symlink",
       "size": 20,
-      "target": "../../CAD-Simulators"
+      "target": "../../HardTech-Stack-CAD-Simulators"
      },
      {
-      "name": "DeepSc-___",
+      "name": "HardTech-___",
       "type": "symlink",
       "size": 16,
-      "target": "../../DeepSc-___"
+      "target": "../../HardTech-___"
      },
      {
-      "name": "DeepSc-X",
+      "name": "HardTech-DeepXTech",
       "type": "symlink",
       "size": 14,
-      "target": "../../DeepSc-X"
+      "target": "../../HardTech-DeepXTech"
      }
     ]
    },

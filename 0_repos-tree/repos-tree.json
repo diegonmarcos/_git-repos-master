@@ -605,21 +605,21 @@
         "name": "3.Capital",
         "kind": "group",
         "path": "3.Capital",
-        "doc": "Capital (3): hub Fin-___ and its members. Capital: capital markets and corporate finance. The hub Fin-___ is the area home (3.0).",
+        "doc": "Capital (3): hub Capital-___ and its members. Capital: capital markets and corporate finance. The hub Capital-___ is the area home (3.0).",
         "children": [
           {
             "code": "3.0",
-            "name": "Fin-___",
+            "name": "Capital-___",
             "kind": "hub",
             "farm": "3.Capital",
-            "link": "3.Capital/Fin-___",
+            "link": "3.Capital/Capital-___",
             "project": "",
             "field": "Capital",
             "family": "Hub",
             "subcategory": "",
             "visibility": "public",
             "developer": "Nexus.z",
-            "url": "https://github.com/diegonmarcos/Fin-___",
+            "url": "https://github.com/diegonmarcos/Capital-___",
             "children": [
               {
                 "name": "Capital-Markets",
@@ -628,32 +628,32 @@
                 "doc": "",
                 "children": [
                   {
-                    "code": "3.3.1.1",
-                    "name": "Fin-CM-Blmbrg",
-                    "kind": "repo",
-                    "farm": "3.Capital/Capital-Markets",
-                    "link": "3.Capital/Capital-Markets/Fin-CM-Blmbrg",
-                    "project": "Stack-Fin-Terminal",
-                    "field": "Capital",
-                    "family": "Terminal",
-                    "subcategory": "",
-                    "visibility": "public",
-                    "developer": "Nexus.z",
-                    "url": "https://github.com/diegonmarcos/Fin-CM-Blmbrg"
-                  },
-                  {
                     "code": "3.1.1.1",
-                    "name": "Fin-CM-mqpm",
+                    "name": "Capital-Macro-Central-Bank",
                     "kind": "repo",
                     "farm": "3.Capital/Capital-Markets",
-                    "link": "3.Capital/Capital-Markets/Fin-CM-mqpm",
+                    "link": "3.Capital/Capital-Markets/Capital-Macro-Central-Bank",
                     "project": "Macro-Central-Bank",
                     "field": "Capital",
                     "family": "MQPM",
                     "subcategory": "",
                     "visibility": "public",
                     "developer": "Nexus.z",
-                    "url": "https://github.com/diegonmarcos/Fin-CM-mqpm"
+                    "url": "https://github.com/diegonmarcos/Capital-Macro-Central-Bank"
+                  },
+                  {
+                    "code": "3.3.1.1",
+                    "name": "Capital-Stack-Fin-Terminal",
+                    "kind": "repo",
+                    "farm": "3.Capital/Capital-Markets",
+                    "link": "3.Capital/Capital-Markets/Capital-Stack-Fin-Terminal",
+                    "project": "Stack-Fin-Terminal",
+                    "field": "Capital",
+                    "family": "Terminal",
+                    "subcategory": "",
+                    "visibility": "public",
+                    "developer": "Nexus.z",
+                    "url": "https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal"
                   }
                 ]
               },
@@ -665,17 +665,17 @@
                 "children": [
                   {
                     "code": "3.2.1.1",
-                    "name": "Fin-Corporate",
+                    "name": "Capital-Micro-Asset-Management",
                     "kind": "repo",
                     "farm": "3.Capital/Corporate",
-                    "link": "3.Capital/Corporate/Fin-Corporate",
+                    "link": "3.Capital/Corporate/Capital-Micro-Asset-Management",
                     "project": "Micro-Asset-Management",
                     "field": "Capital",
                     "family": "Corporate",
                     "subcategory": "",
                     "visibility": "public",
                     "developer": "Nexus.z",
-                    "url": "https://github.com/diegonmarcos/Fin-Corporate"
+                    "url": "https://github.com/diegonmarcos/Capital-Micro-Asset-Management"
                   }
                 ]
               }
@@ -687,49 +687,49 @@
         "name": "4.HardTech",
         "kind": "group",
         "path": "4.HardTech",
-        "doc": "HardTech (4): hub DeepSc-___ and its members. HardTech: deep science projects and CAD / simulation tools.",
+        "doc": "HardTech (4): hub HardTech-___ and its members. HardTech: deep science projects and CAD / simulation tools.",
         "children": [
           {
             "code": "4.0",
-            "name": "DeepSc-___",
+            "name": "HardTech-___",
             "kind": "hub",
             "farm": "4.HardTech",
-            "link": "4.HardTech/DeepSc-___",
+            "link": "4.HardTech/HardTech-___",
             "project": "",
             "field": "HardTech",
             "family": "Hub",
             "subcategory": "",
             "visibility": "public",
             "developer": "Stark.x",
-            "url": "https://github.com/diegonmarcos/DeepSc-___",
+            "url": "https://github.com/diegonmarcos/HardTech-___",
             "children": [
               {
-                "code": "4.3.1.1",
-                "name": "CAD-Simulators",
-                "kind": "repo",
-                "farm": "4.HardTech",
-                "link": "4.HardTech/CAD-Simulators",
-                "project": "Stack-CAD-Simulators",
-                "field": "HardTech",
-                "family": "CAD",
-                "subcategory": "",
-                "visibility": "public",
-                "developer": "Stark.x",
-                "url": "https://github.com/diegonmarcos/CAD-Simulators"
-              },
-              {
                 "code": "4.2.1.1",
-                "name": "DeepSc-X",
+                "name": "HardTech-DeepXTech",
                 "kind": "repo",
                 "farm": "4.HardTech",
-                "link": "4.HardTech/DeepSc-X",
+                "link": "4.HardTech/HardTech-DeepXTech",
                 "project": "DeepXTech",
                 "field": "HardTech",
                 "family": "Sailytics",
                 "subcategory": "",
                 "visibility": "public",
                 "developer": "Stark.x",
-                "url": "https://github.com/diegonmarcos/DeepSc-X"
+                "url": "https://github.com/diegonmarcos/HardTech-DeepXTech"
+              },
+              {
+                "code": "4.3.1.1",
+                "name": "HardTech-Stack-CAD-Simulators",
+                "kind": "repo",
+                "farm": "4.HardTech",
+                "link": "4.HardTech/HardTech-Stack-CAD-Simulators",
+                "project": "Stack-CAD-Simulators",
+                "field": "HardTech",
+                "family": "CAD",
+                "subcategory": "",
+                "visibility": "public",
+                "developer": "Stark.x",
+                "url": "https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators"
               }
             ]
           }
