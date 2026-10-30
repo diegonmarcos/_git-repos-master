@@ -177,6 +177,18 @@
             }
           }
         },
+        "self": {
+          "description": "The index repo itself (#1317): readers treat it as listed; it is never an entry of repos[] (no self-symlink).",
+          "type": "object",
+          "required": ["name", "url"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "url": { "type": "string", "minLength": 1 },
+            "private": { "type": "boolean" },
+            "renamed_from": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+            "doc": { "type": "string" }
+          }
+        },
         "unregistered_ok": {
           "type": "array",
           "items": {

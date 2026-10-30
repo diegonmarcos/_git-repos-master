@@ -69,6 +69,12 @@ function checkRegistry(reg) {
   const gh = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
   const registered = new Set(reg.repos.map(r => gh(r.url)));
   for (const u of reg.unregistered_ok || []) if (registered.has(u.name)) bad(`unregistered_ok ${u.name} is registered`);
+  // #1317 `self` = the index repo for readers: named, never also a repos[] entry (that would give it a symlink to its own parent).
+  if (reg.self) {
+    if (!reg.self.name || !reg.self.url) bad('self: needs name and url');
+    if (reg.repos.some(r => r.name === reg.self.name || gh(r.url) === gh(reg.self.url || ''))) bad(`self ${reg.self.name} must not be a repos[] entry`);
+    for (const o of reg.self.renamed_from || []) if (registered.has(o) || seen.has(o)) bad(`self.renamed_from ${o} is a live entry`);
+  }
   // Owner rule: a hub (name ends in -___) is ALWAYS public.
   for (const r of reg.repos) if (/-___$/.test(r.name) && r.private !== false) bad(`${r.name}: hub must be public (owner rule "Hub always public"), private is ${r.private}`);
   // Owner rule: 42 is a school, not a project; every d_lecole repo carries school "42".

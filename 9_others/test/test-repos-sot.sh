@@ -163,4 +163,10 @@ no_filters "$F" >/dev/null && bad "a filter= attribute was accepted" || ok "a fi
 F2="$T/filtrepo2"; git init -q "$F2"; echo '* text=auto' > "$F2/.gitattributes"; git -C "$F2" add .gitattributes
 no_filters "$F2" >/dev/null && bad "an in-tree .gitattributes was accepted" || ok "an in-tree .gitattributes fails the guard"
 
+# #1317 `self`: the index repo is declared for readers, never as a repos[] entry
+node -e 'const r=require(process.argv[1]);process.exit(r.self&&r.self.name==="_git-repos-master"&&r.self.renamed_from.includes("git-repos-master")&&!r.repos.some(x=>x.name===r.self.name)?0:1)' "$ROOT/repos.json" && ok "repos.json carries self (_git-repos-master, renamed_from git-repos-master), not in repos[]" || bad "self entry missing or in repos[]"
+rm -rf "$T/sf"; mkdir -p "$T/sf"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T/sf/"; cp -a "$ROOT"/[1-9].* "$T/sf/"
+node -e 'const fs=require("fs"),f=process.argv[1];const r=JSON.parse(fs.readFileSync(f));r.repos.push({name:r.self.name,farm:r.repos[0].farm,url:r.self.url,private:false});fs.writeFileSync(f,JSON.stringify(r,null,2))' "$T/sf/repos.json"
+node "$T/sf/repos-sot.js" check "$T/sf/repos.json" >/dev/null 2>&1 && bad "self as a repos[] entry accepted" || ok "self as a repos[] entry fails the check"
+
 exit $fail
