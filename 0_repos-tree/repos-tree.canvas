@@ -53,7 +53,7 @@
     {
       "id": "7b25dfb2ca7ccce7",
       "type": "text",
-      "text": "**cloudy_db_assets-cdn**\nCloudy · DB\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_assets-cdn)",
+      "text": "**cloudy_db_assets-cdn**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_assets-cdn)",
       "x": 700,
       "y": 260,
       "width": 300,
@@ -63,7 +63,7 @@
     {
       "id": "a9b23d876a832b08",
       "type": "text",
-      "text": "**cloudy_db_infra-ops-obsv_configs-sync**\nCloudy · DB\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync)",
+      "text": "**cloudy_db_infra-ops-obsv_configs-sync**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync)",
       "x": 1020,
       "y": 260,
       "width": 300,
@@ -73,7 +73,7 @@
     {
       "id": "af9ae9883e32d475",
       "type": "text",
-      "text": "**cloudy_db_LFS**\nCloudy · DB\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_LFS)",
+      "text": "**cloudy_db_LFS**\nCloudy · C3\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy_db_LFS)",
       "x": 1340,
       "y": 260,
       "width": 300,
@@ -83,7 +83,7 @@
     {
       "id": "b4e4078704030371",
       "type": "text",
-      "text": "**cloudy-a-docs**\nCloudy · Docs\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-a-docs)",
+      "text": "**cloudy-a-docs**\nCloudy · C3\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-a-docs)",
       "x": 700,
       "y": 400,
       "width": 300,
@@ -93,7 +93,7 @@
     {
       "id": "1f24d71cae543f5b",
       "type": "text",
-      "text": "**cloudy-h-webapps**\nCloudy · Webapps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps)",
+      "text": "**cloudy-h-webapps**\nCloudy · WebApps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps)",
       "x": 1020,
       "y": 400,
       "width": 300,
@@ -103,7 +103,7 @@
     {
       "id": "3ba9aa59db28c319",
       "type": "text",
-      "text": "**cloudy-h-webapps-2**\nCloudy · Webapps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-2)",
+      "text": "**cloudy-h-webapps-2**\nCloudy · WebApps\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-2)",
       "x": 1340,
       "y": 400,
       "width": 300,
@@ -133,7 +133,7 @@
     {
       "id": "f0c73b32c9f5306a",
       "type": "text",
-      "text": "**cloudy-u-containers**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers)",
+      "text": "**cloudy-u-containers**\nCloudy · Linux\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers)",
       "x": 1340,
       "y": 540,
       "width": 300,
@@ -143,7 +143,7 @@
     {
       "id": "01fc2a98c7d96fe3",
       "type": "text",
-      "text": "**cloudy-u-containers_cgc**\nCloudy · C3\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers_cgc)",
+      "text": "**cloudy-u-containers_cgc**\nCloudy · Linux\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers_cgc)",
       "x": 700,
       "y": 680,
       "width": 300,
@@ -153,7 +153,7 @@
     {
       "id": "0bf564bc1b45c206",
       "type": "text",
-      "text": "**cloudy-u-desktop**\nCloudy · Desktop\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-desktop)",
+      "text": "**cloudy-u-desktop**\nCloudy · Linux\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloudy-u-desktop)",
       "x": 1020,
       "y": 680,
       "width": 300,
@@ -453,7 +453,7 @@
     {
       "id": "a15f44f67ca86eb9",
       "type": "text",
-      "text": "**CG-circus**\nZirkus · Production\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
+      "text": "**CG-circus**\nZirkus · Web Games\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
       "x": 700,
       "y": 2540,
       "width": 300,

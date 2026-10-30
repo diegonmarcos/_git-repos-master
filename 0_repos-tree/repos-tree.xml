@@ -4,17 +4,17 @@
   <hub name="_git-repos-master" project="Repos" field="Index" family="Master" visibility="public" developer="_Meta" url="https://github.com/diegonmarcos/_git-repos-master">
     <group name="1.1.Cloudy" path="1.1.Cloudy">
       <hub name="cloudy-___" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Hub" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-___">
-        <repo name="cloudy_db_assets-cdn" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="DB" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_assets-cdn"/>
-        <repo name="cloudy_db_infra-ops-obsv_configs-sync" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="DB" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync"/>
-        <repo name="cloudy_db_LFS" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="DB" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_LFS"/>
-        <repo name="cloudy-a-docs" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Docs" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-a-docs"/>
-        <repo name="cloudy-h-webapps" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Webapps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps"/>
-        <repo name="cloudy-h-webapps-2" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Webapps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps-2"/>
+        <repo name="cloudy_db_assets-cdn" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_assets-cdn"/>
+        <repo name="cloudy_db_infra-ops-obsv_configs-sync" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync"/>
+        <repo name="cloudy_db_LFS" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_LFS"/>
+        <repo name="cloudy-a-docs" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-a-docs"/>
+        <repo name="cloudy-h-webapps" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps"/>
+        <repo name="cloudy-h-webapps-2" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps-2"/>
         <repo name="cloudy-t-infra" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-t-infra"/>
         <repo name="cloudy-u-android" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Android" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-android"/>
-        <repo name="cloudy-u-containers" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-containers"/>
-        <repo name="cloudy-u-containers_cgc" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-containers_cgc"/>
-        <repo name="cloudy-u-desktop" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Desktop" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-desktop"/>
+        <repo name="cloudy-u-containers" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Linux" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-containers"/>
+        <repo name="cloudy-u-containers_cgc" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Linux" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-containers_cgc"/>
+        <repo name="cloudy-u-desktop" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Linux" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-desktop"/>
         <repo name="cloudy-u-linux" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Linux" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-linux"/>
       </hub>
     </group>
@@ -49,7 +49,7 @@
     </group>
     <group name="2.CG" path="2.CG">
       <hub name="CG-___" farm="2.CG" field="CG" family="Hub" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-___">
-        <repo name="CG-circus" farm="2.CG" project="Zirkus" field="CG" family="Production" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-circus"/>
+        <repo name="CG-circus" farm="2.CG" project="Zirkus" field="CG" family="Web Games" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-circus"/>
         <repo name="CG-galaxy" farm="2.CG" project="Galaxy" field="CG" family="Threlte" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-galaxy"/>
         <repo name="CG-galaxy-gaia" farm="2.CG" project="Galaxy" field="CG" family="Threlte" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-galaxy-gaia"/>
         <repo name="CG-unity" farm="2.CG" project="Galaxy" field="CG" family="Unity" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/CG-unity"/>

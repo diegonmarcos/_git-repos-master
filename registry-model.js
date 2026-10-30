@@ -91,10 +91,11 @@ function expand(src) {
     nodes.push({ ...n, path: anc.map(a => a.code) , ancestors: anc });
     const at = k => { for (let i = chain.length - 1; i >= 0; i--) if (chain[i][k] !== undefined) return chain[i][k]; return undefined; };
     const hubAbove = upto => { for (let i = upto; i >= 0; i--) if (chain[i].hub) return chain[i].hub.name; return null; };
-    const area = chain[0], project = chain.find(x => x.kind === 'project'), sub = chain.find(x => x.kind === 'subcategory'), fam = chain.find(x => x.kind === 'family');
+    const area = chain[0], project = chain.find(x => x.kind === 'project'), sub = chain.find(x => x.kind === 'subcategory'), fam = chain.find(x => x.kind === 'family'), subfam = chain.filter(x => x.kind === 'family')[1];
     const ctx = (extra) => ({ developer: at('developer'), farm: at('farm') || '', area: area.name, area_code: area.code,
       project: project ? project.name : '', project_code: project ? project.code : '', subcategory: sub ? sub.name : (project && project.branch) || '',
-      family: fam ? fam.name : '', family_code: fam ? fam.code : '', ...extra });
+      family: fam ? fam.name : '', family_code: fam ? fam.code : '',
+      ...(subfam ? { subfamily: subfam.name, subfamily_code: subfam.code } : {}), ...extra });
     if (n.hub) {
       const up = hubAbove(chain.length - 2) || TOP;
       repos.push(finish({ ...n.hub, ...ctx({ up, hub_of: n.code, path: chain.map(c => c.code), family: n.kind === 'family' ? n.name : 'Hub', family_code: n.kind === 'family' ? n.code : '' }) }, owner));
@@ -119,17 +120,18 @@ function finish(r, owner) {
 }
 
 // ---- rules a schema cannot express --------------------------------------------------------------------------------
-const CHILD = { area: ['project'], project: ['subcategory', 'family'], subcategory: ['family'], family: ['repo'] };
+const CHILD = { area: ['project'], project: ['subcategory', 'family'], subcategory: ['family'], family: ['repo', 'family'] };
 function validate(src) {
   const e = [];
   let schema; try { schema = JSON.parse(fs.readFileSync(SCHEMA, 'utf8')); } catch (x) { return [`projects-repos.schema.json: ${x.message}`]; }
   for (const x of schemaErrors(schema, src)) e.push('schema ' + x);
   if (e.length) return e;
-  const names = new Map(), farmTops = new Map();
+  const names = new Map(), farmTops = new Map(), contentRefs = [];
   const seeName = (n, where) => { if (names.has(n)) e.push(`duplicate repo name ${n} (${names.get(n)} and ${where})`); names.set(n, where); };
   seeName(src.root.name, '0');
-  function walk(n, code, parentKind, farmAbove) {
+  function walk(n, code, parentKind, farmAbove, depthFam = 0) {
     if (n.code !== code) e.push(`${n.name}: code ${n.code}, its position says ${code}`);
+    if (n.kind === 'family' && parentKind === 'family' && depthFam > 1) e.push(`${n.code} ${n.name}: families nest one level only (family -> sub-family)`);
     if (parentKind && !(CHILD[parentKind] || []).includes(n.kind)) e.push(`${n.code} ${n.name}: a ${n.kind} cannot sit under a ${parentKind}`);
     if (!parentKind && n.kind !== 'area') e.push(`${n.code} ${n.name}: top level nodes are areas`);
     if (n.hub) { if (n.hub.code !== code + '.0') e.push(`${n.hub.name}: hub code ${n.hub.code}, expected ${code}.0`); seeName(n.hub.name, n.hub.code);
@@ -149,13 +151,16 @@ function validate(src) {
       if (c.kind === 'repo') { if (c.code !== cc) e.push(`${c.name}: code ${c.code}, its position says ${cc}`); seeName(c.name, cc);
         if (n.kind !== 'family') e.push(`${c.name}: repos sit in a family, not a ${n.kind}`);
         if (!f) e.push(`${c.name}: no farm up the tree`); }
-      else walk(c, cc, n.kind, f);
+      else walk(c, cc, n.kind, f, n.kind === 'family' ? depthFam + 1 : 0);
     });
-    if (n.kind === 'family' && !(n.children || []).length) e.push(`${n.code} family ${n.name} is empty`);
+    if (n.kind === 'family' && !(n.children || []).length && !n.content) e.push(`${n.code} family ${n.name} is empty`);
+    if (n.kind === 'family' && n.content) { if (!(n.apps || []).length) e.push(`${n.code} ${n.name}: a content family lists its apps`);
+      if ((n.children || []).length) e.push(`${n.code} ${n.name}: a content family holds no repos`); contentRefs.push([n, n.content.repo]); }
   }
   src.tree.forEach((a, i) => walk(a, String(i + 1), undefined, ''));
   // the archive rule and the hubless rule, on the expanded records
   const x = expand(src);
+  for (const [n, r] of contentRefs) if (!x.byName.has(r)) e.push(`${n.code} ${n.name}: content repo ${r} is not in the tree`);
   for (const r of x.repos) {
     if (r.name.startsWith('z-archived_') && r.area !== 'Archived') e.push(`${r.name}: z-archived_* repos sit in area Archived`);
     if (r.github !== r.name && x.byName.has(r.github)) e.push(`${r.name}: github name ${r.github} is also a registry name`);

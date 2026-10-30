@@ -30,7 +30,7 @@ const pub=n.filter(r=>r.visibility==="public"),t=pub.filter(r=>r.tree);if(n.some
 grep -q 'DO NOT EDIT' "$ROOT/README.md" && ok "README.md carries the DO NOT EDIT banner" || bad "README.md lacks the DO NOT EDIT banner"
 
 # #1295 the README / compat guards bite: a scratch copy is clean, then each mutation fails `check`
-SRCS="repos-sot.js registry-model.js gen-registry.js render-repos-tree.js render-folders-tree.js refresh-folders-tree.js projects-repos.json projects-repos.schema.json repos.json repos-github.json README.md"
+SRCS="repos-sot.js registry-model.js gen-registry.js sync-consumers.js render-repos-tree.js render-folders-tree.js refresh-folders-tree.js projects-repos.json projects-repos.schema.json repos.json repos-github.json README.md"
 gmk() { rm -rf "$T/g"; mkdir -p "$T/g/9_others"; cp -r "$ROOT/9_others/templates" "$T/g/9_others/"; for f in $SRCS; do cp "$ROOT/$f" "$T/g/"; done
   cp -a "$ROOT/0_repos-tree" "$ROOT/1_repo-folders-tree" "$ROOT"/[1-9].* "$T/g/"; for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/g/repos-tree.$f"; done
   for f in json md html; do ln -s "1_repo-folders-tree/repo-folders-tree.$f" "$T/g/repo-folders-tree.$f"; done; }
@@ -54,6 +54,10 @@ gmk; sed -i 's/"private": true/"private": false/' "$T/g/repos.json"; gchk && bad
 gmk; sed -i '0,/"visibility": "private"/s//"visibility": "public"/' "$T/g/repos-github.json"; gchk && bad "hand-edited repos-github.json accepted" || ok "hand-edited repos-github.json fails the check"
 gmk; sed -i '0,/"code": "1.1"/s//"code": "1.9"/' "$T/g/projects-repos.json"; gchk && bad "non-positional code accepted" || ok "a non-positional code in projects-repos.json fails"
 gmk; sed -i '0,/"kind": "family"/s//"kind": "famly"/' "$T/g/projects-repos.json"; gchk && bad "schema violation accepted" || ok "a schema violation (bad kind) fails"
+# Cloudy 1.1 shape: 4 families, sub-families nested one level (C3 > DB, Docs; Linux > Containers, Desktop User)
+gmk; node -e 'const j=require(process.argv[1]+"/registry-model.js").load(),p=j.tree[0].children.find(x=>x.code==="1.1"),n=x=>x.map(f=>f.name+(f.children.some(c=>c.kind==="family")?"["+n(f.children.filter(c=>c.kind==="family"))+"]":"")).join(",");const s=n(p.children);if(s!=="Android,C3[DB,Docs],Linux[Linux Containers,Linux Desktop User],WebApps")process.exit(1)' "$T/g" && ok "Cloudy has 4 families with nested sub-families" || bad "Cloudy outline is not Android, C3[DB,Docs], Linux[Containers,Desktop User], WebApps"
+gmk; jmut 'const c3=j.tree[0].children.find(x=>x.code==="1.1").children[1],db=c3.children[1];db.children[0]={code:"1.1.2.2.1",kind:"family",name:"Deep",label:"Deep",description:"",children:[db.children[0]]}'; (cd "$T/g" && node gen-registry.js >/dev/null 2>&1); gchk && bad "a third family level accepted" || ok "families nest one level only (sub-sub-family fails)"
+gmk; jmut 'const z=j.tree[1].children.find(x=>x.code==="2.2").children[0];z.content.repo="no-such-repo"'; gchk && bad "content family pointing at an unknown repo accepted" || ok "a content family must reference a repo in the tree"
 gmk; sed -i 's/"farm": "4.HardTech"/"farm": "9.DeepSc"/' "$T/g/projects-repos.json"; gchk && bad "farm folder not named after its code accepted" || ok "a top farm folder not prefixed by its node code fails"
 gmk; jmut 'j.tree[1].hub.visibility="private"'; gchk && bad "private hub accepted" || ok "a private hub fails (hub always public)"
 

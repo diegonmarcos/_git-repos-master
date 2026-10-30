@@ -6,7 +6,7 @@ hub: "cloudy-___"
 parent_hub: "cloudy-___"
 project: "Cloudy"
 area: "Unix"
-family: "Docs"
+family: "C3"
 subcategory: ""
 visibility: private
 developer: "Leaf.y"
@@ -15,7 +15,7 @@ tags:
   - repo
   - area/Unix
   - project/Cloudy
-  - family/Docs
+  - family/C3
   - visibility/private
   - group/1-1-Cloudy
 ---
@@ -24,7 +24,7 @@ tags:
 
 # cloudy-a-docs
 
-#repo #area/Unix #project/Cloudy #family/Docs #visibility/private #group/1-1-Cloudy
+#repo #area/Unix #project/Cloudy #family/C3 #visibility/private #group/1-1-Cloudy
 
 Hub: [[cloudy-___]]
 

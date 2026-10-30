@@ -6,7 +6,7 @@ hub: "cloudy-___"
 parent_hub: "cloudy-___"
 project: "Cloudy"
 area: "Unix"
-family: "DB"
+family: "C3"
 subcategory: ""
 visibility: public
 developer: "Leaf.y"
@@ -15,7 +15,7 @@ tags:
   - repo
   - area/Unix
   - project/Cloudy
-  - family/DB
+  - family/C3
   - visibility/public
   - group/1-1-Cloudy
 ---
@@ -24,7 +24,7 @@ tags:
 
 # cloudy_db_infra-ops-obsv_configs-sync
 
-#repo #area/Unix #project/Cloudy #family/DB #visibility/public #group/1-1-Cloudy
+#repo #area/Unix #project/Cloudy #family/C3 #visibility/public #group/1-1-Cloudy
 
 Hub: [[cloudy-___]]
 

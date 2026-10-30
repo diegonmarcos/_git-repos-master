@@ -6,7 +6,7 @@ hub: "CG-___"
 parent_hub: "CG-___"
 project: "Zirkus"
 area: "CG"
-family: "Production"
+family: "Web Games"
 subcategory: ""
 visibility: public
 developer: "Leaf.y"
@@ -15,7 +15,7 @@ tags:
   - repo
   - area/CG
   - project/Zirkus
-  - family/Production
+  - family/Web-Games
   - visibility/public
   - group/2-CG
 ---
@@ -24,7 +24,7 @@ tags:
 
 # CG-circus
 
-#repo #area/CG #project/Zirkus #family/Production #visibility/public #group/2-CG
+#repo #area/CG #project/Zirkus #family/Web-Games #visibility/public #group/2-CG
 
 Hub: [[CG-___]]
 
