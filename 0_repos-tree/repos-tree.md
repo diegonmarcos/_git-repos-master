@@ -88,7 +88,6 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - 📁 **DuckPeng/**
         - **[[DuckPeng-___]]** · 🌐 public · DuckPeng
       - [[Projects-endeavours]] · 🌐 public · Endeavours
-      - [[Projects-labtools]] · 🌐 public · Labtools
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[diegonmarcos]] · 🌐 public · Profile
     - [[diegonmarcos.github.io]] · 🌐 public · Pages
@@ -107,6 +106,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[z-archived_front-projects]] · 🌐 public · Z-archived
       - [[z-archived_front-warehouse]] · 🌐 public · Z-archived
       - [[z-archived_My-ai-memory]] · 🔒 private · Z-archived
+      - [[z-archived_Projects-labtools]] · 🌐 public · Z-archived
 
 ## Mermaid
 
@@ -183,7 +183,6 @@ graph LR
   n_group_6_Projects_DuckPeng["DuckPeng/"]
   n_DuckPeng____["DuckPeng-___"]
   n_Projects_endeavours["Projects-endeavours"]
-  n_Projects_labtools["Projects-labtools"]
   n_group_7_Others["7.Others/"]
   n_diegonmarcos["diegonmarcos"]
   n_diegonmarcos_github_io["diegonmarcos.github.io"]
@@ -202,6 +201,7 @@ graph LR
   n_z_archived_front_projects["z-archived_front-projects"]
   n_z_archived_front_warehouse["z-archived_front-warehouse"]
   n_z_archived_My_ai_memory["z-archived_My-ai-memory"]
+  n_z_archived_Projects_labtools["z-archived_Projects-labtools"]
   n__git_repos_master --> n_group_1_1_Cloudy
   n_group_1_1_Cloudy --> n_cloudy____
   n_cloudy____ --> n_cloudy_db_assets_cdn
@@ -272,7 +272,6 @@ graph LR
   n_Projects____ --> n_group_6_Projects_DuckPeng
   n_group_6_Projects_DuckPeng --> n_DuckPeng____
   n_Projects____ --> n_Projects_endeavours
-  n_Projects____ --> n_Projects_labtools
   n__git_repos_master --> n_group_7_Others
   n_group_7_Others --> n_diegonmarcos
   n_group_7_Others --> n_diegonmarcos_github_io
@@ -291,6 +290,7 @@ graph LR
   n_z_archived____ --> n_z_archived_front_projects
   n_z_archived____ --> n_z_archived_front_warehouse
   n_z_archived____ --> n_z_archived_My_ai_memory
+  n_z_archived____ --> n_z_archived_Projects_labtools
 ```
 
 ## Dataview

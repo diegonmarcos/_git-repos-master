@@ -46,3 +46,4 @@ GitHub: https://github.com/diegonmarcos/z-archived-___
 - [[z-archived_front-projects]]
 - [[z-archived_front-warehouse]]
 - [[z-archived_My-ai-memory]]
+- [[z-archived_Projects-labtools]]

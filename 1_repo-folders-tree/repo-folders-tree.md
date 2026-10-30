@@ -9272,25 +9272,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
         - `README.md` · 501 B
         - `SPLIT-PATHS.txt` · 76 B
-      - **[Projects-labtools](https://github.com/diegonmarcos/Projects-labtools)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `Projects-___` (submodule)
-        - 📁 `a-Lfy_C3`
-          - `README.md` · 84 B
-        - 📁 `a-Lfy_CG-Zirkus`
-          - `README.md` · 138 B
-        - 📁 `b-Nxs_Blmmbrg`
-          - `README.md` · 122 B
-        - 📁 `b-Nxs_PA`
-          - `README.md` · 144 B
-        - 📁 `c-Stk_DsX`
-          - `README.md` · 148 B
-        - 🔗 `.github` → `0_deployer/.github` · 18 B
-        - `.gitmodules` · 256 B
-        - 📦 `0_deployer` (submodule)
-        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-        - `README.md` · 1.0 KiB
-        - `SPLIT-PATHS.txt` · 0 B
   - 📁 **7.Others/** (group)
     - **[diegonmarcos](https://github.com/diegonmarcos/diegonmarcos)** · 🌐 public
       - 📁 `.claude`
@@ -10964,3 +10945,22 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `README.md` · 428 B
         - `SPLIT-PATHS.txt` · 21 B
       - **[z-archived_My-ai-memory](https://github.com/diegonmarcos/z-archived_My-ai-memory)** · 🔒 private
+      - **[z-archived_Projects-labtools](https://github.com/diegonmarcos/z-archived_Projects-labtools)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `z-archived-___` (submodule)
+        - 📁 `a-Lfy_C3`
+          - `README.md` · 84 B
+        - 📁 `a-Lfy_CG-Zirkus`
+          - `README.md` · 138 B
+        - 📁 `b-Nxs_Blmmbrg`
+          - `README.md` · 122 B
+        - 📁 `b-Nxs_PA`
+          - `README.md` · 144 B
+        - 📁 `c-Stk_DsX`
+          - `README.md` · 148 B
+        - 🔗 `.github` → `0_deployer/.github` · 18 B
+        - `.gitmodules` · 256 B
+        - 📦 `0_deployer` (submodule)
+        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+        - `README.md` · 1.0 KiB
+        - `SPLIT-PATHS.txt` · 0 B

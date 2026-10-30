@@ -926,7 +926,7 @@
                 "doc": "",
                 "children": [
                   {
-                    "code": "6.3.0",
+                    "code": "6.2.0",
                     "name": "DuckPeng-___",
                     "kind": "hub",
                     "farm": "6.Projects/DuckPeng",
@@ -955,20 +955,6 @@
                 "visibility": "public",
                 "developer": "Projects",
                 "url": "https://github.com/diegonmarcos/Projects-endeavours"
-              },
-              {
-                "code": "6.2.1.1",
-                "name": "Projects-labtools",
-                "kind": "repo",
-                "farm": "6.Projects",
-                "link": "6.Projects/Projects-labtools",
-                "project": "Labtools",
-                "field": "Projects",
-                "family": "Labtools",
-                "subcategory": "",
-                "visibility": "public",
-                "developer": "Projects",
-                "url": "https://github.com/diegonmarcos/Projects-labtools"
               }
             ]
           }
@@ -1211,6 +1197,20 @@
                 "visibility": "private",
                 "developer": "Z-archived",
                 "url": "https://github.com/diegonmarcos/z-archived_My-ai-memory"
+              },
+              {
+                "code": "8.1.4.1",
+                "name": "z-archived_Projects-labtools",
+                "kind": "repo",
+                "farm": "8.Archived",
+                "link": "8.Archived/z-archived_Projects-labtools",
+                "project": "Z-archived",
+                "field": "Archived",
+                "family": "Projects",
+                "subcategory": "",
+                "visibility": "public",
+                "developer": "Z-archived",
+                "url": "https://github.com/diegonmarcos/z-archived_Projects-labtools"
               }
             ]
           }

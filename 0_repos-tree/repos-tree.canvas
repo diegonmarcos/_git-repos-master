@@ -766,7 +766,7 @@
       "label": "6.Projects",
       "x": 340,
       "y": 4600,
-      "width": 1740,
+      "width": 1420,
       "height": 380,
       "color": "5"
     },
@@ -776,7 +776,7 @@
       "label": "Projects-___",
       "x": 680,
       "y": 4640,
-      "width": 1380,
+      "width": 1060,
       "height": 320,
       "color": "4"
     },
@@ -801,20 +801,10 @@
       "color": "4"
     },
     {
-      "id": "e51a80fc51a93f8d",
-      "type": "text",
-      "text": "**Projects-labtools**\nLabtools · Labtools\n🌐 public · Projects\n[GitHub](https://github.com/diegonmarcos/Projects-labtools)",
-      "x": 1020,
-      "y": 4820,
-      "width": 300,
-      "height": 120,
-      "color": "4"
-    },
-    {
       "id": "ab33eb35318fae9e",
       "type": "group",
       "label": "6.Projects/DuckPeng",
-      "x": 1340,
+      "x": 1020,
       "y": 4680,
       "width": 700,
       "height": 240,
@@ -824,7 +814,7 @@
       "id": "b2834c84bed9af16",
       "type": "group",
       "label": "DuckPeng-___",
-      "x": 1680,
+      "x": 1360,
       "y": 4720,
       "width": 340,
       "height": 180,
@@ -834,7 +824,7 @@
       "id": "99c6d4483cceaf9c",
       "type": "text",
       "text": "**DuckPeng-___**\nDuckPeng · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
-      "x": 1700,
+      "x": 1380,
       "y": 4760,
       "width": 300,
       "height": 120,
@@ -1029,6 +1019,16 @@
       "width": 300,
       "height": 120,
       "color": "1"
+    },
+    {
+      "id": "5b33b8d34d9fe487",
+      "type": "text",
+      "text": "**z-archived_Projects-labtools**\nZ-archived · Projects\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_Projects-labtools)",
+      "x": 1020,
+      "y": 5980,
+      "width": 300,
+      "height": 120,
+      "color": "4"
     }
   ],
   "edges": [
@@ -1489,14 +1489,6 @@
       "color": "4"
     },
     {
-      "id": "f89963ca29e1a6e9",
-      "fromNode": "99e82aea5183040e",
-      "fromSide": "right",
-      "toNode": "e51a80fc51a93f8d",
-      "toSide": "left",
-      "color": "4"
-    },
-    {
       "id": "8577fac940878b9c",
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
@@ -1623,6 +1615,14 @@
       "toNode": "fc3fbe67cc471ea7",
       "toSide": "top",
       "color": "1"
+    },
+    {
+      "id": "3157b726fd5c2ca3",
+      "fromNode": "e5ee18279f60a305",
+      "fromSide": "right",
+      "toNode": "5b33b8d34d9fe487",
+      "toSide": "left",
+      "color": "4"
     }
   ]
 }

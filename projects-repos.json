@@ -2779,63 +2779,13 @@
         {
           "code": "6.2",
           "kind": "project",
-          "name": "Labtools",
-          "label": "Labtools",
-          "icon": "🧪",
-          "description": "Lab tools.",
-          "children": [
-            {
-              "code": "6.2.1",
-              "kind": "family",
-              "name": "Labtools",
-              "label": "Labtools",
-              "description": "",
-              "children": [
-                {
-                  "code": "6.2.1.1",
-                  "kind": "repo",
-                  "name": "Projects-labtools",
-                  "label": "Projects-labtools",
-                  "visibility": "public",
-                  "description": "Front group c_LabTools (split from front-projects, #1072)",
-                  "group": "b_projects",
-                  "renamed_from": [
-                    "front-labtools"
-                  ],
-                  "doc": "Sources of the former c_LabTools group, split from front-projects (#1072); since #1218 laid out as a-Lfy_C3 only; a-Lfy_CG-Zirkus, b-Nxs_PA, b-Nxs_Blmmbrg, c-Stk_DsX were moved with history to CG-circus, Fin-CM-mqpm, Fin-CM-Blmbrg, CAD-Simulators (labtools 741bb8b, 2026-10-28).",
-                  "tree": {
-                    "source": "github-api",
-                    "head": "1eed628ee04a39363bb418dde1522db9a55664e4",
-                    "entries": [
-                      {"name":"0_hub","type":"dir","children":[{"name":"Projects-___","type":"submodule"}]},
-                      {"name":"a-Lfy_C3","type":"dir","children":[{"name":"README.md","type":"file","size":84}]},
-                      {"name":"a-Lfy_CG-Zirkus","type":"dir","children":[{"name":"README.md","type":"file","size":138}]},
-                      {"name":"b-Nxs_Blmmbrg","type":"dir","children":[{"name":"README.md","type":"file","size":122}]},
-                      {"name":"b-Nxs_PA","type":"dir","children":[{"name":"README.md","type":"file","size":144}]},
-                      {"name":"c-Stk_DsX","type":"dir","children":[{"name":"README.md","type":"file","size":148}]},
-                      {"name":".github","type":"symlink","size":18,"target":"0_deployer/.github"},
-                      {"name":".gitmodules","type":"file","size":256},
-                      {"name":"0_deployer","type":"submodule"},
-                      {"name":"1_cicd","type":"symlink","size":17,"target":"0_deployer/1_cicd"},
-                      {"name":"README.md","type":"file","size":1039},
-                      {"name":"SPLIT-PATHS.txt","type":"file","size":0}
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "code": "6.3",
-          "kind": "project",
           "name": "DuckPeng",
           "label": "DuckPeng",
           "icon": "🦆",
           "developer": "Leaf.y",
           "description": "DuckPeng hub: cross-links CG, Cloud and LeafY (no member repos of its own).",
           "hub": {
-            "code": "6.3.0",
+            "code": "6.2.0",
             "kind": "hub",
             "name": "DuckPeng-___",
             "label": "DuckPeng-___",
@@ -3047,7 +2997,7 @@
                     },
                     {
                       "name": "a-Lfy_C3",
-                      "path": "Projects-labtools",
+                      "path": "z-archived_Projects-labtools",
                       "status": "split",
                       "ticket": "#1218",
                       "doc": "README only for now."
@@ -3540,6 +3490,47 @@
                   "doc": "Archived AI memory repo. Registered 2026-10-29 (#1291) so 09.Archived holds every z-archived_*."
                 }
               ]
+            },
+            {
+              "code": "8.1.4",
+              "kind": "family",
+              "name": "Projects",
+              "label": "Projects",
+              "description": "",
+              "children": [
+                {
+                  "code": "8.1.4.1",
+                  "kind": "repo",
+                  "name": "z-archived_Projects-labtools",
+                  "label": "z-archived_Projects-labtools",
+                  "visibility": "public",
+                  "description": "Front group c_LabTools (split from front-projects, #1072)",
+                  "group": "b_projects",
+                  "renamed_from": [
+                    "Projects-labtools",
+                    "front-labtools"
+                  ],
+                  "doc": "Sources of the former c_LabTools group, split from front-projects (#1072); since #1218 laid out as a-Lfy_C3 only; a-Lfy_CG-Zirkus, b-Nxs_PA, b-Nxs_Blmmbrg, c-Stk_DsX were moved with history to CG-circus, Fin-CM-mqpm, Fin-CM-Blmbrg, CAD-Simulators (labtools 741bb8b, 2026-10-28). Archived 2026-10-30: empty except pointer READMEs; renamed z-archived_Projects-labtools, to be archived on GitHub (owner click).",
+                  "tree": {
+                    "source": "github-api",
+                    "head": "1eed628ee04a39363bb418dde1522db9a55664e4",
+                    "entries": [
+                      {"name":"0_hub","type":"dir","children":[{"name":"z-archived-___","type":"submodule"}]},
+                      {"name":"a-Lfy_C3","type":"dir","children":[{"name":"README.md","type":"file","size":84}]},
+                      {"name":"a-Lfy_CG-Zirkus","type":"dir","children":[{"name":"README.md","type":"file","size":138}]},
+                      {"name":"b-Nxs_Blmmbrg","type":"dir","children":[{"name":"README.md","type":"file","size":122}]},
+                      {"name":"b-Nxs_PA","type":"dir","children":[{"name":"README.md","type":"file","size":144}]},
+                      {"name":"c-Stk_DsX","type":"dir","children":[{"name":"README.md","type":"file","size":148}]},
+                      {"name":".github","type":"symlink","size":18,"target":"0_deployer/.github"},
+                      {"name":".gitmodules","type":"file","size":256},
+                      {"name":"0_deployer","type":"submodule"},
+                      {"name":"1_cicd","type":"symlink","size":17,"target":"0_deployer/1_cicd"},
+                      {"name":"README.md","type":"file","size":1039},
+                      {"name":"SPLIT-PATHS.txt","type":"file","size":0}
+                    ]
+                  }
+                }
+              ]
             }
           ]
         }
@@ -3555,6 +3546,15 @@
     "_status_doc": "`status` is optional. Absent = the repo exists and is cloned/linked as usual. `pending_creation` = declared on purpose, but the GitHub repo is NOT created yet: every farmer (clone.sh, the cloud-drive seed, the libs:repos mirror, the fleet dotfiles guard) must SKIP it - no clone, no symlink, no seed - and the guard fails if a pending entry is treated as live. Flip it by deleting the field in the same commit that creates the repo. `parts` (optional) lists named sub-trees that live INSIDE the same repo, declared as placeholders so farmers and docs know the planned layout before any file moves; a part is never a repo of its own and is never cloned or linked.",
     "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
     "renames": [
+      {
+        "from": "Projects-labtools",
+        "to": "z-archived_Projects-labtools",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1311",
+        "status": "pending owner GitHub rename",
+        "doc": "Emptied (its four projects moved to Fin-CM-Blmbrg, Fin-CM-mqpm, CG-circus, CAD-Simulators on 2026-10-29; only pointer READMEs remain); archived. The GitHub rename is the owner's step; the old name keeps working through the GitHub redirect."
+      },
       {
         "from": "DeepSc-Tools",
         "to": "CAD-Simulators",

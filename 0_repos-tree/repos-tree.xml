@@ -93,7 +93,6 @@
           <hub name="DuckPeng-___" farm="6.Projects/DuckPeng" project="DuckPeng" field="Projects" family="Hub" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/DuckPeng-___"/>
         </group>
         <repo name="Projects-endeavours" farm="6.Projects" project="Endeavours" field="Projects" family="Endeavours" visibility="public" developer="Projects" url="https://github.com/diegonmarcos/Projects-endeavours"/>
-        <repo name="Projects-labtools" farm="6.Projects" project="Labtools" field="Projects" family="Labtools" visibility="public" developer="Projects" url="https://github.com/diegonmarcos/Projects-labtools"/>
       </hub>
     </group>
     <group name="7.Others" path="7.Others">
@@ -115,6 +114,7 @@
         <repo name="z-archived_front-projects" farm="8.Archived" project="Z-archived" field="Archived" family="Front" visibility="public" developer="Z-archived" url="https://github.com/diegonmarcos/z-archived_front-projects"/>
         <repo name="z-archived_front-warehouse" farm="8.Archived" project="Z-archived" field="Archived" family="Front" visibility="public" developer="Z-archived" url="https://github.com/diegonmarcos/z-archived_front-warehouse"/>
         <repo name="z-archived_My-ai-memory" farm="8.Archived" project="Z-archived" field="Archived" family="Tools" visibility="private" developer="Z-archived" url="https://github.com/diegonmarcos/z-archived_My-ai-memory"/>
+        <repo name="z-archived_Projects-labtools" farm="8.Archived" project="Z-archived" field="Archived" family="Projects" visibility="public" developer="Z-archived" url="https://github.com/diegonmarcos/z-archived_Projects-labtools"/>
       </hub>
     </group>
   </hub>
