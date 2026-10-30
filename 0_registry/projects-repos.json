@@ -41,7 +41,7 @@
         {"name":".vscode","type":"dir","children":[{"name":"extensions.json","type":"file","size":454},{"name":"settings.json","type":"file","size":1354}]},
         {"name":"0_repos-tree","type":"dir","children":[{"name":"repos-tree","type":"dir","children":[{"name":"_git-repos-master","type":"dir","children":[]}]},{"name":"repos-tree.canvas","type":"file","size":42564},{"name":"repos-tree.html","type":"file","size":39641},{"name":"repos-tree.json","type":"file","size":47909},{"name":"repos-tree.md","type":"file","size":14768},{"name":"repos-tree.xml","type":"file","size":17577}]},
         {"name":"0_repo-folders-tree","type":"dir","children":[{"name":"repo-folders-tree.html","type":"file","size":4694027},{"name":"repo-folders-tree.json","type":"file","size":1554647},{"name":"repo-folders-tree.md","type":"file","size":473802}]},
-        {"name":"1.1.Cloudy","type":"dir","children":[{"name":"cloudy_db_assets-cdn","type":"symlink","size":26,"target":"../../cloudy_db_assets-cdn"},{"name":"cloudy_db_infra-ops-obsv_configs-sync","type":"symlink","size":43,"target":"../../cloudy_db_infra-ops-obsv_configs-sync"},{"name":"cloudy_db_LFS","type":"symlink","size":19,"target":"../../cloudy_db_LFS"},{"name":"cloudy-___","type":"symlink","size":16,"target":"../../cloudy-___"},{"name":"cloudy-a-docs","type":"symlink","size":19,"target":"../../cloudy-a-docs"},{"name":"cloudy-h-webapps","type":"symlink","size":22,"target":"../../cloudy-h-webapps"},{"name":"cloudy-h-webapps-2","type":"symlink","size":24,"target":"../../cloudy-h-webapps-2"},{"name":"cloudy-t-infra","type":"symlink","size":20,"target":"../../cloudy-t-infra"},{"name":"cloudy-u-android","type":"symlink","size":22,"target":"../../cloudy-u-android"},{"name":"cloudy-u-containers","type":"symlink","size":25,"target":"../../cloudy-u-containers"},{"name":"cloudy-u-containers_cgc","type":"symlink","size":29,"target":"../../cloudy-u-containers_cgc"},{"name":"cloudy-u-desktop","type":"symlink","size":22,"target":"../../cloudy-u-desktop"},{"name":"cloudy-u-linux","type":"symlink","size":20,"target":"../../cloudy-u-linux"}]},
+        {"name":"1.1.Cloudy","type":"dir","children":[{"name":"cloudy_db_assets-cdn","type":"symlink","size":26,"target":"../../cloudy_db_assets-cdn"},{"name":"cloudy_db_infra-ops-obsv_configs-sync","type":"symlink","size":43,"target":"../../cloudy_db_infra-ops-obsv_configs-sync"},{"name":"cloudy_db_LFS","type":"symlink","size":19,"target":"../../cloudy_db_LFS"},{"name":"cloudy-___","type":"symlink","size":16,"target":"../../cloudy-___"},{"name":"cloudy-a-docs","type":"symlink","size":19,"target":"../../cloudy-a-docs"},{"name":"cloudy-h-webapps-mob","type":"symlink","size":26,"target":"../../cloudy-h-webapps-mob"},{"name":"cloudy-h-webapps-desk","type":"symlink","size":27,"target":"../../cloudy-h-webapps-desk"},{"name":"cloudy-t-infra","type":"symlink","size":20,"target":"../../cloudy-t-infra"},{"name":"cloudy-u-android","type":"symlink","size":22,"target":"../../cloudy-u-android"},{"name":"cloudy-u-containers","type":"symlink","size":25,"target":"../../cloudy-u-containers"},{"name":"cloudy-u-containers_cgc","type":"symlink","size":29,"target":"../../cloudy-u-containers_cgc"},{"name":"cloudy-u-desktop","type":"symlink","size":22,"target":"../../cloudy-u-desktop"},{"name":"cloudy-u-linux","type":"symlink","size":20,"target":"../../cloudy-u-linux"}]},
         {"name":"1.2.Cloud-me","type":"dir","children":[{"name":"Pub","type":"dir","children":[{"name":"Profiles","type":"dir","children":[]},{"name":"cloud-me-pub-___","type":"symlink","size":25,"target":"../../../cloud-me-pub-___"},{"name":"cloud-me-pub-shared","type":"symlink","size":28,"target":"../../../cloud-me-pub-shared"}]},{"name":"Pvt","type":"dir","children":[{"name":"cloud-me-pvt-___","type":"symlink","size":25,"target":"../../../cloud-me-pvt-___"},{"name":"cloud-me-pvt-cgc","type":"symlink","size":25,"target":"../../../cloud-me-pvt-cgc"},{"name":"cloud-me-pvt-configs","type":"symlink","size":29,"target":"../../../cloud-me-pvt-configs"},{"name":"cloud-me-pvt-containers","type":"symlink","size":32,"target":"../../../cloud-me-pvt-containers"},{"name":"cloud-me-pvt-data","type":"symlink","size":26,"target":"../../../cloud-me-pvt-data"},{"name":"cloud-me-pvt-my-ai","type":"symlink","size":27,"target":"../../../cloud-me-pvt-my-ai"},{"name":"cloud-me-pvt-notes","type":"symlink","size":27,"target":"../../../cloud-me-pvt-notes"},{"name":"cloud-me-pvt-vault","type":"symlink","size":27,"target":"../../../cloud-me-pvt-vault"}]},{"name":"cloud-me-___","type":"symlink","size":18,"target":"../../cloud-me-___"}]},
         {"name":"2.CG","type":"dir","children":[{"name":"CG-___","type":"symlink","size":12,"target":"../../CG-___"},{"name":"CG-circus","type":"symlink","size":15,"target":"../../CG-circus"},{"name":"CG-galaxy","type":"symlink","size":15,"target":"../../CG-galaxy"},{"name":"CG-galaxy-gaia","type":"symlink","size":20,"target":"../../CG-galaxy-gaia"},{"name":"CG-unity","type":"symlink","size":14,"target":"../../CG-unity"},{"name":"CG-voxel-rust","type":"symlink","size":19,"target":"../../CG-voxel-rust"}]},
         {"name":"3.Capital","type":"dir","children":[{"name":"Capital-Markets","type":"dir","children":[{"name":"Capital-Stack-Fin-Terminal","type":"symlink","size":22,"target":"../../../Capital-Stack-Fin-Terminal"},{"name":"Capital-Macro-Central-Bank","type":"symlink","size":20,"target":"../../../Capital-Macro-Central-Bank"}]},{"name":"Corporate","type":"dir","children":[{"name":"Capital-Micro-Asset-Management","type":"symlink","size":22,"target":"../../../Capital-Micro-Asset-Management"}]},{"name":"Capital-___","type":"symlink","size":13,"target":"../../Capital-___"}]},
@@ -130,10 +130,10 @@
                 {"name":"2_sops","type":"dir","children":[{"name":"README.md","type":"file","size":2120}]},
                 {"name":"2_vault","type":"dir","children":[{"name":"cloud-me-pvt-vault","type":"symlink","size":24,"target":"../../cloud-me-pvt-vault"}]},
                 {"name":"9_others","type":"dir","children":[{"name":"src","type":"dir","children":[{"name":"deploy-dotfiles.sh","type":"file","size":11793}]},{"name":"build.sh","type":"file","size":7552}]},
-                {"name":"a_cloud","type":"dir","children":[{"name":"cloud-me-___","type":"symlink","size":18,"target":"../../cloud-me-___"},{"name":"cloud-me-pub-___","type":"symlink","size":22,"target":"../../cloud-me-pub-___"},{"name":"cloud-me-pvt-___","type":"symlink","size":22,"target":"../../cloud-me-pvt-___"},{"name":"cloud-me-pvt-cgc","type":"symlink","size":22,"target":"../../cloud-me-pvt-cgc"},{"name":"cloud-me-pvt-configs","type":"symlink","size":26,"target":"../../cloud-me-pvt-configs"},{"name":"cloud-me-pvt-containers","type":"symlink","size":29,"target":"../../cloud-me-pvt-containers"},{"name":"cloud-me-pvt-data","type":"symlink","size":23,"target":"../../cloud-me-pvt-data"},{"name":"cloud-me-pvt-my-ai","type":"symlink","size":24,"target":"../../cloud-me-pvt-my-ai"},{"name":"cloud-me-pvt-notes","type":"symlink","size":24,"target":"../../cloud-me-pvt-notes"},{"name":"cloudy_db_infra-ops-obsv_configs-sync","type":"symlink","size":43,"target":"../../cloudy_db_infra-ops-obsv_configs-sync"},{"name":"cloudy_db_LFS","type":"symlink","size":19,"target":"../../cloudy_db_LFS"},{"name":"cloudy-___","type":"symlink","size":16,"target":"../../cloudy-___"},{"name":"cloudy-a-docs","type":"symlink","size":19,"target":"../../cloudy-a-docs"},{"name":"cloudy-h-webapps","type":"symlink","size":22,"target":"../../cloudy-h-webapps"},{"name":"cloudy-t-infra","type":"symlink","size":20,"target":"../../cloudy-t-infra"},{"name":"cloudy-u-android","type":"symlink","size":22,"target":"../../cloudy-u-android"},{"name":"cloudy-u-containers","type":"symlink","size":25,"target":"../../cloudy-u-containers"},{"name":"cloudy-u-containers_cgc","type":"symlink","size":29,"target":"../../cloudy-u-containers_cgc"},{"name":"cloudy-u-desktop","type":"symlink","size":22,"target":"../../cloudy-u-desktop"},{"name":"cloudy-u-linux","type":"symlink","size":20,"target":"../../cloudy-u-linux"},{"name":"z-archived_cloud-me-pub-data","type":"symlink","size":34,"target":"../../z-archived_cloud-me-pub-data"},{"name":"z-archived_cloud-me-pvt-data-private","type":"symlink","size":42,"target":"../../z-archived_cloud-me-pvt-data-private"},{"name":"z-archived_cloud-me-pvt-legacy","type":"symlink","size":36,"target":"../../z-archived_cloud-me-pvt-legacy"}]},
+                {"name":"a_cloud","type":"dir","children":[{"name":"cloud-me-___","type":"symlink","size":18,"target":"../../cloud-me-___"},{"name":"cloud-me-pub-___","type":"symlink","size":22,"target":"../../cloud-me-pub-___"},{"name":"cloud-me-pvt-___","type":"symlink","size":22,"target":"../../cloud-me-pvt-___"},{"name":"cloud-me-pvt-cgc","type":"symlink","size":22,"target":"../../cloud-me-pvt-cgc"},{"name":"cloud-me-pvt-configs","type":"symlink","size":26,"target":"../../cloud-me-pvt-configs"},{"name":"cloud-me-pvt-containers","type":"symlink","size":29,"target":"../../cloud-me-pvt-containers"},{"name":"cloud-me-pvt-data","type":"symlink","size":23,"target":"../../cloud-me-pvt-data"},{"name":"cloud-me-pvt-my-ai","type":"symlink","size":24,"target":"../../cloud-me-pvt-my-ai"},{"name":"cloud-me-pvt-notes","type":"symlink","size":24,"target":"../../cloud-me-pvt-notes"},{"name":"cloudy_db_infra-ops-obsv_configs-sync","type":"symlink","size":43,"target":"../../cloudy_db_infra-ops-obsv_configs-sync"},{"name":"cloudy_db_LFS","type":"symlink","size":19,"target":"../../cloudy_db_LFS"},{"name":"cloudy-___","type":"symlink","size":16,"target":"../../cloudy-___"},{"name":"cloudy-a-docs","type":"symlink","size":19,"target":"../../cloudy-a-docs"},{"name":"cloudy-h-webapps-mob","type":"symlink","size":26,"target":"../../cloudy-h-webapps-mob"},{"name":"cloudy-t-infra","type":"symlink","size":20,"target":"../../cloudy-t-infra"},{"name":"cloudy-u-android","type":"symlink","size":22,"target":"../../cloudy-u-android"},{"name":"cloudy-u-containers","type":"symlink","size":25,"target":"../../cloudy-u-containers"},{"name":"cloudy-u-containers_cgc","type":"symlink","size":29,"target":"../../cloudy-u-containers_cgc"},{"name":"cloudy-u-desktop","type":"symlink","size":22,"target":"../../cloudy-u-desktop"},{"name":"cloudy-u-linux","type":"symlink","size":20,"target":"../../cloudy-u-linux"},{"name":"z-archived_cloud-me-pub-data","type":"symlink","size":34,"target":"../../z-archived_cloud-me-pub-data"},{"name":"z-archived_cloud-me-pvt-data-private","type":"symlink","size":42,"target":"../../z-archived_cloud-me-pvt-data-private"},{"name":"z-archived_cloud-me-pvt-legacy","type":"symlink","size":36,"target":"../../z-archived_cloud-me-pvt-legacy"}]},
                 {"name":"a0_docs","type":"dir","children":[{"name":"README.md","type":"file","size":4701}]},
                 {"name":"a0_tasks","type":"dir","children":[{"name":"README.md","type":"file","size":365}]},
-                {"name":"b_projects","type":"dir","children":[{"name":"cloud-me-pub-profiles-___","type":"symlink","size":31,"target":"../../cloud-me-pub-profiles-___"},{"name":"cloud-me-pub-profiles-_lnktree","type":"symlink","size":36,"target":"../../cloud-me-pub-profiles-_lnktree"},{"name":"cloud-me-pub-profiles-leaf.y","type":"symlink","size":34,"target":"../../cloud-me-pub-profiles-leaf.y"},{"name":"cloud-me-pub-profiles-nexus.z","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-nexus.z"},{"name":"cloud-me-pub-profiles-prf-prs","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-prf-prs"},{"name":"cloud-me-pub-profiles-stark.x","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-stark.x"},{"name":"cloud-me-pub-shared","type":"symlink","size":25,"target":"../../cloud-me-pub-shared"},{"name":"cloudy_db_assets-cdn","type":"symlink","size":26,"target":"../../cloudy_db_assets-cdn"},{"name":"cloudy-h-webapps-2","type":"symlink","size":24,"target":"../../cloudy-h-webapps-2"}]},
+                {"name":"b_projects","type":"dir","children":[{"name":"cloud-me-pub-profiles-___","type":"symlink","size":31,"target":"../../cloud-me-pub-profiles-___"},{"name":"cloud-me-pub-profiles-_lnktree","type":"symlink","size":36,"target":"../../cloud-me-pub-profiles-_lnktree"},{"name":"cloud-me-pub-profiles-leaf.y","type":"symlink","size":34,"target":"../../cloud-me-pub-profiles-leaf.y"},{"name":"cloud-me-pub-profiles-nexus.z","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-nexus.z"},{"name":"cloud-me-pub-profiles-prf-prs","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-prf-prs"},{"name":"cloud-me-pub-profiles-stark.x","type":"symlink","size":35,"target":"../../cloud-me-pub-profiles-stark.x"},{"name":"cloud-me-pub-shared","type":"symlink","size":25,"target":"../../cloud-me-pub-shared"},{"name":"cloudy_db_assets-cdn","type":"symlink","size":26,"target":"../../cloudy_db_assets-cdn"},{"name":"cloudy-h-webapps-desk","type":"symlink","size":27,"target":"../../cloudy-h-webapps-desk"}]},
                 {"name":".gitattributes","type":"file","size":1067},
                 {"name":".gitignore","type":"file","size":3788},
                 {"name":".gitmodules","type":"file","size":131},
@@ -243,7 +243,7 @@
                       {"name":".mcp.json","type":"file","size":1160},
                       {"name":".sops.yaml","type":"file","size":681},
                       {"name":"aa_cloud-superapp-mcp","type":"symlink","size":55,"target":"../cloud-infra/a_solutions/infra-api_cloud-superapp-mcp"},
-                      {"name":"aa_cloud-superapp-web","type":"symlink","size":44,"target":"../cloudy-h-webapps-2/a_Portals/cloud-superapp"},
+                      {"name":"aa_cloud-superapp-web","type":"symlink","size":49,"target":"../cloudy-h-webapps-desk/a_Portals/cloud-superapp"},
                       {"name":"aa_cloud-terminal-flakes","type":"symlink","size":39,"target":"../cloud-infra-desktop/bb_flakes_termux"},
                       {"name":"build.sh","type":"file","size":5738},
                       {"name":"CLAUDE.md","type":"file","size":315},
@@ -745,14 +745,15 @@
                 {
                   "code": "1.1.4.1",
                   "kind": "repo",
-                  "name": "cloudy-h-webapps",
-                  "label": "cloudy-h-webapps",
+                  "name": "cloudy-h-webapps-mob",
+                  "label": "cloudy-h-webapps-mob",
                   "visibility": "public",
                   "description": "Cloud web apps: the SuperApp + fleet mimic (/cloud-webapps/) and the C3 console (/cloudy-c3/), one SvelteKit workspace",
                   "group": "a_cloud",
                   "renamed_from": [
                     "cloud-webapps",
-                    "cloud-h-webapps"
+                    "cloud-h-webapps",
+                    "cloudy-h-webapps"
                   ],
                   "doc": "The Cloud web apps (#1320): one npm workspace with @cloudy/ui (tokens, icons and nav GENERATED from cloudy-u-android), @cloudy/c3-data, and two SvelteKit static sites: cloudy-webapps at /cloud-webapps/ (the SuperApp shell and every fleet app, embedded by the APK with ?embed=1) and cloudy-c3 at /cloudy-c3/ (the Cloud C3 console; the old /cloud/ portal redirects there). Also the 89 service fallback pages at /cloud-webapps/<slug>/. Created 2026-10-21 out of front-diegonmarcos (c__Cloud).",
                   "tree": {
@@ -899,15 +900,16 @@
                 {
                   "code": "1.1.4.2",
                   "kind": "repo",
-                  "name": "cloudy-h-webapps-2",
-                  "label": "cloudy-h-webapps-2",
+                  "name": "cloudy-h-webapps-desk",
+                  "label": "cloudy-h-webapps-desk",
                   "visibility": "public",
-                  "description": "Front group c_Suite (split from front-projects, #1072)",
+                  "description": "Cloud web apps, desktop: the cloudy-webdesktop site at /cloud-desktop/, plus the c_Suite sources (split from front-projects, #1072)",
                   "group": "b_projects",
                   "renamed_from": [
                     "front-suite",
                     "cloud-webapps-2",
-                    "cloud-h-webapps-2"
+                    "cloud-h-webapps-2",
+                    "cloudy-h-webapps-2"
                   ],
                   "doc": "Sources of the c_Suite group (now also movies, music, myfeed, #1204; and the portals a_Portals/{cloud,cloud-superapp,cloud-web}, #1319), split from front-projects (#1072); snapshot copy, paths mirror the original layout.",
                   "tree": {
@@ -1735,7 +1737,7 @@
                   "renamed_from": [
                     "front-circus"
                   ],
-                  "doc": "Sources of the c_Circus group (movies, music, myfeed moved to cloudy-h-webapps-2 #1204; myAstro moved to cloud-me-pub-profiles-prf-prs #1218), split from front-projects (#1072); snapshot copy, paths mirror the original layout.",
+                  "doc": "Sources of the c_Circus group (movies, music, myfeed moved to cloudy-h-webapps-desk #1204; myAstro moved to cloud-me-pub-profiles-prf-prs #1218), split from front-projects (#1072); snapshot copy, paths mirror the original layout.",
                   "apps": [
                     {
                       "name": "Game-Production",
@@ -2935,10 +2937,10 @@
                     },
                     {
                       "name": "a_Portals",
-                      "path": "cloudy-h-webapps-2",
+                      "path": "cloudy-h-webapps-desk",
                       "status": "split",
                       "ticket": "#1319",
-                      "doc": "Moved 2026-10-30 (cloud, cloud-superapp, cloud-web) into cloudy-h-webapps-2 with history; the Pages workflow overlays it. Linktree went earlier (#1217)."
+                      "doc": "Moved 2026-10-30 (cloud, cloud-superapp, cloud-web) into cloudy-h-webapps-desk with history; the Pages workflow overlays it. Linktree went earlier (#1217)."
                     },
                     {
                       "name": "a_Individual",
@@ -3033,7 +3035,7 @@
                     },
                     {
                       "name": "c_Suite",
-                      "path": "cloudy-h-webapps-2",
+                      "path": "cloudy-h-webapps-desk",
                       "status": "split",
                       "ticket": "#1072",
                       "doc": "Split out 2026-10-24 from front-projects into cloud-webapps-2; the Pages workflow overlays it."
@@ -3587,6 +3589,22 @@
         "since": "2026-10-30",
         "ticket": "#1323",
         "doc": "Content merged into cloud-me-pvt-configs Linux-Containers/ (#1310); archived. The old name keeps working through the GitHub redirect."
+      },
+      {
+        "from": "cloudy-h-webapps",
+        "to": "cloudy-h-webapps-mob",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1327",
+        "doc": "GitHub repo renamed: the mobile/tablet web repo (cloudy-webapps at /cloud-webapps/ and cloudy-c3 at /cloudy-c3/). Published Pages paths unchanged."
+      },
+      {
+        "from": "cloudy-h-webapps-2",
+        "to": "cloudy-h-webapps-desk",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1327",
+        "doc": "GitHub repo renamed: the desktop web repo (cloudy-webdesktop at /cloud-desktop/). Published Pages paths unchanged."
       },
       {
         "from": "My-ai-memory",
@@ -4311,27 +4329,27 @@
       },
       {
         "from": "front-diegonmarcos a_Portals/cloud",
-        "to": "cloudy-h-webapps-2 a_Portals/cloud",
+        "to": "cloudy-h-webapps-desk a_Portals/cloud",
         "kind": "app-folder",
         "since": "2026-10-30",
         "ticket": "#1319",
-        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud/ unchanged."
+        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-desk; the Pages workflow overlays it at the same path. Published URL /cloud/ unchanged."
       },
       {
         "from": "front-diegonmarcos a_Portals/cloud-superapp",
-        "to": "cloudy-h-webapps-2 a_Portals/cloud-superapp",
+        "to": "cloudy-h-webapps-desk a_Portals/cloud-superapp",
         "kind": "app-folder",
         "since": "2026-10-30",
         "ticket": "#1319",
-        "doc": "Portal folder (formerly cloud-mobile, #1073) moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud-superapp/ (and /cloud-mobile/ redirect) unchanged."
+        "doc": "Portal folder (formerly cloud-mobile, #1073) moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-desk; the Pages workflow overlays it at the same path. Published URL /cloud-superapp/ (and /cloud-mobile/ redirect) unchanged."
       },
       {
         "from": "front-diegonmarcos a_Portals/cloud-web",
-        "to": "cloudy-h-webapps-2 a_Portals/cloud-web",
+        "to": "cloudy-h-webapps-desk a_Portals/cloud-web",
         "kind": "app-folder",
         "since": "2026-10-30",
         "ticket": "#1319",
-        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-2; the Pages workflow overlays it at the same path. Published URL /cloud-web/ unchanged."
+        "doc": "Portal folder moved with history from diegonmarcos.github.io (front-diegonmarcos) into cloudy-h-webapps-desk; the Pages workflow overlays it at the same path. Published URL /cloud-web/ unchanged."
       },
       {
         "from": "ffront",

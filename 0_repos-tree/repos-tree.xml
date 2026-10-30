@@ -8,8 +8,8 @@
         <repo name="cloudy_db_infra-ops-obsv_configs-sync" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync"/>
         <repo name="cloudy_db_LFS" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy_db_LFS"/>
         <repo name="cloudy-a-docs" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="private" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-a-docs"/>
-        <repo name="cloudy-h-webapps" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps"/>
-        <repo name="cloudy-h-webapps-2" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps-2"/>
+        <repo name="cloudy-h-webapps-desk" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps-desk"/>
+        <repo name="cloudy-h-webapps-mob" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="WebApps" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-h-webapps-mob"/>
         <repo name="cloudy-t-infra" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="C3" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-t-infra"/>
         <repo name="cloudy-u-android" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Android" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-android"/>
         <repo name="cloudy-u-containers" farm="1.1.Cloudy" project="Cloudy" field="Unix" family="Linux" visibility="public" developer="Leaf.y" url="https://github.com/diegonmarcos/cloudy-u-containers"/>

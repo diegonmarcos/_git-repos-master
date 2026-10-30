@@ -24,8 +24,8 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[cloudy_db_infra-ops-obsv_configs-sync]] · 🌐 public · Cloudy
       - [[cloudy_db_LFS]] · 🔒 private · Cloudy
       - [[cloudy-a-docs]] · 🔒 private · Cloudy
-      - [[cloudy-h-webapps]] · 🌐 public · Cloudy
-      - [[cloudy-h-webapps-2]] · 🌐 public · Cloudy
+      - [[cloudy-h-webapps-desk]] · 🌐 public · Cloudy
+      - [[cloudy-h-webapps-mob]] · 🌐 public · Cloudy
       - [[cloudy-t-infra]] · 🌐 public · Cloudy
       - [[cloudy-u-android]] · 🌐 public · Cloudy
       - [[cloudy-u-containers]] · 🌐 public · Cloudy
@@ -119,8 +119,8 @@ graph LR
   n_cloudy_db_infra_ops_obsv_configs_sync["cloudy_db_infra-ops-obsv_configs-sync"]
   n_cloudy_db_LFS["cloudy_db_LFS"]
   n_cloudy_a_docs["cloudy-a-docs"]
-  n_cloudy_h_webapps["cloudy-h-webapps"]
-  n_cloudy_h_webapps_2["cloudy-h-webapps-2"]
+  n_cloudy_h_webapps_desk["cloudy-h-webapps-desk"]
+  n_cloudy_h_webapps_mob["cloudy-h-webapps-mob"]
   n_cloudy_t_infra["cloudy-t-infra"]
   n_cloudy_u_android["cloudy-u-android"]
   n_cloudy_u_containers["cloudy-u-containers"]
@@ -208,8 +208,8 @@ graph LR
   n_cloudy____ --> n_cloudy_db_infra_ops_obsv_configs_sync
   n_cloudy____ --> n_cloudy_db_LFS
   n_cloudy____ --> n_cloudy_a_docs
-  n_cloudy____ --> n_cloudy_h_webapps
-  n_cloudy____ --> n_cloudy_h_webapps_2
+  n_cloudy____ --> n_cloudy_h_webapps_desk
+  n_cloudy____ --> n_cloudy_h_webapps_mob
   n_cloudy____ --> n_cloudy_t_infra
   n_cloudy____ --> n_cloudy_u_android
   n_cloudy____ --> n_cloudy_u_containers

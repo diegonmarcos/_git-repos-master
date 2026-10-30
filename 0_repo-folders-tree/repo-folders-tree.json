@@ -327,11 +327,863 @@
         "status": "private"
        },
        {
-        "code": "1.1.4.1",
-        "name": "cloudy-h-webapps",
+        "code": "1.1.4.2",
+        "name": "cloudy-h-webapps-desk",
         "kind": "repo",
         "visibility": "public",
-        "url": "https://github.com/diegonmarcos/cloudy-h-webapps",
+        "url": "https://github.com/diegonmarcos/cloudy-h-webapps-desk",
+        "status": "ok",
+        "source": "github-api",
+        "head": "5fe632f235b9965f1c852296a2442e95e0f82277",
+        "entries": [
+         {
+          "name": "0_hub",
+          "type": "dir",
+          "children": [
+           {
+            "name": "cloudy-___",
+            "type": "submodule"
+           }
+          ]
+         },
+         {
+          "name": "c_Suite",
+          "type": "dir",
+          "children": [
+           {
+            "name": "grist",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 451
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "json-vision",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "jsons",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".eslintrc.json",
+              "type": "file",
+              "size": 40
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 268
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 196
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 63406
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 626
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 14932
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 648
+             },
+             {
+              "name": "tsconfig.node.json",
+              "type": "file",
+              "size": 233
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 493
+             }
+            ]
+           },
+           {
+            "name": "movies",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "scripts",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "tests",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".build.pid",
+              "type": "file",
+              "size": 84
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 294
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 72528
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 659
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 648
+             },
+             {
+              "name": "tsconfig.node.json",
+              "type": "file",
+              "size": 233
+             },
+             {
+              "name": "tsconfig.node.tsbuildinfo",
+              "type": "file",
+              "size": 58808
+             },
+             {
+              "name": "tsconfig.tsbuildinfo",
+              "type": "file",
+              "size": 310
+             },
+             {
+              "name": "vite.config.d.ts",
+              "type": "file",
+              "size": 76
+             },
+             {
+              "name": "vite.config.js",
+              "type": "file",
+              "size": 559
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 488
+             }
+            ]
+           },
+           {
+            "name": "music",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 190
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 72526
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 576
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 661
+             },
+             {
+              "name": "tsconfig.node.json",
+              "type": "file",
+              "size": 213
+             },
+             {
+              "name": "tsconfig.node.tsbuildinfo",
+              "type": "file",
+              "size": 58794
+             },
+             {
+              "name": "tsconfig.tsbuildinfo",
+              "type": "file",
+              "size": 234
+             },
+             {
+              "name": "vite.config.d.ts",
+              "type": "file",
+              "size": 76
+             },
+             {
+              "name": "vite.config.js",
+              "type": "file",
+              "size": 510
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 461
+             }
+            ]
+           },
+           {
+            "name": "myfeed",
+            "type": "dir",
+            "children": [
+             {
+              "name": "0.spec",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".eslintrc.cjs",
+              "type": "file",
+              "size": 424
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 417
+             },
+             {
+              "name": "build.js",
+              "type": "file",
+              "size": 924
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 191
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "components.json",
+              "type": "file",
+              "size": 389
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 446745
+             },
+             {
+              "name": "package-vanilla.json",
+              "type": "file",
+              "size": 938
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 1975
+             },
+             {
+              "name": "postcss.config.js",
+              "type": "file",
+              "size": 69
+             },
+             {
+              "name": "README.md",
+              "type": "file",
+              "size": 6641
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "tailwind.config.js",
+              "type": "file",
+              "size": 2231
+             },
+             {
+              "name": "tsconfig-vanilla.json",
+              "type": "file",
+              "size": 348
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 845
+             },
+             {
+              "name": "tsconfig.node.json",
+              "type": "file",
+              "size": 213
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 1868
+             },
+             {
+              "name": "vite.config.ts.timestamp-1764245914191-4491ecda3a9a5.mjs",
+              "type": "file",
+              "size": 7074
+             }
+            ]
+           },
+           {
+            "name": "myhealth-feedyourself",
+            "type": "dir",
+            "children": [
+             {
+              "name": "0.spec",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 3902
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 30267
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 1062
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "mymail",
+            "type": "dir",
+            "children": [
+             {
+              "name": "1.ops",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 1892
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "mymaps",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 2354
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "mymaps-maps",
+            "type": "dir",
+            "children": [
+             {
+              "name": ".github",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".svelte-kit",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "0.spec",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "public",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "static",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 212
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 73952
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 839
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 702
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 305
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 144
+             }
+            ]
+           },
+           {
+            "name": "mymaps-navigation",
+            "type": "dir",
+            "children": [
+             {
+              "name": ".svelte-kit",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "0.spec",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "static",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "_app",
+              "type": "symlink",
+              "size": 9,
+              "target": "dist/_app"
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 218
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "favicon.svg",
+              "type": "symlink",
+              "size": 16,
+              "target": "dist/favicon.svg"
+             },
+             {
+              "name": "package-lock.md",
+              "type": "file",
+              "size": 118279
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 999
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "svelte.config.js",
+              "type": "file",
+              "size": 483
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 305
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 323
+             }
+            ]
+           },
+           {
+            "name": "suite",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 2353
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             }
+            ]
+           },
+           {
+            "name": "tldraw",
+            "type": "dir",
+            "children": [
+             {
+              "name": "dist",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": "src",
+              "type": "dir",
+              "children": []
+             },
+             {
+              "name": ".gitignore",
+              "type": "file",
+              "size": 268
+             },
+             {
+              "name": "build.json",
+              "type": "file",
+              "size": 193
+             },
+             {
+              "name": "build.sh",
+              "type": "symlink",
+              "size": 35,
+              "target": "../../1_cicd/src/scripts/_engine.sh"
+             },
+             {
+              "name": "package.json",
+              "type": "file",
+              "size": 623
+             },
+             {
+              "name": "ship.yml",
+              "type": "symlink",
+              "size": 32,
+              "target": "../../.github/workflows/ship.yml"
+             },
+             {
+              "name": "tsconfig.json",
+              "type": "file",
+              "size": 539
+             },
+             {
+              "name": "vite.config.ts",
+              "type": "file",
+              "size": 310
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": ".github",
+          "type": "symlink",
+          "size": 18,
+          "target": "0_deployer/.github"
+         },
+         {
+          "name": ".gitmodules",
+          "type": "file",
+          "size": 250
+         },
+         {
+          "name": "0_deployer",
+          "type": "submodule"
+         },
+         {
+          "name": "1_cicd",
+          "type": "symlink",
+          "size": 17,
+          "target": "0_deployer/1_cicd"
+         },
+         {
+          "name": "README.md",
+          "type": "file",
+          "size": 521
+         },
+         {
+          "name": "SPLIT-PATHS.txt",
+          "type": "file",
+          "size": 213
+         }
+        ]
+       },
+       {
+        "code": "1.1.4.1",
+        "name": "cloudy-h-webapps-mob",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/cloudy-h-webapps-mob",
         "status": "ok",
         "source": "github-api",
         "head": "5a311f120d60c2e303ef37ca7919ae85be143a96",
@@ -4211,858 +5063,6 @@
           "name": "README.md",
           "type": "file",
           "size": 596
-         }
-        ]
-       },
-       {
-        "code": "1.1.4.2",
-        "name": "cloudy-h-webapps-2",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/cloudy-h-webapps-2",
-        "status": "ok",
-        "source": "github-api",
-        "head": "5fe632f235b9965f1c852296a2442e95e0f82277",
-        "entries": [
-         {
-          "name": "0_hub",
-          "type": "dir",
-          "children": [
-           {
-            "name": "cloudy-___",
-            "type": "submodule"
-           }
-          ]
-         },
-         {
-          "name": "c_Suite",
-          "type": "dir",
-          "children": [
-           {
-            "name": "grist",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 451
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "json-vision",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "jsons",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".eslintrc.json",
-              "type": "file",
-              "size": 40
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 268
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 196
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 63406
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 626
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 14932
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 648
-             },
-             {
-              "name": "tsconfig.node.json",
-              "type": "file",
-              "size": 233
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 493
-             }
-            ]
-           },
-           {
-            "name": "movies",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "scripts",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "tests",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".build.pid",
-              "type": "file",
-              "size": 84
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 294
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 72528
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 659
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 648
-             },
-             {
-              "name": "tsconfig.node.json",
-              "type": "file",
-              "size": 233
-             },
-             {
-              "name": "tsconfig.node.tsbuildinfo",
-              "type": "file",
-              "size": 58808
-             },
-             {
-              "name": "tsconfig.tsbuildinfo",
-              "type": "file",
-              "size": 310
-             },
-             {
-              "name": "vite.config.d.ts",
-              "type": "file",
-              "size": 76
-             },
-             {
-              "name": "vite.config.js",
-              "type": "file",
-              "size": 559
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 488
-             }
-            ]
-           },
-           {
-            "name": "music",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 190
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 72526
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 576
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 661
-             },
-             {
-              "name": "tsconfig.node.json",
-              "type": "file",
-              "size": 213
-             },
-             {
-              "name": "tsconfig.node.tsbuildinfo",
-              "type": "file",
-              "size": 58794
-             },
-             {
-              "name": "tsconfig.tsbuildinfo",
-              "type": "file",
-              "size": 234
-             },
-             {
-              "name": "vite.config.d.ts",
-              "type": "file",
-              "size": 76
-             },
-             {
-              "name": "vite.config.js",
-              "type": "file",
-              "size": 510
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 461
-             }
-            ]
-           },
-           {
-            "name": "myfeed",
-            "type": "dir",
-            "children": [
-             {
-              "name": "0.spec",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".eslintrc.cjs",
-              "type": "file",
-              "size": 424
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 417
-             },
-             {
-              "name": "build.js",
-              "type": "file",
-              "size": 924
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 191
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "components.json",
-              "type": "file",
-              "size": 389
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 446745
-             },
-             {
-              "name": "package-vanilla.json",
-              "type": "file",
-              "size": 938
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 1975
-             },
-             {
-              "name": "postcss.config.js",
-              "type": "file",
-              "size": 69
-             },
-             {
-              "name": "README.md",
-              "type": "file",
-              "size": 6641
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "tailwind.config.js",
-              "type": "file",
-              "size": 2231
-             },
-             {
-              "name": "tsconfig-vanilla.json",
-              "type": "file",
-              "size": 348
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 845
-             },
-             {
-              "name": "tsconfig.node.json",
-              "type": "file",
-              "size": 213
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 1868
-             },
-             {
-              "name": "vite.config.ts.timestamp-1764245914191-4491ecda3a9a5.mjs",
-              "type": "file",
-              "size": 7074
-             }
-            ]
-           },
-           {
-            "name": "myhealth-feedyourself",
-            "type": "dir",
-            "children": [
-             {
-              "name": "0.spec",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 3902
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 30267
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 1062
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "mymail",
-            "type": "dir",
-            "children": [
-             {
-              "name": "1.ops",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 1892
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "mymaps",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 2354
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "mymaps-maps",
-            "type": "dir",
-            "children": [
-             {
-              "name": ".github",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".svelte-kit",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "0.spec",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "public",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "static",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 212
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 73952
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 839
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 702
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 305
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 144
-             }
-            ]
-           },
-           {
-            "name": "mymaps-navigation",
-            "type": "dir",
-            "children": [
-             {
-              "name": ".svelte-kit",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "0.spec",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "static",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "_app",
-              "type": "symlink",
-              "size": 9,
-              "target": "dist/_app"
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 218
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "favicon.svg",
-              "type": "symlink",
-              "size": 16,
-              "target": "dist/favicon.svg"
-             },
-             {
-              "name": "package-lock.md",
-              "type": "file",
-              "size": 118279
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 999
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "svelte.config.js",
-              "type": "file",
-              "size": 483
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 305
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 323
-             }
-            ]
-           },
-           {
-            "name": "suite",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 2353
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             }
-            ]
-           },
-           {
-            "name": "tldraw",
-            "type": "dir",
-            "children": [
-             {
-              "name": "dist",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": "src",
-              "type": "dir",
-              "children": []
-             },
-             {
-              "name": ".gitignore",
-              "type": "file",
-              "size": 268
-             },
-             {
-              "name": "build.json",
-              "type": "file",
-              "size": 193
-             },
-             {
-              "name": "build.sh",
-              "type": "symlink",
-              "size": 35,
-              "target": "../../1_cicd/src/scripts/_engine.sh"
-             },
-             {
-              "name": "package.json",
-              "type": "file",
-              "size": 623
-             },
-             {
-              "name": "ship.yml",
-              "type": "symlink",
-              "size": 32,
-              "target": "../../.github/workflows/ship.yml"
-             },
-             {
-              "name": "tsconfig.json",
-              "type": "file",
-              "size": 539
-             },
-             {
-              "name": "vite.config.ts",
-              "type": "file",
-              "size": 310
-             }
-            ]
-           }
-          ]
-         },
-         {
-          "name": ".github",
-          "type": "symlink",
-          "size": 18,
-          "target": "0_deployer/.github"
-         },
-         {
-          "name": ".gitmodules",
-          "type": "file",
-          "size": 250
-         },
-         {
-          "name": "0_deployer",
-          "type": "submodule"
-         },
-         {
-          "name": "1_cicd",
-          "type": "symlink",
-          "size": 17,
-          "target": "0_deployer/1_cicd"
-         },
-         {
-          "name": "README.md",
-          "type": "file",
-          "size": 521
-         },
-         {
-          "name": "SPLIT-PATHS.txt",
-          "type": "file",
-          "size": 213
          }
         ]
        },
@@ -23665,8 +23665,8 @@
          {
           "name": "aa_cloud-superapp-web",
           "type": "symlink",
-          "size": 44,
-          "target": "../cloudy-h-webapps-2/a_Portals/cloud-superapp"
+          "size": 49,
+          "target": "../cloudy-h-webapps-desk/a_Portals/cloud-superapp"
          },
          {
           "name": "aa_cloud-terminal-flakes",
@@ -42415,10 +42415,10 @@
           "target": "../../cloudy-a-docs"
          },
          {
-          "name": "cloudy-h-webapps",
+          "name": "cloudy-h-webapps-mob",
           "type": "symlink",
-          "size": 22,
-          "target": "../../cloudy-h-webapps"
+          "size": 26,
+          "target": "../../cloudy-h-webapps-mob"
          },
          {
           "name": "cloudy-t-infra",
@@ -42551,10 +42551,10 @@
           "target": "../../cloudy_db_assets-cdn"
          },
          {
-          "name": "cloudy-h-webapps-2",
+          "name": "cloudy-h-webapps-desk",
           "type": "symlink",
-          "size": 24,
-          "target": "../../cloudy-h-webapps-2"
+          "size": 27,
+          "target": "../../cloudy-h-webapps-desk"
          }
         ]
        },
@@ -61396,16 +61396,16 @@
       "target": "../../cloudy-a-docs"
      },
      {
-      "name": "cloudy-h-webapps",
+      "name": "cloudy-h-webapps-mob",
       "type": "symlink",
-      "size": 22,
-      "target": "../../cloudy-h-webapps"
+      "size": 26,
+      "target": "../../cloudy-h-webapps-mob"
      },
      {
-      "name": "cloudy-h-webapps-2",
+      "name": "cloudy-h-webapps-desk",
       "type": "symlink",
-      "size": 24,
-      "target": "../../cloudy-h-webapps-2"
+      "size": 27,
+      "target": "../../cloudy-h-webapps-desk"
      },
      {
       "name": "cloudy-t-infra",

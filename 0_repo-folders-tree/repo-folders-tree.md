@@ -77,7 +77,168 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `README.md` · 595 B
       - **[cloudy_db_LFS](https://github.com/diegonmarcos/cloudy_db_LFS)** · 🔒 private
       - **[cloudy-a-docs](https://github.com/diegonmarcos/cloudy-a-docs)** · 🔒 private
-      - **[cloudy-h-webapps](https://github.com/diegonmarcos/cloudy-h-webapps)** · 🌐 public
+      - **[cloudy-h-webapps-desk](https://github.com/diegonmarcos/cloudy-h-webapps-desk)** · 🌐 public
+        - 📁 `0_hub`
+          - 📦 `cloudy-___` (submodule)
+        - 📁 `c_Suite`
+          - 📁 `grist`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 451 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `json-vision`
+            - 📁 `dist`
+            - 📁 `jsons`
+            - 📁 `public`
+            - 📁 `src`
+            - `.eslintrc.json` · 40 B
+            - `.gitignore` · 268 B
+            - `build.json` · 196 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 61.9 KiB
+            - `package.json` · 626 B
+            - `README.md` · 14.6 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `tsconfig.json` · 648 B
+            - `tsconfig.node.json` · 233 B
+            - `vite.config.ts` · 493 B
+          - 📁 `movies`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `scripts`
+            - 📁 `src`
+            - 📁 `tests`
+            - `.build.pid` · 84 B
+            - `build.json` · 294 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 70.8 KiB
+            - `package.json` · 659 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `tsconfig.json` · 648 B
+            - `tsconfig.node.json` · 233 B
+            - `tsconfig.node.tsbuildinfo` · 57.4 KiB
+            - `tsconfig.tsbuildinfo` · 310 B
+            - `vite.config.d.ts` · 76 B
+            - `vite.config.js` · 559 B
+            - `vite.config.ts` · 488 B
+          - 📁 `music`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `src`
+            - `build.json` · 190 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 70.8 KiB
+            - `package.json` · 576 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `tsconfig.json` · 661 B
+            - `tsconfig.node.json` · 213 B
+            - `tsconfig.node.tsbuildinfo` · 57.4 KiB
+            - `tsconfig.tsbuildinfo` · 234 B
+            - `vite.config.d.ts` · 76 B
+            - `vite.config.js` · 510 B
+            - `vite.config.ts` · 461 B
+          - 📁 `myfeed`
+            - 📁 `0.spec`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `src`
+            - `.eslintrc.cjs` · 424 B
+            - `.gitignore` · 417 B
+            - `build.js` · 924 B
+            - `build.json` · 191 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `components.json` · 389 B
+            - `package-lock.md` · 436.3 KiB
+            - `package-vanilla.json` · 938 B
+            - `package.json` · 1.9 KiB
+            - `postcss.config.js` · 69 B
+            - `README.md` · 6.5 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `tailwind.config.js` · 2.2 KiB
+            - `tsconfig-vanilla.json` · 348 B
+            - `tsconfig.json` · 845 B
+            - `tsconfig.node.json` · 213 B
+            - `vite.config.ts` · 1.8 KiB
+            - `vite.config.ts.timestamp-1764245914191-4491ecda3a9a5.mjs` · 6.9 KiB
+          - 📁 `myhealth-feedyourself`
+            - 📁 `0.spec`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `src`
+            - `build.json` · 3.8 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 29.6 KiB
+            - `package.json` · 1.0 KiB
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `mymail`
+            - 📁 `1.ops`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 1.8 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `mymaps`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 2.3 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `mymaps-maps`
+            - 📁 `.github`
+            - 📁 `.svelte-kit`
+            - 📁 `0.spec`
+            - 📁 `dist`
+            - 📁 `public`
+            - 📁 `src`
+            - 📁 `static`
+            - `build.json` · 212 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package-lock.md` · 72.2 KiB
+            - `package.json` · 839 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 702 B
+            - `tsconfig.json` · 305 B
+            - `vite.config.ts` · 144 B
+          - 📁 `mymaps-navigation`
+            - 📁 `.svelte-kit`
+            - 📁 `0.spec`
+            - 📁 `dist`
+            - 📁 `src`
+            - 📁 `static`
+            - 🔗 `_app` → `dist/_app` · 9 B
+            - `build.json` · 218 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - 🔗 `favicon.svg` → `dist/favicon.svg` · 16 B
+            - `package-lock.md` · 115.5 KiB
+            - `package.json` · 999 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `svelte.config.js` · 483 B
+            - `tsconfig.json` · 305 B
+            - `vite.config.ts` · 323 B
+          - 📁 `suite`
+            - 📁 `dist`
+            - 📁 `src`
+            - `build.json` · 2.3 KiB
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+          - 📁 `tldraw`
+            - 📁 `dist`
+            - 📁 `src`
+            - `.gitignore` · 268 B
+            - `build.json` · 193 B
+            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
+            - `package.json` · 623 B
+            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
+            - `tsconfig.json` · 539 B
+            - `vite.config.ts` · 310 B
+        - 🔗 `.github` → `0_deployer/.github` · 18 B
+        - `.gitmodules` · 250 B
+        - 📦 `0_deployer` (submodule)
+        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
+        - `README.md` · 521 B
+        - `SPLIT-PATHS.txt` · 213 B
+      - **[cloudy-h-webapps-mob](https://github.com/diegonmarcos/cloudy-h-webapps-mob)** · 🌐 public
         - 📁 `_shared`
           - 📁 `dist`
             - `index.html` · 9.5 KiB
@@ -776,167 +937,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `.gitmodules` · 110 B
         - `CLAUDE.md` · 234 B
         - `README.md` · 596 B
-      - **[cloudy-h-webapps-2](https://github.com/diegonmarcos/cloudy-h-webapps-2)** · 🌐 public
-        - 📁 `0_hub`
-          - 📦 `cloudy-___` (submodule)
-        - 📁 `c_Suite`
-          - 📁 `grist`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 451 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `json-vision`
-            - 📁 `dist`
-            - 📁 `jsons`
-            - 📁 `public`
-            - 📁 `src`
-            - `.eslintrc.json` · 40 B
-            - `.gitignore` · 268 B
-            - `build.json` · 196 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 61.9 KiB
-            - `package.json` · 626 B
-            - `README.md` · 14.6 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `tsconfig.json` · 648 B
-            - `tsconfig.node.json` · 233 B
-            - `vite.config.ts` · 493 B
-          - 📁 `movies`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `scripts`
-            - 📁 `src`
-            - 📁 `tests`
-            - `.build.pid` · 84 B
-            - `build.json` · 294 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 70.8 KiB
-            - `package.json` · 659 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `tsconfig.json` · 648 B
-            - `tsconfig.node.json` · 233 B
-            - `tsconfig.node.tsbuildinfo` · 57.4 KiB
-            - `tsconfig.tsbuildinfo` · 310 B
-            - `vite.config.d.ts` · 76 B
-            - `vite.config.js` · 559 B
-            - `vite.config.ts` · 488 B
-          - 📁 `music`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `src`
-            - `build.json` · 190 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 70.8 KiB
-            - `package.json` · 576 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `tsconfig.json` · 661 B
-            - `tsconfig.node.json` · 213 B
-            - `tsconfig.node.tsbuildinfo` · 57.4 KiB
-            - `tsconfig.tsbuildinfo` · 234 B
-            - `vite.config.d.ts` · 76 B
-            - `vite.config.js` · 510 B
-            - `vite.config.ts` · 461 B
-          - 📁 `myfeed`
-            - 📁 `0.spec`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `src`
-            - `.eslintrc.cjs` · 424 B
-            - `.gitignore` · 417 B
-            - `build.js` · 924 B
-            - `build.json` · 191 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `components.json` · 389 B
-            - `package-lock.md` · 436.3 KiB
-            - `package-vanilla.json` · 938 B
-            - `package.json` · 1.9 KiB
-            - `postcss.config.js` · 69 B
-            - `README.md` · 6.5 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `tailwind.config.js` · 2.2 KiB
-            - `tsconfig-vanilla.json` · 348 B
-            - `tsconfig.json` · 845 B
-            - `tsconfig.node.json` · 213 B
-            - `vite.config.ts` · 1.8 KiB
-            - `vite.config.ts.timestamp-1764245914191-4491ecda3a9a5.mjs` · 6.9 KiB
-          - 📁 `myhealth-feedyourself`
-            - 📁 `0.spec`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `src`
-            - `build.json` · 3.8 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 29.6 KiB
-            - `package.json` · 1.0 KiB
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `mymail`
-            - 📁 `1.ops`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 1.8 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `mymaps`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 2.3 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `mymaps-maps`
-            - 📁 `.github`
-            - 📁 `.svelte-kit`
-            - 📁 `0.spec`
-            - 📁 `dist`
-            - 📁 `public`
-            - 📁 `src`
-            - 📁 `static`
-            - `build.json` · 212 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package-lock.md` · 72.2 KiB
-            - `package.json` · 839 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 702 B
-            - `tsconfig.json` · 305 B
-            - `vite.config.ts` · 144 B
-          - 📁 `mymaps-navigation`
-            - 📁 `.svelte-kit`
-            - 📁 `0.spec`
-            - 📁 `dist`
-            - 📁 `src`
-            - 📁 `static`
-            - 🔗 `_app` → `dist/_app` · 9 B
-            - `build.json` · 218 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - 🔗 `favicon.svg` → `dist/favicon.svg` · 16 B
-            - `package-lock.md` · 115.5 KiB
-            - `package.json` · 999 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `svelte.config.js` · 483 B
-            - `tsconfig.json` · 305 B
-            - `vite.config.ts` · 323 B
-          - 📁 `suite`
-            - 📁 `dist`
-            - 📁 `src`
-            - `build.json` · 2.3 KiB
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-          - 📁 `tldraw`
-            - 📁 `dist`
-            - 📁 `src`
-            - `.gitignore` · 268 B
-            - `build.json` · 193 B
-            - 🔗 `build.sh` → `../../1_cicd/src/scripts/_engine.sh` · 35 B
-            - `package.json` · 623 B
-            - 🔗 `ship.yml` → `../../.github/workflows/ship.yml` · 32 B
-            - `tsconfig.json` · 539 B
-            - `vite.config.ts` · 310 B
-        - 🔗 `.github` → `0_deployer/.github` · 18 B
-        - `.gitmodules` · 250 B
-        - 📦 `0_deployer` (submodule)
-        - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
-        - `README.md` · 521 B
-        - `SPLIT-PATHS.txt` · 213 B
       - **[cloudy-t-infra](https://github.com/diegonmarcos/cloudy-t-infra)** · 🌐 public
         - 📁 `_dotfiles`
           - 📁 `apps`
@@ -4563,7 +4563,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `.mcp.json` · 1.1 KiB
         - `.sops.yaml` · 681 B
         - 🔗 `aa_cloud-superapp-mcp` → `../cloud-infra/a_solutions/infra-api_cloud-superapp-mcp` · 55 B
-        - 🔗 `aa_cloud-superapp-web` → `../cloudy-h-webapps-2/a_Portals/cloud-superapp` · 44 B
+        - 🔗 `aa_cloud-superapp-web` → `../cloudy-h-webapps-desk/a_Portals/cloud-superapp` · 49 B
         - 🔗 `aa_cloud-terminal-flakes` → `../cloud-infra-desktop/bb_flakes_termux` · 39 B
         - `build.sh` · 5.6 KiB
         - `CLAUDE.md` · 315 B

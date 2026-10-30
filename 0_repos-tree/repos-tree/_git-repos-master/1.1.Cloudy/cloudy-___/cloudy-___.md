@@ -32,7 +32,7 @@ Group: [[1.1.Cloudy]]
 
 GitHub: https://github.com/diegonmarcos/cloudy-___
 
-Related (Cloudy): [[cloudy-a-docs]], [[cloudy-h-webapps]], [[cloudy-h-webapps-2]], [[cloudy-t-infra]], [[cloudy-u-android]], [[cloudy-u-containers]], [[cloudy-u-containers_cgc]], [[cloudy-u-desktop]], [[cloudy-u-linux]], [[cloudy_db_LFS]], [[cloudy_db_assets-cdn]], [[cloudy_db_infra-ops-obsv_configs-sync]]
+Related (Cloudy): [[cloudy-a-docs]], [[cloudy-h-webapps-desk]], [[cloudy-h-webapps-mob]], [[cloudy-t-infra]], [[cloudy-u-android]], [[cloudy-u-containers]], [[cloudy-u-containers_cgc]], [[cloudy-u-desktop]], [[cloudy-u-linux]], [[cloudy_db_LFS]], [[cloudy_db_assets-cdn]], [[cloudy_db_infra-ops-obsv_configs-sync]]
 
 ## Children
 
@@ -40,8 +40,8 @@ Related (Cloudy): [[cloudy-a-docs]], [[cloudy-h-webapps]], [[cloudy-h-webapps-2]
 - [[cloudy_db_infra-ops-obsv_configs-sync]]
 - [[cloudy_db_LFS]]
 - [[cloudy-a-docs]]
-- [[cloudy-h-webapps]]
-- [[cloudy-h-webapps-2]]
+- [[cloudy-h-webapps-desk]]
+- [[cloudy-h-webapps-mob]]
 - [[cloudy-t-infra]]
 - [[cloudy-u-android]]
 - [[cloudy-u-containers]]
