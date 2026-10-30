@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // repos-sot.js - the ONE guard for the repo list (#1073, #1295).
 // THE ONE MASTER SOURCE is projects-repos.json (schema projects-repos.schema.json; #1301): hierarchy, repos AND each
-// repo's folder tree. repos.json, repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/* are rendered
+// repo's folder tree. repos.json, repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/* are rendered
 // from it by the one generator gen-registry.js and must never be edited.
 //
 //   node repos-sot.js check                         the master is valid (schema + rules), every rendered file (repos.json,
-//                                                   repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/*,
+//                                                   repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/*,
 //                                                   root symlinks) equals a fresh render BYTE-FOR-BYTE, the
 //                                                   rendered registry is consistent and the committed symlink farm matches it
 //   node repos-sot.js check <repos.json>            only the registry/farm/link checks, on that cloud-repos/v1 file
@@ -300,7 +300,7 @@ if (cmd === 'check') {
   const reg = read(arg || SOT);
   checkRegistry(reg); checkFarms(reg); checkLinks(reg);
   if (!arg) // #1295/#1301 THE ONE MASTER SOURCE: valid against its schema, and EVERY rendered file (repos.json,
-    // repos-github.json, README.md, 0_repos-tree/*, 1_repo-folders-tree/*) equals a fresh render byte-for-byte
+    // repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/*) equals a fresh render byte-for-byte
     require('./gen-registry.js').problems().forEach(bad);
   done('repos.json');
 } else if (cmd === 'check-hubs') {

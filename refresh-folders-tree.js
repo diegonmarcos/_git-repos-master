@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // refresh-folders-tree.js - re-fetches repo folder trees INTO the master projects-repos.json (#1291, #1301).
 // It writes only the `tree` fields of public repo nodes (root, hubs, repos) and nothing else, then runs gen-registry.js
-// so 1_repo-folders-tree/* (and every other render) follow. There is no separate folder JSON to edit.
+// so 0_repo-folders-tree/* (and every other render) follow. There is no separate folder JSON to edit.
 // Data: the GitHub tree API on remote HEAD (`gh api .../git/trees/HEAD?recursive=1`, no clones); when that fails or
 // is truncated, a local single clone under $LOCAL_CLONES (default /home/user) found by GitHub name, registry name or an
 // old name (renamed_from) is read with `git ls-tree`; else the repo keeps no tree and renders as "unreadable".

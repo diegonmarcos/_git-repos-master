@@ -6,8 +6,8 @@
 //                      the data contract of the linktree's scripts/areas-gen.mjs
 //   README.md          100% rendered: 9_others/templates/README.md.tpl + blocks computed here
 //   0_repos-tree/*     json, canvas, html, md, xml, Obsidian graph notes        (render-repos-tree.js)
-//   1_repo-folders-tree/*  json (excerpt of the master's `tree` fields), md, html  (render-folders-tree.js)
-//   root symlinks      ./repos-tree.* -> 0_repos-tree/, ./repo-folders-tree.* -> 1_repo-folders-tree/
+//   0_repo-folders-tree/*  json (excerpt of the master's `tree` fields), md, html  (render-folders-tree.js)
+//   root symlinks      ./repos-tree.* -> 0_repos-tree/, ./repo-folders-tree.* -> 0_repo-folders-tree/
 //   consumer copies    registry.consumers[].copies, written into sibling consumer clones by sync-consumers.js
 //                      (e.g. cloudy-u-android repos.sot.json + pin, repos-github.sot.json, repos.outline.json and
 //                      Cloud Me's ac_cloud-me/data/repos copy); a consumer with no clone prints a note, never fails

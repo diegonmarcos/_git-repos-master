@@ -14,7 +14,7 @@
 | [`repos.json`](repos.json) | `node gen-registry.js` | `cloud-repos/v1` compat: `clone.sh`, cloud-drive and libs:repos byte copies, hub subsets |
 | [`repos-github.json`](repos-github.json) | `node gen-registry.js` | GitHub view per repo (area/project/family/codes) + the `areas` outline: linktree `areas-gen.mjs` |
 | [`0_repos-tree/`](0_repos-tree/) | `node gen-registry.js` (render-repos-tree.js) | JSON, canvas, html, md, xml, Obsidian graph notes |
-| [`1_repo-folders-tree/`](1_repo-folders-tree/) | `node gen-registry.js` (render-folders-tree.js) | each public repo's folders to depth 3: JSON excerpt of the master's `tree` fields, md, html |
+| [`0_repo-folders-tree/`](0_repo-folders-tree/) | `node gen-registry.js` (render-folders-tree.js) | each public repo's folders to depth 3: JSON excerpt of the master's `tree` fields, md, html |
 | every repo's `README.md` (in that repo) | `node repos-sot.js sync-readmes [dir]` ([`readme-render.js`](readme-render.js), templates [`9_others/templates/readme/`](9_others/templates/readme/)) | each repo's README = template (hub or repo) + its registry node (`_dotfiles/readme/node.json`) + its own prose (`_dotfiles/readme/readme.json`, the only hand-edited input); the repo carries the kit in `_dotfiles/readme/` and checks itself with `_dotfiles/readme/render-readme.sh --check`; `node repos-sot.js check-readmes [dir]` checks every clone |
 | farm folders (`{{farm_first}}` .. `{{farm_last}}`) | `./clone.sh --relink` | committed symlinks, one per repo |
 

@@ -100,8 +100,8 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 
 # mutations: each must be caught by --check
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
-mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp -r "$ROOT"/*.js "$ROOT/projects-repos.json" "$ROOT/projects-repos.schema.json" "$ROOT/repos.json" "$ROOT/repos-github.json" "$ROOT/README.md" "$D" "$ROOT/1_repo-folders-tree" "$T/w/"
-  for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/w/repos-tree.$f"; done; for f in json md html; do ln -s "1_repo-folders-tree/repo-folders-tree.$f" "$T/w/repo-folders-tree.$f"; done; }
+mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp -r "$ROOT"/*.js "$ROOT/projects-repos.json" "$ROOT/projects-repos.schema.json" "$ROOT/repos.json" "$ROOT/repos-github.json" "$ROOT/README.md" "$D" "$ROOT/0_repo-folders-tree" "$T/w/"
+  for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/w/repos-tree.$f"; done; for f in json md html; do ln -s "0_repo-folders-tree/repo-folders-tree.$f" "$T/w/repo-folders-tree.$f"; done; }
 mk; node "$T/w/gen-registry.js" --check >/dev/null 2>&1 && ok "copy is clean" || bad "copy not clean"
 mk; f=$(find "$T/w/0_repos-tree/repos-tree" -name '*.md' | head -1); echo x >> "$f"
 node "$T/w/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (edited note) missed" || ok "mutation (edited note) is caught"
