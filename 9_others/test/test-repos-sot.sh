@@ -169,4 +169,11 @@ rm -rf "$T/sf"; mkdir -p "$T/sf"; cp "$ROOT/repos-sot.js" "$ROOT/repos.json" "$T
 node -e 'const fs=require("fs"),f=process.argv[1];const r=JSON.parse(fs.readFileSync(f));r.repos.push({name:r.self.name,farm:r.repos[0].farm,url:r.self.url,private:false});fs.writeFileSync(f,JSON.stringify(r,null,2))' "$T/sf/repos.json"
 node "$T/sf/repos-sot.js" check "$T/sf/repos.json" >/dev/null 2>&1 && bad "self as a repos[] entry accepted" || ok "self as a repos[] entry fails the check"
 
+# Dataview reserved words (GROUP BY, WHERE, SORT, FLATTEN, LIMIT, FROM, AS ...) cannot be bare fields in the generated query:
+# `TABLE group, ...` failed to parse in Obsidian. A field named like a keyword is read as row["<field>"].
+dv_ok() { awk '/^```dataview/{f=1;next} /^```/{f=0} f' "$1" | grep -qiwE '(^TABLE|,|^SORT)[[:space:]]*(group|where|sort|flatten|limit|from|as|table|list|task)([[:space:]]*,|[[:space:]]+(ASC|DESC)|[[:space:]]*$)' && return 1 || return 0; }
+dv_ok "$ROOT/0_repos-tree/repos-tree.md" && ok "Dataview query in repos-tree.md uses no bare reserved word as a field" || bad "Dataview query in repos-tree.md has a bare reserved word (e.g. group): Obsidian fails to parse it"
+printf '```dataview\nTABLE group, hub\nSORT group ASC\n```\n' > "$T/dv.md"
+dv_ok "$T/dv.md" && bad "a bare 'TABLE group' Dataview query was accepted" || ok "a bare 'TABLE group' Dataview query fails the guard"
+
 exit $fail

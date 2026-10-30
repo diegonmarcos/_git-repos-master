@@ -124,7 +124,8 @@ function asMd(j) {
   L.push('', '## Mermaid', '', '```mermaid', 'graph LR');
   walkT(j.tree, o => L.push(`  ${mid(o)}["${o.kind === 'group' ? o.name + '/' : o.name}"]`));
   walkT(j.tree, (o, par) => { if (par) L.push(`  ${mid(par)} --> ${mid(o)}`); });
-  L.push('```', '', '## Dataview', '', '```dataview', 'TABLE group, hub, project, area, family, visibility, developer', 'FROM "0_repos-tree/repos-tree" AND #repo', 'SORT group ASC, file.name ASC', '```', '');
+  // `group` is a Dataview keyword (GROUP BY): a bare `group` fails to parse, so the field is read as row["group"].
+  L.push('```', '', '## Dataview', '', '```dataview', 'TABLE row["group"] AS "group", hub, project, area, family, visibility, developer', 'FROM "0_repos-tree/repos-tree" AND #repo', 'SORT row["group"] ASC, file.name ASC', '```', '');
   return L.join('\n');
 }
 

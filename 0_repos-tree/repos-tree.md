@@ -296,7 +296,7 @@ graph LR
 ## Dataview
 
 ```dataview
-TABLE group, hub, project, area, family, visibility, developer
+TABLE row["group"] AS "group", hub, project, area, family, visibility, developer
 FROM "0_repos-tree/repos-tree" AND #repo
-SORT group ASC, file.name ASC
+SORT row["group"] ASC, file.name ASC
 ```
