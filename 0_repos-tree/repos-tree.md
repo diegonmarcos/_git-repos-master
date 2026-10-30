@@ -48,7 +48,6 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
         - **[[cloud-me-pvt-___]]** · 🌐 public · Cloud-Me
           - [[cloud-me-pvt-cgc]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-configs]] · 🔒 private · Cloud-Me
-          - [[cloud-me-pvt-containers]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-data]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-my-ai]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-notes]] · 🔒 private · Cloud-Me
@@ -95,6 +94,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
     - **[[z-archived-___]]** · 🌐 public
       - [[z-archived_c3-infra-plugin]] · 🔒 private · Z-archived
       - [[z-archived_cloud-me-pub-data]] · 🌐 public · Z-archived
+      - [[z-archived_cloud-me-pvt-containers]] · 🔒 private · Z-archived
       - [[z-archived_cloud-me-pvt-data-private]] · 🔒 private · Z-archived
       - [[z-archived_cloud-me-pvt-legacy]] · 🔒 private · Z-archived
       - [[z-archived_front-data]] · 🌐 public · Z-archived
@@ -143,7 +143,6 @@ graph LR
   n_cloud_me_pvt____["cloud-me-pvt-___"]
   n_cloud_me_pvt_cgc["cloud-me-pvt-cgc"]
   n_cloud_me_pvt_configs["cloud-me-pvt-configs"]
-  n_cloud_me_pvt_containers["cloud-me-pvt-containers"]
   n_cloud_me_pvt_data["cloud-me-pvt-data"]
   n_cloud_me_pvt_my_ai["cloud-me-pvt-my-ai"]
   n_cloud_me_pvt_notes["cloud-me-pvt-notes"]
@@ -190,6 +189,7 @@ graph LR
   n_z_archived____["z-archived-___"]
   n_z_archived_c3_infra_plugin["z-archived_c3-infra-plugin"]
   n_z_archived_cloud_me_pub_data["z-archived_cloud-me-pub-data"]
+  n_z_archived_cloud_me_pvt_containers["z-archived_cloud-me-pvt-containers"]
   n_z_archived_cloud_me_pvt_data_private["z-archived_cloud-me-pvt-data-private"]
   n_z_archived_cloud_me_pvt_legacy["z-archived_cloud-me-pvt-legacy"]
   n_z_archived_front_data["z-archived_front-data"]
@@ -232,7 +232,6 @@ graph LR
   n_group_1_2_Cloud_me_Pvt --> n_cloud_me_pvt____
   n_cloud_me_pvt____ --> n_cloud_me_pvt_cgc
   n_cloud_me_pvt____ --> n_cloud_me_pvt_configs
-  n_cloud_me_pvt____ --> n_cloud_me_pvt_containers
   n_cloud_me_pvt____ --> n_cloud_me_pvt_data
   n_cloud_me_pvt____ --> n_cloud_me_pvt_my_ai
   n_cloud_me_pvt____ --> n_cloud_me_pvt_notes
@@ -279,6 +278,7 @@ graph LR
   n_group_8_Archived --> n_z_archived____
   n_z_archived____ --> n_z_archived_c3_infra_plugin
   n_z_archived____ --> n_z_archived_cloud_me_pub_data
+  n_z_archived____ --> n_z_archived_cloud_me_pvt_containers
   n_z_archived____ --> n_z_archived_cloud_me_pvt_data_private
   n_z_archived____ --> n_z_archived_cloud_me_pvt_legacy
   n_z_archived____ --> n_z_archived_front_data

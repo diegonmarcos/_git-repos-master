@@ -8428,7 +8428,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - **cloud-me-pvt-___/** (hub)
           - **[cloud-me-pvt-cgc](https://github.com/diegonmarcos/cloud-me-pvt-cgc)** · 🔒 private
           - **[cloud-me-pvt-configs](https://github.com/diegonmarcos/cloud-me-pvt-configs)** · 🔒 private
-          - **[cloud-me-pvt-containers](https://github.com/diegonmarcos/cloud-me-pvt-containers)** · 🔒 private
           - **[cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data)** · 🔒 private
           - **[cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)** · 🔒 private
           - **[cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes)** · 🔒 private
@@ -10185,6 +10184,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `LICENSE` · 4.5 KiB
         - `LICENSING.md` · 961 B
         - `README.md` · 147 B
+      - **[z-archived_cloud-me-pvt-containers](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-containers)** · 🔒 private
       - **[z-archived_cloud-me-pvt-data-private](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private)** · 🔒 private
       - **[z-archived_cloud-me-pvt-legacy](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy)** · 🔒 private
       - **[z-archived_front-data](https://github.com/diegonmarcos/z-archived_front-data)** · 🌐 public

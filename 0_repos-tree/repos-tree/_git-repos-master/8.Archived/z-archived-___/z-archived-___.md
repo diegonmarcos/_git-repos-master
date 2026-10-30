@@ -35,6 +35,7 @@ GitHub: https://github.com/diegonmarcos/z-archived-___
 
 - [[z-archived_c3-infra-plugin]]
 - [[z-archived_cloud-me-pub-data]]
+- [[z-archived_cloud-me-pvt-containers]]
 - [[z-archived_cloud-me-pvt-data-private]]
 - [[z-archived_cloud-me-pvt-legacy]]
 - [[z-archived_front-data]]

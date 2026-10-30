@@ -1398,34 +1398,12 @@
                 {
                   "code": "1.2.2.4",
                   "kind": "family",
-                  "name": "Containers",
-                  "label": "Containers",
-                  "description": "",
-                  "children": [
-                    {
-                      "code": "1.2.2.4.1",
-                      "kind": "repo",
-                      "name": "cloud-me-pvt-containers",
-                      "label": "cloud-me-pvt-containers",
-                      "visibility": "private",
-                      "description": "Superseded by cloud-me-pvt-configs Linux-Containers (to archive, owner)",
-                      "group": "a_cloud",
-                      "renamed_from": [
-                        "cloud-me-containers"
-                      ],
-                      "doc": "Superseded: merged into cloud-me-pvt-configs Linux-Containers/ 2026-10-30 (#1310, non-secret files with history); its sops files live only in cloud-me-pvt-vault Linux-Containers/ (#1253). Contents left intact. To archive (owner) as z-archived_cloud-me-pvt-containers: the rename is refused by the session proxy."
-                    }
-                  ]
-                },
-                {
-                  "code": "1.2.2.5",
-                  "kind": "family",
                   "name": "Data",
                   "label": "Data",
                   "description": "",
                   "children": [
                     {
-                      "code": "1.2.2.5.1",
+                      "code": "1.2.2.4.1",
                       "kind": "repo",
                       "name": "cloud-me-pvt-data",
                       "label": "cloud-me-pvt-data",
@@ -1441,14 +1419,14 @@
                   ]
                 },
                 {
-                  "code": "1.2.2.6",
+                  "code": "1.2.2.5",
                   "kind": "family",
                   "name": "Notes",
                   "label": "Notes",
                   "description": "",
                   "children": [
                     {
-                      "code": "1.2.2.6.1",
+                      "code": "1.2.2.5.1",
                       "kind": "repo",
                       "name": "cloud-me-pvt-notes",
                       "label": "cloud-me-pvt-notes",
@@ -1464,14 +1442,14 @@
                   ]
                 },
                 {
-                  "code": "1.2.2.7",
+                  "code": "1.2.2.6",
                   "kind": "family",
                   "name": "Vault",
                   "label": "Vault",
                   "description": "",
                   "children": [
                     {
-                      "code": "1.2.2.7.1",
+                      "code": "1.2.2.6.1",
                       "kind": "repo",
                       "name": "cloud-me-pvt-vault",
                       "label": "cloud-me-pvt-vault",
@@ -3235,6 +3213,20 @@
                     "cloud-me-pvt-legacy"
                   ],
                   "doc": "The original cloud-me repo (cloud-me family, near empty), kept as is under the pvt family. Registered 2026-10-28 (was unregistered_ok since #1073)."
+                },
+                {
+                  "code": "8.1.1.4",
+                  "kind": "repo",
+                  "name": "z-archived_cloud-me-pvt-containers",
+                  "label": "z-archived_cloud-me-pvt-containers",
+                  "visibility": "private",
+                  "description": "Superseded by cloud-me-pvt-configs Linux-Containers (archived)",
+                  "group": "a_cloud",
+                  "renamed_from": [
+                    "cloud-me-containers",
+                    "cloud-me-pvt-containers"
+                  ],
+                  "doc": "Merged into cloud-me-pvt-configs Linux-Containers/ 2026-10-30 (#1310, non-secret files with history); its sops files live only in cloud-me-pvt-vault Linux-Containers/ (#1253). Contents left intact. Archived 2026-10-30: renamed z-archived_cloud-me-pvt-containers on GitHub by the owner."
                 }
               ]
             },
@@ -3580,6 +3572,14 @@
     "_status_doc": "`status` is optional. Absent = the repo exists and is cloned/linked as usual. `pending_creation` = declared on purpose, but the GitHub repo is NOT created yet: every farmer (clone.sh, the cloud-drive seed, the libs:repos mirror, the fleet dotfiles guard) must SKIP it - no clone, no symlink, no seed - and the guard fails if a pending entry is treated as live. Flip it by deleting the field in the same commit that creates the repo. `parts` (optional) lists named sub-trees that live INSIDE the same repo, declared as placeholders so farmers and docs know the planned layout before any file moves; a part is never a repo of its own and is never cloned or linked.",
     "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
     "renames": [
+      {
+        "from": "cloud-me-pvt-containers",
+        "to": "z-archived_cloud-me-pvt-containers",
+        "kind": "repo",
+        "since": "2026-10-30",
+        "ticket": "#1323",
+        "doc": "Content merged into cloud-me-pvt-configs Linux-Containers/ (#1310); archived. The old name keeps working through the GitHub redirect."
+      },
       {
         "from": "My-ai-memory",
         "to": "z-archived_My-ai-memory",
