@@ -169,7 +169,13 @@
                   "renamed_from": [
                     "cloud-u-android"
                   ],
-                  "doc": "Android client.",
+                  "doc": "Android client. #1335: the Lnktree app family (folders ad_*, not the Cloud family ac_cloud-*) is listed in `apps`.",
+                  "apps": [
+                    {"name": "CG-Omniverse", "path": "ad_CG-Omniverse", "description": "CG area app (Galaxy, Game Store, VR Store) behind the SuperApp's Cloud > Lnktree row."},
+                    {"name": "Capital-FinTerm", "path": "ad_Capital-FinTerm", "description": "Capital area app: the FI | EQ | EX | NW | PM | MY-PM terminal tabs behind the SuperApp's Cloud > Lnktree row."},
+                    {"name": "Hardtech-CAD", "path": "ad_Hardtech-CAD", "description": "HardTech area app (MCAD, BIM, SolidWorks) behind the SuperApp's Cloud > Lnktree row."},
+                    {"name": "Hardtech-Sim2Real", "path": "ad_Hardtech-Sim2Real", "description": "HardTech area app (SAP2000, MATLAB, Ansys) behind the SuperApp's Cloud > Lnktree row."}
+                  ],
                   "tree": {
                     "source": "local-clone",
                     "head": "2ea6f983fdf823ff2a5102194d798f87077bf313",
