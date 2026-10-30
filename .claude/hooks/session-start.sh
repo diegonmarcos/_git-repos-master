@@ -1,10 +1,10 @@
 #!/bin/bash
-# Clone every repo in repos.json so a fresh container starts with the fleet
+# Clone every repo in 0_registry/repos.json so a fresh container starts with the fleet
 # already checked out.
 #
 # WHY THIS EXISTS: a remote session gets a NEW container each time, so clones do
 # not survive a restart — there is nothing to preserve, only something to
-# reproduce. clone.sh already knows the registry, the paths and the layout; this
+# reproduce. 0_registry/clone.sh already knows the registry, the paths and the layout; this
 # just runs it before the session starts instead of after someone notices.
 #
 # Remote only. On a real machine ~/git is the working checkout and re-cloning
@@ -27,10 +27,10 @@ export CLOUD_GIT_BASE="${CLOUD_GIT_BASE:-$(dirname "$REPO")}"
 # fatal — a partial fleet beats no fleet, and the dangling links ARE the
 # to-clone list, exactly as clone.sh's header describes.
 cd "$REPO"
-./clone.sh --all || true
-./clone.sh --link >/dev/null 2>&1 || true
+./0_registry/clone.sh --all || true
+./0_registry/clone.sh --link >/dev/null 2>&1 || true
 
-# Push the fleet-shared files (repos.json `fleet_files`) out to every clone that
+# Push the fleet-shared files (0_registry/repos.json `fleet_files`) out to every clone that
 # has the module they belong to. A container assembles its fleet from whatever
 # the anonymous lane served, so the copies it just cloned are only as fresh as
 # each repo's last hand-sync — which is exactly how deploy-dotfiles.sh came to
@@ -40,6 +40,6 @@ cd "$REPO"
 # Copies only on difference, so this is a no-op that dirties nothing when the
 # fleet is already consistent. Non-fatal: a partial clone should still get every
 # shared file whose source it does have.
-./clone.sh --sync || true
+./0_registry/clone.sh --sync || true
 
 echo "[session-start] fleet cloned and synced under $CLOUD_GIT_BASE"

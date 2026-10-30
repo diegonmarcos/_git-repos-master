@@ -1,20 +1,20 @@
 #!/usr/bin/env node
-// sync-consumers.js - refresh every consumer copy declared in projects-repos.json (#1305).
+// 0_registry/sync-consumers.js - refresh every consumer copy declared in projects-repos.json (#1305).
 // THE ONE PLACE: registry.consumers[].copies lists each file a consumer repo holds that is rendered here
 // (byte copies, their sha256 pins, and consumer-side derive commands such as cloudy-u-android's
 // libs/repos/sync.sh --refresh-outline). This script applies them to every consumer clone found NEXT TO this
 // repo (directory = registry name, GitHub name or a former name). It never commits or pushes: the consumer's
 // commit stays an explicit, per-path step.
 //
-//   node sync-consumers.js           write the copies + pins, run the derive steps (gen-registry.js calls this)
-//   node sync-consumers.js --check   exit 1 when a present clone holds a stale copy, pin or derived file
+//   node 0_registry/sync-consumers.js           write the copies + pins, run the derive steps (0_registry/gen-registry.js calls this)
+//   node 0_registry/sync-consumers.js --check   exit 1 when a present clone holds a stale copy, pin or derived file
 //
 // A consumer without a clone, or whose derive step cannot run here, prints `consumer not refreshed: ...` and is
 // skipped: never a failure of the render.
 'use strict';
 const fs = require('fs'), path = require('path'), crypto = require('crypto'), { spawnSync } = require('child_process');
 const M = require('./registry-model.js');
-const HERE = __dirname;
+const ROOT = path.resolve(__dirname, '..');
 
 const sha256 = b => crypto.createHash('sha256').update(b).digest('hex');
 const get = (o, p) => p.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
@@ -23,7 +23,7 @@ const get = (o, p) => p.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
 function findClone(repo, x) {
   const r = x.repos.find(e => e.name === repo);
   const names = [...new Set([repo, r && r.github, ...((r && r.renamed_from) || [])].filter(Boolean))];
-  const base = path.resolve(HERE, process.env.CONSUMERS_BASE || '..');
+  const base = path.resolve(ROOT, process.env.CONSUMERS_BASE || '..');
   for (const n of names) {
     const d = path.join(base, n);
     if (fs.existsSync(path.join(d, '.git'))) return d;
@@ -41,7 +41,7 @@ function pinText(file, pin, sha) {
   return text.replace(`"${old}"`, `"${sha}"`);
 }
 
-const argv = (a, clone) => a.map(s => (s.startsWith('@') ? path.join(HERE, s.slice(1)) : s));
+const argv = (a, clone) => a.map(s => (s.startsWith('@') ? path.join(ROOT, s.slice(1)) : s));
 function run(cmd, clone) {
   const [bin, ...args] = argv(cmd, clone);
   const r = spawnSync(bin, args, { cwd: clone, encoding: 'utf8' });
@@ -51,10 +51,10 @@ function run(cmd, clone) {
 function syncOne(c, x, check) {
   const clone = findClone(c.repo, x), problems = [], notes = [];
   if (!clone) return { notes: [`consumer not refreshed: ${c.repo} (no clone next to _git-repos-master; its copies refresh when it is cloned there or via its own sync)`], problems };
-  const rel = f => path.relative(HERE, f);
+  const rel = f => path.relative(ROOT, f);
   for (const step of c.copies) {
     if (step.from) {
-      const body = fs.readFileSync(path.join(HERE, step.from));
+      const body = fs.readFileSync(path.join(ROOT, step.from));
       for (const t of step.to) {
         const fp = path.join(clone, t), same = fs.existsSync(fp) && fs.readFileSync(fp).equals(body);
         if (same) continue;

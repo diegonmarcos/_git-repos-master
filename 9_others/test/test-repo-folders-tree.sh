@@ -10,17 +10,17 @@ fail=0
 ok()  { echo "PASS  $*"; }
 bad() { echo "FAIL  $*"; fail=1; }
 
-node "$ROOT/gen-registry.js" --check && ok "json/md/html equal a fresh render of projects-repos.json; root symlinks present" || bad "gen-registry.js --check"
-for f in json md html; do [ "$(readlink "$ROOT/repo-folders-tree.$f")" = "0_repo-folders-tree/repo-folders-tree.$f" ] && [ -f "$ROOT/repo-folders-tree.$f" ] || bad "root symlink repo-folders-tree.$f"; done
+node "$ROOT/0_registry/gen-registry.js" --check && ok "json/md/html equal a fresh render of projects-repos.json; no root symlinks" || bad "gen-registry.js --check"
+for f in json md html; do [ ! -e "$ROOT/repo-folders-tree.$f" ] && [ ! -L "$ROOT/repo-folders-tree.$f" ] || bad "root repo-folders-tree.$f must not exist (only 0_repo-folders-tree/ holds it)"; done
 
 node -e '
 const fs=require("fs"),root=process.argv[1],e=[];
 const j=JSON.parse(fs.readFileSync(root+"/0_repo-folders-tree/repo-folders-tree.json","utf8"));
 if(j.max_depth!==3) e.push("default depth is 3, JSON has "+j.max_depth);
-const farms=Object.keys(require(root+"/repos.json").farms), tops=j.tree.children.filter(c=>c.kind==="group").map(c=>c.name);
+const farms=Object.keys(require(root+"/0_registry/repos.json").farms), tops=j.tree.children.filter(c=>c.kind==="group").map(c=>c.name);
 if(JSON.stringify(tops)!==JSON.stringify(farms)) e.push("top groups "+tops+" != farms{}");
-const gh=require(root+"/repos-github.json").repos, priv=new Set(gh.filter(r=>r.visibility!=="public").map(r=>r.name));
-const EXCLUDE=new Set(require(root+"/projects-repos.json").folders.excluded);
+const gh=require(root+"/0_registry/repos-github.json").repos, priv=new Set(gh.filter(r=>r.visibility!=="public").map(r=>r.name));
+const EXCLUDE=new Set(require(root+"/0_registry/projects-repos.json").folders.excluded);
 if(j._schema!=="repo-folders-tree/v1") e.push("schema id"); if(!(Number.isInteger(j.max_depth)&&j.max_depth>=1)) e.push("max_depth");
 const T=new Set(["dir","file","submodule","symlink"]), seen=new Set();
 const ent=(x,d,r)=>{ if(d>j.max_depth) e.push(r+": depth "+d+" > "+j.max_depth+" at "+x.name);
@@ -49,16 +49,16 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 
 # mutations: a render edited, or the master edited without re-render, must fail; master edit + re-render passes
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
-mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp -r "$ROOT"/*.js "$ROOT/projects-repos.json" "$ROOT/projects-repos.schema.json" "$ROOT/repos.json" "$ROOT/repos-github.json" "$ROOT/README.md" "$ROOT/0_repos-tree" "$ROOT/0_repo-folders-tree" "$T/w/"
-  for f in canvas html md json xml; do ln -s "0_repos-tree/repos-tree.$f" "$T/w/repos-tree.$f"; done; for f in json md html; do ln -s "0_repo-folders-tree/repo-folders-tree.$f" "$T/w/repo-folders-tree.$f"; done; }
-chk() { node "$T/w/gen-registry.js" --check >/dev/null 2>&1; }
-jmut() { node -e 'const M=require(process.argv[1]+"/registry-model.js"),fs=require("fs"),j=M.load();'"$1"';fs.writeFileSync(M.SRC,M.serialize(j))' "$T/w"; }
+mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others" "$T/w/0_registry"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp "$ROOT"/0_registry/*.js "$ROOT/0_registry/projects-repos.json" "$ROOT/0_registry/projects-repos.schema.json" "$ROOT/0_registry/repos.json" "$ROOT/0_registry/repos-github.json" "$T/w/0_registry/"; cp -r "$ROOT/README.md" "$ROOT/0_repos-tree" "$ROOT/0_repo-folders-tree" "$T/w/"
+  :; }
+chk() { node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1; }
+jmut() { node -e 'const M=require(process.argv[1]+"/0_registry/registry-model.js"),fs=require("fs"),j=M.load();'"$1"';fs.writeFileSync(M.SRC,M.serialize(j))' "$T/w"; }
 mk; chk && ok "copy is clean" || bad "copy not clean"
 mk; echo x >> "$T/w/0_repo-folders-tree/repo-folders-tree.md"; chk && bad "mutation (edited md) missed" || ok "mutation (edited md) is caught"
 mk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree.children.pop();require("fs").writeFileSync(f,JSON.stringify(j,null,1)+"\n")' "$T/w/0_repo-folders-tree/repo-folders-tree.json"; chk && bad "mutation (group dropped from the rendered JSON) missed" || ok "mutation (group dropped from the rendered JSON) is caught"
 mk; sed -i 's/Repo folders - Dolphin/Repo folders/' "$T/w/0_repo-folders-tree/repo-folders-tree.html"; chk && bad "mutation (edited html) missed" || ok "mutation (edited html) is caught"
-mk; rm "$T/w/repo-folders-tree.md"; chk && bad "mutation (root symlink removed) missed" || ok "mutation (root symlink removed) is caught"
+mk; sed -i 's/"private": true/"private": false/' "$T/w/0_registry/repos.json"; chk && bad "mutation (generated 0_registry/repos.json hand-edited) missed" || ok "mutation (generated 0_registry/repos.json hand-edited) is caught"
 mk; jmut 'j.root.tree.entries.push({name:"zz-new",type:"file",size:1})'; chk && bad "mutation (master tree edited, not re-rendered) missed" || ok "mutation (master tree edited, not re-rendered) is caught"
-mk; jmut 'const r=[];const w=x=>(x.children||[]).forEach(c=>c.kind==="repo"?r.push(c):w(c));j.tree.forEach(w);r.find(x=>x.tree).tree.entries.push({name:"zz-new",type:"file",size:1})'; (cd "$T/w" && node gen-registry.js >/dev/null); chk && grep -q 'zz-new' "$T/w/0_repo-folders-tree/repo-folders-tree.md" && ok "master tree edit + re-render passes and reaches the md" || bad "master tree edit + re-render"
+mk; jmut 'const r=[];const w=x=>(x.children||[]).forEach(c=>c.kind==="repo"?r.push(c):w(c));j.tree.forEach(w);r.find(x=>x.tree).tree.entries.push({name:"zz-new",type:"file",size:1})'; (cd "$T/w" && node 0_registry/gen-registry.js >/dev/null); chk && grep -q 'zz-new' "$T/w/0_repo-folders-tree/repo-folders-tree.md" && ok "master tree edit + re-render passes and reaches the md" || bad "master tree edit + re-render"
 mk; jmut 'j.root.tree.entries.push({name:"node_modules",type:"dir",children:[]})'; chk && bad "mutation (excluded dir in the master) missed" || ok "mutation (excluded dir in a master tree) is caught"
 exit $fail

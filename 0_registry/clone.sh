@@ -33,8 +33,9 @@
 
 set -eu
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-REGISTRY="$SCRIPT_DIR/repos.json"
+REG_DIR="$(cd "$(dirname "$0")" && pwd)"      # 0_registry/: repos.json, repos-sot.js, this script
+SCRIPT_DIR="$(cd "$REG_DIR/.." && pwd)"      # repo root: farm folders, _dotfiles/, 9_others/
+REGISTRY="$REG_DIR/repos.json"
 [ -f "$REGISTRY" ] || { echo "FATAL: $REGISTRY missing" >&2; exit 1; }
 command -v node >/dev/null 2>&1 || { echo "FATAL: node required to read $REGISTRY" >&2; exit 1; }
 # The store's directory name is declared once, in repos.json::shared_store_dir.
@@ -193,7 +194,7 @@ do_list() {
         done
         printf "\n"
     done
-    printf "clone with:  ./clone.sh <name>...  |  --group <g>  |  --all\n"
+    printf "clone with:  0_registry/clone.sh <name>...  |  --group <g>  |  --all\n"
 }
 
 # ── fleet-shared files ──────────────────────────────────────────────────────
@@ -290,7 +291,7 @@ case "${1:-}" in
         ;;
     --check)
         # Registry self-consistency + committed links agree with it.
-        node "$SCRIPT_DIR/repos-sot.js" check "$REGISTRY"
+        node "$REG_DIR/repos-sot.js" check "$REGISTRY"
         ;;
     --all)
         fail=0
@@ -310,7 +311,7 @@ case "${1:-}" in
         for n in "$@"; do
             case " $(_names) " in
                 *" $n "*) clone_one "$n" || true ;;
-                *) echo "unknown repo: $n  (see ./clone.sh --list)" >&2; exit 1 ;;
+                *) echo "unknown repo: $n  (see 0_registry/clone.sh --list)" >&2; exit 1 ;;
             esac
         done
         ;;

@@ -7,13 +7,11 @@
 //   0_repo-folders-tree/repo-folders-tree.json  excerpt of the master: root -> farm groups -> hubs -> repos -> folders
 //   0_repo-folders-tree/repo-folders-tree.md    9_others/templates/repo-folders-tree.md.tpl
 //   0_repo-folders-tree/repo-folders-tree.html  the shared Dolphin template 9_others/templates/repos-tree.html
-// Root symlinks ./repo-folders-tree.{json,md,html} keep the old paths working.
 'use strict';
 const fs = require('fs'), path = require('path');
-const HERE = __dirname, OWNER = 'diegonmarcos';
+const ROOT = path.resolve(__dirname, '..'), OWNER = 'diegonmarcos';
 const RM = require('./registry-model.js'), { model, buildTree } = require('./render-repos-tree.js');
 const DIR = '0_repo-folders-tree', JSON_F = `${DIR}/repo-folders-tree.json`, MD_F = `${DIR}/repo-folders-tree.md`, HTML_F = `${DIR}/repo-folders-tree.html`;
-const ROOT_LINKS = ['repo-folders-tree.json', 'repo-folders-tree.md', 'repo-folders-tree.html'];
 
 const repos = t => [...(t.kind === 'group' ? [] : [t]), ...(t.children || []).flatMap(repos)];
 function build(src) { // root -> groups -> hubs -> repos (same shape as 0_repos-tree/repos-tree.json) + each repo's tree
@@ -47,12 +45,12 @@ function mdTree(j) {
 function counts(j) { const r = repos(j.tree), c = s => r.filter(x => x.status === s).length;
   return { repos: r.length, ok: c('ok'), private: c('private'), unreadable: c('unreadable') }; }
 function md(j) {
-  const t = fs.readFileSync(path.join(HERE, '9_others/templates/repo-folders-tree.md.tpl'), 'utf8'), c = counts(j);
+  const t = fs.readFileSync(path.join(ROOT, '9_others/templates/repo-folders-tree.md.tpl'), 'utf8'), c = counts(j);
   const v = { DEPTH: j.max_depth, REPOS: c.repos, OK: c.ok, PRIVATE: c.private, UNREADABLE: c.unreadable, EXCLUDED: j.excluded.map(x => '`' + x + '`').join(', '), TREE: mdTree(j) };
   return t.replace(/\{\{(\w+)\}\}/g, (_, k) => String(v[k]));
 }
 function html(j) {
-  const tpl = fs.readFileSync(path.join(HERE, '9_others/templates/repos-tree.html'), 'utf8'), N = [], VIS = { public: '🌐', private: '🔒' };
+  const tpl = fs.readFileSync(path.join(ROOT, '9_others/templates/repos-tree.html'), 'utf8'), N = [], VIS = { public: '🌐', private: '🔒' };
   const add = (o) => { N.push(o); return o.id; };
   const ent = (e, par, repo, p) => {
     const id = par + '/' + e.name, isDir = e.type === 'dir';
@@ -79,4 +77,4 @@ function render(src = RM.load()) {
   const j = build(src);
   return { [JSON_F]: JSON.stringify(j, null, 1) + '\n', [MD_F]: md(j), [HTML_F]: html(j) };
 }
-module.exports = { render, build, md, html, counts, repos, DIR, JSON_F, MD_F, HTML_F, ROOT_LINKS };
+module.exports = { render, build, md, html, counts, repos, DIR, JSON_F, MD_F, HTML_F };

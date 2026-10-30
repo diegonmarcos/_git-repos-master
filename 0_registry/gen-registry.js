@@ -1,26 +1,27 @@
 #!/usr/bin/env node
 // gen-registry.js - THE ONE GENERATOR (#1295, #1301): renders EVERY file that lists repos or folders from THE ONE
 // MASTER SOURCE projects-repos.json (schema projects-repos.schema.json). Never edit a rendered file.
-//   repos.json         cloud-repos/v1 compat (clone.sh, cloud-drive + libs:repos byte copies, hub subsets)
-//   repos-github.json  per-repo GitHub view (field/project/subcategory/family + codes) and the `areas` outline:
+//   0_registry/repos.json         cloud-repos/v1 compat (clone.sh, cloud-drive + libs:repos byte copies, hub subsets)
+//   0_registry/repos-github.json per-repo GitHub view (field/project/subcategory/family + codes) and the `areas` outline:
 //                      the data contract of the linktree's scripts/areas-gen.mjs
-//   README.md          100% rendered: 9_others/templates/README.md.tpl + blocks computed here
+//   README.md          (repo root) 100% rendered: 9_others/templates/README.md.tpl + blocks computed here
 //   0_repos-tree/*     json, canvas, html, md, xml, Obsidian graph notes        (render-repos-tree.js)
 //   0_repo-folders-tree/*  json (excerpt of the master's `tree` fields), md, html  (render-folders-tree.js)
-//   root symlinks      ./repos-tree.* -> 0_repos-tree/, ./repo-folders-tree.* -> 0_repo-folders-tree/
 //   consumer copies    registry.consumers[].copies, written into sibling consumer clones by sync-consumers.js
 //                      (e.g. cloudy-u-android repos.sot.json + pin, repos-github.sot.json, repos.outline.json and
 //                      Cloud Me's ac_cloud-me/data/repos copy); a consumer with no clone prints a note, never fails
 //
-//   node gen-registry.js           validate the master, write every rendered file, drop stale graph notes, fix root symlinks,
+//   node 0_registry/gen-registry.js           validate the master, write every rendered file, drop stale graph notes,
 //                                  then refresh the consumer copies (node sync-consumers.js; --no-consumers skips it)
-//   node gen-registry.js --check   exit 1 when the master is invalid, any rendered file differs from a fresh render
-//                                  (byte-for-byte), a stale note exists or a root symlink is wrong; repos-sot.js check runs it
-// Folder data: `node refresh-folders-tree.js` fetches it INTO projects-repos.json, then runs this generator.
+//   node 0_registry/gen-registry.js --check   exit 1 when the master is invalid, any rendered file differs from a fresh render
+//                                  (byte-for-byte) or a stale note exists; repos-sot.js check runs it
+// Layout: the SoT, the generated registry files and every script live in 0_registry/; ROOT (this folder's parent) holds
+// README.md, the farm folders and the 0_*-tree folders. Nothing but README.md is generated into the root.
+// Folder data: `node 0_registry/refresh-folders-tree.js` fetches it INTO projects-repos.json, then runs this generator.
 'use strict';
 const fs = require('fs'), path = require('path');
 const M = require('./registry-model.js');
-const HERE = __dirname;
+const ROOT = path.resolve(__dirname, '..');
 const RT = require('./render-repos-tree.js'), FT = require('./render-folders-tree.js');
 const DASH = '—';
 
@@ -84,7 +85,7 @@ function githubView(src, x) {
 // ---- README ---------------------------------------------------------------------------------------------------------
 const cell = s => String(s ?? '').replace(/\r?\n/g, ' ').replace(/\|/g, '\\|').trim();
 function readme(src, x) {
-  const tpl = fs.readFileSync(path.join(HERE, src.readme.template), 'utf8'), VIS = src.icons.visibility, DEV = src.icons.developer;
+  const tpl = fs.readFileSync(path.join(ROOT, src.readme.template), 'utf8'), VIS = src.icons.visibility, DEV = src.icons.developer;
   const pub = x.repos.filter(r => r.visibility === 'public').length, kinds = k => x.nodes.filter(n => n.kind === k).length;
   const countUnder = n => x.repos.filter(r => (r.path || []).includes(n.code)).length;
   // outline: every non-repo node
@@ -120,25 +121,23 @@ function readme(src, x) {
 
 function render(file) {
   const src = M.load(file), errs = M.validate(src);
-  if (errs.length) { const e = new Error('projects-repos.json invalid:\n  - ' + errs.join('\n  - ')); e.problems = errs; throw e; }
+  if (errs.length) { const e = new Error('0_registry/projects-repos.json invalid:\n  - ' + errs.join('\n  - ')); e.problems = errs; throw e; }
   const x = M.expand(src);
   CHAIN = new Map(x.nodes.map(n => [n.code, n.ancestors]));
-  return { 'repos.json': v1(src, x), 'repos-github.json': githubView(src, x), 'README.md': readme(src, x), ...RT.render(src), ...FT.render(src) };
+  return { '0_registry/repos.json': v1(src, x), '0_registry/repos-github.json': githubView(src, x), 'README.md': readme(src, x), ...RT.render(src), ...FT.render(src) };
 }
 
-// rendered folders that hold ONLY rendered files (anything else in them is stale) and the root symlinks
+// rendered folders that hold ONLY rendered files (anything else in them is stale)
 const NOTES = `${RT.DIR}/repos-tree`;
-const LINKS = [...RT.ROOT_LINKS.map(f => [f, `${RT.DIR}/${f}`]), ...FT.ROOT_LINKS.map(f => [f, `${FT.DIR}/${f}`])];
 const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]) : [];
-const rel = p => path.relative(HERE, p).split(path.sep).join('/');
+const rel = p => path.relative(ROOT, p).split(path.sep).join('/');
 // every difference between the working tree and a fresh render of the master; [] = clean
 function problems() {
   let out; try { out = render(); } catch (e) { return (e.problems || [e.message]).map(x => 'projects-repos.json: ' + x); }
   const p = [];
-  for (const [f, t] of Object.entries(out)) { const fp = path.join(HERE, f);
-    if (!fs.existsSync(fp) || fs.readFileSync(fp, 'utf8') !== t) p.push(`${f} differs from a fresh render of projects-repos.json (never edit it; edit the master and run node gen-registry.js)`); }
-  for (const fp of walk(path.join(HERE, NOTES))) if (!(rel(fp) in out)) p.push(`${rel(fp)}: stale rendered note (run node gen-registry.js)`);
-  for (const [l, t] of LINKS) { let cur = null; try { cur = fs.readlinkSync(path.join(HERE, l)); } catch { } if (cur !== t) p.push(`${l}: must be a root symlink -> ${t}`); }
+  for (const [f, t] of Object.entries(out)) { const fp = path.join(ROOT, f);
+    if (!fs.existsSync(fp) || fs.readFileSync(fp, 'utf8') !== t) p.push(`${f} differs from a fresh render of projects-repos.json (never edit it; edit the master and run node 0_registry/gen-registry.js)`); }
+  for (const fp of walk(path.join(ROOT, NOTES))) if (!(rel(fp) in out)) p.push(`${rel(fp)}: stale rendered note (run node 0_registry/gen-registry.js)`);
   return p;
 }
 module.exports = { render, problems };
@@ -147,15 +146,13 @@ if (require.main === module) {
   if (process.argv[2] === '--check') { const p = problems(); p.forEach(x => console.error(x)); process.exit(p.length ? 1 : 0); }
   let out; try { out = render(); } catch (e) { console.error(e.message); process.exit(1); }
   let n = 0;
-  for (const [f, t] of Object.entries(out)) { const fp = path.join(HERE, f);
+  for (const [f, t] of Object.entries(out)) { const fp = path.join(ROOT, f);
     if (fs.existsSync(fp) && fs.readFileSync(fp, 'utf8') === t) continue;
     fs.mkdirSync(path.dirname(fp), { recursive: true }); fs.writeFileSync(fp, t); n++; if (!f.startsWith(NOTES + '/')) console.log(`wrote ${f}`); }
-  for (const fp of walk(path.join(HERE, NOTES))) if (!(rel(fp) in out)) { fs.unlinkSync(fp); console.log(`removed stale ${rel(fp)}`); }
+  for (const fp of walk(path.join(ROOT, NOTES))) if (!(rel(fp) in out)) { fs.unlinkSync(fp); console.log(`removed stale ${rel(fp)}`); }
   const prune = d => { if (!fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) if (e.isDirectory()) prune(path.join(d, e.name));
     if (!fs.readdirSync(d).length) fs.rmdirSync(d); };
-  prune(path.join(HERE, NOTES));
-  for (const [l, t] of LINKS) { const fp = path.join(HERE, l); let cur = null; try { cur = fs.readlinkSync(fp); } catch { }
-    if (cur !== t) { try { fs.unlinkSync(fp); } catch { } fs.symlinkSync(t, fp); } }
+  prune(path.join(ROOT, NOTES));
   console.log(`gen-registry.js: ${Object.keys(out).length} rendered files from projects-repos.json, ${n} rewritten`);
   if (!process.argv.includes('--no-consumers')) require('./sync-consumers.js').syncAll().notes.forEach(x => console.log(x));
 }

@@ -17,7 +17,7 @@
 #     @@HUB@@/<repo>  ->  ~/@@BASE_DIR@@/<repo>
 #
 # GENERATED from _git-repos-master 9_others/templates/hub-clone.sh
-# (node repos-sot.js sync-hub-scripts). DO NOT EDIT here; edit the template.
+# (node 0_registry/repos-sot.js sync-hub-scripts). DO NOT EDIT here; edit the template.
 #
 # Every repo in the registry has a link, committed, whether or not you have
 # cloned it. A link to a repo you do not have dangles — that is the index

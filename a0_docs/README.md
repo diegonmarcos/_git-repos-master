@@ -6,15 +6,18 @@ want on this machine.
 
 It holds no project code. Two files carry the whole thing:
 
-- `repos.json`  the registry — name, group, url, private, one-line purpose
-- `clone.sh`    clone what you want, symlink it into view
+- `0_registry/repos.json`  the registry — name, group, url, private, one-line purpose (rendered from `0_registry/projects-repos.json`)
+- `0_registry/clone.sh`    clone what you want, symlink it into view
+
+The repo root holds only the README (plus the files tools require there); the source of truth, the generated
+registry files and every script live in `0_registry/`.
 
 ```
-./clone.sh                        # what exists here, what does not
-./clone.sh unix notes             # clone those two
-./clone.sh --group b_data_science # clone a whole group
-./clone.sh --all                  # everything
-./clone.sh --link                 # relink whatever is already cloned
+0_registry/clone.sh                        # what exists here, what does not
+0_registry/clone.sh unix notes             # clone those two
+0_registry/clone.sh --group b_data_science # clone a whole group
+0_registry/clone.sh --all                  # everything
+0_registry/clone.sh --link                 # relink whatever is already cloned
 ```
 
 ## Groups
@@ -69,7 +72,7 @@ and every link resolves.
 
 A link to a repo you have not cloned dangles, deliberately. That **is** the
 index: `ls y_others/` shows every repo in the group, and the broken ones are
-the ones you do not have yet. `./clone.sh --list` spells it out.
+the ones you do not have yet. `0_registry/clone.sh --list` spells it out.
 
 ## Layout
 

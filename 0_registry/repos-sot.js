@@ -1,27 +1,27 @@
 #!/usr/bin/env node
-// repos-sot.js - the ONE guard for the repo list (#1073, #1295).
-// THE ONE MASTER SOURCE is projects-repos.json (schema projects-repos.schema.json; #1301): hierarchy, repos AND each
-// repo's folder tree. repos.json, repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/* are rendered
-// from it by the one generator gen-registry.js and must never be edited.
+// 0_registry/repos-sot.js - the ONE guard for the repo list (#1073, #1295).
+// THE ONE MASTER SOURCE is 0_registry/projects-repos.json (schema projects-repos.schema.json; #1301): hierarchy, repos AND each
+// repo's folder tree. 0_registry/repos.json, 0_registry/repos-github.json, README.md (root), 0_repos-tree/*, 0_repo-folders-tree/* are rendered
+// from it by the one generator 0_registry/gen-registry.js and must never be edited.
 //
-//   node repos-sot.js check                         the master is valid (schema + rules), every rendered file (repos.json,
-//                                                   repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/*,
-//                                                   root symlinks) equals a fresh render BYTE-FOR-BYTE, the
+//   node 0_registry/repos-sot.js check                         the master is valid (schema + rules), every rendered file (repos.json,
+//                                                   repos-github.json, README.md, 0_repos-tree/*, 0_repo-folders-tree/*)
+//                                                   equals a fresh render BYTE-FOR-BYTE, the
 //                                                   rendered registry is consistent and the committed symlink farm matches it
-//   node repos-sot.js check <repos.json>            only the registry/farm/link checks, on that cloud-repos/v1 file
-//   node repos-sot.js check-hubs [--remote]         hub/parent_hub hierarchy is sound; --remote reads each repo's
+//   node 0_registry/repos-sot.js check <repos.json>            only the registry/farm/link checks, on that cloud-repos/v1 file
+//   node 0_registry/repos-sot.js check-hubs [--remote]         hub/parent_hub hierarchy is sound; --remote reads each repo's
 //                                                   .gitmodules via `gh api` and requires 0_hub/<hub>
-//   node repos-sot.js check-subset <file> [--fix]   a project master's repos.json (cloud, ffront)
+//   node 0_registry/repos-sot.js check-subset <file> [--fix]   a project master's repos.json (cloud, ffront)
 //                                                   is a consistent SUBSET of this registry;
 //                                                   --fix rewrites url/private/status from it
-//   node repos-sot.js check-hub-subsets [dir]       every hub clone (sibling of this repo, or in [dir]) with a repos.json:
+//   node 0_registry/repos-sot.js check-hub-subsets [dir]       every hub clone (sibling of this repo, or in [dir]) with a repos.json:
 //                                                   a consistent subset (check-subset) that lists every member the source
 //                                                   gives that hub (extra cross-links allowed)
-//   node repos-sot.js copy-of <file>                <file> is a byte copy of this registry
-//   node repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
-//   node repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
+//   node 0_registry/repos-sot.js copy-of <file>                <file> is a byte copy of this registry
+//   node 0_registry/repos-sot.js sync-hub-scripts [dir]        render 9_others/templates/hub-clone.sh into every hub's clone.sh
+//   node 0_registry/repos-sot.js check-hub-scripts [dir]       fail when a hub's clone.sh differs from the rendered template
 //                                                   (hubs = registry entries with parent_hub, siblings of this repo, or in [dir])
-//   node repos-sot.js sync-readmes [dir] [--migrate] write each clone's _dotfiles/readme/ kit (readme-render.cjs,
+//   node 0_registry/repos-sot.js sync-readmes [dir] [--migrate] write each clone's _dotfiles/readme/ kit (readme-render.cjs,
 //                                                   template.md.tpl, node.json, render-readme.sh) and render README.md
 //                                                   (#1303); [dir] = a clone or a folder of clones (default: siblings),
 //                                                   matched to the registry by origin URL. --migrate turns a hand-written
@@ -29,14 +29,15 @@
 //                                                   Template variant from node.json variant: hub | repo | archived
 //                                                   (z-archived_*) | profile (role "profile"). Also writes the ONE shared
 //                                                   CI guard readme-check.yml (render-readme.sh --check) in .github/workflows, or in 1_cicd/src/cicd when the repo generates its workflows
-//   node repos-sot.js check-readmes [dir]           fail when a kit file, readme-check.yml or README.md differs from a fresh render
+//   node 0_registry/repos-sot.js check-readmes [dir]           fail when a kit file, readme-check.yml or README.md differs from a fresh render
 //
 // Exit 0 = ok, 1 = drift (every difference printed). No dependencies: node only.
 'use strict';
 const fs = require('fs');
 const path = require('path');
 
-const HERE = __dirname;
+const HERE = __dirname;                  // 0_registry/: the SoT, the generated registry files and the scripts
+const ROOT = path.resolve(HERE, '..');   // repo root: farm folders, README.md, 9_others/
 const SOT = path.join(HERE, 'repos.json');
 const STATUSES = new Set(['pending_creation']);
 
@@ -111,23 +112,23 @@ function checkLinks(reg) {
   const want = new Map();
   for (const r of reg.repos) want.set(linkRel(r), r);
   for (const [rel, r] of want) {
-    const p = path.join(HERE, rel);
+    const p = path.join(ROOT, rel);
     let isLink = false;
     try { isLink = fs.lstatSync(p).isSymbolicLink(); } catch (_) { /* absent */ }
     if (r.status === 'pending_creation') { if (isLink) bad(`${rel}: pending_creation entry has a committed link`); continue; }
-    if (!isLink) { bad(`${rel}: registered but no committed link (run ./clone.sh --relink)`); continue; }
+    if (!isLink) { bad(`${rel}: registered but no committed link (run 0_registry/clone.sh --relink)`); continue; }
     const target = fs.readlinkSync(p), expect = linkTarget(r);
     if (target !== expect) bad(`${rel}: link is ${target}, expected ${expect}`);
   }
   const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => {
     const p = path.join(d, e.name);
-    return e.isSymbolicLink() ? [path.relative(HERE, p).split(path.sep).join('/')] : e.isDirectory() ? walk(p) : [];
+    return e.isSymbolicLink() ? [path.relative(ROOT, p).split(path.sep).join('/')] : e.isDirectory() ? walk(p) : [];
   });
   for (const t of Object.keys(reg.farms || {})) {
-    const d = path.join(HERE, t);
+    const d = path.join(ROOT, t);
     if (fs.existsSync(d)) for (const rel of walk(d)) if (!want.has(rel)) bad(`${rel}: link not in the registry`);
   }
-  for (const g of Object.keys(reg.groups || {})) if (fs.existsSync(path.join(HERE, g))) bad(`${g}/: legacy group folder still present (links live under farms since #1291)`);
+  for (const g of Object.keys(reg.groups || {})) if (fs.existsSync(path.join(ROOT, g))) bad(`${g}/: legacy group folder still present (links live under farms since #1291)`);
 }
 
 function checkSubset(file, fix) {
@@ -212,8 +213,8 @@ function checkHubs(reg, remote) {
 // ---- hub clone.sh: rendered from ONE template; hubs are registry entries with parent_hub ----
 const HUB_BASE = { 'lecole-42-___': 'cloud-shared-store/git' }; // default store dir is "git" (under $HOME)
 function hubScripts(dir) {
-  const reg = read(SOT), tpl = fs.readFileSync(path.join(HERE, '9_others/templates/hub-clone.sh'), 'utf8');
-  const root = dir || path.join(HERE, '..');
+  const reg = read(SOT), tpl = fs.readFileSync(path.join(ROOT, '9_others/templates/hub-clone.sh'), 'utf8');
+  const root = dir || path.join(ROOT, '..');
   return reg.repos.filter(r => r.parent_hub && !r.name.startsWith('z-archived_')).map(r => ({
     file: path.join(root, r.name, 'clone.sh'),
     text: tpl.replace(/@@BASE_DIR@@/g, HUB_BASE[r.name] || 'git').replace(/@@HUB@@/g, r.name),
@@ -226,7 +227,7 @@ function readmeClones(dirArg) {
   const alias = new Map();
   for (const r of x.repos) { alias.set(r.github.toLowerCase(), r.name); }
   const old = new Set(); for (const r of x.repos) for (const o of r.renamed_from || []) old.add(o.toLowerCase());
-  const root = path.resolve(dirArg || path.join(HERE, '..'));
+  const root = path.resolve(dirArg || path.join(ROOT, '..'));
   const dirs = fs.existsSync(path.join(root, '.git')) ? [root]
     : fs.readdirSync(root).map(d => path.join(root, d)).filter(d => fs.existsSync(path.join(d, '.git')));
   const out = [];
@@ -242,7 +243,7 @@ function readmeClones(dirArg) {
 }
 function readmeKits(dirArg, write, migrate) {
   const RR = require('./readme-render.js'), { x, out } = readmeClones(dirArg);
-  const T = f => fs.readFileSync(path.join(HERE, '9_others/templates/readme', f), 'utf8');
+  const T = f => fs.readFileSync(path.join(ROOT, '9_others/templates/readme', f), 'utf8');
   for (const { dir, name } of out) {
     const node = RR.nodeData(x, name), kit = path.join(dir, RR.KIT);
     const files = {
@@ -253,7 +254,7 @@ function readmeKits(dirArg, write, migrate) {
     };
     const rj = path.join(kit, 'readme.json');
     if (!fs.existsSync(rj)) {
-      if (!write || !migrate) { bad(`${name} (${dir}): no ${RR.KIT}/readme.json (run sync-readmes --migrate once)`); continue; }
+      if (!write || !migrate) { bad(`${name} (${dir}): no ${RR.KIT}/readme.json (run 0_registry/repos-sot.js sync-readmes --migrate once)`); continue; }
       const old = fs.existsSync(path.join(dir, 'README.md')) ? fs.readFileSync(path.join(dir, 'README.md'), 'utf8') : '';
       const { readme, dropped } = RR.migrate(old, node.kind);
       fs.mkdirSync(kit, { recursive: true });
@@ -264,7 +265,7 @@ function readmeKits(dirArg, write, migrate) {
       const p = path.join(kit, f), cur = fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : null;
       if (cur === text) continue;
       if (write) { fs.mkdirSync(kit, { recursive: true }); fs.writeFileSync(p, text); if (f.endsWith('.sh')) fs.chmodSync(p, 0o755); console.log(`wrote ${p}`); }
-      else bad(`${p} differs from the render (run node repos-sot.js sync-readmes)`);
+      else bad(`${p} differs from the render (run node 0_registry/repos-sot.js sync-readmes)`);
     }
     if (write) fs.chmodSync(path.join(kit, 'render-readme.sh'), 0o755);
     { // the ONE shared CI drift guard, emitted by this same command into every kit repo
@@ -281,7 +282,7 @@ function readmeKits(dirArg, write, migrate) {
       if (!hasGen && gh && gh.isSymbolicLink()) console.log(`${name}: .github is a symlink (${fs.readlinkSync(path.join(dir, '.github'))}), readme-check.yml not emitted`);
       else if (cur !== text) {
         if (write) { fs.mkdirSync(path.dirname(wf), { recursive: true }); fs.writeFileSync(wf, text); console.log(`wrote ${wf}`); }
-        else bad(`${wf} differs from 9_others/templates/readme/readme-check.yml (run node repos-sot.js sync-readmes)`);
+        else bad(`${wf} differs from 9_others/templates/readme/readme-check.yml (run node 0_registry/repos-sot.js sync-readmes)`);
       }
     }
     const stale = path.join(kit, 'readme-render.js'); // vendored as .cjs so "type": "module" repos run it too
@@ -309,7 +310,7 @@ if (cmd === 'check') {
   checkSubset(arg, flag === '--fix'); done(`subset ${arg}`);
 } else if (cmd === 'check-hub-subsets') {
   const x = require('./registry-model.js').expand(require('./registry-model.js').load());
-  const fix = arg === '--fix' || flag === '--fix', root = arg && arg !== '--fix' ? arg : path.join(HERE, '..');
+  const fix = arg === '--fix' || flag === '--fix', root = arg && arg !== '--fix' ? arg : path.join(ROOT, '..');
   let n = 0;
   for (const h of x.repos.filter(r => r.kind === 'hub' && r.name !== TOP)) {
     const f = path.join(root, h.name, 'repos.json'); if (!fs.existsSync(f)) continue; n++;
@@ -319,7 +320,7 @@ if (cmd === 'check') {
   }
   done(`hub subsets (${n} hub clones)`);
 } else if (cmd === 'copy-of' && arg) {
-  if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/repos.json (run ./clone.sh --sync)`);
+  if (!fs.readFileSync(arg).equals(fs.readFileSync(SOT))) bad(`${arg} differs from _git-repos-master/0_registry/repos.json (run 0_registry/clone.sh --sync)`);
   done(`copy ${arg}`);
 } else if (cmd === 'sync-hub-scripts' || cmd === 'check-hub-scripts') {
   const hs = hubScripts(arg);
@@ -327,7 +328,7 @@ if (cmd === 'check') {
     const cur = fs.existsSync(h.file) ? fs.readFileSync(h.file, 'utf8') : null;
     if (cur === h.text) continue;
     if (cmd === 'sync-hub-scripts') { fs.writeFileSync(h.file, h.text, { mode: 0o755 }); fs.chmodSync(h.file, 0o755); console.log(`wrote ${h.file}`); }
-    else bad(`${h.file} differs from the rendered 9_others/templates/hub-clone.sh (run node repos-sot.js sync-hub-scripts)`);
+    else bad(`${h.file} differs from the rendered 9_others/templates/hub-clone.sh (run node 0_registry/repos-sot.js sync-hub-scripts)`);
   }
   done(`${cmd} (${hs.length} hubs)`);
 } else if (cmd === 'sync-readmes' || cmd === 'check-readmes') {

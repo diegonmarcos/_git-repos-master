@@ -9,12 +9,10 @@
 //   repos-tree.md      nested list + mermaid tree, Dataview-friendly frontmatter
 //   repos-tree.xml     the same tree as XML
 //   repos-tree/        Obsidian graph notes, one folder per group/hub (nested like the JSON), <node>.md each.
-// Root-level symlinks (./repos-tree.html -> 0_repos-tree/repos-tree.html, ...) keep old paths working.
 // URL policy: every repo (public AND private) carries its GitHub URL; contents of private repos never appear.
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
-const HERE = __dirname, TOP = '_git-repos-master', DIR = '0_repos-tree';
+const ROOT = path.resolve(__dirname, '..'), TOP = '_git-repos-master', DIR = '0_repos-tree';
 const ghName = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
-const ROOT_LINKS = ['repos-tree.canvas', 'repos-tree.html', 'repos-tree.md', 'repos-tree.json', 'repos-tree.xml'];
 
 // ---- model: registry -> flat nodes with parent hub and farm ------------------------------------
 function model(src) { // from THE ONE MASTER SOURCE projects-repos.json (registry-model.js), never from the rendered compat files
@@ -93,7 +91,7 @@ function canvas(j) {
 }
 
 function html(j) {
-  const tpl = fs.readFileSync(path.join(HERE, '9_others/templates/repos-tree.html'), 'utf8'), nodes = [];
+  const tpl = fs.readFileSync(path.join(ROOT, '9_others/templates/repos-tree.html'), 'utf8'), nodes = [];
   walkT(j.tree, (o, par) => { const g = o.kind === 'group';
     nodes.push({ id: gid(o), name: o.name, label: o.name, url: g ? '' : o.url, project: g ? 'group' : o.project, family: g ? '' : o.family, field: g ? o.doc : o.field,
       developer: g ? '' : o.developer, visibility: g ? 'public' : o.visibility, vis_icon: g ? '' : VIS[o.visibility], parent: par ? gid(par) : null, hub: isBox(o) || o.kind === 'hub' }); });
@@ -166,4 +164,4 @@ function renderFrom(jsonText) { const j = JSON.parse(jsonText);
   return { [`${DIR}/repos-tree.canvas`]: canvas(j), [`${DIR}/repos-tree.html`]: html(j), [`${DIR}/repos-tree.md`]: asMd(j), [`${DIR}/repos-tree.xml`]: asXml(j), ...notes(j) }; }
 const jsonText = src => JSON.stringify(buildTree(model(src)), null, 2) + '\n';
 function render(src) { const t = jsonText(src); return { [`${DIR}/repos-tree.json`]: t, ...renderFrom(t) }; }
-module.exports = { render, renderFrom, model, buildTree, TOP, DIR, ROOT_LINKS };
+module.exports = { render, renderFrom, model, buildTree, TOP, DIR };

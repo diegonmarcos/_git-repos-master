@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-// refresh-folders-tree.js - re-fetches repo folder trees INTO the master projects-repos.json (#1291, #1301).
-// It writes only the `tree` fields of public repo nodes (root, hubs, repos) and nothing else, then runs gen-registry.js
+// 0_registry/refresh-folders-tree.js - re-fetches repo folder trees INTO the master projects-repos.json (#1291, #1301).
+// It writes only the `tree` fields of public repo nodes (root, hubs, repos) and nothing else, then runs 0_registry/gen-registry.js
 // so 0_repo-folders-tree/* (and every other render) follow. There is no separate folder JSON to edit.
 // Data: the GitHub tree API on remote HEAD (`gh api .../git/trees/HEAD?recursive=1`, no clones); when that fails or
 // is truncated, a local single clone under $LOCAL_CLONES (default /home/user) found by GitHub name, registry name or an
 // old name (renamed_from) is read with `git ls-tree`; else the repo keeps no tree and renders as "unreadable".
 // PRIVATE repos: never fetched, never stored (contents stay private). Depth and excluded names: `folders` in the master.
-//   node refresh-folders-tree.js                 refresh every public repo
-//   node refresh-folders-tree.js --missing       only the public repos that have no tree yet
-//   node refresh-folders-tree.js <name>...       only these repos (GitHub or registry names)
+//   node 0_registry/refresh-folders-tree.js                 refresh every public repo
+//   node 0_registry/refresh-folders-tree.js --missing       only the public repos that have no tree yet
+//   node 0_registry/refresh-folders-tree.js <name>...       only these repos (GitHub or registry names)
 //   --depth N                                    also set folders.max_depth to N first
 'use strict';
 const fs = require('fs'), path = require('path'), cp = require('child_process');
