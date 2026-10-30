@@ -360,6 +360,16 @@
         "description": true,
         "hub": true,
         "farm": true,
+        "landing": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Landing page of the node (Linktree Areas: footer link of its home card). Declared only where a live page exists."
+        },
+        "webapp": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Web app of the node (Linktree Areas: webapp link on its row of the parent home card). Declared only where a live web app exists."
+        },
         "show_in": {
           "description": "Consumer surfaces that list this area (e.g. lnktree = Cloud Me Lnktree > Proj chips). Absent = listed nowhere beyond the full outline.",
           "type": "array",
@@ -399,6 +409,16 @@
         "icon": true,
         "developer": true,
         "description": true,
+        "webapp": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Web app of the node (Linktree Areas: webapp link on its row of the parent home card). Declared only where a live web app exists."
+        },
+        "landing": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Landing page of the node (Linktree Areas: footer link of its home card). Declared only where a live page exists."
+        },
         "hub": true,
         "farm": true,
         "kind": {
@@ -464,6 +484,11 @@
         "icon": true,
         "developer": true,
         "description": true,
+        "webapp": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Web app of the node (Linktree Areas: webapp link on its row of the parent home card). Declared only where a live web app exists."
+        },
         "hub": true,
         "farm": true,
         "kind": {
@@ -492,6 +517,11 @@
         "icon": true,
         "developer": true,
         "description": true,
+        "webapp": {
+          "type": "string",
+          "pattern": "^https://[^ ]+$",
+          "description": "Web app of the node (Linktree Areas: webapp link on its row of the parent home card). Declared only where a live web app exists."
+        },
         "hub": true,
         "farm": true,
         "kind": {

@@ -103,6 +103,7 @@
           "label": "Cloudy",
           "icon": "☁️",
           "description": "The cloudy project: fleet infrastructure, services, devices, data and docs.",
+          "landing": "https://diegonmarcos.github.io/cloud-webapps/",
           "hub": {
             "code": "1.1.0",
             "kind": "hub",
@@ -155,6 +156,7 @@
               "name": "Android",
               "label": "Android",
               "description": "",
+              "webapp": "https://diegonmarcos.github.io/cloud-webapps/",
               "children": [
                 {
                   "code": "1.1.1.1",
@@ -260,6 +262,7 @@
               "name": "C3",
               "label": "C3",
               "description": "Fleet infra, data and docs.",
+              "webapp": "https://diegonmarcos.github.io/cloudy-c3/",
               "children": [
                 {
                   "code": "1.1.2.1",
@@ -933,6 +936,7 @@
           "label": "Cloud-Me",
           "icon": "🙋",
           "description": "The owner's personal cloud: public profiles and shared data, private configs, data and secrets.",
+          "landing": "https://diegonmarcos.com/",
           "hub": {
             "code": "1.2.0",
             "kind": "hub",
@@ -1539,6 +1543,7 @@
               "name": "Threlte",
               "label": "Threlte",
               "description": "",
+              "webapp": "https://diegonmarcos.github.io/galaxy/",
               "children": [
                 {
                   "code": "2.1.1.1",
@@ -1847,6 +1852,7 @@
               "name": "MQPM",
               "label": "MQPM",
               "description": "",
+              "webapp": "https://diegonmarcos.github.io/central_bank/",
               "children": [
                 {
                   "code": "3.1.1.1",
@@ -1940,6 +1946,7 @@
               "name": "Terminal",
               "label": "Terminal",
               "description": "",
+              "webapp": "https://diegonmarcos.github.io/fin-terminal/",
               "children": [
                 {
                   "code": "3.3.1.1",
@@ -2058,6 +2065,7 @@
               "name": "Sailytics",
               "label": "Sailytics",
               "description": "",
+              "webapp": "https://diegonmarcos.github.io/sailytics/",
               "children": [
                 {
                   "code": "4.2.1.1",
