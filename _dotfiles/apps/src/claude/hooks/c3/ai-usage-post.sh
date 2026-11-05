@@ -12,16 +12,16 @@
 # Auth: mesh leg first (the mesh is trusted, no credential); public leg with a scoped bearer from C3_AI_USAGE_TOKEN
 # (or the file C3_AI_USAGE_TOKEN_FILE, or minted from the AUTHELIA_* client credentials the cloud environment injects).
 # The credential travels on curl's stdin config, never in argv, and is never printed.
-# Env: C3_AI_USAGE_MESH_URL (default https://cloudy-c3-infra-api.mesh.diegonmarcos.com, then the old c3-infra-api host), C3_AI_USAGE_URL (public, default
-#      https://c3-pvt.diegonmarcos.com/cloudy-c3-infra-api, then /c3-infra-api), AI_USAGE_SYNC=1 (foreground, for tests), AI_USAGE_STATE (state dir).
+# Env: C3_AI_USAGE_MESH_URL (default https://cloudy-c3-api.mesh.diegonmarcos.com, then the old c3-infra-api host), C3_AI_USAGE_URL (public, default
+#      https://c3-pvt.diegonmarcos.com/cloudy-c3-api, then /c3-infra-api), AI_USAGE_SYNC=1 (foreground, for tests), AI_USAGE_STATE (state dir).
 set -u
 MODE="${1:-hook}"
 STATE="${AI_USAGE_STATE:-${XDG_RUNTIME_DIR:-${TMPDIR:-/tmp}}}"
 MIN="${AI_USAGE_MIN_INTERVAL:-60}"
 case "$MIN" in ""|*[!0-9]*) MIN=60;; esac
-# API rebrand (#1450): cloudy-c3-infra-api is the new name, c3-infra-api the alias for one release; try new first.
-MESH="${C3_AI_USAGE_MESH_URL:-https://cloudy-c3-infra-api.mesh.diegonmarcos.com https://c3-infra-api.mesh.diegonmarcos.com}"
-PUB="${C3_AI_USAGE_URL:-https://c3-pvt.diegonmarcos.com/cloudy-c3-infra-api https://c3-pvt.diegonmarcos.com/c3-infra-api}"
+# API rebrand (#1450): cloudy-c3-api is the new name, c3-infra-api the alias for one release; try new first.
+MESH="${C3_AI_USAGE_MESH_URL:-https://cloudy-c3-api.mesh.diegonmarcos.com https://c3-infra-api.mesh.diegonmarcos.com}"
+PUB="${C3_AI_USAGE_URL:-https://c3-pvt.diegonmarcos.com/cloudy-c3-api https://c3-pvt.diegonmarcos.com/c3-infra-api}"
 
 num()  { case "$1" in ""|*[!0-9.]*|*.*.*|.*) return 1;; esac; return 0; }
 int()  { case "$1" in ""|*[!0-9]*) return 1;; esac; return 0; }
