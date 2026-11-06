@@ -7,6 +7,10 @@
 #     statusline-assets engine as claude-ai-usage-post.sh.
 #   * hook path (cloud sessions, which run no statusLine): wired in settings.project.json on StopFailure, no arguments,
 #     hook JSON on stdin. The only usage fact a hook carries is error=rate_limit, posted as {"rate_limited":true}.
+#   * tokens path (#1543, laptop / Termux): `ai-usage-post.sh tokens` ships the `daily` rows (UTC day x model: input,
+#     output, cache_write, cache_read, cost) of the `my-ai usage --daemon` snapshot ($XDG_RUNTIME_DIR/my-ai-usage.json,
+#     or AI_USAGE_SNAPSHOT) to POST /ai/usage/claude/tokens, for the SuperIntel Cost Daily/Monthly tables. Needs jq;
+#     throttled to AI_USAGE_TOKENS_INTERVAL seconds (default 600). The API merges hosts and keeps the per-field max.
 # Never blocks and never fails the caller: the network part is detached, bounded by curl --max-time, always exit 0.
 # Throttled to one post per AI_USAGE_MIN_INTERVAL seconds (default 60) per mode, across all sessions of the host.
 # Auth: mesh leg first (the mesh is trusted, no credential); public leg with a scoped bearer from C3_AI_USAGE_TOKEN
@@ -30,7 +34,21 @@ safe() { printf '%s' "$1" | tr -c 'A-Za-z0-9._-' '_' | cut -c1-"${2:-40}"; }
 # ── build the JSON body (no jq: every interpolated value is validated or sanitised) ──
 HOST="$(safe "${AI_USAGE_HOST:-$(hostname 2>/dev/null || echo host)}" 40)"
 BODY=""
-if [ "$MODE" = "statusline" ]; then
+ROUTE="/ai/usage/claude"
+if [ "$MODE" = "tokens" ]; then
+    MIN="${AI_USAGE_TOKENS_INTERVAL:-600}"; case "$MIN" in ""|*[!0-9]*) MIN=600;; esac
+    SNAP="${AI_USAGE_SNAPSHOT:-${XDG_RUNTIME_DIR:-${TMPDIR:-/tmp}}/my-ai-usage.json}"
+    [ -s "$SNAP" ] && command -v jq >/dev/null 2>&1 || exit 0
+    # Only well-formed rows; jq builds the JSON, so nothing from the file is spliced in as text.
+    BODY="$(jq -c --arg host "$HOST" --argjson now "$(date +%s)" '
+        [ (.daily // [])[] | select((.date|type)=="string" and (.date|test("^[0-9]{4}-[0-9]{2}-[0-9]{2}$"))
+            and (.model|type)=="string" and (.model|test("^[A-Za-z0-9._:-]{1,64}$")))
+          | {date, model, input: (.input // 0), output: (.output // 0), cache_write: (.cache_write // 0),
+             cache_read: (.cache_read // 0), cost: (.cost // 0)} ] as $d
+        | if ($d|length) == 0 then empty else {source: "statusline", host: $host, observed_at: $now, days: $d[-400:]} end' "$SNAP" 2>/dev/null)"
+    [ -n "$BODY" ] || exit 0
+    ROUTE="/ai/usage/claude/tokens"
+elif [ "$MODE" = "statusline" ]; then
     p5="${2:-}"; r5="${3:-}"; p7="${4:-}"; r7="${5:-}"; sid="$(safe "${6:-}" 40)"
     W=""
     if num "$p5" && int "$r5"; then W="\"five_hour\":{\"used_percentage\":$p5,\"resets_at\":$r5}"; fi
@@ -66,7 +84,7 @@ send() {
     # 1) mesh leg: trusted network, no credential, short timeout
     for m in $MESH; do
         code="$(curl -s -o /dev/null -w '%{http_code}' --connect-timeout 2 --max-time 4 -X POST \
-            -H 'Content-Type: application/json' --data-binary "@$tmp" "$m/ai/usage/claude" 2>/dev/null)" || code=000
+            -H 'Content-Type: application/json' --data-binary "@$tmp" "$m$ROUTE" 2>/dev/null)" || code=000
         case "$code" in 2??) rm -f "$tmp"; return 0;; esac
     done
     # 2) public leg with the scoped bearer
@@ -87,7 +105,7 @@ send() {
         for u in $PUB; do
             code="$(printf 'header = "Authorization: Bearer %s"\n' "$tok" \
                 | curl -s -o /dev/null -w '%{http_code}' --connect-timeout 3 --max-time 6 -X POST -H 'Content-Type: application/json' \
-                    --data-binary "@$tmp" -K - "$u/ai/usage/claude" 2>/dev/null)" || code=000
+                    --data-binary "@$tmp" -K - "$u$ROUTE" 2>/dev/null)" || code=000
             case "$code" in 2??) break;; esac
         done
     fi
