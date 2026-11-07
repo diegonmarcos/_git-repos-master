@@ -171,10 +171,26 @@
                   ],
                   "doc": "Android client. #1335: the Lnktree app family (folders ad_*, not the Cloud family ac_cloud-*) is listed in `apps`.",
                   "apps": [
-                    {"name": "CG-Omniverse", "path": "ad_CG-Omniverse", "description": "CG area app (Galaxy, Game Store, VR Store) behind the SuperApp's Cloud > Lnktree row."},
-                    {"name": "Capital-Stack-FinTerminal", "path": "ad_Capital-Stack-FinTerminal", "description": "Capital area app: the FI | EQ | EX | NW | PM | MY-PM terminal tabs behind the SuperApp's Cloud > Lnktree row."},
-                    {"name": "Hardtech-CAD", "path": "ad_Hardtech-CAD", "description": "HardTech area app (MCAD, BIM, SolidWorks) behind the SuperApp's Cloud > Lnktree row."},
-                    {"name": "Hardtech-Sim2Real", "path": "ad_Hardtech-Sim2Real", "description": "HardTech area app (SAP2000, MATLAB, Ansys) behind the SuperApp's Cloud > Lnktree row."}
+                    {
+                      "name": "CG-Omniverse",
+                      "path": "ad_CG-Omniverse",
+                      "description": "CG area app (Galaxy, Game Store, VR Store) behind the SuperApp's Cloud > Lnktree row."
+                    },
+                    {
+                      "name": "Capital-Stack-FinTerminal",
+                      "path": "ad_Capital-Stack-FinTerminal",
+                      "description": "Capital area app: the FI | EQ | EX | NW | PM | MY-PM terminal tabs behind the SuperApp's Cloud > Lnktree row."
+                    },
+                    {
+                      "name": "Hardtech-CAD",
+                      "path": "ad_Hardtech-CAD",
+                      "description": "HardTech area app (MCAD, BIM, SolidWorks) behind the SuperApp's Cloud > Lnktree row."
+                    },
+                    {
+                      "name": "Hardtech-Sim2Real",
+                      "path": "ad_Hardtech-Sim2Real",
+                      "description": "HardTech area app (SAP2000, MATLAB, Ansys) behind the SuperApp's Cloud > Lnktree row."
+                    }
                   ],
                   "tree": {
                     "source": "local-clone",
@@ -3106,6 +3122,31 @@
                       {"name":"package.json","type":"file","size":3643},
                       {"name":"README.md","type":"file","size":14645},
                       {"name":"todo.md","type":"file","size":1048}
+                    ]
+                  }
+                },
+                {
+                  "code": "7.2.1.2",
+                  "kind": "repo",
+                  "name": "front-html",
+                  "github": "front-html",
+                  "label": "front-html",
+                  "visibility": "public",
+                  "description": "Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json.",
+                  "role": "hub",
+                  "group": "c_gh",
+                  "doc": "Pages hub: submodules diegonmarcos.github.io and profile, and pages.json derived from the GitHub API by scripts/gen-pages.mjs (read at runtime by Cloud Browser). Placed beside front-diegonmarcos (the deployer it indexes) in 7.Others.",
+                  "tree": {
+                    "source": "github-api",
+                    "head": "ec7ac4da99ae5e9797430806b538e1bf1ee97163",
+                    "entries": [
+                      {"name":".github","type":"dir","children":[{"name":"workflows","type":"dir","children":[{"name":"pages-drift.yml","type":"file","size":748}]}]},
+                      {"name":"scripts","type":"dir","children":[{"name":"gen-pages.py","type":"file","size":3030}]},
+                      {"name":".gitmodules","type":"file","size":228},
+                      {"name":"diegonmarcos.github.io","type":"submodule"},
+                      {"name":"pages.json","type":"file","size":602},
+                      {"name":"profile","type":"submodule"},
+                      {"name":"README.md","type":"file","size":1006}
                     ]
                   }
                 }

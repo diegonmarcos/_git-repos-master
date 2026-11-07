@@ -1,10 +1,10 @@
 ---
 title: Repos tree
 generated_by: gen-registry.js
-repos: 75
+repos: 76
 hubs: 13
 groups: 9
-public: 58
+public: 59
 private: 17
 tags: [hub, repos-tree]
 ---
@@ -90,6 +90,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[diegonmarcos]] · 🌐 public · Profile
     - [[diegonmarcos.github.io]] · 🌐 public · Pages
+    - [[front-html]] · 🌐 public · Pages
   - 📁 **8.Archived/** · Archived (8): hub z-archived-___ and its members. Every z-archived_* repo, under the hub z-archived-___.
     - **[[z-archived-___]]** · 🌐 public
       - [[z-archived_c3-infra-plugin]] · 🔒 private · Z-archived
@@ -185,6 +186,7 @@ graph LR
   n_group_7_Others["7.Others/"]
   n_diegonmarcos["diegonmarcos"]
   n_diegonmarcos_github_io["diegonmarcos.github.io"]
+  n_front_html["front-html"]
   n_group_8_Archived["8.Archived/"]
   n_z_archived____["z-archived-___"]
   n_z_archived_c3_infra_plugin["z-archived_c3-infra-plugin"]
@@ -274,6 +276,7 @@ graph LR
   n__git_repos_master --> n_group_7_Others
   n_group_7_Others --> n_diegonmarcos
   n_group_7_Others --> n_diegonmarcos_github_io
+  n_group_7_Others --> n_front_html
   n__git_repos_master --> n_group_8_Archived
   n_group_8_Archived --> n_z_archived____
   n_z_archived____ --> n_z_archived_c3_infra_plugin

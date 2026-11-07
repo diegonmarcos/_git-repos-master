@@ -56580,6 +56580,69 @@
         "size": 1048
        }
       ]
+     },
+     {
+      "code": "7.2.1.2",
+      "name": "front-html",
+      "kind": "repo",
+      "visibility": "public",
+      "url": "https://github.com/diegonmarcos/front-html",
+      "status": "ok",
+      "source": "github-api",
+      "head": "ec7ac4da99ae5e9797430806b538e1bf1ee97163",
+      "entries": [
+       {
+        "name": ".github",
+        "type": "dir",
+        "children": [
+         {
+          "name": "workflows",
+          "type": "dir",
+          "children": [
+           {
+            "name": "pages-drift.yml",
+            "type": "file",
+            "size": 748
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": "scripts",
+        "type": "dir",
+        "children": [
+         {
+          "name": "gen-pages.py",
+          "type": "file",
+          "size": 3030
+         }
+        ]
+       },
+       {
+        "name": ".gitmodules",
+        "type": "file",
+        "size": 228
+       },
+       {
+        "name": "diegonmarcos.github.io",
+        "type": "submodule"
+       },
+       {
+        "name": "pages.json",
+        "type": "file",
+        "size": 602
+       },
+       {
+        "name": "profile",
+        "type": "submodule"
+       },
+       {
+        "name": "README.md",
+        "type": "file",
+        "size": 1006
+       }
+      ]
      }
     ]
    },

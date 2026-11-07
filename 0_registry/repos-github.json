@@ -1153,6 +1153,24 @@
       "description": "Does Ducks lives in the north pole with bears or south with Penguins?"
     },
     {
+      "family": "Deployer",
+      "name": "front-html",
+      "url": "https://github.com/diegonmarcos/front-html",
+      "role": "hub",
+      "visibility": "public",
+      "project": "Pages",
+      "field": "Others",
+      "developer": "Gh",
+      "code": "7.2.1.2",
+      "area_code": "7",
+      "project_code": "7.2",
+      "family_code": "7.2.1",
+      "registry_name": "front-html",
+      "hub": null,
+      "farm": "7.Others",
+      "description": "Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json."
+    },
+    {
       "family": "Hub",
       "name": "z-archived-___",
       "url": "https://github.com/diegonmarcos/z-archived-___",
@@ -2525,7 +2543,7 @@
       "description": "Loose GitHub repos with no project hub (profile README, GitHub Pages site).",
       "hub": null,
       "farm": "7.Others",
-      "repos_count": 2,
+      "repos_count": 3,
       "children": [
         {
           "code": "7.1",
@@ -2565,7 +2583,7 @@
           "description": "GitHub Pages deployer.",
           "hub": null,
           "farm": "7.Others",
-          "repos_count": 1,
+          "repos_count": 2,
           "children": [
             {
               "code": "7.2.1",
@@ -2576,9 +2594,10 @@
               "description": "",
               "hub": null,
               "farm": "7.Others",
-              "repos_count": 1,
+              "repos_count": 2,
               "repos": [
-                "diegonmarcos.github.io"
+                "diegonmarcos.github.io",
+                "front-html"
               ]
             }
           ]

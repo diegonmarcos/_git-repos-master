@@ -3,8 +3,8 @@ title: Repo folders tree
 generated_by: 0_registry/gen-registry.js
 source: 0_registry/projects-repos.json
 max_depth: 3
-repos: 75
-listed: 58
+repos: 76
+listed: 59
 private: 17
 unreadable: 0
 tags: [hub, repos-tree]
@@ -15,7 +15,7 @@ tags: [hub, repos-tree]
 # Repo folders tree
 
 Every registry repo, grouped by hub, with its folders and files to depth **3**
-(read from remote `HEAD` through the GitHub tree API). 58 of 75 listed; 17 private repos
+(read from remote `HEAD` through the GitHub tree API). 59 of 76 listed; 17 private repos
 show name and URL only, never their contents; 0 unreadable. Excluded: `.cache`, `.cargo-home`, `.deps`, `.git`, `.gradle`, `.mypy_cache`, `.next`, `.nuxt`, `.parcel-cache`, `.pytest_cache`, `.terraform`, `.venv`, `__pycache__`, `build`, `coverage`, `node_modules`, `out`, `target`, `venv`.
 
 Browser view: [`repo-folders-tree.html`](repo-folders-tree.html). Data: [`repo-folders-tree.json`](repo-folders-tree.json) (an excerpt of the master `../0_registry/projects-repos.json`).
@@ -10171,6 +10171,17 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - `package.json` · 3.6 KiB
       - `README.md` · 14.3 KiB
       - `todo.md` · 1.0 KiB
+    - **[front-html](https://github.com/diegonmarcos/front-html)** · 🌐 public
+      - 📁 `.github`
+        - 📁 `workflows`
+          - `pages-drift.yml` · 748 B
+      - 📁 `scripts`
+        - `gen-pages.py` · 3.0 KiB
+      - `.gitmodules` · 228 B
+      - 📦 `diegonmarcos.github.io` (submodule)
+      - `pages.json` · 602 B
+      - 📦 `profile` (submodule)
+      - `README.md` · 1006 B
   - 📁 **8.Archived/** (group)
     - **z-archived-___/** (hub)
       - **[z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)** · 🔒 private

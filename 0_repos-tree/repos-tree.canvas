@@ -826,7 +826,7 @@
       "label": "7.Others",
       "x": 340,
       "y": 4860,
-      "width": 660,
+      "width": 980,
       "height": 180,
       "color": "5"
     },
@@ -845,6 +845,16 @@
       "type": "text",
       "text": "**diegonmarcos.github.io**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos.github.io)",
       "x": 680,
+      "y": 4900,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "4c807294e312b03f",
+      "type": "text",
+      "text": "**front-html**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/front-html)",
+      "x": 1000,
       "y": 4900,
       "width": 300,
       "height": 120,
@@ -1493,6 +1503,14 @@
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
       "toNode": "f64ab6209f919f6a",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "3d7c2abab6bd2a0b",
+      "fromNode": "61b37abb2d70ec68",
+      "fromSide": "right",
+      "toNode": "4c807294e312b03f",
       "toSide": "left",
       "color": "4"
     },
