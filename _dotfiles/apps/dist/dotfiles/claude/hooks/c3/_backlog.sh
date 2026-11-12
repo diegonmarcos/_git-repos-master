@@ -1,8 +1,14 @@
-# Shared by the backlog hooks: locate the Product Backlog repo (cloudy-a-docs) checkout.
-# Override with C3_BACKLOG_REPO. Prints the repo root, or nothing when no checkout is present.
+# Shared by the backlog hooks: locate the Product Backlog repo checkout.
+# SINGLE SETTING for the backlog location (#1585): C3_BACKLOG_REPO (absolute path) wins; otherwise the repo is found by
+# name from C3_BACKLOG_REPO_NAMES (space separated, first match wins). When the backlog moves (#1699, cloud-me-pvt-tasks)
+# change ONLY the default names below (or export one of the variables); no other hook hardcodes the repo.
+# Prints the repo root, or nothing when no checkout is present.
+C3_BACKLOG_REPO_NAMES="${C3_BACKLOG_REPO_NAMES:-cloud-me-pvt-tasks cloudy-a-docs}"
 backlog_repo() {
-  local c
-  for c in "$C3_BACKLOG_REPO" "${CLAUDE_PROJECT_DIR:-.}" "${CLAUDE_PROJECT_DIR:-.}/../cloudy-a-docs" "$HOME/cloudy-a-docs" "$HOME/git/cloudy-a-docs" /home/user/cloudy-a-docs; do
+  local c n
+  set -- "$C3_BACKLOG_REPO" "${CLAUDE_PROJECT_DIR:-.}"
+  for n in $C3_BACKLOG_REPO_NAMES; do set -- "$@" "${CLAUDE_PROJECT_DIR:-.}/../$n" "$HOME/$n" "$HOME/git/$n" "/home/user/$n"; done
+  for c in "$@"; do
     [ -n "$c" ] && [ -d "$c/1___BACKLOG___/1.1.Product-Backlog/tasks" ] && { (cd "$c" && pwd); return 0; }
   done
   return 1
