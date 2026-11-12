@@ -756,7 +756,7 @@
       "label": "6.Projects",
       "x": 340,
       "y": 4460,
-      "width": 1420,
+      "width": 1740,
       "height": 380,
       "color": "5"
     },
@@ -766,7 +766,7 @@
       "label": "Projects-___",
       "x": 680,
       "y": 4500,
-      "width": 1060,
+      "width": 1380,
       "height": 320,
       "color": "4"
     },
@@ -791,10 +791,20 @@
       "color": "4"
     },
     {
+      "id": "8c0613a8b5f718ae",
+      "type": "text",
+      "text": "**Projects-Library-KG**\nLibrary-KG · Library-KG\n🌐 public · Projects\n[GitHub](https://github.com/diegonmarcos/Projects-Library-KG)",
+      "x": 1020,
+      "y": 4680,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
       "id": "ab33eb35318fae9e",
       "type": "group",
       "label": "6.Projects/DuckPeng",
-      "x": 1020,
+      "x": 1340,
       "y": 4540,
       "width": 700,
       "height": 240,
@@ -804,7 +814,7 @@
       "id": "b2834c84bed9af16",
       "type": "group",
       "label": "DuckPeng-___",
-      "x": 1360,
+      "x": 1680,
       "y": 4580,
       "width": 340,
       "height": 180,
@@ -814,7 +824,7 @@
       "id": "99c6d4483cceaf9c",
       "type": "text",
       "text": "**DuckPeng-___**\nDuckPeng · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
-      "x": 1380,
+      "x": 1700,
       "y": 4620,
       "width": 300,
       "height": 120,
@@ -1488,6 +1498,14 @@
       "fromSide": "bottom",
       "toNode": "903972ebdeb612ba",
       "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "c88f51ff32444efe",
+      "fromNode": "99e82aea5183040e",
+      "fromSide": "right",
+      "toNode": "8c0613a8b5f718ae",
+      "toSide": "left",
       "color": "4"
     },
     {

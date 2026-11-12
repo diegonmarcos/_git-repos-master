@@ -1,10 +1,10 @@
 ---
 title: Repos tree
 generated_by: gen-registry.js
-repos: 76
+repos: 77
 hubs: 13
 groups: 9
-public: 59
+public: 60
 private: 17
 tags: [hub, repos-tree]
 ---
@@ -87,6 +87,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - 📁 **DuckPeng/**
         - **[[DuckPeng-___]]** · 🌐 public · DuckPeng
       - [[Projects-endeavours]] · 🌐 public · Endeavours
+      - [[Projects-Library-KG]] · 🌐 public · Library-KG
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[diegonmarcos]] · 🌐 public · Profile
     - [[diegonmarcos.github.io]] · 🌐 public · Pages
@@ -183,6 +184,7 @@ graph LR
   n_group_6_Projects_DuckPeng["DuckPeng/"]
   n_DuckPeng____["DuckPeng-___"]
   n_Projects_endeavours["Projects-endeavours"]
+  n_Projects_Library_KG["Projects-Library-KG"]
   n_group_7_Others["7.Others/"]
   n_diegonmarcos["diegonmarcos"]
   n_diegonmarcos_github_io["diegonmarcos.github.io"]
@@ -273,6 +275,7 @@ graph LR
   n_Projects____ --> n_group_6_Projects_DuckPeng
   n_group_6_Projects_DuckPeng --> n_DuckPeng____
   n_Projects____ --> n_Projects_endeavours
+  n_Projects____ --> n_Projects_Library_KG
   n__git_repos_master --> n_group_7_Others
   n_group_7_Others --> n_diegonmarcos
   n_group_7_Others --> n_diegonmarcos_github_io

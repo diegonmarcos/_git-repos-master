@@ -3,10 +3,10 @@ title: Repo folders tree
 generated_by: 0_registry/gen-registry.js
 source: 0_registry/projects-repos.json
 max_depth: 3
-repos: 76
+repos: 77
 listed: 59
 private: 17
-unreadable: 0
+unreadable: 1
 tags: [hub, repos-tree]
 ---
 
@@ -15,8 +15,8 @@ tags: [hub, repos-tree]
 # Repo folders tree
 
 Every registry repo, grouped by hub, with its folders and files to depth **3**
-(read from remote `HEAD` through the GitHub tree API). 59 of 76 listed; 17 private repos
-show name and URL only, never their contents; 0 unreadable. Excluded: `.cache`, `.cargo-home`, `.deps`, `.git`, `.gradle`, `.mypy_cache`, `.next`, `.nuxt`, `.parcel-cache`, `.pytest_cache`, `.terraform`, `.venv`, `__pycache__`, `build`, `coverage`, `node_modules`, `out`, `target`, `venv`.
+(read from remote `HEAD` through the GitHub tree API). 59 of 77 listed; 17 private repos
+show name and URL only, never their contents; 1 unreadable. Excluded: `.cache`, `.cargo-home`, `.deps`, `.git`, `.gradle`, `.mypy_cache`, `.next`, `.nuxt`, `.parcel-cache`, `.pytest_cache`, `.terraform`, `.venv`, `__pycache__`, `build`, `coverage`, `node_modules`, `out`, `target`, `venv`.
 
 Browser view: [`repo-folders-tree.html`](repo-folders-tree.html). Data: [`repo-folders-tree.json`](repo-folders-tree.json) (an excerpt of the master `../0_registry/projects-repos.json`).
 Refresh: `node 0_registry/refresh-folders-tree.js [--missing] [--depth N] [repo...]` (writes into `0_registry/projects-repos.json`, then re-renders).
@@ -9271,6 +9271,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - 🔗 `1_cicd` → `0_deployer/1_cicd` · 17 B
         - `README.md` · 501 B
         - `SPLIT-PATHS.txt` · 76 B
+      - **[Projects-Library-KG](https://github.com/diegonmarcos/Projects-Library-KG)** · ⚠️ unreadable
   - 📁 **7.Others/** (group)
     - **[diegonmarcos](https://github.com/diegonmarcos/diegonmarcos)** · 🌐 public
       - 📁 `.claude`
