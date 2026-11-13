@@ -198,7 +198,7 @@ _git-repos-master/
   7.Others/
     front-diegonmarcos
     front-gh-profile-diegonmarcos
-    front-html
+    front-html___
   8.Archived/
     z-archived-___  (hub)
     z-archived_c3-infra-plugin  (private)
@@ -305,7 +305,7 @@ Every repo except this one carries its hub as a git submodule at `0_hub/<hub>` (
 | `6.3.1.1` | [Projects-Library-KG](https://github.com/diegonmarcos/Projects-Library-KG) | Projects | Library-KG | — | Library-KG | Projects-___ | 🌐 public | 🧩 Projects | Library knowledge graph: saved-collections board (served by Cloud KG Store Me) and the Chronos site |
 | `7.1.1.1` | [diegonmarcos](https://github.com/diegonmarcos/diegonmarcos) (registry `front-gh-profile-diegonmarcos`) | Others | Profile | — | README | — | 🌐 public | 🐙 Gh | GitHub Landpage |
 | `7.2.1.1` | [diegonmarcos.github.io](https://github.com/diegonmarcos/diegonmarcos.github.io) (registry `front-diegonmarcos`) | Others | Pages | — | Deployer | — | 🌐 public | 🐙 Gh | Does Ducks lives in the north pole with bears or south with Penguins? |
-| `7.2.1.2` | [front-html](https://github.com/diegonmarcos/front-html) | Others | Pages | — | Deployer | — | 🌐 public | 🐙 Gh | Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json. |
+| `7.2.1.2` | [front-html___](https://github.com/diegonmarcos/front-html___) | Others | Pages | — | Deployer | — | 🌐 public | 🐙 Gh | Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json. |
 | `8.0` | [z-archived-___](https://github.com/diegonmarcos/z-archived-___) _(hub)_ | Archived | — | — | Hub | _git-repos-master | 🌐 public | 📦 Z-archived | Hub of the archived repos (z-archived_*): repos.json subset, clone.sh, README. Parent hub: _git-repos-master. |
 | `8.1.1.1` | [z-archived_cloud-me-pub-data](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data) | Archived | Z-archived | — | Cloud-Me | z-archived-___ | 🌐 public | 📦 Z-archived | cloud-me data (public): e.g. Health |
 | `8.1.1.2` | [z-archived_cloud-me-pvt-data-private](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private) | Archived | Z-archived | — | Cloud-Me | z-archived-___ | 🔒 private | 📦 Z-archived | cloud-me data (private): per-app backups, AI sessions, Maps history, Financial |
