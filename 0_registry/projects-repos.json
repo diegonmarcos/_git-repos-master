@@ -1491,6 +1491,25 @@
                       "doc": "Secrets (sops/age) only. Twin of cloud-me-pvt-configs (same top-level folders: Apks, Linux-Desktop, Linux-Terminal, Linux-Containers, Shared, plus Identity; renamed #1310). Since 2026-10-28 (#1253) it also holds the container secrets formerly in cloud-me-pvt-containers (now Linux-Containers/) and the secrets/, sso-oidc/, vault-mtls/ bundles formerly in cloud-me-pvt-data."
                     }
                   ]
+                },
+                {
+                  "code": "1.2.2.7",
+                  "kind": "family",
+                  "name": "Tasks",
+                  "label": "Tasks",
+                  "description": "",
+                  "children": [
+                    {
+                      "code": "1.2.2.7.1",
+                      "kind": "repo",
+                      "name": "cloud-me-pvt-tasks",
+                      "label": "cloud-me-pvt-tasks",
+                      "visibility": "private",
+                      "description": "Product backlog",
+                      "group": "a_cloud",
+                      "doc": "The Cloud fleet product backlog (1___BACKLOG___ ticket JSONs per session, build.js site, metadata test) moved here from cloudy-a-docs (#1699). Root index.html is the rendered backlog, built by the repo CI; Cloud Code > Backlog clones and renders it."
+                    }
+                  ]
                 }
               ]
             }

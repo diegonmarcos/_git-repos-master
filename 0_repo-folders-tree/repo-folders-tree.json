@@ -45353,6 +45353,14 @@
             "status": "private"
            },
            {
+            "code": "1.2.2.7.1",
+            "name": "cloud-me-pvt-tasks",
+            "kind": "repo",
+            "visibility": "private",
+            "url": "https://github.com/diegonmarcos/cloud-me-pvt-tasks",
+            "status": "private"
+           },
+           {
             "code": "1.2.2.6.1",
             "name": "cloud-me-pvt-vault",
             "kind": "repo",

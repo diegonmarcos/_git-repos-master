@@ -7,7 +7,7 @@
       "x": 0,
       "y": 0,
       "width": 3140,
-      "height": 6020,
+      "height": 6160,
       "color": "2"
     },
     {
@@ -177,7 +177,7 @@
       "x": 340,
       "y": 860,
       "width": 2780,
-      "height": 1300,
+      "height": 1440,
       "color": "5"
     },
     {
@@ -187,7 +187,7 @@
       "x": 680,
       "y": 900,
       "width": 2420,
-      "height": 1240,
+      "height": 1380,
       "color": "5"
     },
     {
@@ -327,7 +327,7 @@
       "x": 1020,
       "y": 1600,
       "width": 1340,
-      "height": 520,
+      "height": 660,
       "color": "5"
     },
     {
@@ -337,7 +337,7 @@
       "x": 1360,
       "y": 1640,
       "width": 980,
-      "height": 460,
+      "height": 600,
       "color": "5"
     },
     {
@@ -401,11 +401,21 @@
       "color": "1"
     },
     {
+      "id": "5b3ae9daa29578b8",
+      "type": "text",
+      "text": "**cloud-me-pvt-tasks**\nCloud-Me · Tasks\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-tasks)",
+      "x": 2020,
+      "y": 1960,
+      "width": 300,
+      "height": 120,
+      "color": "1"
+    },
+    {
       "id": "453ef43ac3b63bbc",
       "type": "text",
       "text": "**cloud-me-pvt-vault**\nCloud-Me · Vault\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
-      "x": 2020,
-      "y": 1960,
+      "x": 1380,
+      "y": 2100,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -415,7 +425,7 @@
       "type": "group",
       "label": "2.CG",
       "x": 340,
-      "y": 2180,
+      "y": 2320,
       "width": 1340,
       "height": 520,
       "color": "5"
@@ -425,7 +435,7 @@
       "type": "group",
       "label": "CG-___",
       "x": 680,
-      "y": 2220,
+      "y": 2360,
       "width": 980,
       "height": 460,
       "color": "4"
@@ -435,7 +445,7 @@
       "type": "text",
       "text": "**CG-___**\n— · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-___)",
       "x": 700,
-      "y": 2260,
+      "y": 2400,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -445,7 +455,7 @@
       "type": "text",
       "text": "**CG-circus**\nZirkus · Web Games\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
       "x": 700,
-      "y": 2400,
+      "y": 2540,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -455,7 +465,7 @@
       "type": "text",
       "text": "**CG-galaxy**\nGalaxy · Threlte\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy)",
       "x": 1020,
-      "y": 2400,
+      "y": 2540,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -465,7 +475,7 @@
       "type": "text",
       "text": "**CG-galaxy-gaia**\nGalaxy · Threlte\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-galaxy-gaia)",
       "x": 1340,
-      "y": 2400,
+      "y": 2540,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -475,7 +485,7 @@
       "type": "text",
       "text": "**CG-unity**\nGalaxy · Unity\n🔒 private · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-unity)",
       "x": 700,
-      "y": 2540,
+      "y": 2680,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -485,7 +495,7 @@
       "type": "text",
       "text": "**CG-voxel-rust**\nGalaxy · Voxel-rust\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/CG-voxel-rust)",
       "x": 1020,
-      "y": 2540,
+      "y": 2680,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -495,7 +505,7 @@
       "type": "group",
       "label": "3.Capital",
       "x": 340,
-      "y": 2720,
+      "y": 2860,
       "width": 1380,
       "height": 500,
       "color": "5"
@@ -505,7 +515,7 @@
       "type": "group",
       "label": "Capital-___",
       "x": 680,
-      "y": 2760,
+      "y": 2900,
       "width": 1020,
       "height": 440,
       "color": "5"
@@ -515,7 +525,7 @@
       "type": "text",
       "text": "**Capital-___**\n— · Hub\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-___)",
       "x": 700,
-      "y": 2800,
+      "y": 2940,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -525,7 +535,7 @@
       "type": "group",
       "label": "3.Capital/Capital-Markets",
       "x": 1020,
-      "y": 2800,
+      "y": 2940,
       "width": 660,
       "height": 180,
       "color": "5"
@@ -535,7 +545,7 @@
       "type": "text",
       "text": "**Capital-Macro-Central-Bank**\nMacro-Central-Bank · MQPM\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Macro-Central-Bank)",
       "x": 1040,
-      "y": 2840,
+      "y": 2980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -545,7 +555,7 @@
       "type": "text",
       "text": "**Capital-Stack-Fin-Terminal**\nStack-Fin-Terminal · Terminal\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal)",
       "x": 1360,
-      "y": 2840,
+      "y": 2980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -555,7 +565,7 @@
       "type": "group",
       "label": "3.Capital/Corporate",
       "x": 1020,
-      "y": 3000,
+      "y": 3140,
       "width": 340,
       "height": 180,
       "color": "5"
@@ -565,7 +575,7 @@
       "type": "text",
       "text": "**Capital-Micro-Asset-Management**\nMicro-Asset-Management · Corporate\n🌐 public · Nexus.z\n[GitHub](https://github.com/diegonmarcos/Capital-Micro-Asset-Management)",
       "x": 1040,
-      "y": 3040,
+      "y": 3180,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -575,7 +585,7 @@
       "type": "group",
       "label": "4.HardTech",
       "x": 340,
-      "y": 3240,
+      "y": 3380,
       "width": 1020,
       "height": 380,
       "color": "5"
@@ -585,7 +595,7 @@
       "type": "group",
       "label": "HardTech-___",
       "x": 680,
-      "y": 3280,
+      "y": 3420,
       "width": 660,
       "height": 320,
       "color": "6"
@@ -595,7 +605,7 @@
       "type": "text",
       "text": "**HardTech-___**\n— · Hub\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-___)",
       "x": 700,
-      "y": 3320,
+      "y": 3460,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -605,7 +615,7 @@
       "type": "text",
       "text": "**HardTech-DeepXTech**\nDeepXTech · Sailytics\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-DeepXTech)",
       "x": 700,
-      "y": 3460,
+      "y": 3600,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -615,7 +625,7 @@
       "type": "text",
       "text": "**HardTech-Stack-CAD-Simulators**\nStack-CAD-Simulators · CAD\n🌐 public · Stark.x\n[GitHub](https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators)",
       "x": 1020,
-      "y": 3460,
+      "y": 3600,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -625,7 +635,7 @@
       "type": "group",
       "label": "5.Lecole-42",
       "x": 340,
-      "y": 3640,
+      "y": 3780,
       "width": 1340,
       "height": 800,
       "color": "5"
@@ -635,7 +645,7 @@
       "type": "group",
       "label": "lecole-42-___",
       "x": 680,
-      "y": 3680,
+      "y": 3820,
       "width": 980,
       "height": 740,
       "color": "2"
@@ -645,7 +655,7 @@
       "type": "text",
       "text": "**lecole-42-___**\n— · Hub\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42-___)",
       "x": 700,
-      "y": 3720,
+      "y": 3860,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -655,7 +665,7 @@
       "type": "text",
       "text": "**lecole-42_back-Algo**\n42-algo · Back\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Algo)",
       "x": 700,
-      "y": 3860,
+      "y": 4000,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -665,7 +675,7 @@
       "type": "text",
       "text": "**lecole-42_back-Graphic**\n42-graphic · Back\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Graphic)",
       "x": 1020,
-      "y": 3860,
+      "y": 4000,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -675,7 +685,7 @@
       "type": "text",
       "text": "**lecole-42_back-System**\n42-system · Back\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-System)",
       "x": 1340,
-      "y": 3860,
+      "y": 4000,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -685,7 +695,7 @@
       "type": "text",
       "text": "**lecole-42_cyber-Cyberwarfare**\n42-cyberwarfare · Cyber\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare)",
       "x": 700,
-      "y": 4000,
+      "y": 4140,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -695,7 +705,7 @@
       "type": "text",
       "text": "**lecole-42_dev**\n42-dev · Dev\n🔒 private · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_dev)",
       "x": 1020,
-      "y": 4000,
+      "y": 4140,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -705,7 +715,7 @@
       "type": "text",
       "text": "**lecole-42_ml-Agentic**\n42-agentic · ML\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-Agentic)",
       "x": 1340,
-      "y": 4000,
+      "y": 4140,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -715,7 +725,7 @@
       "type": "text",
       "text": "**lecole-42_ml-DataScience**\n42-datascience · ML\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-DataScience)",
       "x": 700,
-      "y": 4140,
+      "y": 4280,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -725,7 +735,7 @@
       "type": "text",
       "text": "**lecole-42_ml-MachineLearning**\n42-machinelearning · ML\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-MachineLearning)",
       "x": 1020,
-      "y": 4140,
+      "y": 4280,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -735,7 +745,7 @@
       "type": "text",
       "text": "**lecole-42_ops-Mylibs**\n42-mylibs · Ops\n🌐 public · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42_ops-Mylibs)",
       "x": 1340,
-      "y": 4140,
+      "y": 4280,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -745,7 +755,7 @@
       "type": "text",
       "text": "**lecole-42-projects**\n42-projects · Curriculum\n🔒 private · lecole42\n[GitHub](https://github.com/diegonmarcos/lecole-42-projects)",
       "x": 700,
-      "y": 4280,
+      "y": 4420,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -755,7 +765,7 @@
       "type": "group",
       "label": "6.Projects",
       "x": 340,
-      "y": 4460,
+      "y": 4600,
       "width": 1740,
       "height": 380,
       "color": "5"
@@ -765,7 +775,7 @@
       "type": "group",
       "label": "Projects-___",
       "x": 680,
-      "y": 4500,
+      "y": 4640,
       "width": 1380,
       "height": 320,
       "color": "4"
@@ -775,7 +785,7 @@
       "type": "text",
       "text": "**Projects-___**\n— · Hub\n🌐 public · Projects\n[GitHub](https://github.com/diegonmarcos/Projects-___)",
       "x": 700,
-      "y": 4540,
+      "y": 4680,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -785,7 +795,7 @@
       "type": "text",
       "text": "**Projects-endeavours**\nEndeavours · Endeavours\n🌐 public · Projects\n[GitHub](https://github.com/diegonmarcos/Projects-endeavours)",
       "x": 700,
-      "y": 4680,
+      "y": 4820,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -795,7 +805,7 @@
       "type": "text",
       "text": "**Projects-Library-KG**\nLibrary-KG · Library-KG\n🌐 public · Projects\n[GitHub](https://github.com/diegonmarcos/Projects-Library-KG)",
       "x": 1020,
-      "y": 4680,
+      "y": 4820,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -805,7 +815,7 @@
       "type": "group",
       "label": "6.Projects/DuckPeng",
       "x": 1340,
-      "y": 4540,
+      "y": 4680,
       "width": 700,
       "height": 240,
       "color": "5"
@@ -815,7 +825,7 @@
       "type": "group",
       "label": "DuckPeng-___",
       "x": 1680,
-      "y": 4580,
+      "y": 4720,
       "width": 340,
       "height": 180,
       "color": "4"
@@ -825,7 +835,7 @@
       "type": "text",
       "text": "**DuckPeng-___**\nDuckPeng · Hub\n🌐 public · Leaf.y\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
       "x": 1700,
-      "y": 4620,
+      "y": 4760,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -835,7 +845,7 @@
       "type": "group",
       "label": "7.Others",
       "x": 340,
-      "y": 4860,
+      "y": 5000,
       "width": 980,
       "height": 180,
       "color": "5"
@@ -845,7 +855,7 @@
       "type": "text",
       "text": "**diegonmarcos**\nProfile · README\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos)",
       "x": 360,
-      "y": 4900,
+      "y": 5040,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -855,7 +865,7 @@
       "type": "text",
       "text": "**diegonmarcos.github.io**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos.github.io)",
       "x": 680,
-      "y": 4900,
+      "y": 5040,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -865,7 +875,7 @@
       "type": "text",
       "text": "**front-html___**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/front-html___)",
       "x": 1000,
-      "y": 4900,
+      "y": 5040,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -875,7 +885,7 @@
       "type": "group",
       "label": "8.Archived",
       "x": 340,
-      "y": 5060,
+      "y": 5200,
       "width": 1340,
       "height": 940,
       "color": "5"
@@ -885,7 +895,7 @@
       "type": "group",
       "label": "z-archived-___",
       "x": 680,
-      "y": 5100,
+      "y": 5240,
       "width": 980,
       "height": 880,
       "color": "3"
@@ -895,7 +905,7 @@
       "type": "text",
       "text": "**z-archived-___**\n— · Hub\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived-___)",
       "x": 700,
-      "y": 5140,
+      "y": 5280,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -905,7 +915,7 @@
       "type": "text",
       "text": "**z-archived_c3-infra-plugin**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)",
       "x": 700,
-      "y": 5280,
+      "y": 5420,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -915,7 +925,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pub-data**\nZ-archived · Cloud-Me\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data)",
       "x": 1020,
-      "y": 5280,
+      "y": 5420,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -925,7 +935,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-containers**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-containers)",
       "x": 1340,
-      "y": 5280,
+      "y": 5420,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -935,7 +945,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-data-private**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private)",
       "x": 700,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -945,7 +955,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-legacy**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy)",
       "x": 1020,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -955,7 +965,7 @@
       "type": "text",
       "text": "**z-archived_front-data**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-data)",
       "x": 1340,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -965,7 +975,7 @@
       "type": "text",
       "text": "**z-archived_front-feeds**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-feeds)",
       "x": 700,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -975,7 +985,7 @@
       "type": "text",
       "text": "**z-archived_front-individual**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-individual)",
       "x": 1020,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -985,7 +995,7 @@
       "type": "text",
       "text": "**z-archived_front-linktree**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-linktree)",
       "x": 1340,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -995,7 +1005,7 @@
       "type": "text",
       "text": "**z-archived_front-media**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-media)",
       "x": 700,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1005,7 +1015,7 @@
       "type": "text",
       "text": "**z-archived_front-others**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-others)",
       "x": 1020,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1015,7 +1025,7 @@
       "type": "text",
       "text": "**z-archived_front-projects**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-projects)",
       "x": 1340,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1025,7 +1035,7 @@
       "type": "text",
       "text": "**z-archived_front-warehouse**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-warehouse)",
       "x": 700,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1035,7 +1045,7 @@
       "type": "text",
       "text": "**z-archived_My-ai-memory**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_My-ai-memory)",
       "x": 1020,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -1045,7 +1055,7 @@
       "type": "text",
       "text": "**z-archived_Projects-labtools**\nZ-archived · Projects\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_Projects-labtools)",
       "x": 1340,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1277,11 +1287,19 @@
       "color": "1"
     },
     {
-      "id": "54965c0c835ba4c8",
+      "id": "37b0f97d7a8519d9",
       "fromNode": "89dc1fc10f7a0afb",
       "fromSide": "right",
-      "toNode": "453ef43ac3b63bbc",
+      "toNode": "5b3ae9daa29578b8",
       "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "54965c0c835ba4c8",
+      "fromNode": "89dc1fc10f7a0afb",
+      "fromSide": "bottom",
+      "toNode": "453ef43ac3b63bbc",
+      "toSide": "top",
       "color": "1"
     },
     {

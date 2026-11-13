@@ -33,7 +33,7 @@ Group: [[1.2.Cloud-me.Pvt]]
 
 GitHub: https://github.com/diegonmarcos/cloud-me-pvt-___
 
-Related (Cloud-Me): [[cloud-me-___]], [[cloud-me-pub-___]], [[cloud-me-pub-profiles-___]], [[cloud-me-pub-profiles-_lnktree]], [[cloud-me-pub-profiles-leaf.y]], [[cloud-me-pub-profiles-nexus.z]], [[cloud-me-pub-profiles-prf-prs]], [[cloud-me-pub-profiles-stark.x]], [[cloud-me-pub-shared]], [[cloud-me-pvt-cgc]], [[cloud-me-pvt-configs]], [[cloud-me-pvt-data]], [[cloud-me-pvt-my-ai]], [[cloud-me-pvt-notes]], [[cloud-me-pvt-vault]]
+Related (Cloud-Me): [[cloud-me-___]], [[cloud-me-pub-___]], [[cloud-me-pub-profiles-___]], [[cloud-me-pub-profiles-_lnktree]], [[cloud-me-pub-profiles-leaf.y]], [[cloud-me-pub-profiles-nexus.z]], [[cloud-me-pub-profiles-prf-prs]], [[cloud-me-pub-profiles-stark.x]], [[cloud-me-pub-shared]], [[cloud-me-pvt-cgc]], [[cloud-me-pvt-configs]], [[cloud-me-pvt-data]], [[cloud-me-pvt-my-ai]], [[cloud-me-pvt-notes]], [[cloud-me-pvt-tasks]], [[cloud-me-pvt-vault]]
 
 ## Children
 
@@ -42,4 +42,5 @@ Related (Cloud-Me): [[cloud-me-___]], [[cloud-me-pub-___]], [[cloud-me-pub-profi
 - [[cloud-me-pvt-data]]
 - [[cloud-me-pvt-my-ai]]
 - [[cloud-me-pvt-notes]]
+- [[cloud-me-pvt-tasks]]
 - [[cloud-me-pvt-vault]]

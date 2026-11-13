@@ -599,6 +599,25 @@
       "description": "vault"
     },
     {
+      "family": "Tasks",
+      "name": "cloud-me-pvt-tasks",
+      "url": "https://github.com/diegonmarcos/cloud-me-pvt-tasks",
+      "role": "",
+      "visibility": "private",
+      "project": "Cloud-Me",
+      "field": "Unix",
+      "developer": "Leaf.y",
+      "subcategory": "Pvt",
+      "code": "1.2.2.7.1",
+      "area_code": "1",
+      "project_code": "1.2",
+      "family_code": "1.2.2.7",
+      "registry_name": "cloud-me-pvt-tasks",
+      "hub": "cloud-me-pvt-___",
+      "farm": "1.2.Cloud-me/Pvt",
+      "description": "Product backlog"
+    },
+    {
       "family": "Hub",
       "name": "CG-___",
       "url": "https://github.com/diegonmarcos/CG-___",
@@ -1513,7 +1532,7 @@
       "description": "The Unix estate: the cloudy fleet and the owner's personal cloud.",
       "hub": null,
       "farm": null,
-      "repos_count": 29,
+      "repos_count": 30,
       "children": [
         {
           "code": "1.1",
@@ -1661,7 +1680,7 @@
           "description": "The owner's personal cloud: public profiles and shared data, private configs, data and secrets.",
           "hub": "cloud-me-___",
           "farm": "1.2.Cloud-me",
-          "repos_count": 16,
+          "repos_count": 17,
           "children": [
             {
               "code": "1.2.1",
@@ -1717,7 +1736,7 @@
               "description": "Private half of Cloud-Me (the hub itself is public).",
               "hub": "cloud-me-pvt-___",
               "farm": "1.2.Cloud-me/Pvt",
-              "repos_count": 7,
+              "repos_count": 8,
               "children": [
                 {
                   "code": "1.2.2.1",
@@ -1801,6 +1820,20 @@
                   "repos_count": 1,
                   "repos": [
                     "cloud-me-pvt-vault"
+                  ]
+                },
+                {
+                  "code": "1.2.2.7",
+                  "kind": "family",
+                  "name": "Tasks",
+                  "label": "Tasks",
+                  "developer": "Leaf.y",
+                  "description": "",
+                  "hub": null,
+                  "farm": "1.2.Cloud-me/Pvt",
+                  "repos_count": 1,
+                  "repos": [
+                    "cloud-me-pvt-tasks"
                   ]
                 }
               ]

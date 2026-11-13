@@ -3,9 +3,9 @@ title: Repo folders tree
 generated_by: 0_registry/gen-registry.js
 source: 0_registry/projects-repos.json
 max_depth: 3
-repos: 77
+repos: 78
 listed: 59
-private: 17
+private: 18
 unreadable: 1
 tags: [hub, repos-tree]
 ---
@@ -15,7 +15,7 @@ tags: [hub, repos-tree]
 # Repo folders tree
 
 Every registry repo, grouped by hub, with its folders and files to depth **3**
-(read from remote `HEAD` through the GitHub tree API). 59 of 77 listed; 17 private repos
+(read from remote `HEAD` through the GitHub tree API). 59 of 78 listed; 18 private repos
 show name and URL only, never their contents; 1 unreadable. Excluded: `.cache`, `.cargo-home`, `.deps`, `.git`, `.gradle`, `.mypy_cache`, `.next`, `.nuxt`, `.parcel-cache`, `.pytest_cache`, `.terraform`, `.venv`, `__pycache__`, `build`, `coverage`, `node_modules`, `out`, `target`, `venv`.
 
 Browser view: [`repo-folders-tree.html`](repo-folders-tree.html). Data: [`repo-folders-tree.json`](repo-folders-tree.json) (an excerpt of the master `../0_registry/projects-repos.json`).
@@ -8431,6 +8431,7 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
           - **[cloud-me-pvt-data](https://github.com/diegonmarcos/cloud-me-pvt-data)** · 🔒 private
           - **[cloud-me-pvt-my-ai](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)** · 🔒 private
           - **[cloud-me-pvt-notes](https://github.com/diegonmarcos/cloud-me-pvt-notes)** · 🔒 private
+          - **[cloud-me-pvt-tasks](https://github.com/diegonmarcos/cloud-me-pvt-tasks)** · 🔒 private
           - **[cloud-me-pvt-vault](https://github.com/diegonmarcos/cloud-me-pvt-vault)** · 🔒 private
   - 📁 **2.CG/** (group)
     - **CG-___/** (hub)

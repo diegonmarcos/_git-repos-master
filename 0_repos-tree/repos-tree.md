@@ -1,11 +1,11 @@
 ---
 title: Repos tree
 generated_by: gen-registry.js
-repos: 77
+repos: 78
 hubs: 13
 groups: 9
 public: 60
-private: 17
+private: 18
 tags: [hub, repos-tree]
 ---
 
@@ -51,6 +51,7 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
           - [[cloud-me-pvt-data]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-my-ai]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-notes]] · 🔒 private · Cloud-Me
+          - [[cloud-me-pvt-tasks]] · 🔒 private · Cloud-Me
           - [[cloud-me-pvt-vault]] · 🔒 private · Cloud-Me
   - 📁 **2.CG/** · CG (2): hub CG-___ and its members. Computer graphics: 3D worlds, engines and media production.
     - **[[CG-___]]** · 🌐 public
@@ -148,6 +149,7 @@ graph LR
   n_cloud_me_pvt_data["cloud-me-pvt-data"]
   n_cloud_me_pvt_my_ai["cloud-me-pvt-my-ai"]
   n_cloud_me_pvt_notes["cloud-me-pvt-notes"]
+  n_cloud_me_pvt_tasks["cloud-me-pvt-tasks"]
   n_cloud_me_pvt_vault["cloud-me-pvt-vault"]
   n_group_2_CG["2.CG/"]
   n_CG____["CG-___"]
@@ -239,6 +241,7 @@ graph LR
   n_cloud_me_pvt____ --> n_cloud_me_pvt_data
   n_cloud_me_pvt____ --> n_cloud_me_pvt_my_ai
   n_cloud_me_pvt____ --> n_cloud_me_pvt_notes
+  n_cloud_me_pvt____ --> n_cloud_me_pvt_tasks
   n_cloud_me_pvt____ --> n_cloud_me_pvt_vault
   n__git_repos_master --> n_group_2_CG
   n_group_2_CG --> n_CG____
