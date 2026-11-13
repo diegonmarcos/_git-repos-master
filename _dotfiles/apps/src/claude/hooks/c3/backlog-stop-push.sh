@@ -1,5 +1,5 @@
 #!/bin/bash
-# Stop: auto-commit and push the Product Backlog repo (cloudy-a-docs) so ticket edits are never left uncommitted/lost (#1585).
+# Stop: auto-commit and push the Product Backlog repo (cloud-me-pvt-tasks) so ticket edits are never left uncommitted/lost (#1585).
 # Only touches 1___BACKLOG___/. Refuses to commit when a ticket JSON was deleted or blanked (prints a warning instead).
 # Never blocks the session (always exit 0). Pushes main only.
 . "$(dirname "$0")/_backlog.sh"

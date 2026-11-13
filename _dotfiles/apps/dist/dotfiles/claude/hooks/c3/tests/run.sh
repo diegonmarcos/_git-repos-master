@@ -81,7 +81,7 @@ echo '{"id":"7","subject":"#7 open one","status":"pending"}' > "$BT/7.json"; ech
 o="$(cd /tmp && C3_BACKLOG_REPO="$BR" "$H/backlog-session-start.sh")"; n=$((n+1))
 printf '%s' "$o" | grep -q '7 | pending | #7 open one' && printf '%s' "$o" | grep -q 'additionalContext' && ! printf '%s' "$o" | grep -q 'done one' || { echo "FAIL backlog-session-start index: $o"; fail=$((fail+1)); }
 o="$(cd /tmp && HOME=/nonexistent CLAUDE_PROJECT_DIR=/nonexistent C3_BACKLOG_REPO=/nonexistent "$H/backlog-session-start.sh")"; n=$((n+1))
-printf '%s' "$o" | grep -q 'NOT CHECKED OUT' || { [ -d /home/user/cloudy-a-docs ] && true; } || { echo "FAIL backlog-session-start missing: $o"; fail=$((fail+1)); }
+printf '%s' "$o" | grep -q 'NOT CHECKED OUT' || { [ -d /home/user/cloud-me-pvt-tasks ] && true; } || { echo "FAIL backlog-session-start missing: $o"; fail=$((fail+1)); }
 T="$(mktemp -d)"; mkdir -p "$T/home/my-tasks/1___BACKLOG___/1.1.Product-Backlog/tasks"; n=$((n+1))
 o="$(cd /tmp && HOME="$T/home" CLAUDE_PROJECT_DIR=/nonexistent C3_BACKLOG_REPO= C3_BACKLOG_REPO_NAMES="nope my-tasks" sh -c '. "$0/_backlog.sh"; backlog_repo' "$H")"
 [ "$o" = "$T/home/my-tasks" ] || { echo "FAIL backlog_repo by C3_BACKLOG_REPO_NAMES: $o"; fail=$((fail+1)); }; rm -rf "$T"

@@ -6,4 +6,4 @@
 
 Tickets ("New task"): see `.claude/skills/c3-infra/rules/backlog.md`.
 
-**BANNED: `TaskCreate` / `TaskUpdate` for backlog tickets.** They truncate the session store and have deleted tickets and closed them without evidence. A ticket is only the file `1___BACKLOG___/1.1.Product-Backlog/tasks/<session-id>/<id>.json` in cloudy-a-docs: edit the file, never delete or blank it. Hooks (`.claude/hooks/c3`): `backlog-session-start.sh` injects the open-ticket index, `backlog-stop-push.sh` commits and pushes the backlog at Stop, `ticket-guard.sh` blocks TaskCreate/TaskUpdate and any deletion or blanking of a ticket JSON.
+**BANNED: `TaskCreate` / `TaskUpdate` for backlog tickets.** They truncate the session store and have deleted tickets and closed them without evidence. A ticket is only the file `1___BACKLOG___/1.1.Product-Backlog/tasks/<session-id>/<id>.json` in cloud-me-pvt-tasks: edit the file, never delete or blank it. Hooks (`.claude/hooks/c3`): `backlog-session-start.sh` injects the open-ticket index, `backlog-stop-push.sh` commits and pushes the backlog at Stop, `ticket-guard.sh` blocks TaskCreate/TaskUpdate and any deletion or blanking of a ticket JSON.

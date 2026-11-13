@@ -2,14 +2,14 @@
 # PreToolUse guard (#1585). Blocks (exit 2):
 #  - Write/Edit/MultiEdit that would empty or corrupt a ticket JSON (tasks/<session>/<id>.json): empty, invalid JSON, or missing id/subject/status
 #  - Bash that deletes, truncates or moves-away a ticket JSON (rm, unlink, shred, truncate, git rm, find -delete, `> f`, cp /dev/null f)
-#  - TaskCreate/TaskUpdate (they truncate the session store and delete tickets; tickets are files in cloudy-a-docs)
+#  - TaskCreate/TaskUpdate (they truncate the session store and delete tickets; tickets are files in cloud-me-pvt-tasks)
 node -e '
 let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{
 const fs=require("fs");let j;try{j=JSON.parse(s)}catch(e){process.exit(0)}
 const tool=j.tool_name||"",ti=j.tool_input||{};
 const T=/(^|[\s"'"'"'=:(])(\.{0,2}\/)?([^\s"'"'"';|&<>]*\/)?tasks\/[^\/\s"'"'"']+\/[0-9]+\.json\b/;
 const block=m=>{process.stderr.write("BLOCKED by c3-infra hook ticket-guard: "+m+"\n");process.exit(2)};
-if(/^Task(Create|Update)$/.test(tool))block(tool+" is banned for backlog tickets (it truncates the session store and deletes tickets). Edit the ticket file tasks/<session-id>/<id>.json in cloudy-a-docs instead (skill c3-infra rules/backlog.md).");
+if(/^Task(Create|Update)$/.test(tool))block(tool+" is banned for backlog tickets (it truncates the session store and deletes tickets). Edit the ticket file tasks/<session-id>/<id>.json in cloud-me-pvt-tasks instead (skill c3-infra rules/backlog.md).");
 const isT=p=>/(^|\/)tasks\/[^\/]+\/[0-9]+\.json$/.test(p||"");
 const valid=c=>{try{const t=JSON.parse(c);return !!(t&&t.id&&t.subject&&t.status)}catch(e){return false}};
 if(tool==="Write"&&isT(ti.file_path)){if(!valid(ti.content||""))block("Write would blank or corrupt ticket "+ti.file_path+" (needs valid JSON with id, subject, status).")}
