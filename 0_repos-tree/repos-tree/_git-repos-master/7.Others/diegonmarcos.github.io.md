@@ -32,4 +32,4 @@ Group: [[7.Others]]
 
 GitHub: https://github.com/diegonmarcos/diegonmarcos.github.io
 
-Related (Pages): [[front-html]]
+Related (Pages): [[front-html___]]

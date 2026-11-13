@@ -98,7 +98,7 @@
     <group name="7.Others" path="7.Others">
       <repo name="diegonmarcos" farm="7.Others" project="Profile" field="Others" family="README" visibility="public" developer="Gh" url="https://github.com/diegonmarcos/diegonmarcos"/>
       <repo name="diegonmarcos.github.io" farm="7.Others" project="Pages" field="Others" family="Deployer" visibility="public" developer="Gh" url="https://github.com/diegonmarcos/diegonmarcos.github.io"/>
-      <repo name="front-html" farm="7.Others" project="Pages" field="Others" family="Deployer" visibility="public" developer="Gh" url="https://github.com/diegonmarcos/front-html"/>
+      <repo name="front-html___" farm="7.Others" project="Pages" field="Others" family="Deployer" visibility="public" developer="Gh" url="https://github.com/diegonmarcos/front-html___"/>
     </group>
     <group name="8.Archived" path="8.Archived">
       <hub name="z-archived-___" farm="8.Archived" field="Archived" family="Hub" visibility="public" developer="Z-archived" url="https://github.com/diegonmarcos/z-archived-___">

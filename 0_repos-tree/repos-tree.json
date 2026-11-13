@@ -996,17 +996,17 @@
           },
           {
             "code": "7.2.1.2",
-            "name": "front-html",
+            "name": "front-html___",
             "kind": "repo",
             "farm": "7.Others",
-            "link": "7.Others/front-html",
+            "link": "7.Others/front-html___",
             "project": "Pages",
             "field": "Others",
             "family": "Deployer",
             "subcategory": "",
             "visibility": "public",
             "developer": "Gh",
-            "url": "https://github.com/diegonmarcos/front-html"
+            "url": "https://github.com/diegonmarcos/front-html___"
           }
         ]
       },

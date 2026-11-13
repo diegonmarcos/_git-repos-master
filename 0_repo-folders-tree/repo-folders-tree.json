@@ -56591,10 +56591,10 @@
      },
      {
       "code": "7.2.1.2",
-      "name": "front-html",
+      "name": "front-html___",
       "kind": "repo",
       "visibility": "public",
-      "url": "https://github.com/diegonmarcos/front-html",
+      "url": "https://github.com/diegonmarcos/front-html___",
       "status": "ok",
       "source": "github-api",
       "head": "ec7ac4da99ae5e9797430806b538e1bf1ee97163",

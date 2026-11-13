@@ -2104,10 +2104,10 @@
       "doc": "Front-end: the published site and its derive job (1_front-configs). Cloned as 'front-diegonmarcos', not after its repo name (diegonmarcos.github.io) — every front member is front-<thing>, and the bare 'front' now belongs to the project master, exactly as 'cloud' does for a_cloud."
     },
     {
-      "name": "front-html",
+      "name": "front-html___",
       "farm": "7.Others",
       "group": "c_gh",
-      "url": "git@github.com:diegonmarcos/front-html.git",
+      "url": "git@github.com:diegonmarcos/front-html___.git",
       "private": false,
       "doc": "Pages hub: submodules diegonmarcos.github.io and profile, and pages.json derived from the GitHub API by scripts/gen-pages.mjs (read at runtime by Cloud Browser). Placed beside front-diegonmarcos (the deployer it indexes) in 7.Others."
     },

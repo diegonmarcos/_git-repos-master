@@ -3160,9 +3160,9 @@
                 {
                   "code": "7.2.1.2",
                   "kind": "repo",
-                  "name": "front-html",
-                  "github": "front-html",
-                  "label": "front-html",
+                  "name": "front-html___",
+                  "github": "front-html___",
+                  "label": "front-html___",
                   "visibility": "public",
                   "description": "Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json.",
                   "role": "hub",
