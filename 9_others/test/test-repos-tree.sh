@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# Tester for 0_repos-tree/ (#1291, #1301): repos-tree.json and every UI in it (canvas, html, md, xml, repos-tree/ graph
+# Tester for 00_repos-tree/ (#1291, #1301): repos-tree.json and every UI in it (canvas, html, md, xml, repos-tree/ graph
 # notes) are rendered by the one generator gen-registry.js (render-repos-tree.js) from the master projects-repos.json.
 # Fails on: JSON drifting from the registry, a UI drifting from the JSON, schema violations, a repo missing or
 # duplicated, a group not matching farms{}/farm, edges not matching hub/parent_hub, overlapping cards, external URLs
 # in the HTML, a hand-edited generated registry file.
 set -u
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-D="$ROOT/0_repos-tree"
+D="$ROOT/00_repos-tree"
 fail=0
 ok()  { echo "PASS  $*"; }
 bad() { echo "FAIL  $*"; fail=1; }
 
 node "$ROOT/0_registry/gen-registry.js" --check && ok "every rendered file equals a fresh render of projects-repos.json, no root symlinks" || bad "gen-registry.js --check (run node 0_registry/gen-registry.js)"
 
-for f in canvas html md json xml; do [ ! -e "$ROOT/repos-tree.$f" ] && [ ! -L "$ROOT/repos-tree.$f" ] || bad "root repos-tree.$f must not exist (only 0_repos-tree/ holds it)"; done
+for f in html md json; do [ -f "$ROOT/repos-tree.$f" ] && [ ! -L "$ROOT/repos-tree.$f" ] || bad "root repos-tree.$f must be a real file (deployed by build.sh)"; done
+for f in canvas xml; do [ ! -e "$ROOT/repos-tree.$f" ] && [ ! -L "$ROOT/repos-tree.$f" ] || bad "root repos-tree.$f must not exist (only 00_repos-tree/ holds it)"; done
 
 # the JSON: root -> numbered groups -> hubs -> repos, consistent with the registry
 node -e '
@@ -21,7 +22,7 @@ const fs=require("fs"),root=process.argv[1],e=[],TOP="_git-repos-master";
 const R=require(root+"/0_registry/repos.json"), reg=R.repos, gh=require(root+"/0_registry/repos-github.json").repos;
 const gn=u=>u.replace(/^.*[/:]/,"").replace(/\.git$/,""), byGh=new Map(reg.map(r=>[gn(r.url),r]));
 const par=n=>n===TOP?null:((byGh.get(n)||{}).parent_hub||(byGh.get(n)||{}).hub||TOP);
-const j=JSON.parse(fs.readFileSync(root+"/0_repos-tree/repos-tree.json","utf8"));
+const j=JSON.parse(fs.readFileSync(root+"/00_repos-tree/repos-tree.json","utf8"));
 if(j._schema!=="repos-tree/v3") e.push("json schema"); if(j.tree.name!==TOP) e.push("root is not "+TOP);
 const tops=j.tree.children.filter(c=>c.kind==="group").map(c=>c.name);
 if(JSON.stringify(tops)!==JSON.stringify(Object.keys(R.farms))) e.push("top groups "+tops+" != farms{} "+Object.keys(R.farms));
@@ -43,9 +44,9 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 # canvas + html, read against the JSON
 node -e '
 const fs=require("fs"),root=process.argv[1],e=[];
-const j=require(root+"/0_repos-tree/repos-tree.json"), all=[], want=new Set();
+const j=require(root+"/00_repos-tree/repos-tree.json"), all=[], want=new Set();
 const w=(o,hub)=>{ if(o.kind!=="group"){ all.push(o); if(hub) want.add(hub+">"+o.name); } (o.children||[]).forEach(c=>w(c,o.kind==="group"?hub:o.name)); }; w(j.tree,null);
-const c=JSON.parse(fs.readFileSync(root+"/0_repos-tree/repos-tree.canvas","utf8"));
+const c=JSON.parse(fs.readFileSync(root+"/00_repos-tree/repos-tree.canvas","utf8"));
 if(!Array.isArray(c.nodes)||!Array.isArray(c.edges)) e.push("nodes/edges not arrays");
 const ids=new Set(), COL=/^([1-6]|#[0-9a-fA-F]{6})$/;
 for(const n of c.nodes){ if(typeof n.id!=="string"||ids.has(n.id)) e.push("bad/duplicate node id "+n.id); ids.add(n.id);
@@ -64,7 +65,7 @@ for(let i=0;i<cards.length;i++) for(let k=i+1;k<cards.length;k++){ const a=cards
   if(a.x<b.x+b.width&&b.x<a.x+a.width&&a.y<b.y+b.height&&b.y<a.y+a.height) e.push("cards overlap "+byId.get(a.id)+" / "+byId.get(b.id)); }
 const groups=c.nodes.filter(n=>n.type==="group");
 for(const g of groups) for(const o of cards) if(o.x<g.x+g.width&&g.x<o.x+o.width&&o.y<g.y+g.height&&g.y<o.y+o.height&&!(o.x>=g.x&&o.y>=g.y&&o.x+o.width<=g.x+g.width&&o.y+o.height<=g.y+g.height)) e.push("card straddles group "+g.label);
-const h=fs.readFileSync(root+"/0_repos-tree/repos-tree.html","utf8");
+const h=fs.readFileSync(root+"/00_repos-tree/repos-tree.html","utf8");
 for(const r of all) if(!h.includes("\""+r.name+"\"")) e.push("html lacks "+r.name);
 for(const g of j.groups) if(!h.includes("\"group:"+g+"\"")) e.push("html lacks group "+g);
 for(const u of h.match(/(https?:)?\/\/[^\s"\x27<>)\\]+/g)||[]) if(!/^https:\/\/github\.com\/diegonmarcos\//.test(u)) e.push("external url in html: "+u);
@@ -75,21 +76,21 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 # md / xml / graph notes, read against the JSON
 node -e '
 const fs=require("fs"),path=require("path"),root=process.argv[1],e=[];
-const j=require(root+"/0_repos-tree/repos-tree.json"), all=[];
+const j=require(root+"/00_repos-tree/repos-tree.json"), all=[];
 const nn=o=>o.kind==="group"?o.path.replace(/\//g,"."):o.name;
 const w=(o,anc)=>{ all.push({o,anc}); (o.children||[]).forEach(c=>w(c,[...anc,o])); }; w(j.tree,[]);
-const x=fs.readFileSync(root+"/0_repos-tree/repos-tree.xml","utf8"); if(!/^<\?xml /.test(x)) e.push("xml prolog");
+const x=fs.readFileSync(root+"/00_repos-tree/repos-tree.xml","utf8"); if(!/^<\?xml /.test(x)) e.push("xml prolog");
 const st=[]; for(const m of x.matchAll(/<(\/?)(hub|repo|group|repos-tree)([^>]*?)(\/?)>/g)){ if(m[1]){ if(st.pop()!==m[2]) e.push("xml nesting"); continue; } if(!m[4]) st.push(m[2]); }
 if(st.length) e.push("xml unclosed");
 for(const {o} of all) if(!x.includes(o.kind==="group"?` path="${o.path}"`:` name="${o.name}"`)) e.push("xml lacks "+nn(o));
-const md=fs.readFileSync(root+"/0_repos-tree/repos-tree.md","utf8"); if(!/^---\n[\s\S]*?\nrepos: \d+\n[\s\S]*?\n---\n/.test(md)) e.push("md frontmatter");
+const md=fs.readFileSync(root+"/00_repos-tree/repos-tree.md","utf8"); if(!/^---\n[\s\S]*?\nrepos: \d+\n[\s\S]*?\n---\n/.test(md)) e.push("md frontmatter");
 if(!md.includes("```mermaid")) e.push("md mermaid");
 for(const {o} of all) if(o.kind==="group"?!md.includes("**"+o.name+"/**"):!md.includes("[["+o.name+"]]")) e.push("md lacks "+nn(o));
-const files=[]; const fw=d=>fs.readdirSync(d,{withFileTypes:true}).forEach(f=>f.isDirectory()?fw(path.join(d,f.name)):files.push(path.join(d,f.name))); fw(root+"/0_repos-tree/repos-tree");
+const files=[]; const fw=d=>fs.readdirSync(d,{withFileTypes:true}).forEach(f=>f.isDirectory()?fw(path.join(d,f.name)):files.push(path.join(d,f.name))); fw(root+"/00_repos-tree/repos-tree");
 const names=files.map(f=>path.basename(f,".md")); if(new Set(names).size!==names.length) e.push("note names not unique");
 if(files.length!==all.length) e.push("notes "+files.length+" != nodes "+all.length);
 for(const {o,anc} of all){ const f=files.find(a=>path.basename(a,".md")===nn(o)); if(!f){ e.push("no note "+nn(o)); continue; }
-  const segs=path.relative(root+"/0_repos-tree/repos-tree",f).split(path.sep).slice(0,-1).join("/"), exp=[...anc,...(o.children?[o]:[])].map(nn).join("/");
+  const segs=path.relative(root+"/00_repos-tree/repos-tree",f).split(path.sep).slice(0,-1).join("/"), exp=[...anc,...(o.children?[o]:[])].map(nn).join("/");
   if(segs!==exp) e.push("note path "+nn(o)+" "+segs+" != "+exp);
   const t=fs.readFileSync(f,"utf8"), fm=(t.match(/^---\n([\s\S]*?)\n---\n/)||[])[1]; if(!fm){ e.push("note fm "+nn(o)); continue; }
   if(o.kind!=="group"){ for(const k of ["name","kind","group","hub","parent_hub","project","area","family","subcategory","visibility","developer","url","tags"]) if(!new RegExp("^"+k+":","m").test(fm)) e.push("note "+o.name+" lacks "+k);
@@ -100,15 +101,15 @@ if(e.length){ console.error(e.slice(0,30).join("\n")); process.exit(1); }' "$ROO
 
 # mutations: each must be caught by --check
 T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
-mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others" "$T/w/0_registry"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp "$ROOT"/0_registry/*.js "$ROOT/0_registry/projects-repos.json" "$ROOT/0_registry/projects-repos.schema.json" "$ROOT/0_registry/repos.json" "$ROOT/0_registry/repos-github.json" "$T/w/0_registry/"; cp -r "$ROOT/README.md" "$D" "$ROOT/0_repo-folders-tree" "$T/w/"
+mk() { rm -rf "$T/w"; mkdir -p "$T/w/9_others" "$T/w/0_registry"; cp -r "$ROOT/9_others/templates" "$T/w/9_others/"; cp "$ROOT"/0_registry/*.js "$ROOT/0_registry/projects-repos.json" "$ROOT/0_registry/projects-repos.schema.json" "$ROOT/0_registry/repos.json" "$ROOT/0_registry/repos-github.json" "$T/w/0_registry/"; cp -r "$ROOT/README.md" "$D" "$ROOT/01_repo-folders-tree" "$T/w/"
   :; }
 mk; node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && ok "copy is clean" || bad "copy not clean"
-mk; f=$(find "$T/w/0_repos-tree/repos-tree" -name '*.md' | head -1); echo x >> "$f"
+mk; f=$(find "$T/w/00_repos-tree/repos-tree" -name '*.md' | head -1); echo x >> "$f"
 node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (edited note) missed" || ok "mutation (edited note) is caught"
-mk; touch "$T/w/0_repos-tree/repos-tree/stray.md"; node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (stray note) missed" || ok "mutation (stray note) is caught"
-mk; node -e 'const f=process.argv[1],c=JSON.parse(require("fs").readFileSync(f));c.nodes.splice(c.nodes.findIndex(n=>n.type==="text"),1);require("fs").writeFileSync(f,JSON.stringify(c,null,2)+"\n")' "$T/w/0_repos-tree/repos-tree.canvas"
+mk; touch "$T/w/00_repos-tree/repos-tree/stray.md"; node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (stray note) missed" || ok "mutation (stray note) is caught"
+mk; node -e 'const f=process.argv[1],c=JSON.parse(require("fs").readFileSync(f));c.nodes.splice(c.nodes.findIndex(n=>n.type==="text"),1);require("fs").writeFileSync(f,JSON.stringify(c,null,2)+"\n")' "$T/w/00_repos-tree/repos-tree.canvas"
 node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (dropped card) missed" || ok "mutation (dropped card) is caught"
-mk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree.children.pop();require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/w/0_repos-tree/repos-tree.json"
+mk; node -e 'const f=process.argv[1],j=JSON.parse(require("fs").readFileSync(f));j.tree.children.pop();require("fs").writeFileSync(f,JSON.stringify(j,null,2)+"\n")' "$T/w/00_repos-tree/repos-tree.json"
 node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (group dropped from JSON) missed" || ok "mutation (group dropped from JSON) is caught"
 mk; sed -i 's/"private": true/"private": false/' "$T/w/0_registry/repos.json"; node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (generated 0_registry/repos.json hand-edited) missed" || ok "mutation (generated 0_registry/repos.json hand-edited) is caught"
 mk; sed -i 's/"farm": "2.CG"/"farm": "2.CG-x"/' "$T/w/0_registry/projects-repos.json"; node "$T/w/0_registry/gen-registry.js" --check >/dev/null 2>&1 && bad "mutation (source farm changed) missed" || ok "mutation (source farm in projects-repos.json changed) is caught"

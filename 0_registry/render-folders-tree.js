@@ -1,20 +1,20 @@
 #!/usr/bin/env node
-// render-folders-tree.js - renders 0_repo-folders-tree/* from THE ONE MASTER SOURCE projects-repos.json (#1291, #1301).
+// render-folders-tree.js - renders 01_repo-folders-tree/* from THE ONE MASTER SOURCE projects-repos.json (#1291, #1301).
 // No CLI of its own: `node gen-registry.js` writes these files, `node repos-sot.js check` compares them byte-for-byte.
 // The folder data lives in the master, under each public repo node (`tree`: source, head, entries to
 // folders.max_depth); `node refresh-folders-tree.js` re-fetches it INTO the master. Private repos: name + URL +
 // "private" only, never a listing. A public repo without a `tree` renders as "unreadable".
-//   0_repo-folders-tree/repo-folders-tree.json  excerpt of the master: root -> farm groups -> hubs -> repos -> folders
-//   0_repo-folders-tree/repo-folders-tree.md    9_others/templates/repo-folders-tree.md.tpl
-//   0_repo-folders-tree/repo-folders-tree.html  the shared Dolphin template 9_others/templates/repos-tree.html
+//   01_repo-folders-tree/repo-folders-tree.json  excerpt of the master: root -> farm groups -> hubs -> repos -> folders
+//   01_repo-folders-tree/repo-folders-tree.md    9_others/templates/repo-folders-tree.md.tpl
+//   01_repo-folders-tree/repo-folders-tree.html  the shared Dolphin template 9_others/templates/repos-tree.html
 'use strict';
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..'), OWNER = 'diegonmarcos';
 const RM = require('./registry-model.js'), { model, buildTree } = require('./render-repos-tree.js');
-const DIR = '0_repo-folders-tree', JSON_F = `${DIR}/repo-folders-tree.json`, MD_F = `${DIR}/repo-folders-tree.md`, HTML_F = `${DIR}/repo-folders-tree.html`;
+const DIR = '01_repo-folders-tree', JSON_F = `${DIR}/repo-folders-tree.json`, MD_F = `${DIR}/repo-folders-tree.md`, HTML_F = `${DIR}/repo-folders-tree.html`;
 
 const repos = t => [...(t.kind === 'group' ? [] : [t]), ...(t.children || []).flatMap(repos)];
-function build(src) { // root -> groups -> hubs -> repos (same shape as 0_repos-tree/repos-tree.json) + each repo's tree
+function build(src) { // root -> groups -> hubs -> repos (same shape as 00_repos-tree/repos-tree.json) + each repo's tree
   const x = RM.expand(src), trees = new Map(x.repos.map(r => [r.github, r.tree]));
   const node = o => o.kind === 'group' ? { name: o.name, kind: 'group', path: o.path, children: o.children.map(node) }
     : { code: o.code, name: o.name, kind: o.kind, visibility: o.visibility, url: `https://github.com/${OWNER}/${o.name}`,
