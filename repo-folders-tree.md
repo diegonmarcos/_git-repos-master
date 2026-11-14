@@ -9275,6 +9275,17 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
         - `SPLIT-PATHS.txt` · 76 B
       - **[Projects-Library-KG](https://github.com/diegonmarcos/Projects-Library-KG)** · ⚠️ unreadable
   - 📁 **7.Others/** (group)
+    - **[_front-html___](https://github.com/diegonmarcos/_front-html___)** · 🌐 public
+      - 📁 `.github`
+        - 📁 `workflows`
+          - `pages-drift.yml` · 748 B
+      - 📁 `scripts`
+        - `gen-pages.py` · 3.0 KiB
+      - `.gitmodules` · 228 B
+      - 📦 `diegonmarcos.github.io` (submodule)
+      - `pages.json` · 602 B
+      - 📦 `profile` (submodule)
+      - `README.md` · 1006 B
     - **[diegonmarcos](https://github.com/diegonmarcos/diegonmarcos)** · 🌐 public
       - 📁 `.claude`
         - `SESSION-SURVIVAL.md` · 1.6 KiB
@@ -10174,17 +10185,6 @@ Legend: 📁 folder · 📦 submodule · 🔗 symlink (→ target) · sizes from
       - `package.json` · 3.6 KiB
       - `README.md` · 14.3 KiB
       - `todo.md` · 1.0 KiB
-    - **[front-html___](https://github.com/diegonmarcos/front-html___)** · 🌐 public
-      - 📁 `.github`
-        - 📁 `workflows`
-          - `pages-drift.yml` · 748 B
-      - 📁 `scripts`
-        - `gen-pages.py` · 3.0 KiB
-      - `.gitmodules` · 228 B
-      - 📦 `diegonmarcos.github.io` (submodule)
-      - `pages.json` · 602 B
-      - 📦 `profile` (submodule)
-      - `README.md` · 1006 B
   - 📁 **8.Archived/** (group)
     - **z-archived-___/** (hub)
       - **[z-archived_c3-infra-plugin](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)** · 🔒 private

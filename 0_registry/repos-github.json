@@ -1191,8 +1191,8 @@
     },
     {
       "family": "Deployer",
-      "name": "front-html___",
-      "url": "https://github.com/diegonmarcos/front-html___",
+      "name": "_front-html___",
+      "url": "https://github.com/diegonmarcos/_front-html___",
       "role": "hub",
       "visibility": "public",
       "project": "Pages",
@@ -1202,7 +1202,7 @@
       "area_code": "7",
       "project_code": "7.2",
       "family_code": "7.2.1",
-      "registry_name": "front-html___",
+      "registry_name": "_front-html___",
       "hub": null,
       "farm": "7.Others",
       "description": "Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json."
@@ -2676,7 +2676,7 @@
               "repos_count": 2,
               "repos": [
                 "diegonmarcos.github.io",
-                "front-html___"
+                "_front-html___"
               ]
             }
           ]

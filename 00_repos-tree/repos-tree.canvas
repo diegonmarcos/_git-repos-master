@@ -851,10 +851,20 @@
       "color": "5"
     },
     {
+      "id": "fc30c4ab78b13d94",
+      "type": "text",
+      "text": "**_front-html___**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/_front-html___)",
+      "x": 360,
+      "y": 5040,
+      "width": 300,
+      "height": 120,
+      "color": "4"
+    },
+    {
       "id": "2a655d68e7c73111",
       "type": "text",
       "text": "**diegonmarcos**\nProfile · README\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos)",
-      "x": 360,
+      "x": 680,
       "y": 5040,
       "width": 300,
       "height": 120,
@@ -864,16 +874,6 @@
       "id": "f64ab6209f919f6a",
       "type": "text",
       "text": "**diegonmarcos.github.io**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos.github.io)",
-      "x": 680,
-      "y": 5040,
-      "width": 300,
-      "height": 120,
-      "color": "4"
-    },
-    {
-      "id": "6eb9a4b460915058",
-      "type": "text",
-      "text": "**front-html___**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/front-html___)",
       "x": 1000,
       "y": 5040,
       "width": 300,
@@ -1527,6 +1527,14 @@
       "color": "4"
     },
     {
+      "id": "d6606a5eb02d2fa3",
+      "fromNode": "61b37abb2d70ec68",
+      "fromSide": "right",
+      "toNode": "fc30c4ab78b13d94",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
       "id": "8577fac940878b9c",
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
@@ -1539,14 +1547,6 @@
       "fromNode": "61b37abb2d70ec68",
       "fromSide": "right",
       "toNode": "f64ab6209f919f6a",
-      "toSide": "left",
-      "color": "4"
-    },
-    {
-      "id": "7847a878371e046b",
-      "fromNode": "61b37abb2d70ec68",
-      "fromSide": "right",
-      "toNode": "6eb9a4b460915058",
       "toSide": "left",
       "color": "4"
     },

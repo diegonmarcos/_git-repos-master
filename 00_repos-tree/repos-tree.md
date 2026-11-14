@@ -90,9 +90,9 @@ Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder
       - [[Projects-endeavours]] · 🌐 public · Endeavours
       - [[Projects-Library-KG]] · 🌐 public · Library-KG
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
+    - [[_front-html___]] · 🌐 public · Pages
     - [[diegonmarcos]] · 🌐 public · Profile
     - [[diegonmarcos.github.io]] · 🌐 public · Pages
-    - [[front-html___]] · 🌐 public · Pages
   - 📁 **8.Archived/** · Archived (8): hub z-archived-___ and its members. Every z-archived_* repo, under the hub z-archived-___.
     - **[[z-archived-___]]** · 🌐 public
       - [[z-archived_c3-infra-plugin]] · 🔒 private · Z-archived
@@ -188,9 +188,9 @@ graph LR
   n_Projects_endeavours["Projects-endeavours"]
   n_Projects_Library_KG["Projects-Library-KG"]
   n_group_7_Others["7.Others/"]
+  n__front_html___["_front-html___"]
   n_diegonmarcos["diegonmarcos"]
   n_diegonmarcos_github_io["diegonmarcos.github.io"]
-  n_front_html___["front-html___"]
   n_group_8_Archived["8.Archived/"]
   n_z_archived____["z-archived-___"]
   n_z_archived_c3_infra_plugin["z-archived_c3-infra-plugin"]
@@ -280,9 +280,9 @@ graph LR
   n_Projects____ --> n_Projects_endeavours
   n_Projects____ --> n_Projects_Library_KG
   n__git_repos_master --> n_group_7_Others
+  n_group_7_Others --> n__front_html___
   n_group_7_Others --> n_diegonmarcos
   n_group_7_Others --> n_diegonmarcos_github_io
-  n_group_7_Others --> n_front_html___
   n__git_repos_master --> n_group_8_Archived
   n_group_8_Archived --> n_z_archived____
   n_z_archived____ --> n_z_archived_c3_infra_plugin
