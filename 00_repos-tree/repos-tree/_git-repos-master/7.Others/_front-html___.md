@@ -32,4 +32,4 @@ Group: [[7.Others]]
 
 GitHub: https://github.com/diegonmarcos/_front-html___
 
-Related (Pages): [[diegonmarcos.github.io]]
+Related (Pages): [[_git-lfs____]], [[diegonmarcos.github.io]]

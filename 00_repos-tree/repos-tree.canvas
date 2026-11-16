@@ -7,7 +7,7 @@
       "x": 0,
       "y": 0,
       "width": 3140,
-      "height": 6160,
+      "height": 6300,
       "color": "2"
     },
     {
@@ -847,7 +847,7 @@
       "x": 340,
       "y": 5000,
       "width": 980,
-      "height": 180,
+      "height": 320,
       "color": "5"
     },
     {
@@ -861,10 +861,20 @@
       "color": "4"
     },
     {
+      "id": "f90409ff3ce0d22a",
+      "type": "text",
+      "text": "**_git-lfs____**\nPages · Deployer\n🔒 private · Gh\n[GitHub](https://github.com/diegonmarcos/_git-lfs____)",
+      "x": 680,
+      "y": 5040,
+      "width": 300,
+      "height": 120,
+      "color": "1"
+    },
+    {
       "id": "2a655d68e7c73111",
       "type": "text",
       "text": "**diegonmarcos**\nProfile · README\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos)",
-      "x": 680,
+      "x": 1000,
       "y": 5040,
       "width": 300,
       "height": 120,
@@ -874,8 +884,8 @@
       "id": "f64ab6209f919f6a",
       "type": "text",
       "text": "**diegonmarcos.github.io**\nPages · Deployer\n🌐 public · Gh\n[GitHub](https://github.com/diegonmarcos/diegonmarcos.github.io)",
-      "x": 1000,
-      "y": 5040,
+      "x": 360,
+      "y": 5180,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -885,7 +895,7 @@
       "type": "group",
       "label": "8.Archived",
       "x": 340,
-      "y": 5200,
+      "y": 5340,
       "width": 1340,
       "height": 940,
       "color": "5"
@@ -895,7 +905,7 @@
       "type": "group",
       "label": "z-archived-___",
       "x": 680,
-      "y": 5240,
+      "y": 5380,
       "width": 980,
       "height": 880,
       "color": "3"
@@ -905,7 +915,7 @@
       "type": "text",
       "text": "**z-archived-___**\n— · Hub\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived-___)",
       "x": 700,
-      "y": 5280,
+      "y": 5420,
       "width": 300,
       "height": 120,
       "color": "6"
@@ -915,7 +925,7 @@
       "type": "text",
       "text": "**z-archived_c3-infra-plugin**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_c3-infra-plugin)",
       "x": 700,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -925,7 +935,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pub-data**\nZ-archived · Cloud-Me\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pub-data)",
       "x": 1020,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -935,7 +945,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-containers**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-containers)",
       "x": 1340,
-      "y": 5420,
+      "y": 5560,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -945,7 +955,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-data-private**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-data-private)",
       "x": 700,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -955,7 +965,7 @@
       "type": "text",
       "text": "**z-archived_cloud-me-pvt-legacy**\nZ-archived · Cloud-Me\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_cloud-me-pvt-legacy)",
       "x": 1020,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -965,7 +975,7 @@
       "type": "text",
       "text": "**z-archived_front-data**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-data)",
       "x": 1340,
-      "y": 5560,
+      "y": 5700,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -975,7 +985,7 @@
       "type": "text",
       "text": "**z-archived_front-feeds**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-feeds)",
       "x": 700,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -985,7 +995,7 @@
       "type": "text",
       "text": "**z-archived_front-individual**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-individual)",
       "x": 1020,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -995,7 +1005,7 @@
       "type": "text",
       "text": "**z-archived_front-linktree**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-linktree)",
       "x": 1340,
-      "y": 5700,
+      "y": 5840,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1005,7 +1015,7 @@
       "type": "text",
       "text": "**z-archived_front-media**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-media)",
       "x": 700,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1015,7 +1025,7 @@
       "type": "text",
       "text": "**z-archived_front-others**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-others)",
       "x": 1020,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1025,7 +1035,7 @@
       "type": "text",
       "text": "**z-archived_front-projects**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-projects)",
       "x": 1340,
-      "y": 5840,
+      "y": 5980,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1035,7 +1045,7 @@
       "type": "text",
       "text": "**z-archived_front-warehouse**\nZ-archived · Front\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_front-warehouse)",
       "x": 700,
-      "y": 5980,
+      "y": 6120,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1045,7 +1055,7 @@
       "type": "text",
       "text": "**z-archived_My-ai-memory**\nZ-archived · Tools\n🔒 private · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_My-ai-memory)",
       "x": 1020,
-      "y": 5980,
+      "y": 6120,
       "width": 300,
       "height": 120,
       "color": "1"
@@ -1055,7 +1065,7 @@
       "type": "text",
       "text": "**z-archived_Projects-labtools**\nZ-archived · Projects\n🌐 public · Z-archived\n[GitHub](https://github.com/diegonmarcos/z-archived_Projects-labtools)",
       "x": 1340,
-      "y": 5980,
+      "y": 6120,
       "width": 300,
       "height": 120,
       "color": "4"
@@ -1533,6 +1543,14 @@
       "toNode": "fc30c4ab78b13d94",
       "toSide": "left",
       "color": "4"
+    },
+    {
+      "id": "45ba86394e29033a",
+      "fromNode": "61b37abb2d70ec68",
+      "fromSide": "right",
+      "toNode": "f90409ff3ce0d22a",
+      "toSide": "left",
+      "color": "1"
     },
     {
       "id": "8577fac940878b9c",
