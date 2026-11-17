@@ -228,8 +228,8 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | [[DuckPeng-___]] | `6.2.0` | code | no | no | 🌐 public | DuckPeng | Shell | DuckPeng — hub: CG, Cloud and LeafY |
 | [[Projects-endeavours]] | `6.1.1.1` | html | yes | no | 🌐 public | Endeavours | JavaScript | Front group a_Companies (split from front-projects, #1072) |
 | [[Projects-Library-KG]] | `6.3.1.1` | html | yes | no | 🌐 public | Library-KG | HTML | Chronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum. |
-| [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | — | — |
-| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | — | — |
+| [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | HTML | Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API |
+| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | JavaScript | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
 | [[diegonmarcos]] | `7.1.1.1` | html | yes | no | 🌐 public | Profile | TypeScript | GitHub Landpage |
 | [[diegonmarcos.github.io]] | `7.2.1.1` | html | yes | no | 🌐 public | Pages | TypeScript | Does Ducks lives in the north pole with bears or south with Penguins?  |
 | [[z-archived-___]] | `8.0` | code | no | no | 🌐 public | — | Shell | Hub of the archived repos (z-archived_*): repos.json subset, clone.sh, README. Parent hub: _git-repos-master. |
@@ -266,7 +266,7 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | [[HardTech-DeepXTech]] | `4.2.1.1` | html | yes | no | 🌐 public | DeepXTech | Shell | DeepSc-X — deep science projects |
 | [[Projects-endeavours]] | `6.1.1.1` | html | yes | no | 🌐 public | Endeavours | JavaScript | Front group a_Companies (split from front-projects, #1072) |
 | [[Projects-Library-KG]] | `6.3.1.1` | html | yes | no | 🌐 public | Library-KG | HTML | Chronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum. |
-| [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | — | — |
+| [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | HTML | Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API |
 | [[diegonmarcos]] | `7.1.1.1` | html | yes | no | 🌐 public | Profile | TypeScript | GitHub Landpage |
 | [[diegonmarcos.github.io]] | `7.2.1.1` | html | yes | no | 🌐 public | Pages | TypeScript | Does Ducks lives in the north pole with bears or south with Penguins?  |
 
@@ -275,7 +275,7 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | Repo | Code | Kind | HTML repo? | LFS repo? | Visibility | Project | Language | Description |
 |---|---|---|---|---|---|---|---|---|
 | [[cloudy_db_LFS]] | `1.1.2.2.3` | lfs | no | yes | 🔒 private | Cloudy | Shell | Cloud data storage using Git LFS |
-| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | — | — |
+| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | JavaScript | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
 
 ## Mermaid
 

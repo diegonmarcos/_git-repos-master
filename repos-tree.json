@@ -1823,15 +1823,15 @@
             "html_repo": true,
             "lfs_repo": false,
             "gh": {
-              "description": "",
-              "language": "",
+              "description": "Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API",
+              "language": "HTML",
               "topics": [],
-              "stars": null,
-              "forks": null,
-              "pushed_at": "",
-              "updated_at": "",
-              "size_kb": null,
-              "cached": false
+              "stars": 0,
+              "forks": 0,
+              "pushed_at": "2026-11-14T20:48:48Z",
+              "updated_at": "2026-11-14T20:41:21Z",
+              "size_kb": 76,
+              "cached": true
             }
           },
           {
@@ -1851,15 +1851,15 @@
             "html_repo": false,
             "lfs_repo": true,
             "gh": {
-              "description": "",
-              "language": "",
+              "description": "Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index",
+              "language": "JavaScript",
               "topics": [],
-              "stars": null,
-              "forks": null,
-              "pushed_at": "",
-              "updated_at": "",
-              "size_kb": null,
-              "cached": false
+              "stars": 0,
+              "forks": 0,
+              "pushed_at": "2026-11-16T09:57:52Z",
+              "updated_at": "2026-11-16T09:57:56Z",
+              "size_kb": 7,
+              "cached": true
             }
           },
           {

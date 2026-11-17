@@ -3,12 +3,30 @@
  "scanned": "2026-11-17",
  "repos": {
   "_front-html___": {
-   "error": "unreadable with the scan token",
-   "visibility": "public"
+   "description": "Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API",
+   "language": "HTML",
+   "topics": [],
+   "visibility": "public",
+   "stargazers_count": 0,
+   "forks_count": 0,
+   "pushed_at": "2026-11-14T20:48:48Z",
+   "updated_at": "2026-11-14T20:41:21Z",
+   "size": 76,
+   "archived": false,
+   "html_url": "https://github.com/diegonmarcos/_front-html___"
   },
   "_git-lfs____": {
-   "error": "unreadable with the scan token",
-   "visibility": "private"
+   "description": "Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index",
+   "language": "JavaScript",
+   "topics": [],
+   "visibility": "private",
+   "stargazers_count": 0,
+   "forks_count": 0,
+   "pushed_at": "2026-11-16T09:57:52Z",
+   "updated_at": "2026-11-16T09:57:56Z",
+   "size": 7,
+   "archived": false,
+   "html_url": "https://github.com/diegonmarcos/_git-lfs____"
   },
   "_git-repos-master": {
    "description": null,
