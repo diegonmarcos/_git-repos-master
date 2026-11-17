@@ -1,23 +1,23 @@
 #!/usr/bin/env node
-// render-folders-tree.js - renders 01_repo-folders-tree/* from THE ONE MASTER SOURCE projects-repos.json (#1291, #1301).
+// render-folders-tree.js - renders A1_repos-tree-folders/* from THE ONE MASTER SOURCE projects-repos.json (#1291, #1301).
 // No CLI of its own: `node gen-registry.js` writes these files, `node repos-sot.js check` compares them byte-for-byte.
 // The folder data lives in the master, under each public repo node (`tree`: source, head, entries to
 // folders.max_depth); `node refresh-folders-tree.js` re-fetches it INTO the master. Private repos: name + URL +
 // "private" only, never a listing. A public repo without a `tree` renders as "unreadable".
-//   01_repo-folders-tree/repo-folders-tree.json  excerpt of the master: root -> farm groups -> hubs -> repos -> folders
-//   01_repo-folders-tree/repo-folders-tree.md    9_others/templates/repo-folders-tree.md.tpl
-//   01_repo-folders-tree/repo-folders-tree.html  the shared Dolphin template 9_others/templates/repos-tree.html
+//   A1_repos-tree-folders/dist/repo-folders-tree.json  excerpt of the master: root -> farm groups -> hubs -> repos -> folders
+//   A1_repos-tree-folders/dist/repo-folders-tree.md    A1_repos-tree-folders/src/repo-folders-tree.md.tmpl
+//   A1_repos-tree-folders/dist/repo-folders-tree.html  the shared Dolphin template A1_repos-tree-folders/src/repo-folders-tree.html.tmpl
 'use strict';
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..'), OWNER = 'diegonmarcos';
 const RM = require('./registry-model.js'), { model, buildTree } = require('./render-repos-tree.js');
-const DIR = '01_repo-folders-tree', JSON_F = `${DIR}/repo-folders-tree.json`, MD_F = `${DIR}/repo-folders-tree.md`, HTML_F = `${DIR}/repo-folders-tree.html`;
+const DIR = 'A1_repos-tree-folders', SRC = DIR + '/src', OUT = DIR + '/dist', JSON_F = `${OUT}/repo-folders-tree.json`, MD_F = `${OUT}/repo-folders-tree.md`, HTML_F = `${OUT}/repo-folders-tree.html`;
 
 const repos = t => [...(t.kind === 'group' ? [] : [t]), ...(t.children || []).flatMap(repos)];
-function build(src) { // root -> groups -> hubs -> repos (same shape as 00_repos-tree/repos-tree.json) + each repo's tree
+function build(src) { // root -> groups -> hubs -> repos (same shape as A0_repos-tree/dist/repos-tree.json) + each repo's tree
   const x = RM.expand(src), trees = new Map(x.repos.map(r => [r.github, r.tree]));
-  const node = o => o.kind === 'group' ? { name: o.name, kind: 'group', path: o.path, children: o.children.map(node) }
-    : { code: o.code, name: o.name, kind: o.kind, visibility: o.visibility, url: `https://github.com/${OWNER}/${o.name}`,
+  const node = o => o.node === 'group' ? { name: o.name, kind: 'group', path: o.path, children: o.children.map(node) } // A1 keeps `kind` = group|hub|repo (A0's `kind` is html|lfs|code)
+    : { code: o.code, name: o.name, kind: o.node, visibility: o.visibility, url: `https://github.com/${OWNER}/${o.name}`,
       ...(o.children ? { children: o.children.map(node) } : {}) };
   const tree = node(buildTree(model(src)).tree);
   for (const r of repos(tree)) { const t = trees.get(r.name);
@@ -45,12 +45,12 @@ function mdTree(j) {
 function counts(j) { const r = repos(j.tree), c = s => r.filter(x => x.status === s).length;
   return { repos: r.length, ok: c('ok'), private: c('private'), unreadable: c('unreadable') }; }
 function md(j) {
-  const t = fs.readFileSync(path.join(ROOT, '9_others/templates/repo-folders-tree.md.tpl'), 'utf8'), c = counts(j);
+  const t = fs.readFileSync(path.join(ROOT, SRC, 'repo-folders-tree.md.tmpl'), 'utf8'), c = counts(j);
   const v = { DEPTH: j.max_depth, REPOS: c.repos, OK: c.ok, PRIVATE: c.private, UNREADABLE: c.unreadable, EXCLUDED: j.excluded.map(x => '`' + x + '`').join(', '), TREE: mdTree(j) };
   return t.replace(/\{\{(\w+)\}\}/g, (_, k) => String(v[k]));
 }
 function html(j) {
-  const tpl = fs.readFileSync(path.join(ROOT, '9_others/templates/repos-tree.html'), 'utf8'), N = [], VIS = { public: '🌐', private: '🔒' };
+  const tpl = fs.readFileSync(path.join(ROOT, SRC, 'repo-folders-tree.html.tmpl'), 'utf8'), N = [], VIS = { public: '🌐', private: '🔒' };
   const add = (o) => { N.push(o); return o.id; };
   const ent = (e, par, repo, p) => {
     const id = par + '/' + e.name, isDir = e.type === 'dir';

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Drift guard for the root copies of 00_repos-tree/ and 01_repo-folders-tree/ (repos-tree.{json,md,html},
+# Drift guard for the root copies of A0_repos-tree/ and A1_repos-tree-folders/ (repos-tree.{json,md,html},
 # repo-folders-tree.{json,md,html}): they must be real files (no symlinks) and byte-equal to a fresh ./build.sh output.
 # Runs build.sh in a scratch copy of the repo inputs, never in the working tree. Mutations prove the guard bites.
 set -u
@@ -8,13 +8,13 @@ T="$(mktemp -d)"; trap 'rm -rf "$T"' EXIT
 fail=0
 ok()  { echo "PASS  $*"; }
 bad() { echo "FAIL  $*"; fail=1; }
-FILES="repos-tree.json repos-tree.md repos-tree.html repo-folders-tree.json repo-folders-tree.md repo-folders-tree.html"
+FILES="repos-tree.json repos-tree.md repos-tree.html repos-tree.xml repos-tree.canvas repo-folders-tree.json repo-folders-tree.md repo-folders-tree.html"
 
 for f in $FILES; do [ -f "$ROOT/$f" ] && [ ! -L "$ROOT/$f" ] && ok "root $f is a real file" || bad "root $f missing or a symlink (run ./build.sh)"; done
 
 mkdir -p "$T/fresh/9_others"
 cp "$ROOT/build.sh" "$ROOT/README.md" "$T/fresh/"
-cp -r "$ROOT/0_registry" "$ROOT/00_repos-tree" "$ROOT/01_repo-folders-tree" "$T/fresh/"
+cp -r "$ROOT/0_registry" "$ROOT/A0_repos-tree" "$ROOT/A1_repos-tree-folders" "$T/fresh/"
 cp -r "$ROOT/9_others/templates" "$T/fresh/9_others/"
 (cd "$T/fresh" && sh ./build.sh >"$T/build.log" 2>&1) && ok "build.sh runs in a scratch copy" || { bad "build.sh failed: $(tail -3 "$T/build.log")"; exit 1; }
 for f in $FILES; do cmp -s "$ROOT/$f" "$T/fresh/$f" && ok "root $f is byte-equal to a fresh build.sh output" || bad "root $f drifted from build.sh output (run ./build.sh)"; done
@@ -25,5 +25,5 @@ for f in repos-tree.md repos-tree.html repo-folders-tree.md repo-folders-tree.ht
 for f in $FILES; do
   cp "$ROOT/$f" "$T/m"; echo x >> "$T/m"; cmp -s "$T/m" "$T/fresh/$f" && bad "mutation (edited root $f) missed" || ok "mutation (edited root $f) is caught"
 done
-ln -s 00_repos-tree/repos-tree.md "$T/lnk"; [ -L "$T/lnk" ] && ok "mutation (root symlink) is caught by the real-file check" || bad "symlink mutation setup"
+ln -s A0_repos-tree/dist/repos-tree.md "$T/lnk"; [ -L "$T/lnk" ] && ok "mutation (root symlink) is caught by the real-file check" || bad "symlink mutation setup"
 exit $fail

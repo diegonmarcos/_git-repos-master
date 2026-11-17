@@ -1,25 +1,31 @@
 #!/usr/bin/env node
 // render-repos-tree.js - the repo hierarchy renders (#1291), from THE ONE MASTER SOURCE projects-repos.json (#1295, #1301).
 // No CLI of its own: `node gen-registry.js` writes everything, `node repos-sot.js check` compares it byte-for-byte.
-// Everything lands in 00_repos-tree/:
+// Everything lands in A0_repos-tree/:
 //   repos-tree.json    root _git-repos-master -> farm groups (<code>.<Name> folders, sub-folders nested by the hub
 //                      chain) -> hubs -> repos, each node with its code (an excerpt of the master)
 //   repos-tree.canvas  Obsidian JSON Canvas 1.0            (rendered from repos-tree.json)
-//   repos-tree.html    Dolphin/Breeze-style browser (template 9_others/templates/repos-tree.html)
+//   repos-tree.html    Dolphin/Breeze-style browser (template A0_repos-tree/src/repos-tree.html.tmpl)
 //   repos-tree.md      nested list + mermaid tree, Dataview-friendly frontmatter
 //   repos-tree.xml     the same tree as XML
 //   repos-tree/        Obsidian graph notes, one folder per group/hub (nested like the JSON), <node>.md each.
 // URL policy: every repo (public AND private) carries its GitHub URL; contents of private repos never appear.
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
-const ROOT = path.resolve(__dirname, '..'), TOP = '_git-repos-master', DIR = '00_repos-tree';
+const ROOT = path.resolve(__dirname, '..'), TOP = '_git-repos-master', DIR = 'A0_repos-tree', SRC = DIR + '/src', OUT = DIR + '/dist';
 const ghName = u => u.replace(/^.*[/:]/, '').replace(/\.git$/, '');
 
+const readJ = f => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')); } catch (e) { return {}; } };
+// the Table view's per-repo GitHub fields, from the cache A0_repos-tree/src/gh-meta.json (node 0_registry/scan-kinds.js refreshes it)
+const ghMeta = (g, n) => !g || g.error ? { description: '', language: '', topics: [], stars: null, forks: null, pushed_at: '', updated_at: '', size_kb: null, cached: false }
+  : { description: g.description || '', language: g.language || '', topics: g.topics || [], stars: g.stargazers_count, forks: g.forks_count, pushed_at: g.pushed_at || '', updated_at: g.updated_at || '', size_kb: g.size, cached: true };
 // ---- model: registry -> flat nodes with parent hub and farm ------------------------------------
 function model(src) { // from THE ONE MASTER SOURCE projects-repos.json (registry-model.js), never from the rendered compat files
   const M = require('./registry-model.js'); src = src || M.load(); const x = M.expand(src);
   const nodes = x.repos.map(r => ({ name: r.github, code: r.code, url: r.url, project: r.project || '', family: r.family || '', field: r.area, developer: r.developer,
     subcategory: r.subcategory || '', visibility: r.visibility, vis_icon: src.icons.visibility[r.visibility], role: r.kind === 'hub' ? 'hub' : (r.role || ''),
     farm: r.name === TOP ? '' : r.farm, link: r.name === TOP ? '' : `${r.farm}/${r.name}`, parent: r.name === TOP ? null : (r.up || TOP) }));
+  const KI = readJ(`${SRC}/kinds.json`).repos || {}, GM = readJ(`${SRC}/gh-meta.json`).repos || {};
+  for (const n of nodes) { const k = KI[n.name] || {}; n.html = !!k.html; n.lfs = !!k.lfs; n.repo_kind = k.kind || (k.html ? 'html' : k.lfs ? 'lfs' : 'code'); n.gh = ghMeta(GM[n.name], n); }
   const kids = new Map();
   for (const n of nodes) if (n.parent) (kids.get(n.parent) || kids.set(n.parent, []).get(n.parent)).push(n);
   for (const n of nodes) n.hub = n.name === TOP || kids.has(n.name) || /-___$/.test(n.name);
@@ -31,15 +37,16 @@ const hasProject = n => n.project && n.project !== '—';
 function buildTree(m) {
   const by = new Map(m.nodes.map(n => [n.name, n]));
   const cmp = (a, b) => (b.hub - a.hub) || a.name.localeCompare(b.name);
-  const leaf = n => ({ code: n.code, name: n.name, kind: n.hub ? 'hub' : 'repo', farm: n.farm, link: n.link, project: hasProject(n) ? n.project : '', field: n.field || '',
-    family: n.family || '', subcategory: n.subcategory, visibility: n.visibility, developer: n.developer, url: n.url });
+  const leaf = n => ({ code: n.code, name: n.name, node: n.hub ? 'hub' : 'repo', farm: n.farm, link: n.link, project: hasProject(n) ? n.project : '', field: n.field || '',
+    family: n.family || '', subcategory: n.subcategory, visibility: n.visibility, developer: n.developer, url: n.url,
+    kind: n.repo_kind, html_repo: n.html, lfs_repo: n.lfs, gh: n.gh });
   const build = n => { const o = leaf(n); if (n.hub) o.children = kidsOf(n, n.farm); return o; };
   function kidsOf(h, base) { // h's members, the ones in a deeper folder wrapped in a group node per folder
     const direct = [], groups = new Map();
     for (const c of (m.kids.get(h.name) || []).slice().sort(cmp)) {
       if (c.farm === base) { direct.push(build(c)); continue; }
       const seg = (base ? c.farm.slice(base.length + 1) : c.farm).split('/')[0], p = base ? base + '/' + seg : seg;
-      if (!groups.has(p)) groups.set(p, { name: seg, kind: 'group', path: p, doc: base ? '' : (m.farms[seg] || ''), children: [] });
+      if (!groups.has(p)) groups.set(p, { name: seg, node: 'group', path: p, doc: base ? '' : (m.farms[seg] || ''), children: [] });
       groups.get(p).children.push(c);
     }
     const gs = [...groups.values()].sort((a, b) => a.name.localeCompare(b.name));
@@ -47,15 +54,15 @@ function buildTree(m) {
     return [...gs, ...direct];
   }
   const root = build(by.get(TOP));
-  return { _doc: 'GENERATED by gen-registry.js (render-repos-tree.js) from projects-repos.json. Data of every UI in 00_repos-tree/. DO NOT EDIT.',
-    _schema: 'repos-tree/v3', count: m.nodes.length, groups: Object.keys(m.farms), icons: m.icons, tree: root };
+  return { _doc: 'GENERATED by gen-registry.js (render-repos-tree.js) from projects-repos.json. Data of every UI in A0_repos-tree/. DO NOT EDIT.',
+    _schema: 'repos-tree/v4', count: m.nodes.length, groups: Object.keys(m.farms), icons: m.icons, tree: root };
 }
 
 // ---- helpers over the JSON ---------------------------------------------------------------------
 const VIS = { public: '🌐', private: '🔒' };
 const walkT = (o, f, par = null, anc = []) => { f(o, par, anc); (o.children || []).forEach(c => walkT(c, f, o, [...anc, o])); };
-const upHub = anc => { for (let i = anc.length - 1; i >= 0; i--) if (anc[i].kind !== 'group') return anc[i]; return null; };
-const gid = o => o.kind === 'group' ? 'group:' + o.path : o.name;
+const upHub = anc => { for (let i = anc.length - 1; i >= 0; i--) if (anc[i].node !== 'group') return anc[i]; return null; };
+const gid = o => o.node === 'group' ? 'group:' + o.path : o.name;
 const isBox = o => !!o.children;
 const id = s => crypto.createHash('sha1').update(s).digest('hex').slice(0, 16);
 
@@ -63,14 +70,14 @@ function canvas(j) {
   const W = 300, H = 120, G = 20, P = 20, T = 40, COLS = 3;
   const out = { nodes: [], edges: [] }, pos = new Map(), fields = [];
   walkT(j.tree, o => { if (o.field && !fields.includes(o.field)) fields.push(o.field); }); fields.sort();
-  const gcol = o => o.kind === 'group' ? '5' : String(2 + (fields.indexOf(o.field) % 5));
+  const gcol = o => o.node === 'group' ? '5' : String(2 + (fields.indexOf(o.field) % 5));
   const card = (o, x, y) => {
     pos.set(o.name, { x, y });
-    const txt = `**${o.name}**\n${o.project || '—'} · ${o.family}\n${VIS[o.visibility]} ${o.visibility} · ${o.developer}\n[GitHub](${o.url})`;
-    out.nodes.push({ id: id('c:' + o.name), type: 'text', text: txt, x, y, width: W, height: H, color: o.kind === 'hub' ? '6' : o.visibility === 'public' ? '4' : '1' });
+    const txt = `**${o.name}**\n${o.project || '—'} · ${o.family}\n${VIS[o.visibility]} ${o.visibility} · ${o.developer} · ${o.kind}\n[GitHub](${o.url})`;
+    out.nodes.push({ id: id('c:' + o.name), type: 'text', text: txt, x, y, width: W, height: H, color: o.node === 'hub' ? '6' : o.visibility === 'public' ? '4' : '1' });
   };
   function place(o, x, y) { // lays out box o (hub/root with its card, or group) at (x,y); returns its size
-    const ch = o.children, leaves = ch.filter(c => !isBox(c)), subs = ch.filter(isBox), hasCard = o.kind !== 'group';
+    const ch = o.children, leaves = ch.filter(c => !isBox(c)), subs = ch.filter(isBox), hasCard = o.node !== 'group';
     const gi = out.nodes.length; out.nodes.push(null);
     if (hasCard) card(o, x + P, y + T);
     const top0 = y + T + (hasCard ? H + G : 0);
@@ -80,88 +87,100 @@ function canvas(j) {
     let sx = x + P + leftW + G, sy = y + T, subW = 0;
     for (const s of subs) { const b = place(s, sx, sy); sy += b.h + G; subW = Math.max(subW, b.w); }
     const w = P + leftW + (subs.length ? G + subW : 0) + P, hh = T - 10 + Math.max(leftH, subs.length ? sy - G - (y + T) : 0) + P + 10;
-    out.nodes[gi] = { id: id('g:' + gid(o)), type: 'group', label: o.kind === 'group' ? o.path : o.name, x, y, width: w, height: hh, color: gcol(o) };
+    out.nodes[gi] = { id: id('g:' + gid(o)), type: 'group', label: o.node === 'group' ? o.path : o.name, x, y, width: w, height: hh, color: gcol(o) };
     return { w, h: hh };
   }
   place(j.tree, 0, 0);
-  walkT(j.tree, (o, par, anc) => { if (o.kind === 'group' || !par) return;
+  walkT(j.tree, (o, par, anc) => { if (o.node === 'group' || !par) return;
     const h = upHub(anc), a = pos.get(h.name), b = pos.get(o.name), right = b.x >= a.x + W;
     out.edges.push({ id: id('e:' + h.name + '>' + o.name), fromNode: id('c:' + h.name), fromSide: right ? 'right' : 'bottom', toNode: id('c:' + o.name), toSide: right ? 'left' : 'top', color: o.visibility === 'public' ? '4' : '1' }); });
   return JSON.stringify(out, null, 2) + '\n';
 }
 
 function html(j) {
-  const tpl = fs.readFileSync(path.join(ROOT, '9_others/templates/repos-tree.html'), 'utf8'), nodes = [];
-  walkT(j.tree, (o, par) => { const g = o.kind === 'group';
+  const tpl = fs.readFileSync(path.join(ROOT, SRC, 'repos-tree.html.tmpl'), 'utf8'), nodes = [];
+  walkT(j.tree, (o, par) => { const g = o.node === 'group';
     nodes.push({ id: gid(o), name: o.name, label: o.name, url: g ? '' : o.url, project: g ? 'group' : o.project, family: g ? '' : o.family, field: g ? o.doc : o.field,
-      developer: g ? '' : o.developer, visibility: g ? 'public' : o.visibility, vis_icon: g ? '' : VIS[o.visibility], parent: par ? gid(par) : null, hub: isBox(o) || o.kind === 'hub' }); });
-  const data = { top: j.tree.name, icons: j.icons, nodes };
+      developer: g ? '' : o.developer, visibility: g ? 'public' : o.visibility, vis_icon: g ? '' : VIS[o.visibility], parent: par ? gid(par) : null, hub: isBox(o) || o.node === 'hub',
+      group: g, ...(g ? {} : { kind: o.kind, html: o.html_repo, lfs: o.lfs_repo, gh: o.gh }) }); });
+  const data = { top: j.tree.name, icons: j.icons, nodes, canvas: JSON.parse(canvas(j)) };
   return tpl.replace('/*__GEN__*/', 'gen-registry.js (render-repos-tree.js) from projects-repos.json.').replace('/*__DATA__*/null', () => JSON.stringify(data).replace(/</g, '\\u003c'));
 }
 
 const xe = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 function asXml(j) {
   const out = ['<?xml version="1.0" encoding="UTF-8"?>', '<!-- GENERATED by gen-registry.js from projects-repos.json. DO NOT EDIT. -->', `<repos-tree schema="${j._schema}" count="${j.count}">`];
-  const walk = (o, d) => { const pad = '  '.repeat(d), el = o.kind;
-    const at = ['name', 'path', 'farm', 'project', 'field', 'family', 'subcategory', 'visibility', 'developer', 'url'].filter(k => o[k]).map(k => ` ${k}="${xe(o[k])}"`).join('');
+  const walk = (o, d) => { const pad = '  '.repeat(d), el = o.node;
+    const at = ['name', 'path', 'farm', 'project', 'field', 'family', 'subcategory', 'visibility', 'developer', 'url', 'kind', 'html_repo', 'lfs_repo'].filter(k => o[k] !== undefined && o[k] !== '' && o[k] !== false).map(k => ` ${k}="${xe(o[k])}"`).join('');
     if (o.children && o.children.length) { out.push(`${pad}<${el}${at}>`); o.children.forEach(c => walk(c, d + 1)); out.push(`${pad}</${el}>`); }
     else out.push(`${pad}<${el}${at}/>`); };
   walk(j.tree, 1); out.push('</repos-tree>'); return out.join('\n') + '\n';
 }
 
+const kindBadge = o => ` · ${o.html_repo ? '🌐 HTML' : ''}${o.html_repo && o.lfs_repo ? ' ' : ''}${o.lfs_repo ? '📦 LFS' : ''}${!o.html_repo && !o.lfs_repo ? '💻 code' : ''}`;
+// the tree pruned to the nodes that satisfy pred (hubs/groups stay when a descendant matches)
+function prune(o, pred) {
+  const kids = (o.children || []).map(c => prune(c, pred)).filter(Boolean);
+  if (o.node === 'group') return kids.length ? { ...o, children: kids } : null;
+  return pred(o) || kids.length ? { ...o, children: kids } : null;
+}
 function asMd(j) {
-  const all = []; walkT(j.tree, o => { if (o.kind !== 'group') all.push(o); });
-  const L = ['---', 'title: Repos tree', 'generated_by: gen-registry.js', `repos: ${j.count}`, `hubs: ${all.filter(o => o.kind === 'hub').length}`, `groups: ${j.groups.length}`,
-    `public: ${all.filter(n => n.visibility === 'public').length}`, `private: ${all.filter(n => n.visibility !== 'public').length}`,
-    'tags: [hub, repos-tree]', '---', '', '<!-- GENERATED by gen-registry.js from projects-repos.json. DO NOT EDIT. -->', '',
-    '# Repos tree', '', 'Root -> numbered groups -> hubs -> repos. Source: `repos-tree.json` (this folder). Graph notes: [[_git-repos-master]] (folder `repos-tree/`). Also `repos-tree.canvas`, `repos-tree.xml`, `repos-tree.html`.', '', '## Tree', ''];
-  walkT(j.tree, (o, par, anc) => { const pad = '  '.repeat(anc.length);
-    if (o.kind === 'group') L.push(`${pad}- 📁 **${o.name}/**${o.doc ? ' · ' + o.doc : ''}`);
-    else L.push(`${pad}- ${o.kind === 'hub' ? '**' : ''}[[${o.name}]]${o.kind === 'hub' ? '**' : ''} · ${VIS[o.visibility]} ${o.visibility}${o.project ? ' · ' + o.project : ''}`); });
-  const mid = o => 'n_' + gid(o).replace(/[^A-Za-z0-9]/g, '_');
-  L.push('', '## Mermaid', '', '```mermaid', 'graph LR');
-  walkT(j.tree, o => L.push(`  ${mid(o)}["${o.kind === 'group' ? o.name + '/' : o.name}"]`));
-  walkT(j.tree, (o, par) => { if (par) L.push(`  ${mid(par)} --> ${mid(o)}`); });
-  // `group` is a Dataview keyword (GROUP BY): a bare `group` fails to parse, so the field is read as row["group"].
-  L.push('```', '', '## Dataview', '', '```dataview', 'TABLE row["group"] AS "group", hub, project, area, family, visibility, developer', 'FROM "00_repos-tree/repos-tree" AND #repo', 'SORT row["group"] ASC, file.name ASC', '```', '');
-  return L.join('\n');
+  const all = []; walkT(j.tree, o => { if (o.node !== 'group') all.push(o); });
+  const isHtml = o => o.html_repo, isLfs = o => o.lfs_repo, cnt = f => all.filter(f).length;
+  const list = t => { const L = [];
+    if (t) walkT(t, (o, par, anc) => { const pad = '  '.repeat(anc.length);
+      if (o.node === 'group') L.push(`${pad}- 📁 **${o.name}/**${o.doc ? ' · ' + o.doc : ''}`);
+      else L.push(`${pad}- ${o.node === 'hub' ? '**' : ''}[[${o.name}]]${o.node === 'hub' ? '**' : ''} · ${VIS[o.visibility]} ${o.visibility}${o.project ? ' · ' + o.project : ''}${kindBadge(o)}`); });
+    return L.length ? L.join('\n') : '_none_'; };
+  const yn = b => b ? 'yes' : 'no', cell = s => String(s ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+  const table = rows => ['| Repo | Code | Kind | HTML repo? | LFS repo? | Visibility | Project | Language | Description |', '|---|---|---|---|---|---|---|---|---|',
+    ...rows.map(o => `| [[${o.name}]] | \`${o.code}\` | ${o.kind} | ${yn(o.html_repo)} | ${yn(o.lfs_repo)} | ${VIS[o.visibility]} ${o.visibility} | ${cell(o.project) || '—'} | ${cell(o.gh.language) || '—'} | ${cell(o.gh.description) || '—'} |`)].join('\n');
+  const mid = o => 'n_' + gid(o).replace(/[^A-Za-z0-9]/g, '_'), M = ['graph LR'];
+  walkT(j.tree, o => M.push(`  ${mid(o)}["${o.node === 'group' ? o.name + '/' : o.name}"]`));
+  walkT(j.tree, (o, par) => { if (par) M.push(`  ${mid(par)} --> ${mid(o)}`); });
+  const v = { REPOS: j.count, HUBS: cnt(o => o.node === 'hub'), GROUPS: j.groups.length, PUBLIC: cnt(n => n.visibility === 'public'), PRIVATE: cnt(n => n.visibility !== 'public'),
+    HTML: cnt(isHtml), LFS: cnt(isLfs), CODE: cnt(o => o.kind === 'code'),
+    TREE_ALL: list(j.tree), TREE_HTML: list(prune(j.tree, isHtml)), TREE_LFS: list(prune(j.tree, isLfs)),
+    TABLE_ALL: table(all), TABLE_HTML: table(all.filter(isHtml)), TABLE_LFS: table(all.filter(isLfs)), MERMAID: M.join('\n') };
+  const t = fs.readFileSync(path.join(ROOT, SRC, 'repos-tree.md.tmpl'), 'utf8');
+  return t.replace(/\{\{(\w+)\}\}/g, (_, k) => { if (!(k in v)) throw new Error(`repos-tree.md.tmpl: unknown placeholder {{${k}}}`); return String(v[k]); });
 }
 
 const tag = s => String(s || '').trim().replace(/[^A-Za-z0-9_\-/]+/g, '-').replace(/^-+|-+$/g, '');
 const fams = o => String(o.family || '').split(',').map(x => x.trim()).filter(Boolean);
-const noteName = o => o.kind === 'group' ? o.path.replace(/\//g, '.') : o.name;
+const noteName = o => o.node === 'group' ? o.path.replace(/\//g, '.') : o.name;
 function notes(j) {
   const out = {}, q = s => JSON.stringify(String(s ?? '')), all = [];
   walkT(j.tree, (o, par, anc) => all.push({ o, par, anc }));
   for (const { o, par, anc } of all) {
     const folder = [...anc, ...(isBox(o) ? [o] : [])].map(noteName).join('/');
-    const hub = upHub(anc), grp = [...anc].reverse().find(a => a.kind === 'group');
+    const hub = upHub(anc), grp = [...anc].reverse().find(a => a.node === 'group');
     const kids = o.children || [];
     let fm, b;
-    if (o.kind === 'group') {
-      fm = ['---', `name: ${q(noteName(o))}`, 'kind: group', `path: ${q(o.path)}`, `parent: ${q(par ? noteName(par) : '')}`, 'tags:', '  - group', '---'];
+    if (o.node === 'group') {
+      fm = ['---', `name: ${q(noteName(o))}`, 'node: group', `path: ${q(o.path)}`, `parent: ${q(par ? noteName(par) : '')}`, 'tags:', '  - group', '---'];
       b = ['', '<!-- GENERATED by gen-registry.js from projects-repos.json. DO NOT EDIT. -->', '', `# ${o.path}/`, '', '#group', ''];
       if (o.doc) b.push(o.doc, '');
       b.push(`Parent: [[${noteName(par)}]]`, '');
     } else {
-      const tags = [o.kind, o.field && 'area/' + tag(o.field), o.project && 'project/' + tag(o.project), ...fams(o).map(f => 'family/' + tag(f)), 'visibility/' + o.visibility, o.subcategory && 'subcategory/' + tag(o.subcategory), grp && 'group/' + tag(grp.path)].filter(Boolean);
-      fm = ['---', `name: ${q(o.name)}`, `kind: ${o.kind}`, `group: ${q(grp ? grp.path : '')}`, `hub: ${q(hub ? hub.name : '')}`, `parent_hub: ${q(hub ? hub.name : '')}`, `project: ${q(o.project)}`,
+      const tags = [o.node, 'kind/' + o.kind, o.field && 'area/' + tag(o.field), o.project && 'project/' + tag(o.project), ...fams(o).map(f => 'family/' + tag(f)), 'visibility/' + o.visibility, o.subcategory && 'subcategory/' + tag(o.subcategory), grp && 'group/' + tag(grp.path)].filter(Boolean);
+      fm = ['---', `name: ${q(o.name)}`, `node: ${o.node}`, `kind: ${o.kind}`, `html_repo: ${o.html_repo}`, `lfs_repo: ${o.lfs_repo}`, `group: ${q(grp ? grp.path : '')}`, `hub: ${q(hub ? hub.name : '')}`, `parent_hub: ${q(hub ? hub.name : '')}`, `project: ${q(o.project)}`,
         `area: ${q(o.field)}`, `family: ${q(o.family)}`, `subcategory: ${q(o.subcategory)}`, `visibility: ${o.visibility}`, `developer: ${q(o.developer)}`, `url: ${q(o.url)}`,
         'tags:', ...tags.map(t => `  - ${t}`), '---'];
       b = ['', '<!-- GENERATED by gen-registry.js from projects-repos.json. DO NOT EDIT. -->', '', `# ${o.name}`, '', tags.map(t => '#' + t).join(' '), ''];
-      if (hub) b.push(`${o.kind === 'hub' ? 'Parent hub' : 'Hub'}: [[${hub.name}]]`, '');
+      if (hub) b.push(`${o.node === 'hub' ? 'Parent hub' : 'Hub'}: [[${hub.name}]]`, '');
       if (grp) b.push(`Group: [[${noteName(grp)}]]`, '');
       b.push(`GitHub: ${o.url}`, '');
-      if (o.project) { const rel = all.filter(x => x.o !== o && x.o.kind !== 'group' && x.o.project === o.project).map(x => x.o.name).sort(); if (rel.length) b.push(`Related (${o.project}): ${rel.map(r => `[[${r}]]`).join(', ')}`, ''); }
+      if (o.project) { const rel = all.filter(x => x.o !== o && x.o.node !== 'group' && x.o.project === o.project).map(x => x.o.name).sort(); if (rel.length) b.push(`Related (${o.project}): ${rel.map(r => `[[${r}]]`).join(', ')}`, ''); }
     }
-    if (kids.length) b.push('## Children', '', ...kids.map(c => `- [[${noteName(c)}]]${c.kind === 'repo' ? '' : ' (' + c.kind + ')'}`), '');
-    out[`${DIR}/repos-tree/${folder}/${noteName(o)}.md`] = fm.join('\n') + '\n' + b.join('\n');
+    if (kids.length) b.push('## Children', '', ...kids.map(c => `- [[${noteName(c)}]]${c.node === 'repo' ? '' : ' (' + c.node + ')'}`), '');
+    out[`${OUT}/repos-tree/${folder}/${noteName(o)}.md`] = fm.join('\n') + '\n' + b.join('\n');
   }
   return out;
 }
 
 function renderFrom(jsonText) { const j = JSON.parse(jsonText);
-  return { [`${DIR}/repos-tree.canvas`]: canvas(j), [`${DIR}/repos-tree.html`]: html(j), [`${DIR}/repos-tree.md`]: asMd(j), [`${DIR}/repos-tree.xml`]: asXml(j), ...notes(j) }; }
+  return { [`${OUT}/repos-tree.canvas`]: canvas(j), [`${OUT}/repos-tree.html`]: html(j), [`${OUT}/repos-tree.md`]: asMd(j), [`${OUT}/repos-tree.xml`]: asXml(j), ...notes(j) }; }
 const jsonText = src => JSON.stringify(buildTree(model(src)), null, 2) + '\n';
-function render(src) { const t = jsonText(src); return { [`${DIR}/repos-tree.json`]: t, ...renderFrom(t) }; }
+function render(src) { const t = jsonText(src); return { [`${OUT}/repos-tree.json`]: t, ...renderFrom(t) }; }
 module.exports = { render, renderFrom, model, buildTree, TOP, DIR };
