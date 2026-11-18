@@ -18,6 +18,14 @@
   "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
   "renames": [
     {
+      "from": "Projects-Library-KG",
+      "to": "lib-chronos",
+      "kind": "repo",
+      "since": "2026-11-18",
+      "ticket": "#1789",
+      "doc": "GitHub repo renamed (owner order). The old names keep working through the GitHub redirect."
+    },
+    {
       "from": "HardTech-Chronos",
       "to": "Projects-Library-KG",
       "kind": "repo",
@@ -1957,16 +1965,17 @@
       "doc": "Project master for the DuckPeng family: the CG hub and the cloud hub (Leaf.y moved to the cloud-me-pub-profiles family 2026-10-28). Its own repos.json subset plus committed symlinks. Created 2026-10-27 (#1224)."
     },
     {
-      "name": "Projects-Library-KG",
+      "name": "lib-chronos",
       "farm": "6.Projects",
       "group": "b_projects",
       "hub": "Projects-___",
-      "url": "git@github.com:diegonmarcos/Projects-Library-KG.git",
+      "url": "git@github.com:diegonmarcos/lib-chronos.git",
       "private": false,
       "renamed_from": [
-        "HardTech-Chronos"
+        "HardTech-Chronos",
+        "Projects-Library-KG"
       ],
-      "doc": "Renamed from HardTech-Chronos (#1609). Root index.html + topics.md are the Library board cloned at runtime by Cloud KG Store Me (#1656); Chronos/ is the published site (formerly dist/), including 4.Astronomy-Astrological-sphere. Linked in front-html."
+      "doc": "Renamed from HardTech-Chronos (#1609), then from Projects-Library-KG to lib-chronos (#1789, owner order); its Chronos pages render inside Cloud Wiki. Root index.html + topics.md are the Library board cloned at runtime by Cloud KG Store Me (#1656); Chronos/ is the published site (formerly dist/), including 4.Astronomy-Astrological-sphere. Linked in front-html."
     },
     {
       "name": "front-gh-profile-diegonmarcos",

@@ -6,9 +6,9 @@ hubs: 13
 groups: 9
 public: 60
 private: 19
-html: 16
+html: 15
 lfs: 2
-code: 61
+code: 62
 tags: [hub, repos-tree]
 ---
 
@@ -93,8 +93,8 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
     - **[[Projects-___]]** · 🌐 public · 💻 code
       - 📁 **DuckPeng/**
         - **[[DuckPeng-___]]** · 🌐 public · DuckPeng · 💻 code
+      - [[lib-chronos]] · 🌐 public · Library-KG · 💻 code
       - [[Projects-endeavours]] · 🌐 public · Endeavours · 🌐 HTML
-      - [[Projects-Library-KG]] · 🌐 public · Library-KG · 🌐 HTML
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[_front-html___]] · 🌐 public · Pages · 🌐 HTML
     - [[_git-lfs____]] · 🔒 private · Pages · 📦 LFS
@@ -118,7 +118,7 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
       - [[z-archived_My-ai-memory]] · 🔒 private · Z-archived · 💻 code
       - [[z-archived_Projects-labtools]] · 🌐 public · Z-archived · 💻 code
 
-### HTML repos (16)
+### HTML repos (15)
 
 - **[[_git-repos-master]]** · 🌐 public · Repos · 💻 code
   - 📁 **1.1.Cloudy/** · Cloudy (1.1): hub cloudy-___ and its members. The cloudy project: fleet infrastructure, services, devices, data and docs.
@@ -147,7 +147,6 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
   - 📁 **6.Projects/** · Projects (6): hub Projects-___ and its members. Projects (formerly Front): endeavours, lab tools and DuckPeng.
     - **[[Projects-___]]** · 🌐 public · 💻 code
       - [[Projects-endeavours]] · 🌐 public · Endeavours · 🌐 HTML
-      - [[Projects-Library-KG]] · 🌐 public · Library-KG · 🌐 HTML
   - 📁 **7.Others/** · Others (7): no hub. Loose GitHub repos with no project hub (profile README, GitHub Pages site).
     - [[_front-html___]] · 🌐 public · Pages · 🌐 HTML
     - [[diegonmarcos]] · 🌐 public · Profile · 🌐 HTML
@@ -186,10 +185,10 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | [[cloud-me-pub-___]] | `1.2.1.0` | code | no | no | 🌐 public | Cloud-Me | Shell | Cloud-Me-Pub hub: index of the public cloud-me family |
 | [[cloud-me-pub-profiles-___]] | `1.2.1.1.0` | code | no | no | 🌐 public | Cloud-Me | Shell | Front group b_Profiles (split from front-projects, #1072) |
 | [[cloud-me-pub-profiles-_lnktree]] | `1.2.1.1.1` | html | yes | no | 🌐 public | Cloud-Me | JavaScript | Linktree site (split from Me-Profiles) |
-| [[cloud-me-pub-profiles-leaf.y]] | `1.2.1.1.2` | html | yes | no | 🌐 public | Cloud-Me | HTML | Leaf.y — company site |
-| [[cloud-me-pub-profiles-nexus.z]] | `1.2.1.1.3` | html | yes | no | 🌐 public | Cloud-Me | HTML | Nexus.z — company site |
+| [[cloud-me-pub-profiles-leaf.y]] | `1.2.1.1.2` | html | yes | no | 🌐 public | Cloud-Me | Shell | Leaf.y — company site |
+| [[cloud-me-pub-profiles-nexus.z]] | `1.2.1.1.3` | html | yes | no | 🌐 public | Cloud-Me | Shell | Nexus.z — company site |
 | [[cloud-me-pub-profiles-prf-prs]] | `1.2.1.1.4` | html | yes | no | 🌐 public | Cloud-Me | JavaScript | Professional and personal profiles (split from Me-Profiles) |
-| [[cloud-me-pub-profiles-stark.x]] | `1.2.1.1.5` | html | yes | no | 🌐 public | Cloud-Me | TypeScript | Stark.x — company site |
+| [[cloud-me-pub-profiles-stark.x]] | `1.2.1.1.5` | html | yes | no | 🌐 public | Cloud-Me | Shell | Stark.x — company site |
 | [[cloud-me-pub-shared]] | `1.2.1.2.1` | code | no | no | 🌐 public | Cloud-Me | TypeScript | Front group b_MyData (split from front-projects, #1072) |
 | [[cloud-me-pvt-___]] | `1.2.2.0` | code | no | no | 🌐 public | Cloud-Me | Shell | Cloud-Me-Pvt hub: index of the private cloud-me family |
 | [[cloud-me-pvt-cgc]] | `1.2.2.2.1` | code | no | no | 🔒 private | Cloud-Me | Shell | Private half of the cgc pipeline: indexes the private repos into the cgc-pvt surface by calling cloud-u-containers_cgc's reusable workflow pinned by sha. Logs stay private. |
@@ -225,10 +224,10 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | [[lecole-42-projects]] | `5.5.1.1` | code | no | no | 🔒 private | 42-projects | Python | — |
 | [[Projects-___]] | `6.0` | code | no | no | 🌐 public | — | Shell | Registry index for the front-* repo family (front-master, mirrors cloud-master) |
 | [[DuckPeng-___]] | `6.2.0` | code | no | no | 🌐 public | DuckPeng | Shell | DuckPeng — hub: CG, Cloud and LeafY |
+| [[lib-chronos]] | `6.3.1.1` | code | no | no | 🌐 public | Library-KG | HTML | Chronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum. |
 | [[Projects-endeavours]] | `6.1.1.1` | html | yes | no | 🌐 public | Endeavours | JavaScript | Front group a_Companies (split from front-projects, #1072) |
-| [[Projects-Library-KG]] | `6.3.1.1` | html | yes | no | 🌐 public | Library-KG | HTML | Chronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum. |
 | [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | HTML | Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API |
-| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | JavaScript | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
+| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | HTML | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
 | [[diegonmarcos]] | `7.1.1.1` | html | yes | no | 🌐 public | Profile | TypeScript | GitHub Landpage |
 | [[diegonmarcos.github.io]] | `7.2.1.1` | html | yes | no | 🌐 public | Pages | TypeScript | Does Ducks lives in the north pole with bears or south with Penguins?  |
 | [[z-archived-___]] | `8.0` | code | no | no | 🌐 public | — | Shell | Hub of the archived repos (z-archived_*): repos.json subset, clone.sh, README. Parent hub: _git-repos-master. |
@@ -255,16 +254,15 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | [[cloudy-h-webapps-desk]] | `1.1.4.2` | html | yes | no | 🌐 public | Cloudy | HTML | Front group c_Suite (split from front-projects, #1072) |
 | [[cloudy-h-webapps-mob]] | `1.1.4.1` | html | yes | no | 🌐 public | Cloudy | TypeScript | Cloud web apps: per-app independent sites with a shared top nav |
 | [[cloud-me-pub-profiles-_lnktree]] | `1.2.1.1.1` | html | yes | no | 🌐 public | Cloud-Me | JavaScript | Linktree site (split from Me-Profiles) |
-| [[cloud-me-pub-profiles-leaf.y]] | `1.2.1.1.2` | html | yes | no | 🌐 public | Cloud-Me | HTML | Leaf.y — company site |
-| [[cloud-me-pub-profiles-nexus.z]] | `1.2.1.1.3` | html | yes | no | 🌐 public | Cloud-Me | HTML | Nexus.z — company site |
+| [[cloud-me-pub-profiles-leaf.y]] | `1.2.1.1.2` | html | yes | no | 🌐 public | Cloud-Me | Shell | Leaf.y — company site |
+| [[cloud-me-pub-profiles-nexus.z]] | `1.2.1.1.3` | html | yes | no | 🌐 public | Cloud-Me | Shell | Nexus.z — company site |
 | [[cloud-me-pub-profiles-prf-prs]] | `1.2.1.1.4` | html | yes | no | 🌐 public | Cloud-Me | JavaScript | Professional and personal profiles (split from Me-Profiles) |
-| [[cloud-me-pub-profiles-stark.x]] | `1.2.1.1.5` | html | yes | no | 🌐 public | Cloud-Me | TypeScript | Stark.x — company site |
+| [[cloud-me-pub-profiles-stark.x]] | `1.2.1.1.5` | html | yes | no | 🌐 public | Cloud-Me | Shell | Stark.x — company site |
 | [[CG-circus]] | `2.2.4.1` | html | yes | no | 🌐 public | Zirkus | JavaScript | Front group c_Circus (split from front-projects, #1072) |
 | [[CG-galaxy]] | `2.1.1.1` | html | yes | no | 🌐 public | Galaxy | JavaScript | Front group b_Projects (split from front-projects, #1072) |
 | [[CG-galaxy-gaia]] | `2.1.1.2` | html | yes | no | 🔒 private | Galaxy | Python | front-galaxy-gaia |
 | [[HardTech-DeepXTech]] | `4.2.1.1` | html | yes | no | 🌐 public | DeepXTech | Shell | DeepSc-X — deep science projects |
 | [[Projects-endeavours]] | `6.1.1.1` | html | yes | no | 🌐 public | Endeavours | JavaScript | Front group a_Companies (split from front-projects, #1072) |
-| [[Projects-Library-KG]] | `6.3.1.1` | html | yes | no | 🌐 public | Library-KG | HTML | Chronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum. |
 | [[_front-html___]] | `7.2.1.2` | html | yes | no | 🌐 public | Pages | HTML | Hub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generated from the GitHub API |
 | [[diegonmarcos]] | `7.1.1.1` | html | yes | no | 🌐 public | Profile | TypeScript | GitHub Landpage |
 | [[diegonmarcos.github.io]] | `7.2.1.1` | html | yes | no | 🌐 public | Pages | TypeScript | Does Ducks lives in the north pole with bears or south with Penguins?  |
@@ -274,7 +272,7 @@ Every repo has a `kind`: `html` (a front/web page repo, mounted in `_front-html_
 | Repo | Code | Kind | HTML repo? | LFS repo? | Visibility | Project | Language | Description |
 |---|---|---|---|---|---|---|---|---|
 | [[cloudy_db_LFS]] | `1.1.2.2.3` | lfs | no | yes | 🔒 private | Cloudy | Shell | Cloud data storage using Git LFS |
-| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | JavaScript | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
+| [[_git-lfs____]] | `7.2.1.3` | lfs | no | yes | 🔒 private | Pages | HTML | Hub of every fleet repo that uses Git LFS: submodules plus a generated lfs-repos.json and index |
 
 ## Mermaid
 
@@ -350,8 +348,8 @@ graph LR
   n_Projects____["Projects-___"]
   n_group_6_Projects_DuckPeng["DuckPeng/"]
   n_DuckPeng____["DuckPeng-___"]
+  n_lib_chronos["lib-chronos"]
   n_Projects_endeavours["Projects-endeavours"]
-  n_Projects_Library_KG["Projects-Library-KG"]
   n_group_7_Others["7.Others/"]
   n__front_html___["_front-html___"]
   n__git_lfs____["_git-lfs____"]
@@ -443,8 +441,8 @@ graph LR
   n_group_6_Projects --> n_Projects____
   n_Projects____ --> n_group_6_Projects_DuckPeng
   n_group_6_Projects_DuckPeng --> n_DuckPeng____
+  n_Projects____ --> n_lib_chronos
   n_Projects____ --> n_Projects_endeavours
-  n_Projects____ --> n_Projects_Library_KG
   n__git_repos_master --> n_group_7_Others
   n_group_7_Others --> n__front_html___
   n_group_7_Others --> n__git_lfs____

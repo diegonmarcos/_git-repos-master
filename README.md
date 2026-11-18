@@ -196,8 +196,8 @@ _git-repos-master/
     DuckPeng/
       DuckPeng-___  (hub)
     Projects-___  (hub)
+    lib-chronos
     Projects-endeavours
-    Projects-Library-KG
   7.Others/
     _front-html___
     _git-lfs____  (private)
@@ -307,7 +307,7 @@ Every repo except this one carries its hub as a git submodule at `0_hub/<hub>` (
 | `6.0` | [Projects-___](https://github.com/diegonmarcos/Projects-___) _(hub)_ | Projects | — | — | Hub | _git-repos-master | 🌐 public | 🧩 Projects | Registry index for the front-* repo family (front-master, mirrors cloud-master) |
 | `6.1.1.1` | [Projects-endeavours](https://github.com/diegonmarcos/Projects-endeavours) | Projects | Endeavours | — | Endeavours | Projects-___ | 🌐 public | 🧩 Projects | Front group a_Companies (split from front-projects, #1072) |
 | `6.2.0` | [DuckPeng-___](https://github.com/diegonmarcos/DuckPeng-___) _(hub)_ | Projects | DuckPeng | — | Hub | Projects-___ | 🌐 public | 🍃 Leaf.y | DuckPeng — hub: CG, Cloud and LeafY |
-| `6.3.1.1` | [Projects-Library-KG](https://github.com/diegonmarcos/Projects-Library-KG) | Projects | Library-KG | — | Library-KG | Projects-___ | 🌐 public | 🧩 Projects | Library knowledge graph: saved-collections board (served by Cloud KG Store Me) and the Chronos site |
+| `6.3.1.1` | [lib-chronos](https://github.com/diegonmarcos/lib-chronos) | Projects | Library-KG | — | Library-KG | Projects-___ | 🌐 public | 🧩 Projects | Library knowledge graph: saved-collections board (served by Cloud KG Store Me) and the Chronos site |
 | `7.1.1.1` | [diegonmarcos](https://github.com/diegonmarcos/diegonmarcos) (registry `front-gh-profile-diegonmarcos`) | Others | Profile | — | README | — | 🌐 public | 🐙 Gh | GitHub Landpage |
 | `7.2.1.1` | [diegonmarcos.github.io](https://github.com/diegonmarcos/diegonmarcos.github.io) (registry `front-diegonmarcos`) | Others | Pages | — | Deployer | — | 🌐 public | 🐙 Gh | Does Ducks lives in the north pole with bears or south with Penguins? |
 | `7.2.1.2` | [_front-html___](https://github.com/diegonmarcos/_front-html___) | Others | Pages | — | Deployer | — | 🌐 public | 🐙 Gh | Hub of the owner's GitHub Pages sites: submodules plus the generated pages.json. |

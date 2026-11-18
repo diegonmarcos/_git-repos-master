@@ -2887,15 +2887,16 @@
                 {
                   "code": "6.3.1.1",
                   "kind": "repo",
-                  "name": "Projects-Library-KG",
-                  "label": "Projects-Library-KG",
+                  "name": "lib-chronos",
+                  "label": "lib-chronos",
                   "visibility": "public",
                   "description": "Library knowledge graph: saved-collections board (served by Cloud KG Store Me) and the Chronos site",
                   "group": "b_projects",
                   "renamed_from": [
-                    "HardTech-Chronos"
+                    "HardTech-Chronos",
+                    "Projects-Library-KG"
                   ],
-                  "doc": "Renamed from HardTech-Chronos (#1609). Root index.html + topics.md are the Library board cloned at runtime by Cloud KG Store Me (#1656); Chronos/ is the published site (formerly dist/), including 4.Astronomy-Astrological-sphere. Linked in front-html."
+                  "doc": "Renamed from HardTech-Chronos (#1609), then from Projects-Library-KG to lib-chronos (#1789, owner order); its Chronos pages render inside Cloud Wiki. Root index.html + topics.md are the Library board cloned at runtime by Cloud KG Store Me (#1656); Chronos/ is the published site (formerly dist/), including 4.Astronomy-Astrological-sphere. Linked in front-html."
                 }
               ]
             }
@@ -3693,6 +3694,14 @@
     "_status_doc": "`status` is optional. Absent = the repo exists and is cloned/linked as usual. `pending_creation` = declared on purpose, but the GitHub repo is NOT created yet: every farmer (clone.sh, the cloud-drive seed, the libs:repos mirror, the fleet dotfiles guard) must SKIP it - no clone, no symlink, no seed - and the guard fails if a pending entry is treated as live. Flip it by deleting the field in the same commit that creates the repo. `parts` (optional) lists named sub-trees that live INSIDE the same repo, declared as placeholders so farmers and docs know the planned layout before any file moves; a part is never a repo of its own and is never cloned or linked.",
     "_renames_doc": "`renames` records an old name -> new name for things that are not (or not only) repos, so a path that still says the old name is findable and a guard can flag it. `kind: repo` = a repository rename (the entry also carries `renamed_from`); `kind: app-folder` = a folder/app inside a repo. Farmers never create the old name.",
     "renames": [
+      {
+        "from": "Projects-Library-KG",
+        "to": "lib-chronos",
+        "kind": "repo",
+        "since": "2026-11-18",
+        "ticket": "#1789",
+        "doc": "GitHub repo renamed (owner order). The old names keep working through the GitHub redirect."
+      },
       {
         "from": "HardTech-Chronos",
         "to": "Projects-Library-KG",

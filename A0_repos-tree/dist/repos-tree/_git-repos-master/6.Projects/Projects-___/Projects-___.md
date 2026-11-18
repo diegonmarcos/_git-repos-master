@@ -38,5 +38,5 @@ GitHub: https://github.com/diegonmarcos/Projects-___
 ## Children
 
 - [[6.Projects.DuckPeng]] (group)
+- [[lib-chronos]]
 - [[Projects-endeavours]]
-- [[Projects-Library-KG]]

@@ -1137,8 +1137,8 @@
     },
     {
       "family": "Library-KG",
-      "name": "Projects-Library-KG",
-      "url": "https://github.com/diegonmarcos/Projects-Library-KG",
+      "name": "lib-chronos",
+      "url": "https://github.com/diegonmarcos/lib-chronos",
       "role": "",
       "visibility": "public",
       "project": "Library-KG",
@@ -1148,7 +1148,7 @@
       "area_code": "6",
       "project_code": "6.3",
       "family_code": "6.3.1",
-      "registry_name": "Projects-Library-KG",
+      "registry_name": "lib-chronos",
       "hub": "Projects-___",
       "farm": "6.Projects",
       "description": "Library knowledge graph: saved-collections board (served by Cloud KG Store Me) and the Chronos site"
@@ -2622,7 +2622,7 @@
               "farm": "6.Projects",
               "repos_count": 1,
               "repos": [
-                "Projects-Library-KG"
+                "lib-chronos"
               ]
             }
           ]
