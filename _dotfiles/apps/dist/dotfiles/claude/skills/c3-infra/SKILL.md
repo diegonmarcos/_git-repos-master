@@ -34,7 +34,7 @@ Hard rules first, index last. Each rule has a one-line why in `rules/*.md` (read
 | rules/addressing.md | mesh vs public, c3-pvt/c3-pub, mesh namespace, vault, exposure |
 | rules/backlog.md | tickets: schema, build, test, push, closing, phone check |
 | rules/ci.md | CI-only builds, Gradle, GHA tools, emulator tests |
-| rules/session-survival.md | dead shell recovery, disk, /tmp, worktrees |
+| rules/session-survival.md | dead shell recovery, disk, /tmp, one shared checkout per repo |
 | rules/agents.md | orchestration, token budget, lean agents, tools |
 | rules/security.md | secrets, gitleaks, geo-fence, MCP auth |
 | rules/relay-inbox.md | c3-bot Telegram relay inbox, lease, reply routing, session tag |
