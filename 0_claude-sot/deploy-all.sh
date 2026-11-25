@@ -3,7 +3,8 @@
 # SoT = this directory (0_claude-sot/ in _git-repos-master). Owner order 2026-11-25.
 #   deploy-all.sh           regenerate this repo's mirrors, sync cloud-u-linux's
 #                           da_my-ai/data/claude, then for every repo in mirror-repos.txt
-#                           with a clone under $BASE: run the engine, restore .mcp.json,
+#                           with a clone under $BASE: write the minimal _dotfiles skeleton
+#                           when the repo has none, run the engine, restore .mcp.json,
 #                           stage the mirror paths only, commit, push origin main.
 #   deploy-all.sh --check-child   only the cloud-u-linux mirror (see check-child.sh)
 #   deploy-all.sh --check   change nothing; exit 1 when any mirror differs from the SoT.
@@ -25,10 +26,24 @@ MIRROR_PATHS=(.claude/agents .claude/skills/c3-infra .claude/hooks/c3 .claude/se
   _dotfiles/apps/src/claude _dotfiles/apps/dist/dotfiles/claude)
 
 repos() { # repo dirs, this repo first, then mirror-repos.txt entries with a clone
+  # mirror-repos.txt line: <github-name> [<clone-dir-name>]  (second column only when the
+  # local clone keeps an older folder name, e.g. cloudy-u-linux cloud-u-linux)
   echo "$HOME_REPO"
-  grep -vE '^\s*(#|$)' "$SOT/mirror-repos.txt" | awk '{print $1}' | sed 's#.*/##' | while read -r r; do
-    d="$BASE/$r"; [ -d "$d/.git" ] && [ -d "$d/_dotfiles" ] && [ "$d" != "$HOME_REPO" ] && echo "$d"
+  grep -vE '^\s*(#|$)' "$SOT/mirror-repos.txt" | while read -r name alias _; do
+    r="${alias:-${name##*/}}"
+    d="$BASE/$r"; [ -d "$d/.git" ] && [ "$d" != "$HOME_REPO" ] && echo "$d"
   done
+}
+
+# Paths staged in addition to MIRROR_PATHS for a repo whose skeleton this run created.
+BOOT_PATHS=(_dotfiles/apps/src/manifest.json _dotfiles/apps/src/root _dotfiles/apps/dist/dotfiles/root .mcp.json)
+
+bootstrap() { # <repo>  a repo with no _dotfiles/apps/src gets the minimal skeleton (claude + root mcp)
+  [ -f "$1/_dotfiles/apps/src/manifest.json" ] && return 1
+  mkdir -p "$1/_dotfiles/apps/src/root" || return 2
+  cp "$SOT/bootstrap/manifest.json" "$1/_dotfiles/apps/src/manifest.json" || return 2
+  cp "$HOME_REPO/_dotfiles/apps/src/root/mcp.json" "$HOME_REPO/_dotfiles/apps/src/root/mcp.optin.json" "$1/_dotfiles/apps/src/root/" || return 2
+  return 0
 }
 
 header() { printf '<!-- GENERATED from _git-repos-master/0_claude-sot, DO NOT EDIT. Edit the source and run `sh 0_claude-sot/deploy-all.sh`. -->\n\n'; }
@@ -75,9 +90,14 @@ while read -r d; do
   r=$(basename "$d")
   if [ "$d" != "$HOME_REPO" ]; then
     git -C "$d" pull -q --no-rebase --no-edit origin main >/dev/null 2>&1
+    boot=0
+    if ! git -C "$d" ls-files --error-unmatch _dotfiles/apps/src/manifest.json >/dev/null 2>&1; then
+      bootstrap "$d"; [ $? = 2 ] && { fail="$fail $r(bootstrap)"; continue; }; boot=1
+    fi
     run_engine "$d" || { fail="$fail $r(engine)"; continue; }
   fi
   paths=(); [ "$r" = cloud-u-linux ] && paths+=(da_my-ai/data/claude)
+  [ "${boot:-0}" = 1 ] && for p in "${BOOT_PATHS[@]}"; do [ -e "$d/$p" ] && paths+=("$p"); done
   # the SoT repo also commits the source itself (0_claude-sot/ and its CLAUDE.md) with its mirrors
   [ "$d" = "$HOME_REPO" ] && paths+=("${SOT#"$HOME_REPO"/}" CLAUDE.md)
   for p in "${MIRROR_PATHS[@]}"; do [ -e "$d/$p" ] && paths+=("$p"); done

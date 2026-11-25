@@ -1,10 +1,14 @@
-# Repos whose generated Claude/agent mirror must equal this SoT (read by
-# .github/workflows/mirror-drift.yml via check-mirrors.sh). One owner repo per line.
-# PENDING (frozen, their pushes trigger deploys; add once the freeze lifts):
-#   cloudy-t-infra
-#   cloudy-u-containers
-# PENDING (public web-facing, push held back by the session permission check, needs owner go-ahead):
-#   diegonmarcos (GitHub profile repo), diegonmarcos.github.io (Pages site)
+# Repos whose generated Claude/agent mirror must equal this SoT (deploy-all.sh and
+# check-mirrors.sh). One repo per line: <github-name> [<clone-dir-name>]; the second column
+# is only for a local clone that keeps an older folder name.
+# A repo with no _dotfiles/apps/src gets the minimal skeleton from bootstrap/ on its first run.
+# HELD (not listed, with the reason):
+#   cloudy-t-infra: a push that touches _dotfiles/apps/src/** starts gen-configs, and its
+#     completion starts the home-manager ship for every VM whose build inputs changed, hub
+#     included. Held while the hub is down and no hub deploy is authorised; add the line once
+#     the hub is healthy and a fleet home-manager ship is wanted.
+#   diegonmarcos (GitHub profile repo), diegonmarcos.github.io (Pages site): public web-facing,
+#     the push was refused by the session permission check.
 # Archived z-archived_* repos are out of scope.
 cloudy-___
 cloudy-u-android
@@ -15,7 +19,8 @@ cloudy-a-docs
 cloud-me-pvt-tasks
 cloudy-u-containers_cgc
 cloudy-u-desktop
-cloudy-u-linux
+cloudy-u-linux cloud-u-linux
+cloudy-u-containers
 cloudy-h-webapps-mob
 cloudy-h-webapps-desk
 cloud-me-___
@@ -62,3 +67,6 @@ Projects-___
 Projects-endeavours
 DuckPeng-___
 git-repos-master
+_git-lfs____
+_front-html___
+lib-chronos
