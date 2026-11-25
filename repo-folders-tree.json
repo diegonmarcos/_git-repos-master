@@ -51276,6 +51276,14 @@
         ]
        },
        {
+        "code": "6.3.1.1",
+        "name": "lib-chronos",
+        "kind": "repo",
+        "visibility": "public",
+        "url": "https://github.com/diegonmarcos/lib-chronos",
+        "status": "unreadable"
+       },
+       {
         "code": "6.1.1.1",
         "name": "Projects-endeavours",
         "kind": "repo",
@@ -51595,14 +51603,6 @@
           "size": 76
          }
         ]
-       },
-       {
-        "code": "6.3.1.1",
-        "name": "Projects-Library-KG",
-        "kind": "repo",
-        "visibility": "public",
-        "url": "https://github.com/diegonmarcos/Projects-Library-KG",
-        "status": "unreadable"
        }
       ],
       "status": "ok",

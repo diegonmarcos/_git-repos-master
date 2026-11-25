@@ -791,9 +791,9 @@
       "color": "6"
     },
     {
-      "id": "903972ebdeb612ba",
+      "id": "20be3b137b2479d2",
       "type": "text",
-      "text": "**Projects-endeavours**\nEndeavours · Endeavours\n🌐 public · Projects · html\n[GitHub](https://github.com/diegonmarcos/Projects-endeavours)",
+      "text": "**lib-chronos**\nLibrary-KG · Library-KG\n🌐 public · Projects · code\n[GitHub](https://github.com/diegonmarcos/lib-chronos)",
       "x": 700,
       "y": 4820,
       "width": 300,
@@ -801,9 +801,9 @@
       "color": "4"
     },
     {
-      "id": "8c0613a8b5f718ae",
+      "id": "903972ebdeb612ba",
       "type": "text",
-      "text": "**Projects-Library-KG**\nLibrary-KG · Library-KG\n🌐 public · Projects · html\n[GitHub](https://github.com/diegonmarcos/Projects-Library-KG)",
+      "text": "**Projects-endeavours**\nEndeavours · Endeavours\n🌐 public · Projects · html\n[GitHub](https://github.com/diegonmarcos/Projects-endeavours)",
       "x": 1020,
       "y": 4820,
       "width": 300,
@@ -1521,18 +1521,18 @@
       "color": "4"
     },
     {
-      "id": "0b2136cf9d47eca1",
+      "id": "2693a5dd5878e10f",
       "fromNode": "99e82aea5183040e",
       "fromSide": "bottom",
-      "toNode": "903972ebdeb612ba",
+      "toNode": "20be3b137b2479d2",
       "toSide": "top",
       "color": "4"
     },
     {
-      "id": "c88f51ff32444efe",
+      "id": "0b2136cf9d47eca1",
       "fromNode": "99e82aea5183040e",
       "fromSide": "right",
-      "toNode": "8c0613a8b5f718ae",
+      "toNode": "903972ebdeb612ba",
       "toSide": "left",
       "color": "4"
     },
