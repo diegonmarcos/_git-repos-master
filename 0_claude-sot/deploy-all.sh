@@ -39,11 +39,12 @@ repos() { # repo dirs, this repo first, then mirror-repos.txt entries with a clo
 BOOT_PATHS=(_dotfiles/apps/src/manifest.json _dotfiles/apps/src/root _dotfiles/apps/dist/dotfiles/root .mcp.json)
 
 bootstrap() { # <repo>  a repo with no _dotfiles/apps/src gets the minimal skeleton (claude + root mcp)
-  [ -f "$1/_dotfiles/apps/src/manifest.json" ] && return 1
-  mkdir -p "$1/_dotfiles/apps/src/root" || return 2
-  cp "$SOT/bootstrap/manifest.json" "$1/_dotfiles/apps/src/manifest.json" || return 2
-  cp "$HOME_REPO/_dotfiles/apps/src/root/mcp.json" "$HOME_REPO/_dotfiles/apps/src/root/mcp.optin.json" "$1/_dotfiles/apps/src/root/" || return 2
-  return 0
+  local src="$1/_dotfiles/apps/src"
+  mkdir -p "$src/root" "$src/claude" || return 1   # the engine refreshes src/claude only when the dir exists
+  [ -f "$src/manifest.json" ] || cp "$SOT/bootstrap/manifest.json" "$src/manifest.json" || return 1
+  for f in mcp.json mcp.optin.json; do
+    [ -f "$src/root/$f" ] || cp "$HOME_REPO/_dotfiles/apps/src/root/$f" "$src/root/$f" || return 1
+  done
 }
 
 header() { printf '<!-- GENERATED from _git-repos-master/0_claude-sot, DO NOT EDIT. Edit the source and run `sh 0_claude-sot/deploy-all.sh`. -->\n\n'; }
@@ -90,9 +91,11 @@ while read -r d; do
   r=$(basename "$d")
   if [ "$d" != "$HOME_REPO" ]; then
     git -C "$d" pull -q --no-rebase --no-edit origin main >/dev/null 2>&1
-    boot=0
-    if ! git -C "$d" ls-files --error-unmatch _dotfiles/apps/src/manifest.json >/dev/null 2>&1; then
-      bootstrap "$d"; [ $? = 2 ] && { fail="$fail $r(bootstrap)"; continue; }; boot=1
+    boot=0   # skeleton repo = no manifest yet, or the bootstrap manifest unchanged
+    m="$d/_dotfiles/apps/src/manifest.json"
+    if [ ! -f "$m" ] || cmp -s "$m" "$SOT/bootstrap/manifest.json"; then
+      bootstrap "$d" || { fail="$fail $r(bootstrap)"; continue; }
+      boot=1
     fi
     run_engine "$d" || { fail="$fail $r(engine)"; continue; }
   fi
