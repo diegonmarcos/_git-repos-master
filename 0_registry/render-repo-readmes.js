@@ -41,7 +41,7 @@ const COL = { JavaScript: '#f1e05a', TypeScript: '#3178c6', Shell: '#89e051', Py
 function langs(d, fallback) { // {name, pct}[] from the committed tree by file size; the primary GitHub language when the tree is unreadable
   try { const t = {}; let tot = 0;
     for (const l of git(d, ['ls-tree', '-r', '-l', '-z', 'HEAD'], 256e6, { GIT_NO_LAZY_FETCH: '1' }).split('\0').filter(Boolean)) {
-      const m = /^\d+ blob \w+\s+(\d+|-)\t(.*)$/s.exec(l); if (!m || m[1] === '-' || SELF.has(m[2])) continue;
+      const m = /^\d+ blob \w+\s+(\d+|-)\t(.*)$/s.exec(l); if (!m || m[1] === '-' || SELF.has(m[2]) || m[2].startsWith(DIR + '/dist/')) continue;
       const b = path.basename(m[2]), e = b.toLowerCase() === 'dockerfile' ? 'dockerfile' : (b.includes('.') ? b.split('.').pop().toLowerCase() : ''), k = LANG[e]; if (!k) continue;
       t[k] = (t[k] || 0) + (+m[1]); tot += +m[1]; }
     if (tot) return Object.entries(t).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).map(([name, v]) => ({ name, pct: v * 100 / tot })); } catch (e) { /* fall through */ }
