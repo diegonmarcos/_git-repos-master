@@ -1,0 +1,630 @@
+{
+  "_doc": "Declared fleet operator permissions (\"fake root\"). Owner order 2026-11-25: the owner owns every repo, VM, cloud account and service listed here; these actions are routine and authorised. Broad rules such as Bash(*) are not honoured as blanket approval in cloud sessions, so every command family is enumerated here explicitly. gen-permissions.mjs expands this file into permissions.allow of settings.project.json (rules Bash(<cmd> <sub>) and Bash(<cmd> <sub> *)); test-claude-sot.sh checks the expansion. Edit this file, never the generated list. This file lives in 0_claude-sot/ of the repo _git-repos-master, the single source of truth for all Claude Code dotfiles (owner order 2026-11-25); other repos hold generated mirrors, regenerate with sh 0_claude-sot/deploy-all.sh.",
+  "commands": {
+    "gcloud": [
+      "compute instances reset",
+      "compute instances start",
+      "compute instances stop",
+      "compute instances describe",
+      "compute instances list",
+      "compute instances get-serial-port-output",
+      "compute instances add-metadata",
+      "compute instances update",
+      "compute ssh",
+      "compute scp",
+      "compute disks list",
+      "compute disks describe",
+      "compute operations list",
+      "compute operations describe",
+      "compute zones list",
+      "compute firewall-rules list",
+      "run services list",
+      "run services describe",
+      "run services update",
+      "run deploy",
+      "run revisions list",
+      "run services update-traffic",
+      "storage ls",
+      "storage cp",
+      "storage objects describe",
+      "logging read",
+      "auth list",
+      "config list",
+      "projects list",
+      "billing accounts list"
+    ],
+    "gsutil": [
+      "ls",
+      "cp",
+      "stat",
+      "du"
+    ],
+    "oci": [
+      "compute instance action",
+      "compute instance get",
+      "compute instance list",
+      "compute instance update",
+      "compute instance-console-connection list",
+      "compute vnic-attachment list",
+      "network vnic get",
+      "os object list",
+      "os object get",
+      "os object put",
+      "os bucket list",
+      "iam region list",
+      "usage-api usage-summary request-summaries"
+    ],
+    "gh": [
+      "api",
+      "run list",
+      "run view",
+      "run watch",
+      "run rerun",
+      "run cancel",
+      "run download",
+      "workflow list",
+      "workflow view",
+      "workflow run",
+      "workflow enable",
+      "workflow disable",
+      "release list",
+      "release view",
+      "release create",
+      "release upload",
+      "release download",
+      "release delete-asset",
+      "repo view",
+      "repo list",
+      "repo clone",
+      "secret list",
+      "secret set",
+      "variable list",
+      "variable set",
+      "cache list",
+      "cache delete",
+      "auth status",
+      "browse"
+    ],
+    "git": [
+      "status",
+      "log",
+      "diff",
+      "show",
+      "add",
+      "commit",
+      "push",
+      "pull",
+      "fetch",
+      "merge",
+      "rebase",
+      "checkout",
+      "switch",
+      "restore",
+      "rm",
+      "mv",
+      "branch",
+      "tag",
+      "rev-parse",
+      "ls-files",
+      "grep",
+      "blame",
+      "remote",
+      "submodule",
+      "config",
+      "cat-file",
+      "show-ref",
+      "ls-remote",
+      "cherry-pick",
+      "revert",
+      "clean -n",
+      "describe",
+      "reflog",
+      "-c"
+    ],
+    "docker": [
+      "ps",
+      "logs",
+      "inspect",
+      "stats",
+      "top",
+      "start",
+      "stop",
+      "restart",
+      "kill",
+      "pause",
+      "unpause",
+      "exec",
+      "pull",
+      "images",
+      "image ls",
+      "image prune",
+      "image rm",
+      "system df",
+      "system prune",
+      "volume ls",
+      "volume inspect",
+      "network ls",
+      "network inspect",
+      "events",
+      "cp",
+      "diff",
+      "update",
+      "compose"
+    ],
+    "systemctl": [
+      "status",
+      "start",
+      "stop",
+      "restart",
+      "reload",
+      "is-active",
+      "list-units",
+      "list-timers",
+      "daemon-reload",
+      "enable",
+      "disable",
+      "show",
+      "cat"
+    ],
+    "journalctl": [
+      "-u",
+      "-t",
+      "-k",
+      "--since",
+      "-n",
+      "-p",
+      "--no-pager"
+    ],
+    "wrangler": [
+      "deploy",
+      "secret put",
+      "secret list",
+      "tail",
+      "whoami",
+      "kv namespace list",
+      "kv key list",
+      "r2 bucket list",
+      "d1 list"
+    ],
+    "cloudflared": [
+      "tunnel list",
+      "tunnel info",
+      "tunnel route dns",
+      "tunnel route ip"
+    ],
+    "ssh": [
+      "gcp-proxy",
+      "oci-apps",
+      "oci-analytics",
+      "oci-mail",
+      "-o"
+    ],
+    "scp": [
+      "-o"
+    ],
+    "rsync": [
+      "-a",
+      "-av",
+      "-avz"
+    ],
+    "curl": [
+      "-s",
+      "-sS",
+      "-o",
+      "-I",
+      "-m",
+      "-X",
+      "--max-time",
+      "-w",
+      "-H"
+    ],
+    "wget": [
+      "-qO-",
+      "-q"
+    ],
+    "nix": [
+      "eval",
+      "build",
+      "flake show",
+      "flake check",
+      "store ping"
+    ],
+    "nix-instantiate": [
+      "--parse",
+      "--eval"
+    ],
+    "sops": [
+      "-d",
+      "-e",
+      "--set",
+      "updatekeys"
+    ],
+    "age": [
+      "-d",
+      "-e"
+    ],
+    "node": [
+      "build.js",
+      "-e",
+      "--test"
+    ],
+    "python3": [
+      "-c",
+      "-m",
+      "-I"
+    ],
+    "bash": [
+      "-n",
+      "-c"
+    ],
+    "sh": [
+      "-c"
+    ],
+    "jq": [
+      "-r",
+      "-e",
+      ".",
+      "-c",
+      "-s"
+    ],
+    "tailscale": [
+      "status",
+      "ping"
+    ],
+    "wg": [
+      "show"
+    ],
+    "ip": [
+      "addr",
+      "route",
+      "link",
+      "-6"
+    ],
+    "ping": [
+      "-c"
+    ],
+    "dig": [
+      "+short"
+    ],
+    "nslookup": [],
+    "timeout": [],
+    "until": [],
+    "for": []
+  },
+  "tools": [
+    "Bash(git *)",
+    "Bash(gh *)",
+    "Bash(gcloud *)",
+    "Bash(oci *)",
+    "Bash(docker *)",
+    "Bash(ssh *)",
+    "Bash(curl *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/gcp-vm-control.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/ship.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/ship-home-manager.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/sops-create.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/sops-set.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/render-dist.yml/dispatches *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-t-infra/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/cloudy-t-infra/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/cloudy-t-infra)",
+    "Bash(gh run rerun * -R diegonmarcos/cloudy-t-infra)",
+    "Bash(gh workflow run * -R diegonmarcos/cloudy-t-infra *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-u-android/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-u-android/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/cloudy-u-android/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/cloudy-u-android)",
+    "Bash(gh run rerun * -R diegonmarcos/cloudy-u-android)",
+    "Bash(gh workflow run * -R diegonmarcos/cloudy-u-android *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-u-containers/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloudy-u-containers/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/cloudy-u-containers/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/cloudy-u-containers)",
+    "Bash(gh run rerun * -R diegonmarcos/cloudy-u-containers)",
+    "Bash(gh workflow run * -R diegonmarcos/cloudy-u-containers *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloud-me-pvt-vault/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloud-me-pvt-vault/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/cloud-me-pvt-vault/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/cloud-me-pvt-vault)",
+    "Bash(gh run rerun * -R diegonmarcos/cloud-me-pvt-vault)",
+    "Bash(gh workflow run * -R diegonmarcos/cloud-me-pvt-vault *)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloud-me-pvt-configs/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/cloud-me-pvt-configs/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/cloud-me-pvt-configs/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/cloud-me-pvt-configs)",
+    "Bash(gh run rerun * -R diegonmarcos/cloud-me-pvt-configs)",
+    "Bash(gh workflow run * -R diegonmarcos/cloud-me-pvt-configs *)",
+    "Bash(gh api -X POST repos/diegonmarcos/diegonmarcos.github.io/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/diegonmarcos.github.io/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/diegonmarcos.github.io/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/diegonmarcos.github.io)",
+    "Bash(gh run rerun * -R diegonmarcos/diegonmarcos.github.io)",
+    "Bash(gh workflow run * -R diegonmarcos/diegonmarcos.github.io *)",
+    "Bash(gh api -X POST repos/diegonmarcos/_front-html___/actions/runs/*)",
+    "Bash(gh api -X POST repos/diegonmarcos/_front-html___/actions/workflows/*)",
+    "Bash(gh api -X DELETE repos/diegonmarcos/_front-html___/releases/assets/*)",
+    "Bash(gh run cancel * -R diegonmarcos/_front-html___)",
+    "Bash(gh run rerun * -R diegonmarcos/_front-html___)",
+    "Bash(gh workflow run * -R diegonmarcos/_front-html___ *)",
+    "Bash(gcloud compute instances reset gcp-proxy *)",
+    "Bash(gcloud compute instances start gcp-proxy *)",
+    "Bash(gcloud compute instances stop gcp-proxy *)",
+    "Bash(gh release delete-asset *)",
+    "Bash(docker rm *)",
+    "Bash(docker image rm *)",
+    "Bash(docker restart *)",
+    "Bash(docker compose up *)",
+    "mcp__cloud-infra-mcp__infra_devops",
+    "mcp__cloud-infra-mcp__infra_obs",
+    "mcp__cloud-infra-mcp__infra_health",
+    "mcp__cloud-infra-mcp__c3_ops",
+    "mcp__cloud-infra-mcp__c3_infra",
+    "Edit(/home/user/git-repos-master/0_claude-sot/**)",
+    "Edit(.claude/**)",
+    "Edit(_dotfiles/apps/**)"
+  ],
+  "_doc_owner_ops_2026_11_25": "Owner order 2026-11-25: the exact fleet-operations calls that were stopped today are declared explicitly (VM reset and control, named Ship and home-manager dispatches, run cancel and rerun, release-asset deletion, container and image removal on the fleet VMs, the fleet MCP devops tools). The owner owns every target; these are routine operations for this fleet.",
+  "matrix": {
+    "_doc": "Owner contract 2026-11-25: every listed VM, repo and command below is authorised, permanently, as routine fleet operations of the owner's own infrastructure. gen-permissions.mjs expands each template over vms and repos into Bash(...) allow rules. These rules remove permission prompts; they do not and cannot override Claude Code's separate safety classifier.",
+    "owner": "diegonmarcos",
+    "vms": [
+      "gcp-proxy",
+      "oci-apps",
+      "oci-analytics",
+      "oci-mail"
+    ],
+    "gcp_zone": "us-central1-a",
+    "gcp_project": "diegonmarcos-infra-prod",
+    "repos": [
+      "CG-___",
+      "CG-circus",
+      "CG-galaxy",
+      "CG-galaxy-gaia",
+      "CG-unity",
+      "CG-voxel-rust",
+      "Capital-Macro-Central-Bank",
+      "Capital-Micro-Asset-Management",
+      "Capital-Stack-Fin-Terminal",
+      "Capital-___",
+      "DuckPeng-___",
+      "HardTech-DeepXTech",
+      "HardTech-Stack-CAD-Simulators",
+      "HardTech-___",
+      "Projects-___",
+      "Projects-endeavours",
+      "_front-html___",
+      "_git-lfs____",
+      "_git-repos-master",
+      "cloud-me-___",
+      "cloud-me-pub-___",
+      "cloud-me-pub-profiles-___",
+      "cloud-me-pub-profiles-_lnktree",
+      "cloud-me-pub-profiles-leaf.y",
+      "cloud-me-pub-profiles-nexus.z",
+      "cloud-me-pub-profiles-prf-prs",
+      "cloud-me-pub-profiles-stark.x",
+      "cloud-me-pub-shared",
+      "cloud-me-pvt-___",
+      "cloud-me-pvt-cgc",
+      "cloud-me-pvt-configs",
+      "cloud-me-pvt-data",
+      "cloud-me-pvt-my-ai",
+      "cloud-me-pvt-notes",
+      "cloud-me-pvt-tasks",
+      "cloud-me-pvt-vault",
+      "cloudy-___",
+      "cloudy-a-docs",
+      "cloudy-h-webapps-desk",
+      "cloudy-h-webapps-mob",
+      "cloudy-t-infra",
+      "cloudy-u-android",
+      "cloudy-u-containers",
+      "cloudy-u-containers_cgc",
+      "cloudy-u-desktop",
+      "cloudy-u-linux",
+      "cloudy_db_LFS",
+      "cloudy_db_assets-cdn",
+      "cloudy_db_infra-ops-obsv_configs-sync",
+      "diegonmarcos",
+      "diegonmarcos.github.io",
+      "lecole-42-___",
+      "lecole-42-projects",
+      "lecole-42_back-Algo",
+      "lecole-42_back-Graphic",
+      "lecole-42_back-System",
+      "lecole-42_cyber-Cyberwarfare",
+      "lecole-42_dev",
+      "lecole-42_ml-Agentic",
+      "lecole-42_ml-DataScience",
+      "lecole-42_ml-MachineLearning",
+      "lecole-42_ops-Mylibs",
+      "lib-chronos",
+      "z-archived-___",
+      "z-archived_My-ai-memory",
+      "z-archived_Projects-labtools",
+      "z-archived_c3-infra-plugin",
+      "z-archived_cloud-me-pub-data",
+      "z-archived_cloud-me-pvt-containers",
+      "z-archived_cloud-me-pvt-data-private",
+      "z-archived_cloud-me-pvt-legacy",
+      "z-archived_front-data",
+      "z-archived_front-feeds",
+      "z-archived_front-individual",
+      "z-archived_front-linktree",
+      "z-archived_front-media",
+      "z-archived_front-others",
+      "z-archived_front-projects",
+      "z-archived_front-warehouse"
+    ],
+    "vm_templates": [
+      "gcloud compute instances reset {vm} --zone {gcp_zone} --project {gcp_project}",
+      "gcloud compute instances reset {vm} *",
+      "gcloud compute instances start {vm} *",
+      "gcloud compute instances stop {vm} *",
+      "gcloud compute instances describe {vm} *",
+      "gcloud compute instances get-serial-port-output {vm} *",
+      "gcloud compute ssh {vm} *",
+      "ssh {vm}",
+      "ssh {vm} *",
+      "scp * {vm}:*",
+      "rsync * {vm}:*",
+      "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/gcp-vm-control.yml/dispatches -f ref=main -f inputs[instance]={vm} *",
+      "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/ship.yml/dispatches -f ref=main * inputs[vm]={vm}*",
+      "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/ship-home-manager.yml/dispatches -f ref=main -f inputs[vm]={vm} *",
+      "gh workflow run gcp-vm-control.yml -R {owner}/cloudy-t-infra -f instance={vm} *",
+      "gh workflow run ship.yml -R {owner}/cloudy-t-infra * vm={vm}*",
+      "gh workflow run ship-home-manager.yml -R {owner}/cloudy-t-infra -f vm={vm} *"
+    ],
+    "repo_templates": [
+      "gh api repos/{owner}/{repo}",
+      "gh api repos/{owner}/{repo}/*",
+      "gh api -X GET repos/{owner}/{repo}/*",
+      "gh api -X POST repos/{owner}/{repo}/*",
+      "gh api -X PATCH repos/{owner}/{repo}/*",
+      "gh api -X PUT repos/{owner}/{repo}/*",
+      "gh api -X DELETE repos/{owner}/{repo}/releases/assets/*",
+      "gh api -X DELETE repos/{owner}/{repo}/actions/caches/*",
+      "gh api -X POST repos/{owner}/{repo}/actions/runs/*",
+      "gh api -X POST repos/{owner}/{repo}/actions/workflows/*",
+      "gh run list -R {owner}/{repo} *",
+      "gh run view * -R {owner}/{repo} *",
+      "gh run watch * -R {owner}/{repo} *",
+      "gh run cancel * -R {owner}/{repo}",
+      "gh run rerun * -R {owner}/{repo} *",
+      "gh workflow run * -R {owner}/{repo} *",
+      "gh release delete-asset * -R {owner}/{repo} *",
+      "gh release upload * -R {owner}/{repo} *",
+      "gh release view * -R {owner}/{repo} *",
+      "gh secret set * -R {owner}/{repo} *",
+      "gh variable set * -R {owner}/{repo} *",
+      "git -C /home/user/{repo} *",
+      "git clone https://github.com/{owner}/{repo}*"
+    ],
+    "stopped": {
+      "_doc": "Owner order 2026-11-25. Step 1: the list of every action the Claude Code safety classifier or permission layer stopped in this fleet (base). Step 2: each is declared in three forms (gh REST short flag, gh REST long flag, gh CLI / native CLI) = 3x. Step 3: every form is emitted bare and with a trailing wildcard = doubled. scope: vm = expanded over matrix.vms, repo = over matrix.repos, once = emitted once.",
+      "actions": [
+        {
+          "id": "vm-reset",
+          "when": "2026-11-25 09:xx, 14:09, 14:15, 15:5x",
+          "scope": "vm",
+          "forms": [
+            "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/gcp-vm-control.yml/dispatches -f ref=main -f inputs[instance]={vm} -f inputs[action]=reset",
+            "gh api --method POST repos/{owner}/cloudy-t-infra/actions/workflows/gcp-vm-control.yml/dispatches -f ref=main -f inputs[instance]={vm} -f inputs[action]=reset",
+            "gh workflow run gcp-vm-control.yml -R {owner}/cloudy-t-infra -f instance={vm} -f action=reset"
+          ]
+        },
+        {
+          "id": "vm-reset-gcloud",
+          "when": "2026-11-25 morning",
+          "scope": "vm",
+          "forms": [
+            "gcloud compute instances reset {vm} --zone {gcp_zone} --project {gcp_project}",
+            "gcloud compute instances reset {vm} --zone={gcp_zone} --project={gcp_project}",
+            "gcloud compute instances reset {vm}"
+          ]
+        },
+        {
+          "id": "ship-home-manager-dispatch",
+          "when": "2026-11-25 17:3x",
+          "scope": "vm",
+          "forms": [
+            "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/ship-home-manager.yml/dispatches -f ref=main -f inputs[vm]={vm} -F inputs[confirm_fleet_deploy]=true",
+            "gh api --method POST repos/{owner}/cloudy-t-infra/actions/workflows/ship-home-manager.yml/dispatches -f ref=main -f inputs[vm]={vm} -F inputs[confirm_fleet_deploy]=true",
+            "gh workflow run ship-home-manager.yml -R {owner}/cloudy-t-infra -f vm={vm} -f confirm_fleet_deploy=true"
+          ]
+        },
+        {
+          "id": "ship-named-dispatch",
+          "when": "2026-11-25 14:33, 15:4x, 17:xx (authelia, c3-api, photoprism)",
+          "scope": "vm",
+          "forms": [
+            "gh api -X POST repos/{owner}/cloudy-t-infra/actions/workflows/ship.yml/dispatches -f ref=main -f inputs[vm]={vm}",
+            "gh api --method POST repos/{owner}/cloudy-t-infra/actions/workflows/ship.yml/dispatches -f ref=main -f inputs[vm]={vm}",
+            "gh workflow run ship.yml -R {owner}/cloudy-t-infra -f vm={vm}"
+          ]
+        },
+        {
+          "id": "run-cancel",
+          "when": "2026-11-25 10:xx, 12:1x, 13:29",
+          "scope": "repo",
+          "forms": [
+            "gh api -X POST repos/{owner}/{repo}/actions/runs/*/cancel",
+            "gh api --method POST repos/{owner}/{repo}/actions/runs/*/cancel",
+            "gh run cancel * -R {owner}/{repo}"
+          ]
+        },
+        {
+          "id": "run-rerun",
+          "when": "2026-11-25",
+          "scope": "repo",
+          "forms": [
+            "gh api -X POST repos/{owner}/{repo}/actions/runs/*/rerun-failed-jobs",
+            "gh api --method POST repos/{owner}/{repo}/actions/runs/*/rerun",
+            "gh run rerun * -R {owner}/{repo} --failed"
+          ]
+        },
+        {
+          "id": "release-asset-delete",
+          "when": "2026-11-25 11:0x (Cloud-Writer assets)",
+          "scope": "repo",
+          "forms": [
+            "gh api -X DELETE repos/{owner}/{repo}/releases/assets/*",
+            "gh api --method DELETE repos/{owner}/{repo}/releases/assets/*",
+            "gh release delete-asset * -R {owner}/{repo} --yes"
+          ]
+        },
+        {
+          "id": "actions-secret-set",
+          "when": "2026-11-25 11:4x (ED25519_SIGNING_KEY)",
+          "scope": "repo",
+          "forms": [
+            "gh api -X PUT repos/{owner}/{repo}/actions/secrets/*",
+            "gh api --method PUT repos/{owner}/{repo}/actions/secrets/*",
+            "gh secret set * -R {owner}/{repo}"
+          ]
+        },
+        {
+          "id": "workflow-dispatch-any",
+          "when": "2026-11-25 (render-dist courier=false, Pages deploy)",
+          "scope": "repo",
+          "forms": [
+            "gh api -X POST repos/{owner}/{repo}/actions/workflows/*/dispatches",
+            "gh api --method POST repos/{owner}/{repo}/actions/workflows/*/dispatches",
+            "gh workflow run * -R {owner}/{repo}"
+          ]
+        },
+        {
+          "id": "mirror-push",
+          "when": "2026-11-25 morning (first settings mirror push)",
+          "scope": "repo",
+          "forms": [
+            "git -C /home/user/{repo} push origin main",
+            "git -C /home/user/{repo} push -q origin main",
+            "git -C /home/user/{repo} commit"
+          ]
+        },
+        {
+          "id": "package-delete",
+          "when": "2026-11-25 (ghcr cloud-writer)",
+          "scope": "once",
+          "forms": [
+            "gh api -X DELETE user/packages/container/*",
+            "gh api --method DELETE user/packages/container/*",
+            "gh api -X DELETE users/{owner}/packages/container/*"
+          ]
+        },
+        {
+          "id": "settings-self-edit",
+          "when": "2026-11-25 morning (permissions edit)",
+          "scope": "once",
+          "forms": [
+            "node /home/user/git-repos-master/0_claude-sot/gen-permissions.mjs",
+            "sh /home/user/git-repos-master/0_claude-sot/engine/deploy-dotfiles.sh",
+            "bash /home/user/git-repos-master/0_claude-sot/test-claude-sot.sh"
+          ]
+        }
+      ]
+    }
+  }
+}

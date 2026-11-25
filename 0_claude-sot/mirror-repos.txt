@@ -1,0 +1,64 @@
+# Repos whose generated Claude/agent mirror must equal this SoT (read by
+# .github/workflows/mirror-drift.yml via check-mirrors.sh). One owner repo per line.
+# PENDING (frozen, their pushes trigger deploys; add once the freeze lifts):
+#   cloudy-t-infra
+#   cloudy-u-containers
+# PENDING (public web-facing, push held back by the session permission check, needs owner go-ahead):
+#   diegonmarcos (GitHub profile repo), diegonmarcos.github.io (Pages site)
+# Archived z-archived_* repos are out of scope.
+cloudy-___
+cloudy-u-android
+cloudy_db_assets-cdn
+cloudy_db_infra-ops-obsv_configs-sync
+cloudy_db_LFS
+cloudy-a-docs
+cloud-me-pvt-tasks
+cloudy-u-containers_cgc
+cloudy-u-desktop
+cloudy-u-linux
+cloudy-h-webapps-mob
+cloudy-h-webapps-desk
+cloud-me-___
+cloud-me-pub-___
+cloud-me-pub-profiles-___
+cloud-me-pub-profiles-_lnktree
+cloud-me-pub-profiles-leaf.y
+cloud-me-pub-profiles-nexus.z
+cloud-me-pub-profiles-prf-prs
+cloud-me-pub-profiles-stark.x
+cloud-me-pub-shared
+cloud-me-pvt-___
+cloud-me-pvt-my-ai
+cloud-me-pvt-cgc
+cloud-me-pvt-configs
+cloud-me-pvt-data
+cloud-me-pvt-notes
+cloud-me-pvt-vault
+CG-___
+CG-galaxy
+CG-galaxy-gaia
+CG-unity
+CG-voxel-rust
+CG-circus
+Capital-___
+Capital-Macro-Central-Bank
+Capital-Micro-Asset-Management
+Capital-Stack-Fin-Terminal
+HardTech-___
+HardTech-DeepXTech
+HardTech-Stack-CAD-Simulators
+lecole-42-___
+lecole-42_back-Algo
+lecole-42_back-Graphic
+lecole-42_back-System
+lecole-42_ops-Mylibs
+lecole-42-projects
+lecole-42_ml-Agentic
+lecole-42_ml-DataScience
+lecole-42_ml-MachineLearning
+lecole-42_cyber-Cyberwarfare
+lecole-42_dev
+Projects-___
+Projects-endeavours
+DuckPeng-___
+git-repos-master

@@ -1,0 +1,126 @@
+{
+  "_warning": "GENERATED — DO NOT EDIT. Derived from cloud-infra/1_cloud-configs/dist/mcp.json + mcp-policy.json by cloud-u-linux da_my-ai/data/claude/gen-mcp-tpl.sh. Hand-editing this file is the bug it exists to prevent: edit the service declaration or mcp-policy.json and regenerate.",
+  "_doc": "stdio DISABLED (2026-09-05) so both platforms derive from exactly the same HTTP set and the two templates are byte-identical. Termux was already HTTP-only by decree; desktop being the odd one out is what made the lists diverge. The flag is kept rather than deleted so the split is a visible, deliberate 'false' instead of a silently absent feature.",
+  "_exposure": {
+    "_doc": "Only mcpServers below are registered and preload tool schemas. Every server in _mcp_catalogue is reachable but NOT preloaded: run tools/list against its url at the moment you need it.",
+    "budget_tokens": 20000,
+    "projected_tokens": 68916
+  },
+  "mcpServers": {
+    "cloud-cgc-pub-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-cgc-pub-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-cgc-pvt-mcp": {
+      "type": "http",
+      "url": "http://10.0.0.6:3107/mcp"
+    },
+    "cloud-drive-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-drive-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-infra-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-infra-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-mail-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-mail-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-mattermost-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-mattermost-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-me-cgc-pvt-mcp": {
+      "type": "http",
+      "url": "http://10.0.0.6:3107/mcp"
+    },
+    "cloud-services-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-services-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-superapp-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloud-superapp-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloud-vault-mcp": {
+      "type": "http",
+      "url": "http://10.0.0.6:3111/mcp"
+    },
+    "cloudy-all-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloudy-all-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloudy-android-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloudy-android-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloudy-apps-communication-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloudy-apps-communication-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloudy-apps-drive-mcp": {
+      "type": "http",
+      "url": "http://10.0.0.6:3109/mcp"
+    },
+    "cloudy-c3-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloudy-c3-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "cloudy-cgc-pub-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/cloudy-cgc-pub-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "google-personal-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/google-personal-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    },
+    "google-workspace-mcp": {
+      "type": "http",
+      "url": "https://c3-pvt.diegonmarcos.com/google-workspace-mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}"
+      }
+    }
+  },
+  "_mcp_catalogue": {}
+}

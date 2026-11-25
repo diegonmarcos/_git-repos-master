@@ -1,0 +1,72 @@
+{
+  "_doc": "Declared MCP tools/list size per server: tokens = ceil(bytes/4) of the tools array, tools = count, grouped = exposed as a few dispatcher tools. Written by measure-mcp-sizes.sh --write when the servers are reachable; read by test-claude-sot.sh (budget guard). A stale entry makes the guard wrong, so re-measure when a toolset changes.",
+  "measured": "2026-10-23",
+  "servers": {
+    "cloud-cgc-pub-mcp": {
+      "tools": 16,
+      "tokens": 2815
+    },
+    "cloud-cgc-pvt-mcp": {
+      "tools": 16,
+      "tokens": 2848
+    },
+    "cloud-drive-mcp": {
+      "tools": 1,
+      "tokens": 319
+    },
+    "cloud-infra-mcp": {
+      "tools": 7,
+      "tokens": 2878
+    },
+    "cloud-mail-mcp": {
+      "tools": 1,
+      "tokens": 331
+    },
+    "cloud-mattermost-mcp": {
+      "tools": 1,
+      "tokens": 227
+    },
+    "cloud-me-cgc-pvt-mcp": {
+      "tools": 16,
+      "tokens": 2848
+    },
+    "cloud-services-mcp": {
+      "tools": 130,
+      "tokens": 13617
+    },
+    "cloud-superapp-mcp": {
+      "tools": 2,
+      "tokens": 352
+    },
+    "cloudy-all-mcp": {
+      "tools": 3,
+      "tokens": 450
+    },
+    "cloudy-android-mcp": {
+      "tools": 2,
+      "tokens": 352
+    },
+    "cloudy-apps-communication-mcp": {
+      "tools": 1,
+      "tokens": 331
+    },
+    "cloudy-apps-drive-mcp": {
+      "tools": 1,
+      "tokens": 319
+    },
+    "cloudy-c3-mcp": {
+      "tools": 17,
+      "tokens": 4700
+    },
+    "cloudy-cgc-pub-mcp": {
+      "tools": 16,
+      "tokens": 2815
+    },
+    "google-personal-mcp": {
+      "tools": 1,
+      "tokens": 857
+    }
+  },
+  "_doc_c3_merge": "#1495 cloudy-c3-mcp = the 8 grouped legacy dispatchers (infra_devops ... infra_peers) + infra_help + the tree dispatchers c3_infra, c3_containers, c3_home, c3_ops, c3_observ, c3_configs + c3_tree + c3_help = 17 tools; 4700 tokens is an ESTIMATE (2878 + the peers group about 1000 + the tree about 800) until measure-mcp-sizes.sh --write runs against the deployed container. cloudy-android-mcp and cloud-superapp-mcp are aliases of it: they are not default, so they cost nothing here.",
+  "_doc_rebrand": "#1450: new names copy the old server's measurement (router: 3 tools, estimate) until measure-mcp-sizes.sh --write runs against the renamed containers."
+}

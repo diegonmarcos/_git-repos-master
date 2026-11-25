@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-pkill-pgrep-f.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-glob-rm-tmp.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-local-gradle.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/main-only-push.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-branch-create.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-secrets-commit.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/no-mass-delete.sh" }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit|Bash|TaskCreate|TaskUpdate",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/ticket-guard.sh" }
+        ]
+      },
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/owner-auto-answer.sh", "timeout": 5 }
+        ]
+      }
+    ],
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/backlog-session-start.sh", "timeout": 20 },
+                   { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/relay-inbox.sh", "timeout": 5 } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/backlog-stop-push.sh", "timeout": 90 } ] }
+    ]
+  }
+}

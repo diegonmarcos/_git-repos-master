@@ -1,0 +1,590 @@
+#!/usr/bin/env bash
+# The gate for "ONE SoT for claude settings". Runs offline — no nix, no HM.
+#
+# It lives IN the SoT dir on purpose: the thing being guarded is "this
+# directory is the only place claude settings live", so the guard travels with
+# it and both flakes get the same check.
+#
+# What actually went wrong, twice:
+#   - mcp.json.tpl was a home.file in EACH flake. cloud-infra declared
+#     cloud-cgc-pvt-mcp on 2026-08-23; neither client list ever heard about it,
+#     because nothing pointed at the SoT to notice the gap.
+#   - assets/mcp.json (no .tpl) sat in ba_flakes_desktop for months holding
+#     seven pre-rename server names that nothing read.
+# Both are the same failure: a settings file owned outside this directory.
+set -euo pipefail
+
+SOT="${1:-$(cd "$(dirname "$0")" && pwd)}"
+# From the SCRIPT location, not $SOT: $SOT is overridable so the gate can be
+# pointed at a candidate tree, and REPO must stay the real checkout either way.
+REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
+fail=0
+check() { if [ "$2" = "$3" ]; then echo "ok   — $1"; else echo "FAIL — $1: got '$2', want '$3'"; fail=1; fi; }
+
+# ── the SoT holds what it claims to hold ─────────────────────────────────────
+for f in settings.base.json settings.desktop.json settings.termux.json \
+         settings.project.json mcp.desktop.json.tpl mcp.termux.json.tpl \
+         mcp-local-launch.sh mcp-auth-headers.sh; do
+  check "the SoT holds $f" "$([ -f "$SOT/$f" ] && echo yes || echo no)" yes
+done
+
+for f in settings.base.json settings.desktop.json settings.termux.json \
+         settings.project.json mcp.desktop.json.tpl mcp.termux.json.tpl \
+         claude-plugins.json; do
+  check "$f is valid JSON" "$(jq -e . "$SOT/$f" >/dev/null 2>&1 && echo yes || echo no)" yes
+done
+
+# ── nothing outside the SoT owns a claude settings file ──────────────────────
+# A flake may own secrets.yaml (sops ciphertext keyed to its own age
+# recipients, un-shareable by construction) and nothing else.
+# Scoped to the flake trees: they are the only places that can vendor a second
+# copy, and a whole-monorepo walk took minutes on node_modules and .archive.
+# The flakes are NOT in this repo. my-ai and the other d* apps split out into
+# cloud-u-linux; ba_/bb_flakes_* stayed behind in cloud-infra-desktop. So the
+# gate reaches them as a sibling checkout, the same way it reaches cloud-infra
+# below. An absent sibling must SKIP, never pass: an empty $FLAKES fed to find
+# counts zero hits and every check below would read as green.
+DESKTOP="${CLOUD_DESKTOP_REPO:-$REPO/../cloud-infra-desktop}"
+FLAKES=$(ls -d "$DESKTOP"/?[ab]_flakes_* 2>/dev/null || true)
+
+if [ -n "$FLAKES" ]; then
+  check "no flake vendors an mcp template of its own" \
+    "$(find $FLAKES -name 'mcp*.json.tpl' -print 2>/dev/null | wc -l | tr -d ' ')" 0
+
+  check "no flake vendors a settings.*.json of its own" \
+    "$(find $FLAKES \( -name 'settings.*.json' ! -name 'settings.local.json' \) -print 2>/dev/null | wc -l | tr -d ' ')" 0
+
+  # scripts/ and .sops.yaml are ENGINE, not settings — deploy/merge/debug shell
+  # and the sops recipient list. Ownership follows what a file IS, not where it
+  # happens to sit: data is the SoT's, code is the flake's.
+  check "no settings DATA left beside a flake, only secrets.yaml" \
+    "$(find $FLAKES -path '*/src/claude/assets/*' -maxdepth 5 -type f \
+        ! -name secrets.yaml ! -name .sops.yaml ! -path '*/assets/scripts/*' \
+        2>/dev/null | wc -l | tr -d ' ')" 0
+
+  # ── both flakes actually READ the SoT, rather than a store copy ────────────
+  for nix in "$DESKTOP"/ba_flakes_desktop/src/claude/claude.nix \
+             "$DESKTOP"/bb_flakes_termux/src/claude/claude.nix; do
+    check "$(basename "$(dirname "$(dirname "$(dirname "$nix")")")") no longer home.files an mcp template" \
+      "$(grep -c 'mcp.json.tpl".source' "$nix" || true)" 0
+  done
+
+  # The template lands via an activation copy, so ~/.mcp.json must be templated
+  # strictly after that copy — otherwise a switch renders last switch's servers.
+  check "mcpSecrets runs after claudeAssets" \
+    "$(grep -c 'entryAfter \["linkGeneration" "claudeAssets"\]' \
+        "$DESKTOP/ba_flakes_desktop/src/claude/claude.nix" || true)" 1
+else
+  echo "skip — cloud-infra-desktop checkout not found at $DESKTOP"
+fi
+
+# ── the client list has not drifted from the server list ─────────────────────
+# cloud-infra is the server-side SoT. Every MCP it declares public=true with a
+# dns entry should be reachable from the desktop template; this is the check
+# that was missing when cloud-cgc-pvt-mcp went undeclared for four days.
+INFRA="$REPO/../cloudy-t-infra/1_cloud-configs/dist"
+if [ -d "$INFRA" ]; then
+  missing=$(
+    for b in "$INFRA"/build-*mcp*.json; do
+      n=$(jq -r '.name // (input_filename | sub(".*/build-"; "") | sub("\\.json$"; ""))' "$b" 2>/dev/null) || continue
+      case "$n" in null|"") continue;; esac
+      jq -e --arg n "$n" '(.not_mcp_servers.names // []) | index($n)' "$SOT/mcp-policy.json" >/dev/null 2>&1 && continue
+      jq -e --arg n "$n" '.mcpServers | has($n)' "$SOT/mcp.desktop.json.tpl" >/dev/null 2>&1 || echo "$n"
+    done
+  )
+  check "every cloud-infra MCP is declared in the desktop template" \
+    "$(printf '%s' "$missing" | grep -c . || true)" 0
+  [ -n "$missing" ] && echo "     undeclared: $missing"
+else
+  echo "skip — cloud-infra checkout not found at $INFRA"
+fi
+
+# ── cloud-infra's repo-scoped copy is GENERATED, and has been regenerated ────
+# _dotfiles/apps/src/claude/ is what deploy-dotfiles.sh copies into every repo's
+# .claude/. It used to be a second hand-kept copy of agents/ plus its own
+# settings.json whose _doc read "edit there, then re-copy here" — and the two
+# agents/README.md had already diverged, each describing itself as the same
+# file. deploy-dotfiles.sh now refreshes that directory from this one, so the
+# committed copy must be byte-identical or the refresh was never run.
+#
+# Byte-identical, not key-sampled like the seventeen-mirror check below: this
+# is the ONE copy that is machine-generated, so anything less than equality
+# means a hand edit landed in the generated tree and will be silently reverted.
+INFRA_CLAUDE="$REPO/../cloudy-t-infra/_dotfiles/apps/src/claude"
+# Pre-_dotfiles layout (repos not yet migrated, #1290).
+[ -d "$INFRA_CLAUDE" ] || INFRA_CLAUDE="$REPO/../cloudy-t-infra/0_apps/src/claude"
+if [ -d "$INFRA_CLAUDE" ]; then
+  check "cloud-infra's generated agents/ matches the SoT" \
+    "$(diff -rq "$SOT/agents" "$INFRA_CLAUDE/agents" >/dev/null 2>&1 && echo yes || echo no)" yes
+  check "cloud-infra's generated settings.json is settings.project.json verbatim" \
+    "$(cmp -s "$SOT/settings.project.json" "$INFRA_CLAUDE/settings.json" && echo yes || echo no)" yes
+  check "cloud-infra's generated mcp-auth-headers.sh matches the SoT" \
+    "$(cmp -s "$SOT/mcp-auth-headers.sh" "$INFRA_CLAUDE/mcp-auth-headers.sh" && echo yes || echo no)" yes
+  check "cloud-infra's generated skills/c3-infra matches the plugin skill" \
+    "$(diff -rq "$SOT/cloud-marketplace/c3-infra/skills/c3-infra" "$INFRA_CLAUDE/skills/c3-infra" >/dev/null 2>&1 && echo yes || echo no)" yes
+  check "cloud-infra's generated hooks/c3 is the plugin hooks minus hooks.json" \
+    "$(diff -rq -x hooks.json "$SOT/cloud-marketplace/c3-infra/hooks" "$INFRA_CLAUDE/hooks/c3" >/dev/null 2>&1 && echo yes || echo no)" yes
+else
+  echo "skip — cloud-infra _dotfiles/apps/src/claude not found at $INFRA_CLAUDE"
+fi
+
+# ── c3-infra: registered, github MCP denied, hooks wired once, agents lean ───
+check "c3-infra is registered in cloud-marketplace" \
+  "$(jq -r '[.plugins[].name] | index("c3-infra") != null' "$SOT/cloud-marketplace/.claude-plugin/marketplace.json")" true
+check "settings.project.json denies the github MCP and does not allow it" \
+  "$(jq -r '(.deniedMcpServers | map(.serverName) | index("github") != null) and ((.permissions.allow | index("mcp__github")) == null)' "$SOT/settings.project.json")" true
+check "settings.project.json carries every rule declared in permissions-fleet.json" \
+  "$(node "$SOT/gen-permissions.mjs" --check >/dev/null 2>&1 && echo yes || echo no)" yes
+check "settings.project.json disables claude.ai connectors" \
+  "$(jq -r '.disableClaudeAiConnectors' "$SOT/settings.project.json")" true
+check "settings.project.json wires each c3 guard hook exactly once" \
+  "$(jq -r '[.hooks.PreToolUse[].hooks[].command] | (length == (unique | length)) and length == 8' "$SOT/settings.project.json")" true
+check "the SoT agents are the six lean/fleet agents" \
+  "$(ls "$SOT/agents" | grep -v README | tr '\n' ' ')" "build.md explore.md general-purpose.md infra.md ops.md review.md "
+check "the c3-infra guard (rules, agents pinned, lean agents, hook tests) is green" \
+  "$(bash "$SOT/cloud-marketplace/c3-infra/scripts/guard.sh" >/dev/null 2>&1 && echo yes || echo no)" yes
+
+# ── the repo-scoped mirror agrees with the SoT ───────────────────────────────
+# 0_apps/src/claude/settings.json is committed into every repo under cloud so a
+# fresh clone — CI, a container, someone else's checkout — gets more than
+# Claude's stock defaults. It is a HAND-KEPT MIRROR of the machine-independent
+# half of settings.base.json, and its own _doc says why that is dangerous:
+# project settings merge OVER user settings, so a key that drifts here silently
+# overrides the SoT inside every repo. It was correct when this check was
+# written; nothing was making it stay correct.
+#
+# Only the keys the mirror deliberately carries. Everything with an @HOME@ path
+# is deliberately absent from it (a committed file has no substitution step),
+# and so is enabledPlugins — those are per-machine.
+# EVERY copy, not one. This checked only cloud-infra's, and there are
+# seventeen: one .claude/settings.json per repo, plus the 0_apps source they
+# are generated from. Three had drifted the first time it looked — da_dtk and
+# ac_cloud-vault were forcing ENABLE_TOOL_SEARCH to "true", which defers every
+# MCP tool behind Tool Search unconditionally instead of past the 10% mark, for
+# anyone working in those repos. Checking one copy of a file that exists
+# seventeen times is not a gate.
+#
+# I_cloud is skipped: it is the `cloud` repo vendored as a submodule inside two
+# others, pinned to a commit by design, so it lags on purpose and its parent's
+# pre-push hook rebases it. Failing on a pinned submodule would make this
+# permanently red for something that is not a bug.
+#
+# A mirror is a copy some repo OWNS. The bare path walk also matched three
+# kinds of file that no repo owns, and they held eighteen drifts nobody could
+# act on — a permanently red gate is a gate that gets ignored, which is how the
+# real drift below stayed unnoticed:
+#   $GITBASE/.claude/           an abandoned CLAUDE_CONFIG_DIR, littered with
+#                               .hm-bak-2026* files, whose own settings.json
+#                               points at $HOME/.claude — these keys are never
+#                               read by anything.
+#   _legacy-*/…                 a pre-move archive, same story.
+#   <repo>/cloud, <repo>/IV_cloud-configs, <repo>/V_front-configs
+#                               untracked, gitignored STALE CLONES of OTHER
+#                               repos (cloud pinned at c307b98 / d8a0dde55,
+#                               diegonmarcos.github.io at b3111d73) sitting
+#                               inside a repo that does not track them. Their
+#                               "drift" is their upstream's content from weeks
+#                               ago; ~/git/cloud and ~/git/front are green at
+#                               HEAD, so `git pull` in the clone is the fix and
+#                               an edit here would be fiction.
+# Keep only files whose OWN git toplevel is a direct child of $GITBASE: a real
+# checkout, editable, and the copy a commit here would actually change. The
+# first two resolve to $HOME (a repo of its own, one level too high) and the
+# clones resolve to themselves at depth two, so all five drop out.
+GITBASE="$(cd "$REPO/.." && pwd)"
+# Old-name clones (a folder whose name is some repo's renamed_from in the
+# registry, e.g. cloud-infra -> cloudy-t-infra) are stale duplicates of a repo
+# that is checked on its current name; scanning them only reports fiction.
+REGISTRY="$GITBASE/cloudy-t-infra/0_hub/cloudy-___/repos.json"
+# Old names come from the FULL registry (git-repos-master), not the cloudy-only subset, so stale
+# old-name clones of any family (e.g. front -> Projects-___) are skipped.
+FULL_REGISTRY="$GITBASE/git-repos-master/0_registry/repos.json"
+OLDNAMES=$( { jq -r '.repos[].renamed_from[]?' "$FULL_REGISTRY" 2>/dev/null; jq -r '.repos[].renamed_from[]?' "$REGISTRY" 2>/dev/null; } | sort -u || true)
+# canonical NAME: registry current name for a repo name or any of its renamed_from.
+canon() { local c; c=$(jq -r --arg n "$1" '[.repos[]|select(.name==$n or (.renamed_from//[]|index($n)))|.name][0]//empty' "$FULL_REGISTRY" 2>/dev/null); printf '%s' "${c:-$1}"; }
+# Canonical repo of every direct-child clone (origin URL basename, else folder name).
+CLONECANON=$(for d in "$GITBASE"/*/; do d=${d%/}
+  [ "$(git -C "$d" rev-parse --show-toplevel 2>/dev/null)" = "$d" ] || continue
+  u=$(git -C "$d" remote get-url origin 2>/dev/null); u=${u##*/}; u=${u%.git}
+  printf '%s\t%s\n' "$(basename "$d")" "$(canon "${u:-$(basename "$d")}")"
+done)
+# Skip an old-name folder ONLY when another clone has the same canonical repo; a
+# sole clone under an old name (cloud-u-android) is the one copy and is checked.
+is_old_name() {
+  [ -n "$OLDNAMES" ] && printf '%s\n' "$OLDNAMES" | grep -qxF -- "$1" || return 1
+  local c; c=$(printf '%s\n' "$CLONECANON" | awk -F'\t' -v b="$1" '$1==b{print $2}')
+  [ -n "$c" ] && printf '%s\n' "$CLONECANON" | awk -F'\t' -v b="$1" -v c="$c" '$1!=b && $2==c{f=1} END{exit !f}'
+}
+mirrors=$(find "$GITBASE" -maxdepth 4 \
+  \( -path '*/.claude/settings.json' -o -path '*/0_apps/src/claude/settings.json' -o -path '*/_dotfiles/apps/src/claude/settings.json' \) \
+  -not -path '*/.git/*' -not -path '*z_archive*' -not -path '*/I_cloud/*' 2>/dev/null |
+  while read -r m; do
+    top=$(git -C "$(dirname "$m")" rev-parse --show-toplevel 2>/dev/null) || continue
+    is_old_name "$(basename "$top")" && continue
+    if [ "$(dirname "$top")" = "$GITBASE" ]; then printf '%s\n' "$m"; fi
+  done | sort)
+drifted=""
+for m in $mirrors; do
+  for k in .alwaysThinkingEnabled .env.ENABLE_TOOL_SEARCH .disabledMcpjsonServers; do
+    if [ "$(jq -c "$k" "$m" 2>/dev/null)" != "$(jq -c "$k" "$SOT/settings.base.json" 2>/dev/null)" ]; then
+      drifted="$drifted ${m#"$GITBASE"/}:$k"
+    fi
+  done
+done
+check "every repo-scoped mirror agrees with the SoT ($(printf '%s' "$mirrors" | grep -c . ) checked)" \
+  "$(printf '%s' "$drifted" | wc -w | tr -d ' ')" 0
+[ -n "$drifted" ] && for d in $drifted; do echo "     drift: $d"; done
+
+# ...and every generated copy is the SoT file VERBATIM, nested ones included.
+# The key sample above cannot see a copy that lacks a whole block: da_dtk,
+# ac_cloud-vault and cloud-vault's others/ all passed it while missing autoMode
+# and every 2026-10-09 rule, because they agreed on the three sampled keys. It
+# also never looked at 0_apps/src/ or dist/ (its find stops at depth 4). Since
+# settings.project.json became the file deployed unchanged, equality is the
+# right test. The nested paths are the ones repos.json:fleet_files refreshes
+# (clone.sh --sync); an absent path is skipped, a differing one is drift.
+COPIES=".claude/settings.json _dotfiles/apps/src/claude/settings.json _dotfiles/apps/dist/dotfiles/claude/settings.json
+0_apps/src/claude/settings.json 0_apps/dist/dotfiles/claude/settings.json
+4___ASSETS___/4.2.Config/claude/settings.json
+ac_cloud-vault/.claude/settings.json
+da_dtk/.claude/settings.json da_dtk/0_apps/src/claude/settings.json da_dtk/0_apps/dist/dotfiles/claude/settings.json
+da_dtk/_dotfiles/apps/src/claude/settings.json da_dtk/_dotfiles/apps/dist/dotfiles/claude/settings.json
+others/0_apps/src/claude/settings.json others/0_apps/dist/dotfiles/claude/settings.json
+others/_dotfiles/apps/src/claude/settings.json others/_dotfiles/apps/dist/dotfiles/claude/settings.json"
+vchecked=0; vdrift=""
+for repo in "$GITBASE"/*/; do
+  repo=${repo%/}
+  [ "$(git -C "$repo" rev-parse --show-toplevel 2>/dev/null)" = "$repo" ] || continue
+  is_old_name "$(basename "$repo")" && continue
+  for rel in $COPIES; do
+    [ -f "$repo/$rel" ] || continue
+    vchecked=$((vchecked + 1))
+    cmp -s "$SOT/settings.project.json" "$repo/$rel" || vdrift="$vdrift ${repo#"$GITBASE"/}/$rel"
+  done
+done
+check "every repo-scoped settings.json copy is settings.project.json verbatim ($vchecked checked)" \
+  "$(printf '%s' "$vdrift" | wc -w | tr -d ' ')" 0
+[ -n "$vdrift" ] && for d in $vdrift; do echo "     differs: $d"; done
+
+# ── retired MCPs stay retired ────────────────────────────────────────────────
+# da_dtk ships two MCP products (products/mcp-dtk, products/mcp-unix-api) and
+# neither is used any more. They are not declared in either template, not in
+# ~/.mcp.json and not among cloud-infra's eleven build-*mcp*.json services — so
+# today they are off by ABSENCE, which is a decision nothing is holding.
+#
+# The check above ("every cloud-infra MCP is declared in the desktop template")
+# pushes in the opposite direction by design: anything cloud-infra declares
+# must appear client-side. This is the counterweight. A retired server that
+# quietly reappears in a template costs a tool-list slot and some eager context
+# on every session, and the reason it went away is not written anywhere the
+# next edit would look.
+for retired in mcp-dtk mcp-unix-api dtk-mcp; do
+  check "retired MCP '$retired' is not declared in either template" \
+    "$(grep -l "\"$retired\"" "$SOT/mcp.desktop.json.tpl" "$SOT/mcp.termux.json.tpl" 2>/dev/null | wc -l | tr -d ' ')" 0
+done
+
+# ── the container's fork is declared, and its provenance is not a dead path ──
+# my-ai_claude-api ships its own claude-config: it has no working checkout to
+# read the SoT from and no home-manager to deploy it, so it COPIES. That fork is
+# legitimate and it is also how config rots — its five hook scripts each carried
+# a "# Source:" header naming .../src/modules/dotfiles/claude/, a directory that
+# no longer exists anywhere, because those hooks were superseded by the
+# cloud-marketplace plugins in this SoT and nobody told the copy.
+#
+# Two things are checked. The inventory, so a hook appearing or vanishing in
+# the fork is a visible diff rather than a surprise. And the provenance, so no
+# file may cite a Source: path that is not there — the specific way this one
+# went quiet.
+#
+# The path itself is the third instance of the same rot. It named
+# cloud-infra/a_solutions/user-ai_claude-superset-api, where this service used to
+# live before it moved to cloud-u-containers and was renamed; the directory then
+# stopped existing, the check took the "skip" branch on every run, and the fork it
+# guards drifted to a hand-written seven-server MCP list under invented keys with
+# nothing complaining. A skip that can never become a check is not a check.
+FORK="$REPO/../cloudy-u-containers/user-ai_my-ai_claude-api/src/code/claude-config"
+if [ -d "$FORK" ]; then
+  check "the container fork holds the declared hook inventory" \
+    "$(ls "$FORK/hooks" 2>/dev/null | tr '\n' ' ')" \
+    "a-context-inject-memory.sh b-context-inject-prompt.sh c-context-inject-pretool.sh c-pretool-guard-blockers.sh c-pretool-guard-warning.sh "
+
+  dead=$(
+    grep -rhoE '^# Source: [^ ]+' "$FORK" 2>/dev/null | awk '{print $3}' | sort -u |
+      while read -r path; do
+        expanded=$(printf '%s' "$path" | sed "s|^~|$HOME|")
+        # ~/git/<repo> is where the fleet lives on the owner's machines; a
+        # checkout elsewhere (a container, /dev/shm worktrees) keeps the repos as
+        # siblings of this one, which is $GITBASE. Resolve there when ~/git has none.
+        [ -e "$expanded" ] || expanded=$(printf '%s' "$path" | sed "s|^~/git/|$GITBASE/|")
+        case "$expanded" in
+          *"{"*) expanded_a=$(printf '%s' "$expanded" | sed 's|{\([^,}]*\),[^}]*}|\1|')
+                 [ -e "$expanded_a" ] || echo "$path" ;;
+          *) [ -e "$expanded" ] || echo "$path" ;;
+        esac
+      done
+  )
+  check "no file in the container fork cites a Source: path that is gone" \
+    "$(printf '%s' "$dead" | grep -c . || true)" 0
+  [ -n "$dead" ] && echo "     dead provenance: $dead"
+
+  # The fork's MCP list is the one file in it that is NOT a copy: it is
+  # generated straight into the fork by gen-mcp-tpl.sh (the `output` platform in
+  # mcp-policy.json), so it cannot be a fork at all. Assert the generator's own
+  # --check rather than restating the expected servers here — restating them is
+  # the failure this whole file is about.
+  check "the container's MCP list is generated, not hand-written" \
+    "$(GIT_BASE="$GITBASE" CLOUD_INFRA_DIR="$GITBASE/cloudy-t-infra" "$SOT/gen-mcp-tpl.sh" --check >/dev/null 2>&1 && echo ok || echo drifted)" ok
+else
+  echo "skip — container fork not found at $FORK"
+fi
+
+# ── the deployed statusline assets match the SoT ─────────────────────────────
+# The status line is owned by the my-ai BINARY: statusline_assets.rs embeds
+# data/statusline/ and install() writes it into ~/.claude on every daemon start,
+# which is what makes the dependency self-healing. That guarantee is only as
+# good as the daemon actually running, and on termux nothing runs it — no
+# systemd, no service, so install() never fires. The deployed copy froze a month
+# behind the SoT and quietly lost the 7d reset countdown; the settings were
+# identical the whole time, so every settings-level check stayed green.
+#
+# Content-compare the deployed copy against the SoT. Absent = skip (CI and the
+# container have no ~/.claude); present-and-different = the installer has not
+# run here, and `my-ai usage --daemon` is what repairs it.
+# The statusline and the engine registry stay in cloud-u-linux (the child that ships the my-ai binary).
+U_LINUX="${CLOUD_U_LINUX_REPO:-$REPO/../cloud-u-linux}/da_my-ai"
+STATUSLINE_SOT="$U_LINUX/data/statusline"
+CLAUDE_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+if [ -d "$STATUSLINE_SOT" ] && [ -d "$CLAUDE_DIR" ]; then
+  stale=""
+  for f in "$STATUSLINE_SOT"/*.sh; do
+    n=$(basename "$f")
+    [ -f "$CLAUDE_DIR/$n" ] || continue
+    cmp -s "$f" "$CLAUDE_DIR/$n" || stale="$stale $n"
+  done
+  check "every deployed statusline asset matches the SoT" \
+    "$(printf '%s' "$stale" | wc -w | tr -d ' ')" 0
+  [ -n "$stale" ] && echo "     stale in $CLAUDE_DIR:$stale — run 'my-ai usage --daemon' to reinstall"
+else
+  echo "skip — no deployed statusline to compare at $CLAUDE_DIR"
+fi
+
+# ── the DEPLOYED mcp client list matches the platform template ───────────────
+# gen-mcp-tpl.sh --check compares the two templates against the derivation and
+# stops there. Nothing compared them against what a session actually LOADS, and
+# that is exactly the gap: today both templates were correct while ~/.mcp.json
+# was a month old, so a restart bound the stale server list and --check still
+# printed OK.
+#
+# NOT byte equality, deliberately. ~/.mcp.json legitimately differs from the
+# tpl: the live file carries headersHelper (a script that mints a bearer per
+# session) where the tpl carries a static ${AUTHELIA_OIDC_TOKEN_CLAUDE-ADMIN}
+# that NIX renders at switch time. Writing the tpl through verbatim would leave
+# that literal string in place and break auth on every gated server. So compare
+# the axis that goes stale — which servers exist, where they point, and how they
+# are reached. Auth delivery is the deployer's business; wiring is the SoT's.
+AXIS='.mcpServers | with_entries(.value |= {type: (.type // "http"), url: .url, command: .command})'
+# The proot Debian on the phone reports plain GNU/Linux, so also trust the
+# linux-store profile its generation is named after (termux-N).
+case "$(uname -o 2>/dev/null)/${PREFIX:-}/$(readlink "$HOME/.linux-store/current" 2>/dev/null)" in
+  *[Aa]ndroid*|*com.termux*|*/termux-[0-9]*) PLAT=termux ;;
+  *)                         PLAT=desktop ;;
+esac
+if [ -f "$HOME/.mcp.json" ]; then
+  live=$(jq -S "$AXIS" "$HOME/.mcp.json" 2>/dev/null || echo '"UNREADABLE"')
+  want=$(jq -S "$AXIS" "$SOT/mcp.$PLAT.json.tpl")
+  check "deployed ~/.mcp.json matches mcp.$PLAT.json.tpl (servers, urls, transport)" \
+    "$([ "$live" = "$want" ] && echo yes || echo no)" yes
+  if [ "$live" != "$want" ]; then
+    echo "     want (tpl) vs got (~/.mcp.json) — re-run the home-manager switch:"
+    diff <(printf '%s\n' "$want") <(printf '%s\n' "$live") | sed 's/^/     /' || true
+  fi
+else
+  echo "skip — no deployed ~/.mcp.json to compare"
+fi
+
+# ── every repo's committed .mcp.json carries the derived HTTP set ────────────
+# A different deploy path from ~/.mcp.json: deploy-dotfiles.sh copies
+# cloud-infra's derive output to <repo>/.mcp.json. Repos ship the PROJECT shape
+# (1_cloud-configs/dist/mcp.project.json: mesh-first stdio bridge, owner decision
+# 31), not dist/mcp.json (which carries the -mesh entries).
+# so a clone with no home-manager still gets servers. Same rot, one tier down —
+# front-data and git-repos-master were still shipping the seven PRE-RENAME
+# server names, which is the failure the header of this file describes.
+#
+# Presence, url and transport of the derived set, not equality: a repo may
+# legitimately carry MORE (cloud-infra-desktop ships the desktop tpl, stdio
+# extras and the mesh-direct endpoint included). What must never happen is a
+# derived server going missing or pointing somewhere else.
+DERIVE="$REPO/../cloudy-t-infra/1_cloud-configs/dist/mcp.project.json"
+if [ -f "$DERIVE" ]; then
+  behind=""; nrepo=0
+  for f in "$GITBASE"/*/.mcp.json; do
+    [ -f "$f" ] || continue
+    nrepo=$((nrepo + 1))
+    miss=$(jq -r -n --slurpfile want "$DERIVE" --slurpfile got "$f" '
+      ($got[0].mcpServers // {}) as $g
+      | [ $want[0].mcpServers | to_entries[]
+          | select(($g[.key] | not)
+                   or $g[.key].url != .value.url
+                   or $g[.key].command != .value.command
+                   or $g[.key].args != .value.args
+                   or ($g[.key].type // "http") != (.value.type // "http"))
+          | .key ] | join(",")' 2>/dev/null) || miss="UNREADABLE"
+    [ -n "$miss" ] && behind="$behind ${f#"$GITBASE"/}[$miss]"
+  done
+  check "every repo .mcp.json carries the derived HTTP set ($nrepo checked)" \
+    "$(printf '%s' "$behind" | wc -w | tr -d ' ')" 0
+  [ -n "$behind" ] && for b in $behind; do echo "     stale: $b"; done
+else
+  echo "skip — cloud-infra derive output not found at $DERIVE"
+fi
+
+# ── the enforced ~/.claude.json keys are actually enforced ───────────────────
+# ~/.claude.json is Claude Code's OTHER config file, and claude-json.json
+# declares the keys the SoT owns in it. The applier is `my-ai build.sh assets`,
+# which runs on desktop and never on termux — so remoteControlAtStartup was
+# declared true here and simply ABSENT from the live file, indefinitely.
+#
+# That is the third instance of one pattern (statusline assets, ~/.mcp.json,
+# now this): the SoT declares correctly, the applier only runs on one platform,
+# and the other silently freezes. Declaring without checking is what makes the
+# freeze silent, so each declared key is compared to the deployed value.
+CJ="$SOT/claude-json.json"
+if [ -f "$CJ" ] && [ -f "$HOME/.claude.json" ]; then
+  unapplied=0
+  for k in $(jq -r '.keys | keys[]' "$CJ"); do
+    want=$(jq -c --arg k "$k" '.keys[$k]' "$CJ")
+    got=$(jq -c --arg k "$k" '.[$k]' "$HOME/.claude.json" 2>/dev/null || echo null)
+    if [ "$want" != "$got" ]; then
+      unapplied=$((unapplied + 1))
+      echo "     unapplied: $k — want $want, deployed $got"
+    fi
+  done
+  check "every enforced ~/.claude.json key is applied" "$unapplied" 0
+  [ "$unapplied" -gt 0 ] && echo "     run 'MY_AI_CLAUDE_OVERLAY=<platform> my-ai/build.sh assets' to apply"
+else
+  echo "skip — no deployed ~/.claude.json to compare"
+fi
+
+# ── galaxy's transcript archive trigger is declared, and is termux-only ──────
+# The phone has no scheduler of any kind — no systemd user session under
+# nix-on-droid, no apt layer so no termux-services, no Termux:API so no
+# termux-job-scheduler, and crontab reports "must be suid to work properly".
+# Its archive therefore rides Claude Code's own lifecycle, which means the
+# trigger is a SETTINGS key and lives or dies with this SoT. Two attempts at
+# this already shipped and neither ran: on 2026-09-09 the archive fell 12 MiB
+# behind overnight because the trigger it had (a shell start) never fired
+# again inside a long-running session.
+#
+# Stop is the during-session heartbeat and SessionEnd flushes the tail; both
+# matter, so both are checked. It must NOT be in settings.base.json — surface
+# archives from a systemd.user.timer and does not have the launcher, so the
+# hook there would be a permanent no-op advertising a trigger that is not the
+# real one.
+for ev in Stop SessionEnd; do
+  check "settings.termux.json declares the $ev archive hook" \
+    "$(jq -r --arg e "$ev" '[.hooks[$e][]?.hooks[]?.command] | map(select(test("claude-sync-sessions"))) | length' "$SOT/settings.termux.json")" 1
+done
+
+check "SessionEnd forces a flush rather than waiting for the interval" \
+  "$(jq -r '[.hooks.SessionEnd[]?.hooks[]?.command] | map(select(test("claude-sync-sessions --force"))) | length' "$SOT/settings.termux.json")" 1
+
+# A hook that exits non-zero can block a turn, and one that assumes the
+# launcher is installed would error on every turn of every other device that
+# ever picks this overlay up.
+check "both archive hooks are guarded and cannot fail a turn" \
+  "$(jq -r '[.hooks[][]?.hooks[]?.command] | map(select(test("claude-sync-sessions")))
+            | map(select(test("command -v") and test("\\|\\| true"))) | length' "$SOT/settings.termux.json")" 2
+
+check "the archive trigger is NOT in settings.base.json" \
+  "$(jq -r '[.hooks // {} | .[][]?.hooks[]?.command] | map(select(test("claude-sync-sessions"))) | length' "$SOT/settings.base.json")" 0
+
+# ── engines: my-ai orchestrates routines under engines/<name>/ ───────────────
+# Every engine folder carries a manifest (name, trigger, inputs, outputs, run)
+# and a README, and is registered in core/src/engines.rs; every registry entry
+# has a folder. The Rust unit test asserts the same from inside cargo.
+ENG="$U_LINUX/engines"
+REG="$U_LINUX/core/src/engines.rs"
+if [ -d "$ENG" ]; then
+  for d in "$ENG"/*/; do
+    n="$(basename "$d")"
+    check "engine $n has manifest.json" "$([ -f "$d/manifest.json" ] && echo yes || echo no)" yes
+    check "engine $n has README.md" "$([ -f "$d/README.md" ] && echo yes || echo no)" yes
+    check "engine $n manifest is complete and named after its folder" \
+      "$(jq -r --arg n "$n" '(.name==$n) and (.trigger|IN("daemon-start","timer","on-demand")) and (.inputs|length>0) and (.outputs|length>0) and (.run.kind|IN("builtin","embedded","checkout"))' "$d/manifest.json" 2>/dev/null || echo no)" true
+    check "engine $n is registered in core/src/engines.rs" \
+      "$(grep -c "(\"$n\", include_str!(\"../../engines/$n/manifest.json\"))" "$REG")" 1
+  done
+  check "registry entries equal engine folders" \
+    "$(grep -c 'include_str!("../../engines/[a-z-]*/manifest.json")' "$REG")" \
+    "$(find "$ENG" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+  check "cloud-infra deploy-dotfiles.sh is a thin wrapper onto the dotfiles engine" \
+    "$(grep -c 'engines/dotfiles' "${CLOUD_INFRA_DIR:-$REPO/../cloudy-t-infra}/9_others/src/deploy-dotfiles.sh" 2>/dev/null || echo 1)" 1
+fi
+
+# ── repo mirrors equal the SoT (drift guard) ─────────────────────────────────
+# check-mirrors.sh compares each sibling checkout that has _dotfiles/ byte for
+# byte with this SoT and requires every fleet MCP in its .mcp.json. CI runs it
+# against all repos in mirror-repos.txt (.github/workflows/mirror-drift.yml).
+check "every sibling repo mirror equals the SoT and its .mcp.json lists every fleet server" \
+  "$("$SOT/check-mirrors.sh" 2>&1 | grep -c '^DRIFT')" 0
+
+# ── MCP token budget: a default session loads <= 20k MCP tokens ──────────────
+# Owner rule. mcp-policy.json .tiers declares default (every session) vs opt-in
+# (only when a repo lists the server in .claude/mcp-optin.json). The guard sums
+# the declared tools/list size (mcp-sizes.json, bytes/4, refreshed by
+# measure-mcp-sizes.sh) of the default servers plus the fixed allowance for
+# platform-injected servers (claude-code-remote), and fails above the budget.
+POL="$SOT/mcp-policy.json"; SIZES="$SOT/mcp-sizes.json"
+if [ -f "$SIZES" ] && jq -e '.tiers' "$POL" >/dev/null 2>&1; then
+  total=$(jq -r --slurpfile z "$SIZES" '[.tiers.default[] as $n | ($z[0].servers[$n].tokens // 1000000)] + [.tiers.platform_allowance | to_entries[] | select(.key|startswith("_")|not) | .value] | add' "$POL")
+  budget=$(jq -r '.tiers.budget_tokens' "$POL")
+  echo "     default MCP budget: $(jq -r --slurpfile z "$SIZES" '[.tiers.default[] as $n | "\($n)=\($z[0].servers[$n].tokens // "UNSIZED")"] + [.tiers.platform_allowance | to_entries[] | select(.key|startswith("_")|not) | "\(.key)=\(.value)"] | join(" ")' "$POL") total=$total of $budget"
+  check "default-tier MCP tokens + platform allowance <= budget" "$([ "$total" -le "$budget" ] && echo yes || echo no)" yes
+  check "budget is the owner's 20000" "$budget" 20000
+  check "every default server is grouped, or has at most one tool" \
+    "$(jq -r --slurpfile z "$SIZES" '[.tiers.default[] as $n | select((.tiers.grouped | index($n)) == null and (($z[0].servers[$n].tools // 99) > 1)) | $n] | join(",")' "$POL")" ""
+  check "default and opt-in tiers do not overlap" \
+    "$(jq -r '[.tiers.default[] as $n | select(.tiers["opt-in"] | index($n))] | length' "$POL")" 0
+  TIERED=$(jq -r '.tiers.default + .tiers["opt-in"] | .[]' "$POL")
+  DIST_ALL="$REPO/../cloudy-t-infra/1_cloud-configs/dist/mcp.json"
+  if [ -f "$DIST_ALL" ]; then
+    check "every derived MCP server is assigned a tier" \
+      "$(jq -r --argjson t "$(printf '%s\n' $TIERED | jq -R . | jq -s .)" '[.mcpServers | keys[] | select(endswith("-mesh") | not) | select(. as $n | $t | index($n) | not)] | join(",")' "$DIST_ALL")" ""
+  fi
+  PROJ="$REPO/../cloudy-t-infra/1_cloud-configs/dist/mcp.project.json"
+  if [ -f "$PROJ" ]; then
+    # Rebrand #1450: until cloudy-t-infra's derive emits the new names, its project
+  # .mcp.json still carries the OLD default names; an alias of a default server
+  # (mcp-policy.json renames.aliases) counts as that server.
+  check "generated project .mcp.json holds only default-tier servers" \
+      "$(jq -r --slurpfile p "$POL" '[.mcpServers | keys[] | select(. as $n | ($p[0].tiers.default | index($n) | not) and ((($p[0].renames.aliases // {})[$n]) as $t | ($t == null) or (($p[0].tiers.default | index($t)) == null)))] | join(",")' "$PROJ")" ""
+    check "generated project .mcp.json holds every default-tier server" \
+      "$(jq -r --slurpfile p "$POL" '. as $o | [$p[0].tiers.default[] | . as $d | select(($o.mcpServers[$d] | not) and ([($p[0].renames.aliases // {}) | to_entries[] | select(.value == $d and $o.mcpServers[.key]) ] | length == 0))] | join(",")' "$PROJ")" ""
+  fi
+  # Deployed repos: a server beyond the default tier must be declared opt-in.
+  nonconf=""
+  for f in "$GITBASE"/*/.mcp.json; do
+    [ -f "$f" ] || continue
+    extra=$(jq -r --slurpfile p "$POL" --slurpfile o "$(dirname "$f")/.claude/mcp-optin.json" \
+      '[.mcpServers | keys[] | select(. as $n | ($p[0].tiers.default | index($n) | not) and (($o[0].servers // []) | index($n) | not))] | join(",")' "$f" 2>/dev/null \
+      || jq -r --slurpfile p "$POL" '[.mcpServers | keys[] | select(. as $n | $p[0].tiers.default | index($n) | not)] | join(",")' "$f" 2>/dev/null) || extra="UNREADABLE"
+    [ -n "$extra" ] && nonconf="$nonconf ${f#"$GITBASE"/}[$extra]"
+  done
+  check "no repo .mcp.json carries a non-default server it has not declared opt-in" "$(printf '%s' "$nonconf" | wc -w | tr -d ' ')" 0
+  [ -n "$nonconf" ] && for b in $nonconf; do echo "     over-tier: $b"; done
+else
+  check "MCP tiers and mcp-sizes.json are declared" no yes
+fi
+
+# ── built-in tools nobody uses are denied (tool schemas cost tokens) ─────────
+DENY_TOOLS="Artifact ArtifactComments ArtifactData DesignSync Workflow CronCreate CronDelete CronList ScheduleWakeup EnterPlanMode ExitPlanMode EnterWorktree ExitWorktree TaskCreate TaskGet TaskList TaskUpdate NotebookEdit ReportFindings ShowOnboardingRolePicker SearchSkills SuggestSkills ListSkills SearchPlugins SuggestPluginInstall ListPlugins SearchMcpRegistry SuggestConnectors ListConnectors"
+KEEP_TOOLS="Bash Read Edit Write Glob Grep WebFetch WebSearch Skill AskUserQuestion Agent SendMessage ListAgents TaskStop Monitor ReadNotifications PushNotification SendUserFile ToolSearch"
+for sf in settings.project.json settings.base.json; do
+  check "$sf denies every unused built-in tool" \
+    "$(jq -r --arg d "$DENY_TOOLS" '[($d|split(" "))[] as $t | select((.permissions.deny // []) | index($t) | not) | $t] | join(",")' "$SOT/$sf")" ""
+  check "$sf denies no kept built-in tool" \
+    "$(jq -r --arg k "$KEEP_TOOLS" '[(.permissions.deny // [])[] | select(. as $d | ($k|split(" ")) | index($d))] | join(",")' "$SOT/$sf")" ""
+done
+
+exit "$fail"
