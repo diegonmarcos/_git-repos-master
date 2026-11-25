@@ -241,6 +241,7 @@ function readmeClones(dirArg) {
   }
   return { x, out };
 }
+const SELF_HOSTED_CI = new Set(['cloud-me-pvt-cgc']);
 function readmeKits(dirArg, write, migrate) {
   const RR = require('./readme-render.js'), { x, out } = readmeClones(dirArg);
   const T = f => fs.readFileSync(path.join(ROOT, '9_others/templates/readme', f), 'utf8');
@@ -272,7 +273,9 @@ function readmeKits(dirArg, write, migrate) {
       // a repo that owns a workflow generator (1_cicd/src/cicd/*.yml -> 1_cicd/dist -> .github/workflows) gets the guard in its
       // workflow SOURCE (no generated banner: the generator adds its own); the generated .github file is never written there
       const srcDir = path.join(dir, '1_cicd/src/cicd'), hasGen = fs.existsSync(srcDir) && fs.statSync(srcDir).isDirectory();
-      const full = T('readme-check.yml');
+      let full = T('readme-check.yml');
+      // the private cgc repo runs every job on its self-hosted runner (hosted minutes of private repos are budget-capped; its no-hosted-runner test enforces it)
+      if (SELF_HOSTED_CI.has(name)) full = full.replace('runs-on: ubuntu-latest', 'runs-on: self-hosted');
       const wf = hasGen ? path.join(srcDir, 'readme-check.yml') : path.join(dir, '.github/workflows/readme-check.yml');
       const text = hasGen ? full.replace(/^(#[^\n]*\n)*?# ╚[^\n]*\n/, '') : full;
       let gh = null; try { gh = fs.lstatSync(path.join(dir, '.github')); } catch (_) {}
