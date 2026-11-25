@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>lecole-42_ml-DataScience - diegonmarcos</title>
+<style>
+:root{--bg:#0b0f14;--panel:#10161d;--alt:#141c25;--line:#243040;--text:#cfd8e3;--dim:#7d8b9c;--acc:#3daee9;--pub:#2ecc71;--priv:#ed5565;--hub:#c678dd;--warn:#e5c07b}
+*{box-sizing:border-box}html{background:var(--bg)}
+body{margin:0;color:var(--text);font:12.5px/1.45 ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.top{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:6px 14px;background:var(--panel);border-bottom:1px solid var(--line);color:var(--dim)}
+.top a{color:var(--dim)}.top a:hover{color:var(--acc)}.top b{color:var(--text)}.top i{font-style:normal;color:var(--line)}
+.wrap{max-width:1380px;margin:0 auto;padding:12px 14px}
+h1.t{margin:4px 0 2px;font-size:20px;font-weight:600}h1.t span{color:var(--dim);font-weight:400}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:11px;color:var(--dim);vertical-align:middle;margin-left:6px}
+.badge.public{color:var(--pub);border-color:var(--pub)}.badge.private{color:var(--priv);border-color:var(--priv)}.badge.hub{color:var(--hub);border-color:var(--hub)}
+.desc{color:var(--text);margin:4px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.chip{background:var(--alt);border:1px solid var(--line);border-radius:3px;padding:0 7px;color:var(--acc);font-size:11px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--dim);margin:8px 0}.stats b{color:var(--text);font-weight:500}
+.langbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);margin:8px 0 4px}.langbar i{display:block;height:100%}
+.langs{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--dim);font-size:11px;margin-bottom:10px}.langs s{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;text-decoration:none}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;margin-bottom:12px}
+.box>h2{margin:0;padding:6px 10px;font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);background:var(--alt)}
+.box .in{padding:8px 12px}
+.ft{width:100%;border-collapse:collapse}.ft td{padding:2px 10px;border-top:1px solid var(--alt);white-space:nowrap}.ft tr:first-child td{border-top:0}
+.ft td.k{width:24px;color:var(--dim)}.ft td.r{color:var(--dim);text-align:right}.ft .d a{color:var(--acc)}.ft .f a{color:var(--text)}.ft tr:hover td{background:var(--alt)}
+.md{padding:6px 18px 14px;overflow-wrap:anywhere}.md h1,.md h2{border-bottom:1px solid var(--line);padding-bottom:4px}.md h1{font-size:18px}.md h2{font-size:15px}.md h3{font-size:13.5px}
+.md code{background:var(--alt);padding:0 4px;border-radius:3px;color:var(--warn)}.md pre{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;overflow:auto}.md pre code{background:none;padding:0;color:var(--text)}
+.md blockquote{margin:6px 0;padding:0 12px;border-left:3px solid var(--line);color:var(--dim)}.md hr{border:0;border-top:1px solid var(--line)}
+.md .tw{overflow:auto}.md table{border-collapse:collapse;font-size:12px}.md th,.md td{border:1px solid var(--line);padding:2px 8px;text-align:left;vertical-align:top}.md th{background:var(--alt)}.md a.img{color:var(--dim)}
+dl.meta{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}dl.meta dt{color:var(--dim)}dl.meta dd{margin:0;overflow-wrap:anywhere}
+ul.l{list-style:none;margin:0;padding:0}ul.l li{padding:1px 0;overflow-wrap:anywhere}ul.l li.me{color:var(--warn);font-weight:600}ul.l .dim,.dim{color:var(--dim)}
+pre.pt{margin:0;white-space:pre;overflow:auto;font-size:11.5px;line-height:1.35}pre.pt b{color:var(--warn)}
+.note{color:var(--dim);font-size:11px;margin:6px 0}
+.foot{color:var(--dim);font-size:11px;padding:10px 14px 24px;text-align:center}
+</style></head><body>
+<nav class="top"><a href="https://github.com/diegonmarcos">diegonmarcos</a><i>/</i><a href="https://github.com/diegonmarcos/lecole-42-___">🎓 5 42</a><i>/</i>📊 5.7 42-datascience<i>/</i>5.7.1 ML<i>/</i><b>lecole-42_ml-DataScience</b></nav>
+<div class="wrap">
+<h1 class="t"><span>diegonmarcos /</span> lecole-42_ml-DataScience <span class="badge public">public</span></h1>
+<div class="desc">Notebooks &gt; Excel - for people who prefer code cells to pivot tables (and occasional chaos).</div>
+<div class="chips"><span class="dim">no topics</span></div>
+<div class="stats"><span>branch <b>main</b></span><span>stars <b>0</b></span><span>forks <b>0</b></span><span>size <b>3.6 MB</b></span><span>pushed <b>2026-11-17</b></span><span>code <b>5.7.1.1</b></span><span>kind <b>code</b></span></div>
+<div class="langbar"><i style="width:88.90%;background:#89e051" title="Shell 88.9%"></i><i style="width:11.10%;background:#f1e05a" title="JavaScript 11.1%"></i></div>
+<div class="langs"><span><s style="background:#89e051"></s>Shell 88.9%</span><span><s style="background:#f1e05a"></s>JavaScript 11.1%</span></div>
+<div class="cols">
+<main>
+<section class="box"><h2>Files <span class="dim">(main)</span></h2><table class="ft"><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/tree/main/.claude">.claude/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/tree/main/.github">.github/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/tree/main/0_hub">0_hub/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/tree/main/_dotfiles">_dotfiles/</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/.gitmodules">.gitmodules</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/.mcp.json">.mcp.json</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/CLAUDE.md">CLAUDE.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/LICENSE">LICENSE</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/LICENSING.md">LICENSING.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/README.canvas">README.canvas</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/README.html">README.html</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/README.md">README.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience/blob/main/risk_analysis_1.ipynb">risk_analysis_1.ipynb</a></td><td class="r"></td></tr></table></section>
+<section class="box"><h2>README.md</h2><div class="md"><h1 id="ml-datascience">ml-DataScience</h1>
+<p>🎓 42 <code>5</code> › 📊 42-datascience <code>5.7</code> › ML <code>5.7.1</code></p>
+<blockquote><p>Notebooks &gt; Excel - for people who prefer code cells to pivot tables (and occasional chaos).</p></blockquote>
+<div class="tw"><table><thead><tr><th>Code</th><th>Visibility</th><th>Hub</th><th>Developer</th><th>Farm folder</th></tr></thead><tbody><tr><td><code>5.7.1.1</code></td><td>🌐 public</td><td><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <code>5.0</code></td><td>lecole42</td><td><code>5.Lecole-42/</code></td></tr></tbody></table></div>
+<p>Notebooks &gt; Excel - for people who prefer code cells to pivot tables (and occasional chaos).</p>
+<h1 id="ml-datascience-riskanalysis1ip">ml-DataScience — risk_analysis_1.ipynb</h1>
+<p><a class="img" href="https://img.shields.io/badge/Notebook-Jupyter-orange">[img: Notebook]</a> <a class="img" href="https://img.shields.io/badge/Language-Jupyter%20Notebook-blue">[img: Language]</a> <a class="img" href="https://img.shields.io/badge/Size-~1.7MB-green">[img: Size]</a></p>
+<hr>
+<p>Table of contents</p>
+<ul><li>📌 Overview</li><li>📂 What’s in the repo</li><li>⚙️ Requirements &amp; install (quick)</li><li>▶️ How to run (local, Colab, Binder)</li><li>🔍 Notebook structure — detailed walkthrough (section-by-section explanation)</li><li>📈 Typical outputs &amp; visuals you’ll see</li><li>🛠️ Tips, performance &amp; troubleshooting</li><li>🤝 Contributing &amp; license</li><li>🧾 Contact / credits</li></ul>
+<hr>
+<p>📌 Overview This repository contains one main Jupyter Notebook: risk_analysis_1.ipynb — a hands-on notebook aimed at performing risk analysis workflows (data ingestion → cleaning → EDA → risk metrics → modeling → backtesting &amp; conclusions). The README below explains how to open and run the notebook, describes the expected notebook structure in detail, and gives tips for reproducible execution. 🧭✨</p>
+<hr>
+<p>📂 What’s in the repo</p>
+<ul><li>risk_analysis_1.ipynb — primary notebook (interactive, contains code cells, narrative, visualizations).  </li><li>README.md — this file (explanatory guide).</li></ul>
+<hr>
+<p>⚙️ Requirements &amp; install (quick) Recommended Python environment: 3.9+ (works with 3.8 in most cases).</p>
+<p>Minimum packages (pip):</p>
+<ul><li>pandas</li><li>numpy</li><li>matplotlib</li><li>seaborn</li><li>plotly (optional for interactive plots)</li><li>scikit-learn</li><li>statsmodels</li><li>scipy</li><li>jupyterlab or notebook</li><li>ipywidgets (optional)</li></ul>
+<p>Example pip install:</p>
+<pre><code>pip install pandas numpy matplotlib seaborn plotly scikit-learn statsmodels scipy jupyterlab ipywidgets</code></pre>
+<p>If you prefer Conda:</p>
+<pre><code>conda create -n ml-ds python=3.9
+conda activate ml-ds
+conda install pandas numpy matplotlib seaborn scikit-learn statsmodels scipy jupyterlab -c conda-forge
+pip install plotly ipywidgets</code></pre>
+<p>(Use these commands in a terminal/Anaconda prompt.)</p>
+<hr>
+<p>▶️ How to open and run the notebook</p>
+<ol><li>View in GitHub (read-only)</li><li>Open risk_analysis_1.ipynb on GitHub to see rendered outputs and markdown.</li></ol>
+<ol><li>Run locally (recommended for full interactivity)</li><li>Clone the repo: <code>git clone https://github.com/diegonmarcos/ml-DataScience.git cd ml-DataScience</code></li><li>Start Jupyter: <code>jupyter lab</code> or <code>jupyter notebook</code></li><li>Open risk_analysis_1.ipynb and run cells (Kernel ▶ Restart &amp; Run All to reproduce from scratch). ⚡</li></ol>
+<ol><li>Run on Google Colab (no local setup)</li><li>To open the notebook on Colab, replace the GitHub URL: <code>https://colab.research.google.com/github/diegonmarcos/ml-DataScience/blob/main/risk_analysis_1.ipynb</code></li><li>Colab is useful if you need extra computing or don’t want to configure a local env.</li></ol>
+<ol><li>Binder (interactive reproducible environment)</li><li>You can set up Binder (if you add an environment file). Binder launches a live Jupyter instance from the repository.</li></ol>
+<hr>
+<p>🔍 Notebook structure — detailed walkthrough (what each section typically does) Below is a clear, section-by-section explanation you can use to understand risk_analysis_1.ipynb. The notebook may vary, but these are the expected/standard pieces in a risk-analysis notebook. I describe intentions, typical code patterns, and what to look for in results. 🧩🔎</p>
+<ol><li>Title &amp; Purpose 📘</li><li>Short description of the notebook’s goal: e.g., estimate risk metrics (VaR, CVaR), build predictive models of risk, or analyze portfolio exposures.</li><li>Pay attention to the dataset description — this tells you the columns and time period used.</li></ol>
+<ol><li>Imports &amp; Environment setup 🧰</li><li>Imports of pandas, numpy, matplotlib/seaborn, statsmodels, sklearn, plotly.</li><li>Configuration for plot styles, floating point/display options, and random seed:<ul><li>plt.style.use('seaborn') or seaborn.set()</li><li>pd.options.display.float_format = '{:.4f}'.format</li></ul></li><li>Why it matters: consistent plotting and deterministic results.</li></ol>
+<ol><li>Data loading &amp; quick peek 📥</li><li>Loading data from CSV, Excel, or API. Typical pattern:<ul><li>df = pd.read_csv(&quot;data.csv&quot;, parse_dates=['date'], index_col='date')</li></ul></li><li>Initial checks: df.head(), df.info(), df.describe(), checking NA counts, unique values.</li><li>Key idea: confirm time format, frequency, and key columns.</li></ol>
+<ol><li>Data cleaning &amp; preprocessing 🧼</li><li>Handling missing values: .dropna(), .fillna(method='ffill'), or interpolation.</li><li>Type conversions: converting columns to numeric, datetime, categorical encoding.</li><li>Outliers treatment: winsorizing or clipping, or flagging extremely large values for inspection.</li><li>Why: clean inputs produce reliable risk metrics and stable model training.</li></ol>
+<ol><li>Feature engineering &amp; transformation ✨</li><li>Creating returns (log returns or percent changes): df['ret'] = df['price'].pct_change()</li><li>Rolling windows &amp; aggregated statistics: moving averages, rolling volatility:<ul><li>df['vol_30'] = df['ret'].rolling(30).std() * sqrt(252)  (annualized)</li></ul></li><li>Lag features and technical indicators for modeling.</li><li>Why: features capture temporal patterns that help predict risk exposures or tail events.</li></ol>
+<ol><li>Exploratory Data Analysis (EDA) 📊</li><li>Distribution plots (histograms, KDE), boxplots, QQ-plots to assess normality.</li><li>Time-series plots to show value/returns and volatility over time.</li><li>Correlation matrices and heatmaps to find relationships between variables.</li><li>Why: EDA reveals structure (seasonality, volatility clustering, correlations) and hints at model choices.</li></ol>
+<ol><li>Risk metrics computation (VaR, CVaR, stress scenarios) ⚠️</li><li>Value at Risk (VaR) — historical, parametric (Gaussian), or Monte Carlo approach.<ul><li>Example: 95% historical VaR = -np.percentile(returns, 5)</li></ul></li><li>Conditional VaR (CVaR / Expected Shortfall) computed as the mean of losses beyond the VaR threshold.</li><li>Backtesting logic: compare realized losses to predicted VaR and compute hit rate.</li><li>Why: These summarize tail risk and help evaluate model adequacy.</li></ol>
+<ol><li>Modeling &amp; predictive analysis 🧠</li><li>Typical models: linear regression, logistic regression (for binary risk event), tree-based models (RandomForest, XGBoost), time series models (ARIMA/GARCH) or hybrid approaches.</li><li>Train/test split: careful use of time-series split (no shuffle; use expanding or sliding windows).</li><li>Metrics: MSE/MAE for regression, AUC/precision/recall for classification, or custom risk-based metrics.</li><li>Cross-validation: use time-series aware CV (TimeSeriesSplit) for realistic evaluation.</li></ol>
+<ol><li>Backtesting &amp; calibration 🔁</li><li>Walk-forward/backtest framework: generate predictions per time step, update model periodically and compute cumulative performance.</li><li>Plot cumulative losses, VaR exceedances, and calibration tables (observed vs expected exceedances).</li><li>Why: Backtesting shows how predictive approach performs in real chronological order.</li></ol>
+<ol><li>Visualizations &amp; dashboards 🎨</li><li>Static: Matplotlib/Seaborn for summary plots.</li><li>Interactive: Plotly for hoverable charts and dashboards.</li><li>Common visuals: drawdowns, rolling VaR, concentration charts, correlation matrices.</li></ol>
+<ol><li>Conclusions &amp; next steps ✅</li><li>Summary of key findings: e.g., model strengths/weaknesses, notable tail events, recommended monitoring thresholds.</li><li>Next steps: improve features, more robust backtesting, use intraday data, incorporate alternative data.</li></ol>
+<ol><li>Appendix / reproducibility notes 📚</li><li>Versions of libraries, random seed, and data provenance.</li><li>How to re-run entire notebook from a clean environment.</li></ol>
+<hr>
+<p>📈 Typical outputs &amp; visuals you’ll see</p>
+<ul><li>Time series of price / returns with annotated tail events 📉</li><li>Histogram and KDE of returns showing fat tails 🧾</li><li>Rolling volatility and moving averages 📈</li><li>VaR/CVaR tables and exceedance plots (binary exceedance timeline) ⚡</li><li>Model performance metrics and confusion matrix (if classification) ✅/❌</li></ul>
+<hr>
+<p>🛠️ Tips, performance &amp; troubleshooting</p>
+<ul><li>Kernel crashes / memory issues:<ul><li>Reduce notebook memory by sampling, process in chunks, or increase VM memory.</li><li>Clear large DataFrame references and restart kernel.</li></ul></li><li>Reproducibility:<ul><li>Set random_state / np.random.seed()</li><li>Pin package versions (requirements.txt or environment.yml).</li></ul></li><li>Long running computations:<ul><li>Use smaller sample for development.</li><li>Persist intermediate processed files (parquet) to avoid re-computing heavy pre-processing.</li></ul></li><li>Visualization issues:<ul><li>If static plots don’t show, ensure inline backend is enabled: <code>%matplotlib inline</code></li></ul></li><li>If the notebook expects data not in the repo:<ul><li>Look for file paths in data-loading cells and update them to your local data location or download links.</li></ul></li></ul>
+<hr>
+<p>🤝 Contributing</p>
+<ul><li>Want to improve the notebook? Great!<ul><li>Fork the repo, create a branch, and open a Pull Request with a clear description of changes.</li><li>Add an environment.yml or requirements.txt if you add new dependencies.</li><li>Add smaller, incremental changes (one topic per PR) so changes can be reviewed and merged quickly.</li></ul></li></ul>
+<hr>
+<p>🧾 License &amp; attribution</p>
+<ul><li>Add a license file if you want to make usage terms clear (MIT / Apache-2.0 are common for notebooks).</li><li>If you use data or code from external sources, add citations and references in the notebook.</li></ul>
+<hr>
+<p>📬 Contact / credits</p>
+<ul><li>Repository owner: @diegonmarcos  </li><li>If you want a tailored README that documents each notebook cell and exact functions/plots (auto-generated explanation), I can parse the notebook and create a cell-by-cell annotated README. 🧾🔍</li></ul>
+<hr>
+<h2 id="folders">Folders</h2>
+<p>Top three folder levels, from the registry snapshot (<code>node refresh-folders-tree.js</code> in _git-repos-master).</p>
+<pre><code>lecole-42_ml-DataScience/
+├── .claude/
+└── 0_hub/
+    └── lecole-42-___ (submodule)</code></pre>
+<h2 id="readme">README</h2>
+<p>This README is rendered from one template and data, like every repo in the account: the registry node (<code>_dotfiles/readme/node.json</code>, from <a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <code>projects-repos.json</code>) and this repo's prose (<code>_dotfiles/readme/readme.json</code>). Edit <code>readme.json</code>, run <code>_dotfiles/readme/render-readme.sh</code>; <code>--check</code> is the drift guard.</p></div></section>
+</main>
+<aside>
+<section class="box"><h2>About</h2><div class="in"><dl class="meta"><dt>visibility</dt><dd>public</dd><dt>default branch</dt><dd>main</dd><dt>licence</dt><dd>Required Notice: Copyright 2026 Diego Nepomuceno Marcos — https://diegonmarcos.com</dd><dt>size</dt><dd>3.6 MB</dd><dt>last push</dt><dd>2026-11-17 22:27:39 UTC</dd><dt>stars / forks</dt><dd>0 / 0</dd><dt>area</dt><dd>42</dd><dt>project</dt><dd>42-datascience</dd><dt>family</dt><dd>ML</dd><dt>developer</dt><dd>lecole42</dd><dt>farm folder</dt><dd>5.Lecole-42</dd><dt>role</dt><dd>code</dd><dt>Pages</dt><dd>&lt;span class=&quot;dim&quot;&gt;none declared&lt;/span&gt;</dd><dt>domain page</dt><dd><a href="https://diegonmarcos.github.io/">https://diegonmarcos.github.io/</a></dd></dl></div></section>
+<section class="box"><h2>Parent project</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <span class="dim">hub · 5.0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">hub · 0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">registry root</span></li></ul></div></section>
+<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">5.7 42-datascience/
+└─ 5.7.1 ML/
+   └─ <b>lecole-42_ml-DataScience</b> ◀</pre></div></section>
+<section class="box"><h2>Siblings (9)</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-projects">lecole-42-projects</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Algo">lecole-42_back-Algo</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Graphic">lecole-42_back-Graphic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-System">lecole-42_back-System</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare">lecole-42_cyber-Cyberwarfare</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_dev">lecole-42_dev</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-Agentic">lecole-42_ml-Agentic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning">lecole-42_ml-MachineLearning</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs">lecole-42_ops-Mylibs</a> <span class="dim">code · public</span></li></ul></div></section>
+<section class="box"><h2>Links</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience">GitHub: lecole-42_ml-DataScience</a></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ml-DataScience/main/README.canvas">README.canvas (raw)</a> <span class="dim">JSON Canvas 1.0</span></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ml-DataScience/main/README.html">README.html (raw)</a></li><li><a href="https://diegonmarcos.github.io/">domain page</a></li></ul></div></section>
+</aside>
+</div></div>
+<div class="foot">generated by build.sh (A2_repo-readmes) from _git-repos-master: registry projects-repos/v1, GitHub metadata cache 2026-11-18. Do not edit; edit the sources in _git-repos-master.</div>
+</body></html>

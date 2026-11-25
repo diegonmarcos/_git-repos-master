@@ -1,0 +1,408 @@
+{
+  "nodes": [
+    {
+      "id": "29af31b29c7e6091",
+      "type": "group",
+      "label": "1.1 Cloudy",
+      "x": 0,
+      "y": 0,
+      "width": 2100,
+      "height": 920,
+      "color": "5"
+    },
+    {
+      "id": "7490ad38c3996908",
+      "type": "text",
+      "text": "**cloudy-___**\nhub · 🌐 public · 1.1.0\n\n[GitHub](https://github.com/diegonmarcos/cloudy-___)",
+      "x": 20,
+      "y": 40,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "9190cce208dfc550",
+      "type": "group",
+      "label": "1.1.1 Android",
+      "x": 20,
+      "y": 190,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "7a7e8c138220cdbd",
+      "type": "text",
+      "text": "**cloudy-u-android**\ncode · 🌐 public · 1.1.1.1\nAndroid Parallel Space / Virtual Engine — data-ownership workspace built on the cloud/ declarative framework\n[GitHub](https://github.com/diegonmarcos/cloudy-u-android)",
+      "x": 40,
+      "y": 230,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "eccbb399002e6fbe",
+      "type": "group",
+      "label": "1.1.2 C3",
+      "x": 380,
+      "y": 190,
+      "width": 1380,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "869cb901f9d574c1",
+      "type": "text",
+      "text": "**cloudy-t-infra**\ncode · 🌐 public · 1.1.2.1\nwhat happens if a Penguin learns how to surf?\n[GitHub](https://github.com/diegonmarcos/cloudy-t-infra)",
+      "x": 400,
+      "y": 230,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "efab2a1fc5445f10",
+      "type": "group",
+      "label": "1.1.2.2 DB",
+      "x": 400,
+      "y": 380,
+      "width": 980,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "5576128f1d2e9645",
+      "type": "text",
+      "text": "**cloudy_db_LFS**\nlfs · 🔒 private · 1.1.2.2.3\n\n[GitHub](https://github.com/diegonmarcos/cloudy_db_LFS)",
+      "x": 420,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "e715e92b11a5c63d",
+      "type": "text",
+      "text": "**cloudy_db_assets-cdn**  ◀ THIS REPO\ncode · 🌐 public · 1.1.2.2.1\n\n[GitHub](https://github.com/diegonmarcos/cloudy_db_assets-cdn)",
+      "x": 740,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "3"
+    },
+    {
+      "id": "1b4b35fe93e81b2d",
+      "type": "text",
+      "text": "**cloudy_db_infra-ops-obsv_configs-sync**\ncode · 🌐 public · 1.1.2.2.2\nConfigs-sync engine data repo: consolidated fleet config SoT (from 1_cloud-configs) served by c3-infra-api/mcp\n[GitHub](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync)",
+      "x": 1060,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "8ef023a57fdd64dd",
+      "type": "group",
+      "label": "1.1.2.3 Docs",
+      "x": 1400,
+      "y": 380,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "387b12c0939f424d",
+      "type": "text",
+      "text": "**cloudy-a-docs**\nbacklog · 🔒 private · 1.1.2.3.1\n\n[GitHub](https://github.com/diegonmarcos/cloudy-a-docs)",
+      "x": 1420,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "d43f953bf65ecc6e",
+      "type": "group",
+      "label": "1.1.3 Linux",
+      "x": 20,
+      "y": 630,
+      "width": 1380,
+      "height": 270,
+      "color": "2"
+    },
+    {
+      "id": "bc244d97c6ef4461",
+      "type": "group",
+      "label": "1.1.3.1 Linux Containers",
+      "x": 40,
+      "y": 670,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "9eb4a16e7a63bca6",
+      "type": "text",
+      "text": "**cloudy-u-containers**\ncode · 🌐 public · 1.1.3.1.1\nContainer service definitions for the cloud fleet (split from cloud-infra/a_solutions)\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers)",
+      "x": 60,
+      "y": 710,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "0e5f20032e450e53",
+      "type": "text",
+      "text": "**cloudy-u-containers_cgc**\ncode · 🌐 public · 1.1.3.1.2\nPublic half of the cgc code knowledge graph pipeline: octocode indexes of the public repos -> GHCR -> cloud-cg\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers_cgc)",
+      "x": 380,
+      "y": 710,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "14c0449d903c1f6a",
+      "type": "group",
+      "label": "1.1.3.2 Linux Desktop User",
+      "x": 720,
+      "y": 670,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "08610551b158b0d2",
+      "type": "text",
+      "text": "**cloudy-u-desktop**\ncode · 🌐 public · 1.1.3.2.1\npenguins does have wings, but those are divers and swimmers!\n[GitHub](https://github.com/diegonmarcos/cloudy-u-desktop)",
+      "x": 740,
+      "y": 710,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "f3fb3c8b7e510f06",
+      "type": "text",
+      "text": "**cloudy-u-linux**\ncode · 🌐 public · 1.1.3.2.2\nLinux desktop applications (split from cloud-unix d*/da*/db* trees)\n[GitHub](https://github.com/diegonmarcos/cloudy-u-linux)",
+      "x": 1060,
+      "y": 710,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "42ab713b10a11f75",
+      "type": "group",
+      "label": "1.1.4 WebApps",
+      "x": 1420,
+      "y": 630,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "5be26182a3cf6c3d",
+      "type": "text",
+      "text": "**cloudy-h-webapps-desk**\nhtml · 🌐 public · 1.1.4.2\nFront group c_Suite (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-desk)",
+      "x": 1440,
+      "y": 670,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "199045fc7f1e23ac",
+      "type": "text",
+      "text": "**cloudy-h-webapps-mob**\nhtml · 🌐 public · 1.1.4.1\nCloud web apps: per-app independent sites with a shared top nav\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-mob)",
+      "x": 1760,
+      "y": 670,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "ea5ab610375eafbe",
+      "type": "link",
+      "url": "https://github.com/diegonmarcos/cloudy_db_assets-cdn",
+      "x": 2180,
+      "y": 420,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "9570c696cd2da52c",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/cloudy-c3/",
+      "x": 2180,
+      "y": 500,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "8da1ccbdc2c38652",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/",
+      "x": 2180,
+      "y": 580,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "8a43cde896ebc02e",
+      "type": "link",
+      "url": "https://raw.githubusercontent.com/diegonmarcos/cloudy_db_assets-cdn/main/README.html",
+      "x": 2180,
+      "y": 660,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "a87eedac9bdb9688",
+      "type": "text",
+      "x": 2180,
+      "y": 270,
+      "width": 320,
+      "height": 120,
+      "color": "5",
+      "text": "**cloudy_db_assets-cdn** README.canvas\nrepos under 1.1 Cloudy\nyellow = this repo, purple = hub, green = public, red = private\ngenerated by _git-repos-master build.sh"
+    }
+  ],
+  "edges": [
+    {
+      "id": "9dc2c2b361221101",
+      "fromNode": "e715e92b11a5c63d",
+      "fromSide": "right",
+      "toNode": "ea5ab610375eafbe",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "GitHub"
+    },
+    {
+      "id": "c66f6c8960df6a76",
+      "fromNode": "e715e92b11a5c63d",
+      "fromSide": "right",
+      "toNode": "9570c696cd2da52c",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Pages"
+    },
+    {
+      "id": "d00061c6767671ed",
+      "fromNode": "e715e92b11a5c63d",
+      "fromSide": "right",
+      "toNode": "8da1ccbdc2c38652",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Domain page"
+    },
+    {
+      "id": "d3b7a66b36c7e8a8",
+      "fromNode": "e715e92b11a5c63d",
+      "fromSide": "right",
+      "toNode": "8a43cde896ebc02e",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "README.html (raw)"
+    },
+    {
+      "id": "5938ed2c371e6514",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "bottom",
+      "toNode": "7a7e8c138220cdbd",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "76268391c07d5375",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "869cb901f9d574c1",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "63231e5311e5d9bb",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "e715e92b11a5c63d",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "cb94f5cbb36af994",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "1b4b35fe93e81b2d",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "59202bd538d522bb",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "5576128f1d2e9645",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "5544a5c0ad2240e2",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "387b12c0939f424d",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "d16738a10619fbc8",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "bottom",
+      "toNode": "9eb4a16e7a63bca6",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "3063bbb8d55aa1aa",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "0e5f20032e450e53",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "d4d3c0ea56df3254",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "08610551b158b0d2",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "55e01a92acd3ea85",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "f3fb3c8b7e510f06",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "b9a2fe3e665bb5fa",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "199045fc7f1e23ac",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "dc9fb10545d3744a",
+      "fromNode": "7490ad38c3996908",
+      "fromSide": "right",
+      "toNode": "5be26182a3cf6c3d",
+      "toSide": "left",
+      "color": "4"
+    }
+  ]
+}

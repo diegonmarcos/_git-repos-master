@@ -1,0 +1,473 @@
+{
+  "nodes": [
+    {
+      "id": "d6ae664fb80d04d6",
+      "type": "group",
+      "label": "5 42",
+      "x": 0,
+      "y": 0,
+      "width": 820,
+      "height": 1640,
+      "color": "5"
+    },
+    {
+      "id": "97f7f6edbc4495df",
+      "type": "text",
+      "text": "**lecole-42-___**  ◀ THIS REPO\nhub · 🌐 public · 5.0\nMaster repo for the lecole-42_* repos: registry + symlinks\n[GitHub](https://github.com/diegonmarcos/lecole-42-___)",
+      "x": 20,
+      "y": 40,
+      "width": 300,
+      "height": 130,
+      "color": "3"
+    },
+    {
+      "id": "a6cf7d64c726f450",
+      "type": "group",
+      "label": "5.1 42-algo",
+      "x": 20,
+      "y": 190,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "357b1ce5e2674903",
+      "type": "group",
+      "label": "5.1.1 Back",
+      "x": 40,
+      "y": 230,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "bb68bc8127ec6df0",
+      "type": "text",
+      "text": "**lecole-42_back-Algo**\ncode · 🌐 public · 5.1.1.1\nwhere dead-ends are just recursive detours and you will try to overcome stack overflows with a `ulimit - s unl\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Algo)",
+      "x": 60,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "5174e084c928b946",
+      "type": "group",
+      "label": "5.2 42-graphic",
+      "x": 420,
+      "y": 190,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "8d047c0ae3903357",
+      "type": "group",
+      "label": "5.2.1 Back",
+      "x": 440,
+      "y": 230,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0f8c17c7da1a6922",
+      "type": "text",
+      "text": "**lecole-42_back-Graphic**\ncode · 🌐 public · 5.2.1.1\nFilling Wireframes, rendering matrixes and applying ray tracing one pixel at a time, until the GPU begs for me\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Graphic)",
+      "x": 460,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "863d790a994242ba",
+      "type": "group",
+      "label": "5.3 42-system",
+      "x": 20,
+      "y": 480,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "3c533e9f6a176377",
+      "type": "group",
+      "label": "5.3.1 Back",
+      "x": 40,
+      "y": 520,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "e7dcfb7170bbffde",
+      "type": "text",
+      "text": "**lecole-42_back-System**\ncode · 🌐 public · 5.3.1.1\n The Unix Alchemist: Transmuting recursive pipes into web servers and containers into… well, more containers.\"\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-System)",
+      "x": 60,
+      "y": 560,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "46456c76fc957bfe",
+      "type": "group",
+      "label": "5.4 42-mylibs",
+      "x": 420,
+      "y": 480,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "3a27c821d564b224",
+      "type": "group",
+      "label": "5.4.1 Ops",
+      "x": 440,
+      "y": 520,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "5865dab0c19c0247",
+      "type": "text",
+      "text": "**lecole-42_ops-Mylibs**\ncode · 🌐 public · 5.4.1.1\n__\"Every library has its first book, but not the last\"__: MyLibC, MylibC++, MyTools, for Memory Management and\n[GitHub](https://github.com/diegonmarcos/lecole-42_ops-Mylibs)",
+      "x": 460,
+      "y": 560,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "fd379ef9f37b3e66",
+      "type": "group",
+      "label": "5.5 42-projects",
+      "x": 20,
+      "y": 770,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "096d0ee93664e822",
+      "type": "group",
+      "label": "5.5.1 Curriculum",
+      "x": 40,
+      "y": 810,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "1a399938b9d9a906",
+      "type": "text",
+      "text": "**lecole-42-projects**\ncode · 🔒 private · 5.5.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42-projects)",
+      "x": 60,
+      "y": 850,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "06ca9c728cf41376",
+      "type": "group",
+      "label": "5.6 42-agentic",
+      "x": 420,
+      "y": 770,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "6215df16ae908429",
+      "type": "group",
+      "label": "5.6.1 ML",
+      "x": 440,
+      "y": 810,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "62510ae41fd5acb0",
+      "type": "text",
+      "text": "**lecole-42_ml-Agentic**\ncode · 🌐 public · 5.6.1.1\nIt's basically a highly-paid, very fast committee of AIs arguing until a solution pops out.\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-Agentic)",
+      "x": 460,
+      "y": 850,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "593e238def084569",
+      "type": "group",
+      "label": "5.7 42-datascience",
+      "x": 20,
+      "y": 1060,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "1d5c44b81a0786cd",
+      "type": "group",
+      "label": "5.7.1 ML",
+      "x": 40,
+      "y": 1100,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "cc9ccbc2d103b333",
+      "type": "text",
+      "text": "**lecole-42_ml-DataScience**\ncode · 🌐 public · 5.7.1.1\nNotebooks > Excel - for people who prefer code cells to pivot tables (and occasional chaos).\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-DataScience)",
+      "x": 60,
+      "y": 1140,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "f78562416c6e0418",
+      "type": "group",
+      "label": "5.8 42-machinelearning",
+      "x": 420,
+      "y": 1060,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "85e57e37a9621581",
+      "type": "group",
+      "label": "5.8.1 ML",
+      "x": 440,
+      "y": 1100,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "ea36967b92865f7c",
+      "type": "text",
+      "text": "**lecole-42_ml-MachineLearning**\ncode · 🌐 public · 5.8.1.1\n\"Where I teach computers to be smart so I don't have to be.\"\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-MachineLearning)",
+      "x": 460,
+      "y": 1140,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "476cb1cc0c9af2d7",
+      "type": "group",
+      "label": "5.9 42-cyberwarfare",
+      "x": 20,
+      "y": 1350,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "97d264b758ffc7e6",
+      "type": "group",
+      "label": "5.9.1 Cyber",
+      "x": 40,
+      "y": 1390,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "c36e37927dde5d31",
+      "type": "text",
+      "text": "**lecole-42_cyber-Cyberwarfare**\ncode · 🌐 public · 5.9.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare)",
+      "x": 60,
+      "y": 1430,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "d03cf00513610747",
+      "type": "group",
+      "label": "5.10 42-dev",
+      "x": 420,
+      "y": 1350,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "fa90e15adfb01146",
+      "type": "group",
+      "label": "5.10.1 Dev",
+      "x": 440,
+      "y": 1390,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "442ae0d39f5710b4",
+      "type": "text",
+      "text": "**lecole-42_dev**\ncode · 🔒 private · 5.10.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42_dev)",
+      "x": 460,
+      "y": 1430,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "dc6d9a8b52a2de97",
+      "type": "link",
+      "url": "https://github.com/diegonmarcos/lecole-42-___",
+      "x": 900,
+      "y": 40,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "153282cd019e5b5e",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/",
+      "x": 900,
+      "y": 120,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "817a20efcd7573d4",
+      "type": "link",
+      "url": "https://raw.githubusercontent.com/diegonmarcos/lecole-42-___/main/README.html",
+      "x": 900,
+      "y": 200,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "329ea5ca543eacc2",
+      "type": "text",
+      "x": 900,
+      "y": -110,
+      "width": 320,
+      "height": 120,
+      "color": "5",
+      "text": "**lecole-42-___** README.canvas\nrepos under 5 42\nyellow = this repo, purple = hub, green = public, red = private\ngenerated by _git-repos-master build.sh"
+    }
+  ],
+  "edges": [
+    {
+      "id": "85116744c10ab62f",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "dc6d9a8b52a2de97",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "GitHub"
+    },
+    {
+      "id": "cf13146fc764af4f",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "153282cd019e5b5e",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Domain page"
+    },
+    {
+      "id": "1ff0e08452e871b5",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "817a20efcd7573d4",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "README.html (raw)"
+    },
+    {
+      "id": "5811f156d261a1a2",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "bottom",
+      "toNode": "bb68bc8127ec6df0",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "dcad534574b16f55",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "0f8c17c7da1a6922",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "cc51321750fdbe78",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "bottom",
+      "toNode": "e7dcfb7170bbffde",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "5266a9eef734f46f",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "5865dab0c19c0247",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "bf00c08ef81d1727",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "bottom",
+      "toNode": "1a399938b9d9a906",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "6cce4362887c0436",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "62510ae41fd5acb0",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "6745e150b922c0ae",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "bottom",
+      "toNode": "cc9ccbc2d103b333",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "3282782c3541d63e",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "ea36967b92865f7c",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "791ff9121b121665",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "bottom",
+      "toNode": "c36e37927dde5d31",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "2343554336ffe81d",
+      "fromNode": "97f7f6edbc4495df",
+      "fromSide": "right",
+      "toNode": "442ae0d39f5710b4",
+      "toSide": "left",
+      "color": "3"
+    }
+  ]
+}

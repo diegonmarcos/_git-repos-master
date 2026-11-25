@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>cloudy-u-desktop - diegonmarcos</title>
+<style>
+:root{--bg:#0b0f14;--panel:#10161d;--alt:#141c25;--line:#243040;--text:#cfd8e3;--dim:#7d8b9c;--acc:#3daee9;--pub:#2ecc71;--priv:#ed5565;--hub:#c678dd;--warn:#e5c07b}
+*{box-sizing:border-box}html{background:var(--bg)}
+body{margin:0;color:var(--text);font:12.5px/1.45 ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.top{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:6px 14px;background:var(--panel);border-bottom:1px solid var(--line);color:var(--dim)}
+.top a{color:var(--dim)}.top a:hover{color:var(--acc)}.top b{color:var(--text)}.top i{font-style:normal;color:var(--line)}
+.wrap{max-width:1380px;margin:0 auto;padding:12px 14px}
+h1.t{margin:4px 0 2px;font-size:20px;font-weight:600}h1.t span{color:var(--dim);font-weight:400}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:11px;color:var(--dim);vertical-align:middle;margin-left:6px}
+.badge.public{color:var(--pub);border-color:var(--pub)}.badge.private{color:var(--priv);border-color:var(--priv)}.badge.hub{color:var(--hub);border-color:var(--hub)}
+.desc{color:var(--text);margin:4px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.chip{background:var(--alt);border:1px solid var(--line);border-radius:3px;padding:0 7px;color:var(--acc);font-size:11px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--dim);margin:8px 0}.stats b{color:var(--text);font-weight:500}
+.langbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);margin:8px 0 4px}.langbar i{display:block;height:100%}
+.langs{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--dim);font-size:11px;margin-bottom:10px}.langs s{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;text-decoration:none}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;margin-bottom:12px}
+.box>h2{margin:0;padding:6px 10px;font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);background:var(--alt)}
+.box .in{padding:8px 12px}
+.ft{width:100%;border-collapse:collapse}.ft td{padding:2px 10px;border-top:1px solid var(--alt);white-space:nowrap}.ft tr:first-child td{border-top:0}
+.ft td.k{width:24px;color:var(--dim)}.ft td.r{color:var(--dim);text-align:right}.ft .d a{color:var(--acc)}.ft .f a{color:var(--text)}.ft tr:hover td{background:var(--alt)}
+.md{padding:6px 18px 14px;overflow-wrap:anywhere}.md h1,.md h2{border-bottom:1px solid var(--line);padding-bottom:4px}.md h1{font-size:18px}.md h2{font-size:15px}.md h3{font-size:13.5px}
+.md code{background:var(--alt);padding:0 4px;border-radius:3px;color:var(--warn)}.md pre{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;overflow:auto}.md pre code{background:none;padding:0;color:var(--text)}
+.md blockquote{margin:6px 0;padding:0 12px;border-left:3px solid var(--line);color:var(--dim)}.md hr{border:0;border-top:1px solid var(--line)}
+.md .tw{overflow:auto}.md table{border-collapse:collapse;font-size:12px}.md th,.md td{border:1px solid var(--line);padding:2px 8px;text-align:left;vertical-align:top}.md th{background:var(--alt)}.md a.img{color:var(--dim)}
+dl.meta{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}dl.meta dt{color:var(--dim)}dl.meta dd{margin:0;overflow-wrap:anywhere}
+ul.l{list-style:none;margin:0;padding:0}ul.l li{padding:1px 0;overflow-wrap:anywhere}ul.l li.me{color:var(--warn);font-weight:600}ul.l .dim,.dim{color:var(--dim)}
+pre.pt{margin:0;white-space:pre;overflow:auto;font-size:11.5px;line-height:1.35}pre.pt b{color:var(--warn)}
+.note{color:var(--dim);font-size:11px;margin:6px 0}
+.foot{color:var(--dim);font-size:11px;padding:10px 14px 24px;text-align:center}
+</style></head><body>
+<nav class="top"><a href="https://github.com/diegonmarcos">diegonmarcos</a><i>/</i>🐧 1 Unix<i>/</i><a href="https://github.com/diegonmarcos/cloudy-___">☁️ 1.1 Cloudy</a><i>/</i>1.1.3 Linux<i>/</i>1.1.3.2 Linux Desktop User<i>/</i><b>cloudy-u-desktop</b></nav>
+<div class="wrap">
+<h1 class="t"><span>diegonmarcos /</span> cloudy-u-desktop <span class="badge public">public</span></h1>
+<div class="desc">penguins does have wings, but those are divers and swimmers!</div>
+<div class="chips"><span class="dim">no topics</span></div>
+<div class="stats"><span>branch <b>main</b></span><span>stars <b>0</b></span><span>forks <b>0</b></span><span>size <b>413.1 MB</b></span><span>pushed <b>2026-11-17</b></span><span>code <b>1.1.3.2.1</b></span><span>kind <b>code</b></span></div>
+<div class="langbar"><i style="width:46.62%;background:#89e051" title="Shell 46.6%"></i><i style="width:23.62%;background:#f1e05a" title="JavaScript 23.6%"></i><i style="width:10.82%;background:#a97bff" title="Kotlin 10.8%"></i><i style="width:4.30%;background:#e34c26" title="HTML 4.3%"></i><i style="width:3.57%;background:#dea584" title="Rust 3.6%"></i><i style="width:3.08%;background:#7e7eff" title="Nix 3.1%"></i><i style="width:2.33%;background:#f34b7d" title="C++ 2.3%"></i><i style="width:1.79%;background:#563d7c" title="CSS 1.8%"></i><i style="width:1.40%;background:#ffa657" title="HCL 1.4%"></i><i style="width:0.71%;background:#7ee787" title="Gradle 0.7%"></i><i style="width:0.67%;background:#888" title="C 0.7%"></i><i style="width:0.65%;background:#3178c6" title="TypeScript 0.7%"></i><i style="width:0.42%;background:#384d54" title="Dockerfile 0.4%"></i><i style="width:0.00%;background:#3572a5" title="Python 0.0%"></i></div>
+<div class="langs"><span><s style="background:#89e051"></s>Shell 46.6%</span><span><s style="background:#f1e05a"></s>JavaScript 23.6%</span><span><s style="background:#a97bff"></s>Kotlin 10.8%</span><span><s style="background:#e34c26"></s>HTML 4.3%</span><span><s style="background:#dea584"></s>Rust 3.6%</span><span><s style="background:#7e7eff"></s>Nix 3.1%</span><span><s style="background:#f34b7d"></s>C++ 2.3%</span><span><s style="background:#563d7c"></s>CSS 1.8%</span><span><s style="background:#ffa657"></s>HCL 1.4%</span><span><s style="background:#7ee787"></s>Gradle 0.7%</span><span><s style="background:#888"></s>C 0.7%</span><span><s style="background:#3178c6"></s>TypeScript 0.7%</span><span><s style="background:#384d54"></s>Dockerfile 0.4%</span><span><s style="background:#3572a5"></s>Python 0.0%</span></div>
+<div class="cols">
+<main>
+<section class="box"><h2>Files <span class="dim">(main)</span></h2><table class="ft"><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/.claude">.claude/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/.githooks">.githooks/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/.github">.github/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/.obsidian">.obsidian/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/.vscode">.vscode/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/0_______________________________">0_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/0_hub">0_hub/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/1_cicd">1_cicd/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/1_reports">1_reports/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/2_sops">2_sops/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/9_others">9_others/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/I_______________________________">I_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">⇢</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/I_cloud">I_cloud/</a></td><td class="r">submodule</td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/_aac_dev-phone-arm">_aac_dev-phone-arm/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/_dotfiles">_dotfiles/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/a0_docs">a0_docs/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/a0_tasks">a0_tasks/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/a_OS-TERRAFORM_______________________________">a_OS-TERRAFORM_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/b_OS-HOME-MANAGER_______________________________">b_OS-HOME-MANAGER_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/c_UNIX-infra_______________________________">c_UNIX-infra_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/ca_containers_user">ca_containers_user/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/cb_containers-builders">cb_containers-builders/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/ea_cloud-superapp">ea_cloud-superapp/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/fa_garmin-watchface">fa_garmin-watchface/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/z_______________________________">z_______________________________/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/tree/main/z_archive">z_archive/</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.cwd_restore">.cwd_restore</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.gitattributes">.gitattributes</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.gitignore">.gitignore</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.gitleaks.toml">.gitleaks.toml</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.gitmodules">.gitmodules</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.mcp.json">.mcp.json</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/.sops.yaml">.sops.yaml</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/CLAUDE.md">CLAUDE.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/LICENSE">LICENSE</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/LICENSING.md">LICENSING.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/PLAN-resource-bouncer.md">PLAN-resource-bouncer.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/README.canvas">README.canvas</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/README.html">README.html</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/README.md">README.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/SIGNING.md">SIGNING.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/TASKS.md">TASKS.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/main.tf">main.tf</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/rescue-chroot-nixos.sh">rescue-chroot-nixos.sh</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/unix-chroot.sh">unix-chroot.sh</a></td><td class="r"></td></tr></table></section>
+<section class="box"><h2>README.md</h2><div class="md"><h1 id="cloudy-u-desktop">cloudy-u-desktop</h1>
+<p>🐧 Unix <code>1</code> › ☁️ Cloudy <code>1.1</code> › Linux <code>1.1.3</code> › Linux Desktop User <code>1.1.3.2</code></p>
+<blockquote><p>penguins does have wings, but those are divers and swimmers!</p></blockquote>
+<div class="tw"><table><thead><tr><th>Code</th><th>Visibility</th><th>Hub</th><th>Developer</th><th>Farm folder</th></tr></thead><tbody><tr><td><code>1.1.3.2.1</code></td><td>🌐 public</td><td><a href="https://github.com/diegonmarcos/cloudy-___">cloudy-___</a> <code>1.1.0</code></td><td>Leaf.y</td><td><code>1.1.Cloudy/</code></td></tr></tbody></table></div>
+<pre><code>╔═══════════════════════════════════════════════════════════════╗
+║  ██╗   ██╗███╗   ██╗██╗██╗  ██╗                              ║
+║  ██║   ██║████╗  ██║██║╚██╗██╔╝                              ║
+║  ██║   ██║██╔██╗ ██║██║ ╚███╔╝                               ║
+║  ██║   ██║██║╚██╗██║██║ ██╔██╗                               ║
+║  ╚██████╔╝██║ ╚████║██║██╔╝ ██╗                              ║
+║   ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝                              ║
+║                                                               ║
+║  NixOS · Impermanence · LUKS · Surface Pro 8 · Nix Flakes    ║
+╚═══════════════════════════════════════════════════════════════╝</code></pre>
+<h1 id="unix---secure-workstation-fall">UNIX - Secure Workstation &amp; Fallback Infrastructure</h1>
+<blockquote><p><strong>Device</strong>: Surface Pro 8 (Intel Tiger Lake) <strong>Goal</strong>: A high-security, declarative, and immutable UNIX environment with multiple layers of fail-safe recovery.</p></blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="a-documentation-overview">A) Documentation Overview</h3>
+<ul><li><a href="#a1-security-zones">A.1 Security Zones</a></li><li><a href="#a2-operating-systems">A.2 Operating Systems</a></li><li><a href="#a3-nix-flakes-user-environment">A.3 Nix Flakes (User Environment)</a></li><li><a href="#a4-applications--containers">A.4 Applications &amp; Containers</a></li><li><a href="#a5-quick-start">A.5 Quick Start</a></li><li><a href="#a6-filesystem-layout">A.6 Filesystem Layout</a></li><li><a href="#a7-surface-hardware-notes">A.7 Surface Hardware Notes</a></li></ul>
+<h3 id="b-architectural-design">B) Architectural Design</h3>
+<ul><li><a href="#b1-repository-structure">B.1 Repository Structure</a></li><li><a href="#b2-build-system">B.2 Build System</a></li><li><a href="#b3-nixos-host-configuration">B.3 NixOS Host Configuration</a></li><li><a href="#b4-home-manager-profiles">B.4 Home Manager Profiles</a></li><li><a href="#b5-isolation-layers">B.5 Isolation Layers</a></li><li><a href="#b6-mcp-server">B.6 MCP Server</a></li><li><a href="#b7-disk-partitioning">B.7 Disk Partitioning</a></li></ul>
+<hr>
+<h2 id="a-documentation-overview">A) Documentation Overview</h2>
+<h3 id="a1-security-zones">A.1 Security Zones</h3>
+<div class="tw"><table><thead><tr><th>Zone</th><th>System</th><th>Encryption</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>0</strong></td><td><strong>Alpine Recovery</strong></td><td>None</td><td>Emergency repair, LUKS rescue</td></tr><tr><td><strong>1a</strong></td><td><strong>Windows 11 Lite</strong></td><td>None</td><td>Hardware compatibility (Surface Webcam)</td></tr><tr><td><strong>1b</strong></td><td><strong>Kali Security</strong></td><td>None</td><td>Security auditing &amp; pentesting</td></tr><tr><td><strong>2</strong></td><td><strong>NixOS (Host)</strong></td><td>LUKS2</td><td>Primary Workstation (Impermanence)</td></tr><tr><td><strong>3</strong></td><td><strong>User Space</strong></td><td>LUKS + Vault</td><td>Personal data &amp; secret management</td></tr><tr><td><strong>4</strong></td><td><strong>Untrusted</strong></td><td>LUKS</td><td>Isolated workloads via <code>microvm.nix</code></td></tr></tbody></table></div>
+<h3 id="a2-operating-systems">A.2 Operating Systems</h3>
+<div class="tw"><table><thead><tr><th>OS</th><th>Folder</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>NixOS 24.11</strong></td><td><code>cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_desk-usr_x86_surface-linux_nixos/</code></td><td>Primary workstation. Immutable root (tmpfs), impermanence, KDE Plasma 6</td></tr><tr><td><strong>Bootloader (rEFInd)</strong></td><td><code>cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_bootloader/</code></td><td>UEFI bootloader engine — declarative <code>boot.json</code> → rEFInd menu + GRUB chainload</td></tr><tr><td><strong>Rescue OS (Debian)</strong></td><td><code>rescue-os-debian/</code></td><td>On-disk minimal CLI rescue (p6) — replaces Arch, replaced 2026-05-03</td></tr><tr><td><strong>Kali Linux</strong></td><td><code>ab_fallback_os/ab_kali_security/</code></td><td>Security auditing, network forensics (debootstrap)</td></tr><tr><td><strong>Windows 11 Lite</strong></td><td><code>ab_fallback_os/ac_win11_webcam/</code></td><td>Surface webcam driver support</td></tr><tr><td><strong>Ventoy USB</strong></td><td><code>ab_fallback_os/ad_ventoy_fallback_usb/</code></td><td>Multi-OS recovery: Debian, Arch, Alpine, NixOS Slim</td></tr><tr><td><strong>Android/Mobile</strong></td><td><code>ab_fallback_os/ae_mobile_image/</code></td><td>BlissOS QEMU VM, Samsung app extraction</td></tr></tbody></table></div>
+<h3 id="a3-nix-flakes-user-environment">A.3 Nix Flakes (User Environment)</h3>
+<h4 id="desktop-cloud-meconfigsaconfig">Desktop — <a href="https://github.com/diegonmarcos/cloud-me_configs/tree/main/A_CONFIGS-USER/a1-diego-user/nix-hm-flakes/ba_flakes_desktop"><code>cloud-me_configs/A_CONFIGS-USER/a1-diego-user/nix-hm-flakes/ba_flakes_desktop/</code></a></h4>
+<p>Standalone Home Manager that works on <strong>any Linux distro</strong>. Manages packages, dotfiles, desktop environments.</p>
+<p><strong>Host Configs</strong>: <code>surface-plasma</code> (all profiles + Plasma 6), <code>surface-gnome</code>, <code>server</code>, <code>cli</code>, <code>minimal</code>.</p>
+<h4 id="termux-cloud-meconfigsbconfigs">Termux — <a href="https://github.com/diegonmarcos/cloud-me_configs/tree/main/B_CONFIGS-MACHINES/_shared/nix-os-flakes/bb_flakes_termux"><code>cloud-me_configs/B_CONFIGS-MACHINES/_shared/nix-os-flakes/bb_flakes_termux/</code></a></h4>
+<p>Nix Home Manager for Android/Termux. Mobile development environment with Claude Code, MCP servers, and full CLI tooling.</p>
+<h3 id="a4-applications-containers">A.4 Applications &amp; Containers</h3>
+<div class="tw"><table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>ca_container_cli/</code></td><td>CLI tools container (Podman/Docker)</td></tr><tr><td><code>cb_container_gui/</code></td><td>GUI apps container (Podman/Docker)</td></tr><tr><td><code>de_claude-sandbox/</code></td><td>Claude AI sandbox (Nix + AppImage)</td></tr><tr><td><code>bc_unix-mcp-api/</code></td><td>Unix MCP server (system introspection)</td></tr></tbody></table></div>
+<h3 id="a5-quick-start">A.5 Quick Start</h3>
+<pre><code class="lang-bash"># Rebuild NixOS system
+~/git/cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_desk-usr_x86_surface-linux_nixos/build.sh       # Interactive TUI
+
+# Rebuild Home Manager (desktop)
+~/git/cloud-me_configs/A_CONFIGS-USER/a1-diego-user/nix-hm-flakes/ba_flakes_desktop/build.sh switch surface
+
+# Rebuild Home Manager (Termux/mobile)
+~/git/cloud-me_configs/B_CONFIGS-MACHINES/_shared/nix-os-flakes/bb_flakes_termux/build.sh switch</code></pre>
+<h3 id="a6-filesystem-layout">A.6 Filesystem Layout</h3>
+<pre><code>/                       # tmpfs (ephemeral, wiped on reboot)
+├── nix/                # @nixos/nix subvolume (persistent)
+├── home/diego/         # @home-diego subvolume (persistent)
+├── home/guest/         # @home-guest subvolume (persistent)
+├── mnt/
+│   ├── shared/         # @shared subvolume (cross-OS data)
+│   ├── btrfs-root/     # Pool root (all subvolumes visible)
+│   └── shared-lib/     # ext4 p5 — Docker data-root + cross-OS shared libs
+└── boot/efi/           # EFI system partition (ESP)</code></pre>
+<ul><li><strong>LUKS2</strong>: Full disk encryption, USB keyfile (Ventoy) + password fallback</li><li><strong>BTRFS</strong>: zstd compression, noatime</li><li><strong>zRAM swap</strong>: 50% of RAM (compressed) + disk swapfile fallback (priority -2)</li><li><strong>Docker/Podman data</strong>: <code>/mnt/shared-lib/docker/</code></li></ul>
+<h3 id="a7-surface-hardware-notes">A.7 Surface Hardware Notes</h3>
+<ul><li><strong>initrd modules</strong>: <code>surface_aggregator</code>, <code>surface_hid</code> loaded early for Type Cover keyboard</li><li><strong>No Intel ISH</strong>: Surface Pro 8 uses SAM (Surface Aggregator Module)</li><li><strong>Wayland</strong>: Default (Plasma 6), X11 available for Openbox</li><li><strong>Touchscreen/Pen</strong>: via <code>nixos-hardware</code> Surface module</li><li><strong>Kernel</strong>: linux-surface (mainline 6.15+ with Surface patches)</li><li><strong>Multi-boot</strong>: Rescue-OS-Debian (p6, ext4) · Kali Linux (p7, ext4) · Windows (ESP chainload, webcam-only) · Ventoy USB · all rendered into rEFInd menu by <code>cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_bootloader/</code></li></ul>
+<hr>
+<h2 id="b-architectural-design">B) Architectural Design</h2>
+<h3 id="b1-repository-structure">B.1 Repository Structure</h3>
+<pre><code>unix/
+├── 0_spec/                            Specifications &amp; design docs
+│   ├── ARCHITECTURE.md                System-wide design
+│   ├── DISK_LAYOUT.md                 Partition &amp; subvolume map
+│   ├── ISOLATION_LAYERS.md            Sandbox breakdown
+│   └── TOOLS.md                       Curated package lists
+│
+│   (aa_*/ab_*/ac_*/ad_*/ae_*/af_* OS configs and ba/bb/bc nix flakes
+│    now live in the cloud-me_configs repo; see its MIGRATION.md)
+├── bc_unix-mcp-api/                   Unix MCP server
+│
+├── ca_container_cli/                  CLI container (Podman)
+├── cb_container_gui/                  GUI container (Podman)
+├── de_claude-sandbox/                 Claude AI sandbox
+│
+└── z_archive/                         Archived configs</code></pre>
+<h3 id="b2-build-system">B.2 Build System</h3>
+<p>Every major project uses <code>build.sh</code> (engine) + <code>build.json</code> (config) at project root.</p>
+<div class="tw"><table><thead><tr><th>Project</th><th>Engine</th><th>Purpose</th></tr></thead><tbody><tr><td><code>cloud-me_configs/…/aa_desk-usr_x86_surface-linux_nixos/build.sh</code></td><td>NixOS installer</td><td>Create raw EFI / ISO images for Surface</td></tr><tr><td><code>cloud-me_configs/…/ba_flakes_desktop/build.sh</code></td><td>Home Manager</td><td>Switch/build/update desktop environment</td></tr><tr><td><code>cloud-me_configs/…/bb_flakes_termux/build.sh</code></td><td>nix-on-droid</td><td>Switch/build/update Termux environment</td></tr><tr><td><code>bc_unix-mcp-api/build.sh</code></td><td>Node.js</td><td>Build MCP server</td></tr><tr><td><code>ca_container_cli/build.sh</code></td><td>Podman</td><td>Build CLI container</td></tr><tr><td><code>cb_container_gui/build.sh</code></td><td>Podman</td><td>Build GUI container</td></tr></tbody></table></div>
+<h3 id="b3-nixos-host-configuration">B.3 NixOS Host Configuration</h3>
+<ul><li><strong>Flake</strong>: <code>cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_desk-usr_x86_surface-linux_nixos/src/flake.nix</code></li><li><strong>Impermanence</strong>: Root is <code>tmpfs</code>, wiped on reboot. Persistent data via BTRFS subvolumes.</li><li><strong>Multi-user</strong>: <code>diego</code> (UID 1000), <code>guest</code> (UID 1001)</li><li><strong>Desktop</strong>: KDE Plasma 6 (Wayland), GNOME, Openbox</li><li><strong>Shell</strong>: Fish (default), Zsh, Bash</li></ul>
+<h3 id="b4-home-manager-profiles">B.4 Home Manager Profiles</h3>
+<p>Desktop flake provides modular, composable profiles:</p>
+<div class="tw"><table><thead><tr><th>Profile</th><th>Packages</th></tr></thead><tbody><tr><td><code>shell-core</code></td><td>zsh, starship, fzf, ripgrep, fd, bat, eza</td></tr><tr><td><code>dev-languages</code></td><td>Node, Python, Rust, Go runtimes</td></tr><tr><td><code>build-debug</code></td><td>cmake, gcc, gdb, valgrind, strace</td></tr><tr><td><code>containers-cloud</code></td><td>podman, kubectl, helm, gcloud, aws, oci-cli</td></tr><tr><td><code>security-network</code></td><td>nmap, wireshark, burpsuite, openssl</td></tr><tr><td><code>data-science</code></td><td>jupyter, pandas, numpy, R</td></tr><tr><td><code>productivity</code></td><td>obsidian, zotero, libreoffice</td></tr><tr><td><code>media-graphics</code></td><td>gimp, inkscape, ffmpeg, imagemagick</td></tr></tbody></table></div>
+<h3 id="b5-isolation-layers">B.5 Isolation Layers</h3>
+<div class="tw"><table><thead><tr><th>Layer</th><th>Technology</th><th>Trust Level</th><th>Use Case</th></tr></thead><tbody><tr><td>1</td><td>Nix Native</td><td>Trusted</td><td>CLI &amp; system utilities</td></tr><tr><td>2</td><td>Distrobox</td><td>Semi-trusted</td><td>Development environments (Arch, Ubuntu)</td></tr><tr><td>3</td><td>Flatpak</td><td>Sandboxed</td><td>GUI applications</td></tr><tr><td>4</td><td>Podman</td><td>Rootless</td><td>Containerized services</td></tr><tr><td>5</td><td>MicroVM</td><td>Fully isolated</td><td>Untrusted workloads (separate kernel)</td></tr></tbody></table></div>
+<h3 id="b6-mcp-server">B.6 MCP Server</h3>
+<p><code>bc_unix-mcp-api/</code> — stdio MCP server for system introspection.</p>
+<p>Provides tools for shell management, Nix operations, Git sync, mesh networking, dev servers, and system information. Used by Claude Code for local system context.</p>
+<h3 id="b7-disk-partitioning">B.7 Disk Partitioning</h3>
+<p>Live layout (Surface Pro 8 NVMe, 237.54 GiB total):</p>
+<div class="tw"><table><thead><tr><th>Part</th><th>Size</th><th>FS</th><th>Label</th><th>Mount</th><th>Purpose</th></tr></thead><tbody><tr><td>p1</td><td>100 MiB</td><td>vfat</td><td>(ESP)</td><td><code>/boot/efi</code></td><td>UEFI bootloader hub (rEFInd)</td></tr><tr><td>p2</td><td>16 MiB</td><td>raw</td><td>MSR</td><td>—</td><td>Microsoft Reserved (legacy)</td></tr><tr><td>p3</td><td>2 GiB</td><td>ext4</td><td>boot</td><td><code>/boot</code></td><td>NixOS kernel + initrd</td></tr><tr><td>p4</td><td>80 GiB</td><td>LUKS2/btrfs</td><td>pool</td><td>(multi)</td><td>NixOS encrypted pool</td></tr><tr><td>p5</td><td>118 GiB</td><td>ext4</td><td>Shared-Lib</td><td><code>/mnt/shared-lib</code></td><td>Docker data-root + shared libs</td></tr><tr><td>p6</td><td>5 GiB</td><td>ext4</td><td>rescue-os-debian</td><td>(unmounted)</td><td>On-disk Debian rescue</td></tr><tr><td>p7</td><td>25 GiB</td><td>ext4</td><td>kali-root</td><td>(unmounted)</td><td>Kali Linux</td></tr></tbody></table></div>
+<p>BTRFS subvolumes (in pool): <code>@nixos/nix</code>, <code>@home-diego</code>, <code>@home-guest</code>, <code>@shared</code> (with <code>@shared/{tmp,journal,coredump,log/audit,log/account,host/*,containers/*,...}</code> children).</p>
+<p>UEFI default boot: rEFInd (Boot0007). Bootloader source-of-truth: <code>cloud-me_configs/B_CONFIGS-MACHINES/b2-surface-8pro/nix-os-flakes/aa_bootloader/src/boot.json</code>.</p>
+<hr>
+<p><strong>Quick Links</strong>: <a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/0_spec/ARCHITECTURE.md">Architecture</a> | <a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/0_spec/DISK_LAYOUT.md">Disk Layout</a> | <a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/0_spec/ISOLATION_LAYERS.md">Isolation Layers</a> | <a href="https://github.com/diegonmarcos/cloudy-u-desktop/blob/main/0_spec/ROADMAP.md">Roadmap</a></p>
+<p><strong>Last Updated</strong>: 2026-03-18</p>
+<h2 id="folders">Folders</h2>
+<p>Top three folder levels, from the registry snapshot (<code>node 0_registry/refresh-folders-tree.js</code> in _git-repos-master).</p>
+<pre><code>cloudy-u-desktop/
+├── _aac_dev-phone-arm/
+│   ├── 0_DOCS/
+│   │   ├── local_s21/
+│   │   └── local_SurfacePro8/
+│   ├── data/
+│   ├── lib/
+│   └── src/
+├── _dotfiles/
+│   ├── apps/
+│   │   ├── dist/
+│   │   ├── src/
+│   │   └── test/
+│   └── git/
+│       ├── dist/
+│       ├── src/
+│       └── test/
+├── .claude/
+│   ├── agents/
+│   ├── hooks/
+│   │   └── c3/
+│   └── skills/
+│       └── c3-infra/
+├── .githooks/
+├── .github/
+│   └── workflows/
+│       ├── hooks/
+│       └── scripts/
+├── .obsidian/
+├── .vscode/
+├── 0_______________________________/
+├── 0_hub/
+│   └── cloudy-___ (submodule)
+├── 1_cicd/
+│   ├── dist/
+│   │   └── scripts/
+│   └── src/
+│       ├── cicd/
+│       ├── patches/
+│       └── scripts/
+├── 1_reports/
+├── 2_sops/
+├── 9_others/
+│   ├── dist/
+│   │   ├── data/
+│   │   └── test/
+│   ├── src/
+│   │   └── data/
+│   └── test/
+├── a_OS-TERRAFORM_______________________________/
+├── a0_docs/
+│   └── z_dotfiles_src/
+│       ├── editors/
+│       ├── git/
+│       └── shells/
+├── a0_tasks/
+├── b_OS-HOME-MANAGER_______________________________/
+├── c_UNIX-infra_______________________________/
+├── ca_containers_user/
+│   ├── dist/
+│   └── src/
+├── cb_containers-builders/
+│   ├── .claude/
+│   ├── dist/
+│   │   └── docker/
+│   └── src/
+│       └── docker/
+├── ea_cloud-superapp/
+│   └── dist/
+├── fa_garmin-watchface/
+│   └── faces/
+│       └── 2-circles/
+├── I_______________________________/
+├── I_cloud (submodule)
+├── z_______________________________/
+└── z_archive/
+    ├── 0_spec/
+    │   └── cb_container_gui/
+    ├── a_kinoite_host/
+    │   ├── 0_spec/
+    │   ├── 1_oci/
+    │   ├── 2_raw/
+    │   └── 3_deploy/
+    ├── aa_nixos-surface_host_0_spec-pre-refind/
+    ├── ab_arch-surface_fallback_desk/
+    │   └── bootstrap/
+    ├── ae_mobile_image/
+    ├── ca_container_cli/
+    ├── da_app_cli/
+    │   ├── docs/
+    │   ├── nix/
+    │   ├── poetry_venv_1/
+    │   └── scripts/
+    ├── da_app_gui/
+    ├── da_cloud-terminal/
+    │   ├── dist/
+    │   ├── frontend/
+    │   ├── src/
+    │   └── src-tauri/
+    ├── da_redroid/
+    │   └── src/
+    ├── da_waydroid-apps/
+    │   └── src/
+    ├── da_waydroid-sensors/
+    │   └── src/
+    ├── db_apps_gui_2/
+    │   ├── 0.spec/
+    │   ├── apps_profiles/
+    │   ├── dist_docker/
+    │   ├── dist_host/
+    │   ├── src_docker/
+    │   ├── src_host/
+    │   └── src_podman/
+    ├── dd_ops_scripts/
+    ├── ea_cloud-comms/
+    │   ├── contract/
+    │   ├── data/
+    │   ├── forks/
+    │   ├── hub/
+    │   └── test/
+    └── ea_cloud-ide/
+        ├── contract/
+        ├── forks/
+        └── hub/</code></pre>
+<h2 id="readme">README</h2>
+<p>This README is rendered from one template and data, like every repo in the account: the registry node (<code>_dotfiles/readme/node.json</code>, from <a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <code>0_registry/projects-repos.json</code>) and this repo's prose (<code>_dotfiles/readme/readme.json</code>). Edit <code>readme.json</code>, run <code>_dotfiles/readme/render-readme.sh</code>; <code>--check</code> is the drift guard.</p></div></section>
+</main>
+<aside>
+<section class="box"><h2>About</h2><div class="in"><dl class="meta"><dt>visibility</dt><dd>public</dd><dt>default branch</dt><dd>main</dd><dt>licence</dt><dd>Required Notice: Copyright 2026 Diego Nepomuceno Marcos — https://diegonmarcos.com</dd><dt>size</dt><dd>413.1 MB</dd><dt>last push</dt><dd>2026-11-17 22:29:30 UTC</dd><dt>stars / forks</dt><dd>0 / 0</dd><dt>area</dt><dd>Unix</dd><dt>project</dt><dd>Cloudy</dd><dt>family</dt><dd>Linux / Linux Desktop User</dd><dt>developer</dt><dd>Leaf.y</dd><dt>farm folder</dt><dd>1.1.Cloudy</dd><dt>role</dt><dd>code</dd><dt>Pages</dt><dd><a href="https://diegonmarcos.github.io/cloud-webapps/">https://diegonmarcos.github.io/cloud-webapps/</a></dd><dt>domain page</dt><dd><a href="https://diegonmarcos.github.io/">https://diegonmarcos.github.io/</a></dd></dl></div></section>
+<section class="box"><h2>Parent project</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/cloudy-___">cloudy-___</a> <span class="dim">hub · 1.1.0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">hub · 0</span></li><li><a href="https://diegonmarcos.github.io/cloud-webapps/">https://diegonmarcos.github.io/cloud-webapps/</a> <span class="dim">declared page</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">registry root</span></li></ul></div></section>
+<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">1.1 Cloudy/
+├─ 1.1.1 Android/
+│  └─ <a href="https://github.com/diegonmarcos/cloudy-u-android">cloudy-u-android</a>
+├─ 1.1.2 C3/
+│  ├─ 1.1.2.2 DB/
+│  │  ├─ <a href="https://github.com/diegonmarcos/cloudy_db_LFS">cloudy_db_LFS</a>
+│  │  ├─ <a href="https://github.com/diegonmarcos/cloudy_db_assets-cdn">cloudy_db_assets-cdn</a>
+│  │  └─ <a href="https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync">cloudy_db_infra-ops-obsv_configs-sync</a>
+│  ├─ 1.1.2.3 Docs/
+│  │  └─ <a href="https://github.com/diegonmarcos/cloudy-a-docs">cloudy-a-docs</a>
+│  └─ <a href="https://github.com/diegonmarcos/cloudy-t-infra">cloudy-t-infra</a>
+├─ 1.1.3 Linux/
+│  ├─ 1.1.3.1 Linux Containers/
+│  │  ├─ <a href="https://github.com/diegonmarcos/cloudy-u-containers">cloudy-u-containers</a>
+│  │  └─ <a href="https://github.com/diegonmarcos/cloudy-u-containers_cgc">cloudy-u-containers_cgc</a>
+│  └─ 1.1.3.2 Linux Desktop User/
+│     ├─ <b>cloudy-u-desktop</b> ◀
+│     └─ <a href="https://github.com/diegonmarcos/cloudy-u-linux">cloudy-u-linux</a>
+├─ 1.1.4 WebApps/
+│  ├─ <a href="https://github.com/diegonmarcos/cloudy-h-webapps-desk">cloudy-h-webapps-desk</a>
+│  └─ <a href="https://github.com/diegonmarcos/cloudy-h-webapps-mob">cloudy-h-webapps-mob</a>
+└─ <a href="https://github.com/diegonmarcos/cloudy-___">cloudy-___</a> (hub)</pre></div></section>
+<section class="box"><h2>Siblings (11)</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/cloudy-a-docs">cloudy-a-docs</a> <span class="dim">backlog · private</span></li><li><a href="https://github.com/diegonmarcos/cloudy-h-webapps-desk">cloudy-h-webapps-desk</a> <span class="dim">html · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-h-webapps-mob">cloudy-h-webapps-mob</a> <span class="dim">html · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-t-infra">cloudy-t-infra</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-u-android">cloudy-u-android</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-u-containers">cloudy-u-containers</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-u-containers_cgc">cloudy-u-containers_cgc</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy-u-linux">cloudy-u-linux</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy_db_LFS">cloudy_db_LFS</a> <span class="dim">lfs · private</span></li><li><a href="https://github.com/diegonmarcos/cloudy_db_assets-cdn">cloudy_db_assets-cdn</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync">cloudy_db_infra-ops-obsv_configs-sync</a> <span class="dim">code · public</span></li></ul></div></section>
+<section class="box"><h2>Links</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/cloudy-u-desktop">GitHub: cloudy-u-desktop</a></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/cloudy-u-desktop/main/README.canvas">README.canvas (raw)</a> <span class="dim">JSON Canvas 1.0</span></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/cloudy-u-desktop/main/README.html">README.html (raw)</a></li><li><a href="https://diegonmarcos.github.io/cloud-webapps/">Pages</a> <span class="dim">declared</span></li><li><a href="https://diegonmarcos.github.io/">domain page</a></li></ul></div></section>
+</aside>
+</div></div>
+<div class="foot">generated by build.sh (A2_repo-readmes) from _git-repos-master: registry projects-repos/v1, GitHub metadata cache 2026-11-18. Do not edit; edit the sources in _git-repos-master.</div>
+</body></html>

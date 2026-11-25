@@ -1,0 +1,510 @@
+{
+  "nodes": [
+    {
+      "id": "6f81308b58f127d9",
+      "type": "group",
+      "label": "1.2 Cloud-Me",
+      "x": 0,
+      "y": 0,
+      "width": 2180,
+      "height": 1320,
+      "color": "5"
+    },
+    {
+      "id": "9bb714feab958e5b",
+      "type": "text",
+      "text": "**cloud-me-___**\nhub · 🌐 public · 1.2.0\ncloud-me hub: the owner's configs across the cloud — links the cloud-me-pub-___ and cloud-me-pvt-___ hubs\n[GitHub](https://github.com/diegonmarcos/cloud-me-___)",
+      "x": 20,
+      "y": 40,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "662d29772408d9ca",
+      "type": "group",
+      "label": "1.2.1 Pub",
+      "x": 20,
+      "y": 190,
+      "width": 1380,
+      "height": 570,
+      "color": "5"
+    },
+    {
+      "id": "79f0dd462c754d25",
+      "type": "text",
+      "text": "**cloud-me-pub-___**\nhub · 🌐 public · 1.2.1.0\nCloud-Me-Pub hub: index of the public cloud-me family\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-___)",
+      "x": 40,
+      "y": 230,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "43d1bde97c35a697",
+      "type": "group",
+      "label": "1.2.1.1 Profiles",
+      "x": 40,
+      "y": 380,
+      "width": 980,
+      "height": 360,
+      "color": "2"
+    },
+    {
+      "id": "4ec2300f1e4141dd",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-___**\nhub · 🌐 public · 1.2.1.1.0\nFront group b_Profiles (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-___)",
+      "x": 60,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "9659432246c2e68c",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-_lnktree**\nhtml · 🌐 public · 1.2.1.1.1\nLinktree site (split from Me-Profiles)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree)",
+      "x": 380,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "9bf8c0801e1b9149",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-leaf.y**\nhtml · 🌐 public · 1.2.1.1.2\nLeaf.y — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y)",
+      "x": 700,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "00a370543a753438",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-nexus.z**\nhtml · 🌐 public · 1.2.1.1.3\nNexus.z — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z)",
+      "x": 60,
+      "y": 570,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "e4a1286d261b3135",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-prf-prs**\nhtml · 🌐 public · 1.2.1.1.4\nProfessional and personal profiles (split from Me-Profiles)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs)",
+      "x": 380,
+      "y": 570,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "de494f7556757dc9",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-stark.x**\nhtml · 🌐 public · 1.2.1.1.5\nStark.x — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x)",
+      "x": 700,
+      "y": 570,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "97b2bd24b44fa014",
+      "type": "group",
+      "label": "1.2.1.2 Shared",
+      "x": 1040,
+      "y": 380,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0f40d87981155b4f",
+      "type": "text",
+      "text": "**cloud-me-pub-shared**  ◀ THIS REPO\ncode · 🌐 public · 1.2.1.2.1\nFront group b_MyData (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-shared)",
+      "x": 1060,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "3"
+    },
+    {
+      "id": "fee26756afb471a5",
+      "type": "group",
+      "label": "1.2.2 Pvt",
+      "x": 1420,
+      "y": 190,
+      "width": 740,
+      "height": 1110,
+      "color": "5"
+    },
+    {
+      "id": "a5894fa048fb1b2c",
+      "type": "text",
+      "text": "**cloud-me-pvt-___**\nhub · 🌐 public · 1.2.2.0\nCloud-Me-Pvt hub: index of the private cloud-me family\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-___)",
+      "x": 1440,
+      "y": 230,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "aefe74b011557c44",
+      "type": "group",
+      "label": "1.2.2.1 AI Memory",
+      "x": 1440,
+      "y": 380,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "f2b5bbcee8c24d69",
+      "type": "text",
+      "text": "**cloud-me-pvt-my-ai**\nai memory · 🔒 private · 1.2.2.1.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)",
+      "x": 1460,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "dedc1c7faa33df1c",
+      "type": "group",
+      "label": "1.2.2.2 CGC",
+      "x": 1800,
+      "y": 380,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "32175cfa8ae1ec61",
+      "type": "text",
+      "text": "**cloud-me-pvt-cgc**\ncode · 🔒 private · 1.2.2.2.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-cgc)",
+      "x": 1820,
+      "y": 420,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "883470f88376a7fd",
+      "type": "group",
+      "label": "1.2.2.3 Configs",
+      "x": 1440,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "c8514e8cbedaab9a",
+      "type": "text",
+      "text": "**cloud-me-pvt-configs**\ncode · 🔒 private · 1.2.2.3.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-configs)",
+      "x": 1460,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "528c0a5d4e6c18ff",
+      "type": "group",
+      "label": "1.2.2.4 Data",
+      "x": 1800,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "549b824cee31906b",
+      "type": "text",
+      "text": "**cloud-me-pvt-data**\ncode · 🔒 private · 1.2.2.4.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-data)",
+      "x": 1820,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "1a59cbaf2cf36285",
+      "type": "group",
+      "label": "1.2.2.5 Notes",
+      "x": 1440,
+      "y": 840,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6efcdd3a5409319b",
+      "type": "text",
+      "text": "**cloud-me-pvt-notes**\ncode · 🔒 private · 1.2.2.5.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-notes)",
+      "x": 1460,
+      "y": 880,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "8f42b1fb4b6b0e25",
+      "type": "group",
+      "label": "1.2.2.6 Vault",
+      "x": 1800,
+      "y": 840,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "8b75baa74ff2ec1d",
+      "type": "text",
+      "text": "**cloud-me-pvt-vault**\ncode · 🔒 private · 1.2.2.6.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
+      "x": 1820,
+      "y": 880,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "3c737ff2dcf1812a",
+      "type": "group",
+      "label": "1.2.2.7 Tasks",
+      "x": 1440,
+      "y": 1070,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6aafe78d8da37edd",
+      "type": "text",
+      "text": "**cloud-me-pvt-tasks**\ncode · 🔒 private · 1.2.2.7.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-tasks)",
+      "x": 1460,
+      "y": 1110,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "37c4c6284302a71c",
+      "type": "link",
+      "url": "https://github.com/diegonmarcos/cloud-me-pub-shared",
+      "x": 2260,
+      "y": 420,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "17ef21f81a7eab45",
+      "type": "link",
+      "url": "https://diegonmarcos.com/",
+      "x": 2260,
+      "y": 500,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "7728124f112cf2b9",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/",
+      "x": 2260,
+      "y": 580,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "2075e4cb2ed95b21",
+      "type": "link",
+      "url": "https://raw.githubusercontent.com/diegonmarcos/cloud-me-pub-shared/main/README.html",
+      "x": 2260,
+      "y": 660,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "639f64a74729d588",
+      "type": "text",
+      "x": 2260,
+      "y": 270,
+      "width": 320,
+      "height": 120,
+      "color": "5",
+      "text": "**cloud-me-pub-shared** README.canvas\nrepos under 1.2 Cloud-Me\nyellow = this repo, purple = hub, green = public, red = private\ngenerated by _git-repos-master build.sh"
+    }
+  ],
+  "edges": [
+    {
+      "id": "5a93098e7075458b",
+      "fromNode": "0f40d87981155b4f",
+      "fromSide": "right",
+      "toNode": "37c4c6284302a71c",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "GitHub"
+    },
+    {
+      "id": "2cb50e408759ca2c",
+      "fromNode": "0f40d87981155b4f",
+      "fromSide": "right",
+      "toNode": "17ef21f81a7eab45",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Pages"
+    },
+    {
+      "id": "c02edcaa6889e196",
+      "fromNode": "0f40d87981155b4f",
+      "fromSide": "right",
+      "toNode": "7728124f112cf2b9",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Domain page"
+    },
+    {
+      "id": "0155f5263b14d118",
+      "fromNode": "0f40d87981155b4f",
+      "fromSide": "right",
+      "toNode": "2075e4cb2ed95b21",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "README.html (raw)"
+    },
+    {
+      "id": "16ee7ca4f97f5e8e",
+      "fromNode": "9bb714feab958e5b",
+      "fromSide": "bottom",
+      "toNode": "79f0dd462c754d25",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "37ab95b1b22e1fd0",
+      "fromNode": "79f0dd462c754d25",
+      "fromSide": "bottom",
+      "toNode": "4ec2300f1e4141dd",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "5e3d82d332560e75",
+      "fromNode": "4ec2300f1e4141dd",
+      "fromSide": "right",
+      "toNode": "9659432246c2e68c",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "949fe16c81bf06a6",
+      "fromNode": "4ec2300f1e4141dd",
+      "fromSide": "right",
+      "toNode": "9bf8c0801e1b9149",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "37829577fbe3451a",
+      "fromNode": "4ec2300f1e4141dd",
+      "fromSide": "bottom",
+      "toNode": "00a370543a753438",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "b7594cfb0bbda0fa",
+      "fromNode": "4ec2300f1e4141dd",
+      "fromSide": "right",
+      "toNode": "e4a1286d261b3135",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "1d26f4c65574f577",
+      "fromNode": "4ec2300f1e4141dd",
+      "fromSide": "right",
+      "toNode": "de494f7556757dc9",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "375ab048622ac0a8",
+      "fromNode": "79f0dd462c754d25",
+      "fromSide": "right",
+      "toNode": "0f40d87981155b4f",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "038bd56d5cfcf4c1",
+      "fromNode": "9bb714feab958e5b",
+      "fromSide": "right",
+      "toNode": "a5894fa048fb1b2c",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "c753225e047ff627",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "bottom",
+      "toNode": "f2b5bbcee8c24d69",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "3d0018c87f22d10e",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "right",
+      "toNode": "32175cfa8ae1ec61",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "94752eedad3e820f",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "bottom",
+      "toNode": "c8514e8cbedaab9a",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "c01fad01193c4843",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "right",
+      "toNode": "549b824cee31906b",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "0755ee1b6dea71e7",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "bottom",
+      "toNode": "6efcdd3a5409319b",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "df99c67f3ea30a17",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "right",
+      "toNode": "8b75baa74ff2ec1d",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "f95a6e99f607aacf",
+      "fromNode": "a5894fa048fb1b2c",
+      "fromSide": "bottom",
+      "toNode": "6aafe78d8da37edd",
+      "toSide": "top",
+      "color": "1"
+    }
+  ]
+}

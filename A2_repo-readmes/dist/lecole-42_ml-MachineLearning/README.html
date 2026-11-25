@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>lecole-42_ml-MachineLearning - diegonmarcos</title>
+<style>
+:root{--bg:#0b0f14;--panel:#10161d;--alt:#141c25;--line:#243040;--text:#cfd8e3;--dim:#7d8b9c;--acc:#3daee9;--pub:#2ecc71;--priv:#ed5565;--hub:#c678dd;--warn:#e5c07b}
+*{box-sizing:border-box}html{background:var(--bg)}
+body{margin:0;color:var(--text);font:12.5px/1.45 ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.top{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:6px 14px;background:var(--panel);border-bottom:1px solid var(--line);color:var(--dim)}
+.top a{color:var(--dim)}.top a:hover{color:var(--acc)}.top b{color:var(--text)}.top i{font-style:normal;color:var(--line)}
+.wrap{max-width:1380px;margin:0 auto;padding:12px 14px}
+h1.t{margin:4px 0 2px;font-size:20px;font-weight:600}h1.t span{color:var(--dim);font-weight:400}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:11px;color:var(--dim);vertical-align:middle;margin-left:6px}
+.badge.public{color:var(--pub);border-color:var(--pub)}.badge.private{color:var(--priv);border-color:var(--priv)}.badge.hub{color:var(--hub);border-color:var(--hub)}
+.desc{color:var(--text);margin:4px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.chip{background:var(--alt);border:1px solid var(--line);border-radius:3px;padding:0 7px;color:var(--acc);font-size:11px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--dim);margin:8px 0}.stats b{color:var(--text);font-weight:500}
+.langbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);margin:8px 0 4px}.langbar i{display:block;height:100%}
+.langs{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--dim);font-size:11px;margin-bottom:10px}.langs s{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;text-decoration:none}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;margin-bottom:12px}
+.box>h2{margin:0;padding:6px 10px;font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);background:var(--alt)}
+.box .in{padding:8px 12px}
+.ft{width:100%;border-collapse:collapse}.ft td{padding:2px 10px;border-top:1px solid var(--alt);white-space:nowrap}.ft tr:first-child td{border-top:0}
+.ft td.k{width:24px;color:var(--dim)}.ft td.r{color:var(--dim);text-align:right}.ft .d a{color:var(--acc)}.ft .f a{color:var(--text)}.ft tr:hover td{background:var(--alt)}
+.md{padding:6px 18px 14px;overflow-wrap:anywhere}.md h1,.md h2{border-bottom:1px solid var(--line);padding-bottom:4px}.md h1{font-size:18px}.md h2{font-size:15px}.md h3{font-size:13.5px}
+.md code{background:var(--alt);padding:0 4px;border-radius:3px;color:var(--warn)}.md pre{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;overflow:auto}.md pre code{background:none;padding:0;color:var(--text)}
+.md blockquote{margin:6px 0;padding:0 12px;border-left:3px solid var(--line);color:var(--dim)}.md hr{border:0;border-top:1px solid var(--line)}
+.md .tw{overflow:auto}.md table{border-collapse:collapse;font-size:12px}.md th,.md td{border:1px solid var(--line);padding:2px 8px;text-align:left;vertical-align:top}.md th{background:var(--alt)}.md a.img{color:var(--dim)}
+dl.meta{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}dl.meta dt{color:var(--dim)}dl.meta dd{margin:0;overflow-wrap:anywhere}
+ul.l{list-style:none;margin:0;padding:0}ul.l li{padding:1px 0;overflow-wrap:anywhere}ul.l li.me{color:var(--warn);font-weight:600}ul.l .dim,.dim{color:var(--dim)}
+pre.pt{margin:0;white-space:pre;overflow:auto;font-size:11.5px;line-height:1.35}pre.pt b{color:var(--warn)}
+.note{color:var(--dim);font-size:11px;margin:6px 0}
+.foot{color:var(--dim);font-size:11px;padding:10px 14px 24px;text-align:center}
+</style></head><body>
+<nav class="top"><a href="https://github.com/diegonmarcos">diegonmarcos</a><i>/</i><a href="https://github.com/diegonmarcos/lecole-42-___">🎓 5 42</a><i>/</i>🧠 5.8 42-machinelearning<i>/</i>5.8.1 ML<i>/</i><b>lecole-42_ml-MachineLearning</b></nav>
+<div class="wrap">
+<h1 class="t"><span>diegonmarcos /</span> lecole-42_ml-MachineLearning <span class="badge public">public</span></h1>
+<div class="desc">&quot;Where I teach computers to be smart so I don't have to be.&quot;</div>
+<div class="chips"><span class="dim">no topics</span></div>
+<div class="stats"><span>branch <b>main</b></span><span>stars <b>0</b></span><span>forks <b>0</b></span><span>size <b>189 KB</b></span><span>pushed <b>2026-11-17</b></span><span>code <b>5.8.1.1</b></span><span>kind <b>code</b></span></div>
+<div class="langbar"><i style="width:78.43%;background:#89e051" title="Shell 78.4%"></i><i style="width:11.78%;background:#3572a5" title="Python 11.8%"></i><i style="width:9.79%;background:#f1e05a" title="JavaScript 9.8%"></i></div>
+<div class="langs"><span><s style="background:#89e051"></s>Shell 78.4%</span><span><s style="background:#3572a5"></s>Python 11.8%</span><span><s style="background:#f1e05a"></s>JavaScript 9.8%</span></div>
+<div class="cols">
+<main>
+<section class="box"><h2>Files <span class="dim">(main)</span></h2><table class="ft"><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/tree/main/.claude">.claude/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/tree/main/.github">.github/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/tree/main/0_hub">0_hub/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/tree/main/_dotfiles">_dotfiles/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/tree/main/test_data">test_data/</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/.env.example">.env.example</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/.gitmodules">.gitmodules</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/.mcp.json">.mcp.json</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/API_SPECIFICATIONS.md">API_SPECIFICATIONS.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/ARCHITECTURE.md">ARCHITECTURE.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/CLAUDE.md">CLAUDE.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/COST_MANAGEMENT.md">COST_MANAGEMENT.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/DEPLOYMENT.md">DEPLOYMENT.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/LICENSE">LICENSE</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/LICENSING.md">LICENSING.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/N8N_WORKFLOWS.md">N8N_WORKFLOWS.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/QUICK_START.md">QUICK_START.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/README.canvas">README.canvas</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/README.html">README.html</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/README.md">README.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/UI_DESIGN.md">UI_DESIGN.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/VPS_PROVIDERS.md">VPS_PROVIDERS.md</a></td><td class="r"></td></tr></table></section>
+<section class="box"><h2>README.md</h2><div class="md"><h1 id="n8n-model-orchestration-platfo">n8n Model Orchestration Platform</h1>
+<p>🎓 42 <code>5</code> › 🧠 42-machinelearning <code>5.8</code> › ML <code>5.8.1</code></p>
+<blockquote><p>&quot;Where I teach computers to be smart so I don't have to be.&quot;</p></blockquote>
+<div class="tw"><table><thead><tr><th>Code</th><th>Visibility</th><th>Hub</th><th>Developer</th><th>Farm folder</th></tr></thead><tbody><tr><td><code>5.8.1.1</code></td><td>🌐 public</td><td><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <code>5.0</code></td><td>lecole42</td><td><code>5.Lecole-42/</code></td></tr></tbody></table></div>
+<blockquote><p>&quot;Where I teach computers to be smart so I don't have to be.&quot;</p></blockquote>
+<p>A comprehensive platform for orchestrating fine-tuning of open-source language models using private data across multiple VPS providers, with built-in cost management and monitoring capabilities.</p>
+<h2 id="overview">Overview</h2>
+<p>This platform provides an end-to-end solution for:</p>
+<ul><li><strong>Fine-tuning LLMs</strong>: Support for Llama, GPT-Neo, Mistral, Falcon, and other open-source models</li><li><strong>Multi-Provider Management</strong>: Seamless integration with RunPod, Vast.ai, Lambda Labs, Modal, and more</li><li><strong>Cost Optimization</strong>: Real-time cost tracking, forecasting, and optimization recommendations</li><li><strong>n8n Orchestration</strong>: Powerful workflow automation for complex ML pipelines</li><li><strong>Private Data Handling</strong>: Secure management of proprietary training datasets</li><li><strong>Pay-Per-Use Model</strong>: Optimize costs with flexible VPS provider selection</li></ul>
+<h2 id="key-features">Key Features</h2>
+<h3 id="training-orchestration">🚀 Training Orchestration</h3>
+<ul><li>Automated provider selection based on cost and availability</li><li>Support for full fine-tuning, LoRA, and QLoRA</li><li>Real-time progress monitoring and metrics</li><li>Automatic checkpointing and recovery</li><li>Distributed training support</li></ul>
+<h3 id="cost-management">💰 Cost Management</h3>
+<ul><li>Real-time cost tracking across all providers</li><li>Budget management with alerts and hard limits</li><li>Cost forecasting using ML models</li><li>Optimization recommendations</li><li>Detailed cost breakdowns and analytics</li></ul>
+<h3 id="provider-management">🔧 Provider Management</h3>
+<ul><li>Unified interface for 6+ VPS providers</li><li>Automatic failover and retry logic</li><li>Health monitoring and alerting</li><li>Dynamic pricing and availability tracking</li><li>Spot instance support</li></ul>
+<h3 id="comprehensive-ui">📊 Comprehensive UI</h3>
+<ul><li>Modern React dashboard with real-time updates</li><li>Visual workflow designer (n8n integration)</li><li>Cost analytics and visualization</li><li>Dataset and model management</li><li>Team collaboration features</li></ul>
+<h3 id="security-privacy">🔐 Security &amp; Privacy</h3>
+<ul><li>End-to-end encryption for private data</li><li>RBAC and multi-tenant isolation</li><li>Secure credential management with Vault</li><li>Audit logging and compliance</li></ul>
+<h3 id="monitoring-observability">📈 Monitoring &amp; Observability</h3>
+<ul><li>Prometheus metrics collection</li><li>Grafana dashboards</li><li>Real-time WebSocket updates</li><li>Comprehensive logging</li><li>Alert management</li></ul>
+<h2 id="documentation">Documentation</h2>
+<h3 id="core-documentation">Core Documentation</h3>
+<ul><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/ARCHITECTURE.md">ARCHITECTURE.md</a></strong> - System architecture and design overview</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/VPS_PROVIDERS.md">VPS_PROVIDERS.md</a></strong> - Provider integration specifications</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/COST_MANAGEMENT.md">COST_MANAGEMENT.md</a></strong> - Cost tracking and optimization</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/UI_DESIGN.md">UI_DESIGN.md</a></strong> - Frontend UI/UX specifications</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/N8N_WORKFLOWS.md">N8N_WORKFLOWS.md</a></strong> - Workflow automation designs</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/API_SPECIFICATIONS.md">API_SPECIFICATIONS.md</a></strong> - RESTful API documentation</li><li><strong><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/DEPLOYMENT.md">DEPLOYMENT.md</a></strong> - Deployment and infrastructure guide</li></ul>
+<h3 id="quick-links">Quick Links</h3>
+<ul><li><a href="#getting-started">Getting Started</a></li><li><a href="#supported-models">Supported Models</a></li><li><a href="#vps-providers">VPS Providers</a></li><li><a href="#cost-comparison">Cost Comparison</a></li><li><a href="#roadmap">Roadmap</a></li><li><a href="#contributing">Contributing</a></li></ul>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                     User Interface (React)                   │
+│  Dashboard • Jobs • Models • Datasets • Cost • Providers    │
+└─────────────────────────────────────────────────────────────┘
+                           │
+┌─────────────────────────────────────────────────────────────┐
+│                      API Gateway (FastAPI)                   │
+│  Authentication • Rate Limiting • Request Validation        │
+└─────────────────────────────────────────────────────────────┘
+                           │
+┌─────────────────────────────────────────────────────────────┐
+│                   n8n Orchestration Layer                    │
+│  Job Management • Cost Tracking • Provider Selection        │
+└─────────────────────────────────────────────────────────────┘
+                           │
+┌─────────────────────────────────────────────────────────────┐
+│                    VPS Provider Layer                        │
+│  RunPod • Vast.ai • Lambda • Modal • TensorDock • CoreWeave│
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="technology-stack">Technology Stack</h2>
+<h3 id="backend">Backend</h3>
+<ul><li><strong>Python 3.11+</strong>: Core API and services</li><li><strong>FastAPI</strong>: REST API framework</li><li><strong>PostgreSQL</strong>: Primary database</li><li><strong>TimescaleDB</strong>: Time-series metrics</li><li><strong>Redis</strong>: Caching and job queues</li><li><strong>n8n</strong>: Workflow orchestration</li><li><strong>MinIO</strong>: Object storage</li></ul>
+<h3 id="frontend">Frontend</h3>
+<ul><li><strong>React 18</strong>: UI framework</li><li><strong>TypeScript</strong>: Type safety</li><li><strong>TailwindCSS</strong>: Styling</li><li><strong>Recharts</strong>: Data visualization</li><li><strong>React Query</strong>: State management</li><li><strong>Socket.io</strong>: Real-time updates</li></ul>
+<h3 id="infrastructure">Infrastructure</h3>
+<ul><li><strong>Docker</strong>: Containerization</li><li><strong>Kubernetes</strong>: Orchestration</li><li><strong>Prometheus</strong>: Metrics</li><li><strong>Grafana</strong>: Visualization</li><li><strong>Terraform</strong>: Infrastructure as code</li></ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul><li>Docker 24.0+</li><li>Docker Compose 2.20+</li><li>Node.js 18+ (for local frontend development)</li><li>Python 3.11+ (for local backend development)</li></ul>
+<h3 id="quick-start">Quick Start</h3>
+<ol><li><strong>Clone the repository</strong></li></ol>
+<pre><code class="lang-bash">git clone https://github.com/your-org/ml-orchestration-platform.git
+cd ml-orchestration-platform</code></pre>
+<ol><li><strong>Configure environment</strong></li></ol>
+<pre><code class="lang-bash">cp .env.example .env
+# Edit .env with your API keys and configuration</code></pre>
+<ol><li><strong>Start services</strong></li></ol>
+<pre><code class="lang-bash">docker-compose up -d</code></pre>
+<ol><li><strong>Access the platform</strong></li><li>Frontend: <a href="http://localhost:3000">http://localhost:3000</a></li><li>API Docs: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a></li><li>n8n: <a href="http://localhost:5678">http://localhost:5678</a></li></ol>
+<ol><li><strong>Create your first training job</strong></li><li>Navigate to <a href="http://localhost:3000">http://localhost:3000</a></li><li>Upload a dataset</li><li>Select a model</li><li>Configure training parameters</li><li>Submit job and monitor progress</li></ol>
+<p>For detailed setup instructions, see <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/DEPLOYMENT.md">DEPLOYMENT.md</a>.</p>
+<h2 id="supported-models">Supported Models</h2>
+<h3 id="language-models">Language Models</h3>
+<div class="tw"><table><thead><tr><th>Model</th><th>Size</th><th>Use Case</th><th>Recommended GPU</th></tr></thead><tbody><tr><td>Llama 2</td><td>7B, 13B, 70B</td><td>General purpose</td><td>A100, H100</td></tr><tr><td>Mistral</td><td>7B</td><td>Fast inference</td><td>RTX 4090, A100</td></tr><tr><td>GPT-Neo</td><td>1.3B, 2.7B, 20B</td><td>Cost-effective</td><td>RTX 3090, A100</td></tr><tr><td>Falcon</td><td>7B, 40B, 180B</td><td>Long context</td><td>A100, H100</td></tr><tr><td>Qwen</td><td>1.8B, 7B, 14B, 72B</td><td>Multilingual</td><td>A100</td></tr><tr><td>DeepSeek</td><td>1.3B, 7B, 33B</td><td>Code generation</td><td>RTX 4090, A100</td></tr></tbody></table></div>
+<h3 id="training-methods">Training Methods</h3>
+<ul><li><strong>Full Fine-tuning</strong>: Complete model parameter updates</li><li><strong>LoRA</strong>: Low-rank adaptation (efficient, recommended)</li><li><strong>QLoRA</strong>: Quantized LoRA (most cost-effective)</li><li><strong>Prefix Tuning</strong>: Lightweight adaptation</li><li><strong>Adapter Layers</strong>: Modular fine-tuning</li></ul>
+<h2 id="vps-providers">VPS Providers</h2>
+<h3 id="supported-providers">Supported Providers</h3>
+<div class="tw"><table><thead><tr><th>Provider</th><th>GPU Types</th><th>Billing</th><th>Price Range</th><th>Availability</th></tr></thead><tbody><tr><td><strong>RunPod</strong></td><td>RTX 3090, 4090, A100, H100</td><td>Per-second</td><td>$0.39-$4.99/hr</td><td>High</td></tr><tr><td><strong>Vast.ai</strong></td><td>Various (marketplace)</td><td>Per-hour</td><td>$0.10-$5.00/hr</td><td>High</td></tr><tr><td><strong>Lambda Labs</strong></td><td>RTX 6000, A100, H100</td><td>Per-minute</td><td>$0.60-$13.20/hr</td><td>Medium</td></tr><tr><td><strong>Modal</strong></td><td>A100, H100</td><td>Per-second</td><td>$0.00003-$0.00006/sec</td><td>High</td></tr><tr><td><strong>TensorDock</strong></td><td>RTX 3060-4090, A100</td><td>Per-hour</td><td>$0.19-$2.39/hr</td><td>Medium</td></tr><tr><td><strong>CoreWeave</strong></td><td>A100, H100</td><td>Per-hour</td><td>Enterprise</td><td>Medium</td></tr></tbody></table></div>
+<p>For detailed provider specifications, see <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/VPS_PROVIDERS.md">VPS_PROVIDERS.md</a>.</p>
+<h2 id="cost-comparison">Cost Comparison</h2>
+<h3 id="example-fine-tuning-llama-2-7b">Example: Fine-tuning Llama 2 7B (LoRA)</h3>
+<div class="tw"><table><thead><tr><th>Provider</th><th>GPU</th><th>Duration</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr><td>RunPod</td><td>4x A100</td><td>4 hours</td><td>$21.60</td><td>Spot available</td></tr><tr><td>Vast.ai</td><td>4x A100</td><td>4 hours</td><td>$16.20</td><td>Community hosts</td></tr><tr><td>Lambda Labs</td><td>4x A100</td><td>4 hours</td><td>$17.60</td><td>Reliable</td></tr><tr><td>Modal</td><td>4x A100</td><td>4 hours</td><td>$19.44</td><td>Serverless</td></tr></tbody></table></div>
+<p><strong>Estimated savings with optimization</strong>: 15-30% through automatic provider selection</p>
+<p>For detailed cost analysis, see <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/COST_MANAGEMENT.md">COST_MANAGEMENT.md</a>.</p>
+<h2 id="core-workflows">Core Workflows</h2>
+<h3 id="1-training-job-lifecycle">1. Training Job Lifecycle</h3>
+<pre><code>Submit Job → Validate → Check Budget → Select Provider →
+Provision Resources → Upload Data → Train → Monitor →
+Save Checkpoints → Complete → Cleanup → Store Model</code></pre>
+<h3 id="2-cost-tracking">2. Cost Tracking</h3>
+<pre><code>Job Starts → Track Cost (every 30s) → Check Budget →
+Alert if Threshold → Stop if Hard Limit → Finalize Cost</code></pre>
+<h3 id="3-provider-health-monitoring">3. Provider Health Monitoring</h3>
+<pre><code>Schedule (5 min) → Check API Health → Check Availability →
+Calculate Score → Update Status → Alert if Down</code></pre>
+<p>For complete workflow specifications, see <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/N8N_WORKFLOWS.md">N8N_WORKFLOWS.md</a>.</p>
+<h2 id="api-examples">API Examples</h2>
+<h3 id="create-training-job">Create Training Job</h3>
+<pre><code class="lang-python">import requests
+
+response = requests.post(
+    'http://localhost:8000/v1/jobs',
+    headers={'Authorization': 'Bearer YOUR_TOKEN'},
+    json={
+        'name': 'llama-2-7b-custom',
+        'model_name': 'meta-llama/Llama-2-7b-hf',
+        'dataset_id': 'ds_123',
+        'training_config': {
+            'training_type': 'lora',
+            'epochs': 10,
+            'batch_size': 4,
+            'learning_rate': 2e-5
+        }
+    }
+)
+
+job = response.json()
+print(f&quot;Job created: {job['id']}&quot;)</code></pre>
+<h3 id="monitor-progress">Monitor Progress</h3>
+<pre><code class="lang-javascript">import { io } from 'socket.io-client';
+
+const socket = io('ws://localhost:8000', {
+  auth: { token: 'YOUR_TOKEN' }
+});
+
+socket.on('job:status', (data) =&gt; {
+  console.log(`Progress: ${data.progress}%`);
+  console.log(`Cost: $${data.current_cost}`);
+});</code></pre>
+<p>For complete API documentation, see <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/API_SPECIFICATIONS.md">API_SPECIFICATIONS.md</a>.</p>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-customer-support-chatbot">1. Customer Support Chatbot</h3>
+<p>Fine-tune Llama 2 7B on your support conversations to create a custom chatbot that understands your products and policies.</p>
+<p><strong>Dataset</strong>: 50K customer conversations <strong>Model</strong>: Llama 2 7B with LoRA <strong>Cost</strong>: ~$20 per training run <strong>Time</strong>: 4-6 hours</p>
+<h3 id="2-code-generation">2. Code Generation</h3>
+<p>Adapt DeepSeek Coder to your company's coding standards and internal APIs.</p>
+<p><strong>Dataset</strong>: 100K code samples <strong>Model</strong>: DeepSeek Coder 7B <strong>Cost</strong>: ~$25 per training run <strong>Time</strong>: 5-7 hours</p>
+<h3 id="3-domain-specific-qa">3. Domain-Specific Q&amp;A</h3>
+<p>Create a specialized model for medical, legal, or financial Q&amp;A.</p>
+<p><strong>Dataset</strong>: Domain-specific documents <strong>Model</strong>: Mistral 7B with LoRA <strong>Cost</strong>: ~$18 per training run <strong>Time</strong>: 3-5 hours</p>
+<h3 id="4-multilingual-translation">4. Multilingual Translation</h3>
+<p>Fine-tune Qwen for high-quality translation in specific language pairs.</p>
+<p><strong>Dataset</strong>: Parallel text corpus <strong>Model</strong>: Qwen 7B <strong>Cost</strong>: ~$22 per training run <strong>Time</strong>: 4-6 hours</p>
+<h2 id="roadmap">Roadmap</h2>
+<h3 id="phase-1-core-platform-q1-2025">Phase 1: Core Platform (Q1 2025) ✓</h3>
+<ul><li>☑ Multi-provider integration</li><li>☑ Cost tracking and management</li><li>☑ n8n workflow orchestration</li><li>☑ Basic UI</li><li>☑ API development</li></ul>
+<h3 id="phase-2-advanced-features-q2-2">Phase 2: Advanced Features (Q2 2025)</h3>
+<ul><li>☐ Distributed training support</li><li>☐ Model marketplace</li><li>☐ Advanced optimization algorithms</li><li>☐ Team collaboration features</li><li>☐ Enhanced security features</li></ul>
+<h3 id="phase-3-enterprise-features-q3">Phase 3: Enterprise Features (Q3 2025)</h3>
+<ul><li>☐ Multi-region deployment</li><li>☐ Advanced analytics</li><li>☐ Custom model serving</li><li>☐ SLA guarantees</li><li>☐ White-label options</li></ul>
+<h3 id="phase-4-ml-operations-q4-2025">Phase 4: ML Operations (Q4 2025)</h3>
+<ul><li>☐ AutoML integration</li><li>☐ Hyperparameter optimization</li><li>☐ A/B testing framework</li><li>☐ Model versioning and rollback</li><li>☐ Production deployment automation</li></ul>
+<h2 id="performance-metrics">Performance Metrics</h2>
+<h3 id="platform-performance">Platform Performance</h3>
+<ul><li><strong>API Response Time</strong>: &lt;200ms (p95)</li><li><strong>Job Submission</strong>: &lt;5 seconds</li><li><strong>Real-time Updates</strong>: &lt;1 second latency</li><li><strong>System Uptime</strong>: 99.9% target</li></ul>
+<h3 id="training-performance">Training Performance</h3>
+<ul><li><strong>Llama 2 7B LoRA</strong>: 4-6 hours (4x A100)</li><li><strong>Mistral 7B</strong>: 3-5 hours (4x A100)</li><li><strong>Cost Optimization</strong>: 15-30% savings vs single provider</li></ul>
+<h2 id="security">Security</h2>
+<ul><li><strong>Encryption</strong>: AES-256 at rest, TLS 1.3 in transit</li><li><strong>Authentication</strong>: JWT with refresh tokens</li><li><strong>Authorization</strong>: Role-based access control (RBAC)</li><li><strong>Compliance</strong>: GDPR, SOC 2 ready</li><li><strong>Audit</strong>: Comprehensive logging</li></ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see our contributing guidelines:</p>
+<ol><li>Fork the repository</li><li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li><li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li><li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li><li>Open a Pull Request</li></ol>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<h2 id="support">Support</h2>
+<ul><li><strong>Documentation</strong>: See docs folder</li><li><strong>Issues</strong>: <a href="https://github.com/your-org/ml-orchestration-platform/issues">GitHub Issues</a></li><li><strong>Discussions</strong>: <a href="https://github.com/your-org/ml-orchestration-platform/discussions">GitHub Discussions</a></li><li><strong>Email</strong>: support@mlplatform.com</li></ul>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>This project integrates with and is inspired by many amazing tools:</p>
+<ul><li><strong>n8n</strong>: Workflow automation</li><li><strong>Hugging Face</strong>: Model hub and transformers</li><li><strong>Ray</strong>: Distributed computing</li><li><strong>Weights &amp; Biases</strong>: Experiment tracking</li><li>All the VPS providers who make GPU compute accessible</li></ul>
+<h2 id="team">Team</h2>
+<ul><li><strong>Architecture</strong>: [Your Name]</li><li><strong>Backend</strong>: [Developer Names]</li><li><strong>Frontend</strong>: [Developer Names]</li><li><strong>DevOps</strong>: [Developer Names]</li></ul>
+<hr>
+<p><strong>Built with ❤️ for the ML community</strong></p>
+<p><em>Making fine-tuning accessible, affordable, and automated.</em></p>
+<h2 id="folders">Folders</h2>
+<p>Top three folder levels, from the registry snapshot (<code>node refresh-folders-tree.js</code> in _git-repos-master).</p>
+<pre><code>lecole-42_ml-MachineLearning/
+├── .claude/
+├── 0_hub/
+│   └── lecole-42-___ (submodule)
+└── test_data/
+    └── results/</code></pre>
+<h2 id="readme">README</h2>
+<p>This README is rendered from one template and data, like every repo in the account: the registry node (<code>_dotfiles/readme/node.json</code>, from <a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <code>projects-repos.json</code>) and this repo's prose (<code>_dotfiles/readme/readme.json</code>). Edit <code>readme.json</code>, run <code>_dotfiles/readme/render-readme.sh</code>; <code>--check</code> is the drift guard.</p></div></section>
+</main>
+<aside>
+<section class="box"><h2>About</h2><div class="in"><dl class="meta"><dt>visibility</dt><dd>public</dd><dt>default branch</dt><dd>main</dd><dt>licence</dt><dd>Required Notice: Copyright 2026 Diego Nepomuceno Marcos — https://diegonmarcos.com</dd><dt>size</dt><dd>189 KB</dd><dt>last push</dt><dd>2026-11-17 22:27:42 UTC</dd><dt>stars / forks</dt><dd>0 / 0</dd><dt>area</dt><dd>42</dd><dt>project</dt><dd>42-machinelearning</dd><dt>family</dt><dd>ML</dd><dt>developer</dt><dd>lecole42</dd><dt>farm folder</dt><dd>5.Lecole-42</dd><dt>role</dt><dd>code</dd><dt>Pages</dt><dd>&lt;span class=&quot;dim&quot;&gt;none declared&lt;/span&gt;</dd><dt>domain page</dt><dd><a href="https://diegonmarcos.github.io/">https://diegonmarcos.github.io/</a></dd></dl></div></section>
+<section class="box"><h2>Parent project</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <span class="dim">hub · 5.0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">hub · 0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">registry root</span></li></ul></div></section>
+<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">5.8 42-machinelearning/
+└─ 5.8.1 ML/
+   └─ <b>lecole-42_ml-MachineLearning</b> ◀</pre></div></section>
+<section class="box"><h2>Siblings (9)</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-projects">lecole-42-projects</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Algo">lecole-42_back-Algo</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Graphic">lecole-42_back-Graphic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-System">lecole-42_back-System</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare">lecole-42_cyber-Cyberwarfare</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_dev">lecole-42_dev</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-Agentic">lecole-42_ml-Agentic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience">lecole-42_ml-DataScience</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs">lecole-42_ops-Mylibs</a> <span class="dim">code · public</span></li></ul></div></section>
+<section class="box"><h2>Links</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning">GitHub: lecole-42_ml-MachineLearning</a></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ml-MachineLearning/main/README.canvas">README.canvas (raw)</a> <span class="dim">JSON Canvas 1.0</span></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ml-MachineLearning/main/README.html">README.html (raw)</a></li><li><a href="https://diegonmarcos.github.io/">domain page</a></li></ul></div></section>
+</aside>
+</div></div>
+<div class="foot">generated by build.sh (A2_repo-readmes) from _git-repos-master: registry projects-repos/v1, GitHub metadata cache 2026-11-18. Do not edit; edit the sources in _git-repos-master.</div>
+</body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{title}}</title>
+<style>
+{{style}}
+</style></head><body>
+<nav class="top">{{crumbs}}</nav>
+<div class="wrap">
+<h1 class="t"><span>{{owner}} /</span> {{name}} <span class="badge {{visibility}}">{{visibility}}</span>{{hubbadge}}</h1>
+<div class="desc">{{description}}</div>
+<div class="chips">{{topics}}</div>
+<div class="stats">{{stats}}</div>
+<div class="langbar">{{langbar}}</div>
+<div class="langs">{{langs}}</div>
+<div class="cols">
+<main>
+<section class="box"><h2>Files <span class="dim">({{branch}})</span></h2>{{files}}</section>
+<section class="box"><h2>README.md</h2><div class="md">{{readme}}</div></section>
+</main>
+<aside>
+<section class="box"><h2>About</h2><div class="in"><dl class="meta">{{meta}}</dl>{{clonenote}}</div></section>
+<section class="box"><h2>Parent project</h2><div class="in"><ul class="l">{{parents}}</ul></div></section>
+<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">{{ptree}}</pre></div></section>
+<section class="box"><h2>Siblings ({{nsib}})</h2><div class="in"><ul class="l">{{siblings}}</ul></div></section>
+<section class="box"><h2>Links</h2><div class="in"><ul class="l">{{links}}</ul></div></section>
+</aside>
+</div></div>
+<div class="foot">{{foot}}</div>
+</body></html>

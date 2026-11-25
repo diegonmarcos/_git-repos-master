@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>lecole-42_ops-Mylibs - diegonmarcos</title>
+<style>
+:root{--bg:#0b0f14;--panel:#10161d;--alt:#141c25;--line:#243040;--text:#cfd8e3;--dim:#7d8b9c;--acc:#3daee9;--pub:#2ecc71;--priv:#ed5565;--hub:#c678dd;--warn:#e5c07b}
+*{box-sizing:border-box}html{background:var(--bg)}
+body{margin:0;color:var(--text);font:12.5px/1.45 ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.top{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:6px 14px;background:var(--panel);border-bottom:1px solid var(--line);color:var(--dim)}
+.top a{color:var(--dim)}.top a:hover{color:var(--acc)}.top b{color:var(--text)}.top i{font-style:normal;color:var(--line)}
+.wrap{max-width:1380px;margin:0 auto;padding:12px 14px}
+h1.t{margin:4px 0 2px;font-size:20px;font-weight:600}h1.t span{color:var(--dim);font-weight:400}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:11px;color:var(--dim);vertical-align:middle;margin-left:6px}
+.badge.public{color:var(--pub);border-color:var(--pub)}.badge.private{color:var(--priv);border-color:var(--priv)}.badge.hub{color:var(--hub);border-color:var(--hub)}
+.desc{color:var(--text);margin:4px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.chip{background:var(--alt);border:1px solid var(--line);border-radius:3px;padding:0 7px;color:var(--acc);font-size:11px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--dim);margin:8px 0}.stats b{color:var(--text);font-weight:500}
+.langbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);margin:8px 0 4px}.langbar i{display:block;height:100%}
+.langs{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--dim);font-size:11px;margin-bottom:10px}.langs s{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;text-decoration:none}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;margin-bottom:12px}
+.box>h2{margin:0;padding:6px 10px;font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);background:var(--alt)}
+.box .in{padding:8px 12px}
+.ft{width:100%;border-collapse:collapse}.ft td{padding:2px 10px;border-top:1px solid var(--alt);white-space:nowrap}.ft tr:first-child td{border-top:0}
+.ft td.k{width:24px;color:var(--dim)}.ft td.r{color:var(--dim);text-align:right}.ft .d a{color:var(--acc)}.ft .f a{color:var(--text)}.ft tr:hover td{background:var(--alt)}
+.md{padding:6px 18px 14px;overflow-wrap:anywhere}.md h1,.md h2{border-bottom:1px solid var(--line);padding-bottom:4px}.md h1{font-size:18px}.md h2{font-size:15px}.md h3{font-size:13.5px}
+.md code{background:var(--alt);padding:0 4px;border-radius:3px;color:var(--warn)}.md pre{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;overflow:auto}.md pre code{background:none;padding:0;color:var(--text)}
+.md blockquote{margin:6px 0;padding:0 12px;border-left:3px solid var(--line);color:var(--dim)}.md hr{border:0;border-top:1px solid var(--line)}
+.md .tw{overflow:auto}.md table{border-collapse:collapse;font-size:12px}.md th,.md td{border:1px solid var(--line);padding:2px 8px;text-align:left;vertical-align:top}.md th{background:var(--alt)}.md a.img{color:var(--dim)}
+dl.meta{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}dl.meta dt{color:var(--dim)}dl.meta dd{margin:0;overflow-wrap:anywhere}
+ul.l{list-style:none;margin:0;padding:0}ul.l li{padding:1px 0;overflow-wrap:anywhere}ul.l li.me{color:var(--warn);font-weight:600}ul.l .dim,.dim{color:var(--dim)}
+pre.pt{margin:0;white-space:pre;overflow:auto;font-size:11.5px;line-height:1.35}pre.pt b{color:var(--warn)}
+.note{color:var(--dim);font-size:11px;margin:6px 0}
+.foot{color:var(--dim);font-size:11px;padding:10px 14px 24px;text-align:center}
+</style></head><body>
+<nav class="top"><a href="https://github.com/diegonmarcos">diegonmarcos</a><i>/</i><a href="https://github.com/diegonmarcos/lecole-42-___">🎓 5 42</a><i>/</i>📚 5.4 42-mylibs<i>/</i>5.4.1 Ops<i>/</i><b>lecole-42_ops-Mylibs</b></nav>
+<div class="wrap">
+<h1 class="t"><span>diegonmarcos /</span> lecole-42_ops-Mylibs <span class="badge public">public</span></h1>
+<div class="desc">__&quot;Every library has its first book, but not the last&quot;__: MyLibC, MylibC++, MyTools, for Memory Management and Data Manipulation.</div>
+<div class="chips"><span class="dim">no topics</span></div>
+<div class="stats"><span>branch <b>main</b></span><span>stars <b>0</b></span><span>forks <b>0</b></span><span>size <b>115.8 MB</b></span><span>pushed <b>2026-11-17</b></span><span>code <b>5.4.1.1</b></span><span>kind <b>code</b></span></div>
+<div class="langbar"><i style="width:55.58%;background:#888" title="C 55.6%"></i><i style="width:39.42%;background:#89e051" title="Shell 39.4%"></i><i style="width:4.20%;background:#f1e05a" title="JavaScript 4.2%"></i><i style="width:0.36%;background:#427819" title="Makefile 0.4%"></i><i style="width:0.31%;background:#f34b7d" title="C++ 0.3%"></i><i style="width:0.13%;background:#79c0ff" title="Perl 0.1%"></i></div>
+<div class="langs"><span><s style="background:#888"></s>C 55.6%</span><span><s style="background:#89e051"></s>Shell 39.4%</span><span><s style="background:#f1e05a"></s>JavaScript 4.2%</span><span><s style="background:#427819"></s>Makefile 0.4%</span><span><s style="background:#f34b7d"></s>C++ 0.3%</span><span><s style="background:#79c0ff"></s>Perl 0.1%</span></div>
+<div class="cols">
+<main>
+<section class="box"><h2>Files <span class="dim">(main)</span></h2><table class="ft"><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/.claude">.claude/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/.github">.github/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/0_hub">0_hub/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/_dotfiles">_dotfiles/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/mylibc">mylibc/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/mylibcpp">mylibcpp/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/mylibx">mylibx/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/mytools">mytools/</a></td><td class="r"></td></tr><tr><td class="k">▸</td><td class="d"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/tree/main/myunittest">myunittest/</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/.gitignore">.gitignore</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/.gitmodules">.gitmodules</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/.mcp.json">.mcp.json</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/CLAUDE.md">CLAUDE.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/LICENSE">LICENSE</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/LICENSING.md">LICENSING.md</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/README.canvas">README.canvas</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/README.html">README.html</a></td><td class="r"></td></tr><tr><td class="k">·</td><td class="f"><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs/blob/main/README.md">README.md</a></td><td class="r"></td></tr></table></section>
+<section class="box"><h2>README.md</h2><div class="md"><h1 id="my-libraries---a-backend-devel">My Libraries - A Backend Development Learning Path</h1>
+<p>🎓 42 <code>5</code> › 📚 42-mylibs <code>5.4</code> › Ops <code>5.4.1</code></p>
+<blockquote><p>__&quot;Every library has its first book, but not the last&quot;__: MyLibC, MylibC++, MyTools, for Memory Management and Data Manipulation.</p></blockquote>
+<div class="tw"><table><thead><tr><th>Code</th><th>Visibility</th><th>Hub</th><th>Developer</th><th>Farm folder</th></tr></thead><tbody><tr><td><code>5.4.1.1</code></td><td>🌐 public</td><td><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <code>5.0</code></td><td>lecole42</td><td><code>5.Lecole-42/</code></td></tr></tbody></table></div>
+<p>This repository represents a journey through backend development, with a focus on system-level programming, algorithms, and graphics. It contains a collection of self-made libraries and tools that are used across various system-level projects.</p>
+<h2 id="core-concepts">Core Concepts</h2>
+<p>The libraries in this repository are built from scratch to provide a deep understanding of fundamental concepts in computer science. The main areas of focus are:</p>
+<ul><li><strong>System-Level Programming:</strong> Understanding how the operating system works, memory management, file I/O, and process management.</li><li><strong>Algorithms and Data Structures:</strong> Implementing and using a variety of algorithms (sorting, searching, etc.) and data structures (linked lists, hash tables, trees, etc.).</li><li><strong>Graphics:</strong> Exploring the basics of computer graphics, from drawing pixels to creating simple graphical applications.</li></ul>
+<h2 id="repository-structure">Repository Structure</h2>
+<p>This repository is organized into several sub-repositories, each with a specific purpose:</p>
+<h3 id="mylibc"><code>mylibc</code></h3>
+<p>This is a C library that forms the core of this repository. It contains a wide range of functions and data structures, including:</p>
+<ul><li><strong>Memory Management:</strong> Custom memory allocation and management functions.</li><li><strong>String Manipulation:</strong> A comprehensive set of functions for string manipulation.</li><li><strong>Data Structures:</strong> Implementations of linked lists, hash tables, binary trees, and more.</li><li><strong>Algorithms:</strong> Various sorting and searching algorithms.</li><li><strong>File I/O:</strong> Functions for reading from and writing to files.</li></ul>
+<h3 id="mylibcpp"><code>mylibcpp</code></h3>
+<p>This is a C++ library that is still under development. It is intended to be a C++ equivalent of <code>mylibc</code>, with a more object-oriented approach.</p>
+<h3 id="mylibx"><code>mylibx</code></h3>
+<p>This is a graphics library for creating simple graphical applications. It is built on top of the X11 and MiniLibX libraries and provides a simple interface for drawing pixels, lines, and other shapes.</p>
+<h3 id="mytools"><code>mytools</code></h3>
+<p>This directory contains a collection of helper scripts, configuration files, and notes for development. It includes:</p>
+<ul><li><strong>Shell Scripts:</strong> A variety of shell scripts for automating common tasks.</li><li><strong>Configuration Files:</strong> Configuration files for various tools and applications.</li><li><strong>Notes:</strong> Notes and documentation on various topics.</li></ul>
+<h3 id="myunittest"><code>myunittest</code></h3>
+<p>This is a unit testing framework for the libraries in this repository. It is used to ensure the quality and correctness of the code.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This repository is a work in progress, and it is constantly being updated with new libraries, tools, and documentation. It is a valuable resource for anyone who wants to learn about backend development, system-level programming, and computer science in general.</p>
+<h2 id="folders">Folders</h2>
+<p>Top three folder levels, from the registry snapshot (<code>node refresh-folders-tree.js</code> in _git-repos-master).</p>
+<pre><code>lecole-42_ops-Mylibs/
+├── .claude/
+├── 0_hub/
+│   └── lecole-42-___ (submodule)
+├── mylibc/
+│   ├── inc/
+│   └── src/
+│       ├── 0_system/
+│       ├── 1a_memory/
+│       ├── 1b_input/
+│       ├── 1c_string_manip/
+│       ├── 1d_string_manip_heap/
+│       ├── 1e_output/
+│       ├── 2_data_bintree/
+│       ├── 2_data_dls/
+│       ├── 2_data_hashtable/
+│       ├── 2_data_ls/
+│       ├── 3_algos_graphic/
+│       ├── 3_algos_others/
+│       ├── 3_algos_sorting/
+│       ├── 4__data_parser/
+│       └── src_all/
+├── mylibcpp/
+├── mylibx/
+│   ├── inc/
+│   ├── libs/
+│   │   ├── minilibx_linux/
+│   │   ├── opengl/
+│   │   ├── sdl/
+│   │   ├── vulkan/
+│   │   └── x11/
+│   └── src/
+│       ├── __transformation/
+│       ├── _draw/
+│       ├── _x11/
+│       └── src_all/
+├── mytools/
+│   ├── _tools/
+│   │   ├── .obsidian/
+│   │   ├── 0.General/
+│   │   ├── 42School/
+│   │   ├── CodeProductivity/
+│   │   ├── LinuxSys/
+│   │   └── Notetkng/
+│   ├── 0_unix/
+│   │   └── packages_list/
+│   ├── 0_zsh/
+│   ├── 1_coding/
+│   │   ├── doxygen/
+│   │   ├── make_utils/
+│   │   └── vscode/
+│   ├── 1_debbuging/
+│   │   ├── clang_ast/
+│   │   └── debuging_printers/
+│   ├── 1_docker/
+│   ├── 1_git/
+│   └── 1_quality_assurance/
+│       ├── code_cleaner/
+│       ├── compiler_checker/
+│       └── Testers/
+└── myunittest/
+    ├── inc/
+    ├── lib/
+    ├── log/
+    ├── obj/
+    ├── src/
+    └── tests/
+        ├── fprintf/
+        ├── gnl/
+        ├── pipex/
+        └── push_swap/</code></pre>
+<h2 id="readme">README</h2>
+<p>This README is rendered from one template and data, like every repo in the account: the registry node (<code>_dotfiles/readme/node.json</code>, from <a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <code>projects-repos.json</code>) and this repo's prose (<code>_dotfiles/readme/readme.json</code>). Edit <code>readme.json</code>, run <code>_dotfiles/readme/render-readme.sh</code>; <code>--check</code> is the drift guard.</p></div></section>
+</main>
+<aside>
+<section class="box"><h2>About</h2><div class="in"><dl class="meta"><dt>visibility</dt><dd>public</dd><dt>default branch</dt><dd>main</dd><dt>licence</dt><dd>Required Notice: Copyright 2026 Diego Nepomuceno Marcos — https://diegonmarcos.com</dd><dt>size</dt><dd>115.8 MB</dd><dt>last push</dt><dd>2026-11-17 22:27:29 UTC</dd><dt>stars / forks</dt><dd>0 / 0</dd><dt>area</dt><dd>42</dd><dt>project</dt><dd>42-mylibs</dd><dt>family</dt><dd>Ops</dd><dt>developer</dt><dd>lecole42</dd><dt>farm folder</dt><dd>5.Lecole-42</dd><dt>role</dt><dd>code</dd><dt>Pages</dt><dd>&lt;span class=&quot;dim&quot;&gt;none declared&lt;/span&gt;</dd><dt>domain page</dt><dd><a href="https://diegonmarcos.github.io/">https://diegonmarcos.github.io/</a></dd></dl></div></section>
+<section class="box"><h2>Parent project</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-___">lecole-42-___</a> <span class="dim">hub · 5.0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">hub · 0</span></li><li><a href="https://github.com/diegonmarcos/_git-repos-master">_git-repos-master</a> <span class="dim">registry root</span></li></ul></div></section>
+<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">5.4 42-mylibs/
+└─ 5.4.1 Ops/
+   └─ <b>lecole-42_ops-Mylibs</b> ◀</pre></div></section>
+<section class="box"><h2>Siblings (9)</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42-projects">lecole-42-projects</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Algo">lecole-42_back-Algo</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-Graphic">lecole-42_back-Graphic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_back-System">lecole-42_back-System</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare">lecole-42_cyber-Cyberwarfare</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_dev">lecole-42_dev</a> <span class="dim">code · private</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-Agentic">lecole-42_ml-Agentic</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-DataScience">lecole-42_ml-DataScience</a> <span class="dim">code · public</span></li><li><a href="https://github.com/diegonmarcos/lecole-42_ml-MachineLearning">lecole-42_ml-MachineLearning</a> <span class="dim">code · public</span></li></ul></div></section>
+<section class="box"><h2>Links</h2><div class="in"><ul class="l"><li><a href="https://github.com/diegonmarcos/lecole-42_ops-Mylibs">GitHub: lecole-42_ops-Mylibs</a></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ops-Mylibs/main/README.canvas">README.canvas (raw)</a> <span class="dim">JSON Canvas 1.0</span></li><li><a href="https://raw.githubusercontent.com/diegonmarcos/lecole-42_ops-Mylibs/main/README.html">README.html (raw)</a></li><li><a href="https://diegonmarcos.github.io/">domain page</a></li></ul></div></section>
+</aside>
+</div></div>
+<div class="foot">generated by build.sh (A2_repo-readmes) from _git-repos-master: registry projects-repos/v1, GitHub metadata cache 2026-11-18. Do not edit; edit the sources in _git-repos-master.</div>
+</body></html>

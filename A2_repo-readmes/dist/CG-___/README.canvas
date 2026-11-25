@@ -1,0 +1,273 @@
+{
+  "nodes": [
+    {
+      "id": "57ab0aa95a0d5a3c",
+      "type": "group",
+      "label": "2 CG",
+      "x": 0,
+      "y": 0,
+      "width": 1860,
+      "height": 710,
+      "color": "5"
+    },
+    {
+      "id": "37593d77eb080098",
+      "type": "text",
+      "text": "**CG-___**  ◀ THIS REPO\nhub · 🌐 public · 2.0\nCG — master index of the CG-* repos (circus, galaxy, galaxy-gaia, unity, voxel-rust)\n[GitHub](https://github.com/diegonmarcos/CG-___)",
+      "x": 20,
+      "y": 40,
+      "width": 300,
+      "height": 130,
+      "color": "3"
+    },
+    {
+      "id": "a8183a525a82520c",
+      "type": "group",
+      "label": "2.1 Galaxy",
+      "x": 20,
+      "y": 190,
+      "width": 1060,
+      "height": 500,
+      "color": "5"
+    },
+    {
+      "id": "59f1c60c81aa301b",
+      "type": "group",
+      "label": "2.1.1 Threlte",
+      "x": 40,
+      "y": 230,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "d8a5da02e261712a",
+      "type": "text",
+      "text": "**CG-galaxy**\nhtml · 🌐 public · 2.1.1.1\nFront group b_Projects (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/CG-galaxy)",
+      "x": 60,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "f58e64e188f98748",
+      "type": "text",
+      "text": "**CG-galaxy-gaia**\nhtml · 🔒 private · 2.1.1.2\n\n[GitHub](https://github.com/diegonmarcos/CG-galaxy-gaia)",
+      "x": 380,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "28658bff54c4df51",
+      "type": "group",
+      "label": "2.1.2 Unity",
+      "x": 720,
+      "y": 230,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6e2acdfa6664f975",
+      "type": "text",
+      "text": "**CG-unity**\ncode · 🔒 private · 2.1.2.1\n\n[GitHub](https://github.com/diegonmarcos/CG-unity)",
+      "x": 740,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "761112a457de51c0",
+      "type": "group",
+      "label": "2.1.3 Voxel-rust",
+      "x": 40,
+      "y": 460,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6af0d375204ba77b",
+      "type": "text",
+      "text": "**CG-voxel-rust**\ncode · 🌐 public · 2.1.3.1\nvox-rust: agent-driven voxel world (Luanti-class engine in Rust) — build plan\n[GitHub](https://github.com/diegonmarcos/CG-voxel-rust)",
+      "x": 60,
+      "y": 500,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "ef83f76df48bff45",
+      "type": "group",
+      "label": "2.2 Zirkus",
+      "x": 1100,
+      "y": 190,
+      "width": 740,
+      "height": 350,
+      "color": "5"
+    },
+    {
+      "id": "c23d97e2ad09d2fc",
+      "type": "group",
+      "label": "2.2.1 Music Production",
+      "x": 1120,
+      "y": 230,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "ae667d37e3bc8e16",
+      "type": "group",
+      "label": "2.2.2 Video Production",
+      "x": 1480,
+      "y": 230,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "20fbddf02476ee92",
+      "type": "group",
+      "label": "2.2.3 Game Production",
+      "x": 1120,
+      "y": 310,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "c0ee3748ef7679a2",
+      "type": "group",
+      "label": "2.2.4 Web Games",
+      "x": 1480,
+      "y": 310,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "b89419a8558dfcfc",
+      "type": "text",
+      "text": "**CG-circus**\nhtml · 🌐 public · 2.2.4.1\nFront group c_Circus (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
+      "x": 1500,
+      "y": 350,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "946e4f4742f6cc9c",
+      "type": "link",
+      "url": "https://github.com/diegonmarcos/CG-___",
+      "x": 1940,
+      "y": 40,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "dbd1ab44c1c63114",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/",
+      "x": 1940,
+      "y": 120,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "36842e7257c06137",
+      "type": "link",
+      "url": "https://raw.githubusercontent.com/diegonmarcos/CG-___/main/README.html",
+      "x": 1940,
+      "y": 200,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "cf5e8812ae8dda23",
+      "type": "text",
+      "x": 1940,
+      "y": -110,
+      "width": 320,
+      "height": 120,
+      "color": "5",
+      "text": "**CG-___** README.canvas\nrepos under 2 CG\nyellow = this repo, purple = hub, green = public, red = private\ngenerated by _git-repos-master build.sh"
+    }
+  ],
+  "edges": [
+    {
+      "id": "cdd8d75bdbdeb273",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "946e4f4742f6cc9c",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "GitHub"
+    },
+    {
+      "id": "ac35e145bc28c3e7",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "dbd1ab44c1c63114",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Domain page"
+    },
+    {
+      "id": "9c9936ed5e257d79",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "36842e7257c06137",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "README.html (raw)"
+    },
+    {
+      "id": "8ada5c9828023baf",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "bottom",
+      "toNode": "d8a5da02e261712a",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "3b88f82f8c3092ac",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "f58e64e188f98748",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "ed9ebba049b44211",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "6e2acdfa6664f975",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "d9e8c04322382051",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "bottom",
+      "toNode": "6af0d375204ba77b",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "5c2e9b7c41b489dc",
+      "fromNode": "37593d77eb080098",
+      "fromSide": "right",
+      "toNode": "b89419a8558dfcfc",
+      "toSide": "left",
+      "color": "3"
+    }
+  ]
+}

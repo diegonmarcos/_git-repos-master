@@ -1,0 +1,2007 @@
+{
+  "nodes": [
+    {
+      "id": "1de813ca3a70be22",
+      "type": "group",
+      "label": "_git-repos-master",
+      "x": 0,
+      "y": 0,
+      "width": 6260,
+      "height": 4390,
+      "color": "5"
+    },
+    {
+      "id": "f183f6e0231c6104",
+      "type": "text",
+      "text": "**_git-repos-master**  ◀ THIS REPO\nhub · 🌐 public · 0\nThe index of every repository this account owns.\n[GitHub](https://github.com/diegonmarcos/_git-repos-master)",
+      "x": 20,
+      "y": 40,
+      "width": 300,
+      "height": 130,
+      "color": "3"
+    },
+    {
+      "id": "ccdec9092b18b802",
+      "type": "group",
+      "label": "1 Unix",
+      "x": 20,
+      "y": 190,
+      "width": 4340,
+      "height": 1380,
+      "color": "5"
+    },
+    {
+      "id": "6e52c9639d46c058",
+      "type": "group",
+      "label": "1.1 Cloudy",
+      "x": 40,
+      "y": 230,
+      "width": 2100,
+      "height": 920,
+      "color": "5"
+    },
+    {
+      "id": "7c9c1b49ac9283da",
+      "type": "text",
+      "text": "**cloudy-___**\nhub · 🌐 public · 1.1.0\n\n[GitHub](https://github.com/diegonmarcos/cloudy-___)",
+      "x": 60,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "1ae9637fff07acf7",
+      "type": "group",
+      "label": "1.1.1 Android",
+      "x": 60,
+      "y": 420,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "78e38a910e1785cb",
+      "type": "text",
+      "text": "**cloudy-u-android**\ncode · 🌐 public · 1.1.1.1\nAndroid Parallel Space / Virtual Engine — data-ownership workspace built on the cloud/ declarative framework\n[GitHub](https://github.com/diegonmarcos/cloudy-u-android)",
+      "x": 80,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "b0806c63d53aec6b",
+      "type": "group",
+      "label": "1.1.2 C3",
+      "x": 420,
+      "y": 420,
+      "width": 1380,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "d5683a690fdb860d",
+      "type": "text",
+      "text": "**cloudy-t-infra**\ncode · 🌐 public · 1.1.2.1\nwhat happens if a Penguin learns how to surf?\n[GitHub](https://github.com/diegonmarcos/cloudy-t-infra)",
+      "x": 440,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "f2cedfc8fb2e273e",
+      "type": "group",
+      "label": "1.1.2.2 DB",
+      "x": 440,
+      "y": 610,
+      "width": 980,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "80827ac81aadec09",
+      "type": "text",
+      "text": "**cloudy_db_LFS**\nlfs · 🔒 private · 1.1.2.2.3\n\n[GitHub](https://github.com/diegonmarcos/cloudy_db_LFS)",
+      "x": 460,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "e4224fb730c23444",
+      "type": "text",
+      "text": "**cloudy_db_assets-cdn**\ncode · 🌐 public · 1.1.2.2.1\n\n[GitHub](https://github.com/diegonmarcos/cloudy_db_assets-cdn)",
+      "x": 780,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "16678eb7a4f7d4f0",
+      "type": "text",
+      "text": "**cloudy_db_infra-ops-obsv_configs-sync**\ncode · 🌐 public · 1.1.2.2.2\nConfigs-sync engine data repo: consolidated fleet config SoT (from 1_cloud-configs) served by c3-infra-api/mcp\n[GitHub](https://github.com/diegonmarcos/cloudy_db_infra-ops-obsv_configs-sync)",
+      "x": 1100,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "62925da2892e548b",
+      "type": "group",
+      "label": "1.1.2.3 Docs",
+      "x": 1440,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "b0333fde7367da12",
+      "type": "text",
+      "text": "**cloudy-a-docs**\nbacklog · 🔒 private · 1.1.2.3.1\n\n[GitHub](https://github.com/diegonmarcos/cloudy-a-docs)",
+      "x": 1460,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "8eb6c61c09fffa5b",
+      "type": "group",
+      "label": "1.1.3 Linux",
+      "x": 60,
+      "y": 860,
+      "width": 1380,
+      "height": 270,
+      "color": "2"
+    },
+    {
+      "id": "4dc6a001bcf7194b",
+      "type": "group",
+      "label": "1.1.3.1 Linux Containers",
+      "x": 80,
+      "y": 900,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "3c1fc325a1883498",
+      "type": "text",
+      "text": "**cloudy-u-containers**\ncode · 🌐 public · 1.1.3.1.1\nContainer service definitions for the cloud fleet (split from cloud-infra/a_solutions)\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers)",
+      "x": 100,
+      "y": 940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "7fb00e534b237e82",
+      "type": "text",
+      "text": "**cloudy-u-containers_cgc**\ncode · 🌐 public · 1.1.3.1.2\nPublic half of the cgc code knowledge graph pipeline: octocode indexes of the public repos -> GHCR -> cloud-cg\n[GitHub](https://github.com/diegonmarcos/cloudy-u-containers_cgc)",
+      "x": 420,
+      "y": 940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "a9d921f83aeeb1d5",
+      "type": "group",
+      "label": "1.1.3.2 Linux Desktop User",
+      "x": 760,
+      "y": 900,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "a41fbb6b2243c8f5",
+      "type": "text",
+      "text": "**cloudy-u-desktop**\ncode · 🌐 public · 1.1.3.2.1\npenguins does have wings, but those are divers and swimmers!\n[GitHub](https://github.com/diegonmarcos/cloudy-u-desktop)",
+      "x": 780,
+      "y": 940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "d4c881ac61a23a12",
+      "type": "text",
+      "text": "**cloudy-u-linux**\ncode · 🌐 public · 1.1.3.2.2\nLinux desktop applications (split from cloud-unix d*/da*/db* trees)\n[GitHub](https://github.com/diegonmarcos/cloudy-u-linux)",
+      "x": 1100,
+      "y": 940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "e9c76880417e0ff2",
+      "type": "group",
+      "label": "1.1.4 WebApps",
+      "x": 1460,
+      "y": 860,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "f1720098b858d058",
+      "type": "text",
+      "text": "**cloudy-h-webapps-desk**\nhtml · 🌐 public · 1.1.4.2\nFront group c_Suite (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-desk)",
+      "x": 1480,
+      "y": 900,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "44a4e4caae151a7b",
+      "type": "text",
+      "text": "**cloudy-h-webapps-mob**\nhtml · 🌐 public · 1.1.4.1\nCloud web apps: per-app independent sites with a shared top nav\n[GitHub](https://github.com/diegonmarcos/cloudy-h-webapps-mob)",
+      "x": 1800,
+      "y": 900,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "09056390e96eb776",
+      "type": "group",
+      "label": "1.2 Cloud-Me",
+      "x": 2160,
+      "y": 230,
+      "width": 2180,
+      "height": 1320,
+      "color": "5"
+    },
+    {
+      "id": "9b45392c830fc0fb",
+      "type": "text",
+      "text": "**cloud-me-___**\nhub · 🌐 public · 1.2.0\ncloud-me hub: the owner's configs across the cloud — links the cloud-me-pub-___ and cloud-me-pvt-___ hubs\n[GitHub](https://github.com/diegonmarcos/cloud-me-___)",
+      "x": 2180,
+      "y": 270,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "e0946fd023a6557f",
+      "type": "group",
+      "label": "1.2.1 Pub",
+      "x": 2180,
+      "y": 420,
+      "width": 1380,
+      "height": 570,
+      "color": "5"
+    },
+    {
+      "id": "641e180f573a0d89",
+      "type": "text",
+      "text": "**cloud-me-pub-___**\nhub · 🌐 public · 1.2.1.0\nCloud-Me-Pub hub: index of the public cloud-me family\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-___)",
+      "x": 2200,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "64cddd768d29a50d",
+      "type": "group",
+      "label": "1.2.1.1 Profiles",
+      "x": 2200,
+      "y": 610,
+      "width": 980,
+      "height": 360,
+      "color": "2"
+    },
+    {
+      "id": "29bdc45ee44e2dc0",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-___**\nhub · 🌐 public · 1.2.1.1.0\nFront group b_Profiles (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-___)",
+      "x": 2220,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "7a8f26cff8ad66ef",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-_lnktree**\nhtml · 🌐 public · 1.2.1.1.1\nLinktree site (split from Me-Profiles)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-_lnktree)",
+      "x": 2540,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "663bdce7de9f9629",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-leaf.y**\nhtml · 🌐 public · 1.2.1.1.2\nLeaf.y — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-leaf.y)",
+      "x": 2860,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "9717539d551c433f",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-nexus.z**\nhtml · 🌐 public · 1.2.1.1.3\nNexus.z — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-nexus.z)",
+      "x": 2220,
+      "y": 800,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "96679f85a7d8972c",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-prf-prs**\nhtml · 🌐 public · 1.2.1.1.4\nProfessional and personal profiles (split from Me-Profiles)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-prf-prs)",
+      "x": 2540,
+      "y": 800,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "3de88254570e7b95",
+      "type": "text",
+      "text": "**cloud-me-pub-profiles-stark.x**\nhtml · 🌐 public · 1.2.1.1.5\nStark.x — company site\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-profiles-stark.x)",
+      "x": 2860,
+      "y": 800,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "154941944981f47a",
+      "type": "group",
+      "label": "1.2.1.2 Shared",
+      "x": 3200,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "637417d5abbec8a5",
+      "type": "text",
+      "text": "**cloud-me-pub-shared**\ncode · 🌐 public · 1.2.1.2.1\nFront group b_MyData (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/cloud-me-pub-shared)",
+      "x": 3220,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "dff812d7ad880561",
+      "type": "group",
+      "label": "1.2.2 Pvt",
+      "x": 3580,
+      "y": 420,
+      "width": 740,
+      "height": 1110,
+      "color": "5"
+    },
+    {
+      "id": "367fd80a74c635ba",
+      "type": "text",
+      "text": "**cloud-me-pvt-___**\nhub · 🌐 public · 1.2.2.0\nCloud-Me-Pvt hub: index of the private cloud-me family\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-___)",
+      "x": 3600,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "c6c6a390e443dcdc",
+      "type": "group",
+      "label": "1.2.2.1 AI Memory",
+      "x": 3600,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "ca4f5ac479aac5a6",
+      "type": "text",
+      "text": "**cloud-me-pvt-my-ai**\nai memory · 🔒 private · 1.2.2.1.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-my-ai)",
+      "x": 3620,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "ec8ac55321d7f746",
+      "type": "group",
+      "label": "1.2.2.2 CGC",
+      "x": 3960,
+      "y": 610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "00ce1487acb721a7",
+      "type": "text",
+      "text": "**cloud-me-pvt-cgc**\ncode · 🔒 private · 1.2.2.2.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-cgc)",
+      "x": 3980,
+      "y": 650,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "a6ff46ab8d23cfc9",
+      "type": "group",
+      "label": "1.2.2.3 Configs",
+      "x": 3600,
+      "y": 840,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "08392760cf084ffb",
+      "type": "text",
+      "text": "**cloud-me-pvt-configs**\ncode · 🔒 private · 1.2.2.3.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-configs)",
+      "x": 3620,
+      "y": 880,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "4d1da8f1432c0ee4",
+      "type": "group",
+      "label": "1.2.2.4 Data",
+      "x": 3960,
+      "y": 840,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0ffe217b657ed357",
+      "type": "text",
+      "text": "**cloud-me-pvt-data**\ncode · 🔒 private · 1.2.2.4.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-data)",
+      "x": 3980,
+      "y": 880,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "b6ee8d8bdcd8defe",
+      "type": "group",
+      "label": "1.2.2.5 Notes",
+      "x": 3600,
+      "y": 1070,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0593ff839cf391a9",
+      "type": "text",
+      "text": "**cloud-me-pvt-notes**\ncode · 🔒 private · 1.2.2.5.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-notes)",
+      "x": 3620,
+      "y": 1110,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "789ee211f13701d6",
+      "type": "group",
+      "label": "1.2.2.6 Vault",
+      "x": 3960,
+      "y": 1070,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "a4d94307141270e0",
+      "type": "text",
+      "text": "**cloud-me-pvt-vault**\ncode · 🔒 private · 1.2.2.6.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-vault)",
+      "x": 3980,
+      "y": 1110,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "be031776fc3823ff",
+      "type": "group",
+      "label": "1.2.2.7 Tasks",
+      "x": 3600,
+      "y": 1300,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "624ca9deb1b29d8b",
+      "type": "text",
+      "text": "**cloud-me-pvt-tasks**\ncode · 🔒 private · 1.2.2.7.1\n\n[GitHub](https://github.com/diegonmarcos/cloud-me-pvt-tasks)",
+      "x": 3620,
+      "y": 1340,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "f61de26054742ea7",
+      "type": "group",
+      "label": "2 CG",
+      "x": 4380,
+      "y": 190,
+      "width": 1860,
+      "height": 710,
+      "color": "5"
+    },
+    {
+      "id": "d4e0c1f75e8e2130",
+      "type": "text",
+      "text": "**CG-___**\nhub · 🌐 public · 2.0\nCG — master index of the CG-* repos (circus, galaxy, galaxy-gaia, unity, voxel-rust)\n[GitHub](https://github.com/diegonmarcos/CG-___)",
+      "x": 4400,
+      "y": 230,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "e50a6a8ccdb0e11b",
+      "type": "group",
+      "label": "2.1 Galaxy",
+      "x": 4400,
+      "y": 380,
+      "width": 1060,
+      "height": 500,
+      "color": "5"
+    },
+    {
+      "id": "5088952d8547d660",
+      "type": "group",
+      "label": "2.1.1 Threlte",
+      "x": 4420,
+      "y": 420,
+      "width": 660,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6cfd085b483c392b",
+      "type": "text",
+      "text": "**CG-galaxy**\nhtml · 🌐 public · 2.1.1.1\nFront group b_Projects (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/CG-galaxy)",
+      "x": 4440,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "5d00f40e4f467ecb",
+      "type": "text",
+      "text": "**CG-galaxy-gaia**\nhtml · 🔒 private · 2.1.1.2\n\n[GitHub](https://github.com/diegonmarcos/CG-galaxy-gaia)",
+      "x": 4760,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "0957b5640b62ad5e",
+      "type": "group",
+      "label": "2.1.2 Unity",
+      "x": 5100,
+      "y": 420,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "864f970fd4030321",
+      "type": "text",
+      "text": "**CG-unity**\ncode · 🔒 private · 2.1.2.1\n\n[GitHub](https://github.com/diegonmarcos/CG-unity)",
+      "x": 5120,
+      "y": 460,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "2d3bd02f4b085597",
+      "type": "group",
+      "label": "2.1.3 Voxel-rust",
+      "x": 4420,
+      "y": 650,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "ed4ae8966910e598",
+      "type": "text",
+      "text": "**CG-voxel-rust**\ncode · 🌐 public · 2.1.3.1\nvox-rust: agent-driven voxel world (Luanti-class engine in Rust) — build plan\n[GitHub](https://github.com/diegonmarcos/CG-voxel-rust)",
+      "x": 4440,
+      "y": 690,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "8ee46357b0867aaf",
+      "type": "group",
+      "label": "2.2 Zirkus",
+      "x": 5480,
+      "y": 380,
+      "width": 740,
+      "height": 350,
+      "color": "5"
+    },
+    {
+      "id": "a2dc16a6d5b19c63",
+      "type": "group",
+      "label": "2.2.1 Music Production",
+      "x": 5500,
+      "y": 420,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "a311fe92ea59daae",
+      "type": "group",
+      "label": "2.2.2 Video Production",
+      "x": 5860,
+      "y": 420,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "774f9c8670dce89e",
+      "type": "group",
+      "label": "2.2.3 Game Production",
+      "x": 5500,
+      "y": 500,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "9566683f63c518e9",
+      "type": "group",
+      "label": "2.2.4 Web Games",
+      "x": 5860,
+      "y": 500,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "c7295734669510d2",
+      "type": "text",
+      "text": "**CG-circus**\nhtml · 🌐 public · 2.2.4.1\nFront group c_Circus (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/CG-circus)",
+      "x": 5880,
+      "y": 540,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "936799d41196977c",
+      "type": "group",
+      "label": "3 Capital",
+      "x": 20,
+      "y": 1590,
+      "width": 820,
+      "height": 770,
+      "color": "5"
+    },
+    {
+      "id": "4998c7a0b160dbe0",
+      "type": "text",
+      "text": "**Capital-___**\nhub · 🌐 public · 3.0\nFin-CM — hub: capital markets (NexusZ, MQPM, Blmbrg)\n[GitHub](https://github.com/diegonmarcos/Capital-___)",
+      "x": 40,
+      "y": 1630,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "357a7714e9b53a61",
+      "type": "group",
+      "label": "3.1 Macro-Central-Bank",
+      "x": 40,
+      "y": 1780,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "f982139ff16844f2",
+      "type": "group",
+      "label": "3.1.1 MQPM",
+      "x": 60,
+      "y": 1820,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "19abda9f5350f0ce",
+      "type": "text",
+      "text": "**Capital-Macro-Central-Bank**\ncode · 🌐 public · 3.1.1.1\nMQPM — StochBates and quant projects\n[GitHub](https://github.com/diegonmarcos/Capital-Macro-Central-Bank)",
+      "x": 80,
+      "y": 1860,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "dbd0a33de7c7803d",
+      "type": "group",
+      "label": "3.2 Micro-Asset-Management",
+      "x": 440,
+      "y": 1780,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "3cccb45512d256d3",
+      "type": "group",
+      "label": "3.2.1 Corporate",
+      "x": 460,
+      "y": 1820,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "7855a95517434a4f",
+      "type": "text",
+      "text": "**Capital-Micro-Asset-Management**\ncode · 🌐 public · 3.2.1.1\nFin: Corporate finance\n[GitHub](https://github.com/diegonmarcos/Capital-Micro-Asset-Management)",
+      "x": 480,
+      "y": 1860,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "96c88dce2aaa61d2",
+      "type": "group",
+      "label": "3.3 Stack-Fin-Terminal",
+      "x": 40,
+      "y": 2070,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "6fd142c64a1ca460",
+      "type": "group",
+      "label": "3.3.1 Terminal",
+      "x": 60,
+      "y": 2110,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "09d50d5587cf6c3d",
+      "type": "text",
+      "text": "**Capital-Stack-Fin-Terminal**\ncode · 🌐 public · 3.3.1.1\nBlmbrg — fin-term, market watch and news\n[GitHub](https://github.com/diegonmarcos/Capital-Stack-Fin-Terminal)",
+      "x": 80,
+      "y": 2150,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "aba79aa16ac2e864",
+      "type": "group",
+      "label": "4 HardTech",
+      "x": 860,
+      "y": 1590,
+      "width": 780,
+      "height": 770,
+      "color": "5"
+    },
+    {
+      "id": "839a6ab2c3c30d1d",
+      "type": "text",
+      "text": "**HardTech-___**\nhub · 🌐 public · 4.0\nDeepSc — hub: deep science (StarkX, X)\n[GitHub](https://github.com/diegonmarcos/HardTech-___)",
+      "x": 880,
+      "y": 1630,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "18b4046d1d3708ed",
+      "type": "group",
+      "label": "4.1 Structural",
+      "x": 880,
+      "y": 1780,
+      "width": 340,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "3e4e454ea01222ea",
+      "type": "group",
+      "label": "4.2 DeepXTech",
+      "x": 1240,
+      "y": 1780,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "d81ac5dd1a9c100c",
+      "type": "group",
+      "label": "4.2.1 Sailytics",
+      "x": 1260,
+      "y": 1820,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "a5ae2c69a48b2425",
+      "type": "text",
+      "text": "**HardTech-DeepXTech**\nhtml · 🌐 public · 4.2.1.1\nDeepSc-X — deep science projects\n[GitHub](https://github.com/diegonmarcos/HardTech-DeepXTech)",
+      "x": 1280,
+      "y": 1860,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "bb35ec2c04196dce",
+      "type": "group",
+      "label": "4.3 Stack-CAD-Simulators",
+      "x": 880,
+      "y": 2070,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "d284db5c49a674d5",
+      "type": "group",
+      "label": "4.3.1 CAD",
+      "x": 900,
+      "y": 2110,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "f04b914d0e501a9c",
+      "type": "text",
+      "text": "**HardTech-Stack-CAD-Simulators**\ncode · 🌐 public · 4.3.1.1\nDeepSc tools: agentic CAD (MCP) and more\n[GitHub](https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators)",
+      "x": 920,
+      "y": 2150,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "252888387a015eef",
+      "type": "group",
+      "label": "5 42",
+      "x": 20,
+      "y": 2380,
+      "width": 820,
+      "height": 1640,
+      "color": "5"
+    },
+    {
+      "id": "86668bdba0eeb7b4",
+      "type": "text",
+      "text": "**lecole-42-___**\nhub · 🌐 public · 5.0\nMaster repo for the lecole-42_* repos: registry + symlinks\n[GitHub](https://github.com/diegonmarcos/lecole-42-___)",
+      "x": 40,
+      "y": 2420,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "30247d5031abc2cb",
+      "type": "group",
+      "label": "5.1 42-algo",
+      "x": 40,
+      "y": 2570,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "1d5583f5e923e9b0",
+      "type": "group",
+      "label": "5.1.1 Back",
+      "x": 60,
+      "y": 2610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0ea8ba42659bf161",
+      "type": "text",
+      "text": "**lecole-42_back-Algo**\ncode · 🌐 public · 5.1.1.1\nwhere dead-ends are just recursive detours and you will try to overcome stack overflows with a `ulimit - s unl\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Algo)",
+      "x": 80,
+      "y": 2650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "bb25070c2d5cafa3",
+      "type": "group",
+      "label": "5.2 42-graphic",
+      "x": 440,
+      "y": 2570,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "a96cedb72e453514",
+      "type": "group",
+      "label": "5.2.1 Back",
+      "x": 460,
+      "y": 2610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "6b4cc6a51ec5a816",
+      "type": "text",
+      "text": "**lecole-42_back-Graphic**\ncode · 🌐 public · 5.2.1.1\nFilling Wireframes, rendering matrixes and applying ray tracing one pixel at a time, until the GPU begs for me\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-Graphic)",
+      "x": 480,
+      "y": 2650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "ee9337e0177be8f5",
+      "type": "group",
+      "label": "5.3 42-system",
+      "x": 40,
+      "y": 2860,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "51e49bfedf0f63c1",
+      "type": "group",
+      "label": "5.3.1 Back",
+      "x": 60,
+      "y": 2900,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "03e1852b34c6bfb9",
+      "type": "text",
+      "text": "**lecole-42_back-System**\ncode · 🌐 public · 5.3.1.1\n The Unix Alchemist: Transmuting recursive pipes into web servers and containers into… well, more containers.\"\n[GitHub](https://github.com/diegonmarcos/lecole-42_back-System)",
+      "x": 80,
+      "y": 2940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "387755b7158faa79",
+      "type": "group",
+      "label": "5.4 42-mylibs",
+      "x": 440,
+      "y": 2860,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "902a545e1dac1476",
+      "type": "group",
+      "label": "5.4.1 Ops",
+      "x": 460,
+      "y": 2900,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "82658d7b6a237c44",
+      "type": "text",
+      "text": "**lecole-42_ops-Mylibs**\ncode · 🌐 public · 5.4.1.1\n__\"Every library has its first book, but not the last\"__: MyLibC, MylibC++, MyTools, for Memory Management and\n[GitHub](https://github.com/diegonmarcos/lecole-42_ops-Mylibs)",
+      "x": 480,
+      "y": 2940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "50f1ba329d5b5612",
+      "type": "group",
+      "label": "5.5 42-projects",
+      "x": 40,
+      "y": 3150,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "bfd015c71ef2f78e",
+      "type": "group",
+      "label": "5.5.1 Curriculum",
+      "x": 60,
+      "y": 3190,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "ed87b1d06102f3c8",
+      "type": "text",
+      "text": "**lecole-42-projects**\ncode · 🔒 private · 5.5.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42-projects)",
+      "x": 80,
+      "y": 3230,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "48be71c87ebdea35",
+      "type": "group",
+      "label": "5.6 42-agentic",
+      "x": 440,
+      "y": 3150,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "e0b5672d74f39d46",
+      "type": "group",
+      "label": "5.6.1 ML",
+      "x": 460,
+      "y": 3190,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "155486a3f65d565d",
+      "type": "text",
+      "text": "**lecole-42_ml-Agentic**\ncode · 🌐 public · 5.6.1.1\nIt's basically a highly-paid, very fast committee of AIs arguing until a solution pops out.\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-Agentic)",
+      "x": 480,
+      "y": 3230,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "44cbd92ca4811773",
+      "type": "group",
+      "label": "5.7 42-datascience",
+      "x": 40,
+      "y": 3440,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "aad7fd9a06421fba",
+      "type": "group",
+      "label": "5.7.1 ML",
+      "x": 60,
+      "y": 3480,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "66d19a7f4ba28afb",
+      "type": "text",
+      "text": "**lecole-42_ml-DataScience**\ncode · 🌐 public · 5.7.1.1\nNotebooks > Excel - for people who prefer code cells to pivot tables (and occasional chaos).\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-DataScience)",
+      "x": 80,
+      "y": 3520,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "e6129111e7113e06",
+      "type": "group",
+      "label": "5.8 42-machinelearning",
+      "x": 440,
+      "y": 3440,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "841d15e776dfdc87",
+      "type": "group",
+      "label": "5.8.1 ML",
+      "x": 460,
+      "y": 3480,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "51ddd02c528d3fac",
+      "type": "text",
+      "text": "**lecole-42_ml-MachineLearning**\ncode · 🌐 public · 5.8.1.1\n\"Where I teach computers to be smart so I don't have to be.\"\n[GitHub](https://github.com/diegonmarcos/lecole-42_ml-MachineLearning)",
+      "x": 480,
+      "y": 3520,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "80ae634e8a8bd439",
+      "type": "group",
+      "label": "5.9 42-cyberwarfare",
+      "x": 40,
+      "y": 3730,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "6d43667087598f32",
+      "type": "group",
+      "label": "5.9.1 Cyber",
+      "x": 60,
+      "y": 3770,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "22cd46b32744c8b6",
+      "type": "text",
+      "text": "**lecole-42_cyber-Cyberwarfare**\ncode · 🌐 public · 5.9.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42_cyber-Cyberwarfare)",
+      "x": 80,
+      "y": 3810,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "fda8975a4cc7e695",
+      "type": "group",
+      "label": "5.10 42-dev",
+      "x": 440,
+      "y": 3730,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "8a6178c6454108d4",
+      "type": "group",
+      "label": "5.10.1 Dev",
+      "x": 460,
+      "y": 3770,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "637b7cd836cc1c7e",
+      "type": "text",
+      "text": "**lecole-42_dev**\ncode · 🔒 private · 5.10.1.1\n\n[GitHub](https://github.com/diegonmarcos/lecole-42_dev)",
+      "x": 480,
+      "y": 3810,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "ad9e316bbb2040ed",
+      "type": "group",
+      "label": "6 Projects",
+      "x": 860,
+      "y": 2380,
+      "width": 780,
+      "height": 770,
+      "color": "5"
+    },
+    {
+      "id": "06b3b1d9a091c925",
+      "type": "text",
+      "text": "**Projects-___**\nhub · 🌐 public · 6.0\nRegistry index for the front-* repo family (front-master, mirrors cloud-master)\n[GitHub](https://github.com/diegonmarcos/Projects-___)",
+      "x": 880,
+      "y": 2420,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "5a283d27f98d8544",
+      "type": "group",
+      "label": "6.1 Endeavours",
+      "x": 880,
+      "y": 2570,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "86619f109534320f",
+      "type": "group",
+      "label": "6.1.1 Endeavours",
+      "x": 900,
+      "y": 2610,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "0de5b5369d626ea1",
+      "type": "text",
+      "text": "**Projects-endeavours**\nhtml · 🌐 public · 6.1.1.1\nFront group a_Companies (split from front-projects, #1072)\n[GitHub](https://github.com/diegonmarcos/Projects-endeavours)",
+      "x": 920,
+      "y": 2650,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "9ffb2e9a3961ed5c",
+      "type": "group",
+      "label": "6.2 DuckPeng",
+      "x": 1280,
+      "y": 2570,
+      "width": 340,
+      "height": 210,
+      "color": "5"
+    },
+    {
+      "id": "ebee16e6d9640580",
+      "type": "text",
+      "text": "**DuckPeng-___**\nhub · 🌐 public · 6.2.0\nDuckPeng — hub: CG, Cloud and LeafY\n[GitHub](https://github.com/diegonmarcos/DuckPeng-___)",
+      "x": 1300,
+      "y": 2610,
+      "width": 300,
+      "height": 130,
+      "color": "6"
+    },
+    {
+      "id": "b5329932adee93df",
+      "type": "group",
+      "label": "6.3 Library-KG",
+      "x": 880,
+      "y": 2860,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "996760f2d9d9016f",
+      "type": "group",
+      "label": "6.3.1 Library-KG",
+      "x": 900,
+      "y": 2900,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "df4b136699db50e3",
+      "type": "text",
+      "text": "**lib-chronos**\ncode · 🌐 public · 6.3.1.1\nChronos: interactive simulators of cycles across scales - circadian, Earth, Milky Way and quantum.\n[GitHub](https://github.com/diegonmarcos/lib-chronos)",
+      "x": 920,
+      "y": 2940,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "da1d59f8ac9f0cbe",
+      "type": "group",
+      "label": "7 Others",
+      "x": 20,
+      "y": 4040,
+      "width": 1460,
+      "height": 330,
+      "color": "5"
+    },
+    {
+      "id": "9074afaac665aca7",
+      "type": "group",
+      "label": "7.1 Profile",
+      "x": 40,
+      "y": 4080,
+      "width": 380,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "6686ed433f5b801a",
+      "type": "group",
+      "label": "7.1.1 README",
+      "x": 60,
+      "y": 4120,
+      "width": 340,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "3d3301a74cc9b936",
+      "type": "text",
+      "text": "**diegonmarcos**\nprofile · 🌐 public · 7.1.1.1\nGitHub Landpage\n[GitHub](https://github.com/diegonmarcos/diegonmarcos)",
+      "x": 80,
+      "y": 4160,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "df4215efdedeadaa",
+      "type": "group",
+      "label": "7.2 Pages",
+      "x": 440,
+      "y": 4080,
+      "width": 1020,
+      "height": 270,
+      "color": "5"
+    },
+    {
+      "id": "4b32a8486e70c63a",
+      "type": "group",
+      "label": "7.2.1 Deployer",
+      "x": 460,
+      "y": 4120,
+      "width": 980,
+      "height": 210,
+      "color": "2"
+    },
+    {
+      "id": "cc468b36bdf7a933",
+      "type": "text",
+      "text": "**_front-html___**\nhub · 🌐 public · 7.2.1.2\nHub of every GitHub Pages site: diegonmarcos.github.io, the profile repo and a declarative pages.json generate\n[GitHub](https://github.com/diegonmarcos/_front-html___)",
+      "x": 480,
+      "y": 4160,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "1e6b05a6bad180ba",
+      "type": "text",
+      "text": "**_git-lfs____**\nhub · 🔒 private · 7.2.1.3\n\n[GitHub](https://github.com/diegonmarcos/_git-lfs____)",
+      "x": 800,
+      "y": 4160,
+      "width": 300,
+      "height": 130,
+      "color": "1"
+    },
+    {
+      "id": "b249d836e60684c2",
+      "type": "text",
+      "text": "**diegonmarcos.github.io**\ndeployer · 🌐 public · 7.2.1.1\nDoes Ducks lives in the north pole with bears or south with Penguins? \n[GitHub](https://github.com/diegonmarcos/diegonmarcos.github.io)",
+      "x": 1120,
+      "y": 4160,
+      "width": 300,
+      "height": 130,
+      "color": "4"
+    },
+    {
+      "id": "0b38f31c058f02fd",
+      "type": "group",
+      "label": "8 Archived",
+      "x": 1500,
+      "y": 4040,
+      "width": 780,
+      "height": 260,
+      "color": "5"
+    },
+    {
+      "id": "cfda24a55bfc7d99",
+      "type": "group",
+      "label": "8.1 Z-archived",
+      "x": 1520,
+      "y": 4080,
+      "width": 740,
+      "height": 200,
+      "color": "5"
+    },
+    {
+      "id": "a8f360ea5e52030e",
+      "type": "group",
+      "label": "8.1.1 Cloud-Me",
+      "x": 1540,
+      "y": 4120,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "e58a0373d983fe02",
+      "type": "group",
+      "label": "8.1.2 Front",
+      "x": 1900,
+      "y": 4120,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "bed8fac9eaa2cd5a",
+      "type": "group",
+      "label": "8.1.3 Tools",
+      "x": 1540,
+      "y": 4200,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "54a269f839752250",
+      "type": "group",
+      "label": "8.1.4 Projects",
+      "x": 1900,
+      "y": 4200,
+      "width": 340,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "f2cf7325fa7aec2d",
+      "type": "link",
+      "url": "https://github.com/diegonmarcos/_git-repos-master",
+      "x": 6340,
+      "y": 40,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "85f54dcc2250ffbc",
+      "type": "link",
+      "url": "https://diegonmarcos.github.io/",
+      "x": 6340,
+      "y": 120,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "de903e4841087507",
+      "type": "link",
+      "url": "https://raw.githubusercontent.com/diegonmarcos/_git-repos-master/main/README.html",
+      "x": 6340,
+      "y": 200,
+      "width": 320,
+      "height": 60,
+      "color": "5"
+    },
+    {
+      "id": "375b1733d4475562",
+      "type": "text",
+      "x": 6340,
+      "y": -110,
+      "width": 320,
+      "height": 120,
+      "color": "5",
+      "text": "**_git-repos-master** README.canvas\nrepos under the whole registry\nyellow = this repo, purple = hub, green = public, red = private\ngenerated by _git-repos-master build.sh"
+    }
+  ],
+  "edges": [
+    {
+      "id": "141100b2c0156e65",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "f2cf7325fa7aec2d",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "GitHub"
+    },
+    {
+      "id": "56b4409d40ef9b76",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "85f54dcc2250ffbc",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Domain page"
+    },
+    {
+      "id": "0e307195db10cff4",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "de903e4841087507",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "README.html (raw)"
+    },
+    {
+      "id": "39b249931f00557d",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "bottom",
+      "toNode": "7c9c1b49ac9283da",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "29a34f5cb3ca3a40",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "bottom",
+      "toNode": "78e38a910e1785cb",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "3752bc57eaea81cc",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "d5683a690fdb860d",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "475d0291a1e836c1",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "e4224fb730c23444",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "73e91a3acbe7e4d4",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "16678eb7a4f7d4f0",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "5dd1ad5f27e6e6cc",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "80827ac81aadec09",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "b9332dfcc5ad9623",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "b0333fde7367da12",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "76ac225069e16842",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "bottom",
+      "toNode": "3c1fc325a1883498",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "bd11d0e611d5d3cb",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "7fb00e534b237e82",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "7240a4dec66bc11d",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "a41fbb6b2243c8f5",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "b1d45d43d03983f8",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "d4c881ac61a23a12",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "d1a849fa051b9a06",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "44a4e4caae151a7b",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "2c43bf242262af0f",
+      "fromNode": "7c9c1b49ac9283da",
+      "fromSide": "right",
+      "toNode": "f1720098b858d058",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "819208f2595a7b5a",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "9b45392c830fc0fb",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "2e1c4868846e88cd",
+      "fromNode": "9b45392c830fc0fb",
+      "fromSide": "bottom",
+      "toNode": "641e180f573a0d89",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "fc2c66c87b0b4bec",
+      "fromNode": "641e180f573a0d89",
+      "fromSide": "bottom",
+      "toNode": "29bdc45ee44e2dc0",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "f8a60f9769be2b46",
+      "fromNode": "29bdc45ee44e2dc0",
+      "fromSide": "right",
+      "toNode": "7a8f26cff8ad66ef",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "ca686d9a590b2990",
+      "fromNode": "29bdc45ee44e2dc0",
+      "fromSide": "right",
+      "toNode": "663bdce7de9f9629",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "a27cc0aa144b6925",
+      "fromNode": "29bdc45ee44e2dc0",
+      "fromSide": "bottom",
+      "toNode": "9717539d551c433f",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "dddac3136624ca5f",
+      "fromNode": "29bdc45ee44e2dc0",
+      "fromSide": "right",
+      "toNode": "96679f85a7d8972c",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "63ecd1ec460ba6da",
+      "fromNode": "29bdc45ee44e2dc0",
+      "fromSide": "right",
+      "toNode": "3de88254570e7b95",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "44b8a90413207b79",
+      "fromNode": "641e180f573a0d89",
+      "fromSide": "right",
+      "toNode": "637417d5abbec8a5",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "53e1b53ce80d19d5",
+      "fromNode": "9b45392c830fc0fb",
+      "fromSide": "right",
+      "toNode": "367fd80a74c635ba",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "c19eb35db36488a5",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "bottom",
+      "toNode": "ca4f5ac479aac5a6",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "aa0ad529a582ed07",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "right",
+      "toNode": "00ce1487acb721a7",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "f27aa37b4c76f2f1",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "bottom",
+      "toNode": "08392760cf084ffb",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "ab9598608a31eb9b",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "right",
+      "toNode": "0ffe217b657ed357",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "1f52ea8403114b1b",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "bottom",
+      "toNode": "0593ff839cf391a9",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "68b9cb6e80aa3d92",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "right",
+      "toNode": "a4d94307141270e0",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "c4a7aea90a957fe1",
+      "fromNode": "367fd80a74c635ba",
+      "fromSide": "bottom",
+      "toNode": "624ca9deb1b29d8b",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "1a79a8fa7a09b588",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "d4e0c1f75e8e2130",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "e6ed472f2a4243f1",
+      "fromNode": "d4e0c1f75e8e2130",
+      "fromSide": "bottom",
+      "toNode": "6cfd085b483c392b",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "33792a3d2903cbdc",
+      "fromNode": "d4e0c1f75e8e2130",
+      "fromSide": "right",
+      "toNode": "5d00f40e4f467ecb",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "9bb25eaf8173f449",
+      "fromNode": "d4e0c1f75e8e2130",
+      "fromSide": "right",
+      "toNode": "864f970fd4030321",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "4c6def2603501c0b",
+      "fromNode": "d4e0c1f75e8e2130",
+      "fromSide": "bottom",
+      "toNode": "ed4ae8966910e598",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "c0d64d57b6552583",
+      "fromNode": "d4e0c1f75e8e2130",
+      "fromSide": "right",
+      "toNode": "c7295734669510d2",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "652f967e6563ead4",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "bottom",
+      "toNode": "4998c7a0b160dbe0",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "82362368a41096a3",
+      "fromNode": "4998c7a0b160dbe0",
+      "fromSide": "bottom",
+      "toNode": "19abda9f5350f0ce",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "5b332b1b192b0984",
+      "fromNode": "4998c7a0b160dbe0",
+      "fromSide": "right",
+      "toNode": "7855a95517434a4f",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "69d45055b5923cf1",
+      "fromNode": "4998c7a0b160dbe0",
+      "fromSide": "bottom",
+      "toNode": "09d50d5587cf6c3d",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "454aae223821793f",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "839a6ab2c3c30d1d",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "c570e7cf6bacdb61",
+      "fromNode": "839a6ab2c3c30d1d",
+      "fromSide": "right",
+      "toNode": "a5ae2c69a48b2425",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "b1b88ed092bb7dfb",
+      "fromNode": "839a6ab2c3c30d1d",
+      "fromSide": "bottom",
+      "toNode": "f04b914d0e501a9c",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "7435af16f76028fa",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "bottom",
+      "toNode": "86668bdba0eeb7b4",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "948ef96dac6f5326",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "bottom",
+      "toNode": "0ea8ba42659bf161",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "eb391988024b7404",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "right",
+      "toNode": "6b4cc6a51ec5a816",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "d25f5061143da6e4",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "bottom",
+      "toNode": "03e1852b34c6bfb9",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "d7f8b29a2925b961",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "right",
+      "toNode": "82658d7b6a237c44",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "87d81ee54d51a628",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "bottom",
+      "toNode": "ed87b1d06102f3c8",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "3f22609eda60ad18",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "right",
+      "toNode": "155486a3f65d565d",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "7d56340163cc2b0b",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "bottom",
+      "toNode": "66d19a7f4ba28afb",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "a349e2f9e29cad26",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "right",
+      "toNode": "51ddd02c528d3fac",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "1e25b5b9e3657bc5",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "bottom",
+      "toNode": "22cd46b32744c8b6",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "83632f64edc631ca",
+      "fromNode": "86668bdba0eeb7b4",
+      "fromSide": "right",
+      "toNode": "637b7cd836cc1c7e",
+      "toSide": "left",
+      "color": "1"
+    },
+    {
+      "id": "2a3b9433063c42ea",
+      "fromNode": "f183f6e0231c6104",
+      "fromSide": "right",
+      "toNode": "06b3b1d9a091c925",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "694e61477436e311",
+      "fromNode": "06b3b1d9a091c925",
+      "fromSide": "bottom",
+      "toNode": "0de5b5369d626ea1",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "23d301618a64682e",
+      "fromNode": "06b3b1d9a091c925",
+      "fromSide": "right",
+      "toNode": "ebee16e6d9640580",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "6ced572f1a66a924",
+      "fromNode": "06b3b1d9a091c925",
+      "fromSide": "bottom",
+      "toNode": "df4b136699db50e3",
+      "toSide": "top",
+      "color": "4"
+    }
+  ]
+}

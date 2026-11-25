@@ -14,7 +14,7 @@ for f in $FILES; do [ -f "$ROOT/$f" ] && [ ! -L "$ROOT/$f" ] && ok "root $f is a
 
 mkdir -p "$T/fresh/9_others"
 cp "$ROOT/build.sh" "$ROOT/README.md" "$T/fresh/"
-cp -r "$ROOT/0_registry" "$ROOT/A0_repos-tree" "$ROOT/A1_repos-tree-folders" "$T/fresh/"
+cp -r "$ROOT/0_registry" "$ROOT/A0_repos-tree" "$ROOT/A1_repos-tree-folders" "$ROOT/A2_repo-readmes" "$T/fresh/"
 cp -r "$ROOT/9_others/templates" "$T/fresh/9_others/"
 (cd "$T/fresh" && sh ./build.sh >"$T/build.log" 2>&1) && ok "build.sh runs in a scratch copy" || { bad "build.sh failed: $(tail -3 "$T/build.log")"; exit 1; }
 for f in $FILES; do cmp -s "$ROOT/$f" "$T/fresh/$f" && ok "root $f is byte-equal to a fresh build.sh output" || bad "root $f drifted from build.sh output (run ./build.sh)"; done
