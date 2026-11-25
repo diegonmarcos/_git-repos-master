@@ -27,7 +27,7 @@ MIRROR_PATHS=(.claude/agents .claude/skills/c3-infra .claude/hooks/c3 .claude/se
 repos() { # repo dirs, this repo first, then mirror-repos.txt entries with a clone
   echo "$HOME_REPO"
   grep -vE '^\s*(#|$)' "$SOT/mirror-repos.txt" | awk '{print $1}' | sed 's#.*/##' | while read -r r; do
-    d="$BASE/$r"; [ -d "$d/.git" ] && [ "$d" != "$HOME_REPO" ] && echo "$d"
+    d="$BASE/$r"; [ -d "$d/.git" ] && [ -d "$d/_dotfiles" ] && [ "$d" != "$HOME_REPO" ] && echo "$d"
   done
 }
 
@@ -90,5 +90,16 @@ $TRAILER" -- "${paths[@]}" >/dev/null 2>&1 || { fail="$fail $r(commit)"; continu
   if [ "${NO_PUSH:-}" = 1 ]; then ok=$((ok+1)); continue; fi
   if git -C "$d" push -q origin main >/dev/null 2>&1; then ok=$((ok+1)); else fail="$fail $r(push)"; fi
 done < <(repos)
+# 4. cloud-u-linux child: commit + push the generated mirror (not in mirror-repos.txt)
+C="${CHILD%/da_my-ai/data/claude}"
+if [ -d "$C/.git" ]; then
+  git -C "$C" add -A -- da_my-ai/data/claude 2>/dev/null
+  if ! git -C "$C" diff --cached --quiet -- da_my-ai/data/claude; then
+    git -C "$C" commit -q -m "$MSG
+
+$TRAILER" -- da_my-ai/data/claude >/dev/null 2>&1 || fail="$fail cloud-u-linux(commit)"
+    [ "${NO_PUSH:-}" = 1 ] || git -C "$C" push -q origin main >/dev/null 2>&1 || fail="$fail cloud-u-linux(push)"
+  fi
+fi
 echo "deploy-all: ok=$ok fail=[${fail# }]"
 [ -z "$fail" ]
