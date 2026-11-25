@@ -93,7 +93,15 @@ while read -r d; do
     git -C "$d" pull -q --no-rebase --no-edit origin main >/dev/null 2>&1
     boot=0   # skeleton repo = no manifest yet, or the bootstrap manifest unchanged
     m="$d/_dotfiles/apps/src/manifest.json"
-    if [ ! -f "$m" ] || cmp -s "$m" "$SOT/bootstrap/manifest.json"; then
+    if [ ! -f "$m" ] && git -C "$d" cat-file -e ":_dotfiles/apps/src/manifest.json" 2>/dev/null; then
+      # sparse clone: the skeleton is tracked but outside the cone. Write out the tracked
+      # files the engine reads; never replace them with the bootstrap ones.
+      for f in manifest.json root/mcp.json root/mcp.optin.json; do
+        mkdir -p "$(dirname "$d/_dotfiles/apps/src/$f")"
+        git -C "$d" show ":_dotfiles/apps/src/$f" > "$d/_dotfiles/apps/src/$f" 2>/dev/null || rm -f "$d/_dotfiles/apps/src/$f"
+      done
+      mkdir -p "$d/_dotfiles/apps/src/claude"
+    elif [ ! -f "$m" ] || cmp -s "$m" "$SOT/bootstrap/manifest.json"; then
       bootstrap "$d" || { fail="$fail $r(bootstrap)"; continue; }
       boot=1
     fi
@@ -104,7 +112,7 @@ while read -r d; do
   # the SoT repo also commits the source itself (0_claude-sot/ and its CLAUDE.md) with its mirrors
   [ "$d" = "$HOME_REPO" ] && paths+=("${SOT#"$HOME_REPO"/}" CLAUDE.md)
   for p in "${MIRROR_PATHS[@]}"; do [ -e "$d/$p" ] && paths+=("$p"); done
-  git -C "$d" add -A -- "${paths[@]}" 2>/dev/null
+  git -C "$d" add --sparse -A -- "${paths[@]}" 2>/dev/null   # --sparse: a sparse clone (cloud-u-linux) still stages its mirror
   if git -C "$d" diff --cached --quiet -- "${paths[@]}"; then ok=$((ok+1)); continue; fi
   # commit only the mirror paths, even if other files are already staged
   git -C "$d" commit -q -m "$MSG
