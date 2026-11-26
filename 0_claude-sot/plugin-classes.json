@@ -1,16 +1,42 @@
 {
-  "_doc": "The class of every Claude Code plugin of cloud-marketplace, declared here (the source), read by cloudy-u-android ac_cloud-superintel tools/derive-ai-data.py for Context > Plugins. Two classes: `skills` = Skills plugins (payload of skills, commands or agents); `performance` = Performance plugins (payload of hooks, MCP servers, LSP, output styles or other tooling that changes how the assistant runs). `primary` is the declared class; a plugin whose payload also carries the other class is listed under its primary class with a badge for the other (derived from the payload folders, never typed). The derivation fails when a plugin is undeclared, declared twice, or its primary is not a class its payload carries.",
+  "_doc": "The class of every Claude Code plugin of cloud-marketplace, declared here (the source), read by cloudy-u-android ac_cloud-superintel tools/derive-ai-data.py for Context > Plugins. Two classes: `skills` = Skills plugins (payload of skills, commands or agents); `performance` = Performance plugins (payload of hooks, MCP servers, LSP, output styles or other tooling that changes how the assistant runs). `primary` is the declared class; a plugin whose payload also carries the other class is listed under its primary class with a badge for the other (derived from the payload folders, never typed). The derivation fails when a plugin is undeclared, declared twice, or its primary is not a class its payload carries. Entries of claude-plugins.json (the status-bar registry: headroom, rtk, caveman, superset-mode; ponytail is also a marketplace plugin and is one plugin) are plugins too: each is declared here, and a registry plugin has tooling payload only (class performance).",
   "classes": {
     "skills": "Skills plugins",
     "performance": "Performance plugins"
   },
   "plugins": {
-    "c3-infra": { "primary": "skills" },
-    "ponytail": { "primary": "skills" },
-    "skill-claude-api-plugin": { "primary": "skills" },
-    "hooks-stack-framework-principles-cloud-ai-plugin": { "primary": "performance" },
-    "compression-cloud-ai-plugin": { "primary": "performance" },
-    "memory-system-cloud-ai-plugin": { "primary": "performance" },
-    "sub-agents-cloud-ai-plugin": { "primary": "performance" }
+    "c3-infra": {
+      "primary": "skills"
+    },
+    "ponytail": {
+      "primary": "skills"
+    },
+    "skill-claude-api-plugin": {
+      "primary": "skills"
+    },
+    "hooks-stack-framework-principles-cloud-ai-plugin": {
+      "primary": "performance"
+    },
+    "compression-cloud-ai-plugin": {
+      "primary": "performance"
+    },
+    "memory-system-cloud-ai-plugin": {
+      "primary": "performance"
+    },
+    "sub-agents-cloud-ai-plugin": {
+      "primary": "performance"
+    },
+    "headroom": {
+      "primary": "performance"
+    },
+    "rtk": {
+      "primary": "performance"
+    },
+    "caveman": {
+      "primary": "performance"
+    },
+    "superset-mode": {
+      "primary": "performance"
+    }
   }
 }
