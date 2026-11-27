@@ -12,6 +12,17 @@ h1{font-size:16px;margin:0 6px 0 0;font-weight:600}
 .chip{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:16px;padding:3px 11px;font:inherit;cursor:pointer;white-space:nowrap}
 .chip.on{background:var(--accb);border-color:var(--acc);color:var(--acc);font-weight:600}
 .chip.sm{padding:1px 8px;font-size:11px}
+.fchip{border:1px solid #1f6f66;background:#10302c;color:#7fe0cf;border-radius:16px;padding:1px 8px;font:inherit;font-size:11px;cursor:pointer;white-space:nowrap}
+.fchip.on{background:#1f8f80;border-color:#5eead4;color:#04201c;font-weight:700}
+.frow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px;color:var(--dim);font-size:12px}
+.frow>.lb{min-width:62px}
+.ics{display:inline-flex;gap:5px;align-items:center;flex:none}
+svg.ic{width:14px;height:14px;flex:none;display:block}
+svg.ic[data-ic=pvt]{color:var(--priv)}svg.ic[data-ic=pub]{color:var(--pub)}svg.ic[data-ic=lfs]{color:#f0883e}svg.ic[data-ic=code]{color:var(--acc)}
+svg.ic[data-ic=html]{color:#e3b341}svg.ic[data-ic=nohtml]{color:#586374;opacity:.8}svg.ic[data-ic=hub]{color:var(--hub)}svg.ic[data-ic=nohub]{color:#586374;opacity:.8}
+td.ic,th.ic{width:1%;padding:4px 8px;cursor:default}td.ic .ics{vertical-align:middle}
+.lg{display:flex;gap:4px 14px;flex-wrap:wrap;align-items:center;padding:5px 10px;color:var(--dim);font-size:11px;border-top:1px solid var(--line);background:var(--card)}
+.lg span.p{display:inline-flex;gap:4px;align-items:center}
 .sep{color:var(--dim);margin:0 2px}
 input[type=search]{flex:1;min-width:140px;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:4px 12px;color:var(--text);font:inherit}
 .sub{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px;color:var(--dim);font-size:12px}
@@ -25,7 +36,7 @@ main{flex:1;min-height:0;display:flex}
 .row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--line);cursor:pointer}
 .row:hover,.row.sel{background:var(--card2)}.row.sel{box-shadow:inset 3px 0 var(--acc)}
 .row .tg{width:16px;text-align:center;color:var(--dim);flex:none;user-select:none}
-.row .nm{font-weight:600;white-space:nowrap}.row .b{white-space:nowrap}.row .cd{color:var(--dim);font-family:ui-monospace,Menlo,monospace;font-size:11px}
+.row .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row .b{white-space:nowrap}.row .cd{color:var(--dim);font-family:ui-monospace,Menlo,monospace;font-size:11px}
 .row .ds{color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
 .b{display:inline-block;border-radius:10px;padding:0 7px;font-size:11px;border:1px solid var(--line);color:var(--dim)}
 .b.public{color:var(--pub);border-color:var(--pub)}.b.private{color:var(--priv);border-color:var(--priv)}.b.hub{color:var(--hub);border-color:var(--hub)}
@@ -49,37 +60,54 @@ svg#cv{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
 <div class="top"><h1>Repos</h1>
 <div class="chips" id="modes"><button class="chip" data-m="list">List</button><button class="chip" data-m="table">Table</button><button class="chip" data-m="canvas">Canvas</button><span class="sep">|</span><a class="chip" href="repos-tree.html" id="oldtree">Tree</a></div>
 <input type="search" id="q" placeholder="Search every field (name, code, project, language, topic, ...)" aria-label="search"></div>
-<div class="sub"><span>visibility</span><span class="chips" id="fv"></span><span>kind</span><span class="chips" id="fk"></span><span>role</span><span class="chips" id="fr"></span><span id="count"></span></div>
+<div class="frow" id="rowv"><span class="lb">visibility</span><span class="chips" id="fv"></span><span id="count" style="margin-left:auto"></span></div>
+<div class="frow" id="rowk"><span class="lb">kind</span><span class="chips" id="fk"></span></div>
 </header>
 <main><div id="view"></div><aside id="detail"></aside></main>
+<div class="lg" id="lg" aria-label="icon legend"></div>
 <script>
 var J=/*DATA*/null,R=J.rows,BY={};R.forEach(function(r){BY[r.name]=r});
 var $=function(i){return document.getElementById(i)},esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
-var st={mode:"list",q:"",vis:"",kind:"",role:"",sk:"",sd:1,sel:"",col:{}};
+var st={mode:"list",q:"",vis:"",kind:"",sk:"",sd:1,sel:"",col:{}};
 var m0=/mode=(list|table|canvas)/.exec(location.hash);if(m0)st.mode=m0[1];
 // columns = every key of the rows (nested objects flattened as parent.child), in row order: no registry field is left out
 function flat(r){var o={};Object.keys(r).forEach(function(k){var v=r[k];if(v&&typeof v==="object"&&!Array.isArray(v)){Object.keys(v).forEach(function(k2){o[k+"."+k2]=v[k2]})}else o[k]=v});return o}
 var F=R.map(flat),COLS=[];F.forEach(function(o){Object.keys(o).forEach(function(k){if(COLS.indexOf(k)<0)COLS.push(k)})});COLS.splice(COLS.indexOf("name"),1);COLS.unshift("name");   // the name column leads (sticky)
 
+/*IC*/
+var SV={pvt:["Private repo (Pvt)",'<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>'],
+ pub:["Public repo (Pub)",'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'],
+ lfs:["Holds LFS data (LFS)",'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'],
+ code:["Plain code repo (Code)",'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>'],
+ html:["Has README.html or Pages (HTML)",'<path d="M6 2h9l5 5v15H6zM15 2v5h5M9 13h8M9 17h8"/>'],
+ nohtml:["No README.html or Pages (NoHTML)",'<path d="M6 2h9l5 5v15H6zM15 2v5h5"/><path d="M4 4l16 16"/>'],
+ hub:["Hub with child repos (Hub)",'<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5H5v5M12 11.5h7v5"/>'],
+ nohub:["No children (NoHub)",'<circle cx="12" cy="12" r="4"/>']};
+function ic(k){return'<svg class="ic" data-ic="'+k+'" role="img" aria-label="'+SV[k][0]+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>'+SV[k][0]+"</title>"+SV[k][1]+"</svg>"}
+// rules: Pvt/Pub = visibility; LFS/Code = lfs flag (registry lfs); HTML/NoHTML = html flag (README.html or Pages); Hub/NoHub = hub node or at least one child repo
+function icSt(r){return[r.visibility==="private"?"pvt":"pub",r.lfs?"lfs":"code",r.html?"html":"nohtml",(r.hub||r.children_count>0)?"hub":"nohub"]}
+function icons(r){return'<span class="ics">'+icSt(r).map(ic).join("")+"</span>"}
+function rowHtml(r,tg,sel,pad){return'<div class="row'+(sel?" sel":"")+'" data-n="'+esc(r.name)+'" style="padding-left:'+pad+'px"><span class="tg" data-t="'+esc(r.name)+'">'+tg+"</span>"+icons(r)+'<span class="nm">'+esc(r.name)+"</span></div>"}
+/*/IC*/
 var NUM={};COLS.forEach(function(k){NUM[k]=F.every(function(o){var v=o[k];return v===""||v==null||typeof v==="number"})&&F.some(function(o){return typeof o[k]==="number"})});
 function cell(v){if(v==null)return"";if(Array.isArray(v))return v.join(", ");if(typeof v==="boolean")return v?"yes":"no";return String(v)}
 function hay(i){var o=F[i];return COLS.map(function(k){return cell(o[k])}).join("\u0001").toLowerCase()}
 var H=R.map(function(_,i){return hay(i)});
 function vals(f){var s={};R.forEach(function(r){var v=f(r);if(v!=="")s[v]=(s[v]||0)+1});return Object.keys(s).sort()}
-function chips(id,key,list){var h='<button class="chip sm'+(st[key]===""?" on":"")+'" data-k="'+key+'" data-v="">all</button>';list.forEach(function(v){h+='<button class="chip sm'+(st[key]===v?" on":"")+'" data-k="'+key+'" data-v="'+esc(v)+'">'+esc(v)+"</button>"});$(id).innerHTML=h}
-function pass(i){var r=R[i];if(st.vis&&r.visibility!==st.vis)return false;if(st.kind&&r.kind!==st.kind)return false;if(st.role&&(r.role||(r.node==="hub"?"hub":""))!==st.role)return false;if(st.q&&H[i].indexOf(st.q)<0)return false;return true}
+function chips(id,key,list){var h='<button class="fchip'+(st[key]===""?" on":"")+'" data-k="'+key+'" data-v="">all</button>';list.forEach(function(v){h+='<button class="fchip'+(st[key]===v?" on":"")+'" data-k="'+key+'" data-v="'+esc(v)+'">'+esc(v)+"</button>"});$(id).innerHTML=h}
+function pass(i){var r=R[i];if(st.vis&&r.visibility!==st.vis)return false;if(st.kind&&r.kind!==st.kind)return false;if(st.q&&H[i].indexOf(st.q)<0)return false;return true}
 function vis(){var a=[];R.forEach(function(_,i){if(pass(i))a.push(i)});return a}
 var collapsed={};
 function hidden(r){for(var p=r.parent;p;p=BY[p]&&BY[p].parent){if(collapsed[p])return true}return false}
-function listHtml(){var h="",n=0,filt=!!(st.q||st.vis||st.kind||st.role);R.forEach(function(r,i){if(!pass(i))return;if(!filt&&hidden(r))return;n++;
+function listHtml(){var h="",n=0,filt=!!(st.q||st.vis||st.kind);R.forEach(function(r,i){if(!pass(i))return;if(!filt&&hidden(r))return;n++;
  var has=r.children_count>0,tg=has&&!filt?(collapsed[r.name]?"▸":"▾"):"·";
- h+='<div class="row'+(st.sel===r.name?" sel":"")+'" data-n="'+esc(r.name)+'" style="padding-left:'+(10+(filt?0:r.depth)*20)+'px"><span class="tg" data-t="'+esc(r.name)+'">'+tg+'</span><span class="nm">'+esc(r.name)+'</span><span class="cd">'+esc(r.code)+'</span><span class="b '+esc(r.visibility)+'">'+esc(r.visibility)+"</span>"+(r.node==="hub"?'<span class="b hub">hub</span>':"")+(r.role&&r.role!=="hub"?'<span class="b">'+esc(r.role)+"</span>":"")+(r.gh&&r.gh.language?'<span class="b">'+esc(r.gh.language)+"</span>":"")+(has?'<span class="b">'+r.children_count+" child"+(r.children_count>1?"ren":"")+"</span>":"")+'<span class="ds">'+esc(r.description||(r.gh&&r.gh.description)||"")+"</span></div>"});
+ h+=rowHtml(r,tg,st.sel===r.name,10+(filt?0:r.depth)*20)});
  if(!n)return'<div class="empty">no repo matches</div>';
  if(!filt&&J.groups&&J.groups.length)h+='<div class="card"><div class="row" style="cursor:default"><b>Folder groups ('+J.groups.length+')</b></div>'+J.groups.map(function(g){return'<div class="row" style="cursor:default"><span class="cd">'+esc(g.path)+'</span><span class="ds">'+esc(g.doc||"")+'</span><span class="b">in '+esc(g.parent)+'</span></div>'}).join("")+"</div>";
  return h}
 function tableHtml(){var ix=vis();if(st.sk){var k=st.sk,nu=NUM[k];ix.sort(function(a,b){var x=F[a][k],y=F[b][k];x=x==null?"":x;y=y==null?"":y;var c=nu?((x===""?-Infinity:x)-(y===""?-Infinity:y)):cell(x).localeCompare(cell(y),undefined,{numeric:true});return c*st.sd||a-b})}
- var h="<table><thead><tr>"+COLS.map(function(k){return'<th data-c="'+esc(k)+'"'+(st.sk===k?' class="on"':"")+">"+esc(k)+(st.sk===k?(st.sd>0?" ▲":" ▼"):"")+"</th>"}).join("")+"</tr></thead><tbody>";
- ix.forEach(function(i){var o=F[i];h+='<tr data-n="'+esc(R[i].name)+'"'+(st.sel===R[i].name?' class="sel"':"")+">"+COLS.map(function(k){var v=cell(o[k]);return"<td"+(NUM[k]?' style="text-align:right"':"")+' title="'+esc(v)+'">'+(k==="url"||k==="gh.html_url"?'<a href="'+esc(v)+'">'+esc(v)+"</a>":esc(v))+"</td>"}).join("")+"</tr>"});
+ var h='<table><thead><tr><th class="ic" aria-label="icons">icons</th>'+COLS.map(function(k){return'<th data-c="'+esc(k)+'"'+(st.sk===k?' class="on"':"")+">"+esc(k)+(st.sk===k?(st.sd>0?" ▲":" ▼"):"")+"</th>"}).join("")+"</tr></thead><tbody>";
+ ix.forEach(function(i){var o=F[i];h+='<tr data-n="'+esc(R[i].name)+'"'+(st.sel===R[i].name?' class="sel"':"")+'><td class="ic">'+icons(R[i])+"</td>"+COLS.map(function(k){var v=cell(o[k]);return"<td"+(NUM[k]?' style="text-align:right"':"")+' title="'+esc(v)+'">'+(k==="url"||k==="gh.html_url"?'<a href="'+esc(v)+'">'+esc(v)+"</a>":esc(v))+"</td>"}).join("")+"</tr>"});
  return h+"</tbody></table>"+(ix.length?"":'<div class="empty">no repo matches</div>')}
 // canvas: parent/child graph, tidy layered layout (x = depth, y = leaf order), pan + zoom
 var cv={x:20,y:20,k:1};
@@ -91,7 +119,7 @@ function canvasHtml(){var ix=vis(),set={};ix.forEach(function(i){set[R[i].name]=
 function detail(){var d=$("detail");if(!st.sel||!BY[st.sel]){d.className="";d.innerHTML="";return}var o=F[R.indexOf(BY[st.sel])];d.className="on";
  d.innerHTML='<h2>'+esc(st.sel)+' <a href="#" data-x="1" style="float:right">×</a></h2><dl>'+COLS.map(function(k){var v=cell(o[k]);return v===""?"":"<dt>"+esc(k)+"</dt><dd>"+((k==="url"||k==="gh.html_url")?'<a href="'+esc(v)+'">'+esc(v)+"</a>":esc(v))+"</dd>"}).join("")+"</dl>"}
 function draw(){document.querySelectorAll("[data-m]").forEach(function(b){b.classList.toggle("on",b.dataset.m===st.mode)});
- chips("fv","vis",vals(function(r){return r.visibility}));chips("fk","kind",vals(function(r){return r.kind}));chips("fr","role",vals(function(r){return r.role||(r.node==="hub"?"hub":"")}));
+ chips("fv","vis",vals(function(r){return r.visibility}));chips("fk","kind",vals(function(r){return r.kind}));
  var v=$("view"),sc=v.scrollTop,sl=v.scrollLeft;v.innerHTML=st.mode==="list"?listHtml():st.mode==="table"?tableHtml():canvasHtml();v.scrollTop=sc;v.scrollLeft=sl;
  $("count").textContent=vis().length+" of "+R.length+" repos · "+COLS.length+" fields";detail();if(st.mode==="canvas")fit(false)}
 function fit(force){var s=$("cv");if(!s)return;var vp=$("vp"),b=vp.getBBox(),w=s.clientWidth,h=s.clientHeight;if(force||!st.fitted){cv.k=Math.min(1,Math.max(.45,(w-40)/(b.width||1)));cv.x=20;cv.y=20;st.fitted=1}vp.setAttribute("transform","translate("+cv.x+","+cv.y+") scale("+cv.k+")")}
@@ -109,5 +137,6 @@ var drag=null;document.addEventListener("pointerdown",function(e){if(st.mode==="
 document.addEventListener("pointermove",function(e){if(drag){cv.x=drag.ox+e.clientX-drag.x;cv.y=drag.oy+e.clientY-drag.y;$("vp").setAttribute("transform","translate("+cv.x+","+cv.y+") scale("+cv.k+")")}});
 document.addEventListener("pointerup",function(){drag=null});
 document.addEventListener("wheel",function(e){if(st.mode==="canvas"&&e.target.closest("#cv")){e.preventDefault();cv.k=Math.max(.1,Math.min(4,cv.k*(e.deltaY<0?1.1:.9)));$("vp").setAttribute("transform","translate("+cv.x+","+cv.y+") scale("+cv.k+")")}},{passive:false});
+$("lg").innerHTML='<b>Icons</b>'+[["pvt","pub"],["lfs","code"],["html","nohtml"],["hub","nohub"]].map(function(p){return'<span class="p">'+ic(p[0])+SV[p[0]][0]+" / "+ic(p[1])+SV[p[1]][0]+"</span>"}).join("")+'<span>HTML = README.html or Pages in the registry; Hub = hub node or has child repos</span>';
 draw();
 </script></body></html>
