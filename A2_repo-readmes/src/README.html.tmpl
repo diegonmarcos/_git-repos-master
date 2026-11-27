@@ -6,24 +6,29 @@
 </style></head><body>
 <nav class="top">{{crumbs}}</nav>
 <div class="wrap">
+<section class="hd" id="title" data-section="title">
 <h1 class="t"><span>{{owner}} /</span> {{name}} <span class="badge {{visibility}}">{{visibility}}</span>{{hubbadge}}</h1>
 <div class="desc">{{description}}</div>
 <div class="chips">{{topics}}</div>
-<div class="stats">{{stats}}</div>
-<div class="langbar">{{langbar}}</div>
-<div class="langs">{{langs}}</div>
-<div class="cols">
-<main>
-<section class="box"><h2>Files <span class="dim">({{branch}})</span></h2>{{files}}</section>
-<section class="box"><h2>README.md</h2><div class="md">{{readme}}</div></section>
-</main>
-<aside>
-<section class="box"><h2>About</h2><div class="in"><dl class="meta">{{meta}}</dl>{{clonenote}}</div></section>
-<section class="box"><h2>Parent project</h2><div class="in"><ul class="l">{{parents}}</ul></div></section>
-<section class="box"><h2>Project tree</h2><div class="in"><pre class="pt">{{ptree}}</pre></div></section>
-<section class="box"><h2>Siblings ({{nsib}})</h2><div class="in"><ul class="l">{{siblings}}</ul></div></section>
-<section class="box"><h2>Links</h2><div class="in"><ul class="l">{{links}}</ul></div></section>
-</aside>
-</div></div>
+</section>
+<section class="box" id="metadata" data-section="metadata"><h2>Metadata</h2><div class="in"><div class="stats">{{stats}}</div><dl class="meta">{{meta}}</dl>{{clonenote}}</div></section>
+<section class="box" id="urls" data-section="urls"><h2>URLs</h2><div class="in"><ul class="l">{{urls}}</ul></div></section>
+<div class="cols2">
+<section class="box" id="languages" data-section="languages"><h2>Languages</h2><div class="in">{{langsvg}}<div class="langbar">{{langbar}}</div><div class="langs">{{langs}}</div></div></section>
+<section class="box" id="commits" data-section="commits"><h2>Commit activity</h2><div class="in">{{commitsvg}}</div></section>
+</div>
+<div class="cols2">
+<section class="box" id="workflows" data-section="workflows"><h2>Workflows ({{nwf}})</h2><div class="in">{{workflows}}</div></section>
+<section class="box" id="hooks" data-section="hooks"><h2>Hooks ({{nhooks}})</h2><div class="in">{{hooks}}</div></section>
+</div>
+<section class="box" id="tree" data-section="tree"><h2>Tree of files and folders <span class="dim">({{branch}})</span></h2>{{files}}<div class="in"><pre class="pt">{{tree}}</pre></div></section>
+<section class="box" id="explorer" data-section="explorer"><h2>File explorer</h2><div class="in">{{explorer}}</div></section>
+<div class="cols2">
+<section class="box" id="siblings" data-section="siblings"><h2>Repo siblings ({{nsib}})</h2><div class="in"><ul class="l">{{siblings}}</ul></div></section>
+<section class="box" id="parents" data-section="parents"><h2>Repo parents</h2><div class="in"><ul class="l">{{parents}}</ul><h3 class="sub">Project tree</h3><pre class="pt">{{ptree}}</pre></div></section>
+</div>
+<section class="box" id="links" data-section="links"><h2>Links</h2><div class="in"><ul class="l">{{links}}</ul></div></section>
+<section class="box" id="readme" data-section="readme"><h2>README.md</h2><div class="md">{{readme}}</div></section>
+</div>
 <div class="foot">{{foot}}</div>
 </body></html>
