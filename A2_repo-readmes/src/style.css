@@ -35,3 +35,4 @@ pre.pt{margin:0;white-space:pre;overflow:auto;font-size:11.5px;line-height:1.35}
 svg.g{display:block;max-width:100%;height:auto;font:10px ui-monospace,Menlo,Consolas,monospace}svg.g text{fill:var(--text)}svg.g .v{fill:var(--dim)}svg.g .b{fill:var(--pub)}svg.g .z{fill:none}svg.g .ax{fill:var(--line)}
 ul.fx,ul.fx ul{list-style:none;margin:0;padding:0 0 0 14px}ul.fx{padding:0}ul.fx li{padding:1px 0;white-space:nowrap}ul.fx summary{cursor:pointer;color:var(--acc)}ul.fx li.ff a{color:var(--text)}
 details>summary{cursor:pointer}
+svg.g .h0{fill:#1b2230}svg.g .h1{fill:#3b6fb6}svg.g .h2{fill:#3fb5c9}svg.g .h3{fill:#f2d24b}svg.g .h4{fill:#f29b38}svg.g .h5{fill:#e5483a}svg.g .h6{fill:#9d1b2f}svg.g.hm rect.h0{stroke:var(--line);stroke-width:.5}p.err{color:#ff7b72;border:1px solid #ff7b72;padding:6px 10px;border-radius:6px}

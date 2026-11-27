@@ -105,15 +105,15 @@ function hooks(d, entries) { // hook scripts (.githooks, .husky, any hooks/ fold
   const groups = new Map(); for (const f of files) { const i = f.path.lastIndexOf('/'), g = i < 0 ? '.' : f.path.slice(0, i); if (!groups.has(g)) groups.set(g, []); groups.get(g).push(f.path.slice(i + 1)); }
   let events = []; try { const j = JSON.parse(show(d, '.claude/settings.json') || '{}'); events = Object.entries(j.hooks || {}).map(([ev, arr]) => ({ ev, n: (arr || []).reduce((a, m) => a + ((m && m.hooks) || []).length, 0), match: (arr || []).map(m => m && m.matcher).filter(Boolean) })); } catch (e) { /* none */ }
   return { n: files.length, groups: [...groups.entries()].sort((a, b) => a[0] < b[0] ? -1 : 1), events }; }
-function activity(d) { // commits per week over the 52 weeks ending at the newest commit (deploy-only README commits and merges excluded, so a deploy changes nothing)
-  let ts = null;
-  try { ts = git(d, ['log', '--no-merges', '--format=%ct', 'HEAD', '--', SUB || '.', `:(exclude)${pre()}README.html`, `:(exclude)${pre()}README.canvas`, ...(SUB ? [`:(exclude)${pre()}README.md`] : []), `:(exclude)${DIR}/dist`], 64e6, NOLAZY).split('\n').filter(Boolean).map(Number); } catch (e) {
-    try { ts = git(d, ['log', '--no-merges', '--format=%ct%x09%s', 'HEAD', ...(SUB ? ['--', SUB] : [])], 64e6, NOLAZY).split('\n').filter(l => l && !/\tREADME\.html \+ README\.canvas/.test(l)).map(l => +l.split('\t')[0]); } catch (e2) { return null; } }
-  let shallow = false; try { shallow = git(d, ['rev-parse', '--is-shallow-repository']).trim() === 'true'; } catch (e) { /* no */ }
-  if (!ts.length) return { total: 0, bins: Array(52).fill(0), shallow };
-  const last = Math.max(...ts), first = Math.min(...ts), W = 604800, bins = Array(52).fill(0);
-  for (const t of ts) { const i = Math.floor((last - t) / W); if (i < 52) bins[51 - i]++; }
-  return { total: ts.length, first, last, bins, shallow }; }
+const CD = require('./commit-days.js');
+const CDF = (() => { const o = { repos: {}, fetched: '' }; for (const f of [path.join(ROOT, DIR, 'src/commit-days.json'), process.env.COMMIT_DAYS_PRIV]) { if (!f) continue; try { const j = JSON.parse(fs.readFileSync(f, 'utf8')); Object.assign(o.repos, j.repos); o.fetched = o.fetched || j.fetched || ''; } catch (e) { /* none */ } } return o; })();
+function activityOf(me, d) { // {s: summary, note} from the full GitHub history (commit-days.json) or a NON-shallow clone; {error} otherwise (never a number from partial data)
+  const e = CDF.repos[me.github + (SUB ? '~' + SUB : '')];
+  if (e && e.days) return { s: CD.summarize(e.days), note: `GitHub REST history of every commit, fetched ${CDF.fetched.slice(0, 10)}` };
+  if (e && e.error) return { error: `GitHub history fetch failed: ${e.error}` };
+  if (d) { try { return { s: CD.summarize(CD.fromGit(d, SUB).days), note: 'full local git history' }; } catch (er) { return { error: String(er.message).split('\n')[0] + '; no cached GitHub history for this repo' }; } }
+  return { error: 'no cached GitHub history and no local clone' };
+}
 const day = t => new Date(t * 1000).toISOString().slice(0, 10);
 function langSvg(ls, lc) { // inline SVG: a stacked bar plus one row per language (bar proportional to its share)
   if (!ls.length) return '<p class="dim">no language detected</p>';
@@ -121,15 +121,7 @@ function langSvg(ls, lc) { // inline SVG: a stacked bar plus one row per languag
   const stack = ls.map((l, i) => { const w = W * l.pct / 100, r = `<rect x="${x.toFixed(2)}" y="2" width="${Math.max(w, 0.5).toFixed(2)}" height="12" fill="${lc(l.name, i)}"><title>${esc(l.name)} ${l.pct.toFixed(1)}%</title></rect>`; x += w; return r; }).join('');
   const lines = rows.map((l, i) => { const y = 26 + i * 18; return `<rect x="0" y="${y}" width="10" height="10" rx="2" fill="${lc(l.name, i)}"/><text x="16" y="${y + 9}">${esc(l.name)}</text><rect x="150" y="${y + 1}" width="${(400 * l.pct / 100).toFixed(2)}" height="8" fill="${lc(l.name, i)}" opacity=".85"/><text x="${(156 + 400 * l.pct / 100).toFixed(2)}" y="${y + 9}" class="v">${l.pct.toFixed(1)}%</text>`; }).join('');
   return `<svg class="g" role="img" aria-label="languages" viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">${stack}${lines}${ls.length > rows.length ? `<text x="0" y="${H - 2}" class="v">+${ls.length - rows.length} more</text>` : ''}</svg>`; }
-function commitSvg(a) {
-  if (!a) return '<p class="dim">no local clone at render time: commit activity unavailable.</p>';
-  const max = Math.max(1, ...a.bins), W = 52 * 12, H = 96, top = 8, ch = 64;
-  const bars = a.bins.map((n, i) => { const h = n ? Math.max(2, ch * n / max) : 0, ws = a.last ? day(a.last - (51 - i) * 604800) : ''; return `<rect x="${i * 12 + 1}" y="${(top + ch - h).toFixed(2)}" width="10" height="${h.toFixed(2)}" rx="1" class="${n ? 'b' : 'z'}"><title>week ending ${ws}: ${n} commits</title></rect><rect x="${i * 12 + 1}" y="${top + ch}" width="10" height="2" class="ax"/>`; }).join('');
-  const lbl = a.last ? `<text x="0" y="${H - 6}" class="v">${day(a.last - 51 * 604800)}</text><text x="${W}" y="${H - 6}" class="v" text-anchor="end">${day(a.last)}</text><text x="${W / 2}" y="${H - 6}" class="v" text-anchor="middle">max ${max}/week</text>` : '';
-  const sum = a.bins.reduce((x, y) => x + y, 0);
-  return `<svg class="g" role="img" aria-label="commit activity" viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">${bars}${lbl}</svg>`
-    + `<div class="stats"><span>last 52 weeks <b>${sum}</b> commits</span><span>in history <b>${a.total}</b></span>${a.first ? `<span>first <b>${day(a.first)}</b></span><span>latest <b>${day(a.last)}</b></span>` : ''}</div>`
-    + `<p class="note">from git log of the committed HEAD at render time (merges and README-only deploy commits excluded)${a.shallow ? '; shallow clone: only the fetched history is counted' : ''}.</p>`; }
+function commitSvg(a) { return a.error ? `<p class="err">commit activity unavailable: ${esc(a.error)}.</p>` : CD.heatmap(a.s, a.note); }
 
 // ---- model ------------------------------------------------------------------------------------------------------------
 const src = M.load(), x = M.expand(src), GMF = readJ('A0_repos-tree/src/gh-meta.json'), GM = GMF.repos || {}, KI = readJ('A0_repos-tree/src/kinds.json').repos || {};
@@ -224,7 +216,7 @@ function html(me, tpl, style) {
   const links = [li(furl, 'GitHub: ' + nm), li(rawb + 'README.canvas', 'README.canvas (raw)', 'JSON Canvas 1.0'), li(rawb + 'README.html', 'README.html (raw)'), ...(SUB ? [li(rawb + 'README.md', 'README.md (raw)')] : []),
     pg ? li(pg, 'Pages', 'declared') : '', li(domainPage(me), 'domain page')].join('');
   // #1961 sections: URLs, languages + commits graphics, workflows, hooks, full tree, file explorer
-  const all = dir ? allTree(dir) : null, troot = all ? treeOf(all) : null, act = dir ? activity(dir) : null;
+  const all = dir ? allTree(dir) : null, troot = all ? treeOf(all) : null, act = activityOf(me, dir);
   const wfs = all ? workflows(dir, all) : null, hk = all ? hooks(dir, all) : null, NC = w => `<p class="dim">no local clone at render time: ${w} unavailable.</p>`;
   const urls = [li(furl, SUB ? 'GitHub folder' : 'GitHub repo'), ...(SUB ? [li(me.url, 'GitHub repo', 'holds this folder')] : []), li(`${me.url}.git`, `${me.url}.git`, 'clone (https)'), `<li><code>git@github.com:${esc(OWNER)}/${esc(me.github)}.git</code> <span class="dim">clone (ssh)</span></li>`,
     li(`https://api.github.com/repos/${OWNER}/${me.github}`, 'GitHub REST', 'api'), li(rawb, 'raw (main)'),
@@ -248,13 +240,13 @@ function html(me, tpl, style) {
 function folderTargets() { try { return JSON.parse(fs.readFileSync(path.join(ROOT, DIR, 'src/folder-targets.json'), 'utf8')).targets || []; } catch (e) { return []; } }
 const folderKey = t => `${t.repo}~${t.path.replace(/\//g, '+')}`; // dist dir name of a target (one level deep, like a repo)
 function markdown(me, t) { // README.md of a folder: the same sections as text, from the same git reads
-  const d = cloneDir(me), g = GM[me.github] || {}, all = d ? allTree(d) : null, troot = all ? treeOf(all) : null, ls = d ? langs(d, g.language) : [], act = d ? activity(d) : null;
+  const d = cloneDir(me), g = GM[me.github] || {}, all = d ? allTree(d) : null, troot = all ? treeOf(all) : null, ls = d ? langs(d, g.language) : [], act = activityOf(me, d);
   const wfs = all ? workflows(d, all) : [], hk = all ? hooks(d, all) : { n: 0, groups: [], events: [] }, base = `${GH(me.github)}/tree/main/${enc('').slice(0, -1)}`, raw = `https://raw.githubusercontent.com/${OWNER}/${me.github}/main/${pre()}`;
   const top = rootTree(d) || [], L = [`# ${me.github} / ${SUB}`, '', t.title ? `**${t.title}**` : '', '', descOf(me) || '', '',
     '## Metadata', '', `- repo: [${me.github}](${me.url}) (${me.visibility})`, `- folder: \`${SUB}\``, `- default branch: main`, `- last push of the repo: ${(g.pushed_at || '—').slice(0, 10)}`, `- project: ${me.project || '—'}, area ${me.area}`, '',
     '## URLs', '', `- ${base}`, `- ${raw}`, `- ${me.url}`, '',
     '## Languages', '', ...(ls.length ? ls.slice(0, 12).map(l => `- ${l.name} ${l.pct.toFixed(1)}%`) : ['- none detected']), '',
-    '## Commit activity', '', act ? `last 52 weeks ${act.bins.reduce((a, b) => a + b, 0)} commits, ${act.total} in history${act.first ? `, first ${day(act.first)}, latest ${day(act.last)}` : ''}${act.shallow ? ' (shallow clone)' : ''}` : 'unavailable (no local clone at render time)', '',
+    '## Commit activity', '', act.error ? `unavailable: ${act.error}` : `last 52 weeks ${act.s.win.total} commits, ${act.s.total} in history, first ${act.s.first}, latest ${act.s.last}, busiest day ${act.s.busiest.day} (${act.s.busiest.n}); ${act.note}`, '',
     `## Workflows (${wfs.length})`, '', ...(wfs.length ? wfs.map(w => `- ${w.file}: ${w.name || '—'} (${w.on.join(', ') || '—'})`) : ['none in this folder.']), '',
     `## Hooks (${hk.n + hk.events.length})`, '', ...(hk.n + hk.events.length ? [...hk.events.map(e => `- ${e.ev} x${e.n}`), ...hk.groups.map(([g2, f]) => `- ${g2}/: ${f.length} files`)] : ['none in this folder.']), '',
     '## Tree of files and folders', '', '```', ...(troot ? asciiTree(troot, me).split('\n').map(l => l.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')) : ['(unavailable)']), '```', '',
@@ -271,7 +263,7 @@ function renderAll(vis) { // vis: 'public' (default, goes to the public master d
     SUB = t.path; try { const me = { ...r, fdesc: t.description || '' }, k = folderKey(t); out[`${k}/README.html`] = html(me, tpl, style); out[`${k}/README.canvas`] = canvas(me); out[`${k}/README.md`] = markdown(me, t); } finally { SUB = ''; } }
   return out;
 }
-module.exports = { renderAll, cloneDir, live, HELD };
+module.exports = { renderAll, cloneDir, live, HELD, folderTargets, owner: src.owner, activityOf };
 
 if (require.main === module) {
   if (process.argv[2] === '--list') { for (const r of live) { const d = cloneDir(r); if (d) console.log(`${r.github}\t${d}`); }

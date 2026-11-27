@@ -1,0 +1,20 @@
+name: commit-heatmap-1973
+# README.html commit activity: real per-day history, 7x52 heatmap (#1973). Full checkout (fetch-depth 0) so the test cross-checks
+# commit-days.json against git's own history; the test carries its own mutations (each must go red).
+on:
+  push:
+    paths: ['0_registry/commit-days.js', '0_registry/fetch-commit-days.js', '0_registry/render-repo-readmes.js', 'A2_repo-readmes/**', '9_others/test/test-commit-heatmap-1973.sh', '.github/workflows/commit-heatmap-1973.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: heatmap test (+ mutations)
+        run: bash 9_others/test/test-commit-heatmap-1973.sh
+      - name: readme section tests
+        run: bash 9_others/test/test-readme-sections-1961.sh

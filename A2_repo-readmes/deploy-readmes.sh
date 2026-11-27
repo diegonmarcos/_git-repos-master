@@ -13,6 +13,8 @@ HOME_REPO="$(cd "$HERE/.." && pwd)"
 export BASE="${BASE:-$(cd "$HOME_REPO/.." && pwd)}"
 DIST="${DIST:-$HERE/dist}"
 PRIV="$(mktemp -d)"; trap 'rm -rf "$PRIV"' EXIT   # private repos'"'"' pages: rendered here (outside master), deployed only to that private clone
+export COMMIT_DAYS_PRIV="$PRIV.commit-days.json"; trap 'rm -rf "$PRIV" "$COMMIT_DAYS_PRIV"' EXIT   # #1973: private repos' real per-day history (GitHub REST), kept outside master
+node "$HOME_REPO/0_registry/fetch-commit-days.js" --private >/dev/null || { echo "deploy-readmes: commit history fetch failed (private)"; exit 1; }
 OUT="$PRIV" node "$HOME_REPO/0_registry/render-repo-readmes.js" --private >/dev/null || { echo "deploy-readmes: private render failed"; exit 1; }
 src_of() { [ -f "$PRIV/$1/README.html" ] && echo "$PRIV" || echo "$DIST"; }
 MSG="${MSG:-README.html + README.canvas: generated from _git-repos-master/A2_repo-readmes}"
