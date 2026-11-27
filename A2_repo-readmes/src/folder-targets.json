@@ -1,0 +1,8 @@
+{
+  "_doc": "#1961 folder-scoped README trios: for each target the engine (0_registry/render-repo-readmes.js) renders README.html, README.canvas and README.md with the same sections scoped to <path> of <repo>, into dist/<repo>~<path>/ ; deploy-readmes.sh copies them into <path>/ of the clone. Cloud Me Proj > Wiki pages point at these folders.",
+  "targets": [
+    { "repo": "lib-chronos", "path": "1.Modern-science", "title": "Cloud Wiki: Modern Science", "description": "Modern Science pages of Cloud Wiki: Science, Humanities, Arts and Explore, one folder per topic." },
+    { "repo": "lib-chronos", "path": "2.Arcanum-science", "title": "Cloud Wiki: Arcanum Science", "description": "Arcanum Science pages of Cloud Wiki, after the Esoteric Arcanum master taxonomy." },
+    { "repo": "lib-chronos", "path": "3.Projects", "title": "Cloud Wiki: Projects", "description": "Projects pages of Cloud Wiki: Chronos and Sacred geometry." }
+  ]
+}
