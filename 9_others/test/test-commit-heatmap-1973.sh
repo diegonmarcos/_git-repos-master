@@ -74,7 +74,7 @@ node "$CHK" dist "$T/d" >/dev/null 2>&1 && bad "mutation (shallow note) missed" 
 if ! grep -q SKIP "$T/o" 2>/dev/null; then :; fi
 if [ "$(git -C "$ROOT" rev-parse --is-shallow-repository)" = false ]; then
   node -e "const j=require('$JSON');const e=j.repos._git-repos-master;" 2>/dev/null; node -e "
-const fs=require('fs');const j=JSON.parse(fs.readFileSync('$JSON','utf8'));const e=j.repos['_git-repos-master'];const k=Object.keys(e.days)[0];e.days[k]+=7;fs.writeFileSync('$T/mock.json',JSON.stringify(j))"
+const fs=require('fs');const j=JSON.parse(fs.readFileSync('$JSON','utf8'));const e=j.repos['_git-repos-master'];const k=Object.keys(e.days).sort()[0];e.days[k]+=7;fs.writeFileSync('$T/mock.json',JSON.stringify(j))"
   REPO=_git-repos-master node "$CHK" data "$T/mock.json" "$ROOT" >/dev/null 2>&1 && bad "mutation (mocked day in commit-days.json) missed" || ok "mutation (mocked day in commit-days.json) is caught"
 else echo "SKIP  mock-data mutation needs a full checkout (runs in CI with fetch-depth 0)"; fi
 [ $fail = 0 ] && echo "test-commit-heatmap-1973: all passed" || echo "test-commit-heatmap-1973: FAILED"; exit $fail
