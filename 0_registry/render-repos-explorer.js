@@ -22,7 +22,7 @@ function rows() {
       vis_icon: n.vis_icon || '', role: n.role || '', parent: n.parent || '', depth, children_count: (kids.get(name) || []).length,
       registry_label: r.label || '', registry_kind: r.kind || '', description: r.description || '', doc: r.doc || '', private: !!r.private, ssh_url: r.ssh_url || '',
       area: r.area || '', area_code: r.area_code || '', project_code: r.project_code || '', family_code: r.family_code || '', subfamily: r.subfamily || '', subfamily_code: r.subfamily_code || '',
-      registry_group: r.group || '', school: r.school || '', hub_of: r.hub_of || '', up: r.up || '', path: (r.path || []).join(' / '), renamed_from: r.renamed_from || [],
+      registry_group: r.group || '', school: r.school || '', hub_of: r.hub_of || '', up: r.up || '', path: (r.path || []).join(' / '), renamed_from: r.renamed_from || [], lfs_registry: !!r.lfs,
       apps: (r.apps || []).map(a => a.name), parts: (r.parts || []).map(p => p.name + (p.status ? ' (' + p.status + ')' : '')),
       tree_source: t.source || '', tree_head: t.head || '', tree_entries: (t.entries || []).length, tree_files: files(t.entries) });
     for (const k of (kids.get(name) || []).slice().sort((a, b) => ((nm.get(b).hub - nm.get(a).hub) || (a < b ? -1 : 1)))) walk(k, depth + 1); };
